@@ -21,12 +21,20 @@ fp2_urbanism_legacy_track = {
 		# 				}
 		# 			}
 		# 		}
-		# 		has_dynasty_perk = fp2_urbanism_legacy_1
+		# 		has_dynasty_perk = fp2_coterie_legacy_1
 		# 	}
 		# }
-		always = no
+		OR = {
+			has_title = title:c_oldtown
+			has_title = title:c_lannisport
+			has_title = title:c_fairmarket
+			has_title = title:c_plankytown
+			has_title = title:c_gulltown
+			has_title = title:c_white_harbor
+		}
 	}
 }
+
 
 # TO DO: should be available for any character involved in the Struggle instead of checking Iberian heritage
 fp2_coterie_legacy_track = {

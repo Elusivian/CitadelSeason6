@@ -3,4 +3,3 @@ shawney_legacy_5_effect = {
 	first = SHAWNEY_CITADEL
 	third = SHAWNEY_CITADEL
 }
-

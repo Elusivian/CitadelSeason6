@@ -10,6 +10,7 @@
 	desc = reforge_valyrian_steel_decision_desc
 
 	is_shown = {
+		debug_only = yes
 		any_character_artifact = {
 			has_variable = valyrian_steel
 			NOT = { has_artifact_modifier = vs_dawn_modifier }

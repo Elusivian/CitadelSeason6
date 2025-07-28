@@ -244,7 +244,7 @@ NCharacter = {
 	MAXIMUM_DIPLOMATIC_RANGE_RESTRICTED = 750	# Used if a game rule with the restricted_diplomatic_range flag is used
 	HOOK_COOLDOWN_DURATION_YEARS = 5	# How many years do strong hooks go on cooldown when used?
 	MAX_COUNTIES_IN_REALM_AS_DUKE = 30						# As a duke or below, the player (but not the AI) will suffer penalties when they go beyond this # of counties in their realm. They can form a kingdom to get the penalties to go away
-	INCOME_PENALTY_PER_COUNTY_ABOVE_LIMIT = 0.05			# For each county above MAX_COUNTIES_IN_REALM_AS_DUKE, you get 10% less income
+	INCOME_PENALTY_PER_COUNTY_ABOVE_LIMIT = 0.1			# For each county above MAX_COUNTIES_IN_REALM_AS_DUKE, you get 10% less income
 
 	FORCED_SUCCESSION_ELECTION_YEARS = 100	# For how long someone is forced to vote with another elector when using the force_vote_in_succession_election interaction
 
@@ -545,8 +545,8 @@ NCombat = {
 	WAR_ATTACKER_COMBAT_MAX_SCORE = 50				# The maximum amount of warscore gained from a single battle by the war attacker
 	WAR_DEFENDER_COMBAT_MAX_SCORE = 50				# The maximum amount of warscore gained from a single battle by the war attacker
 	MANEUVER_PHASE_DAYS = 3							# How many days should the maneuver phase last
-	LEVY_TOUGHNESS = 10								# How much toughness does each levy soldier have
-	LEVY_ATTACK = 10								# How much attack does each levy soldier have
+	LEVY_TOUGHNESS = 14								# How much toughness does each levy soldier have
+	LEVY_ATTACK = 12								# How much attack does each levy soldier have
 	LEVY_SIEGE = 0									# How much siege bonus does each levy soldier have
 	LEVY_PURSUIT = 0								# How much pursuit does each levy soldier have
 	LEVY_SCREEN = 0									# How much screen does each levy soldier have
@@ -570,7 +570,7 @@ NCombat = {
 	DISEMBARK_PENALTY_DAYS = 30						# How long does an army have a penalty after disembarking?
 	#AGOT Modified, less OP knights
 	#KNIGHT_DAMAGE_PER_PROWESS = 100					# How much "Damage" stat does a knight get per prowess?
-	KNIGHT_DAMAGE_PER_PROWESS = 50					# How much "Damage" stat does a knight get per prowess?
+	KNIGHT_DAMAGE_PER_PROWESS = 40					# How much "Damage" stat does a knight get per prowess?
 	KNIGHT_TOUGHNESS_PER_PROWESS = 10				# How much "Toughness" stat does a knight get per prowess?
 
 	### Brief: KNIGHT_AVERAGE_PROWESS_FOR_AI_POWER_CALCULATION ( int32 )
@@ -609,7 +609,7 @@ NArmy = {
 	REGIMENT_DEFAULT_STACK_SIZE = 100
 	REGIMENT_DEFAULT_MAX_SIZE = 3					# Number of regiment chunks
 	REGIMENT_MAA_CAP_BY_TIER = { 0 1 2 3 4 5 }
-	REGIMENT_MAA_EXTRA_BY_CAP = 0.2					# Percentage [0-1] applied to each MAA regiment by each regiment above the cap
+	REGIMENT_MAA_EXTRA_BY_CAP = 5				# Percentage [0-1] applied to each MAA regiment by each regiment above the cap
 	REGIMENT_MAA_SHOW_INFO_PERCENTAGE = 0.3
 	REGIMENT_MAA_STARTING_COUNT = 5
 

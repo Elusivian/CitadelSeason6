@@ -678,7 +678,7 @@ kicked_dornish_traders_county = {#
 blessed_by_storm = {
 	icon = dread_positive
 	health = 1
-	prowess = 5
+	prowess = 3
 	liege_opinion = 5
 	vassal_opinion = 10
 }

@@ -8,23 +8,17 @@
 }
 
 
-#umber_legacy_track = {
-#	is_shown = {
-#		OR = {
-#			dynasty = dynasty:dynn_Umber 
-#			dynasty = { has_dynasty_perk = umber_legacy_1 }
-#		}
-#	}
-#}
+umber_legacy_track = {
+	is_shown = {
+		always = no
+	}
+}
 
-#forrester_legacy_track = {
-#	is_shown = {
-#		OR = {
-#			dynasty = dynasty:dynn_Forrester  
-#			dynasty = { has_dynasty_perk = forrester_legacy_1 }
-#		}
-#	}
-#}
+forrester_legacy_track = {
+	is_shown = {
+		always = no
+	}
+}
 
 
 north_legacy_track = {

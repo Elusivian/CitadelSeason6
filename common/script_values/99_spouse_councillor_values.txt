@@ -54,6 +54,7 @@ spouse_default_task_diplomacy_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 3
 }
 
 spouse_default_task_martial_scale = {
@@ -84,6 +85,7 @@ spouse_default_task_martial_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 3
 }
 
 spouse_default_task_intrigue_scale = {
@@ -125,6 +127,7 @@ spouse_default_task_intrigue_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 3
 }
 
 spouse_default_task_learning_scale = {
@@ -155,6 +158,7 @@ spouse_default_task_learning_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 3
 }
 
 spouse_default_task_stewardship_scale = {
@@ -185,6 +189,7 @@ spouse_default_task_stewardship_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 3
 }
 
 spouse_task_court_politics_scale = {
@@ -215,6 +220,7 @@ spouse_task_court_politics_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 5
 }
 
 spouse_task_chivalry_scale = {
@@ -245,6 +251,7 @@ spouse_task_chivalry_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 5
 }
 
 spouse_task_court_intrigue_scale = {
@@ -286,6 +293,7 @@ spouse_task_court_intrigue_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 5
 }
 
 spouse_task_manage_domain_scale = {
@@ -316,6 +324,7 @@ spouse_task_manage_domain_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 5
 }
 
 spouse_task_patronage_scale = {
@@ -346,6 +355,7 @@ spouse_task_patronage_scale = {
 		floor = yes
 	}
 	min = 1
+	max = 5
 }
 
 #Spouse rank up values

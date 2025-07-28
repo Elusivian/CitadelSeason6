@@ -1,0 +1,435 @@
+banefort_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Banefort
+			dynasty = { has_dynasty_perk = banefort_legacy_1 }
+		}
+	}
+}
+
+cargyll_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Cargyll
+			dynasty = { has_dynasty_perk = cargyll_legacy_1 }
+		}
+	}
+}
+
+frey_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Frey
+			dynasty = { has_dynasty_perk = frey_legacy_1 }
+		}
+	}
+}
+
+strong_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Strong
+			dynasty = { has_dynasty_perk = strong_legacy_1 }
+		}
+	}
+}
+
+graceford_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Graceford
+			dynasty = { has_dynasty_perk = graceford_legacy_1 }
+		}
+	}
+}
+
+mallister_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Mallister
+			dynasty = { has_dynasty_perk = mallister_legacy_1 }
+		}
+	}
+}
+
+oakheart_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Oakheart
+			dynasty = { has_dynasty_perk = oakheart_legacy_1 }
+		}
+	}
+}
+
+peake_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Peake
+			dynasty = { has_dynasty_perk = peake_legacy_1 }
+		}
+	}
+}
+
+connington_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Connington
+			dynasty = { has_dynasty_perk = connington_legacy_1 }
+		}
+	}
+}
+
+kenning_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Kenning
+			dynasty = { has_dynasty_perk = kenning_legacy_1 }
+		}
+	}
+}
+
+harlaw_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Harlaw
+			dynasty = { has_dynasty_perk = harlaw_legacy_1 }
+		}
+	}
+}
+
+goodbrother_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Goodbrother
+			dynasty = { has_dynasty_perk = goodbrother_legacy_1 }
+		}
+	}
+}
+
+blacktyde_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Blacktyde
+			dynasty = { has_dynasty_perk = blacktyde_legacy_1 }
+		}
+	}
+}
+
+reed_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Reed
+			dynasty = { has_dynasty_perk = reed_legacy_1 }
+		}
+	}
+}
+
+darry_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Darry
+			dynasty = { has_dynasty_perk = darry_legacy_1 }
+		}
+	}
+}
+
+hayford_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Hayford
+			dynasty = { has_dynasty_perk = hayford_legacy_1 }
+		}
+	}
+}
+
+rosby_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Rosby
+			dynasty = { has_dynasty_perk = rosby_legacy_1 }
+		}
+	}
+}
+
+stokeworth_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Stokeworth
+			dynasty = { has_dynasty_perk = stokeworth_legacy_1 }
+		}
+	}
+}
+
+swann_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Swann
+			dynasty = { has_dynasty_perk = swann_legacy_1 }
+		}
+	}
+}
+
+
+fowler_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Fowler
+			dynasty = { has_dynasty_perk = fowler_legacy_1 }
+		}
+	}
+}
+
+spicer_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Spicer
+			dynasty = { has_dynasty_perk = spicer_legacy_1 }
+		}
+	}
+}
+
+staedmon_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Staedmon
+			dynasty = { has_dynasty_perk = staedmon_legacy_1 }
+		}
+	}
+}
+
+fell_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Fell
+			dynasty = { has_dynasty_perk = fell_legacy_1 }
+		}
+	}
+}
+
+serrett_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Serrett
+			dynasty = { has_dynasty_perk = serrett_legacy_1 }
+		}
+	}
+}
+
+# FID LEGACIES
+
+tarth_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Tarth
+			dynasty = { has_dynasty_perk = tarth_legacy_1 }
+		}
+	}
+}
+
+massey_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Massey
+			dynasty = { has_dynasty_perk = massey_legacy_1 }
+		}
+	}
+}
+
+corbray_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Corbray
+			dynasty = { has_dynasty_perk = corbray_legacy_1 }
+		}
+	}
+}
+
+penrose_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Penrose
+			dynasty = { has_dynasty_perk = penrose_legacy_1 }
+		}
+	}
+}
+
+mooton_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Mooton
+			dynasty = { has_dynasty_perk = mooton_legacy_1 }
+		}
+	}
+}
+
+allyrion_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Allyrion
+			dynasty = { has_dynasty_perk = allyrion_legacy_1 }
+		}
+	}
+}
+
+# END FID LEGACIES
+
+# FISHER LEGACIES
+
+redfort_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Redfort
+			dynasty = { has_dynasty_perk = redfort_legacy_1 }
+		}
+	}
+}
+
+fisher_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_FisherSS
+			dynasty = { has_dynasty_perk = fisher_legacy_1 }
+		}
+	}
+}
+
+belmore_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Belmore
+			dynasty = { has_dynasty_perk = belmore_legacy_1 }
+		}
+	}
+}
+
+templeton_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Templeton
+			dynasty = { has_dynasty_perk = templeton_legacy_1 }
+		}
+	}
+}
+
+piper_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Piper
+			dynasty = { has_dynasty_perk = piper_legacy_1 }
+		}
+	}
+}
+
+elesham_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Elesham
+			dynasty = { has_dynasty_perk = elesham_legacy_1 }
+		}
+	}
+}
+
+# END FISHER LEGACIES
+
+# KIZAN LEGACIES
+
+clawman_legacy_track = {
+	is_shown = {
+		OR = { 
+			culture = {
+				OR = {
+					this = culture:clawman
+					any_parent_culture_or_above = {
+						this = culture:clawman
+					}
+				}
+			}
+			dynasty = { has_dynasty_perk = clawman_legacy_1 }
+		}
+	}
+}
+
+honeywiner_legacy_track = {
+	is_shown = {
+		OR = { 
+			culture = {
+				OR = {
+					this = culture:honeywiner
+					any_parent_culture_or_above = {
+						this = culture:honeywiner
+					}
+				}
+			}
+			dynasty = { has_dynasty_perk = honeywiner_legacy_1 }
+		}
+	}
+}
+
+sisterman_legacy_track = {
+	is_shown = {
+		OR = { 
+			culture = {
+				OR = {
+					this = culture:sisterman
+					any_parent_culture_or_above = {
+						this = culture:sisterman
+					}
+				}
+			}
+			dynasty = { has_dynasty_perk = sisterman_legacy_1 }
+		}
+	}
+}
+
+stonedornish_legacy_track = {
+	is_shown = {
+		OR = { 
+			culture = {
+				OR = {
+					this = culture:stone_dornish
+					any_parent_culture_or_above = {
+						this = culture:stone_dornish
+					}
+				}
+			}
+			dynasty = { has_dynasty_perk = stonedornish_legacy_1 }
+		}
+	}
+}
+
+whent_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Whent
+			dynasty = { has_dynasty_perk = whent_legacy_1 }
+		}
+	}
+}
+
+shawney_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Shawney
+			dynasty = { has_dynasty_perk = shawney_legacy_1 }
+		}
+	}
+}
+
+selmy_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Selmy
+			dynasty = { has_dynasty_perk = selmy_legacy_1 }
+		}
+	}
+}
+ironmaker_legacy_track = {
+	is_shown = {
+		OR = {
+			dynasty = dynasty:dynn_Ironmaker
+			dynasty = { has_dynasty_perk = ironmaker_legacy_1 }
+		}
+	}
+}
+
+# END KIZAN LEGACIES

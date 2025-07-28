@@ -3,9 +3,9 @@
 ######################
 
 # Use these values #Hambone reduced
-miniscule_lifestyle_xp = 10
-minor_lifestyle_xp = 20
-medium_lifestyle_xp = 50
+miniscule_lifestyle_xp = 5
+minor_lifestyle_xp = 10
+medium_lifestyle_xp = 25
 major_lifestyle_xp = 200
 massive_lifestyle_xp = 500		# Half of xp needed for 1 perk point
 monumental_lifestyle_xp = 1000	# Enough for 1 perk point... but why give XP instead of just awarding a full perk?
@@ -250,7 +250,7 @@ duty_focus_value = -20
 clerical_justifications_percentage = 20
 
 # Learn on the Job
-learn_on_the_job_percentage = 10 #Hambone
+learn_on_the_job_percentage = 5 #Hambone
 
 # Zealous Proselytizer
 zealous_proselytizer_percentage = 25
@@ -978,7 +978,7 @@ voyager_journey_planner_value = {
 }
 
 wanderer_destination_prestige_value = {
-	value = 50
+	value = 25
 }
 
 wanderer_finally_there_prestige_value = {

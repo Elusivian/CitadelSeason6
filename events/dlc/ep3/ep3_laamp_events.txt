@@ -733,31 +733,31 @@ ep3_laamps.0011 = {
 }
 
 # Setup event - deceased
-ep3_laamps.0012 = {
-	hidden = yes
-	type = character_event
+# ep3_laamps.0012 = {
+# 	hidden = yes
+# 	type = character_event
 
-	trigger = {
-		has_ep3_dlc_trigger = yes
-		is_landed = yes
-		player_heir ?= {
-			save_temporary_scope_as = heir_temp
-			any_sibling = {
-				ep3_laamp_interesting_sibling_trigger = { COMPARISON = scope:heir_temp }
-			}
-		}
-	}
+# 	trigger = {
+# 		has_ep3_dlc_trigger = yes
+# 		is_landed = yes
+# 		player_heir ?= {
+# 			save_temporary_scope_as = heir_temp
+# 			any_sibling = {
+# 				ep3_laamp_interesting_sibling_trigger = { COMPARISON = scope:heir_temp }
+# 			}
+# 		}
+# 	}
 
-	immediate = {
-		save_scope_as = deceased
-		player_heir = {
-			trigger_event = {
-				id = ep3_laamps.0011
-				days = 5
-			}
-		}
-	}
-}
+# 	immediate = {
+# 		save_scope_as = deceased
+# 		player_heir = {
+# 			trigger_event = {
+# 				id = ep3_laamps.0011
+# 				days = 5
+# 			}
+# 		}
+# 	}
+# }
 
 ##################################################
 # Become Adventurer - Banish

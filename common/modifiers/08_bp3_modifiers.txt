@@ -266,7 +266,7 @@ landless_local_arbitration_wanderers_modifier = {
 landless_local_arbitration_mercenaries_modifier = {
 	icon = martial_positive
 	martial = 2
-	prowess = 2
+	prowess = 1
 }
 
 landless_local_arbitration_scholars_modifier = {
@@ -283,7 +283,7 @@ landless_local_arbitration_explorers_modifier = {
 
 landless_local_arbitration_brigands_modifier = {
 	icon = intrigue_positive
-	prowess = 2
+	prowess = 1
 	intrigue = 2
 }
 

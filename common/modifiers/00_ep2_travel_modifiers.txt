@@ -57,7 +57,7 @@ mystic_wisdom_modifier = {
 
 trained_in_warrior_culture_modifier = {
 	icon = martial_positive
-	prowess = 5
+	prowess = 4
 	martial = 1
 }
 
@@ -65,7 +65,7 @@ training_hard_modifier = {
 	icon = martial_positive
 	#AGOT Modified
 	#prowess = 20
-	prowess = 4
+	prowess = 3
 }
 	
 philosophical_musings_modifier = {
