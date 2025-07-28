@@ -1,0 +1,1312 @@
+﻿###################
+# AGOT More Bookmarked #
+###################
+
+##################################
+# Game of Thrones / A Clash of Kings Scenario #
+##################################
+agot_more_bookmarks_agot_scenario_setup = {
+
+#### Ned Begins his event chain
+
+title:k_the_north.holder = { trigger_event = {
+								id = got_bookmark.0001
+								days = 1
+							} }
+							
+#### Trait/Faith/Etc.
+character:Tyrell_14 = { add_trait = refusing_marriage }
+character:Hardyng_5 = { set_house = character:Arryn_3.house }
+character:Stark_6 = { add_trait = refusing_marriage }
+character:Frey_82 = { add_trait = refusing_marriage }
+character:Baratheon_4 = { add_trait = refusing_marriage }
+character:Lannister_8 = { add_trait = refusing_marriage }
+character:Stokeworth_6 = { add_trait = refusing_marriage }
+character:Blackwater_1 = { add_trait = refusing_marriage }
+character:Lannister_8 = { add_trait = refusing_marriage }
+character:Westerling_2 = { add_trait = refusing_marriage }
+character:Baratheon_3 = { set_character_faith = faith:red_god }
+character:Byrch_2 = { add_trait = infertile }
+character:Stokeworth_5 = { add_trait = infertile }
+###Misc							
+character:Baratheon_3 = { agot_create_personal_coa = yes }
+
+}
+
+agot_more_bookmarks_agot_war_setup = {
+
+title:e_the_iron_throne.holder = { add_character_flag = { flag = agot_immersion_bannermen_blocker days = 300 } }
+
+
+agot_more_bookmarks_agot_character_setup = yes
+
+
+
+
+#### Pre-breakup Kingdoms	
+
+###Neutral
+	title:k_the_vale.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		
+		
+	title:k_dorne.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:k_the_iron_islands.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		
+### TBD		
+	title:k_the_reach.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		
+#### Rebels
+
+if = { limit = { OR = { title:k_the_north.holder = { has_character_flag = im_king_in_the_north  }
+						 title:k_the_north.holder = { has_character_flag = supports_stannis }
+						 title:k_the_north.holder = { has_character_flag = supports_jon }
+						 }
+				}
+		title:k_the_north.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		
+		title:k_the_riverlands.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+}
+		title:k_the_stormlands.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:k_dragonstone.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:d_masseys_hook.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:d_masseys_hook.holder = {
+		change_liege = {
+			liege = title:k_dragonstone.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+	title:d_wendwater_forest.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:d_wendwater_forest.holder = {
+		change_liege = {
+			liege = title:k_dragonstone.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+		
+### loyalists
+	title:k_the_westerlands.holder = { 
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		}
+	
+
+	
+	
+
+
+stannis_war_effect = yes
+
+			
+	
+	### Renly War
+if = { limit = { title:k_the_stormlands.holder = { has_character_flag = wants_to_be_king } }
+	
+	renly_war_effect = yes
+	}
+	
+		### Stannis Declares War
+	
+	#stannis_war_effect = yes
+	
+	
+	###Northern War for Jon
+	
+	
+if = { limit = { title:k_the_north.holder = { has_character_flag = supports_jon } }
+
+		northern_war_for_jon_effect = yes
+
+				}
+			
+### King in the north
+			
+if = { limit = { title:k_the_north.holder = { has_character_flag = im_king_in_the_north } }
+
+robb_king_in_the_north_setup = yes
+
+}
+
+
+		
+
+### Balon makes his choice
+		
+	title:k_the_iron_islands.holder = { 
+	
+	trigger_event = {
+								id = got_bookmark.0007
+								days = 15
+							}
+
+							}
+	
+	
+	loyalists_rejoin_throne_effect = yes
+		
+	neutrals_stay_neutral_effect = yes
+		
+		
+		
+	}
+	
+	
+	
+	
+#### King in the north setup
+
+robb_king_in_the_north_setup = {
+
+title:k_the_north.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_north.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+
+
+	title:k_the_north.holder = {
+	
+		start_war = {
+				cb = agot_mb_northern_independence_war 
+				target = title:e_the_iron_throne.holder
+			}
+			every_character_war = {
+				add_attacker = title:k_the_riverlands.holder
+				add_defender = title:k_the_westerlands.holder
+				add_defender = title:c_fang_hill.holder
+				if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_joffrey } }
+				add_defender = title:k_the_reach.holder
+			}
+			}
+			}
+			
+
+			
+
+	
+	
+	
+
+	
+	title:k_the_riverlands.holder = { 
+	
+	trigger_event = {
+								id = got_bookmark.0020
+								days = 4
+							} }
+
+
+
+
+
+
+
+
+}
+	
+	
+	
+	
+###North war for jon
+
+northern_war_for_jon_effect = { 
+	title:k_the_riverlands.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_riverlands.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+
+
+
+	title:k_the_north.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_north.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	title:k_the_north.holder = {
+		
+		
+		
+		
+		character:Stark_7 = {
+				set_mother = character:Stark_5
+				set_father = character:Targaryen_3
+				set_house =  character:Targaryen_3.house
+				add_pressed_claim = title:e_the_iron_throne
+				add_pressed_claim = title:d_kings_landing
+				add_pressed_claim = title:c_kings_landing
+				add_pressed_claim = title:d_dragonstone
+				add_pressed_claim = title:c_dragonstone
+		
+		
+				}
+	
+		start_war = {
+				cb = agot_claimant_faction_war
+				claimant = character:Stark_7
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+			}
+			every_character_war = {
+				add_attacker = title:k_the_riverlands.holder
+			}
+			}
+	
+				
+	title:e_the_iron_throne.holder = { 		every_character_war = {
+				
+				add_defender = title:k_the_westerlands.holder
+				add_defender = title:c_fang_hill.holder
+				if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_joffrey } }
+				add_defender = title:k_the_reach.holder
+			}
+			}
+}			
+
+
+
+
+}	
+	
+	
+	
+### Stannis War 
+
+stannis_war_effect = {
+
+			title:k_dragonstone.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_dragonstone.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+		title:k_dragonstone.holder = {
+			start_war = {
+				cb = agot_claimant_faction_war
+				claimant = title:k_dragonstone.holder
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:k_the_crownlands
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+				#target_title = title:d_dragonstone
+				#target_title = title:c_dragonstone
+			}
+			every_character_war = {
+				add_attacker = title:d_wendwater_forest.holder
+				add_attacker = title:d_masseys_hook.holder
+				add_attacker = character:Saan_2
+			if = { limit = { title:k_the_north.holder = { has_character_flag = supports_stannis } }
+				#add_attacker = title:k_the_north.holder
+				#add_attacker = title:k_the_riverlands.holder
+			}
+			if = { limit = { title:k_the_stormlands.holder = { has_character_flag = supports_stannis } }
+				add_attacker = title:k_the_stormlands.holder
+			}
+			}
+		}
+	
+
+		title:e_the_iron_throne.holder = {
+			every_character_war = {
+				add_defender = title:k_the_westerlands.holder
+				if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_joffrey } }
+				add_defender = title:k_the_reach.holder
+				}
+			}
+		}
+	
+
+
+
+
+
+
+}
+
+
+
+
+####Renly's War 
+
+renly_war_effect = {
+
+title:k_the_stormlands.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_stormlands.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+				
+
+				
+
+	
+	
+								
+
+
+
+
+title:k_the_stormlands.holder = {
+		
+		
+		start_war = {
+				cb = agot_claimant_faction_war
+				claimant = title:k_the_stormlands.holder
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+			}
+			every_character_war = {
+				
+				add_defender = title:k_the_westerlands.holder
+					if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_joffrey } }
+				add_defender = title:k_the_reach.holder
+			}
+				if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_renly } }
+				add_attacker = title:k_the_reach.holder
+			}
+	
+			}
+			}
+			
+		
+	#
+	#title:k_dragonstone.holder = {
+	#		start_war = {
+	#			cb = claim_cb
+	#			claimant = title:k_dragonstone.holder
+	#			target = title:k_the_stormlands.holder
+	#			target_title = title:k_the_stormlands
+	#			target_title = title:d_shipbreaker_bay
+	#			target_title = title:c_storms_end
+	#		}
+	#		every_character_war = {
+	#			add_attacker = title:d_wendwater_forest.holder
+	#			add_attacker = title:d_masseys_hook.holder
+	#			add_attacker = character:Saan_2
+	#		if = { limit = { title:k_the_north.holder = { has_character_flag = supports_stannis } }
+	#			add_attacker = title:k_the_north.holder
+	#			add_attacker = title:k_the_riverlands.holder
+	#		}
+	#		if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_renly } }
+	#			add_defender = title:k_the_reach.holder
+	#		
+	#		}
+	#		
+	#		}
+	#		}
+			
+	
+			
+}
+
+
+
+
+
+
+
+
+
+
+
+agot_more_bookmarks_agot_character_setup = {
+
+
+title:c_fang_hill.holder = {
+spawn_army = {
+						levies = 2000
+						   men_at_arms = {
+								type = armored_horsemen# 
+									stacks = 10
+								}
+					men_at_arms = {
+                        type = trebuchet# 
+                        stacks = 3
+							}
+						location = title:c_harrenhal.title_province
+						name = fp1_mann_event_troops
+						}
+						}
+
+title:c_winterfell.holder = {
+spawn_army = {
+						
+						   men_at_arms = {
+								type = light_horsemen# 
+									stacks = 30
+								}
+					men_at_arms = {
+                        type = trebuchet# 
+                        stacks = 12
+							}
+						location = title:c_riverrun.title_province
+						name = fp1_mann_event_troops
+						}
+						}
+
+character:Stark_6 = { set_relation_rival = character:Baratheon_5 }
+character:Baratheon_3 = { set_relation_rival = character:Baratheon_5 }
+character:Baratheon_4 = { set_relation_rival = character:Baratheon_5 }
+character:Stark_6 = { set_relation_rival = character:Lannister_1 }
+character:Blackwater_1 = { set_relation_friend = character:Lannister_8 }
+
+character:Stark_6 = { every_sibling = {
+			add_pressed_claim = title:e_the_north
+			add_pressed_claim = title:k_the_north
+			add_pressed_claim = title:d_winterfell
+			add_pressed_claim = title:c_winterfell
+			}
+			}
+#### Joffrey Small Council
+
+		title:c_midlor_point.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:c_midlor_point.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+
+
+character:Baratheon_5 = {
+				add_pressed_claim = title:k_the_stormlands
+				add_pressed_claim = title:k_the_north
+				add_pressed_claim = title:k_dragonstone
+				add_pressed_claim = title:d_dragonstone
+				add_pressed_claim = title:c_dragonstone
+				add_pressed_claim = title:d_shipbreaker_bay
+				add_pressed_claim = title:c_storms_end
+	add_courtier = character:Lannister_8
+	add_courtier = character:Stark_8
+character:Lannister_8 = { remove_trait = refusing_marriage }	
+  assign_councillor_type = {
+			type = councillor_castellan
+			target = character:Lannister_1
+			}
+  assign_councillor_type = {
+			type = councillor_steward
+			target = title:c_midlor_point.holder
+			}				
+
+			}
+character:Lannister_1 = { add_opinion = {
+			target = character:Baratheon_5
+			modifier = love_opinion
+			years = 5
+			opinion = 500
+					} }
+character:Stokeworth_6 = { remove_trait = refusing_marriage }		
+character:Blackwater_1 = { remove_trait = refusing_marriage }	
+character:Blackwater_1 = { marry = character:Stokeworth_6 }
+if = { limit = { title:c_harrenhal.holder = { is_ai = yes } }
+	character:Blackwater_1 = { get_title = title:b_goldguard_heights }
+    character:Baelish_2 = { get_title = title:c_harrenhal
+						  get_title = title:d_harrenhal
+						add_pressed_claim = title:k_the_riverlands 
+						add_pressed_claim = title:e_the_riverlands 
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:d_harrenhal.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				add_opinion = {
+			target = character:Baratheon_5
+			modifier = grateful_opinion
+			years = 10
+			opinion = 500
+					}
+				
+				}
+		
+	title:k_the_north.holder = {
+
+			add_opinion = {
+			target = character:Baelish_2
+			modifier = murdered_close_family_crime
+			years = 30
+			opinion = -500
+					}
+	
+				}
+				
+				
+				}
+		else = {
+					character:Baelish_2 = { add_pressed_claim = title:d_harrenhal 
+										  add_pressed_claim = title:c_harrenhal 	
+										}
+										}
+
+
+
+
+
+
+
+
+}
+
+
+loyalists_rejoin_throne_effect = {
+
+agot_mw_join_loyalists_effect = { RULER = title:k_the_westerlands.holder CROWN = title:e_the_iron_throne.holder }
+#title:k_the_westerlands.holder = {
+#	
+#		create_title_and_vassal_change = {
+#		type = swear_fealty
+#		save_scope_as = change
+#	}
+#	title:k_the_westerlands.holder = {
+#		change_liege = {
+#			liege = title:e_the_iron_throne.holder
+#			change = scope:change
+#		}
+#	}
+#	resolve_title_and_vassal_change = scope:change
+#	
+#				
+#				}
+				
+ if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_joffrey }	}
+				
+agot_mw_join_loyalists_effect = { RULER = title:k_the_reach.holder CROWN = title:e_the_iron_throne.holder }
+
+
+	#			title:k_the_reach.holder = {
+	#
+	#	create_title_and_vassal_change = {
+	#	type = swear_fealty
+	#	save_scope_as = change
+	#}
+	#title:k_the_reach.holder = {
+	#	change_liege = {
+	#		liege = title:e_the_iron_throne.holder
+	#		change = scope:change
+	#	}
+	#}
+	#resolve_title_and_vassal_change = scope:change
+	#
+	#			
+	#			}
+						
+		
+	}
+	title:c_harrenhal.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:c_harrenhal.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+
+
+
+character:Baratheon_5 = { 
+
+assign_councillor_type = {
+			type = councillor_castellan
+			target = character:Lannister_1
+			}
+assign_councillor_type = {
+			type = councillor_steward
+			target = character:Baelish_2
+			}
+			}
+			
+
+}
+
+neutrals_stay_neutral_effect = {
+
+
+
+##KING IN THE NORTH
+if = { limit = { title:c_winterfell.holder = { has_character_flag = im_king_in_the_north } }
+
+title:k_the_riverlands.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_riverlands.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+
+agot_mw_stay_neutral_effect = { RULER = title:k_the_riverlands.holder CROWN = title:e_the_iron_throne.holder }
+
+}
+### JON SNOW
+#if = { limit = { title:c_winterfell.holder = { has_character_flag = supports_jon } }
+#
+#		title:k_the_riverlands.holder = {
+#	
+#		create_title_and_vassal_change = {
+#		type = swear_fealty
+#		save_scope_as = change
+#	}
+#	title:k_the_riverlands.holder = {
+#		change_liege = {
+#			liege = title:e_the_iron_throne.holder
+#			change = scope:change
+#		}
+#	}
+#	resolve_title_and_vassal_change = scope:change
+#				agot_mw_stay_neutral_effect = { RULER = title:k_the_riverlands.holder CROWN = title:e_the_iron_throne.holder }
+#				agot_mw_join_rebels_effect = { RULER = title:k_the_riverlands REBEL_LEADER = title:k_the_north.holder }
+#				}
+#				}
+#### STANNIS
+if = { limit = { title:c_winterfell.holder = { has_character_flag = supports_stannis } }
+
+		title:k_the_riverlands.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_riverlands.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+				agot_mw_stay_neutral_effect = { RULER = title:k_the_riverlands.holder CROWN = title:e_the_iron_throne.holder }
+				agot_mw_join_rebels_effect = { RULER = title:k_the_riverlands REBEL_LEADER = title:k_dragonstone.holder }
+				}
+				
+
+title:k_the_north.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_north.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+				agot_mw_stay_neutral_effect = { RULER = title:k_the_north.holder CROWN = title:e_the_iron_throne.holder }
+				agot_mw_join_rebels_effect = { RULER = title:k_the_north.holder REBEL_LEADER = title:k_dragonstone.holder }
+}
+}
+
+if = { limit = { title:k_the_stormlands.holder = { has_character_flag = supports_stannis }	}			
+	title:k_the_stormlands.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_stormlands.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	agot_mw_join_rebels_effect = { RULER = title:k_the_stormlands.holder REBEL_LEADER = title:k_dragonstone.holder }
+				
+				}
+				}
+				
+#### RENLY
+if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_renly }	}			
+	title:k_the_reach.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_reach.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	agot_mw_join_rebels_effect = { RULER = title:k_the_reach.holder REBEL_LEADER = title:k_the_stormlands.holder }
+				
+				}
+				}
+				
+##### JOFFREY
+#if = { limit = { title:k_the_reach.holder = { has_character_flag = supports_joffrey }	}			
+#	title:k_the_reach.holder = {
+#	
+#		create_title_and_vassal_change = {
+#		type = swear_fealty
+#		save_scope_as = change
+#	}
+#	title:k_the_reach.holder = {
+#		change_liege = {
+#			liege = title:e_the_iron_throne.holder
+#			change = scope:change
+#		}
+#	}
+#	resolve_title_and_vassal_change = scope:change
+#	agot_mw_join_loyalists_effect = { RULER = title:k_the_reach.holder REBEL_LEADER = title:k_the_stormlands.holder }
+#				
+#				}
+#				}				
+
+
+title:k_dorne.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_dorne.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+
+agot_mw_stay_neutral_effect = { RULER = title:k_dorne.holder CROWN = title:e_the_iron_throne.holder }
+
+title:k_the_vale.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_vale.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+agot_mw_stay_neutral_effect = { RULER = title:k_the_vale.holder CROWN = title:e_the_iron_throne.holder }
+
+if = { limit = { NOR = { 
+				title:k_the_reach.holder = { has_character_flag = supports_joffrey }
+					title:k_the_reach.holder = { has_character_flag = supports_renly }
+				} }
+
+title:k_the_reach.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_reach.holder = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}				
+agot_mw_stay_neutral_effect = { RULER = title:k_the_reach.holder CROWN = title:e_the_iron_throne.holder }
+
+}
+
+#title:k_the_vale.holder = { trigger_event = {
+#								id = got_bookmark.2003
+#								days = 1
+#							} }	 
+#title:k_dorne.holder = { trigger_event = {
+#								id = got_bookmark.2003
+#								days = 1
+#							} }
+#if = { limit = { NOR = { 
+#				title:k_the_reach.holder = { has_character_flag = supports_joffrey }
+#					title:k_the_reach.holder = { has_character_flag = supports_renly }
+#				} }						
+#title:k_the_reach.holder = { trigger_event = {
+#								id = got_bookmark.2003
+#								days = 1
+#							} }
+#
+#}
+
+
+
+
+}
+
+
+northern_independence_victory_effect = {
+
+title:e_the_north.holder = { get_title = title:d_harrenhal
+							 get_title = title:c_harrenhal
+
+ }
+ }
+
+
+northern_independence_defeat_effect = {
+
+	### North	
+
+if = { limit = { character:Bolton_1 = { has_character_flag = killed_robb } } 
+	character:Bolton_1 = { save_scope_as = north_lp }
+	character:Bolton_5 = { trigger_event = bastard_interaction.0009 }
+	}
+else_if = { limit = { OR = { 	AND = { character:Lannister_8 = { is_betrothed = no 
+																	is_married = no
+																	is_ruler = no
+																	}
+							character:Stark_8 = { is_married = no
+													is_betrothed = no 
+							}
+							}
+						character:Lannister_8 = { is_spouse_of_even_if_dead	= character:Stark_8 }
+				  } }
+				  #character:Stark_8 = { break_betrothal = character:Baratheon_5 }
+			character:Stark_8 = { marry_matrilineal = character:Lannister_8 }
+			 character:Lannister_8 = { save_scope_as = north_lp
+				tyrion_north_effect = yes
+			 }
+			 }
+else_if = { limit = { character:Bolton_1 = { is_alive = yes } }
+			 character:Bolton_1 = { save_scope_as = north_lp }
+			character:Bolton_5 = { trigger_event = bastard_interaction.0009 }
+			}
+else = { scope:e_the_iron_throne = { save_scope_as = north_lp } }
+
+
+	title:k_the_north.holder = {  set_designated_heir_unsafe = scope:north_lp }
+	title:k_the_north.holder = { 
+			if = { limit = { this = character:Stark_6 }
+				death = {
+							death_reason = death_execution
+							killer = title:e_the_iron_throne.holder
+					}
+					}
+					else = { depose = yes }
+					
+					}
+if = { limit = { NOT = { scope:north_lp = { has_title = title:e_the_iron_throne } } }					
+scope:north_lp = { trigger_event = {
+								id = got_bookmark.2003
+								days = 1
+							} }				
+}					
+
+### Riverlands
+ if = { limit = { character:Baelish_2 = { is_alive = yes } }
+	title:k_the_riverlands.holder = {
+		 set_designated_heir_unsafe = character:Baelish_2
+		depose = yes }
+					
+	character:Baelish_2 = { trigger_event = {
+								id = got_bookmark.2004
+								days = 1
+							} }
+	}	
+ else = { title:k_the_riverlands.holder = { trigger_event = {
+								id = got_bookmark.2003
+								days = 1
+							} }
+	}
+	
+if = { limit = { character:Stark_8 = { is_married = no
+									  is_betrothed = no 
+							} }
+
+character:Baelish_2 = { add_courtier = character:Stark_8 }
+}
+	
+	
+
+
+
+
+
+
+
+
+#	title:k_the_north.holder = { trigger_event = {
+#								id = got_bookmark.2003
+#								days = 1
+#							} }
+#	title:k_the_riverlands.holder = { trigger_event = {
+#								id = got_bookmark.2004
+#								days = 1
+#							} }
+#	title:k_the_north.holder = { 
+#	create_title_and_vassal_change = {
+#		type = swear_fealty
+#		save_scope_as = change
+#	}
+#	title:k_the_north.holder = {
+#		change_liege = {
+#			liege = title:e_the_iron_throne.holder
+#			change = scope:change
+#		}
+#	}
+#	}
+#	
+#	title:k_the_riverlands.holder = { 
+#	create_title_and_vassal_change = {
+#		type = swear_fealty
+#		save_scope_as = change
+#	}
+#	title:k_the_riverlands.holder = {
+#		change_liege = {
+#			liege = title:e_the_iron_throne.holder
+#			change = scope:change
+#		}
+#	}
+#	}
+# if = { limit = { character:Baelish_2 = { is_alive = yes } }
+#	character:Baelish_2 = {
+#		get_title = title:k_the_riverlands
+#	}
+#	character:Tully_7.house.house_head = { 
+#		add_pressed_claim = title:k_the_riverlands
+#		}
+#}
+#
+#
+#if = { limit = { character:Stark_6 = { is_alive = yes } }
+#	character:Stark_6 = { death = {
+#							death_reason = death_execution
+#							killer = character:Baratheon_5
+#					}
+#					}
+#					}
+#
+#title:e_the_iron_throne.holder = {				
+#if = { limit = {  is_ai = yes  }
+#
+#	if = { limit = { 
+#			OR = { 	AND = { character:Lannister_8 = { is_married = no }
+#							character:Stark_8 = { is_married = no }
+#							}
+#						character:Lannister_8 = { is_spouse_of_even_if_dead	= character:Stark_8 }
+#				  }
+#				  }
+#			character:Stark_8 = { break_betrothal = cnaracter:Baratheon_5 }
+#			character:Stark_8 = { marry_matrilineal = character:Lannister_8 }
+#			character:Lannister_8 = { 
+#			get_title = title:c_winterfell
+#			get_title = title:d_winterfell
+#			get_title = title:k_the_north }
+#			}
+#	 else_if = { limit = { character:Bolton_1 = { is_alive = yes } }
+#			character:Bolton_1 = { get_title = title:k_the_north }
+#			character:Bolton_5 = { trigger_event = bastard_interaction.0009 }
+#			}
+#		else = { get_title = title:k_the_north }
+#		
+#		}
+#else = { get_title = title:k_the_north }
+#		}
+			
+
+
+
+
+
+
+}
+
+
+
+
+tyrion_north_effect = {
+
+
+if = { limit = { character:Lannister_7 = { is_alive = yes } }
+
+	 agot_remove_kingsguard_effect = { KINGSGUARD = character:Lannister_7 }
+		
+}
+else_if = { limit = { character:Baratheon_7 = { is_ruler = no } }
+
+character:Lannister_1 = {  set_designated_heir_unsafe = character:Baratheon_7 }
+character:Baratheon_7 = { set_house = character:Lannister_1.house }
+}
+else_if = { limit = { character:Lannister_2 = { is_alive = yes } }
+
+character:Lannister_1 = { set_designated_heir_unsafe = character:Lannister_2  }
+
+}
+
+else_if = { limit = { character:Lannister_2 = { is_alive = yes } }
+
+character:Lannister_1 = { set_designated_heir_unsafe = character:Lannister_2  }
+
+}
+
+else_if = { limit = { character:Lannister_9 = { is_alive = yes } }
+
+character:Lannister_1 = { set_designated_heir_unsafe = character:Lannister_9  }
+
+}
+
+else_if = { limit = { character:Lannister_9 = { is_alive = yes } }
+
+character:Lannister_1 = { set_designated_heir_unsafe = character:Lannister_10  }
+
+}
+
+else_if = { limit = { character:Lannister_9 = { is_alive = yes } }
+
+character:Lannister_1 = { set_designated_heir_unsafe = character:Lannister_11  }
+
+}
+
+}

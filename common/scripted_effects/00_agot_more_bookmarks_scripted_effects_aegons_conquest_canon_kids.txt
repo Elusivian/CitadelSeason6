@@ -1,0 +1,4249 @@
+﻿simple_canon_kids_aenys_targaryen_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aenys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aenys"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_30
+				DNA = More_Bookmarks_Dummy_Targaryen_30
+			}
+			
+			create_story = { 
+												type = more_bookmarks_aenys_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			#add_trait = physique_bad_1
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_maegor_targaryen_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Maegor"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Maegor"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_31
+				DNA = More_Bookmarks_Dummy_Targaryen_31
+			}
+			
+			
+			add_trait = strong
+			add_trait = infertile
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_32_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaena"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaena"
+				NAME_FEMALE = "Rhaena"
+				TRAIT = is_targaryen_32
+				DNA = More_Bookmarks_Dummy_Targaryen_32
+			}
+			
+			
+
+			set_sexuality = homosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_33_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_33
+				DNA = More_Bookmarks_Dummy_Targaryen_33
+			}
+			create_story = { 
+												type = more_bookmarks_aegon_uncrowned_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			add_trait = beauty_good_1
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_34_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Viserys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Viserys"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_34
+				DNA = More_Bookmarks_Dummy_Targaryen_34
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_35_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Jaehaerys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Jaehaerys"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_35
+				DNA = More_Bookmarks_Dummy_Targaryen_35
+			}
+			create_story = { 
+												type = more_bookmarks_jaehaerys_I_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_36_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Alysanne"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Alysanne"
+				NAME_FEMALE = "Alysanne"
+				TRAIT = is_targaryen_36
+				DNA = More_Bookmarks_Dummy_Targaryen_36
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+
+simple_canon_kids_targaryen_41_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aerea"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aerea"
+				NAME_FEMALE = "Aerea"
+				TRAIT = is_targaryen_41
+				DNA = More_Bookmarks_Dummy_Targaryen_41
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_42_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaella"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Rhaella"
+				TRAIT = is_targaryen_42
+				DNA = More_Bookmarks_Dummy_Targaryen_42
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_44_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daenerys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daenerys"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_targaryen_44
+				DNA = More_Bookmarks_Dummy_Targaryen_44
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_45_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Aemon"
+				TRAIT = is_targaryen_45
+				DNA = More_Bookmarks_Dummy_Targaryen_45
+			}
+			create_story = { 
+												type = more_bookmarks_aemon_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_46_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Baelon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Baelon"
+				NAME_FEMALE = "Rhaella"
+				TRAIT = is_targaryen_46
+				DNA = More_Bookmarks_Dummy_Targaryen_46
+			}
+			
+			create_story = { 
+												type = more_bookmarks_baelon_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_47_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Alyssa"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Alyssa"
+				TRAIT = is_targaryen_47
+				DNA = More_Bookmarks_Dummy_Targaryen_47
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_48_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Maegelle"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Maegelle"
+				TRAIT = is_targaryen_48
+				DNA = More_Bookmarks_Dummy_Targaryen_48
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_49_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Vaegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Vaegon"
+				NAME_FEMALE = "Alyssa"
+				TRAIT = is_targaryen_49
+				DNA = More_Bookmarks_Dummy_Targaryen_49
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_50_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daella"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Daella"
+				TRAIT = is_targaryen_50
+				DNA = More_Bookmarks_Dummy_Targaryen_50
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_51_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Saera"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Saera"
+				TRAIT = is_targaryen_51
+				DNA = More_Bookmarks_Dummy_Targaryen_51
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_52_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Viserra"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Viserra"
+				TRAIT = is_targaryen_52
+				DNA = More_Bookmarks_Dummy_Targaryen_52
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_trait = beauty_good_3
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_55_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Gael"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Gael"
+				TRAIT = is_targaryen_55
+				DNA = More_Bookmarks_Dummy_Targaryen_55
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+
+
+
+
+simple_canon_kids_targaryen_59_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaenys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaella"
+				NAME_FEMALE = "Rhaenys"
+				TRAIT = is_targaryen_59
+				DNA = More_Bookmarks_Dummy_Targaryen_59
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_60_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Viserys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Viserys"
+				NAME_FEMALE = "Gael"
+				TRAIT = is_targaryen_60
+				DNA = More_Bookmarks_Dummy_Targaryen_60
+			}
+			
+			create_story = { 
+												type = more_bookmarks_viserys_I_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_61_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daemon"
+				NAME_FEMALE = "Gael"
+				TRAIT = is_targaryen_61
+				DNA = More_Bookmarks_Dummy_Targaryen_61
+			}
+			create_story = { 
+												type = more_bookmarks_daemon_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:deceitful AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:education_martial_prowess_5  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+
+simple_canon_kids_targaryen_63_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaenyra"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daemon"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_63
+				DNA = More_Bookmarks_Dummy_Targaryen_63
+			}
+			
+			
+			
+			set_sexuality = bisexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_65_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_65
+				DNA = More_Bookmarks_Dummy_Targaryen_65
+			}
+			
+			
+			
+			set_sexuality = bisexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_66_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Helaena"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Helaena"
+				TRAIT = is_targaryen_66
+				DNA = More_Bookmarks_Dummy_Targaryen_66
+			}
+			
+			
+			
+			set_sexuality = bisexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_67_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aemond"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemond"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_67
+				DNA = More_Bookmarks_Dummy_Targaryen_67
+			}
+			
+			
+			
+			set_sexuality = bisexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_68_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daeron"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daeron"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_68
+				DNA = More_Bookmarks_Dummy_Targaryen_68
+			}
+			
+			
+			
+			set_sexuality = bisexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_78_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_78
+				DNA = More_Bookmarks_Dummy_Targaryen_78
+			}
+			
+			create_story = { 
+												type = more_bookmarks_aegon_III_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_79_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Viserys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Viserys"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_79
+				DNA = More_Bookmarks_Dummy_Targaryen_79
+			}
+			create_story = { 
+												type = more_bookmarks_viserys_II_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_81_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daeron"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daeron"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_81
+				DNA = More_Bookmarks_Dummy_Targaryen_81
+			}
+		
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_82_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Baelor"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Baelor"
+				NAME_FEMALE = "Rhaenyra"
+				TRAIT = is_targaryen_82
+				DNA = More_Bookmarks_Dummy_Targaryen_82
+			}
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_83_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daena"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daena"
+				NAME_FEMALE = "Daena"
+				TRAIT = is_targaryen_83
+				DNA = More_Bookmarks_Dummy_Targaryen_83
+			}
+			
+			
+			add_character_flag = daena_the_defiant
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_84_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaena"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daena"
+				NAME_FEMALE = "Rhaena"
+				TRAIT = is_targaryen_84
+				DNA = More_Bookmarks_Dummy_Targaryen_84
+			}
+			
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_85_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Elaena"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daena"
+				NAME_FEMALE = "Elaena"
+				TRAIT = is_targaryen_85
+				DNA = More_Bookmarks_Dummy_Targaryen_85
+			}
+			
+			
+			
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_88_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Daena"
+				TRAIT = is_targaryen_88
+				DNA = More_Bookmarks_Dummy_Targaryen_88
+			}
+			create_story = { 
+												type = more_bookmarks_aegon_IV_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			trigger_event = {
+			id = agot_crowned_stag.0002
+			years = 15
+			}
+			add_trait = beauty_good_1
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_89_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Daena"
+				TRAIT = is_targaryen_89
+				DNA = More_Bookmarks_Dummy_Targaryen_89
+			}
+			
+			
+			
+			add_trait = beauty_good_1
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:content  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_90_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Naerys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Naerys"
+				TRAIT = is_targaryen_90
+				DNA = More_Bookmarks_Dummy_Targaryen_90
+			}
+			
+			
+			
+			add_trait = beauty_good_1
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:content  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_91_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daeron"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daeron"
+				NAME_FEMALE = "Naerys"
+				TRAIT = is_targaryen_91
+				DNA = More_Bookmarks_Dummy_Targaryen_91
+			}
+			create_story = { 
+												type = more_bookmarks_daeron_II_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			
+			
+			#add_trait = beauty_good_1
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_trait = disputed_heritage
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:content  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_92_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daenerys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daeron"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_targaryen_91
+				DNA = More_Bookmarks_Dummy_Targaryen_91
+			}
+			
+			
+			
+			add_trait = beauty_good_2
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:content  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_94_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daemon"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_targaryen_94
+				DNA = More_Bookmarks_Dummy_Targaryen_94
+			}
+			create_story = { 
+												type = more_bookmarks_daemon_blackfyre_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			give_nickname = nick_waters
+			add_martial_skill = 30
+			add_prowess_skill = 30
+			add_trait = beauty_good_1
+			add_trait = strong
+			add_trait = bastard
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_95_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegor"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegor"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_targaryen_95
+				DNA = More_Bookmarks_Dummy_Targaryen_95
+			}
+			
+			give_nickname = nick_bittersteel
+			add_martial_skill = 30
+			add_prowess_skill = 30
+			add_trait = beauty_good_1
+			add_trait = strong
+			add_trait = bastard
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_96_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Brynden"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Brynden"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_targaryen_96
+				DNA = More_Bookmarks_Dummy_Targaryen_96
+			}
+			
+			give_nickname = nick_bloodraven
+			add_intrigue_skill = 15
+			add_prowess_skill = 15
+			add_trait = beauty_good_1
+			add_trait = greensight
+			add_trait = bastard
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_97_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Shiera"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Shiera"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_97
+				DNA = More_Bookmarks_Dummy_Targaryen_97
+			}
+			
+			give_nickname = nick_seastar
+			add_trait = beauty_good_2
+			#add_trait = mystic
+			add_trait = bastard
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_97_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Shiera"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Shiera"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_97
+				DNA = More_Bookmarks_Dummy_Targaryen_97
+			}
+			
+			give_nickname = nick_seastar
+			add_trait = beauty_good_2
+			#add_trait = mystic
+			add_trait = bastard
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_107_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Baelor"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Baelor"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_107
+				DNA = More_Bookmarks_Dummy_Targaryen_107
+			}
+			add_prowess_skill = 10
+			give_nickname = nick_breakspear
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_108_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aerys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aerys"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_107
+				DNA = More_Bookmarks_Dummy_Targaryen_108
+			}
+			add_trait = celibate
+			add_prowess_skill = 10
+			set_sexuality = asexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_109_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaegel"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaegel"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_109
+				DNA = More_Bookmarks_Dummy_Targaryen_109
+			}
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_110_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Maekar"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Maekar"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_110
+				DNA = More_Bookmarks_Dummy_Targaryen_110
+			}
+				create_story = { 
+												type = more_bookmarks_maekar_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+			add_prowess_skill = 10
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_118_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daeron"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daeron"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_118
+				DNA = More_Bookmarks_Dummy_Targaryen_118
+			}
+
+			add_trait = dragon_dreams
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_119_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aerion"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aerion"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_119
+				DNA = More_Bookmarks_Dummy_Targaryen_119
+			}
+
+			add_trait = lunatic
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+
+simple_canon_kids_targaryen_120_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_120
+				DNA = More_Bookmarks_Dummy_Targaryen_120
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+
+simple_canon_kids_targaryen_121_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daella"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aerion"
+				NAME_FEMALE = "Daella"
+				TRAIT = is_targaryen_121
+				DNA = More_Bookmarks_Dummy_Targaryen_121
+			}
+
+			
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_122_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_122
+				DNA = More_Bookmarks_Dummy_Targaryen_122
+			}
+				create_story = { 
+												type = more_bookmarks_aegon_V_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_123_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhae"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Rhae"
+				TRAIT = is_targaryen_123
+				DNA = More_Bookmarks_Dummy_Targaryen_123
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_126_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Duncan"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Duncan"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_126
+				DNA = More_Bookmarks_Dummy_Targaryen_126
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_127_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Jaehaerys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Jaehaerys"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_127
+				DNA = More_Bookmarks_Dummy_Targaryen_127
+			}
+				create_story = { 
+												type = more_bookmarks_jaehaerys_II_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_128_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Shaera"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Shaera"
+				TRAIT = is_targaryen_128
+				DNA = More_Bookmarks_Dummy_Targaryen_128
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_129_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daeron"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daeron"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_129
+				DNA = More_Bookmarks_Dummy_Targaryen_129
+			}
+
+		
+			set_sexuality = homosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_130_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaelle"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Rhaelle"
+				TRAIT = is_targaryen_130
+				DNA = More_Bookmarks_Dummy_Targaryen_130
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_1_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aerys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aerys"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_1
+				DNA = More_Bookmarks_Dummy_Targaryen_1
+			}
+				create_story = { 
+												type = more_bookmarks_aerys_II_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_2_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaella"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Rhaella"
+				TRAIT = is_targaryen_2
+				DNA = More_Bookmarks_Dummy_Targaryen_2
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_3_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaegar"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhaegar"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_3
+				DNA = More_Bookmarks_Dummy_Targaryen_3
+			}
+				create_story = { 
+												type = more_bookmarks_rhaegar_targaryen_simple_canon_kids
+												save_scope_as = aegons_conquest_canon_kids_story
+											}
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_8_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Viserys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Viserys"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_8
+				DNA = More_Bookmarks_Dummy_Targaryen_8
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_9_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daenerys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_targaryen_9
+				DNA = More_Bookmarks_Dummy_Targaryen_9
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_targaryen_10_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhaenys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Rhaenys"
+				TRAIT = is_targaryen_10
+				DNA = More_Bookmarks_Dummy_Targaryen_10
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+simple_canon_kids_targaryen_11_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_targaryen_10
+				DNA = More_Bookmarks_Dummy_Targaryen_10
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_stark_7_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Jon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Jon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_stark_7
+				DNA = More_Bookmarks_Dummy_Stark_7
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_1_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_blackfyre_1
+				DNA = More_Bookmarks_Dummy_Blackfyre_1
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_2_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_blackfyre_2
+				DNA = More_Bookmarks_Dummy_Blackfyre_2
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+
+simple_canon_kids_blackfyre_3_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Calla"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Calla"
+				TRAIT = is_blackfyre_3
+				DNA = More_Bookmarks_Dummy_Blackfyre_3
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_4_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daenerys"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_blackfyre_4
+				DNA = More_Bookmarks_Dummy_Blackfyre_4
+			}
+
+		
+			set_sexuality = homosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_5_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daemon"
+				NAME_FEMALE = "Daenerys"
+				TRAIT = is_blackfyre_5
+				DNA = More_Bookmarks_Dummy_Blackfyre_5
+			}
+
+			add_trait = dragon_dreams
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_6_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Haegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Haegon"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_blackfyre_6
+				DNA = More_Bookmarks_Dummy_Blackfyre_6
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_7_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aenys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aenys"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_blackfyre_7
+				DNA = More_Bookmarks_Dummy_Blackfyre_7
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_8_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegor"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegor"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_blackfyre_8
+				DNA = More_Bookmarks_Dummy_Blackfyre_8
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_9_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Maelys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Maelys"
+				NAME_FEMALE = "Shiera"
+				TRAIT = is_blackfyre_9
+				DNA = More_Bookmarks_Dummy_Blackfyre_9
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}
+
+
+simple_canon_kids_blackfyre_10_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daena"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = root.story_owner.faith
+		culture = root.story_owner.culture
+		dynasty_house = root.story_owner.house
+		employer = root.story_owner.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	root.story_owner = { add_character_flag = { flag = canon_birth_cooldown months = 9 } }
+
+    hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Daena"
+				TRAIT = is_blackfyre_10
+				DNA = More_Bookmarks_Dummy_Blackfyre_10
+			}
+
+		
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious  AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:drunkard  AGE = agot_canon_children_trait_4_year }
+			
+
+			
+		}
+	}
+}

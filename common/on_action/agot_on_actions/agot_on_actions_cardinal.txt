@@ -1,0 +1,131 @@
+﻿# on_game_start = {
+# 	on_actions = {
+# 		on_cardinal_preinitialize
+# 	}
+# }
+# on_cardinal_preinitialize = {
+# 	# Set back-end configuration data
+# 	effect = {
+# 		# if = { # Vanilla parameters (For testing, since I don't have AGOT)
+# 		# 	limit = {
+# 		# 		exists = faith:catholic
+# 		# 	}
+# 		# 	set_global_variable = {
+# 		# 		name = gui_storage
+# 		# 		value = religion:christianity_religion
+# 		# 		#value = dummy_male
+# 		# 	}
+# 		# 	set_global_variable = {
+# 		# 		name = the_seven_main
+# 		# 		value = faith:catholic
+# 		# 	}
+# 		# 	set_global_variable = {
+# 		# 		name = the_seven_dorne
+# 		# 		value = faith:insular_celtic
+# 		# 	}
+# 		# 	set_global_variable = {
+# 		# 		name = k_the_most_devout
+# 		# 		value = title:k_papal_state
+# 		# 	}
+# 		# 	set_global_variable = {
+# 		# 		name = ideal_cardinal_location
+# 		# 		value = title:c_roma
+# 		# 	}
+# 		# }
+# 		if = { # Vanilla parameters (For testing, since I don't have AGOT)
+# 			limit = {
+# 				exists = faith:the_seven_main
+# 			}
+# 			set_global_variable = {
+# 				name = gui_storage
+# 				value = faith:the_seven_main.religion
+# 			}
+# 			set_global_variable = {
+# 				name = the_seven_main
+# 				value = faith:the_seven_main
+# 			}
+# 			set_global_variable = {
+# 				name = k_the_most_devout
+# 				value = title:k_the_most_devout
+# 			}
+# 			set_global_variable = {
+# 				name = ideal_cardinal_location
+# 				value = title:c_kings_landing
+# 			}
+# 		}
+# 		# Set which faiths should show the cardinal window.
+# 		global_var:the_seven_main = {
+# 			set_variable = uses_cardinal_module
+# 		}
+# 	}
+# }
+
+# on_game_start_after_lobby = {
+# 	on_actions = {
+# 		on_cardinal_initialize
+# 	}
+# }
+
+# on_cardinal_initialize = {
+# 	effect = {
+# 		initialize_random_cardinals = yes
+# 		update_preferatus = yes
+# 		update_cardinal_window = yes
+# 	}
+# }
+# # What should happen when pope/cardinal dies?
+# on_death = {
+# 	on_actions = {
+# 		on_cardinal_death
+# 		on_pope_death
+# 	}
+# }
+
+# # Optional on_action that can handle cardinals dying.
+# on_cardinal_death = {
+# 	trigger = {
+# 		owns_story_of_type = cardinal_story
+# 	}
+# }
+# on_pope_death = {
+# 	trigger = {
+# 		is_pope = yes
+# 	}
+# 	effect = {
+# 		# Make sure we have the most up-to-date preferatus
+# 		update_preferatus = yes
+# 		# Optional heir designation (If your systems care about such)
+# 		#set_designated_heir = global_var:preferatus.story_owner
+# 		# Make sure the preferatus gives up their lands and titles before becoming pope
+# 		if = {
+# 			limit = {
+# 				global_var:preferatus.story_owner = { is_ruler = yes }
+# 			}
+# 			global_var:preferatus.story_owner = {depose = yes}
+# 		}
+
+# 		create_title_and_vassal_change = {
+# 			type = election
+# 			save_scope_as = papal_inheritance
+# 		}
+# 		# Transfer every non-barony title
+# 		every_held_title = {
+# 			limit = {
+# 				tier > tier_barony
+# 			}
+# 			every_player = {
+# 				add_prestige = 1
+# 			}
+# 			change_title_holder = {
+# 				holder = global_var:preferatus.story_owner
+# 				change = scope:papal_inheritance
+# 			}
+# 		}
+# 		resolve_title_and_vassal_change = scope:papal_inheritance
+# 		# Fetch a new cardinal in place of the recently promoted pope
+# 		global_var:preferatus = {
+# 			promote_new_cardinal = yes
+# 		}
+# 		update_cardinal_window = yes
+# 	}
+# }

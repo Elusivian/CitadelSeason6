@@ -1,0 +1,59 @@
+﻿on_war_started = {
+	on_actions = {
+		naval_war_setup
+	
+	}
+}
+
+on_army_monthly = {
+on_actions = {
+	naval_defeat
+}
+
+}
+
+naval_war_setup = {
+	effect = {
+	if = { limit = { has_game_rule = agot_immersion_naval_on }
+	if = { limit = { 
+	
+	OR = { 
+	scope:attacker = { any_sub_realm_county = { is_coastal_county = yes } }
+	scope:defender = { any_sub_realm_county = { is_coastal_county = yes } }
+	
+	
+	}
+
+
+	}
+		naval_war_setup_effect = yes
+		}
+		}
+	}
+}
+
+
+
+naval_defeat = {
+	
+	effect = {
+	if = { limit = { has_game_rule = agot_immersion_naval_on }
+		scope:army ?= {
+			if = {
+				limit = {
+					naval_warfare_is_at_sea_trigger = yes
+					army_owner = { has_character_modifier = naval_defeat_modifier }
+				}
+				naval_defeat_effect = yes
+				#save_scope_as = invader
+				#scope:army.army_commander ?= { save_scope_as = invading_commander }
+				
+				#army_commander = {
+					#trigger_event = { on_action = commander_death_events_pulse }
+				#}
+				#army_owner = { trigger_event = naval_defeat.001 }
+			}
+		}
+		}
+	}
+}

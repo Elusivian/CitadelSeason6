@@ -1,0 +1,579 @@
+﻿#aithnea to do, all of these need to be in war_custom_loc and 03_bp1_scripted_effects
+
+agot_mb_northern_independence_war = {
+	group = independence
+	white_peace_possible = no
+	allowed_against_character = {
+		agot_mw_is_valid_to_happen = { ATTACKER = scope:attacker DEFENDER = scope:defender }
+		scope:attacker.primary_title.tier < scope:defender.primary_title.tier
+		trigger_if = {
+			limit = { is_independent_ruler = yes } # Don't change this to agot_is_independent_ruler !
+
+			exists = scope:attacker.var:pre_war_liege
+			scope:attacker.var:pre_war_liege = scope:defender
+		}
+	}
+
+	valid_to_start = { is_ai = no } # This is an event CB, you should not be allowed to fire it manually
+
+	cost = {
+		piety = {
+			value = 0
+			if = { # Attacking your HoF is impious
+				limit = {
+					exists = scope:attacker.faith.religious_head
+					scope:attacker.faith.religious_head = scope:defender
+				}
+				if = {
+					limit = {
+						scope:attacker.faith = {
+							has_doctrine = doctrine_spiritual_head
+						}
+					}
+					add = {
+						value = massive_piety_value
+						desc = CB_ATTACKER_HOF
+					}
+				}
+				else = {
+					add = {
+						value = medium_piety_value
+						desc = CB_ATTACKER_HOF
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:attacker.faith = scope:defender.faith
+					scope:defender = {
+						has_government = theocracy_government
+					}
+				}
+				add = {
+					value = medium_piety_value
+					desc = CB_ATTACKER_THEOCRACY
+				}
+			}
+		}
+		prestige = {
+			value = 0
+			add = {
+				value = 500
+				desc = CB_BASE_COST
+			}
+			if = {
+				limit = {
+					scope:attacker = {
+						has_government = tribal_government
+					}
+				}
+				multiply = {
+					value = 0.5
+					desc = CB_TRIBAL_COST
+				}
+			}
+
+			#Innovation Prestige Discounts
+			if = {
+				limit = {
+					scope:attacker = {
+						culture = {
+							has_innovation = innovation_chronicle_writing
+							has_innovation = innovation_land_grants
+							has_innovation = innovation_rightful_ownership
+						}
+					}
+				}
+				multiply = {
+					value = 0.7
+					desc = CB_ATTACKER_INNOVATIONS
+				}
+			}
+			else_if = {
+				limit = {
+					scope:attacker = {
+						culture = {
+							OR = {
+								has_innovation = innovation_chronicle_writing
+								has_innovation = innovation_land_grants
+							}
+							OR = {
+								has_innovation = innovation_land_grants
+								has_innovation = innovation_rightful_ownership
+							}
+							OR = {
+								has_innovation = innovation_chronicle_writing
+								has_innovation = innovation_rightful_ownership
+							}
+						}
+					}
+				}
+				multiply = {
+					value = 0.8
+					desc = CB_ATTACKER_INNOVATIONS
+				}
+			}
+			else_if = {
+				limit = {
+					scope:attacker = {
+						culture = {
+							OR = {
+								has_innovation = innovation_chronicle_writing
+								has_innovation = innovation_land_grants
+								has_innovation = innovation_rightful_ownership
+							}
+						}
+					}
+				}
+				multiply = {
+					value = 0.9
+					desc = CB_ATTACKER_INNOVATIONS
+				}
+			}
+
+			# Bellum Justum Perk
+			if = {
+				limit = {
+					scope:attacker = {
+						has_perk = bellum_justum_perk
+					}
+				}
+				multiply = {
+					add = bellum_justum_discount_percentage
+					divide = 100
+					desc = CB_ATTACKER_BELLUM_JUSTUM
+				}
+			}
+
+			# Dynasty Warfare Perk
+			if = {
+				limit = {
+					scope:attacker = {
+						has_dynasty = yes
+						dynasty = {
+							has_dynasty_perk = warfare_legacy_2
+						}
+					}
+				}
+				multiply = {
+					value = warfare_legacy_2_discount
+					desc = CB_ATTACKER_DYNASTY_WARFARE
+				}
+			}
+
+			# Culture
+			if = {
+				limit = {
+					scope:attacker = {
+						culture = {
+							has_cultural_parameter = cheaper_cbs
+						}
+					}
+				}
+				multiply = {
+					value = 0.8
+					desc = "CB_ATTACKER_CULTURE"
+				}
+			}
+
+			# Vassal contract in-realm cost reduction
+			if = {
+				limit = {
+					scope:attacker = {
+						agot_is_independent_ruler = no
+						vassal_contract_has_flag = vassal_contract_war_override
+						liege = scope:defender.liege
+					}
+				}
+				multiply = {
+					value = war_declaration_rights_allowed_cost_reduction
+					desc = "CB_ATTACKER_VASSAL_CONTRACT"
+				}
+			}
+
+			if = {
+				limit = {
+					has_game_rule = no_cost_casus_belli_costs
+				}
+				multiply = {
+					value = 0
+					desc = CB_GAME_RULE_NO_COST
+				}
+			}
+		}
+	}
+
+	on_declaration = {
+		on_declared_war = yes
+		# Remove offending HumSac modifiers.
+		scope:attacker = {
+			hidden_effect = { fp1_remove_humsac_offended_counties_effect = yes }
+		}
+		scope:attacker = {
+			if = {
+				limit = {
+					primary_title.tier = tier_kingdom
+				}
+				trigger_event = {
+					id = agot_proclamation_events.0001
+					days = 1
+				}
+			}
+		}
+	}
+
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { # Desc for only one player attacker
+					scope:attacker = {
+						is_local_player = yes
+					}
+				}
+				desc = independence_war_victory_desc_local_player_attacker_alone
+			}
+			triggered_desc = { # Desc for only one attacker, player defender
+				trigger = {
+					scope:defender = {
+						is_local_player = yes
+					}
+				}
+				desc = player_independence_war_victory_desc_local_player_defender_attacker_alone
+			}
+			desc = independence_war_victory_desc_local_player_attacker_alone # Desc for a third party involved
+		}
+	}
+
+	on_victory = {
+		scope:defender = {
+			random_owned_story = {
+				limit = { story_type = story_agot_mw_crown }
+				save_scope_as = mw_crown_story
+			}
+		}
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			add_character_flag = ai_should_not_transfer
+
+			random_owned_story = {
+				limit = { story_type = story_agot_mw_rebel }
+				save_scope_as = mw_rebel_story # the attacker side must always be the rebel side!
+			}
+			remove_variable = pre_war_liege
+			agot_mw_clear_data_effect = yes
+
+			scope:mw_rebel_story = {
+				every_in_list = {
+					variable = mw_rebel_supporter_list
+
+					if = {
+						limit = {
+							is_alive = yes
+							has_variable = pre_war_liege
+						}
+
+						#scope:mw_crown_story = { add_to_variable_list = { name = mw_temp_rebel_list target = prev } } # AGOT TODO disabled since it is set but never used
+					}
+					if = {
+						limit = { highest_held_title_tier = tier_kingdom }
+
+						remove_variable = pre_war_liege
+
+						hidden_effect = {
+							set_variable = {
+								name = independence_war_former_liege
+								value = scope:defender
+							}
+							add_truce_both_ways = {
+								character = scope:defender
+								days = 1825
+								war = root.war
+								result = victory
+							}
+							save_scope_as = current_member
+
+							# Struggle Catalyst
+							if = {
+								limit = {
+									catalyst_gave_independence_to_powerful_diff_faith_culture_vassal_preliminary_trigger = {
+										CHAR1 = scope:defender
+										CHAR2 = scope:current_member
+									}
+									any_character_struggle = {
+										involvement = involved
+										activate_struggle_catalyst_secondary_character_involvement_involved_trigger = {
+											CATALYST = catalyst_gave_independence_to_powerful_diff_faith_culture_vassal
+											CHAR = scope:current_member
+										}
+									}
+								}
+								every_character_struggle = {
+									involvement = involved
+									limit = {
+										activate_struggle_catalyst_secondary_character_involvement_either_trigger = {
+											CATALYST = catalyst_gave_independence_to_powerful_diff_faith_culture_vassal
+											CHAR = scope:current_member
+										}
+									}
+									activate_struggle_catalyst = {
+										catalyst = catalyst_gave_independence_to_powerful_diff_faith_culture_vassal
+										character = scope:defender
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			hidden_effect = {
+				set_variable = {
+					name = independence_war_former_liege
+					value = scope:defender
+				}
+				add_truce_both_ways = {
+					character = scope:defender
+					days = 1825
+					war = root.war
+					result = victory
+				}
+			}
+
+			add_prestige = medium_prestige_value
+
+			if = {
+				limit = {
+					has_title = title:e_the_iron_islands
+				}
+				every_ruler = {
+					trigger_event = {
+						id = agot_filler_westeros.0003
+						days = 1
+					}
+					trigger_event = {
+						id = agot_filler_westeros.0004
+						days = 1
+					}
+					trigger_event = {
+						id = agot_filler_westeros.0005
+						days = 1
+					}
+					trigger_event = {
+						id = agot_filler_westeros.0006
+						days = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_title = title:e_dorne
+				}
+				every_ruler = {
+					trigger_event = {
+						id = agot_filler_westeros.0007
+						days = 1
+					}
+				}
+			}
+		}
+		scope:defender = {
+			add_prestige = {
+				value = medium_prestige_value
+				multiply = -1
+			}
+			if = {
+				limit = { has_realm_law = crown_authority_1 }
+				add_realm_law = crown_authority_0
+			}
+			if = {
+				limit = { has_realm_law = crown_authority_2 }
+				add_realm_law = crown_authority_1
+			}
+			if = {
+				limit = { has_realm_law = crown_authority_3 }
+				add_realm_law = crown_authority_2
+			}
+		}
+
+		# Rebuild the realm
+		scope:mw_crown_story ?= { agot_mw_rebuild_realm_effect = { REBUILD_MODE = only_roots TARGET = scope:attacker } }
+		northern_independence_victory_effect = yes
+		
+		
+	}
+
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:attacker = {
+						any_owned_story = {
+							story_type = story_agot_mw_rebel
+							any_in_list = {
+								variable = mw_rebel_supporter_list
+								highest_held_title_tier = tier_kingdom
+								count > 1
+							}
+						}
+					}
+					scope:defender = { is_local_player = yes }
+				}
+				desc = independence_war_white_peace_defender_desc
+			}
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = player_independence_war_white_peace_defender_desc
+			}
+			triggered_desc = {
+				trigger = {
+					scope:attacker = {
+						is_local_player = yes
+					}
+				}
+				desc = player_independence_war_white_peace_attacker_desc
+			}
+			desc = player_independence_war_white_peace_desc # AGOT TODO get a new proper desc here
+		}
+	}
+
+	on_white_peace = {
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			stress_impact = {
+				ambitious = medium_stress_impact_gain
+				arrogant = medium_stress_impact_gain
+			}
+		}
+		hidden_effect = {
+			scope:attacker = {
+				add_truce_both_ways = {
+					character = scope:defender
+					days = 1825
+					war = root.war
+					result = white_peace
+				}
+			}
+		}
+		hidden_effect = { #Swap Empire for Kingdom Titles
+			scope:attacker = { agot_conquered_kingdom_effect = { SWITCH_TRIGGER = primary_title NEW_LIEGE_TITLE = scope:defender.primary_title } }
+		}
+
+		scope:defender = {
+			add_prestige = minor_prestige_value
+			stress_impact = {
+				arrogant = medium_stress_impact_gain
+			}
+			add_character_flag = {
+				flag = recent_independence_faction_war
+				years = faction_war_white_peace_cooldown
+			}
+
+			# Rebuild the realm
+			random_owned_story = {
+				limit = { story_type = story_agot_mw_crown }
+				save_scope_as = mw_crown_story
+
+				agot_mw_rebuild_realm_effect = { REBUILD_MODE = entire TARGET = scope:attacker }
+			}
+		}
+	}
+
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:attacker = {
+						any_owned_story = {
+							story_type = story_agot_mw_rebel
+							any_in_list = {
+								variable = mw_rebel_supporter_list
+								highest_held_title_tier = tier_kingdom
+								count > 1
+							}
+						}
+					}
+					scope:defender = { is_local_player = yes }
+				}
+				desc = independence_defeat_defender_desc
+			}
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = player_independence_defeat_defender_desc
+			}
+			triggered_desc = {
+				trigger = {
+					scope:attacker = {
+						is_local_player = yes
+					}
+				}
+				desc = player_independence_defeat_attacker_desc
+			}
+			desc = player_independence_war_defeat_desc
+		}
+	}
+
+	on_defeat = {
+		hidden_effect = { #Swap Empire for Kingdom Titles
+			scope:attacker = { agot_conquered_kingdom_effect = { SWITCH_TRIGGER = primary_title NEW_LIEGE_TITLE = scope:defender.primary_title } }
+		}
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			hard_imprison_character_effect = {
+				TARGET = this
+				IMPRISONER = scope:defender
+			}
+			scope:defender = {
+				add_opinion = {
+					target = prev
+					modifier = vassal_lost_faction_revolt_war
+				}
+			}
+		}
+		scope:defender = {
+			add_character_flag = {
+				flag = recent_independence_faction_war
+				years = faction_war_defeat_cooldown
+			}
+			add_dread = medium_dread_gain
+			# Prestige for Defender
+			add_prestige_war_defender_effect = {
+				PRESTIGE_VALUE = medium_prestige_value
+			}
+			add_achievement_flag_effect = { FLAG = achievement_know_your_place_flag }
+
+			# Rebuild the realm
+			random_owned_story = {
+				limit = { story_type = story_agot_mw_crown }
+				save_scope_as = mw_crown_story
+
+				agot_mw_rebuild_realm_effect = { REBUILD_MODE = entire TARGET = scope:attacker }
+			}
+		}
+		northern_independence_defeat_effect = yes
+	}
+
+	on_invalidated_desc = msg_invalidate_war_title
+
+	check_attacker_inheritance_validity = no
+	check_defender_inheritance_validity = no
+
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+
+	transfer_behavior = transfer
+
+	war_name = "INDEPENDENCE_WAR_NAME"
+
+	interface_priority = 120
+
+	attacker_wargoal_percentage = 0.8
+
+	max_attacker_score_from_battles = 100
+	max_defender_score_from_battles = 50
+
+	defender_wargoal_percentage = 0.0 # A single occupation will do
+	#defender_ticking_warscore_delay = { days = 0 } # No need for a delay here since the defender actually needs to occupy something rather than starting in control
+}

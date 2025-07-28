@@ -1,0 +1,4 @@
+﻿## Court Position Modifiers ##
+# employs_septon_non_fots = {
+# 	rf_faith_of_the_seven_opinion = 5
+# }

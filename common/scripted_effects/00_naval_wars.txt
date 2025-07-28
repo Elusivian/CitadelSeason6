@@ -1,0 +1,1829 @@
+﻿### General Effects ###
+
+
+### Naval War setup ###
+
+naval_war_setup_effect = {
+	#scope:attacker = { save_scope_as = naval_attacker }
+	#scope:defender = { save_scope_as = naval_defender }
+	scope:attacker = {
+				create_story = {
+					type = naval_war_story_type
+					save_scope_as = naval_war_story
+				}
+			}
+			
+			scope:naval_war_story = {
+				
+				add_to_variable_list = {
+					name = naval_war
+					target = scope:war
+				}
+			set_variable = {
+	name = naval_war_check
+	value = scope:war
+		}
+				
+			}
+		}
+		
+		
+		
+## Naval War Power Calculation
+
+
+naval_war_power_calculation_effect = {
+
+set_variable = {
+	name = attacker_navalstrength
+	value = 1
+		}
+		
+set_variable = {
+	name = defender_navalstrength
+	value = 1
+		}
+		
+	scope:naval_war = {
+	
+	
+	####Calculate Naval Power from Holdings
+	every_war_attacker = { naval_attacker_calc_effect = yes }
+	every_war_defender = { naval_defender_calc_effect = yes }
+	
+	### Calculate Naval Power from Artifacts
+	every_war_attacker = { naval_attacker_artifact_calc_effect = yes }
+	every_war_defender = { naval_defender_artifact_calc_effect = yes }
+	
+	### Calculate Naval Power from Artifacts
+	every_war_attacker = { naval_attacker_title_calc_effect = yes }
+	every_war_defender = { naval_defender_title_calc_effect = yes }
+
+
+		}
+		}
+		
+
+
+## Naval War Power Calculation w/ No Vassals Directly Being Called into War
+	
+naval_war_power_calculation_no_banners_effect = {
+
+		}
+		
+		
+		
+
+## View my own naval power
+
+
+naval_power_info_calculation_effect = {
+
+set_variable = {
+   name = personal_navalstrength
+   value = 0
+		}
+		
+		set_variable = {
+   name = vassal_navalstrength
+   value = 0
+		}
+
+
+#### NAVAL STRENGTH FROM Artifacts
+
+
+
+
+
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = small_flagship
+			}
+			root = { change_variable = {
+   name = personal_navalstrength
+   add = 25
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = medium_flagship
+			}
+			root = { change_variable = {
+   name = personal_navalstrength
+   add = 50
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = large_flagship
+			}
+			root = { change_variable = {
+   name = personal_navalstrength
+   add = 100
+}
+}
+		}
+
+		
+		
+
+
+##### NAVAL STRENGTH FROM BUILDINGS	
+		every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_01 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 1
+}
+}
+		}
+
+	every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_02 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 2
+}
+}
+		}
+		
+		
+	every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_03 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 3
+}
+}
+		}
+		
+		
+	every_sub_realm_barony = {
+ limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_04 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 4
+}
+}
+		}
+		
+			every_sub_realm_barony = {
+ limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_05 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 5
+}
+}
+		}
+		
+			every_sub_realm_barony = {
+ limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_06 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 6
+}
+}
+		}
+		
+			every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_07 }
+  }
+  root = { change_variable = {
+   name = personal_navalstrength
+   add = 7
+}
+}
+		}
+
+###### NAVAL STRENGTH FROM TITLES
+
+### Westeros
+if = { 	limit = { has_title = title:c_driftmark } root = { change_variable = {   name = personal_navalstrength   add = 30 } } }
+
+if = { 	limit = { has_title = title:c_high_tide
+				title:b_high_tide = { has_building = agot_hightide_01}
+ } 
+ 
+ root = { change_variable = {   name = personal_navalstrength   add = 20 } } }
+ 
+ if = { 	limit = { has_title = title:c_high_tide
+				OR = { title:b_spicetown = { has_building = agot_spicetown_01 }
+						title:b_spicetown = { has_building = agot_ruins_spicetown_02 }} } 
+ root = { change_variable = {   name = personal_navalstrength   add = 20 } } }
+
+if = { 	limit = { has_title = title:c_dragonstone } root = { change_variable = {   name = personal_navalstrength   add = 20 } } }
+if = { 	limit = { has_title = title:c_kings_landing } root = { change_variable = {   name = personal_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:c_oldtown } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_the_arbor } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:c_casterly_rock } root = { change_variable = {   name = personal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_lannisport } root = { change_variable = {   name = personal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = personal_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_fair_isle } root = { change_variable = {   name = personal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_seagard } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_white_harbor } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_planky_town } root = { change_variable = {   name = personal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_sunspear } root = { change_variable = {   name = personal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_claw_isle } root = { change_variable = {   name = personal_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_eastwatch } root = { change_variable = {   name = personal_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_mormont } root = { change_variable = {   name = personal_navalstrength   add = 3 } } }
+
+
+### Iron Islands
+
+if = { 	limit = { OR = { has_title = title:k_the_iron_islands has_title = title:e_the_iron_islands } } root = { change_variable = {   name = personal_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:d_pyke } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_harlaw } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_hardstone_hills } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_saltcliffe } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_blacktyde } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_east_wyk } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_old_wyk } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_orkmont } root = { change_variable = {   name = personal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_lonely_light } root = { change_variable = {   name = personal_navalstrength   add = 5 } } }
+
+### Essos
+if = { 	limit = { has_title = title:d_tyrosh } root = { change_variable = {   name = personal_navalstrength   add = 175 } } }
+if = { 	limit = { has_title = title:k_tyrosh } root = { change_variable = {   name = personal_navalstrength   add = 175 } } }
+
+if = { 	limit = { has_title = title:d_pentos } root = { change_variable = {   name = personal_navalstrength   add = 140 } } }
+if = { 	limit = { has_title = title:k_pentos } root = { change_variable = {   name = personal_navalstrength   add = 140 } } }
+
+if = { 	limit = { has_title = title:d_myr } root = { change_variable = {   name = personal_navalstrength   add = 160 } } }
+if = { 	limit = { has_title = title:k_myr } root = { change_variable = {   name = personal_navalstrength   add = 160 } } }
+
+if = { 	limit = { has_title = title:d_lys } root = { change_variable = {   name = personal_navalstrength   add = 150 } } }
+if = { 	limit = { has_title = title:k_lys } root = { change_variable = {   name = personal_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_braavos } root = { change_variable = {   name = personal_navalstrength   add = 150 } } }
+if = { 	limit = { has_title = title:k_braavos } root = { change_variable = {   name = personal_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_volantis } root = { change_variable = {   name = personal_navalstrength   add = 200 } } }
+if = { 	limit = { has_title = title:k_volantis } root = { change_variable = {   name = personal_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_astapor } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_astapor } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+
+if = { 	limit = { has_title = title:d_yunkai } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_yunkai } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+
+if = { 	limit = { has_title = title:d_mereen } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_mereen } root = { change_variable = {   name = personal_navalstrength   add = 50 } } }
+
+
+
+
+#### Vassal Naval Strength
+
+
+	every_sub_realm_barony = {
+  limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_01 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 1
+}
+}
+		}
+
+	every_sub_realm_barony = {
+  limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_02 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 2
+}
+}
+		}
+		
+		
+	every_sub_realm_barony = {
+  limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_03 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 3
+}
+}
+		}
+		
+		
+	every_sub_realm_barony = {
+ limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_04 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 4
+}
+}
+		}
+		
+			every_sub_realm_barony = {
+ limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_05 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 5
+}
+}
+		}
+		
+			every_sub_realm_barony = {
+ limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_06 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 6
+}
+}
+		}
+		
+			every_sub_realm_barony = {
+  limit = {
+	NOT = { holder = PREV }
+    title_province = { has_building = common_tradeport_07 }
+  }
+  root = { change_variable = {
+   name = vassal_navalstrength
+   add = 7
+}
+}
+		}
+
+
+
+####Vassal Naval Strength from TITLES
+
+every_vassal_or_below = {
+###### NAVAL STRENGTH FROM TITLES
+
+### Westeros
+if = { 	limit = { has_title = title:c_driftmark } root = { change_variable = {   name = vassal_navalstrength   add = 30 } } }
+
+if = { 	limit = { has_title = title:c_high_tide
+				title:b_high_tide = { has_building = agot_hightide_01}
+ } 
+ 
+ root = { change_variable = {   name = vassal_navalstrength   add = 20 } } }
+ 
+ if = { 	limit = { has_title = title:c_high_tide
+				OR = { title:b_spicetown = { has_building = agot_spicetown_01 }
+						title:b_spicetown = { has_building = agot_ruins_spicetown_02 }} } 
+ root = { change_variable = {   name = vassal_navalstrength   add = 20 } } }
+if = { 	limit = { has_title = title:c_dragonstone } root = { change_variable = {   name = vassal_navalstrength   add = 25 } } } 
+if = { 	limit = { has_title = title:c_kings_landing } root = { change_variable = {   name = vassal_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:c_oldtown } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_the_arbor } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:c_casterly_rock } root = { change_variable = {   name = vassal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_lannisport } root = { change_variable = {   name = vassal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = vassal_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_fair_isle } root = { change_variable = {   name = vassal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_seagard } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_white_harbor } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_planky_town } root = { change_variable = {   name = vassal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_sunspear } root = { change_variable = {   name = vassal_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_claw_isle } root = { change_variable = {   name = vassal_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_eastwatch } root = { change_variable = {   name = vassal_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_mormont } root = { change_variable = {   name = vassal_navalstrength   add = 3 } } }
+
+
+### Iron Islands
+
+if = { 	limit = { OR = { has_title = title:k_the_iron_islands has_title = title:e_the_iron_islands } } root = { change_variable = {   name = vassal_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:d_pyke } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_harlaw } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_hardstone_hills } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_saltcliffe } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_blacktyde } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_east_wyk } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_old_wyk } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_orkmont } root = { change_variable = {   name = vassal_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_lonely_light } root = { change_variable = {   name = vassal_navalstrength   add = 5 } } }
+
+### Essos
+if = { 	limit = { has_title = title:d_tyrosh } root = { change_variable = {   name = vassal_navalstrength   add = 175 } } }
+if = { 	limit = { has_title = title:k_tyrosh } root = { change_variable = {   name = vassal_navalstrength   add = 175 } } }
+
+if = { 	limit = { has_title = title:d_pentos } root = { change_variable = {   name = vassal_navalstrength   add = 140 } } }
+if = { 	limit = { has_title = title:k_pentos } root = { change_variable = {   name = vassal_navalstrength   add = 140 } } }
+
+if = { 	limit = { has_title = title:d_myr } root = { change_variable = {   name = vassal_navalstrength   add = 160 } } }
+if = { 	limit = { has_title = title:k_myr } root = { change_variable = {   name = vassal_navalstrength   add = 160 } } }
+
+if = { 	limit = { has_title = title:d_lys } root = { change_variable = {   name = vassal_navalstrength   add = 150 } } }
+if = { 	limit = { has_title = title:k_lys } root = { change_variable = {   name = vassal_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_braavos } root = { change_variable = {   name = vassal_navalstrength   add = 150 } } }
+if = { 	limit = { has_title = title:k_braavos } root = { change_variable = {   name = vassal_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_volantis } root = { change_variable = {   name = vassal_navalstrength   add = 200 } } }
+if = { 	limit = { has_title = title:k_volantis } root = { change_variable = {   name = vassal_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_astapor } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_astapor } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+
+if = { 	limit = { has_title = title:d_yunkai } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_yunkai } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+
+if = { 	limit = { has_title = title:d_mereen } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_mereen } root = { change_variable = {   name = vassal_navalstrength   add = 50 } } }
+
+
+
+}
+
+
+every_vassal_or_below = {
+
+
+
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = small_flagship
+			}
+			root = { change_variable = {
+   name = vassal_navalstrength
+   add = 25
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = medium_flagship
+			}
+			root = { change_variable = {
+   name = vassal_navalstrength
+   add = 50
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = large_flagship
+			}
+			root = { change_variable = {
+   name = vassal_navalstrength
+   add = 100
+}
+}
+		}
+
+
+
+
+
+
+
+}
+		
+
+
+
+
+		}
+		
+		
+		
+
+
+#### Naval Admirals and Captains
+
+
+naval_battle_characters_setup = {
+
+scope:naval_war = { 
+					
+					### Setup Defender Fleet
+					primary_defender  = { 
+							save_scope_as = naval_defender
+							random_councillor = {	limit = { has_council_position = councillor_admiral }
+				save_scope_as = naval_defender_admiral
+				add_to_list = naval_participants
+				add_to_list = naval_defender_participants
+				add_character_flag = naval_defender_participant
+				trigger_event = naval_warfare.98
+												}
+										}
+										
+									if = { limit = { NOT = { scope:naval_secondary_defender_1 = exists } }	
+										
+										ordered_war_defender = { 
+												limit = {
+												random_councillor = {	has_council_position = councillor_admiral }
+										NOT = {	this = scope:naval_defender }
+										NOT = {	this = scope:naval_secondary_defender_1 }
+										NOT = {	this = scope:naval_secondary_defender_2 }
+										NOT = {	this = scope:naval_secondary_defender_3 }
+
+										}
+										order_by = {
+					value = 0
+					add = max_military_strength
+				}
+										save_scope_as = naval_secondary_defender_1
+										
+																
+																random_councillor = {
+														
+														limit = {
+															has_council_position = councillor_admiral
+															NOR = { this = scope:naval_defender_captain_1
+																	this = scope:naval_defender_captain_2
+																	this = scope:naval_defender_captain_3
+																	this = scope:naval_defender_admiral
+																		}
+													
+														}
+														save_scope_as = naval_defender_captain_1
+														add_to_list = naval_participants
+														add_to_list = naval_defender_participants
+														add_character_flag = naval_defender_participant
+														trigger_event = naval_warfare.98
+														}
+														
+														}
+														}
+														
+														if = { limit = { NOT = { scope:naval_secondary_defender_2 = exists } }	
+										
+										ordered_war_defender = { 
+												limit = {
+												random_councillor = {	has_council_position = councillor_admiral }
+										NOT = {	this = scope:naval_defender }
+										NOT = {	this = scope:naval_secondary_defender_1 }
+										NOT = {	this = scope:naval_secondary_defender_2 }
+										NOT = {	this = scope:naval_secondary_defender_3 }
+
+										}
+										order_by = {
+					value = 0
+					add = max_military_strength
+				}
+										save_scope_as = naval_secondary_defender_2
+										
+																
+																random_councillor = {
+														
+														limit = {
+															has_council_position = councillor_admiral
+															NOR = { this = scope:naval_defender_captain_1
+																	this = scope:naval_defender_captain_2
+																	this = scope:naval_defender_captain_3
+																	this = scope:naval_defender_admiral
+																		}
+													
+														}
+														save_scope_as = naval_defender_captain_2
+														add_to_list = naval_participants
+														add_to_list = naval_defender_participants
+														add_character_flag = naval_defender_participant
+														trigger_event = naval_warfare.98
+														}
+														
+														}
+														}
+														
+														if = { limit = { NOT = { scope:naval_secondary_defender_3 = exists } }	
+										
+										ordered_war_defender = { 
+												limit = {
+												random_councillor = {	has_council_position = councillor_admiral }
+										NOT = {	this = scope:naval_defender }
+										NOT = {	this = scope:naval_secondary_defender_1 }
+										NOT = {	this = scope:naval_secondary_defender_2 }
+										NOT = {	this = scope:naval_secondary_defender_3 }
+
+										}
+										order_by = {
+					value = 0
+					add = max_military_strength
+				}
+										save_scope_as = naval_secondary_defender_3
+										
+																
+																random_councillor = {
+														
+														limit = {
+															has_council_position = councillor_admiral
+															NOR = { this = scope:naval_defender_captain_1
+																	this = scope:naval_defender_captain_2
+																	this = scope:naval_defender_captain_3
+																	this = scope:naval_defender_admiral
+																		}
+													
+														}
+														save_scope_as = naval_defender_captain_3
+														add_to_list = naval_participants
+														add_to_list = naval_defender_participants
+														add_character_flag = naval_defender_participant
+														trigger_event = naval_warfare.98
+														}
+														
+														}
+														}
+													
+														
+														
+														
+												
+										
+										
+										
+										
+										
+										
+										
+										
+					
+												
+
+
+
+								
+										
+										
+					primary_attacker = { 
+							save_scope_as = naval_attacker
+							random_councillor = {	limit = { has_council_position = councillor_admiral }
+				save_scope_as = naval_attacker_admiral
+				add_to_list = naval_participants
+				add_to_list = naval_attack_participants
+				add_character_flag = naval_attacker_participant
+				trigger_event = naval_warfare.98
+												}
+			}
+			
+			if = { limit = { NOT = { scope:naval_secondary_attacker_1 = exists } }	
+										
+										ordered_war_attacker = { 
+												limit = {
+												any_sub_realm_county = {
+			is_coastal_county = yes
+		}
+										NOT = {	this = scope:naval_attacker }
+										NOT = {	this = scope:naval_secondary_attacker_1 }
+										NOT = {	this = scope:naval_secondary_attacker_2 }
+										NOT = {	this = scope:naval_secondary_attacker_3 }
+
+										}
+										order_by = {
+					value = 0
+					add = max_military_strength
+				}
+										save_scope_as = naval_secondary_attacker_1
+										
+																
+																random_councillor = {
+														
+														limit = {
+															has_council_position = councillor_admiral
+															NOR = { this = scope:naval_attacker_captain_1
+																	this = scope:naval_attacker_captain_2
+																	this = scope:naval_attacker_captain_3
+																	this = scope:naval_attacker_admiral
+																		}
+													
+														}
+														save_scope_as = naval_attacker_captain_1
+														add_to_list = naval_participants
+														add_to_list = naval_attack_participants
+														add_character_flag = naval_attacker_participant
+														trigger_event = naval_warfare.98
+														}
+														
+														}
+														}
+														
+														if = { limit = { NOT = { scope:naval_secondary_attacker_2 = exists } }	
+										
+										ordered_war_attacker = { 
+												limit = {
+												any_sub_realm_county = {
+			is_coastal_county = yes
+		}
+										NOT = {	this = scope:naval_attacker }
+										NOT = {	this = scope:naval_secondary_attacker_1 }
+										NOT = {	this = scope:naval_secondary_attacker_2 }
+										NOT = {	this = scope:naval_secondary_attacker_3 }
+
+										}
+										order_by = {
+					value = 0
+					add = max_military_strength
+				}
+										save_scope_as = naval_secondary_attacker_2
+										
+																
+																random_councillor = {
+														
+														limit = {
+															has_council_position = councillor_admiral
+															NOR = { this = scope:naval_attacker_captain_1
+																	this = scope:naval_attacker_captain_2
+																	this = scope:naval_attacker_captain_3
+																	this = scope:naval_attacker_admiral
+																		}
+													
+														}
+														save_scope_as = naval_attacker_captain_2
+														add_to_list = naval_participants
+														add_to_list = naval_attack_participants
+														add_character_flag = naval_attacker_participant
+														trigger_event = naval_warfare.98
+														}
+														
+														}
+														}
+														
+														if = { limit = { NOT = { scope:naval_secondary_attacker_3 = exists } }	
+										
+										ordered_war_attacker = { 
+												limit = {
+												any_sub_realm_county = {
+			is_coastal_county = yes
+		}
+										NOT = {	this = scope:naval_attacker }
+										NOT = {	this = scope:naval_secondary_attacker_1 }
+										NOT = {	this = scope:naval_secondary_attacker_2 }
+										NOT = {	this = scope:naval_secondary_attacker_3 }
+
+										}
+										order_by = {
+					value = 0
+					add = max_military_strength
+				}
+										save_scope_as = naval_secondary_attacker_3
+										
+																
+																random_councillor = {
+														
+														limit = {
+															has_council_position = councillor_admiral
+															NOR = { this = scope:naval_attacker_captain_1
+																	this = scope:naval_attacker_captain_2
+																	this = scope:naval_attacker_captain_3
+																	this = scope:naval_attacker_admiral
+																		}
+													
+														}
+														save_scope_as = naval_attacker_captain_3
+														add_to_list = naval_participants
+														add_to_list = naval_attack_participants
+														add_character_flag = naval_attacker_participant
+														trigger_event = naval_warfare.98
+														}
+														
+														}
+														}
+													
+			
+							
+										}
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+##### Attacker Calculation
+
+naval_attacker_calc_effect = {
+
+		####Attackers
+		
+	
+			every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_01 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 1
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_02 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 2
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_03 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 3
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_04 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 4
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_05 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 5
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_06 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 6
+}
+}
+		}
+				every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_07 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 7
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_08 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 8
+}
+}
+		}
+		
+		every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_01 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 2
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_02 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 4
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_03 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 6
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_04 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 8
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_05 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 10
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_06 }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 12
+}
+}
+		}
+			
+
+every_vassal = { limit = { NOT = { is_participant_in_war = scope:naval_war } }
+
+naval_attacker_calc_effect = yes  }
+		
+
+
+}
+
+
+
+
+#### Naval Calc Defender
+naval_defender_calc_effect = {
+
+	
+		
+	
+			every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_01 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 1
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_02 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 2
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_03 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 3
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_04 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 4
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_05 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 5
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_06 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 6
+}
+}
+		}
+				every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_07 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 7
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = common_tradeport_08 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 8
+}
+}
+		}
+				every_sub_realm_barony = {
+  limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_01 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 2
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_02 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 4
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_03 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 6
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_04 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 8
+}
+}
+		}
+				every_sub_realm_barony = {
+   limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_05 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 10
+}
+}
+		}
+				every_sub_realm_barony = {
+    limit = {
+	holder = PREV
+    title_province = { has_building = agot_pirate_military_06 }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 12
+}
+}
+		}
+		
+
+every_vassal = { limit = { NOT = { is_participant_in_war = scope:naval_war } }
+
+naval_defender_calc_effect = yes  }
+		
+
+
+}
+
+					
+
+
+
+############# ARTIFACTS AND Titles
+
+
+naval_attacker_artifact_calc_effect = {
+
+
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = small_flagship
+			}
+			root = { change_variable = {
+   name = attacker_navalstrength
+   add = 25
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = medium_flagship
+			}
+			root = { change_variable = {
+   name = attacker_navalstrength
+   add = 50
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = large_flagship
+			}
+			root = { change_variable = {
+   name = attacker_navalstrength
+   add = 100
+}
+}
+		}
+
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = tier4_flagship
+			}
+			root = { change_variable = {
+   name = attacker_navalstrength
+   add = 40
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = tier5_flagship
+			}
+			root = { change_variable = {
+   name = attacker_navalstrength
+   add = 60
+}
+}
+		}
+		
+		}
+		
+		
+		
+naval_defender_artifact_calc_effect = {
+
+
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = small_flagship
+			}
+			root = { change_variable = {
+   name = defender_navalstrength
+   add = 25
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = medium_flagship
+			}
+			root = { change_variable = {
+   name = defender_navalstrength
+   add = 50
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = large_flagship
+			}
+			root = { change_variable = {
+   name = defender_navalstrength
+   add = 100
+}
+}
+		}
+
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = tier4_flagship
+			}
+			root = { change_variable = {
+   name = defender_navalstrength
+   add = 40
+}
+}
+		}
+		
+random_equipped_character_artifact = {
+			limit = {
+				artifact_type = flagship
+				has_variable = tier5_flagship
+			}
+			root = { change_variable = {
+   name = defender_navalstrength
+   add = 60
+}
+}
+		}
+		
+		}
+		
+		
+
+naval_attacker_title_calc_effect = {
+
+### Westeros
+if = { 	limit = { has_title = title:c_driftmark } root = { change_variable = {   name = attacker_navalstrength   add = 30 } } }
+
+if = { 	limit = { has_title = title:c_high_tide
+				title:b_high_tide = { has_building = agot_hightide_01}
+ } 
+ 
+ root = { change_variable = {   name = attacker_navalstrength   add = 20 } } }
+ 
+ if = { 	limit = { has_title = title:c_high_tide
+				OR = { title:b_spicetown = { has_building = agot_spicetown_01 }
+						title:b_spicetown = { has_building = agot_ruins_spicetown_02 }} } 
+ root = { change_variable = {   name = attacker_navalstrength   add = 20 } } }
+if = { 	limit = { has_title = title:c_dragonstone } root = { change_variable = {   name = attacker_navalstrength   add = 25 } } } 
+if = { 	limit = { has_title = title:c_kings_landing } root = { change_variable = {   name = attacker_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:c_oldtown } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_the_arbor } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:c_casterly_rock } root = { change_variable = {   name = attacker_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_lannisport } root = { change_variable = {   name = attacker_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = attacker_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_fair_isle } root = { change_variable = {   name = attacker_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_seagard } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_white_harbor } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_planky_town } root = { change_variable = {   name = attacker_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_sunspear } root = { change_variable = {   name = attacker_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_claw_isle } root = { change_variable = {   name = attacker_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_eastwatch } root = { change_variable = {   name = attacker_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_mormont } root = { change_variable = {   name = attacker_navalstrength   add = 3 } } }
+
+
+### Iron Islands
+
+if = { 	limit = { OR = { has_title = title:k_the_iron_islands has_title = title:e_the_iron_islands } } root = { change_variable = {   name = attacker_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:d_pyke } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_harlaw } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_hardstone_hills } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_saltcliffe } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_blacktyde } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_east_wyk } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_old_wyk } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_orkmont } root = { change_variable = {   name = attacker_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_lonely_light } root = { change_variable = {   name = attacker_navalstrength   add = 5 } } }
+
+### Essos
+if = { 	limit = { has_title = title:d_tyrosh } root = { change_variable = {   name = attacker_navalstrength   add = 175 } } }
+if = { 	limit = { has_title = title:k_tyrosh } root = { change_variable = {   name = attacker_navalstrength   add = 175 } } }
+
+if = { 	limit = { has_title = title:d_pentos } root = { change_variable = {   name = attacker_navalstrength   add = 140 } } }
+if = { 	limit = { has_title = title:k_pentos } root = { change_variable = {   name = attacker_navalstrength   add = 140 } } }
+
+if = { 	limit = { has_title = title:d_myr } root = { change_variable = {   name = attacker_navalstrength   add = 160 } } }
+if = { 	limit = { has_title = title:k_myr } root = { change_variable = {   name = attacker_navalstrength   add = 160 } } }
+
+if = { 	limit = { has_title = title:d_lys } root = { change_variable = {   name = attacker_navalstrength   add = 150 } } }
+if = { 	limit = { has_title = title:k_lys } root = { change_variable = {   name = attacker_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_braavos } root = { change_variable = {   name = attacker_navalstrength   add = 150 } } }
+if = { 	limit = { has_title = title:k_braavos } root = { change_variable = {   name = attacker_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_volantis } root = { change_variable = {   name = attacker_navalstrength   add = 200 } } }
+if = { 	limit = { has_title = title:k_volantis } root = { change_variable = {   name = attacker_navalstrength   add = 150 } } }
+
+if = { 	limit = { has_title = title:d_astapor } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_astapor } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+
+if = { 	limit = { has_title = title:d_yunkai } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_yunkai } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+
+if = { 	limit = { has_title = title:d_mereen } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:k_mereen } root = { change_variable = {   name = attacker_navalstrength   add = 50 } } }
+
+
+}
+
+naval_defender_title_calc_effect = {
+
+### Westeros
+if = { 	limit = { has_title = title:c_driftmark } root = { change_variable = {   name = defender_navalstrength   add = 30 } } }
+
+if = { 	limit = { has_title = title:c_high_tide
+				title:b_high_tide = { has_building = agot_hightide_01}
+ } 
+ 
+ root = { change_variable = {   name = defender_navalstrength   add = 20 } } }
+ 
+ if = { 	limit = { has_title = title:c_high_tide
+				OR = { title:b_spicetown = { has_building = agot_spicetown_01 }
+						title:b_spicetown = { has_building = agot_ruins_spicetown_02 }} }
+ 
+ root = { change_variable = {   name = defender_navalstrength   add = 20 } } }
+if = { 	limit = { has_title = title:c_dragonstone } root = { change_variable = {   name = defender_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:c_kings_landing } root = { change_variable = {   name = defender_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:c_oldtown } root = { change_variable = {   name = defender_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:d_the_arbor } root = { change_variable = {   name = defender_navalstrength   add = 50 } } }
+if = { 	limit = { has_title = title:c_casterly_rock } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_lannisport } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_fair_isle } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_seagard } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_gulltown } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:c_white_harbor } root = { change_variable = {   name = defender_navalstrength   add = 15 } } }
+if = { 	limit = { has_title = title:c_planky_town } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_sunspear } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+if = { 	limit = { has_title = title:c_claw_isle } root = { change_variable = {   name = defender_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_eastwatch } root = { change_variable = {   name = defender_navalstrength   add = 3 } } }
+if = { 	limit = { has_title = title:c_mormont } root = { change_variable = {   name = defender_navalstrength   add = 3 } } }
+
+
+### Iron Islands
+if = { 	limit = { OR = { has_title = title:k_the_iron_islands has_title = title:e_the_iron_islands } } root = { change_variable = {   name = defender_navalstrength   add = 25 } } }
+if = { 	limit = { has_title = title:d_pyke } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_harlaw } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_hardstone_hills } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_saltcliffe } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_blacktyde } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_east_wyk } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_old_wyk } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_orkmont } root = { change_variable = {   name = defender_navalstrength   add = 10 } } }
+if = { 	limit = { has_title = title:d_lonely_light } root = { change_variable = {   name = defender_navalstrength   add = 5 } } }
+
+### Essos
+if = { 	limit = { has_title = title:d_tyrosh } root = { change_variable = {   name = defender_navalstrength   add = 175 } } }
+if = { 	limit = { has_title = title:k_tyrosh } root = { change_variable = {   name = defender_navalstrength   add = 175 } } }
+
+if = { 	limit = { has_title = title:d_pentos } root = { change_variable = {   name = defender_navalstrength   add = 140 } } }
+if = { 	limit = { has_title = title:k_pentos } root = { change_variable = {   name = defender_navalstrength   add = 140 } } }
+
+if = { 	limit = { has_title = title:d_myr } root = { change_variable = {   name = defender_navalstrength   add = 160 } } }
+if = { 	limit = { has_title = title:k_myr } root = { change_variable = {   name = defender_navalstrength   add = 160 } } }
+
+if = { 	limit = { has_title = title:d_lys } root = { change_variable = {   name = defender_navalstrength   add = 175 } } }
+if = { 	limit = { has_title = title:k_lys } root = { change_variable = {   name = defender_navalstrength   add = 175 } } }
+
+
+
+
+
+}
+
+
+
+
+#### Naval Battle Simulation
+
+
+
+naval_defender_battle_simulation_effect = {
+
+scope:naval_attacker_fleet_commander = { naval_flags_cleanup = yes  }
+scope:naval_defender_fleet_commander = { naval_flags_cleanup = yes  }
+
+scope:naval_defender_fleet_commander = { 
+
+		duel = {
+			skill = martial
+			target = scope:naval_attacker_fleet_commander
+			### Lvl 1 Succeess
+			10= {
+				desc = naval_victory_1
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				modifier = {
+					add = scope:defender_navalstrength
+				}
+				hidden_effect = {
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				random = {
+			chance = 33
+				add_character_flag = naval_outcome
+				add_character_flag = naval_defender_victory_2
+				every_in_list = { 
+				list = naval_attack_participants
+				naval_attacker_killed_effect = yes
+				}
+				}
+				
+				}
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+			
+				add_character_flag = naval_defender_victory_1
+				
+				
+				
+			}
+			}
+			}
+			### Naval Defeat
+			10 = {
+				desc = naval_defeat
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+				}
+				modifier = {
+					add = scope:attacker_navalstrength
+				}
+				hidden_effect = { 
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				random = {
+			chance = 33
+				add_character_flag = naval_defender_defeat_2
+				add_character_flag = naval_outcome
+				every_in_list = { 
+				list = naval_defender_participants
+				naval_defender_killed_effect = yes
+				}
+				}
+				
+				}
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				
+				add_character_flag = naval_defender_defeat_1
+				
+				add_character_flag = naval_outcome
+				
+			}
+			}
+			} 
+			
+		}
+if = { limit = { 
+				OR = {
+				has_character_flag = naval_defender_defeat_2
+				has_character_flag = naval_defender_victory_2
+				}
+				}
+	if = { limit = { has_character_flag = naval_defender_defeat_2 }
+		scope:naval_attacker_fleet_commander = { save_scope_as = naval_winner }
+		save_scope_as = naval_loser }
+	if = { limit = { has_character_flag = naval_defender_victory_2 }
+		scope:naval_attacker_fleet_commander = { save_scope_as = naval_loser }
+		save_scope_as = naval_winner }
+	scope:naval_attacker = { trigger_event = naval_warfare.7 }
+	scope:naval_defender = { trigger_event = naval_warfare.7 }
+	every_in_list = {
+		list = naval_participants
+			trigger_event = naval_warfare.9
+			}
+	
+			}
+else_if = { limit = { has_character_flag = naval_defender_defeat_1 } trigger_event = naval_warfare.8 } 
+else_if = { limit = { has_character_flag = naval_defender_victory_1 } scope:naval_attacker_fleet_commander = { trigger_event = naval_warfare.8 } } 
+
+}
+
+		
+		
+}
+		
+		
+		
+
+naval_attacker_battle_simulation_effect = {
+
+scope:naval_attacker_fleet_commander = { naval_flags_cleanup = yes  }
+scope:naval_defender_fleet_commander = { naval_flags_cleanup = yes  }
+
+
+scope:naval_attacker_fleet_commander = {
+
+	
+	
+		duel = {
+			skill = martial
+			target = scope:naval_defender_fleet_commander
+			### Lvl 1 Succeess
+			10= {
+				desc = naval_victory_1
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				modifier = {
+					add = scope:attacker_navalstrength
+				}
+				hidden_effect = { 
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				random = {
+			chance = 33
+				add_character_flag = naval_attacker_victory_2
+				add_character_flag = naval_outcome
+				every_in_list = { 
+				list = naval_defender_participants
+				naval_defender_killed_effect = yes
+				}
+				}
+				
+				}
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				
+				add_character_flag = naval_attacker_victory_1
+				
+				add_character_flag = naval_outcome
+				
+			}
+			}
+			}
+			### Naval Defeat
+			10 = {
+				desc = naval_defeat
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+				}
+				modifier = {
+					add = scope:defender_navalstrength
+				}
+				hidden_effect = { 
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				random = {
+			chance = 33
+				add_character_flag = naval_attacker_defeat_2
+				add_character_flag = naval_outcome
+				
+				every_in_list = { 
+				list = naval_attack_participants
+				naval_attacker_killed_effect = yes
+				}
+				}
+				if = { limit = { NOT = { has_character_flag = naval_outcome } }
+				
+				add_character_flag = naval_attacker_defeat_1
+				
+				add_character_flag = naval_outcome
+				}
+			}
+			}
+			} 
+			
+		}
+if = { limit = { 
+				OR = {
+				has_character_flag = naval_attacker_defeat_2
+				has_character_flag = naval_attacker_victory_2
+				}
+				}
+	if = { limit = { has_character_flag = naval_attacker_defeat_2 }
+		scope:naval_defender_fleet_commander = { save_scope_as = naval_winner }
+		save_scope_as = naval_loser }
+	if = { limit = { has_character_flag = naval_attacker_victory_2 }
+		scope:naval_defender_fleet_commander = { save_scope_as = naval_loser }
+		save_scope_as = naval_winner }
+	scope:naval_attacker = { trigger_event = naval_warfare.7 }
+	scope:naval_defender = { trigger_event = naval_warfare.7 }
+	every_in_list = {
+		list = naval_participants
+			trigger_event = naval_warfare.9
+			}
+		scope:naval_attacker = {
+		naval_flags_cleanup = yes
+		naval_variables_cleanup = yes
+		}
+		scope:naval_defender = { 
+		naval_flags_cleanup = yes
+		naval_variables_cleanup = yes
+		}
+		scope:naval_defender_fleet_commander = { naval_flags_cleanup = yes  naval_variables_cleanup = yes }
+		scope:naval_defender_fleet_commander = { naval_flags_cleanup = yes  naval_variables_cleanup = yes }
+	
+			}
+else_if = { limit = { has_character_flag = naval_attacker_defeat_1 } trigger_event = naval_warfare.8 } 
+else_if = { limit = { has_character_flag = naval_attacker_victory_1 } scope:naval_defender_fleet_commander = { trigger_event = naval_warfare.8 } } 
+
+
+}
+
+		}
+		
+		
+		
+naval_flags_cleanup = {
+
+	remove_character_flag = naval_outcome
+	remove_character_flag = naval_defender_victory_1
+	remove_character_flag = naval_defender_victory_2
+	remove_character_flag = naval_defender_defeat_1
+	remove_character_flag = naval_defender_defeat_2
+	remove_character_flag = naval_attacker_victory_1
+	remove_character_flag = naval_attacker_victory_2
+	remove_character_flag = naval_attacker_defeat_1
+	remove_character_flag = naval_attacker_defeat_2
+
+
+
+}
+
+
+		
+naval_variables_cleanup = {
+
+	
+	remove_variable = defender_navalstrength
+	remove_variable = attacker_navalstrength
+	remove_variable = defender_naval_command_buff
+	remove_variable = attacker_naval_command_buff
+	remove_variable = naval_strength_battle_size
+
+
+
+}
+
+
+
+
+
+naval_attacker_killed_effect = {
+
+if = { limit = { 
+
+OR = {
+NOT = { this = scope:naval_attacker }
+NOT = { has_trait = wounded_3 }
+}
+ }
+random = {
+			chance = 75
+			increase_wounds_effect = {
+				REASON = battle
+			}
+		}
+		}
+if = { limit = { NOT = { this = scope:naval_attacker } }
+random = {
+			chance = 50
+					remove_trait = wounded_1
+					remove_trait = wounded_2
+					remove_trait = wounded_3
+				death = {
+							death_reason = death_sea_battle
+							killer = scope:naval_defender_fleet_commander
+						}
+			
+		}
+		
+		}
+random = {
+			chance = 25
+				rightfully_imprison_character_less_verbose_effect = { 
+									TARGET = this 
+									IMPRISONER = scope:naval_defender
+								}
+		}
+		
+
+
+
+
+}
+
+naval_defender_killed_effect = {
+
+if = { limit = { 
+
+OR = {
+NOT = { this = scope:naval_defender }
+NOT = { has_trait = wounded_3 }
+}
+ }
+random = {
+			chance = 75
+			increase_wounds_effect = {
+				REASON = battle
+			}
+		}
+		}
+if = { limit = { NOT = { this = scope:naval_defender } }
+random = {
+			chance = 50
+					remove_trait = wounded_1
+					remove_trait = wounded_2
+					remove_trait = wounded_3
+				death = {
+							death_reason = death_sea_battle
+							killer = scope:naval_attacker_fleet_commander
+						}
+			
+		}
+		
+		}
+random = {
+			chance = 25
+				rightfully_imprison_character_less_verbose_effect = { 
+									TARGET = this 
+									IMPRISONER = scope:naval_attackerr
+								}
+		}
+
+
+
+
+}
+

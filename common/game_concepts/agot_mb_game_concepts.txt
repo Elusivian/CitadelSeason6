@@ -1,0 +1,5 @@
+﻿
+story_content_daemon_blackfyre_195 = {
+	texture = "gfx/interface/icons/court_position_types/champion_court_position.dds"
+	shown_in_encyclopedia = no
+}

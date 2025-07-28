@@ -1,0 +1,6 @@
+﻿agot_can_convert = {
+	OR = {
+		is_ai = no
+		religion = religion:rhllor_religion
+	}
+}

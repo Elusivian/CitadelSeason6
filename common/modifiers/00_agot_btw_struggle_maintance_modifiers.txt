@@ -1,0 +1,15 @@
+﻿btw_wildlings_resistance = {
+	icon = county_modifier_opinion_negative
+	county_opinion_add = -100
+	monthly_county_control_growth_factor = -0.8
+	development_growth_factor = -0.8
+	tax_mult = -1.0
+	levy_size = -1
+	garrison_size = -0.8
+}
+
+btw_province_devastation = {
+	development_growth_factor = -0.8
+	tax_mult = -0.8
+	levy_size = -0.8
+}

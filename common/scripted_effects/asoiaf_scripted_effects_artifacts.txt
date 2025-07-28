@@ -1,0 +1,575 @@
+﻿create_artifact_asoiaf_jaimes_sword_effect = {
+	#dynasty:dynn_Lannister = { #scope Jaime for the effect
+	#	every_dynasty_member = {
+	#		limit = {
+	#			has_inactive_trait = asoiaf_Lannister_7_trait #Jaime Lannister (son of Tywin)
+	#		}
+	#		save_scope_as = asoiaf_jaime
+	#	}
+	#}
+	
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_jaimes_sword_name
+		description = asoiaf_jaimes_sword_description
+		type = sword
+		visuals = asoiaf_jaimes_sword_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_jaimes_sword_template
+		history = {
+			type = created
+			date = 8281.3.1 #Some months after Jaime is knighted
+			recipient = scope:owner
+			location = province:4151 #King's Landing
+		}
+		modifier = asoiaf_jaimes_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		equip_artifact_to_owner = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = { name = asoiaf_is_jaimes_sword value = yes }
+		set_variable = { #temporary until there's a dynasty/House succession mechanic for artefacts
+			name = artifact_succession_title
+			value = title:c_casterly_rock
+		}
+	}
+	
+	scope:owner.house = {
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+create_artifact_asoiaf_rhaegars_sword_effect_historical = {
+	#dynasty:dynn_Targaryen = { #scope Rhaegar for the effect
+	#	every_dynasty_member = {
+	#		limit = {
+	#			has_inactive_trait = asoiaf_Targaryen_3_trait #Rhaegar Targaryen (son of Aerys II)
+	#		}
+	#		save_scope_as = asoiaf_rhaegar
+	#	}
+	#}
+
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_rhaegars_sword_name
+		description = asoiaf_rhaegars_sword_description
+		type = sword
+		visuals = asoiaf_rhaegars_sword_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_rhaegars_sword_template
+		history = {
+			type = created
+			date = 8278.1.1
+			recipient = character:Targaryen_3 #Rhaegar
+			location = province:4415
+		}
+		modifier = asoiaf_rhaegars_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		equip_artifact_to_owner = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8283.3.1 #Rhaegar dies, sword passed to Viserys
+			RECIPIENT = character:Targaryen_8
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8298.8.1 #Viserys dies, sword passed to Daenerys
+			RECIPIENT = character:Targaryen_9
+		}
+	}
+	
+	character:Targaryen_13.house = {
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+create_artifact_asoiaf_rhaegars_sword_effect = {
+	#dynasty:dynn_Targaryen = { #scope Rhaegar for the effect
+	#	every_dynasty_member = {
+	#		limit = {
+	#			has_inactive_trait = asoiaf_Targaryen_3_trait #Rhaegar Targaryen (son of Aerys II)
+	#		}
+	#		save_scope_as = asoiaf_rhaegar
+	#	}
+	#}
+
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_rhaegars_sword_name
+		description = asoiaf_rhaegars_sword_description
+		type = sword
+		visuals = asoiaf_rhaegars_sword_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_rhaegars_sword_template
+		history = {
+			type = created
+			recipient = scope:owner
+			location = scope:owner.location
+		}
+		modifier = asoiaf_rhaegars_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		equip_artifact_to_owner = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+	}
+	
+	character:Targaryen_13.house = {
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+create_artifact_asoiaf_roberts_sword_effect = {
+	#dynasty:dynn_Baratheon = { #scope Robert for the effect
+	#	every_dynasty_member = {
+	#		limit = {
+	#			has_inactive_trait = asoiaf_Baratheon_2_trait #Robert I Baratheon
+	#		}
+	#		save_scope_as = asoiaf_robert
+	#	}
+	#}
+	
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_roberts_sword_name
+		description = asoiaf_roberts_sword_description
+		type = sword
+		visuals = asoiaf_roberts_sword_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_roberts_sword_template
+		history = {
+			type = created
+			date = 8283.11.1 #made for Robert shortly into his reign; change to after the Greyjoy Rebellion when later bookmarks are added
+			recipient = scope:owner
+			location = province:4151
+		}
+		modifier = asoiaf_roberts_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		#equip_artifact_to_owner = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8298.10.28 #Robert dies and the sword passes to Joffrey
+			RECIPIENT = character:Baratheon_5 #Joffrey I Baratheon
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8300.1.1 #Joffrey dies and the sword passes to Tommen
+			RECIPIENT = character:Baratheon_7 #Tommen I Baratheon
+		}
+	}
+}
+
+create_artifact_asoiaf_aerys_II_crown_effect = {
+	#dynasty:dynn_Targaryen = { #scope Aerys for the effect
+	#	every_dynasty_member = {
+	#		limit = {
+	#			has_inactive_trait = asoiaf_Targaryen_1_trait #Aerys II Targaryen
+	#		}
+	#		save_scope_as = asoiaf_aerys
+	#	}
+	#}
+	
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_aerys_II_crown_name
+		description = asoiaf_aerys_II_crown_description
+		type = helmet
+		visuals = asoiaf_aerys_II_crown_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_aerys_II_crown_template
+		history = {
+			type = created
+			recipient = scope:owner
+			location = scope:owner.location
+		}
+		modifier = asoiaf_aerys_II_crown_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = asoiaf_aerys_II_crown_artefact value = yes }
+		set_variable = { name = stannis_crown_artifact value = yes } #to prevent it from spawning while Aerys II's crown exists
+		set_variable = { name = historical_unique_artifact value = yes }
+	}
+	
+	character:Targaryen_13.house = {
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+create_artifact_asoiaf_aerys_II_crown_effect_historical = {
+	#dynasty:dynn_Targaryen = { #scope Aerys for the effect
+	#	every_dynasty_member = {
+	#		limit = {
+	#			has_inactive_trait = asoiaf_Targaryen_1_trait #Aerys II Targaryen
+	#		}
+	#		save_scope_as = asoiaf_aerys
+	#	}
+	#}
+	
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_aerys_II_crown_name
+		description = asoiaf_aerys_II_crown_description
+		type = helmet
+		visuals = asoiaf_aerys_II_crown_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_aerys_II_crown_template
+		history = {
+			type = created
+			date = 8262.1.1
+			recipient = character:Targaryen_1
+			location = province:4151
+		}
+		modifier = asoiaf_aerys_II_crown_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = asoiaf_aerys_II_crown_artefact value = yes }
+		set_variable = { name = stannis_crown_artifact value = yes } #to prevent it from spawning while Aerys II's crown exists
+		set_variable = { name = historical_unique_artifact value = yes }
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8283.6.1 #Aerys II is killed and Robert takes the Iron Throne
+			RECIPIENT = character:Baratheon_2 #Robert I Baratheon
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8283.6.2 #Robert I gives the crown to Stannis when he becomes Lord of Dragonstone
+			RECIPIENT = character:Baratheon_3 #Stannis Baratheon (son of Steffon)
+		}
+	}
+	
+	character:Targaryen_13.house = {
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+create_artifact_asoiaf_robert_I_crown_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_robert_I_crown_name
+		description = asoiaf_robert_I_crown_description
+		type = helmet
+		visuals = asoiaf_robert_I_crown_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_robert_I_crown_template
+		history = {
+			type = created
+			date = 8284.1.1
+			recipient = scope:owner #Robert I Baratheon
+			location = province:4151
+		}
+		modifier = asoiaf_robert_I_crown_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = asoiaf_robert_I_crown_artefact value = yes }
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = {
+			name = artifact_succession_title
+			value = title:c_kings_landing
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8298.10.28 #Robert dies and the crown passes to Joffrey
+			RECIPIENT = character:Baratheon_5 #Joffrey I Baratheon
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8300.1.1 #Joffrey dies and the crown passes to Tommen
+			RECIPIENT = character:Baratheon_7 #Tommen I Baratheon
+		}
+	}
+	
+	character:Baratheon_14.house = {
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+create_artifact_asoiaf_red_priest_necklace_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = asoiaf_red_priest_necklace_name
+		description = asoiaf_red_priest_necklace_description
+		type = miscellaneous
+		visuals = asoiaf_red_priest_necklace_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_red_priest_necklace_template
+		history = {
+			#type = created_before_history
+			type = created
+			#date = 8281.3.1
+			recipient = scope:owner
+			#location = province:4151 #King's Landing
+		}
+		modifier = asoiaf_red_priest_necklace_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact = {
+		equip_artifact_to_owner = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = { name = asoiaf_red_priest_necklace value = yes }
+	}
+}
+
+create_artifact_stark_throne_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {	
+		name = asoiaf_stark_throne_name
+		description = asoiaf_stark_throne_description
+		type = throne
+		visuals = asoiaf_stark_throne_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = asoiaf_stark_throne_template
+		history = {
+			type = created
+			date = 7864.1.1
+			recipient = character:Stark_46
+			location = province:77
+		}
+		modifier = asoiaf_stark_throne_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = { #temporary until there's a dynasty/House succession mechanic for artefacts
+			name = artifact_succession_title
+			value = title:c_winterfell
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 7899.1.1
+			RECIPIENT = character:Stark_51
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 7919.1.1
+			RECIPIENT = character:Stark_60
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 7951.1.1
+			RECIPIENT = character:Stark_64
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 7988.1.1
+			RECIPIENT = character:Stark_66
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8014.1.1
+			RECIPIENT = character:Stark_68
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8019.1.1
+			RECIPIENT = character:Stark_69
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8025.1.1
+			RECIPIENT = character:Stark_70
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8049.10.1
+			RECIPIENT = character:Stark_75
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8050.1.1
+			RECIPIENT = character:Stark_76
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8072.1.1
+			RECIPIENT = character:Stark_80
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8097.1.1
+			RECIPIENT = character:Stark_81
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8106.1.1
+			RECIPIENT = character:Stark_82
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8115.1.1
+			RECIPIENT = character:Stark_84
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8121.1.1
+			RECIPIENT = character:Stark_86
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8173.1.1
+			RECIPIENT = character:Stark_99
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8184.1.1
+			RECIPIENT = character:Stark_102
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8195.1.1
+			RECIPIENT = character:Stark_103
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8198.1.1
+			RECIPIENT = character:Stark_111
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8203.1.1
+			RECIPIENT = character:Stark_112
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8212.1.1
+			RECIPIENT = character:Stark_114
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8213.1.1
+			RECIPIENT = character:Stark_115
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8226.9.9
+			RECIPIENT = character:Stark_122
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8262.1.1
+			RECIPIENT = character:Stark_1
+		}
+		agot_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 8282.9.15
+			RECIPIENT = character:Stark_3
+		}
+	}
+	
+	character:Stark_12.house = { #scope the earliest Stark since they always get a claim on their throne
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}

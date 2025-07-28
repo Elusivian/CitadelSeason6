@@ -1,0 +1,323 @@
+﻿naval_war_story_type = {
+	on_setup = {
+	set_variable = {
+			name	= naval_war_status
+			value	= flag:initialized
+		}
+
+	
+	}
+	on_end = {}
+	on_owner_death = {}
+	
+	effect_group = {
+		days = 14
+
+		trigger = { var:naval_war_status = flag:initialized }
+		
+		triggered_effect = {
+			trigger = { var:naval_war_status = flag:initialized }
+			effect = {
+				
+			set_variable = {
+			name	= naval_war_status
+			value	= flag:ongoing
+			}
+
+			every_in_list = {
+							variable = naval_war
+							save_scope_as = naval_war
+						
+					
+							}
+			naval_battle_characters_setup  = yes
+			
+
+						
+
+						
+						
+						
+					
+		
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					scope:naval_attacker = { trigger_event = naval_warfare.5 }
+					
+				
+					}
+			
+			
+			
+			
+			}
+		}
+	
+	
+	
+	
+	
+	
+	
+	effect_group = {
+		days = 545
+
+		trigger = { var:naval_war_status = flag:ongoing }
+		
+		triggered_effect = {
+			trigger = { always = yes }
+			effect = {
+
+			every_in_list = {
+							variable = naval_war
+							save_scope_as = naval_war
+						
+					
+							}
+			naval_battle_characters_setup  = yes
+			
+	
+						
+					scope:naval_attacker ={ trigger_event = naval_warfare.5 }
+					}
+			
+			
+	
+			
+			}
+		}
+		
+		effect_group = {
+		days = 61
+
+		trigger = { var:naval_war_status = flag:ongoing }
+		
+		triggered_effect = {
+			trigger = { NOT = { exists = var:naval_war_check } }
+			effect = {
+
+
+			
+			
+	
+				
+
+end_story = yes
+
+				
+
+						
+					
+			
+			}
+		}
+	}
+	
+	}
+
+
+flagship_commission_story = {
+
+	on_setup = {
+	
+		if = { limit = { story_owner = { has_character_flag = small_flagship } }
+	
+	set_variable = {
+			name = small_flagship
+			value = 1
+		}
+		story_owner =  { remove_character_flag = small_flagship }
+	
+	}
+	if = { limit = { story_owner = { has_character_flag = medium_flagship } }
+	
+		set_variable = {
+			name = medium_flagship
+			value = 1
+		}
+	story_owner =  { remove_character_flag = medium_flagship }
+	}
+	if = { limit = { story_owner = { has_character_flag = large_flagship } }
+	
+		set_variable = {
+			name = large_flagship
+			value = 1
+		}
+	story_owner =  { remove_character_flag = large_flagship }
+	}
+	
+	
+	
+		set_variable = {
+			name = flagship_state
+			value = 1
+		}
+		
+		
+	}
+	
+	on_owner_death = {
+	
+	make_story_owner = story_owner.primary_heir
+	
+	}
+	
+	on_end = {
+		
+	}
+	
+	#DISCOVERY PHASE
+	
+	#Small Flagship
+	effect_group = {
+		days = 180
+		
+		trigger = {
+			var:flagship_state = 1
+			var:small_flagship = 1
+		}
+		
+		triggered_effect = {
+			trigger = { always = yes }
+			
+			effect = {
+			story_owner = {  
+					trigger_event = naval_decisions.5
+					agot_immersion_create_small_flagship_effect = { OWNER = this }
+				
+		
+				}
+				end_story = yes	
+			}
+		}
+	}
+	#Medium Flagship
+	effect_group = {
+		days = 365
+		
+		trigger = {
+			var:flagship_state = 1
+			var:medium_flagship = 1
+		}
+		
+		triggered_effect = {
+			trigger = { always = yes }
+			
+			effect = {
+			story_owner = { trigger_event = naval_decisions.1 
+			
+					trigger_event = naval_decisions.5	
+					agot_immersion_create_medium_flagship_effect = { OWNER = this }
+				
+		
+				}
+				end_story = yes	
+			}
+		}
+	}
+	
+	#Large Flagship
+	effect_group = {
+		days = 500
+		
+		trigger = {
+			var:flagship_state = 1
+			var:large_flagship = 1
+		}
+		
+		triggered_effect = {
+			trigger = { always = yes }
+			
+			effect = {
+			
+			story_owner = {
+				trigger_event = naval_decisions.1 
+				save_scope_as = ship_owner
+				random_councillor = {	limit = { has_council_position = councillor_admiral }
+				save_scope_as = admiral
+				}
+			
+					if = { limit = { scope:admiral = { 
+												is_ai = yes
+												agot_is_flawed_character = yes
+												valid_stepstones_adventurer = yes 
+												} 
+									}
+							scope:admiral = {		
+								agot_immersion_create_large_flagship_effect = { OWNER = this }
+								save_scope_as = stepstones_adventurer
+		
+		
+		##Check through the ordered western targets to see if a region needs a few more Norsemen.
+		###Iceland & the Northern Isles
+		if = {
+			limit = {
+				any_county_in_region = {
+					region = world_stepstones
+					valid_adventurer_target_trigger = yes
+				}
+			}
+			every_county_in_region = {
+				region = world_stepstones
+				limit = {
+					NOT = {
+						holder = { is_in_list = stepstones_targets_list }
+					}
+					valid_adventurer_target_trigger = yes
+				}
+				add_to_list = stepstones_targets_list
+			}
+			random_in_list = {
+				list = stepstones_targets_list
+				weight = {
+					modifier = { add = stepstones_adventurer_target_title_priority_value }
+				}
+				save_scope_as = adventurer_target
+			}
+		}
+
+		#SORT WAR
+		if = {
+			limit = { exists = scope:adventurer_target }
+			scope:stepstones_adventurer = { trigger_event = agot_adventurers_events.0004 }
+		}
+		}
+				
+				
+				
+				
+				scope:ship_owner = { trigger_event = naval_decisions.6
+				
+				}
+				
+				
+							} else = {
+									
+			
+					story_owner = { trigger_event = naval_decisions.5 }		
+					agot_immersion_create_large_flagship_effect = { OWNER = this }		
+					
+				
+			
+			}
+			}
+			end_story = yes	
+		}
+	}
+	
+}
+
+
+
+
+}

@@ -1,0 +1,12 @@
+﻿
+blademaster_training_modifier = { #Hambone added more inversed stress effects
+	icon = prowess_positive
+	health = 0.75
+	stress_gain_mult = 0.2
+	stress_loss_mult = -0.2
+	diplomacy = -1
+	martial = -1
+	stewardship = -1
+	intrigue = -1
+	learning = -1
+}

@@ -1,0 +1,92 @@
+﻿# court_position_court_smith_trigger = {
+# 	liege = { can_employ_court_position_type = court_smith_court_position }
+# 	is_vassal_of = liege
+# }
+
+# court_position_master_at_arms_trigger = {
+# 	liege = { can_employ_court_position_type = master_at_arms_court_position }
+# 	is_vassal_of = liege
+# }
+
+is_valid_travel_leader_trigger = {
+    OR = {
+        has_court_position = travel_leader_court_position
+        AND = {
+            OR = {
+                learning > 5
+                stewardship > 5
+            }
+            OR = {
+                has_trait_xp = {
+                    trait = lifestyle_traveler
+                    track = travel
+                    value >= 50
+                }
+                has_trait_xp = {
+                    trait = lifestyle_traveler
+                    track = danger
+                    value >= 50
+                }
+            }
+            OR = {
+                travel_leader_speed > 10
+                travel_leader_safety > 10
+                has_trait = adventurer
+                has_trait = flexible_leader
+                has_trait = forest_fighter
+                has_trait = open_terrain_expert
+                has_trait = rough_terrain_expert
+                has_trait = desert_warrior
+                has_trait = jungle_stalker
+                has_trait = winter_soldier
+                has_trait = lifestyle_herbalist
+                has_trait = lifestyle_hunter
+                has_trait = lifestyle_physician
+                has_trait = brave
+                has_trait = diligent
+                has_trait = administrator
+                has_trait = scholar
+            }
+            NOR = {
+                has_trait = blind
+                has_trait = clubfooted
+                has_trait = craven
+                has_trait = infirm
+                has_trait = maimed
+            }
+        }
+        AND = {
+            OR = {
+                learning > 5
+                stewardship > 5
+            }
+            OR = {
+                travel_leader_speed > 10
+                travel_leader_safety > 10
+                has_trait = adventurer
+                has_trait = flexible_leader
+                has_trait = forest_fighter
+                has_trait = open_terrain_expert
+                has_trait = rough_terrain_expert
+                has_trait = desert_warrior
+                has_trait = jungle_stalker
+                has_trait = winter_soldier
+                has_trait = lifestyle_traveler
+                has_trait = lifestyle_herbalist
+                has_trait = lifestyle_hunter
+                has_trait = lifestyle_physician
+                has_trait = brave
+                has_trait = diligent
+                has_trait = administrator
+                has_trait = scholar
+            }
+            NOR = {
+                has_trait = blind
+                has_trait = clubfooted
+                has_trait = craven
+                has_trait = infirm
+                has_trait = maimed
+            }
+        }
+    }
+}

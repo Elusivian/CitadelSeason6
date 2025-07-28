@@ -1,0 +1,676 @@
+﻿### Mega War setup and maintenance
+
+agot_mw_is_valid_to_happen = {
+	#has_game_rule = agot_mw_on
+
+	### MAY NOT BE HISTORICAL WAR ###
+	NOR = {
+		AND = {
+			$ATTACKER$ = character:Targaryen_94
+			current_date = 8195.3.7
+		}
+		AND = {
+			$ATTACKER$ = character:Baratheon_2
+			current_date = 8282.9.15
+		}
+		AND = {
+			$ATTACKER$ = character:Baratheon_3
+			current_date = 8299.3.3
+		}
+	}
+	#########
+
+	### MAY NOT TRIGGER IF BLOCKED
+	NOR = {
+		$ATTACKER$ = { has_character_flag = mw_init_event_blocker }
+		$DEFENDER$ = { has_character_flag = mw_init_event_blocker }
+	}
+
+	# Mega Wars should only trigger if an empire title is a major participant; trigger by on_action "on_war_started"
+	OR = {
+		AND = {
+			$ATTACKER$ = { agot_mw_is_empire_tier_ruler = yes }
+			$DEFENDER$ = {
+				OR = {
+					is_valid_lord_paramount = yes
+					agot_mw_has_claimant_trigger = { CLAIMANT = $DEFENDER$ HOLDER = $ATTACKER$ }
+				}
+			}
+		}
+		AND = {
+			$ATTACKER$ = {
+				OR = {
+					is_valid_lord_paramount = yes
+					agot_mw_has_claimant_trigger = { CLAIMANT = $ATTACKER$ HOLDER = $DEFENDER$ }
+				}
+			}
+			$DEFENDER$ = { agot_mw_is_empire_tier_ruler = yes }
+		}
+		$ATTACKER$ = {
+			OR = {
+				has_variable = mw_allow_mega_war # used to allow MW for tyranny wars
+				agot_mw_is_external_war_trigger = yes
+			}
+		}
+	}
+}
+
+agot_mw_is_external_war_trigger = {
+	any_owned_story = {
+		OR = {
+			#ADDED BY TYPICAL TO SUPPORT FAEGON/6th Blackfyre rebellion, since claim clause fails to work properly sadly
+			AND = {
+				prev.primary_title = title:e_targaryen_host_title
+				story_type = agot_story_targ_faegon_landing
+			}
+			AND = {
+				prev.primary_title = title:e_blackfyre_rebellion
+				story_type = agot_story_6th_blackfyre_rebellion
+			}
+		}
+	}
+}
+
+agot_mw_rebel_may_vassalize_trigger = {
+	always = no # AGOT TODO add entries once they exist
+}
+
+agot_mw_is_valid_to_happen_tyranny_war = {
+	scope:actor = {
+		highest_held_title_tier = tier_empire
+		has_government = lp_feudal_government
+	}
+}
+
+agot_mw_is_empire_tier_ruler = {
+	#has_title = title:e_the_iron_throne
+	highest_held_title_tier = tier_empire
+
+}
+
+agot_mw_weak_empire_mw_ongoing_trigger = {
+	holder = {
+		NOR = {
+			agot_mw_crown_trigger = yes
+			agot_mw_rebel_leader_trigger = yes
+			agot_mw_is_in_loyalist_list_trigger = { TARGET = scope:this_scope.holder}
+			agot_mw_is_in_neutral_list_trigger = { TARGET = scope:this_scope.holder}
+			agot_mw_is_in_rebel_list_trigger = { TARGET = scope:this_scope.holder}
+		}
+	}
+}
+
+agot_mw_has_claimant_trigger = {
+	exists = $HOLDER$.primary_title
+	OR = {
+		exists = scope:claimant
+		exists = scope:faction_claimant
+	}
+	OR = {
+		$HOLDER$ = {
+			any_held_title = {
+				OR = {
+					scope:claimant ?= { has_claim_on = prev }
+					scope:faction_claimant ?= { has_claim_on = prev }
+					$CLAIMANT$ ?= { has_claim_on = prev }
+				}
+			}
+		}
+		#scope:claimant = {
+		#	is_landed = yes
+		#	OR = {
+		#		father = $HOLDER$
+		#		mother = $HOLDER$
+		#	}
+		#}
+		#scope:faction_claimant = {
+		#	is_landed = yes
+		#	OR = {
+		#		father = $HOLDER$
+		#		mother = $HOLDER$
+		#	}
+		#}
+	}
+}
+
+agot_mw_show_declare_independence_option_trigger = {
+	NOT = {
+		any_liege_or_above = {
+			any_character_war = {
+				is_civil_war = yes
+				using_cb = agot_independence_war
+			}
+		}
+	}
+
+	NOT = { scope:war = { using_cb = agot_independence_war } }
+	NOT = { primary_title = title:k_the_most_devout }
+	#NOT = { has_variable = mw_is_loyal_to }
+	OR = {
+		highest_held_title_tier = tier_kingdom
+		any_liege_or_above = {
+			highest_held_title_tier = tier_kingdom
+			save_temporary_scope_as = temp_liege_or_above
+			agot_mw_in_LIST_of_trigger = { STORY_OWNER = scope:mw_crown TYPE = crown LIST_NAME = mw_independence_rebel_leader_list TARGET = scope:temp_liege_or_above }
+		}
+	}
+	trigger_if = { # for now hard block for AI cause AI chooses it despite having -200 weight
+		limit = {
+			is_ai = yes
+			NOT = { # show option if any liege is independence leader
+				any_liege_or_above = {
+					highest_held_title_tier = tier_kingdom
+					save_temporary_scope_as = temp_liege_or_above
+					agot_mw_in_LIST_of_trigger = { STORY_OWNER = scope:mw_crown TYPE = crown LIST_NAME = mw_independence_rebel_leader_list TARGET = scope:temp_liege_or_above }
+				}
+			}
+		}
+
+		OR = {
+			has_relation_rival = liege
+			has_relation_nemesis = liege
+			NOT = { culture = { has_same_culture_heritage = root.liege.culture } }
+			NOT = { religion = root.liege.religion }
+		}
+	}
+}
+
+agot_mw_send_options_to_diarch_trigger = {
+	has_active_diarchy = yes
+	OR = {
+		is_imprisoned = yes
+		is_adult = no
+	}
+}
+
+agot_mw_debug_trigger = {
+	has_game_rule = agot_debug_on
+	#has_global_variable = is_debug_mw_testing_mode
+}
+
+agot_mw_debug_has_mw_stance_trigger = {
+	OR = {
+		has_variable = debug_mw_loyalist
+		has_variable = debug_mw_neutral
+		has_variable = debug_mw_rebel
+	}
+}
+
+agot_mw_crown_trigger = {
+	any_owned_story = { story_type = story_agot_mw_crown }
+}
+
+agot_mw_rebel_leader_trigger = {
+	any_owned_story = { story_type = story_agot_mw_rebel }
+}
+
+# Checks whether character is in scoped character's list
+agot_mw_in_LIST_of_trigger = {
+	save_temporary_scope_as = this_scope
+	$STORY_OWNER$ = {
+		any_owned_story = {
+			story_type = story_agot_mw_$TYPE$
+			is_target_in_variable_list = { name = $LIST_NAME$ target = $TARGET$ }
+		}
+	}
+}
+
+# Checks whether character is in someone's list, no matter whose
+agot_mw_is_in_loyalist_list_trigger = {
+	save_temporary_scope_as = this_scope
+	any_ruler = {
+		any_owned_story = {
+			story_type = story_agot_mw_crown
+			is_target_in_variable_list = { name = mw_loyalist_list target = $TARGET$ }
+		}
+	}
+}
+
+# Checks whether character is in someone's list, no matter whose
+agot_mw_is_in_neutral_list_trigger = {
+	save_temporary_scope_as = this_scope
+	any_ruler = {
+		any_owned_story = {
+			story_type = story_agot_mw_crown
+			is_target_in_variable_list = { name = mw_neutral_list target = $TARGET$ }
+		}
+	}
+}
+
+# Checks whether character is in someone's list, no matter whose
+agot_mw_is_in_rebel_list_trigger = {
+	save_temporary_scope_as = this_scope
+	any_ruler = {
+		any_owned_story = {
+			story_type = story_agot_mw_rebel
+			is_target_in_variable_list = { name = mw_rebel_supporter_list target = $TARGET$ }
+		}
+	}
+}
+
+agot_mw_root_is_in_mw_faction_trigger = {
+	save_temporary_scope_as = this_scope
+	scope:mw_rebel_story ?= {
+		has_variable_list = mw_faction_members_list
+		is_target_in_variable_list = { name = mw_faction_members_list target = $TARGET$ }
+	}
+}
+
+agot_mw_house_has_historical_loyality_to_tigger = {
+	OR = {
+		AND = {
+			$TO_HOUSE$ = dynasty:dynn_Targaryen.dynasty_founder.house
+			root.house = { has_house_modifier = agot_historical_loyalty_targaryen }
+		}
+		AND = {
+			$TO_HOUSE$ = house:house_Blackfyre
+			root.house = { has_house_modifier = agot_historical_loyalty_blackfyre }
+		}
+	}
+}
+
+agot_mw_switch_side_send_trigger = {
+	scope:recipient = {
+		is_landed = yes
+	}
+	scope:actor = {
+		#NOT = { any_character_war = { using_cb = agot_independence_war } }
+		#OR = {
+		#	primary_title.tier = tier_kingdom
+		#	primary_title.tier > scope:recipient.primary_title.tier
+		#}
+		OR = {
+			AND = {
+				any_ruler = {
+					any_owned_story = {
+						story_type = story_agot_mw_crown
+						OR = {
+							story_owner = scope:actor
+							is_target_in_variable_list = { name = mw_loyalist_list target = scope:actor }
+						}
+						save_temporary_scope_as = mw_crown_story_temp
+						any_in_list = {
+							variable = mw_rebel_leader_list
+
+							any_owned_story = {
+								story_type = story_agot_mw_rebel
+								NOT = { story_owner = scope:recipient }
+								is_target_in_variable_list = { name = mw_rebel_supporter_list target = scope:recipient }
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				any_ruler = {
+					any_owned_story = {
+						story_type = story_agot_mw_rebel
+						OR = {
+							story_owner = scope:actor
+							is_target_in_variable_list = { name = mw_rebel_supporter_list target = scope:actor }
+						}
+						save_temporary_scope_as = mw_rebel_story_temp
+						any_ruler = {
+							any_owned_story = {
+								story_type = story_agot_mw_crown
+								any_in_list = {
+									variable = mw_rebel_leader_list
+									this = scope:mw_rebel_story_temp.story_owner
+								}
+								is_target_in_variable_list = { name = mw_loyalist_list target = scope:recipient }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+### Mega War traitor punishment
+agot_mw_penalty_specific_title_trigger = {
+	has_variable_list = mw_traitors_demesne_list
+}
+
+agot_mw_penalty_main_titles_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_SPEC_TITLES_TT
+		OR = {
+			has_variable = take_main_titles
+			has_variable_list = mw_traitors_demesne_list
+		}
+	}
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_MAIN_TITLES_neg_TT
+		NOT = { has_variable = take_entire_demesne }
+	}
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_BLOCK_TITLE_SEPTON_neg_TT
+		NOT = { var:selected_traitor = { has_title = title:k_the_most_devout } }
+	}
+}
+
+agot_mw_penalty_secondary_title_trigger = {
+	trigger_if = {
+		limit = { NOT = { has_variable_list = mw_traitors_demesne_list } }
+
+		custom_tooltip = {
+			text = AGOT_MW_TRAITORS_SPEC_TITLES_TT
+			has_variable_list = mw_traitors_demesne_list
+		}
+	}
+	trigger_else = {
+		custom_tooltip = {
+			text = AGOT_MW_TRAITORS_SEC_TITLES_TT
+			var:selected_traitor ?= {
+				primary_title.tier > tier_duchy
+				any_held_title = {
+					this.tier = tier_duchy
+					count > 1
+				}
+			}
+		}
+	}
+	NOT = { var:selected_traitor ?= { has_title = title:k_the_most_devout } }
+}
+
+agot_mw_penalty_entire_demesne_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_SPEC_TITLES_TT
+		OR = {
+			has_variable = take_entire_demesne
+			has_variable_list = mw_traitors_demesne_list
+		}
+	}
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_ENTIRE_DEM_neg_TT
+		NOR = {
+			has_variable = take_half_demesne
+			has_variable = take_main_titles
+		}
+	}
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_BLOCK_TITLE_SEPTON_neg_TT
+		NOT = { var:selected_traitor = { has_title = title:k_the_most_devout } }
+	}
+}
+
+agot_mw_penalty_entire_demesne_capital_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_DEMESNE_CAPITAL_TT
+		has_variable = take_entire_demesne
+		NOR = {
+			has_variable = take_half_demesne
+			has_variable = take_main_titles
+		}
+		NOT = { var:selected_traitor = { has_title = title:k_the_most_devout } }
+		variable_list_size = { name = mw_traitors_demesne_list value > 1 }
+	}
+}
+
+agot_mw_penalty_half_demesne_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_SPEC_TITLES_TT
+		OR = {
+			has_variable = take_half_demesne
+			AND = {
+				has_variable_list = mw_traitors_demesne_list
+				any_in_list = {
+					variable = mw_traitors_demesne_list
+					count > 1
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_HALF_DEM_neg_TT
+		NOT = { has_variable = take_entire_demesne }
+	}
+	NOT = { var:selected_traitor = { has_title = title:k_the_most_devout } }
+}
+
+agot_mw_penalty_hostage_trigger = {
+	# Sould only be invalid if no other member of dynasty exists or is within crown's realm
+	exists = var:selected_traitor
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_HOSTAGES_TT
+		has_variable_list = mw_traitors_hostage_list
+	}
+}
+
+agot_mw_penalty_artifact_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_ARTIFACT_TT
+		var:selected_traitor ?= {
+			any_character_artifact = { exists = this }
+		}
+	}
+}
+
+agot_mw_penalty_artifact_valuable_trigger = {
+	var:selected_traitor ?= {
+		any_character_artifact = {
+			OR = {
+				has_variable = valyrian_steel
+				has_variable = dragon_egg
+			}
+		}
+	}
+}
+
+agot_mw_penalty_execution_family_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_EXECUTION_TT
+		any_in_list = {
+			variable = mw_execution_candidates_list
+
+			agot_mw_is_family_trigger = { TRAITOR_TARGET = $TARGET$ }
+		}
+	}
+}
+
+agot_mw_penalty_execution_house_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_EXECUTION_TT
+		any_in_list = {
+			variable = mw_execution_candidates_list
+
+			agot_mw_is_house_trigger = { TRAITOR_TARGET = $TARGET$ }
+		}
+	}
+}
+
+agot_mw_penalty_wall_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_CAN_SEND_TO_WALL_TT
+		exists = title:k_the_wall.holder
+		trigger_if = {
+			limit = { var:selected_traitor = { is_female = yes } }
+
+			agot_nw_allow_women = yes
+		}
+	}
+}
+
+agot_mw_penalty_expel_family_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_EXPEL_FAMILY_TT
+		any_in_list = {
+			variable = mw_execution_candidates_list
+
+			agot_mw_is_family_trigger = { TRAITOR_TARGET = $TARGET$ }
+			NOT = { has_trait = nightswatch }
+		}
+	}
+}
+
+agot_mw_penalty_expel_house_trigger = {
+	custom_tooltip = {
+		text = AGOT_MW_TRAITORS_EXPEL_HOUSE_TT
+		any_in_list = {
+			variable = mw_execution_candidates_list
+
+			agot_mw_is_house_trigger = { TRAITOR_TARGET = $TARGET$ }
+			NOT = { has_trait = nightswatch }
+		}
+	}
+}
+
+agot_mw_has_possible_hostages_trigger = {
+	OR = {
+		any_child = {
+			exists = this
+			agot_mw_is_valid_hostage = yes
+		}
+		any_close_family_member = {
+			exists = this
+			agot_mw_is_valid_hostage = yes
+		}
+	}
+}
+
+agot_mw_is_valid_hostage = {
+	#is_courtier_of = prev
+	is_married = no
+	is_adult = no
+}
+
+agot_mw_is_traitor_char_pool_trigger = {
+	employer.top_liege ?= $EMPLOYER_TARGET$
+	NOR = {
+		this = root
+		agot_mw_is_valid_execution_candidate_evade_trigger = yes
+		# These characters can not be made responsible only due to their house
+		has_trait = kingsguard
+		has_trait = nightswatch
+		has_trait = nightswatch_temp
+		has_trait = maester
+		has_trait = silent_sister
+		has_trait = septon
+		has_trait = high_septon
+		has_trait = most_devout_member
+		is_spouse_of = $EMPLOYER_TARGET$
+	}
+}
+
+agot_mw_is_valid_execution_candidate_evade_trigger = {
+	has_character_flag = agot_is_at_unknown_place
+}
+
+agot_mw_gui_general_hide_button_trigger = {
+	NOR = {
+		has_variable = selecting_hostage
+		has_variable = selecting_specific_title
+		has_variable = selecting_artifact
+	}
+}
+
+agot_mw_has_any_punishment_variable_trigger = {
+	OR = {
+		has_variable = take_hostage
+		has_variable = sent_to_wall
+		has_variable = execution_traitor
+		has_variable = execution_family
+		has_variable = execution_house
+		has_variable = expel_traitor
+		has_variable = expel_family
+		has_variable = take_main_titles
+		has_variable = take_entire_demesne
+		has_variable = take_entire_demesne_except_capital
+		has_variable = take_artifact
+		has_variable = take_half_demesne
+	}
+}
+
+agot_mw_punishment_mild_trigger = {
+	exists = var:acceptance_indicator
+	var:acceptance_indicator > 99
+}
+
+agot_mw_punishment_adequate_trigger = {
+	exists = var:acceptance_indicator
+	var:acceptance_indicator < 100
+	var:acceptance_indicator > 79
+}
+
+agot_mw_punishment_moderate_trigger = {
+	exists = var:acceptance_indicator
+	root.var:acceptance_indicator < 80
+	root.var:acceptance_indicator > 59
+}
+
+agot_mw_punishment_harsh_trigger = {
+	exists = var:acceptance_indicator
+	var:acceptance_indicator < 60
+	var:acceptance_indicator > 29
+}
+
+agot_mw_punishment_very_harsh_trigger = {
+	exists = var:acceptance_indicator
+	var:acceptance_indicator < 30
+	var:acceptance_indicator > 0
+}
+
+agot_mw_punishment_tyrannic_trigger = {
+	exists = var:acceptance_indicator
+	var:acceptance_indicator < 1
+}
+
+agot_mw_is_family_trigger = {
+	NOT = { this = $TRAITOR_TARGET$ }
+	OR = {
+		is_child_of = $TRAITOR_TARGET$
+		is_spouse_of = $TRAITOR_TARGET$
+		#is_sibling_of = $TRAITOR_TARGET$ # Should not apply, should it?
+	}
+}
+
+agot_mw_is_house_trigger = {
+	house = $TRAITOR_TARGET$.house
+	trigger_if = {
+		limit = {
+			root = {
+				OR = {
+					has_variable = execution_family
+					has_variable = expel_family
+				}
+			}
+		}
+		NOT = { agot_mw_is_family_trigger = { TRAITOR_TARGET = $TRAITOR_TARGET$ } }
+	}
+}
+
+agot_mw_war_valid_during_megawar = {
+	trigger_if = {
+		limit = {
+			scope:defender = {
+				is_alive = yes
+			}
+		}
+		NOT = {
+			scope:defender = {
+				has_variable = pre_war_liege
+			}
+		}
+	}
+	trigger_if = {
+		limit = {
+			scope:attacker = {
+				is_alive = yes
+				has_variable = pre_war_liege
+			}
+			exists = scope:attacker.var:pre_war_liege
+		}
+		NOT = { scope:defender = scope:attacker.var:pre_war_liege }
+	}
+}
+
+agot_mw_is_in_realm_at_megawar = {
+	title:e_the_iron_throne.holder ?= {
+		any_owned_story = { story_type = story_agot_mw_crown }
+	}
+	OR = {
+		top_liege = title:e_the_iron_throne.holder
+		top_liege ?= { has_variable = pre_war_liege }
+	}
+}

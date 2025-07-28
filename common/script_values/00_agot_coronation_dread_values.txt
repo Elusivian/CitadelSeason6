@@ -1,0 +1,8 @@
+﻿agot_coronation_dread = {
+	scope:potential_supporter = {
+		add = {
+			add = dread
+			multiply = 1.0
+		}
+	}
+}

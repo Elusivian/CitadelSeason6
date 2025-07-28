@@ -1,0 +1,93 @@
+﻿# On actions for army events, triggered automatically by the game
+
+# called for armies whenever they enter a province
+# root is the owner of the army
+# scope:army is the army
+
+on_army_enter_province = {
+	events = {
+		fow_trait.0001
+		fow_trait.0002
+		fow_trait.0004
+		fow_trait.00071
+	}
+}
+
+on_combat_end_winner = {
+	events = {
+		fow_trait.0003
+		fow_trait.1001
+		fow_trait.1002
+		fow_trait.1003
+		fow_trait.1004
+		fow_trait.1005
+		fow_trait.1006
+		fow_trait.1007
+		fow_trait.1008
+		fow_trait.1009
+		fow_trait.1010
+		fow_trait.1011
+		fow_trait.1012
+		fow_trait.1013
+		fow_trait.1014
+		fow_trait.1015
+		fow_trait.1016
+		fow_trait.1017
+
+		fow_trait.2003
+		fow_trait.2004
+		fow_trait.2005
+		fow_trait.2006
+		fow_trait.2007
+		fow_trait.2008
+		fow_trait.2009
+		fow_trait.2010
+		fow_trait.2011
+		fow_trait.2012
+		fow_trait.2013
+		fow_trait.2014
+		fow_trait.2015
+		fow_trait.2016
+		fow_trait.2017
+	}
+}
+
+on_combat_end_loser = {
+	events = {
+		fow_trait.1101
+		fow_trait.1102
+		fow_trait.1103
+		fow_trait.1104
+		fow_trait.1105
+		fow_trait.1106
+		fow_trait.1107
+		fow_trait.1108
+		fow_trait.1109
+		fow_trait.1110
+		fow_trait.1111
+		fow_trait.1112
+		fow_trait.1113
+		fow_trait.1114
+		fow_trait.1115
+		fow_trait.1116
+		fow_trait.1117
+
+		fow_trait.2101
+		fow_trait.2102
+		fow_trait.2103
+		fow_trait.2104
+		fow_trait.2105
+		fow_trait.2106
+		fow_trait.2107
+		fow_trait.2108
+		fow_trait.2109
+		fow_trait.2110
+		fow_trait.2111
+		fow_trait.2112
+		fow_trait.2113
+		fow_trait.2114
+		fow_trait.2115
+		fow_trait.2116
+		fow_trait.2117
+	}
+}

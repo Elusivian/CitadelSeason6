@@ -1,0 +1,10 @@
+﻿## AGOT ADDED FILE - Bookmark groups
+agot_more_bookmarks_group = { # The Conquest of Dorne
+	default_start_date = 8157.1.15
+}
+
+
+agot_more_bookmarks_brackets_group = { # The Conquest of Dorne
+	default_start_date = 8157.1.15
+}
+

@@ -1,0 +1,163 @@
+﻿add_title_law = {
+	global = ADD_TITLE_LAW_EFFECT
+	global_past = ADD_TITLE_LAW_PAST_EFFECT
+}
+
+set_relation_bodyguard = {
+	first = set_relation_bodyguard_first
+	third = set_relation_bodyguard_first
+	global = set_relation_bodyguard_first
+}
+
+set_relation_agot_dragon = {
+	global = GET_DRAGON
+	global_past = GOT_DRAGON
+	first = I_GET_DRAGON
+	third = THEY_GET_DRAGON
+	first_past = I_GOT_DRAGON
+	third_past = THEY_GOT_DRAGON
+}
+
+set_relation_small_councillor = {
+	first = set_relation_small_councillor
+	third = set_relation_small_councillor
+	global = set_relation_small_councillor
+}
+
+agot_sailing_at_sea.0009_a_tt = {
+	global = agot_sailing_at_sea.0009_a_tt
+	first = agot_sailing_at_sea.0009_a_tt
+}
+agot_sailing_at_sea.0009_b_tt = {
+	global = agot_sailing_at_sea.0009_b_tt
+	first = agot_sailing_at_sea.0009_b_tt
+}
+agot_sailing_at_sea.0009_c_tt = {
+	global = agot_sailing_at_sea.0009_c_tt
+	first = agot_sailing_at_sea.0009_c_tt
+}
+agot_sailing_at_sea.0009_d_tt = {
+	global = agot_sailing_at_sea.0009_d_tt
+	first = agot_sailing_at_sea.0009_d_tt
+}
+agot_sailing_at_sea.0009_e_tt = {
+	global = agot_sailing_at_sea.0009_e_tt
+	first = agot_sailing_at_sea.0009_e_tt
+}
+agot_sailing_at_sea.0009_f_tt = {
+	global = agot_sailing_at_sea.0009_f_tt
+	first = agot_sailing_at_sea.0009_f_tt
+}
+agot_sailing_at_sea.0009_g_tt = {
+	global = agot_sailing_at_sea.0009_g_tt
+	first = agot_sailing_at_sea.0009_g_tt
+}
+agot_sailing_at_sea.0009_h_tt = {
+	global = agot_sailing_at_sea.0009_h_tt
+	first = agot_sailing_at_sea.0009_h_tt
+}
+
+send_to_nightswatch_interaction_effect = {
+	global = send_to_nightswatch_interaction_effect_desc
+	first = send_to_nightswatch_interaction_effect_desc
+	third = send_to_nightswatch_interaction_effect_desc
+}
+
+agot_send_to_citadel_effect_desc = {
+	global = agot_send_to_citadel_effect_desc
+	first = agot_send_to_citadel_effect_desc
+	third = agot_send_to_citadel_effect_desc
+}
+
+set_relation_paramour = {
+	global = GET_PARAMOUR
+	first = I_GET_PARAMOUR
+	first_past = I_GOT_PARAMOUR
+	third = THEY_GET_PARAMOUR
+	third_past = THEY_GOT_PARAMOUR
+}
+remove_relation_paramour = {
+	global = LOSE_PARAMOUR
+	first = I_LOSE_PARAMOUR
+	third = THEY_LOSE_PARAMOUR
+}
+
+agot_6th_blackfyre_realm_rebuild = {
+	global = agot_6th_blackfyre_realm_rebuild_loc
+}
+
+agot_faegon_realm_rebuild = {
+	global = agot_faegon_realm_rebuild_loc
+}
+
+# AGOT Mega Wars
+agot_rebuild_realm_effect_loc = {
+	third = agot_rebuild_realm_effect_loc
+	third_past = agot_rebuild_realm_effect_loc_past
+}
+
+AGOT_MW_JOIN_CROWN = {
+	global = AGOT_MW_JOIN_CROWN_a
+	first = AGOT_MW_JOIN_CROWN_first
+	first_past = AGOT_MW_JOIN_CROWN_first
+	third_past = AGOT_MW_JOIN_CROWN_third
+}
+
+sold_into_slavery_effect = {
+	third = sold_into_slavery_desc
+	global = sold_into_slavery_desc
+}
+
+agot_freedman_courtiers_will_join = {
+	global = freedman_courtiers_will_join
+	first = freedman_courtiers_will_join_first
+	first_past = freedman_courtiers_will_join_first_past
+	third = freedman_courtiers_will_join_third
+}
+
+agot_upgrade_slave_population = {
+	global = upgrade_slave_population
+	first = upgrade_slave_population_first
+	first_past = upgrade_slave_population_first_past
+	third = upgrade_slave_population_third
+}
+
+end_realm_slavery_effect_desc = {
+	third = end_realm_slavery_effect_desc
+	third_past = end_realm_slavery_effect_desc_past
+	global = end_realm_slavery_effect_desc
+}
+
+forcibly_end_realm_slavery_effect = {
+	first = forcibly_end_realm_slavery_effect_desc
+	third = forcibly_end_realm_slavery_effect_desc
+	third_past = forcibly_end_realm_slavery_effect_desc_past
+	global = forcibly_end_realm_slavery_effect_desc
+}
+
+agot_ruinized_summerhall_effect_desc = {
+	first_past = agot_ruinized_summerhall_effect_desc
+}
+
+agot_ruinized_castamere_effect_desc = {
+	first = agot_ruinized_castamere_effect_desc
+}
+
+stop_cradling_egg = {
+	global = STOP_CRADLING_EGG
+}
+
+artifact_dragon_egg_reforged_tt = {
+	first_past = artifact_dragon_egg_reforged_tt
+	third_past = artifact_dragon_egg_reforged_tt
+	global = artifact_dragon_egg_reforged_tt
+}
+
+agot_coronation_dread_challenge = {
+	first_past = I_ENTERED_DREAD_CHALLENGE_EFFECT
+	third_past = THEY_ENTERED_DREAD_CHALLENGE_EFFECT
+	global_past = ENTERED_DREAD_CHALLENGE_EFFECT
+	first = I_ENTER_DREAD_CHALLENGE_EFFECT
+	third = THEY_ENTER_DREAD_CHALLENGE_EFFECT
+	global = ENTERS_DREAD_CHALLENGE_EFFECT
+}

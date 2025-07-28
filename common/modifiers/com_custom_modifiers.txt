@@ -1,0 +1,215 @@
+﻿seasoned_rover_pos_modifier = {
+	icon = martial_positive
+	advantage = 3
+}
+
+seasoned_rover_pos_modifier_1 = {
+	icon = martial_positive
+	advantage = 6
+}
+
+seasoned_rover_pos_modifier_2 = {
+	icon = martial_positive
+	advantage = 9
+}
+
+seasoned_rover_pos_modifier_3 = {
+	icon = martial_positive
+	advantage = 12
+}
+
+seasoned_rover_neg_modifier = {
+	icon = martial_negative
+	advantage = -2
+}
+
+seasoned_rover_neg_modifier_1 = {
+	icon = martial_negative
+	advantage = -4
+}
+
+seasoned_rover_neg_modifier_2 = {
+	icon = martial_negative
+	advantage = -6
+}
+
+seasoned_rover_neg_modifier_3 = {
+	icon = martial_negative
+	advantage = -8
+}
+
+resolute_localist_pos_modifier = {
+	icon = martial_positive
+	advantage = 3
+}
+
+resolute_localist_pos_modifier_1 = {
+	icon = martial_positive
+	advantage = 6
+}
+
+resolute_localist_pos_modifier_2 = {
+	icon = martial_positive
+	advantage = 9
+}
+
+resolute_localist_pos_modifier_3 = {
+	icon = martial_positive
+	advantage = 12
+}
+
+resolute_localist_neg_modifier = {
+	icon = martial_negative
+	advantage = -2
+}
+
+resolute_localist_neg_modifier_1 = {
+	icon = martial_negative
+	advantage = -4
+}
+
+resolute_localist_neg_modifier_2 = {
+	icon = martial_negative
+	advantage = -6
+}
+
+resolute_localist_neg_modifier_3 = {
+	icon = martial_negative
+	advantage = -8
+}
+
+relentless_pursuer_modifier = {
+	icon = martial_positive
+	movement_speed = 0.05
+	pursue_efficiency = 0.1
+	stacking = yes
+}
+
+infiltration_specialist_modifier = {
+	icon = martial_positive
+	siege_phase_time = -0.25
+	min_combat_roll = 4
+	advantage = 4
+}
+
+stewardship_scaling_1_modifier = {
+	icon = martial_positive
+	supply_duration = 0.1
+}
+
+stewardship_scaling_2_modifier = {
+	icon = martial_positive
+	supply_duration = 0.2
+}
+
+stewardship_scaling_3_modifier = {
+	icon = martial_positive
+	supply_duration = 0.3
+}
+
+stewardship_scaling_4_modifier = {
+	icon = martial_positive
+	supply_duration = 0.4
+}
+
+stewardship_scaling_5_modifier = {
+	icon = martial_positive
+	supply_duration = 0.5
+}
+
+stewardship_scaling_6_modifier = {
+	icon = martial_positive
+	supply_duration = 0.6
+}
+
+stewardship_scaling_7_modifier = {
+	icon = martial_positive
+	supply_duration = 0.7
+}
+
+stewardship_scaling_8_modifier = {
+	icon = martial_positive
+	supply_duration = 0.8
+}
+
+stewardship_scaling_9_modifier = {
+	icon = martial_positive
+	supply_duration = 0.9
+}
+
+stewardship_scaling_10_modifier = {
+	icon = martial_positive
+	supply_duration = 1
+}
+
+stewardship_scaling_11_modifier = {
+	icon = martial_positive
+	supply_duration = 1.1
+}
+
+fow_war_started_modifier = {
+	icon = martial_positive
+	movement_speed = 0.1
+	enemy_hard_casualty_modifier = 0.2
+	attacker_advantage = 5
+}
+
+focus_specialist_modifier = {
+	icon = martial_positive
+	siege_phase_time = -0.5
+}
+
+intrigue_scaling_1_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.05
+}
+
+intrigue_scaling_2_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.1
+}
+
+intrigue_scaling_3_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.15
+}
+
+intrigue_scaling_4_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.2
+}
+
+intrigue_scaling_5_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.25
+}
+
+intrigue_scaling_6_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.3
+}
+
+intrigue_scaling_7_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.35
+}
+
+intrigue_scaling_8_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.4
+}
+
+intrigue_scaling_9_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.45
+}
+
+intrigue_scaling_10_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.5
+}
+
+intrigue_scaling_11_modifier = {
+	icon = martial_positive
+	counter_efficiency = 0.55
+}

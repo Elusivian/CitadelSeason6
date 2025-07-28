@@ -1,0 +1,5554 @@
+﻿### SPOILER ALERT ### DO NOT READ THIS FILE IF UNFAMILIAR WITH SEVERAL THEORIES REGARDING daemon'S REBELLION
+
+
+more_bookmarks_aegon_I_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aenys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= maegor
+			value	= flag:unborn
+		}
+		
+	}
+	on_end = {
+	if = { limit = { story_owner = { is_alive = yes } }
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# 
+		triggered_effect = {
+			trigger = {
+				current_date >= 8007.1.1
+				var:aenys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+		if = { limit = { character:Targaryen_27 = { is_alive = yes } character:Targaryen_29 = { is_alive = yes } }
+				character:Targaryen_27 = { save_scope_as = dad }
+				character:Targaryen_29 = { save_scope_as = mom }
+				}
+				
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aenys
+																value	= flag:born
+												}
+												simple_canon_kids_aenys_targaryen_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	 
+		triggered_effect = {
+			trigger = {
+				current_date >= 8012.1.1
+				var:maegor = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+		effect = {
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+		if = { limit = { character:Targaryen_27 = { is_alive = yes } character:Targaryen_28 = { is_alive = yes } }
+				character:Targaryen_27 = { save_scope_as = dad }
+				character:Targaryen_28 = { save_scope_as = mom }
+				}
+				
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= maegor
+																value	= flag:born
+												}
+												simple_canon_kids_maegor_targaryen_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:maegor = flag:born
+							var:aenys = flag:born
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+
+more_bookmarks_aenys_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhaena
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= viserys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= jaehaerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= alysanne
+			value	= flag:unborn
+		}
+	
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# Rhaena
+		triggered_effect = {
+			trigger = {
+				current_date >= 8023.1.1
+				var:rhaena = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			 if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		} 
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaena
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_32_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	 ### Aegon the Uncrowned
+		triggered_effect = {
+			trigger = {
+				current_date >= 8026.1.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+		effect = {
+			###Mother
+			 if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		} 
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_33_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		triggered_effect = {
+			trigger = {
+				current_date >= 8029.1.1
+				var:viserys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+		effect = {
+			###Mother
+		 if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		} 
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= viserys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_34_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		## Jaehaerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8034.1.1
+				var:jaehaerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+		effect = {
+			###Mother
+		 if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		} 
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= jaehaerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_35_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		#Alysanne
+		triggered_effect = {
+			trigger = {
+				current_date >= 8036.1.1
+				var:alysanne = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+		effect = {
+			###Mother
+		 if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= alysanne
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_36_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		triggered_effect = {
+			trigger = {
+					OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:aegon = flag:born
+							var:rhaena = flag:born
+							var:viserys = flag:born
+							var:jaehaerys = flag:born
+							var:alysanne = flag:born
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+
+
+
+more_bookmarks_aegon_uncrowned_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aerea
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhaella
+			value	= flag:unborn
+		}
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# Aerea
+		triggered_effect = {
+			trigger = {
+				current_date >= 8042.1.1
+				var:aerea = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aerea
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_41_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	 ### rhaella
+		triggered_effect = {
+			trigger = {
+				current_date >= 8043.1.1
+				var:rhaella = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+		effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaella
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_42_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:rhaella = flag:born
+							var:aerea = flag:born
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+more_bookmarks_jaehaerys_I_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= daenerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aemon
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= baelon
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= alyssa
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= maegelle
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= vaegon
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= daella
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= saera
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= viserra
+			value	= flag:unborn
+		}
+			set_variable = {
+			name	= gael
+			value	= flag:unborn
+		}
+	}
+	
+	
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# Daenerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8053.7.1
+				var:daenerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daenerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_44_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	# Aemon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8055.1.1
+				var:aemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aemon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_45_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Baelon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8057.1.1
+				var:baelon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= baelon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_46_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Alyssa
+		triggered_effect = {
+			trigger = {
+				current_date >= 8060.1.1
+				var:alyssa = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= alyssa
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_47_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Maegelle
+		triggered_effect = {
+			trigger = {
+				current_date >= 8063.1.1
+				var:maegelle = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= maegelle
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_48_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Vaegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8064.1.1
+				var:vaegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= vaegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_49_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Daella
+		triggered_effect = {
+			trigger = {
+				current_date >= 8064.1.1
+				var:daella = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daella
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_50_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# Saera
+		triggered_effect = {
+			trigger = {
+				current_date >= 8067.1.1
+				var:saera = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= saera
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_51_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# Vissera
+		triggered_effect = {
+			trigger = {
+				current_date >= 8071.1.1
+				var:viserra = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= viserra
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_52_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Gael
+		triggered_effect = {
+			trigger = {
+				current_date >= 8080.1.1
+				var:gael = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= gael
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_55_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:daenerys = flag:born
+							var:aemon = flag:born
+							var:baelon = flag:born
+							var:alyssa = flag:born
+							var:maegelle = flag:born
+							var:vaegon = flag:born
+							var:daella = flag:born
+							var:saera = flag:born
+							var:viserra = flag:born
+							var:gael = flag:born
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+more_bookmarks_aemon_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= rhaenys
+			value	= flag:unborn
+			
+		}
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# Daenerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8074.1.1
+				var:rhaenys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaenys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_59_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:rhaenys = flag:born
+						
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+more_bookmarks_baelon_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= viserys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daemon
+			value	= flag:unborn
+		}
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# Viserys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8077.1.1
+				var:viserys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= viserys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_60_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# Daemon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8081.1.1
+				var:daemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daemon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_61_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:viserys = flag:born
+							var:daemon = flag:born
+						
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+more_bookmarks_viserys_I_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= rhaenyra
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= helaena
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aemond
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daeron
+			value	= flag:unborn
+		}
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# rhaenyra
+		triggered_effect = {
+			trigger = {
+				current_date >= 8097.1.1
+				var:rhaenyra = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaenyra
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_63_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# aegon II
+		triggered_effect = {
+			trigger = {
+				current_date >= 8107.1.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_65_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	# helaena
+		triggered_effect = {
+			trigger = {
+				current_date >= 8109.1.1
+				var:helaena = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= helaena
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_66_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aemond
+		triggered_effect = {
+			trigger = {
+				current_date >= 8110.1.1
+				var:aemond = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aemond
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_67_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daeron
+		triggered_effect = {
+			trigger = {
+				current_date >= 8114.1.1
+				var:daeron = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daeron
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_68_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		triggered_effect = {
+			trigger = {
+				current_date >= 8172.1.1
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+	
+more_bookmarks_daemon_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= viserys
+			value	= flag:unborn
+		}
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# aegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8120.1.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_78_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# viserys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8122.1.1
+				var:viserys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= viserys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_79_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:viserys = flag:born
+							var:aegon = flag:born
+
+					
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+more_bookmarks_aegon_III_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= daeron
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= baelor
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daena
+			value	= flag:unborn
+		}
+		
+		set_variable = {
+			name	= rhaena
+			value	= flag:unborn
+		}
+		
+		set_variable = {
+			name	= elaena
+			value	= flag:unborn
+		}
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# Daeron Young Dragon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8143.1.1
+				var:daeron = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daeron
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_81_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		#Baelor
+			triggered_effect = {
+			trigger = {
+				current_date >= 8144.10.1
+				var:baelor = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= baelor
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_82_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daena
+		triggered_effect = {
+			trigger = {
+				current_date >= 8145.11.1
+				var:daena = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daena
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_83_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# rhaena
+		triggered_effect = {
+			trigger = {
+				current_date >= 8147.10.1
+				var:rhaena = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaena
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_84_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# elaena
+		triggered_effect = {
+			trigger = {
+				current_date >= 8150.10.1
+				var:elaena = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= elaena
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_85_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:daeron = flag:born
+							var:baelor = flag:born
+							var:daena = flag:born
+							var:rhaena = flag:born
+							var:elaena = flag:born
+						
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+more_bookmarks_viserys_II_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aemon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= naerys
+			value	= flag:unborn
+		}
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# aegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8135.3.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_88_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# viserys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8136.1.1
+				var:aemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aemon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_89_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# naerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8138.1.1
+				var:naerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= naerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_90_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:aegon = flag:born
+							var:aemon = flag:born
+							var:naerys = flag:born
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+more_bookmarks_aegon_IV_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		#story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= daeron
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daemon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aegor
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daenerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= brynden
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= shiera
+			value	= flag:unborn
+		}
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# daeron
+		triggered_effect = {
+			trigger = {
+				current_date >= 8153.12.1
+				var:daeron = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = {
+								exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daeron
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_91_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daemon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8170.1.1
+				var:daemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				#NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		character:Targaryen_27.house = { random_house_member = { limit = { NOT = { this = root.story_owner } NOT = { is_spouse_of = root.story_owner } is_female = yes age >= 16 age <= 40 } save_scope_as = mom } }  
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		character:Targaryen_27.house = { random_house_member = { limit = { NOT = { this = root.story_owner } NOT = { is_spouse_of = root.story_owner } is_male = yes age >= 16} save_scope_as = dad } } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daemon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_94_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daenerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8172.1.1
+				var:daenerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daenerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_92_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aegor
+		triggered_effect = {
+			trigger = {
+				current_date >= 8172.1.1
+				var:aegor = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				#NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		character:Bracken_28.house = { random_house_member = { limit = { NOT = { this = root.story_owner } is_female = yes age >= 16 age <= 40 } save_scope_as = mom } } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		character:Bracken_28.house = { random_house_member = { limit = { NOT = { this = root.story_owner } is_male = yes age >= 16 } save_scope_as = dad } } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegor
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_95_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# bloodraven
+		triggered_effect = {
+			trigger = {
+				current_date >= 8175.1.1
+				var:brynden = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		character:Blackwood_25.house = { random_house_member = { limit = { NOT = { this = root.story_owner } is_female = yes age >= 16 age <= 40 } save_scope_as = mom } } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		character:Blackwood_25.house = { random_house_member = { limit = { NOT = { this = root.story_owner } is_male = yes age >= 16 } save_scope_as = dad } } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= brynden
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_96_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	# shiera
+		triggered_effect = {
+			trigger = {
+				current_date >= 8181.1.1
+				var:shiera = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		title:k_lys.holder.house = { random_house_member = { limit = { NOT = { this = root.story_owner } is_female = yes age >= 16 age <= 40 } save_scope_as = mom } }
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		title:k_lys.holder.house = { random_house_member = { limit = { NOT = { this = root.story_owner } is_male = yes age >= 16 } save_scope_as = dad } } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= shiera
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_97_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:daeron = flag:born
+							var:daemon = flag:born
+							var:daenerys = flag:born
+							var:aegor = flag:born
+							var:brynden = flag:born
+							var:shiera = flag:born
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+more_bookmarks_daeron_II_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= baelor
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhaegel
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= maekar
+			value	= flag:unborn
+		}
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# daeron
+		triggered_effect = {
+			trigger = {
+				current_date >= 8170.1.1
+				var:baelor = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= baelor
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_107_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8172.1.1
+				var:daemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_108_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# rhaegel
+		triggered_effect = {
+			trigger = {
+				current_date >= 8173.1.1
+				var:daenerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaegel
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_109_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# maekar
+		triggered_effect = {
+			trigger = {
+				current_date >= 8172.1.1
+				var:aegor = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= maekar
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_110_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:baelor = flag:born
+							var:aerys = flag:born
+							var:rhaegel = flag:born
+							var:maekar = flag:born
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+more_bookmarks_maekar_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= daeron
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aerion
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aemon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daella
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhae
+			value	= flag:unborn
+		}
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# daeron
+		triggered_effect = {
+			trigger = {
+				current_date >= 8190.1.1
+				var:daeron = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daeron
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_118_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aerion
+		triggered_effect = {
+			trigger = {
+				current_date >= 8192.1.1
+				var:aerion = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aerion
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_119_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aemon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8198.1.1
+				var:aemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aemon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_120_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8200.1.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_122_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# daella
+		triggered_effect = {
+			trigger = {
+				current_date >= 8199.1.1
+				var:daella = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daella
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_121_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	# rhae
+		triggered_effect = {
+			trigger = {
+				current_date >= 8202.1.1
+				var:shiera = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhae
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_123_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:daeron = flag:born
+							var:aerion = flag:born
+							var:daella = flag:born
+							var:aegon = flag:born
+							var:aemon = flag:born
+							var:rhae = flag:born
+	
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+
+more_bookmarks_aegon_V_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= duncan
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= jaehaerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= shaera
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daeron
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhaelle
+			value	= flag:unborn
+		}
+	
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# duncan
+		triggered_effect = {
+			trigger = {
+				current_date >= 8221.12.1
+				var:duncan = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= duncan
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_126_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# jaehaerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8225.1.1
+				var:jaehaerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= jaehaerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_127_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# shaera
+		triggered_effect = {
+			trigger = {
+				current_date >= 8226.1.1
+				var:shaera = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= shaera
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_128_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daeron
+		triggered_effect = {
+			trigger = {
+				current_date >= 8228.1.1
+				var:daeron = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daeron
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_129_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		# rhaelle
+		triggered_effect = {
+			trigger = {
+				current_date >= 8230.1.1
+				var:rhaelle = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= brynden
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_130_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:duncan = flag:born
+							var:jaehaerys = flag:born
+							var:shaera = flag:born
+							var:daeron = flag:born
+							var:rhaelle = flag:born
+	
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+
+more_bookmarks_jaehaerys_II_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhaella
+			value	= flag:unborn
+		}
+		
+	
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# aerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8243.1.1
+				var:aerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_1_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# rhaella
+		triggered_effect = {
+			trigger = {
+				current_date >= 8245.1.1
+				var:rhaella = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaella
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_2_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+	
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:aerys = flag:born
+							var:rhaella = flag:born
+					
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}	
+	
+	
+more_bookmarks_aerys_II_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= rhaegar
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= viserys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daenerys
+			value	= flag:unborn
+		}
+	
+	
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# rhaegar
+		triggered_effect = {
+			trigger = {
+				current_date >= 8259.6.1
+				var:rhaegar = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaegar
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_3_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# viserys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8276.1.1
+				var:viserys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= viserys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_8_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daenerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8284.1.1
+				var:daenerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daenerys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_9_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:rhaegar = flag:born
+							var:viserys = flag:born
+							var:daenerys = flag:born
+				
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	more_bookmarks_rhaegar_targaryen_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= rhaenys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= jon
+			value	= flag:unborn
+		}
+		
+	
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# rhaenys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8280.9.1
+				var:rhaenys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhaenys
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_10_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8282.1.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												simple_canon_kids_targaryen_11_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Jon AKA Lightbringer
+		triggered_effect = {
+			trigger = {
+				current_date >= 8284.1.1
+				var:jon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+				NOT = { story_owner = { has_character_flag = canon_birth_cooldown } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= jon
+																value	= flag:born
+												}
+												simple_canon_kids_stark_7_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		
+		
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:rhaenys = flag:born
+							var:aegon = flag:born
+							var:jon = flag:born
+						
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+	
+	
+more_bookmarks_daemon_blackfyre_simple_canon_kids = {
+	# by Freeholder
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner = { add_character_modifier = simple_canon_kids_infertility }
+		set_variable = {
+			name	= aegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aemon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daemon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= calla
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= haegon
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daenerys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aenys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aegor
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= maelys
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daena
+			value	= flag:unborn
+		}
+	
+
+		
+		
+	}
+	on_end = {
+	story_owner = { remove_character_modifier = simple_canon_kids_infertility } 
+	}
+	on_owner_death = {
+	if = { limit = { exists = story_owner.primary_heir }
+	make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = { story_owner = { any_child = { is_male = yes is_alive = yes } } }
+		random_child = { limit = { is_male = yes is_alive = yes } save_scope_as = new_owner }
+		scope:new_owner = { add_character_modifier = simple_canon_kids_infertility }
+		make_story_owner = scope:new_owner
+	}
+	else = {
+	character:Targaryen_27.house.house_head = { add_character_modifier = simple_canon_kids_infertility }
+	make_story_owner = character:Targaryen_27.house.house_head
+	}
+
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 7
+
+		# aegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8184.10.1
+				var:aegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon
+																value	= flag:born
+												}
+												set_variable = {
+																name	= aemon
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_1_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												simple_canon_kids_blackfyre_2_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aemon
+		#triggered_effect = {
+		#	trigger = {
+		#		current_date >= 8184.10.1
+		#		var:aemon = flag:unborn
+		#		story_owner = { is_male = yes }
+		#	}
+		#
+		#	effect = {
+		#	###Mother
+		#	if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+		#		if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+		#					random_list = {
+		#									10 = { # Child is born
+		#										
+		#						
+		#										
+		#						
+		#										
+		#										
+		#										set_variable = {
+		#														name	= aemon
+		#														value	= flag:born
+		#										}
+		#										simple_canon_kids_blackfyre_2_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+		#										}
+		#										
+		#										
+		#										
+		#									
+		#								
+		#									200 = { # nothing happens
+		#										
+		#										
+		#									}
+		#					}
+		#					}
+		#	
+		#	
+		#	}
+		#}
+		# Calla
+		triggered_effect = {
+			trigger = {
+				current_date >= 8185.10.1
+				var:calla = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= calla
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_3_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daenerys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8187.1.1
+				var:daenerys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daenerys
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_4_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# daemon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8188.1.1
+				var:daemon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daemon
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_5_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Haegon
+		triggered_effect = {
+			trigger = {
+				current_date >= 8189.1.1
+				var:haegon = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= haegon
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_6_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Aenys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8190.1.1
+				var:aenys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aenys
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_7_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# aegor
+		triggered_effect = {
+			trigger = {
+				current_date >= 8192.1.1
+				var:aegor = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegor
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_8_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Maelys
+		triggered_effect = {
+			trigger = {
+				current_date >= 8193.1.1
+				var:maelys = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= maelys
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_9_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		# Daena
+		triggered_effect = {
+			trigger = {
+				current_date >= 8195.1.1
+				var:daena = flag:unborn
+				NOT = { story_owner = { has_trait = pregnant } }
+			}
+
+			effect = {
+			###Mother
+			if = { limit = { story_owner = { is_male = yes } } 
+		story_owner = { save_scope_as = dad  }
+		story_owner.primary_spouse = { save_scope_as = mom } 
+		}
+		else = {
+		story_owner =  { save_scope_as = mom }
+		story_owner.primary_spouse = { save_scope_as = dad } 
+		}
+				if = { limit = { exists = scope:mom 
+								 exists = scope:dad
+				} 
+							random_list = {
+											10 = { # Child is born
+												
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daena 
+																value	= flag:born
+												}
+												simple_canon_kids_blackfyre_10_birth_effect = { FATHER = scope:dad MOTHER = scope:mom }
+												}
+												
+												
+												
+											
+										
+											200 = { # nothing happens
+												
+												
+											}
+							}
+							}
+			
+			
+			}
+		}
+		triggered_effect = {
+			trigger = {
+				OR = { 
+						current_date >= 8400.1.1
+					 AND = {
+							var:aegon = flag:born
+							var:aemon = flag:born
+							var:calla = flag:born
+							var:daenerys = flag:born
+							var:daemon = flag:born
+							var:haegon = flag:born
+							var:aenys = flag:born
+							var:aegor = flag:born
+							var:maelys = flag:born
+							var:daena = flag:born
+							
+					}
+				}
+				
+			}
+
+			effect = {
+			end_story = yes
+			
+			
+			}
+		}
+
+			
+	}
+		
+		
+		
+	
+
+
+
+
+
+		##########################
+
+
+		
+	}

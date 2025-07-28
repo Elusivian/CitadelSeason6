@@ -1,0 +1,12 @@
+﻿feudalize_tribal_holding_interaction_cost = {
+	value = 500
+	if = {
+		limit = {
+			is_ai = yes
+			#AGOT Modified
+			#capital_province = { has_holding_type = tribal_holding }
+			capital_province ?= { has_holding_type = tribal_holding }
+		}
+		add = -250
+	}
+}

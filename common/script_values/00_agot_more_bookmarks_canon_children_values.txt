@@ -1,0 +1,387 @@
+﻿
+### The Conqueror and his siblings
+
+agot_more_bookmarks_canon_children_birth_year_visenya_targaryen = 7972
+agot_more_bookmarks_canon_children_birth_year_visenya_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_visenya_targaryen add = -1 }
+
+
+agot_more_bookmarks_canon_children_birth_year_aegon_i_targaryen = 7974
+agot_more_bookmarks_canon_children_birth_year_aegon_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_i_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhaenys_targaryen = 7976
+agot_more_bookmarks_canon_children_birth_year_rhaenys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaenys_targaryen add = -1 }
+
+
+agot_more_bookmarks_canon_children_birth_year_orys_baratheon = 7978
+agot_more_bookmarks_canon_children_birth_year_orys_baratheon_min = { value = agot_more_bookmarks_canon_children_birth_year_orys_baratheon add = -1 }
+
+
+# Issue of Aegon Targaryen
+agot_more_bookmarks_canon_children_birth_year_aenys_targaryen = 8007
+agot_more_bookmarks_canon_children_birth_year_aenys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aenys_targaryen add = -1 }
+
+
+agot_more_bookmarks_canon_children_birth_year_maegor_targaryen = 8012
+agot_more_bookmarks_canon_children_birth_year_maegor_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_maegor_targaryen add = -1 }
+
+
+### Issue of Aenys
+
+
+agot_more_bookmarks_canon_children_birth_year_rhaena_targaryen = 8023
+agot_more_bookmarks_canon_children_birth_year_rhaena_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaena_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegon_uncrowned_targaryen = 8026
+agot_more_bookmarks_canon_children_birth_year_aegon_uncrowned_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_uncrowned_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_viserys_targaryen = 8028
+agot_more_bookmarks_canon_children_birth_year_viserys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_viserys_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_jaehaerys_i_targaryen = 8034
+agot_more_bookmarks_canon_children_birth_year_jaehaerys_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_jaehaerys_i_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_alysanne_targaryen = 8036
+agot_more_bookmarks_canon_children_birth_year_alysanne_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_alysanne_targaryen add = -1 }
+
+
+### Issue of Maegor
+
+agot_more_bookmarks_canon_children_birth_year_maegor_kid_1 = 8044
+agot_more_bookmarks_canon_children_birth_year_maegor_kid_1_min = { value = agot_more_bookmarks_canon_children_birth_year_maegor_kid_1 add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maegor_kid_2 = 8047
+agot_more_bookmarks_canon_children_birth_year_maegor_kid_2_min = { value = agot_more_bookmarks_canon_children_birth_year_maegor_kid_2 add = -1 }
+
+
+agot_more_bookmarks_canon_children_birth_year_maegor_kid_3 = 8050
+agot_more_bookmarks_canon_children_birth_year_maegor_kid_3_min = { value = agot_more_bookmarks_canon_children_birth_year_maegor_kid_3 add = -1 }
+
+
+### Issue of Jaehaerys
+
+
+agot_more_bookmarks_canon_children_birth_year_daenerys_j_targaryen = 8053
+agot_more_bookmarks_canon_children_birth_year_daenerys_j_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daenerys_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aemon_targaryen = 8055
+agot_more_bookmarks_canon_children_birth_year_aemon_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aemon_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_baelon_targaryen = 8057
+agot_more_bookmarks_canon_children_birth_year_baelon_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_baelon_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_alyssa_targaryen = 8060
+agot_more_bookmarks_canon_children_birth_year_alyssa_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_alyssa_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maegelle_targaryen = 8062
+agot_more_bookmarks_canon_children_birth_year_maegelle_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_maegelle_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daella_targaryen = 8064
+agot_more_bookmarks_canon_children_birth_year_daella_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daella_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_vaegon_targaryen = 8063
+agot_more_bookmarks_canon_children_birth_year_vaegon_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_vaegon_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_saera_targaryen = 8067
+agot_more_bookmarks_canon_children_birth_year_saera_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_saera_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_viserra_targaryen = 8071
+agot_more_bookmarks_canon_children_birth_year_viserra_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_viserra_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_gael_targaryen = 8080
+agot_more_bookmarks_canon_children_birth_year_gael_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_gael_targaryen add = -1 }
+
+
+### Issue of Aegon the Uncrowned
+
+agot_more_bookmarks_canon_children_birth_year_aerea_targaryen = 8042
+agot_more_bookmarks_canon_children_birth_year_aerea_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aerea_targaryen add = -1 }
+
+#agot_more_bookmarks_canon_children_birth_year_rhaella_targaryen = 8044
+#agot_more_bookmarks_canon_children_birth_year_rhaella_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaella_targaryen add = -1 }
+
+
+
+
+### Issue of Aemon
+
+agot_more_bookmarks_canon_children_birth_year_rhaenys_targaryen_tqhnw = 8078
+agot_more_bookmarks_canon_children_birth_year_rhaenys_targaryen_tqhnw_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaenys_targaryen_tqhnw add = -1 }
+
+
+### Issue of Baelon
+
+agot_more_bookmarks_canon_children_birth_year_viserys_i_targaryen = 8079
+agot_more_bookmarks_canon_children_birth_year_viserys_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_viserys_i_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daemon_targaryen = 8081
+agot_more_bookmarks_canon_children_birth_year_daemon_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daemon_targaryen add = -1 }
+
+
+### Issue of Viserys
+
+agot_more_bookmarks_canon_children_birth_year_rhaenyra_targaryen = 8097
+agot_more_bookmarks_canon_children_birth_year_rhaenyra_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaenyra_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_heir_for_a_day = 8106
+agot_more_bookmarks_canon_children_birth_year_heir_for_a_day_min = { value = agot_more_bookmarks_canon_children_birth_year_heir_for_a_day add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegon_ii_targaryen = 8108
+agot_more_bookmarks_canon_children_birth_year_aegon_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_ii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_helaena_targaryen = 8109
+agot_more_bookmarks_canon_children_birth_year_helaena_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_helaena_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aemond_targaryen = 8110
+agot_more_bookmarks_canon_children_birth_year_aemond_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aemond_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daeron_daring_targaryen = 8114
+agot_more_bookmarks_canon_children_birth_year_daeron_daring_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daeron_daring_targaryen add = -1 }
+
+
+### Issue of Aegon II
+
+agot_more_bookmarks_canon_children_birth_year_jaehaerys_bc_targaryen = 8127
+agot_more_bookmarks_canon_children_birth_year_jaehaerys_bc_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_jaehaerys_bc_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_jaehaera_targaryen = 8127
+agot_more_bookmarks_canon_children_birth_year_jaehaera_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_jaehaera_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maelor_targaryen = 8129
+agot_more_bookmarks_canon_children_birth_year_maelor_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_maelor_targaryen add = -1 }
+
+
+### Issue of Rhaenyra
+
+agot_more_bookmarks_canon_children_birth_year_jacaerys_targaryen = 8115
+agot_more_bookmarks_canon_children_birth_year_jacaerys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_jacaerys_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_lucerys_targaryen = 8116
+agot_more_bookmarks_canon_children_birth_year_lucerys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_lucerys_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_joffrey_targaryen = 8117
+agot_more_bookmarks_canon_children_birth_year_joffrey_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_joffrey_targaryen add = -1 }
+
+
+### Issue of Daemon
+
+agot_more_bookmarks_canon_children_birth_year_baela_targaryen = 8115
+agot_more_bookmarks_canon_children_birth_year_baela_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_baela_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhaena_dork_targaryen = 8116
+agot_more_bookmarks_canon_children_birth_year_rhaena_dork_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaena_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegon_iii_targaryen = 8122
+agot_more_bookmarks_canon_children_birth_year_aegon_iii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_iii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_viserys_ii_targaryen = 8124
+agot_more_bookmarks_canon_children_birth_year_viserys_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_viserys_ii_targaryen add = -1 }
+
+
+### Issue of Aegon III
+
+agot_more_bookmarks_canon_children_birth_year_daeron_i_targaryen = 8143
+agot_more_bookmarks_canon_children_birth_year_daeron_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daeron_i_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_baelor_i_targaryen = 8144
+agot_more_bookmarks_canon_children_birth_year_baelor_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_baelor_i_targaryen add = -1 }
+
+
+agot_more_bookmarks_canon_children_birth_year_daena_targaryen = 8145
+agot_more_bookmarks_canon_children_birth_year_daena_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daena_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhaena_her_targaryen = 8146
+agot_more_bookmarks_canon_children_birth_year_rhaena_her_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaena_her_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_elaena_targaryen = 8147
+agot_more_bookmarks_canon_children_birth_year_elaena_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_elaena_targaryen add = -1 }
+
+
+### Issue of Viserys II
+
+agot_more_bookmarks_canon_children_birth_year_aegon_iv_targaryen = 8134
+agot_more_bookmarks_canon_children_birth_year_aegon_iv_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_iv_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aemon_dragonknight_targaryen = 8135
+agot_more_bookmarks_canon_children_birth_year_aemon_dragonknight_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aemon_dragonknight_targaryen add = -1 }
+
+is_targaryen_90 = 8136
+agot_more_bookmarks_canon_children_birth_year_naerys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_naerys_targaryen add = -1 }
+
+
+
+### Issue of Aegon IV
+
+agot_more_bookmarks_canon_children_birth_year_daeron_ii_targaryen = 8154
+agot_more_bookmarks_canon_children_birth_year_daeron_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daeron_ii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_balerion_otherys = 8168
+agot_more_bookmarks_canon_children_birth_year_balerion_otherys_min = { value = agot_more_bookmarks_canon_children_birth_year_balerion_otherys add = -1 }
+
+
+
+agot_more_bookmarks_canon_children_birth_year_daemon_blackfyre = 8170
+agot_more_bookmarks_canon_children_birth_year_daemon_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_daemon_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegor_bittersteel = 8172
+agot_more_bookmarks_canon_children_birth_year_aegor_bittersteel_min = { value = agot_more_bookmarks_canon_children_birth_year_aegor_bittersteel add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daenerys_targaryen = 8173
+agot_more_bookmarks_canon_children_birth_year_daenerys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daenerys_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_brynden_bloodraven = 8175
+agot_more_bookmarks_canon_children_birth_year_brynden_bloodraven_min = { value = agot_more_bookmarks_canon_children_birth_year_brynden_bloodraven add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_shiera_seastar = 8180
+agot_more_bookmarks_canon_children_birth_year_shiera_seastar_min = { value = agot_more_bookmarks_canon_children_birth_year_shiera_seastar add = -1 }
+
+
+
+### Issue of Daeron II
+
+agot_more_bookmarks_canon_children_birth_year_baelor_ii_targaryen = 8170
+agot_more_bookmarks_canon_children_birth_year_baelor_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_baelor_ii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aerys_i_targaryen = 8172
+agot_more_bookmarks_canon_children_birth_year_aerys_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aerys_i_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhaegel_targaryen = 8173
+agot_more_bookmarks_canon_children_birth_year_rhaegel_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaegel_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maekar_i_targaryen = 8175
+agot_more_bookmarks_canon_children_birth_year_maekar_i_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_maekar_i_targaryen add = -1 }
+
+
+
+### Issue of Baelor
+
+agot_more_bookmarks_canon_children_birth_year_valarr_targaryen = 8194
+agot_more_bookmarks_canon_children_birth_year_valarr_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_valarr_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_matarys_targaryen = 8195
+agot_more_bookmarks_canon_children_birth_year_matarys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_matarys_targaryen add = -1 }
+
+
+### Issue of Rhaegel
+
+agot_more_bookmarks_canon_children_birth_year_aelor_targaryen = 8197
+agot_more_bookmarks_canon_children_birth_year_aelor_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aelor_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aelora_targaryen = 8197
+agot_more_bookmarks_canon_children_birth_year_aelora_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aelora_targaryen add = -1 }
+
+
+### Issue of Maekar
+
+agot_more_bookmarks_canon_children_birth_year_daeron_drunken_targaryen = 8190
+agot_more_bookmarks_canon_children_birth_year_daeron_drunken_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daeron_drunken_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aerion_targaryen = 8191
+agot_more_bookmarks_canon_children_birth_year_aerion_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aerion_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maester_aemon_targaryen = 8198
+agot_more_bookmarks_canon_children_birth_year_maester_aemon_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_maester_aemon_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daella_m_targaryen = 8199
+agot_more_bookmarks_canon_children_birth_year_daella_m_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daella_m_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegon_v_targaryen = 8200
+agot_more_bookmarks_canon_children_birth_year_aegon_v_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_v_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhae_targaryen = 8205
+agot_more_bookmarks_canon_children_birth_year_rhae_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhae_targaryen add = -1 }
+
+
+### Issue of Aegon V
+
+agot_more_bookmarks_canon_children_birth_year_duncan_targaryen = 8221
+agot_more_bookmarks_canon_children_birth_year_duncan_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_duncan_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_jaehaerys_ii_targaryen = 8225
+agot_more_bookmarks_canon_children_birth_year_jaehaerys_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_jaehaerys_ii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_shaera_targaryen = 8226
+agot_more_bookmarks_canon_children_birth_year_shaera_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_shaera_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daeron_gay_targaryen = 8229
+agot_more_bookmarks_canon_children_birth_year_daeron_gay_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daeron_gay_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhaelle_targaryen = 8230
+agot_more_bookmarks_canon_children_birth_year_rhaelle_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaelle_targaryen add = -1 }
+
+### Issue of Jaehaerys II
+
+agot_more_bookmarks_canon_children_birth_year_aerys_ii_targaryen = 8245
+agot_more_bookmarks_canon_children_birth_year_aerys_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aerys_ii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_rhaella_ii_targaryen = 8246
+agot_more_bookmarks_canon_children_birth_year_rhaella_ii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaella_ii_targaryen add = -1 }
+
+### Issue of Aerys II
+
+agot_more_bookmarks_canon_children_birth_year_rhaegar_targaryen = 8259
+agot_more_bookmarks_canon_children_birth_year_rhaegar_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaegar_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_viserys_iii_targaryen = 8276
+agot_more_bookmarks_canon_children_birth_year_viserys_iii_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_viserys_iii_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daenerys_stormborn_targaryen = 8284
+agot_more_bookmarks_canon_children_birth_year_daenerys_stormborn_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_daenerys_stormborn_targaryen add = -1 }
+
+### Issue of Rhaegar
+
+agot_more_bookmarks_canon_children_birth_year_rhaenys_smells_dornish_targaryen = 8280
+agot_more_bookmarks_canon_children_birth_year_rhaenys_smells_dornish_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_rhaenys_smells_dornish_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegon_vi_targaryen = 8282
+agot_more_bookmarks_canon_children_birth_year_aegon_vi_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_vi_targaryen add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_jonhaerys_targaryen = 8284
+agot_more_bookmarks_canon_children_birth_year_jonhaerys_targaryen_min = { value = agot_more_bookmarks_canon_children_birth_year_jonhaerys_targaryen add = -1 }
+
+
+### Issue of Daemon Blackfyre
+
+agot_more_bookmarks_canon_children_birth_year_aegon_blackfyre = 8184
+agot_more_bookmarks_canon_children_birth_year_aegon_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_aegon_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aemon_blackfyre = 8184
+agot_more_bookmarks_canon_children_birth_year_aemon_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_aemon_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_calla_blackfyre = 8185
+agot_more_bookmarks_canon_children_birth_year_calla_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_calla_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daenerys_blackfyre = 8186
+agot_more_bookmarks_canon_children_birth_year_daenerys_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_daenerys_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daemon_ii_blackfyre = 8187
+agot_more_bookmarks_canon_children_birth_year_daemon_ii_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_daemon_ii_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_haegon_blackfyre = 8188
+agot_more_bookmarks_canon_children_birth_year_haegon_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_haegon_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aenys_blackfyre = 8189
+agot_more_bookmarks_canon_children_birth_year_aenys_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_aenys_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aegor_blackfyre = 8190
+agot_more_bookmarks_canon_children_birth_year_aegor_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_aegor_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maelys_i_blackfyre = 8191
+agot_more_bookmarks_canon_children_birth_year_maelys_i_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_maelys_i_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_daena_blackfyre = 8192
+agot_more_bookmarks_canon_children_birth_year_daena_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_daena_blackfyre add = -1 }
+
+
+### Gen 2 Blackfyre
+
+agot_more_bookmarks_canon_children_birth_year_daemon_iii_blackfyre = 8214
+agot_more_bookmarks_canon_children_birth_year_daemon_iii_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_daemon_iii_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_aemon_ii_blackfyre = 8215
+agot_more_bookmarks_canon_children_birth_year_aemon_ii_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_aemon_ii_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_balerion_blackfyre = 8218
+agot_more_bookmarks_canon_children_birth_year_balerion_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_balerion_blackfyre add = -1 }
+
+agot_more_bookmarks_canon_children_birth_year_maelys_blackfyre = 8220
+agot_more_bookmarks_canon_children_birth_year_maelys_blackfyre_min = { value = agot_more_bookmarks_canon_children_birth_year_maelys_blackfyre add = -1 }

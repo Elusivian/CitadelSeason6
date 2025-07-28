@@ -1,0 +1,32 @@
+﻿agot_more_bookmarks_canon_children_child_pregnancy_trigger = {
+	#spouse = { save_temporary_scope_as = father }
+	NOT = {
+		agot_more_bookmarks_canon_children_had_child_trigger = {
+			ID = $ID$
+			FATHER = scope:canon_father
+			TRAIT = $TRAIT$
+		}
+	}
+	agot_canon_children_birth_year_trigger = { BIRTH_YEAR = $BIRTH_YEAR$ }
+	is_alive = yes
+	is_pregnant = no
+	can_have_children = yes
+
+	scope:canon_father = {
+		can_have_children = yes
+	}
+}
+
+
+agot_more_bookmarks_canon_children_had_child_trigger = {
+	OR = {
+		exists = character:$ID$
+		$FATHER$ = { has_inactive_trait = $TRAIT$ }
+		$FATHER$ = {
+			any_close_or_extended_family_member = {
+				even_if_dead = yes
+				has_inactive_trait = $TRAIT$
+			}
+		}
+	}
+}

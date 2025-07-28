@@ -1,0 +1,97 @@
+﻿###################
+# AGOT Bookmarked #
+###################
+
+#################################
+# Dance of the Dragons Scenario #
+#################################
+agot_8236_fourth_blackfyre_rebellion_scenario_setup = {
+	hidden_effect = {
+	
+		
+		character:Targaryen_95 = { 
+		add_opinion = {
+					target = character:Targaryen_108
+					modifier = hate_opinion
+					opinion = -100
+				}
+				add_opinion = {
+					target = character:Targaryen_110
+					modifier = hate_opinion
+					opinion = -100
+				}
+		 set_designated_heir_unsafe = character:Blackfyre_11
+				}
+				
+		#character:Blackfyre_11 = {
+		#if = { limit = { has_title = e_blackfyre_rebellion }
+		#
+		#destroy_title = title:e_blackfyre_rebellion
+		#
+		#
+		#}
+		
+		character:Blackfyre_11 = { 
+		get_title = title:c_qorena
+		add_gold = 1000
+		spawn_army = {
+					levies = 0
+					name = the_golden_company_name
+					men_at_arms = {
+						type = light_footmen # 2000
+						stacks = 20
+					}
+					men_at_arms = {
+						type = pikemen_unit # 2000
+						stacks = 20
+					}
+					men_at_arms = {
+						type = armored_footmen # 2000
+						stacks = 20
+					}
+					men_at_arms = {
+						type = light_horsemen # 2500
+						stacks = 25
+					}
+					men_at_arms = {
+						type = armored_horsemen # 500
+						stacks = 10
+					}
+					men_at_arms = {
+						type = bowmen # 300
+						stacks = 3
+					}
+					men_at_arms = {
+						type = longbowmen # 700
+						stacks = 7
+					}
+					men_at_arms = {
+						type = war_elephant # 25
+						stacks = 1
+					}
+					location = title:c_goldfuror.title_province
+					origin = title:c_goldfuror.title_province
+					inheritable = yes
+				}
+				
+		
+		
+		
+						
+					
+	
+	 trigger_event = {
+								id = blackfyre_bookmark_rebellion.0002
+								days = { 60 90 }
+							} 
+		}
+		
+	
+	
+			
+			
+			}
+			}
+
+
+}

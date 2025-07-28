@@ -1,0 +1,13 @@
+﻿economically_undermined_modifier = {
+	icon = county_modifier_development_negative
+	development_growth_factor = -0.3
+	levy_size = -0.5
+	monthly_county_control_growth_factor = -0.3
+}
+
+economically_undermined_character_modifier = {
+	icon = economy_negative
+	monthly_income = -4
+	domain_tax_mult = -0.75
+	general_opinion = -30
+}

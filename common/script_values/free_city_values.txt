@@ -1,0 +1,48 @@
+﻿candidate_score_value = { # Irritatingly, we can't just add the votes for an individual character because it would be add = number_of_election_votes = { scope:term_limit_country } and we can't have the two equals
+	value = 0
+	save_temporary_scope_as = candidate
+	scope:term_limit_country = {
+		every_elector = {
+			save_temporary_scope_as = person
+			if = {
+				limit = { scope:candidate = { has_election_vote_of = { who = scope:person title = scope:term_limit_country } } }
+				add = gold # Since gold is the vote power of each elector, we just add that 
+			}
+		}
+	}
+}
+
+reverse_gold = {
+	value = gold
+	multiply = -1
+	add = 5000
+}
+
+war_vote_declaration = {
+	value = 0
+	if = { limit = { liege_or_court_owner = { exists = var:vote_triarchy var:vote_triarchy = 1 } } add = 70 }
+	if = { limit = { opinion = { target = scope:recipient value = { 0 50 } } } subtract = 10 }
+	if = { limit = { opinion = { target = scope:recipient value = { -50 0 } } } add = 10 }
+	if = { limit = { opinion = { target = scope:recipient value = { 50 100 } } } subtract = 20 }
+	if = { limit = { opinion = { target = scope:recipient value = { -100 -50 } } } add = 20 }
+	if = { limit = { opinion = { target = scope:actor value = { 0 50 } } } add = 10 }
+	if = { limit = { opinion = { target = scope:actor value = { -50 0 } } } subtract = 10 }
+	if = { limit = { opinion = { target = scope:actor value = { 50 100 } } } add = 20 }
+	if = { limit = { opinion = { target = scope:actor value = { -100 -50 } } } subtract = 20 }
+	if = { limit = { has_trait = brave } add = 10 }
+	if = { limit = { has_trait = craven } subtract = 10 }
+	if = { limit = { has_trait = ambitious } add = 10 }
+	if = { limit = { has_trait = content } subtract = 10 }
+	if = { limit = { scope:actor.current_military_strength > scope:recipient.current_military_strength } add = 20 }
+	if = { limit = { scope:actor.max_military_strength > scope:recipient.max_military_strength } add = 20 }
+	if = { limit = { scope:actor.current_military_strength < scope:recipient.current_military_strength } subtract = 20 }
+	if = { limit = { scope:actor.max_military_strength < scope:recipient.max_military_strength } subtract = 20 }
+}
+
+total_votes_for = {
+	value = 0
+	every_in_global_list = {
+		variable = all_triarchy_magisters
+		add = var:vote_triarchy
+	}
+}

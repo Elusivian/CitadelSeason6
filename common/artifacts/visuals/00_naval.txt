@@ -1,0 +1,5 @@
+﻿
+flagship = {
+	icon = "flagship.dds"
+	asset = ep1_indian_book_big_01_a_entity
+}

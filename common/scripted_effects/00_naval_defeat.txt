@@ -1,0 +1,400 @@
+﻿### General Effects ###
+
+
+### Naval War setup ###
+
+
+naval_defeat_effect = {
+			
+		random_list = {
+							200 = { 
+							scope:army = {
+							deplete_army_by_percentage = 0.3
+									}
+							}
+							100 = { 
+							scope:army = {
+							deplete_army_by_percentage = 0.5
+									}
+							}
+							100 = { 
+							scope:army = {
+							deplete_army_by_percentage = 0.6
+									}
+							}
+							100 = { 
+							scope:army = {
+							deplete_army_by_percentage = 0.7
+									}		
+									
+							}
+							
+							
+							
+						}	
+			
+				
+				
+		}
+
+
+
+
+
+
+
+
+
+
+naval_defeat_old_effect = {
+				save_scope_as = invader
+				scope:army.army_commander ?= { save_scope_as = invading_commander }
+				random_war_enemy = {
+			limit = {
+				any_war = { is_war_leader = prev }
+			}
+			save_scope_as = naval_opponent_leader
+		}
+		scope:naval_opponent_leader = { if =  {
+			limit = {
+				cp:councillor_admiral ?= {
+					is_available = yes
+				}
+			}
+			cp:councillor_admiral = {
+				save_scope_as = city_defender
+			}
+		}
+		else_if = {
+			limit = {
+				is_available = yes
+			}
+			save_scope_as = city_defender
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_diarchy_type = temporary_regency
+					has_diarchy_type = regency
+				}
+				diarch = {
+					is_available = yes
+				}
+			}
+			diarch = { save_scope_as = city_defender }
+		}
+		else = {
+			save_scope_as = city_defender
+		}
+		}
+		
+				scope:invader = {
+			if = {
+				limit = {
+					any_knight = {
+						is_in_army = yes
+						NOT = { this = scope:invading_commander }
+					}
+				}
+				random_knight = {
+					limit = {
+						is_in_army = yes
+						NOT = { this = scope:invading_commander }
+					}
+					save_scope_as = knight_1
+				}
+			}
+			if = {
+				limit = {
+					any_knight = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:invading_commander
+						}
+					}
+				}
+				random_knight = {
+					limit = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:invading_commander
+						}
+					}
+					save_scope_as = knight_2
+				}
+			}
+			if = {
+				limit = {
+					any_knight = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:knight_2
+							this = scope:invading_commander
+						}
+					}
+				}
+				random_knight = {
+					limit = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:knight_2
+							this = scope:invading_commander
+						}
+					}
+					save_scope_as = knight_3
+				}
+			}
+			if = {
+				limit = {
+					any_knight = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:knight_2
+							this = scope:knight_3
+							this = scope:invading_commander
+						}
+					}
+				}
+				random_knight = {
+					limit = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:knight_2
+							this = scope:knight_3
+							this = scope:invading_commander
+						}
+					}
+					save_scope_as = knight_4
+				}
+			}
+			if = {
+				limit = {
+					any_knight = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:knight_2
+							this = scope:knight_3
+							this = scope:knight_4
+							this = scope:invading_commander
+						}
+					}
+				}
+				random_knight = {
+					limit = {
+						is_in_army = yes
+						NOR = {
+							this = scope:knight_1
+							this = scope:knight_2
+							this = scope:knight_3
+							this = scope:knight_4
+							this = scope:invading_commander
+						}
+					}
+					save_scope_as = knight_5
+				}
+			}
+		}
+		
+				scope:city_defender = {
+			duel = {
+				skill = martial
+				target = scope:invading_commander
+				30 = { #Your fleet ruins the enemy
+					desc = ep3_emperor_yearly.3011.a.success
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 3.5
+						min = -34
+					}
+					modifier = {
+						has_trait = forder
+						add = 20
+					}
+					modifier = {
+						highest_held_title_tier >= tier_empire
+						
+						add = 10
+					}
+					modifier = {
+						scope:army = {
+							army_size <= 1000
+						}
+						add = 10
+					}
+					modifier = {
+						scope:army = {
+							#Big enough army to actually siege the city
+							army_size < 2500
+						}
+						add = 10
+					}
+					modifier = {
+						scope:invading_commander = {
+							has_trait = reckless
+						}
+						add = 10
+					}
+					modifier = {
+						has_trait = reckless
+						add = 10
+					}
+					modifier = {
+						has_trait = aggressive_attacker
+						add = 10
+					}
+					modifier = {
+						has_trait = military_engineer
+						add = 10
+					}
+					modifier = {
+						scope:invading_commander = {
+							has_trait = aggressive_attacker
+						}
+						add = 10
+					}
+					
+					naval_defeat_high_damage_effect = yes
+				}
+				70 = { #Your fleet does some damage
+					desc = ep3_emperor_yearly.3011.a.fail
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+					}
+					modifier = {
+						has_trait = forder
+						add = 40
+					}
+					modifier = {
+						scope:army = {
+							#Big enough army to actually siege the city
+							army_size < 2500
+						}
+						add = 20
+					}
+					modifier = {
+						scope:army = {
+							army_size <= 1000
+						}
+						add = 20
+					}
+					modifier = {
+						scope:invading_commander = {
+							has_trait = reckless
+						}
+						add = 20
+					}
+					modifier = {
+						scope:invading_commander = {
+							has_trait = aggressive_attacker
+						}
+						add = 10
+					}
+					modifier = {
+						has_trait = aggressive_attacker
+						add = 20
+					}
+					modifier = {
+						has_trait = military_engineer
+						add = 20
+					}
+					
+					naval_defeat_damage_effect = yes
+				}
+				
+			}
+		}
+				
+				#army_commander = {
+					#trigger_event = { on_action = commander_death_events_pulse }
+				#}
+				army_owner = { trigger_event = naval_defeat.1 }
+				scope:city_defender = { trigger_event = naval_defeat.1 }
+				
+				
+		}
+		
+		
+		
+		
+naval_defeat_high_damage_effect = {
+	#TODO_CD_EP3_JC modifiers and MaA effects here will most likely be replaced/supplemented by deplete_army once we have code support
+	scope:invading_commander = {
+		add_character_modifier = {
+			modifier = ravaged_by_greek_fire_modifier
+			years = 1
+		}
+		add_stress = major_stress_impact_gain
+	}
+	scope:army = {
+		deplete_army_by_percentage = 0.4
+	}
+	scope:invading_commander = {
+		custom_tooltip = two_knights_killed_tooltip
+		hidden_effect = {
+			scope:knight_1 ?= {
+				death = {
+					death_reason = death_greek_fire
+					killer = scope:city_defender
+				}
+			}
+			scope:knight_2 ?= {
+				death = {
+					death_reason = death_greek_fire
+					killer = scope:city_defender
+				}
+			}
+		}
+		custom_tooltip = three_knights_killed_tooltip
+		hidden_effect = {
+			scope:knight_3 ?= {
+				increase_wounds_effect = { REASON = greek_fire }
+			}
+			scope:knight_4 ?= {
+				increase_wounds_effect = { REASON = greek_fire }
+			}
+			scope:knight_5 ?= {
+				increase_wounds_effect = { REASON = greek_fire }
+			}
+		}
+	}
+
+}
+
+naval_defeat_damage_effect = {
+	scope:invading_commander = {
+		add_character_modifier = {
+			modifier = assaulted_by_greek_fire_modifier
+			years = 1
+		}
+		add_stress = medium_stress_impact_gain
+	}
+	scope:knight_1 ?= {
+		death = {
+			death_reason = death_greek_fire
+			killer = scope:city_defender
+		}
+	}
+	scope:army = {
+		deplete_army_by_percentage = 0.2
+	}
+	scope:invading_commander = {
+		custom_tooltip = two_knights_wounded_tooltip
+		hidden_effect = {
+			scope:knight_2 ?= {
+				increase_wounds_effect = { REASON = greek_fire }
+			}
+			scope:knight_3 ?= {
+				increase_wounds_effect = { REASON = greek_fire }
+			}
+		}
+	}
+}

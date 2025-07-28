@@ -1,0 +1,164 @@
+﻿
+
+## AI decision to start (or join) the war for the dawn.
+naval_commission_flagship_decision_ai = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	# Never shown, so it doesn't matter what we write here
+	title = war_for_the_dawn_decision_title
+	desc = war_for_the_dawn_decision_desc
+	confirm_text = war_for_the_dawn_decision_confirm
+	selection_tooltip = war_for_the_dawn_decision_tt
+
+	decision_group_type = major
+
+	ai_check_interval = 36
+
+	is_shown = {
+		is_ai = yes
+				
+		
+	}
+
+	# Must be a landed ruler, not a nightswatch, nightswatch must exist, and one of NW de jure lands must be held by a non-vassal wildling
+	is_valid = {
+		is_landed = yes
+		gold > 250
+		has_game_rule = agot_immersion_naval_on
+		any_sub_realm_county = { holder = root
+		is_coastal_county = yes }
+
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+	}
+
+	effect = {
+		trigger_event = naval_decisions.4
+	}
+
+	ai_will_do = {
+		base = -45
+
+		ai_value_modifier = {
+			who = root
+			ai_boldness = 0.5
+			ai_greed = tiny_chance_impact_negative_ai_value
+			ai_energy = 0.5
+			ai_vengefulness = 0.5
+			max = 70.50
+		}
+		
+		
+		modifier = {
+			add = 100
+			culture = culture:ironborn
+		modifier = {
+			add = 100
+			dynasty = dynasty:dynn_Velaryon
+		}
+			modifier = {
+			add = 100
+			dynasty = dynasty:dynn_Redwyne
+		}
+		modifier = {
+			add = 50
+			dynasty = dynasty:dynn_Targaryen
+		}
+		modifier = {
+			add = 50
+			dynasty = dynasty:dynn_Hightower
+		}
+		modifier = {
+			add = 25
+			dynasty = dynasty:dynn_Manderly
+		}
+		modifier = {
+			add = 25
+			dynasty = dynasty:dynn_Grafton
+		}
+		modifier = {
+			add = 25
+			dynasty = dynasty:dynn_Mallister
+		}
+		modifier = {
+			add = 25
+			highest_held_title_tier >= tier_duchy
+		}
+		modifier = {
+			add = 50
+			highest_held_title_tier >= tier_kingdom
+		}
+		modifier = {
+			add = 100
+			highest_held_title_tier >= tier_empire
+		}
+		
+			
+		
+		
+
+
+
+		modifier = {
+			factor = 0
+			root = {
+				debt_level > 0
+			}
+		}
+
+		
+	}
+}
+}
+
+
+agot_immersion_naval_menu = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+
+	title = agot_immersion_naval_menu_title
+	desc = agot_immersion_naval_menu_desc
+	confirm_text = agot_immersion_naval_menu_confirm
+	selection_tooltip = agot_immersion_naval_menu_tt
+
+	decision_group_type = major
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+		any_councillor = { has_council_position = councillor_admiral }	
+		debug_only = yes #Hambone	
+		
+	}
+
+	# Must be a landed ruler, not a nightswatch, nightswatch must exist, and one of NW de jure lands must be held by a non-vassal wildling
+	is_valid = {
+		has_game_rule = agot_immersion_naval_on
+		
+
+	}
+
+	is_valid_showing_failures_only = {
+		#is_at_war = no
+	}
+
+	effect = {
+		custom_tooltip = naval_decision_effect
+		trigger_event = naval_decisions.1
+	}
+
+	ai_will_do = {
+		
+
+		
+	}
+}
+
+

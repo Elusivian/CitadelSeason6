@@ -1,0 +1,714 @@
+﻿agot_story_targ_faegon_landing = {
+	# by Typical
+
+	#vars:
+	#faegon_landing - flag:initialized, flag:on:going, flag:finished - basically held to make sure only certain effect blocks will be ever fired
+	#agot_faegon_taken_title_from - holds value of the former holder of the taken title, will be inherited on that character death
+	#agot_faegon_taken_title_from_flag - Used for quickly locating the 'agot_faegon_taken_title_from' within the 'on_death'
+
+	on_setup = {
+		debug_log = "AGOT: Faegon story started on:"
+		debug_log_date = yes
+
+		story_owner = {
+			save_scope_as = faegon
+		}
+
+		save_scope_as = faegon_story
+
+		story_owner = {
+
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+			}
+
+			title:e_targaryen_host_title = {   #title:e_targaryen_host_title = {
+				change_title_holder = {
+					holder = scope:faegon
+					change = scope:change
+				}
+			}
+
+			resolve_title_and_vassal_change = scope:change
+
+			random_list = {
+				25 = { #historical: Stormlands
+
+					random_list = {
+						50 = { #land in griffin's roost
+							trigger = {
+								title:c_griffins_roost.holder = {
+									is_ai = yes
+								}
+							}
+							title:c_griffins_roost = {
+								create_title_and_vassal_change = {
+									type = conquest
+									save_scope_as = title_change
+									add_claim_on_loss = yes
+								}
+
+								save_scope_as = faegon_title_landing
+
+								scope:faegon_story = { #remember from whom you taken title
+									set_variable = {
+										name = agot_faegon_taken_title_from
+										value = title:c_griffins_roost.holder
+									}
+									var:agot_faegon_taken_title_from = {
+										add_character_flag = agot_faegon_taken_title_from_flag
+									}
+									set_variable = {
+										name = agot_faegon_landing_title
+										value = title:c_griffins_roost
+									}
+								}
+
+								change_title_holder = {
+									holder = scope:faegon
+									change = scope:title_change
+								}
+
+								resolve_title_and_vassal_change = scope:title_change
+							}
+
+							debug_log = "AGOT: Faegon claimant landed in Griffin's Roost"
+						}
+						50 = {
+							trigger = {
+								NOT = {
+									has_game_rule = agot_story_historical_events_historical_outcomes
+								}
+								any_county = {
+									kingdom = title:k_the_stormlands
+									is_coastal_county = yes
+									NOR = {
+										this = title:c_storms_end
+									}
+									holder = {
+										is_ai = yes
+									}
+									NOT = { this = holder.capital_county }
+								}
+							}
+
+							random_county = {
+								limit = {
+									kingdom = title:k_the_stormlands
+									is_coastal_county = yes
+									NOR = {
+										this = title:c_storms_end
+									}
+									holder = {
+										is_ai = yes
+									}
+									NOT = { this = holder.capital_county }
+								}
+
+								create_title_and_vassal_change = {
+									type = conquest
+									save_scope_as = title_change
+									add_claim_on_loss = yes
+								}
+
+								save_scope_as = faegon_title_landing
+
+								scope:faegon_story  = { #remember from whom you taken title
+									set_variable = {
+										name = agot_faegon_taken_title_from
+										value = scope:faegon_title_landing.holder
+									}
+									var:agot_faegon_taken_title_from = {
+										add_character_flag = agot_faegon_taken_title_from_flag
+									}
+									set_variable = {
+										name = agot_faegon_landing_title
+										value = scope:faegon_title_landing
+									}
+								}
+
+
+								change_title_holder = {
+									holder = scope:faegon
+									change = scope:title_change
+								}
+
+								resolve_title_and_vassal_change = scope:title_change
+							}
+							debug_log = "AGOT: Faegon claimant landed in Stormlands"
+						}
+					}
+				}
+				25 = { #a-historical: Crownlands
+					trigger = {
+						NOT = {
+							has_game_rule = agot_story_historical_events_historical_outcomes
+						}
+						any_county = {
+							kingdom = title:k_the_crownlands
+							is_coastal_county = yes
+							NOR = {
+								this = title:c_kings_landing
+								this = title:c_dragonstone
+							}
+							holder = {
+								is_ai = yes
+							}
+							NOT = { this = holder.capital_county }
+						}
+					}
+
+					random_county = {
+						limit = {
+							kingdom = title:k_the_crownlands
+							is_coastal_county = yes
+							NOR = {
+								this = title:c_kings_landing
+								this = title:c_dragonstone
+							}
+							holder = {
+								is_ai = yes
+							}
+							NOT = { this = holder.capital_county }
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_title_landing
+
+						scope:faegon_story  = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = scope:faegon_title_landing.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+					debug_log = "AGOT: Faegon claimant landed in the Crownlands"
+				}
+				25 = { #a-historical: Riverlands
+					trigger = {
+						NOT = {
+							has_game_rule = agot_story_historical_events_historical_outcomes
+						}
+						any_county = {
+							kingdom = title:k_the_riverlands
+							is_coastal_county = yes
+							OR = {
+								duchy = title:d_maidenpool
+								duchy = title:d_tridents_mouth
+							}
+							holder = {
+								is_ai = yes
+							}
+							NOT = { this = holder.capital_county }
+						}
+					}
+
+					random_county = {
+						limit = {
+							kingdom = title:k_the_riverlands
+							is_coastal_county = yes
+							OR = {
+								duchy = title:d_maidenpool
+								duchy = title:d_tridents_mouth
+							}
+							holder = {
+								is_ai = yes
+							}
+							NOT = { this = holder.capital_county }
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_title_landing
+
+						scope:faegon_story  = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = scope:faegon_title_landing.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+					debug_log = "AGOT: Faegon claimant landed in the Riverlands"
+				}
+				25 = { #a-historical: Vale
+					trigger = {
+						NOT = {
+							has_game_rule = agot_story_historical_events_historical_outcomes
+						}
+						any_county = {
+							kingdom = title:k_the_vale
+							is_coastal_county = yes
+							NOT = {
+								this = title:c_gulltown
+							}
+							holder = {
+								is_ai = yes
+							}
+							NOT = { this = holder.capital_county }
+						}
+					}
+
+					random_county = {
+						limit = {
+							kingdom = title:k_the_vale
+							is_coastal_county = yes
+							NOT = {
+								this = title:c_gulltown
+							}
+							holder = {
+								is_ai = yes
+							}
+							NOT = { this = holder.capital_county }
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_title_landing
+
+						scope:faegon_story  = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = prev.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+
+					debug_log = "AGOT: Faegon claimant landed in the Vale"
+				}
+			}
+			scope:faegon_title_landing = {
+				add_county_modifier = {
+					modifier = agot_deserted_province
+					years = 100
+				}
+			}
+		}
+
+		#story_owner = {
+		every_ruler = {
+			limit = {
+				is_landed = yes
+				capital_province = {
+					geographical_region = world_westeros_seven_kingdoms
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						this = scope:faegon
+						this = title:e_the_iron_throne.holder
+						has_trait = ruin
+					}
+					AND = {
+						primary_title = {
+							OR = {
+								this = title:k_dorne
+								this = title:k_the_reach
+							}
+						}
+						OR = {
+							dynasty = {
+								this = dynasty:dynn_Martell
+							}
+							dynasty = {
+								this = dynasty:dynn_Tyrell
+							}
+						}
+					}
+				}
+				#trigger_event = {
+				#	id = faegon_landing.0002 #Claimant asks for support
+				#	days = 4
+				#}
+			}
+
+
+			trigger_event = {
+				id = faegon_landing.0004 #Claimant starts MW war after this event
+				days = 10
+			}
+
+		}
+
+		debug_log = "AGOT: Faegon story initialised"
+		set_variable = {
+			name = faegon_landing
+			value = flag:initialized
+		}
+	}
+
+	on_end = {
+		debug_log = "AGOT: Faegon story ended on:"
+		debug_log_date = yes
+
+		set_variable = {
+			name = faegon_landing
+			value = flag:finished
+		}
+
+		story_owner = {
+			remove_trait = refusing_marriage
+			if = {
+				limit = {
+					var:faegon_main_character = flag:viserys
+					exists = var:faegon_vizzy_dany_spawned
+				}
+				var:faegon_vizzy_dany_spawned ?= {
+					remove_trait = refusing_marriage
+				}
+			}
+		}
+	}
+
+	on_owner_death = {
+		story_owner = {
+			destroy_title = title:e_targaryen_host_title
+		}
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+		}
+
+		scope:story = {
+			var:agot_faegon_landing_title = {
+				remove_county_modifier = agot_deserted_province
+				change_title_holder = {
+					holder = prev.var:agot_faegon_taken_title_from
+					change = scope:change
+				}
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		end_story = yes
+	}
+}
+
+agot_story_6th_blackfyre_rebellion = {
+	on_setup = {
+		debug_log = "AGOT: Faegon Blackfyre rebellion story started on:"
+		debug_log_date = yes
+
+		story_owner = {
+			save_scope_as = faegon_fyre
+		}
+
+		save_scope_as = faegon_fyre_story
+
+		story_owner = {
+			random_list = {
+				25 = { #a-historical: Stormlands
+					random_county = {
+						limit = {
+							kingdom = title:k_the_stormlands
+							is_coastal_county = yes
+							NOR = {
+								this = title:c_storms_end
+							}
+							holder = {
+								is_ai = yes
+							}
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_fyre_title_landing
+
+						scope:faegon_fyre_story = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = scope:faegon_fyre_title_landing.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_fyre_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon_fyre
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+					debug_log = "AGOT: Blackfyre claimant landed in Stormlands"
+				}
+				25 = { #Crownlands
+					random_county = {
+						limit = {
+							kingdom = title:k_the_crownlands
+							is_coastal_county = yes
+							NOR = {
+								this = title:c_kings_landing
+								this = title:c_dragonstone
+							}
+							holder = {
+								is_ai = yes
+							}
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_fyre_title_landing
+
+						scope:faegon_fyre_story = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = scope:faegon_fyre_title_landing.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_fyre_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon_fyre
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+
+					debug_log = "AGOT: Blackfyre claimant landed in Crownlands"
+				}
+				25 = { #Riverlands
+
+					random_county = {
+						limit = {
+							kingdom = title:k_the_riverlands
+							is_coastal_county = yes
+							OR = {
+								duchy = title:d_maidenpool
+								duchy = title:d_tridents_mouth
+							}
+							holder = {
+								is_ai = yes
+							}
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_fyre_title_landing
+
+						scope:faegon_fyre_story = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = scope:faegon_fyre_title_landing.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_fyre_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon_fyre
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+
+					debug_log = "AGOT: Blackfyre claimant landed in the Riverlands"
+				}
+				25 = { #Vale
+
+					random_county = {
+						limit = {
+							kingdom = title:k_the_vale
+							is_coastal_county = yes
+							NOT = {
+								this = title:c_gulltown
+							}
+							holder = {
+								is_ai = yes
+							}
+						}
+
+						create_title_and_vassal_change = {
+							type = conquest
+							save_scope_as = title_change
+							add_claim_on_loss = yes
+						}
+
+						save_scope_as = faegon_fyre_title_landing
+
+						scope:faegon_fyre_story = { #remember from whom you taken title
+							set_variable = {
+								name = agot_faegon_taken_title_from
+								value = scope:faegon_fyre_title_landing.holder
+							}
+							var:agot_faegon_taken_title_from = {
+								add_character_flag = agot_faegon_taken_title_from_flag
+							}
+							set_variable = {
+								name = agot_faegon_landing_title
+								value = scope:faegon_fyre_title_landing
+							}
+						}
+
+
+						change_title_holder = {
+							holder = scope:faegon_fyre
+							change = scope:title_change
+						}
+
+						resolve_title_and_vassal_change = scope:title_change
+					}
+
+					debug_log = "AGOT: Blackfyre claimant landed in the Vale"
+				}
+			}
+
+			scope:faegon_fyre_title_landing = {
+				add_county_modifier = {
+					modifier = agot_deserted_province
+					years = 100
+				}
+			}
+
+			every_ruler = {
+				limit = {
+					is_landed = yes
+					capital_province = {
+						geographical_region = world_westeros_seven_kingdoms
+					}
+				}
+				trigger_event = {
+					id = faegon_landing.0006 #Claimant starts MW war after this event
+					days = 10
+				}
+			}
+		}
+	}
+
+	on_end = {
+		debug_log = "AGOT: Faegon Blackfyre rebellion story ended on:"
+		debug_log_date = yes
+
+		set_variable = {
+			name = faegon_landing
+			value = flag:finished
+		}
+
+		story_owner = {
+			remove_trait = refusing_marriage
+		}
+	}
+
+	on_owner_death = {
+		debug_log = "AGOT: Faegon Blackfyre rebellion story ended via death on:"
+		debug_log_date = yes
+		story_owner = {
+			destroy_title = title:e_blackfyre_rebellion
+		}
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+		}
+
+		scope:story = {
+			var:agot_faegon_landing_title = {
+				remove_county_modifier = agot_deserted_province
+				change_title_holder = {
+					holder = prev.var:agot_faegon_taken_title_from
+					change = scope:change
+				}
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		end_story = yes
+	}
+
+}

@@ -1,0 +1,3 @@
+﻿
+
+naval_warfare_is_at_sea_trigger = {    NOT = { exists = location.barony }}

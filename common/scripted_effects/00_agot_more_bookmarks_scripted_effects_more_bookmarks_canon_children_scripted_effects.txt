@@ -1,0 +1,337 @@
+﻿
+#### On Canon Parent Death
+
+agot_more_bookmarks_canon_children_on_owner_death_effect = {
+
+	if = { limit = { exists = story_owner.primary_heir }
+		story_owner.primary_heir = {
+									if = { limit = { story_owner = { is_male = yes } }
+									agot_canon_children_setup_father_effect = {
+										FATHER = this
+										
+									}
+									}
+									
+									
+		}
+		make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = {
+						#has_game_rule = agot_more_bookmarks_canon_lineage
+						story_owner = { any_child = { 
+										dynasty_house = root.story_owner.house
+										is_male = yes
+										} }
+				}
+				story_owner = {	
+					ordered_child = {
+								limit = { is_male = yes
+										dynasty_house = root.story_owner.house
+								}
+								order_by = age
+								
+													
+						save_scope_as = canon_heir
+					}
+			agot_canon_children_setup_father_effect = {
+										FATHER = scope:canon_heir
+										
+									}
+			root = { make_story_owner = scope:canon_heir }
+			}
+			
+	}
+	else_if = { limit = { exists = story_owner.house.house_head }
+			story_owner.house.house_head = {
+											if = { limit = { is_male = yes  }
+													agot_canon_children_setup_father_effect = {
+														FATHER = this
+														
+													}
+											}
+											
+
+
+
+
+			}
+			make_story_owner = story_owner.house.house_head
+	}
+	else = {
+	end_story = yes 
+	}
+	
+	
+}
+
+
+
+
+agot_more_bookmarks_canon_children_life_cycle_effect = {
+	# Start/extend natural pregnancy blocker as long as conditions are met
+	if = {
+		limit = {
+			NOT = {
+				agot_more_bookmarks_canon_children_had_child_trigger = {
+					ID = $FINAL_CHILD_ID$
+					FATHER = $FATHER$
+					TRAIT = $FINAL_CHILD_TRAIT$
+				}
+			}
+			#$MOTHER$ = {
+			#	has_character_flag = canon_children_should_prevent_pregnancy
+			#}
+		}
+
+		$MOTHER$ = {
+			add_character_flag = {
+				flag = canon_children_prevent_pregnancy
+				months = 24
+			}
+		}
+	}
+	# End story if cycle is finished
+	# TODO: This is not the right place to do it when there are multiple mothers
+	 else = {
+	 	root = { end_story = yes }
+	 }
+}
+
+
+agot_more_bookmarks_on_canon_parent_pregnant = {
+
+	story_owner = {
+						every_spouse = {
+						limit = { is_pregnant = yes
+								NOT = { has_character_flag = agot_is_pregnant }
+					}
+					end_pregnancy = yes
+						add_character_flag = {
+													flag = canon_children_prevent_pregnancy
+													months = 12
+											}
+						
+						}
+						}
+
+
+
+
+
+
+
+}
+
+
+
+
+aegon_iv_bastard_mom_finder = {
+
+
+### Bloodraven
+
+character:Blackwood_25.house = { random_house_member = { limit = { 					
+																			NOT = { is_spouse_of = scope:child.father }
+																					is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 15
+																					is_ai = yes
+																				}
+																				save_scope_as = bloodraven_mom
+																				}
+																				}
+																				
+#### Bittersteel																			
+																				
+				character:Bracken_28.house = { random_house_member = { limit = {
+																					NOT = { is_spouse_of = scope:child.father }
+																					is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 12
+																					is_ai = yes
+																				}
+																				save_scope_as = bittersteel_mom
+																				}
+																				}
+																				
+#### Daemon Blackfyre
+
+	story_owner = { if = { limit = { any_close_or_extended_family_member = { has_trait = is_targaryen_83 } } random_close_or_extended_family_member = { limit = { has_trait = is_targaryen_83 } save_scope_as = daemon_mom } }
+	
+					else = {
+					
+					character:Targaryen_27.house = { random_house_member = { limit = {
+																					NOT = { is_spouse_of = scope:child.father }
+																					is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 12
+																					is_ai = yes
+																				}
+																				save_scope_as = daemon_mom
+																				}
+					}
+		}
+	}
+	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
+
+
+
+
+
+#### Shiera Seastar
+
+
+
+title:k_lys.holder.house = { random_house_member = { limit = {						NOT = { is_spouse_of = scope:child.father }	
+																					is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 12
+																					is_ai = yes
+																				}
+																				save_scope_as = seastar_mom
+																				}
+																				}
+
+
+
+
+
+
+}
+
+
+
+balerion_mom_spawn = {
+
+
+create_character = {
+		age = 16
+		name = "Bellegere"
+		gender = female
+		faith = faith:weeping_lady
+		culture = culture:braavosi
+		employer = scope:child.employer
+		#dynasty = none
+		#random_traits = no
+
+		save_scope_as = balerion_mom
+	}
+
+scope:balerion_mom = {
+
+add_stewardship_skill = 15
+add_intrigue_skill = 15
+
+add_trait = beauty_good_3
+add_trait = seducer
+copy_inheritable_appearance_from = character:Nymeros_1
+
+dynasty = { set_dynasty_name = dynn_Otherys }
+
+house = { set_house_name = dynn_Otherys }
+
+
+set_relation_lover = scope:father
+
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+the_great_bastards_mom_selection_effect = {
+
+
+
+			
+### Bloodraven
+
+character:Blackwood_25.house = { random_house_member = { limit = { is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 15
+																					is_ai = yes
+																				}
+																				save_scope_as = bloodraven_mom
+																				}
+																				}
+																				
+#### Bittersteel																			
+																				
+				character:Bracken_28.house = { random_house_member = { limit = { is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 15
+																					is_ai = yes
+																				}
+																				save_scope_as = bittersteel_mom
+																				}
+																				}
+																				
+#### Daemon Blackfyre
+
+	scope:father = { if = { limit = { any_close_or_extended_family_member = { has_trait = is_targaryen_83 } } random_close_or_extended_family_member = { limit = { has_trait = is_targaryen_83 } save_scope_as = daemon_mom } }
+	
+					else = {
+					
+					character:Targaryen_13_A.house = { random_house_member = { limit = { is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 15
+																					is_ai = yes
+																				}
+																				save_scope_as = daemon_mom
+																				}
+					}
+		}
+	}
+
+
+
+#### Shiera Seastar
+
+
+
+title:k_lys.holder.house = { random_house_member = { limit = { is_female = yes
+																					can_have_children = yes
+																					age < 30
+																					age >= 15
+																					is_ai = yes
+																				}
+																				save_scope_as = seastar_mom
+																				}
+																				}
+																				
+																				
+
+balerion_mom_spawn = yes
+
+
+
+}

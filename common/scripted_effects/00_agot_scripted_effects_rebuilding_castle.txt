@@ -1,0 +1,195 @@
+﻿#Mothballed
+# ## Rebuild Castles Along the Wall Setup ## Modeled after Pilgrimage & Feast for dynamic setup
+# agot_set_up_abandoned_castles_for_selection_effect = {
+# 	if = {
+# 		limit = { NOT = { exists = scope:has_started_rebuilding_wall_castles } }
+# 		save_temporary_scope_as = castle_rebuilder
+# 		every_sub_realm_county = {
+# 			every_county_province = {
+# 				limit = {
+# 					geographical_region = world_westeros_the_wall_only
+# 					NOR = {
+# 						has_holding_type = castle_holding
+# 						has_holding_type = city_holding
+# 						has_holding_type = church_holding
+# 						has_holding_type = monastery_holding
+# 					}
+# 				}
+# 				add_to_list = rebuild_castles
+# 			}
+# 		}
+# 		every_in_list = {
+# 			list = rebuild_castles
+# 			# Assign the castles to a scope
+# 			if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_1 }
+# 				}
+# 				save_scope_as = nw_wall_castle_1
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_2 }
+# 				}
+# 				save_scope_as = nw_wall_castle_2
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_3 }
+# 				}
+# 				save_scope_as = nw_wall_castle_3
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_4 }
+# 				}
+# 				save_scope_as = nw_wall_castle_4
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_5 }
+# 				}
+# 				save_scope_as = nw_wall_castle_5
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_6 }
+# 				}
+# 				save_scope_as = nw_wall_castle_6
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_7 }
+# 				}
+# 				save_scope_as = nw_wall_castle_7
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_8 }
+# 				}
+# 				save_scope_as = nw_wall_castle_8
+# 			}
+
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_9 }
+# 				}
+# 				save_scope_as = nw_wall_castle_9
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_10 }
+# 				}
+# 				save_scope_as = nw_wall_castle_10
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_11 }
+# 				}
+# 				save_scope_as = nw_wall_castle_11
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_12 }
+# 				}
+# 				save_scope_as = nw_wall_castle_12
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_13 }
+# 				}
+# 				save_scope_as = nw_wall_castle_13
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_14 }
+# 				}
+# 				save_scope_as = nw_wall_castle_14
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_15 }
+# 				}
+# 				save_scope_as = nw_wall_castle_15
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_16 }
+# 				}
+# 				save_scope_as = nw_wall_castle_16
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_17 }
+# 				}
+# 				save_scope_as = nw_wall_castle_17
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_18 }
+# 				}
+# 				save_scope_as = nw_wall_castle_18
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:nw_wall_castle_19 }
+# 				}
+# 				save_scope_as = nw_wall_castle_19
+# 			}
+# 			else = {
+# 				debug_log = "NW Wall Castles failed to get an assigned scope slot!"
+# 				debug_log_scopes = yes
+# 			}
+# 		}
+# 		save_scope_value_as = {
+# 			name = has_started_rebuilding_wall_castles
+# 			value = yes
+# 		}
+# 	}
+# 	# Debug checks:
+# 	if = {
+# 		limit = { NOT = { exists = scope:nw_wall_castle_1 } }
+# 		debug_log = "No NW Wall Castles can be rebuilt!"
+# 		debug_log_scopes = yes
+# 	}
+# }
+
+# agot_nw_castle_rebuild_effect = {
+# 	$CASTLE$ = { save_scope_as = rebuild_target_castle }
+# 	$BUILDER$ = { save_scope_as = rebuild_target_owner }
+# 	scope:rebuild_target_castle = {
+# 		begin_create_holding = {
+# 			type = castle_holding
+# 		}
+# 		spawn_activity = {
+# 			type = activity_rebuilding_castle
+# 			owner = scope:rebuild_target_owner
+# 		}
+# 	}
+# }
+
+# agot_castle_rebuilding_setup_effect = {
+# 	scope:activity = {
+# 		every_participant = { #Effect for remaining (most) guests
+# 			if = {
+# 				limit = {
+# 					exists = var:booked_for_a_party
+# 					var:booked_for_a_party = { NOT = { this = scope:activity.activity_owner } }
+# 				}
+# 				trigger_event = agot_rebuilding_castle.1000
+# 			}
+# 			else = {
+# 				trigger_event = {
+# 					on_action = rebuilding_castle_start_events
+# 					days = 10
+# 				}
+# 			}
+# 		}
+# 	}
+#  }

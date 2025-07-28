@@ -1,0 +1,135 @@
+﻿offer_dawn_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	icon = artisan_inspiration
+	desc = offer_dawn_interaction_desc
+
+	ai_frequency = 0
+
+	cooldown = { years = 1 }
+
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:actor = {
+			is_adult = yes
+			is_ai = no
+			this = dynasty:dynn_Dayne.dynast
+			any_character_artifact = {
+				has_artifact_modifier = vs_dawn_modifier
+			}
+		}
+		scope:recipient = {
+			dynasty = dynasty:dynn_Dayne
+			age > 11
+		}
+	}
+
+	auto_accept = no
+
+	ai_accept = {
+		base = 0 # Try to make it 0 for most interactions
+
+		modifier = {
+			add = 500
+			worthy_sword_of_the_morning_trigger = yes
+			desc = worthy_of_dawn
+		}
+		modifier = {
+			add = 50
+			has_trait = arrogant
+		}
+		modifier = {
+			add = 25
+			has_trait = ambitious
+		}
+		modifier = {
+			add = {
+				value = ai_greed
+			}
+			ai_greed > 0
+			desc = dawn_greedy
+		}
+		modifier = {
+			add = -50
+			has_trait = craven
+		}
+		modifier = {
+			add = -100
+			worthy_sword_of_the_morning_trigger = no
+			desc = unworthy_of_dawn
+		}
+		modifier = {
+			add = -50
+			worthy_sword_of_the_morning_trigger = no
+			has_trait = humble
+		}
+		modifier = {
+			add = -50
+			worthy_sword_of_the_morning_trigger = no
+			has_trait = craven
+		}
+		modifier = {
+			add = -50
+			worthy_sword_of_the_morning_trigger = no
+			has_trait = content
+		}
+		modifier = {
+			add = -50
+			worthy_sword_of_the_morning_trigger = no
+			has_trait = honest
+		}
+		modifier = {
+			add = -50
+			worthy_sword_of_the_morning_trigger = no
+			has_trait = just
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = { worthy_sword_of_the_morning_trigger = yes }
+
+				give_nickname = nick_the_sword_of_the_morning
+
+				add_character_flag = is_sword_of_morning
+
+				add_prestige = massive_prestige_value
+				add_prestige_level = 1
+			}
+
+			scope:actor = {
+				save_scope_as = my_relation
+				random_character_artifact = {
+					limit  = { has_artifact_modifier = vs_dawn_modifier }
+					save_scope_as = dawn
+				}
+			}
+
+			scope:dawn = {
+				set_owner = scope:recipient
+			}
+
+			hidden_effect = {
+				add_character_flag = claimed_dawn
+				scope:dawn = {
+					equip_artifact_to_owner_replace = yes
+				}
+			}
+		}
+	}
+
+	on_decline = {
+		hidden_effect = {
+			scope:recipient = { save_scope_as = refused_sword }
+			dynasty:dynn_Dayne.dynast = {
+				send_interface_toast = {
+					title = dawn_refused_title
+					custom_tooltip = dawn_refused_desc
+					left_icon = scope:recipient
+				}
+			}
+		}
+	}
+
+}

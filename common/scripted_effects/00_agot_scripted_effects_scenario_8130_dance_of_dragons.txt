@@ -1,0 +1,558 @@
+﻿###################
+# AGOT More Bookmarks #
+###################
+
+##################################
+# Dance of Dragons #
+##################################
+agot_more_bookmarks_dance_of_dragons_scenario_setup = {
+
+character:Targaryen_75 = {
+
+add_character_flag = do_not_assign_strong_seed
+		make_trait_inactive = brown_eyes
+		make_trait_inactive = brown_hair
+		
+		}
+		
+character:Targaryen_76 = {
+
+add_character_flag = do_not_assign_strong_seed
+		make_trait_inactive = brown_eyes
+		make_trait_inactive = brown_hair
+		
+		}
+
+character:Targaryen_77 = {
+
+add_character_flag = do_not_assign_strong_seed
+		make_trait_inactive = brown_eyes
+		make_trait_inactive = brown_hair
+		
+		}
+
+character:Velaryon_43 = {
+
+set_father = character:Velaryon_35
+set_house = character:Velaryon_35.house
+}
+
+character:Velaryon_44 = {
+
+set_father = character:Velaryon_35
+set_house = character:Velaryon_35.house
+}
+
+
+### Fix Iron Islands and Vale
+
+title:k_the_vale.holder = { 
+create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	
+	resolve_title_and_vassal_change = scope:change
+	
+}
+
+title:k_the_iron_islands.holder = { 
+create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	
+	resolve_title_and_vassal_change = scope:change
+	
+}
+
+
+
+
+
+
+### Make Independent
+
+title:e_the_iron_throne.holder = { 
+
+every_vassal = { limit = { NOT = { has_title = title:k_dragonstone } }
+
+add_to_list = iron_throne_vassals
+
+
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		
+
+
+}
+}
+
+
+hidden_effect = {
+		title:k_dragonstone.holder = {
+		add_courtier = Targaryen_59
+		add_prestige = 3000
+			start_war = {
+				cb = agot_succession_war
+				claimant = title:k_dragonstone.holder
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:k_the_crownlands
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+			
+			}
+			random_character_war = {
+					limit = { using_cb = agot_succession_war }
+					save_scope_as = the_dance
+				}
+			
+}
+}
+every_in_list = {
+list = iron_throne_vassals
+create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	
+	resolve_title_and_vassal_change = scope:change
+
+
+}
+
+		### Blacks
+		#title:k_the_vale.holder= { add_to_list = team_black }
+		#title:k_the_north.holder = { add_to_list = team_black }
+		#title:d_riverrun.holder = { add_to_list = team_black } 
+		title:d_driftmark.holder = { add_to_list = team_black }
+		title:d_sharp_point.holder = { add_to_list = team_black }
+		title:c_honeyholt.holder = { add_to_list = team_black }
+		title:c_flockshade.holder= { add_to_list = team_black }
+		title:d_blackwood_vale.holder = { add_to_list = team_black }
+		title:c_sweetsister.holder = { add_to_list = team_black }
+		#title:d_southstone.holder = { add_to_list = team_black }
+		title:c_brownhollow.holder = { add_to_list = team_black }
+		title:c_dyre_den.holder = { add_to_list = team_black }
+		title:c_bronzegate.holder = { add_to_list = team_black }
+		title:c_silverhead.holder = { add_to_list = team_black }
+		title:d_bitterbridge.holder = { add_to_list = team_black }
+		title:d_claw_isle.holder = { add_to_list = team_black }
+		title:d_kings_course.holder = { add_to_list = team_black }
+		title:c_whisper_point.holder = { add_to_list = team_black }
+		title:c_branstone.holder = { add_to_list = team_black }
+		title:c_mistlewood.holder = { add_to_list = team_black }
+		title:d_hearts_home.holder = { add_to_list = team_black }
+		title:c_strongcliffs.holder = { add_to_list = team_black }
+		title:d_duskendale.holder = { add_to_list = team_black }
+		title:c_darry.holder = { add_to_list = team_black }
+		title:c_lancewood.holder = { add_to_list = team_black }
+		title:d_the_barrowlands.holder = { add_to_list = team_black }
+		title:d_kingswood.holder = { add_to_list = team_black }
+		title:d_flints_finger.holder = { add_to_list = team_black }
+		title:d_tumbleton.holder = { add_to_list = team_black }
+		title:d_the_crossing.holder = { add_to_list = team_black }
+		title:c_oldferns.holder = { add_to_list = team_black }
+		#title:d_pyke.holder = { add_to_list = team_black }
+		title:c_greyshield.holder = { add_to_list = team_black }
+		title:c_brackworth.holder = { add_to_list = team_black } 
+		title:d_hayford.holder = { add_to_list = team_black }
+		title:d_hornwood.holder = { add_to_list = team_black }
+		title:d_cape_of_eagles.holder = { add_to_list = team_black }
+		title:d_white_harbor.holder = { add_to_list = team_black }
+		title:d_masseys_hook.holder = { add_to_list = team_black }
+		title:d_fullharvest.holder = { add_to_list = team_black }
+		title:c_turrellis.holder = { add_to_list = team_black }
+		title:c_float_river.holder = { add_to_list = team_black }
+		title:d_pinkmaiden.holder = { add_to_list = team_black }
+		title:c_horsehead.holder = { add_to_list = team_black }
+		title:d_goldengrove.holder = { add_to_list = team_black }
+		title:d_runestone.holder = { add_to_list = team_black }
+		title:c_acorns_ridge.holder = { add_to_list = team_black }
+	
+		title:d_rooks_rest.holder = { add_to_list = team_black }
+		title:d_the_sisters.holder = { add_to_list = team_black }
+		title:d_the_westmarch.holder = { add_to_list = team_black }
+		title:d_wayfarers_rest.holder = { add_to_list = team_black }
+		title:c_stillfen.holder = { add_to_list = team_black }
+		title:c_summer_cove.holder = { add_to_list = team_black }
+		
+		### Greens
+		title:k_the_westerlands.holder  = { add_to_list = team_green }
+		 title:k_the_stormlands.holder   = { add_to_list = team_green }
+		 title:c_torrentpeak.holder  = { add_to_list = team_green }   
+		 title:c_great_fork.holder       = { add_to_list = team_green }
+		 title:d_southstone.holder = { add_to_list = team_green }
+		 title:c_milkstone.holder        = { add_to_list = team_green }
+		 title:d_crakehall.holder        = { add_to_list = team_green }
+		 title:d_orchard_way.holder      = { add_to_list = team_green }
+		 title:c_holyhall.holder         = { add_to_list = team_green }
+		 title:d_oldtown.holder          = { add_to_list = team_green }
+		 title:d_the_golden_tooth.holder = { add_to_list = team_green }
+		 title:c_estryck.holder          = { add_to_list = team_green }
+		 title:d_maidenpool.holder       = { add_to_list = team_green }
+		 title:c_norcross.holder         = { add_to_list = team_green }
+		 title:d_cockleswhent.holder     = { add_to_list = team_green }
+		 title:d_the_arbor.holder        = { add_to_list = team_green }
+		 title:d_castamere.holder        = { add_to_list = team_green }
+		 title:c_risley_glade.holder     = { add_to_list = team_green }
+		 title:c_rhodalea.holder         = { add_to_list = team_green }
+		 title:d_rosby.holder            = { add_to_list = team_green }
+		 title:d_oldhills.holder         = { add_to_list = team_green }
+		 title:d_stokeworth.holder       = { add_to_list = team_green }
+		 title:d_harrenhal.holder        = { add_to_list = team_green }
+		 title:d_red_watch.holder        = { add_to_list = team_green }
+		 title:d_the_fieldlands.holder   = { add_to_list = team_green }
+		 title:d_tarrich.holder          = { add_to_list = team_green }
+		 title:c_shinebridge.holder      = { add_to_list = team_green }
+		 title:d_atranta.holder          = { add_to_list = team_green }
+		 title:d_the_rainwood.holder     = { add_to_list = team_green }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	title:k_the_iron_islands.holder = { add_to_list = team_neutral }
+	title:k_the_reach.holder = { add_to_list = team_neutral }
+	###Slow to help
+	title:k_the_riverlands.holder = { add_to_list = team_neutral }
+	title:k_the_north.holder = { add_to_list = team_neutral }
+	title:k_the_vale.holder = { add_to_list = team_neutral }
+	
+	every_in_list = {
+	list = team_black
+	agot_mw_join_rebels_effect = { RULER = this REBEL_LEADER = title:k_dragonstone.holder }
+	if = { limit = { NOT = { is_participant_in_war = scope:the_dance } }
+	scope:the_dance = { add_attacker = prev }
+	}
+	}
+	every_in_list = {
+	list = team_green
+	agot_mw_join_loyalists_effect = { RULER = this CROWN = title:e_the_iron_throne.holder }
+	if = { limit = { NOT = { is_participant_in_war = scope:the_dance } }
+	scope:the_dance = { add_defender = prev }
+	}
+	}
+	every_in_list = {
+	list = team_neutral
+	agot_mw_stay_neutral_effect = { RULER = this CROWN = title:e_the_iron_throne.holder }
+	}
+	
+scope:the_dance = { add_defender = title:k_lys.holder	
+					add_defender = title:k_tyrosh.holder
+					add_defender = title:k_myr.holder
+					}
+	
+if = { limit = { title:k_the_iron_islands.holder = { is_ai = yes }
+		}
+		title:k_the_iron_islands.holder = {
+					start_war = {
+				cb = claim_cb
+				claimant = title:k_the_iron_islands.holder
+				target = title:k_the_westerlands.holder
+				target_title = title:d_fair_isle
+				target_title = title:c_faircastle
+			
+			}
+			random_character_war = {
+			add_attacker = title:d_hardstone_hills.holder
+			add_attacker = title:c_iron_holt.holder
+			add_defender = title:d_fair_isle.holder
+			add_defender = title:e_the_iron_throne.holder
+			}
+			}
+				
+		
+		}
+title:k_the_riverlands.holder = { 
+create_story = { 
+			type = story_agot_scenario_dance_tully
+			save_scope_as = tully_story
+		}
+		
+		scope:tully_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+
+title:k_the_north.holder = { 
+create_story = { 
+			type = story_agot_scenario_dance_stark
+			save_scope_as = stark_story
+		}
+		
+		scope:stark_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+
+title:k_the_vale.holder = { 
+create_story = { 
+			type = story_agot_scenario_dance_stark
+			save_scope_as = arryn_story
+		}
+		
+		scope:arryn_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+	
+					
+					
+}
+
+
+
+##################################
+# The Uncrowned #
+##################################
+agot_more_bookmarks_the_uncrowned_scenario_setup = {
+
+
+
+
+
+### Make Independent
+
+title:e_the_iron_throne.holder = { 
+
+every_vassal = { limit = { NOT = { has_title = title:k_dragonstone } }
+
+add_to_list = iron_throne_vassals
+
+
+	create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			becomes_independent = {
+				change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:change
+		
+
+
+}
+}
+
+
+hidden_effect = {
+		title:k_dragonstone.holder = {
+		add_prestige = 3000
+			start_war = {
+				cb = agot_succession_war
+				claimant = title:k_dragonstone.holder
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:k_the_crownlands
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+			
+			}
+			random_character_war = {
+					limit = { using_cb = agot_succession_war }
+					save_scope_as = the_dance
+				}
+			
+}
+}
+every_in_list = {
+list = iron_throne_vassals
+create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	
+	resolve_title_and_vassal_change = scope:change
+
+
+}
+
+		### Aegon
+		title:d_the_crossing.holder = { add_to_list = team_aegon }
+		title:c_mistlewood.holder = { add_to_list = team_aegon }
+		title:d_nestridge.holder = { add_to_list = team_aegon }
+		title:d_hearts_home.holder = { add_to_list = team_aegon }
+		title:d_the_barrowlands.holder = { add_to_list = team_aegon }
+		title:d_fair_isle.holder = { add_to_list = team_aegon }
+		title:d_tarrich.holder = { add_to_list = team_aegon }
+		title:d_fairmarket.holder = { add_to_list = team_aegon }
+		title:d_pinkmaiden.holder = { add_to_list = team_aegon }
+		title:d_wayfarers_rest.holder = { add_to_list = team_aegon }
+		title:d_atranta.holder = { add_to_list = team_aegon }
+		title:c_acorns_ridge.holder = { add_to_list = team_aegon }
+		title:c_horsehead.holder = { add_to_list = team_aegon }
+		title:c_fang_hill.holder = { add_to_list = team_aegon }
+		title:d_the_crag.holder = { add_to_list = team_aegon }
+		
+		### Maegor
+		title:d_bitterbridge.holder  = { add_to_list = team_maegor }
+		title:d_harrenhal.holder  = { add_to_list = team_maegor }
+		title:d_fullharvest.holder  = { add_to_list = team_maegor }
+		title:c_starpike.holder  = { add_to_list = team_maegor }
+		title:c_riverrun.holder  = { add_to_list = team_maegor }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	title:k_the_westerlands.holder = { add_to_list = team_neutral }
+	title:k_the_iron_islands.holder = { add_to_list = team_neutral }
+	title:k_the_reach.holder = { add_to_list = team_neutral }
+	title:k_the_north.holder = { add_to_list = team_neutral }
+	title:k_the_stormlands.holder = { add_to_list = team_neutral }
+	title:k_the_vale.holder = { add_to_list = team_neutral }
+	
+	every_in_list = {
+	list = team_aegon
+	agot_mw_join_rebels_effect = { RULER = this REBEL_LEADER = title:k_dragonstone.holder }
+	if = { limit = { NOT = { is_participant_in_war = scope:the_dance } }
+	scope:the_dance = { add_attacker = prev }
+	}
+	}
+	every_in_list = {
+	list = team_maegor
+	agot_mw_join_loyalists_effect = { RULER = this CROWN = title:e_the_iron_throne.holder }
+	if = { limit = { NOT = { is_participant_in_war = scope:the_dance } }
+	scope:the_dance = { add_defender = prev }
+	}
+	}
+	every_in_list = {
+	list = team_neutral
+	agot_mw_stay_neutral_effect = { RULER = this CROWN = title:e_the_iron_throne.holder }
+	}
+	
+
+
+title:k_the_westerlands.holder = { 
+create_story = { 
+			type = story_agot_scenario_uncrowned_greathouse
+			save_scope_as = lannister_story
+		}
+		
+		scope:lannister_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+title:k_the_north.holder = { 
+create_story = { 
+			type = story_agot_scenario_uncrowned_greathouse
+			save_scope_as = stark_story
+		}
+		
+		scope:stark_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+title:k_the_reach.holder = { 
+create_story = { 
+			type = story_agot_scenario_uncrowned_greathouse
+			save_scope_as = tyrell_story
+		}
+		
+		scope:tyrell_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+
+title:k_the_vale.holder = { 
+create_story = { 
+			type = story_agot_scenario_uncrowned_greathouse
+			save_scope_as = arryn_story
+		}
+		
+		scope:arryn_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+
+title:k_the_stormlands.holder = { 
+create_story = { 
+			type = story_agot_scenario_uncrowned_greathouse
+			save_scope_as = baratheon_story
+		}
+		
+		scope:baratheon_story = { 
+			set_variable = { name = the_dance value = scope:the_dance }
+
+		}
+		
+}
+	
+
+
+
+
+title:k_dragonstone.holder = {
+	trigger_event = {
+								id = agot_events_more_bookmarks_misc.1
+								days = 1
+							}	
+		}
+		
+
+
+
+
+					
+					
+}
+	
+	
+	
+	
+	

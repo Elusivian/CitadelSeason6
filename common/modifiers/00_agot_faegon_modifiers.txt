@@ -1,0 +1,7 @@
+﻿agot_deserted_province = { #fuck you ai for making me doing this >:C
+	icon = county_modifier_development_negative
+	garrison_size = 50000
+	fort_level = 50000
+	levy_size = -2
+	tax_mult = -2
+}

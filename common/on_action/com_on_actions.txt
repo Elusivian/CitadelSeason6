@@ -1,0 +1,624 @@
+﻿fow_stewardship_scaling_parent = {
+	trigger = {
+		has_trait = crafty_commander
+	}
+	effect = {
+		root = {
+			remove_character_modifier = stewardship_scaling_1_modifier
+			remove_character_modifier = stewardship_scaling_2_modifier
+			remove_character_modifier = stewardship_scaling_3_modifier
+			remove_character_modifier = stewardship_scaling_4_modifier
+			remove_character_modifier = stewardship_scaling_5_modifier
+			remove_character_modifier = stewardship_scaling_6_modifier
+			remove_character_modifier = stewardship_scaling_7_modifier
+			remove_character_modifier = stewardship_scaling_8_modifier
+			remove_character_modifier = stewardship_scaling_9_modifier
+			remove_character_modifier = stewardship_scaling_10_modifier
+			remove_character_modifier = stewardship_scaling_11_modifier
+			if = { limit = { root.stewardship > 49 } add_character_modifier = { modifier = stewardship_scaling_11_modifier } }
+			else_if = { limit = { root.stewardship > 45 } add_character_modifier = { modifier = stewardship_scaling_10_modifier } }
+			else_if = { limit = { root.stewardship > 40 } add_character_modifier = { modifier = stewardship_scaling_9_modifier } }
+			else_if = { limit = { root.stewardship > 35 } add_character_modifier = { modifier = stewardship_scaling_8_modifier } }
+			else_if = { limit = { root.stewardship > 30 } add_character_modifier = { modifier = stewardship_scaling_7_modifier } }
+			else_if = { limit = { root.stewardship > 25 } add_character_modifier = { modifier = stewardship_scaling_6_modifier } }
+			else_if = { limit = { root.stewardship > 20 } add_character_modifier = { modifier = stewardship_scaling_5_modifier } }
+			else_if = { limit = { root.stewardship > 15 } add_character_modifier = { modifier = stewardship_scaling_4_modifier } }
+			else_if = { limit = { root.stewardship > 10 } add_character_modifier = { modifier = stewardship_scaling_3_modifier } }
+			else_if = { limit = { root.stewardship > 5 } add_character_modifier = { modifier = stewardship_scaling_2_modifier } }
+			else_if = { limit = { root.stewardship > 0 } add_character_modifier = { modifier = stewardship_scaling_1_modifier } }
+		}
+	}
+}
+
+fow_intrigue_scaling_parent = {
+	trigger = {
+		has_trait = master_ambusher
+	}
+	effect = {
+		root = {
+			remove_character_modifier = intrigue_scaling_1_modifier
+			remove_character_modifier = intrigue_scaling_2_modifier
+			remove_character_modifier = intrigue_scaling_3_modifier
+			remove_character_modifier = intrigue_scaling_4_modifier
+			remove_character_modifier = intrigue_scaling_5_modifier
+			remove_character_modifier = intrigue_scaling_6_modifier
+			remove_character_modifier = intrigue_scaling_7_modifier
+			remove_character_modifier = intrigue_scaling_8_modifier
+			remove_character_modifier = intrigue_scaling_9_modifier
+			remove_character_modifier = intrigue_scaling_10_modifier
+			remove_character_modifier = intrigue_scaling_11_modifier
+			if = { limit = { root.intrigue > 49 } add_character_modifier = { modifier = intrigue_scaling_11_modifier } }
+			else_if = { limit = { root.intrigue > 45 } add_character_modifier = { modifier = intrigue_scaling_10_modifier } }
+			else_if = { limit = { root.intrigue > 40 } add_character_modifier = { modifier = intrigue_scaling_9_modifier } }
+			else_if = { limit = { root.intrigue > 35 } add_character_modifier = { modifier = intrigue_scaling_8_modifier } }
+			else_if = { limit = { root.intrigue > 30 } add_character_modifier = { modifier = intrigue_scaling_7_modifier } }
+			else_if = { limit = { root.intrigue > 25 } add_character_modifier = { modifier = intrigue_scaling_6_modifier } }
+			else_if = { limit = { root.intrigue > 20 } add_character_modifier = { modifier = intrigue_scaling_5_modifier } }
+			else_if = { limit = { root.intrigue > 15 } add_character_modifier = { modifier = intrigue_scaling_4_modifier } }
+			else_if = { limit = { root.intrigue > 10 } add_character_modifier = { modifier = intrigue_scaling_3_modifier } }
+			else_if = { limit = { root.intrigue > 5 } add_character_modifier = { modifier = intrigue_scaling_2_modifier } }
+			else_if = { limit = { root.intrigue > 0 } add_character_modifier = { modifier = intrigue_scaling_1_modifier } }
+		}
+	}
+}
+
+quarterly_playable_pulse = {
+	on_actions = {
+		fow_fire_pulse_1
+		fow_fire_pulse_4
+		delay = { months = 1 }
+		fow_fire_pulse_2
+		fow_fire_pulse_5
+		delay = { months = 2 }
+		fow_fire_pulse_3
+		fow_fire_pulse_6
+	}
+}
+
+fow_fire_pulse_1 = {
+	on_actions = {
+		fow_intrigue_scaling_parent
+	}
+}
+fow_fire_pulse_2 = {
+	on_actions = {
+		fow_intrigue_scaling_parent
+	}
+}
+fow_fire_pulse_3 = {
+	on_actions = {
+		fow_intrigue_scaling_parent
+	}
+}
+fow_fire_pulse_4 = {
+	on_actions = {
+		fow_stewardship_scaling_parent
+	}
+}
+fow_fire_pulse_5 = {
+	on_actions = {
+		fow_stewardship_scaling_parent
+	}
+}
+fow_fire_pulse_6 = {
+	on_actions = {
+		fow_stewardship_scaling_parent
+	}
+}
+
+on_war_started = {
+	on_actions = {
+		fow_on_war_started
+	}
+}
+
+fow_on_war_started = {
+	trigger = {
+	}
+	effect = {
+		scope:attacker = {
+			if = {
+				limit = {
+					any_vassal_or_below = { has_trait = bannerlord }
+				}
+				every_vassal_or_below = {
+					limit = { has_trait = bannerlord }
+					add_character_modifier = {
+						modifier = fow_war_started_modifier
+						years = 1
+					}
+				}
+				if = { 
+					limit = { has_trait = bannerlord }
+					add_character_modifier = {
+						modifier = fow_war_started_modifier
+						years = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+fow_natural_increase = {
+	effect = {
+		if = {
+			limit = {
+				has_trait = mapper 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = crafty_commander
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = mapper }
+			add_trait_xp = {
+				trait = crafty_commander
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				has_trait = navigator 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = navigator
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = navigator }
+			add_trait_xp = {
+				trait = navigator
+				value = 2
+			}
+		}
+
+		if = {
+			limit = { has_trait = dauntless_leader }
+			add_trait_xp = {
+				trait = dauntless_leader
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait = dauntless_leader 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = dauntless_leader
+				value = 2
+			}
+		}
+
+		if = {
+			limit = {
+				has_trait = crafty_commander 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = crafty_commander
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = crafty_commander }
+			add_trait_xp = {
+				trait = crafty_commander
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				has_trait = cautious_planner 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = cautious_planner
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = cautious_planner }
+			add_trait_xp = {
+				trait = cautious_planner
+				value = 2
+			}
+		}
+
+		if = {
+			limit = {
+				has_trait = bannerlord 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = bannerlord
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = bannerlord }
+			add_trait_xp = {
+				trait = bannerlord
+				value = 2
+			}
+		}
+
+		if = {
+			limit = {
+				has_trait = focus_specialist 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = focus_specialist
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = focus_specialist }
+			add_trait_xp = {
+				trait = focus_specialist
+				value = 2
+			}
+		}
+
+		if = {
+			limit = {
+				has_trait = master_ambusher 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = master_ambusher
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = master_ambusher }
+			add_trait_xp = {
+				trait = master_ambusher
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				has_trait = zealot 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = {
+				trait = zealot
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_trait = zealot }
+			add_trait_xp = {
+				trait = zealot
+				value = 2
+			}
+		}
+		# Winter Soldier
+		if = {
+			limit = {
+				has_trait = winter_soldier 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = winter_soldier value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = winter_soldier }
+			add_trait_xp = { trait = winter_soldier value = 2 }
+		}
+
+		# Desert Warrior
+		if = {
+			limit = {
+				has_trait = desert_warrior 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = desert_warrior value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = desert_warrior }
+			add_trait_xp = { trait = desert_warrior value = 2 }
+		}
+
+		# Aggressive Attacker
+		if = {
+			limit = {
+				has_trait = aggressive_attacker 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = aggressive_attacker value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = aggressive_attacker }
+			add_trait_xp = { trait = aggressive_attacker value = 2 }
+		}
+
+		# Flexible Leader
+		if = {
+			limit = {
+				has_trait = flexible_leader 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = flexible_leader value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = flexible_leader }
+			add_trait_xp = { trait = flexible_leader value = 2 }
+		}
+
+		# Forder
+		if = {
+			limit = {
+				has_trait = forder 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = forder value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = forder }
+			add_trait_xp = { trait = forder value = 2 }
+		}
+
+		# Holy Warrior
+		if = {
+			limit = {
+				has_trait = holy_warrior 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = holy_warrior value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = holy_warrior }
+			add_trait_xp = { trait = holy_warrior value = 2 }
+		}
+
+		# Logistician
+		if = {
+			limit = {
+				has_trait = logistician 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = logistician value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = logistician }
+			add_trait_xp = { trait = logistician value = 2 }
+		}
+
+		# Military Engineer
+		if = {
+			limit = {
+				has_trait = military_engineer 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = military_engineer value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = military_engineer }
+			add_trait_xp = { trait = military_engineer value = 2 }
+		}
+
+		# Organizer
+		if = {
+			limit = {
+				has_trait = organizer 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = organizer value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = organizer }
+			add_trait_xp = { trait = organizer value = 2 }
+		}
+
+		# Reaver
+		if = {
+			limit = {
+				has_trait = reaver 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = reaver value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = reaver }
+			add_trait_xp = { trait = reaver value = 2 }
+		}
+
+		# Unyielding Defender
+		if = {
+			limit = {
+				has_trait = unyielding_defender 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = unyielding_defender value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = unyielding_defender }
+			add_trait_xp = { trait = unyielding_defender value = 2 }
+		}
+
+		# Cautious Leader
+		if = {
+			limit = {
+				has_trait = cautious_leader 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = cautious_leader value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = cautious_leader }
+			add_trait_xp = { trait = cautious_leader value = 2 }
+		}
+
+		# Reckless
+		if = {
+			limit = {
+				has_trait = reckless 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = reckless value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = reckless }
+			add_trait_xp = { trait = reckless value = 2 }
+		}
+
+		# Forest Fighter
+		if = {
+			limit = { 
+			has_trait = forest_fighter 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = forest_fighter value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = forest_fighter }
+			add_trait_xp = { trait = forest_fighter value = 2 }
+		}
+		# Open Terrain Expert
+		if = {
+			limit = {
+				has_trait = open_terrain_expert 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = open_terrain_expert value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = open_terrain_expert }
+			add_trait_xp = { trait = open_terrain_expert value = 2 }
+		}
+		# Rough Terrain Expert
+		if = {
+			limit = {
+				has_trait = rough_terrain_expert 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = rough_terrain_expert value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = rough_terrain_expert }
+			add_trait_xp = { trait = rough_terrain_expert value = 2 }
+		}
+
+		# Jungle Stalker
+		if = {
+			limit = {
+				has_trait = jungle_stalker 
+				OR = {
+					is_ai = no
+					#liege = { is_ai = no }
+				}
+			}
+			add_trait_xp = { trait = jungle_stalker value = 1 }
+		}
+		else_if = {
+			limit = { has_trait = jungle_stalker }
+			add_trait_xp = { trait = jungle_stalker value = 2 }
+		}
+	}
+}
+
+random_yearly_everyone_pulse = {
+	on_actions = {
+		fow_natural_increase
+	}
+}
+
+train_commanders_monthly_on_action = {
+	trigger = {
+		exists = cp:councillor_marshal
+	}
+	on_actions = {
+		reb_train_commanders_monthly_on_action
+	}
+}
+
+reb_train_commanders_monthly_on_action = {
+	trigger = {
+		exists = cp:councillor_marshal
+	}
+	events = {
+		fow_task.0001
+	}
+}

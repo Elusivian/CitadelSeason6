@@ -1,0 +1,217 @@
+﻿# Maester
+agot_maester_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+	if = {
+		limit = {
+			scope:liege.primary_title = title:e_the_iron_throne
+		}
+		scope:liege.primary_title = {
+			set_variable = {
+				name = grandmaester
+				value = scope:employee
+			}
+		}
+	}
+}
+agot_maester_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+	if = {
+		limit = {
+			scope:employee = { has_character_flag = former_acolyte }
+		}
+		scope:employee = { remove_character_flag = former_acolyte }
+	}
+}
+agot_maester_title_invalidated_effect = {
+	basic_invalidated_court_position_effect = yes
+}
+
+# CAPT HOUSEHOLD GUARD
+agot_household_guard_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+agot_household_guard_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+}
+agot_household_guard_title_invalidated_effect = {
+	basic_invalidated_court_position_effect = yes
+}
+
+# SEPTON/SEPTA
+agot_septon_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+agot_septa_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+	scope:liege = {
+		every_child = {
+			limit = {
+				is_adult = no
+				is_ruler = no
+				age >= childhood_education_start_age
+				NOT = {
+					any_relation = {
+						type = guardian
+					}
+				}
+				court_owner ?= prev
+			}
+			set_relation_guardian = scope:employee
+		}
+	}
+}
+agot_septa_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+	scope:liege = {
+		every_child = {
+			limit = {
+				any_relation = {
+					type = guardian
+					this = scope:employee
+				}
+			}
+			remove_relation_guardian = scope:employee
+		}
+	}
+}
+agot_septon_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+}
+
+agot_septon_title_invalidated_effect = {
+	basic_invalidated_court_position_effect = yes
+}
+
+
+#Gaoler
+
+agot_gaoler_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+agot_gaoler_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+}
+agot_gaoler_title_invalidated_effect = {
+	basic_invalidated_court_position_effect = yes
+}
+
+
+#Harbor
+
+agot_harbormaster_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+
+agot_harbormaster_title_revoked_effect ={
+	basic_revoked_court_position_effect = yes
+}
+agot_harbormaster_title_invalidated_effect ={
+	basic_invalidated_court_position_effect = yes
+}
+
+#Warden
+
+agot_warden_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+
+agot_warden_title_revoked_effect ={
+	basic_revoked_court_position_effect = yes
+}
+agot_warden_title_invalidated_effect ={
+	basic_invalidated_court_position_effect = yes
+}
+
+#Goldcloaks
+
+agot_goldcloaks_title_accepted_effect = {
+	scope:employee = {
+		save_scope_as = employee_saved
+	}
+	create_title_and_vassal_change = {
+		type = granted
+		save_scope_as = title_change
+		add_claim_on_loss = no
+	}
+	title:b_goldguard_heights  = {
+		change_title_holder_include_vassals = {
+			holder = scope:employee
+			change = scope:title_change
+		}
+	}
+	resolve_title_and_vassal_change = scope:title_change
+}
+
+agot_goldcloaks_title_revoked_effect  = {
+	scope:liege = {
+		trigger_event = {
+			id = agot_goldcloaks.0001
+			days = 1
+		}
+	}
+}
+
+
+agot_goldcloaks_title_invalidated_effect  = {
+	scope:liege = {
+		trigger_event = {
+			id = agot_goldcloaks.0001
+			days = 1
+		}
+	}
+}
+
+# Master At Arms
+
+agot_master_at_arms_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+agot_master_at_arms_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+}
+agot_master_at_arms_title_invalidated_effect = {
+	basic_invalidated_court_position_effect = yes
+}
+
+# Court Smith
+
+agot_court_smith_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+}
+agot_court_smith_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+}
+agot_court_smith_title_invalidated_effect = {
+	basic_invalidated_court_position_effect = yes
+}
+
+# Head Dragonkeeper
+agot_head_dragonkeeper_title_accepted_effect = {
+	basic_gained_court_position_effect = yes
+	scope:employee = {
+		add_character_flag = head_dragonkeeper
+	}
+}
+
+agot_head_dragonkeeper_title_revoked_effect = {
+	basic_revoked_court_position_effect = yes
+	scope:employee = { 
+		save_scope_as = head_dragonkeeper
+		add_character_flag = {
+			flag = agot_currently_being_fired
+			days = 1
+		}
+	}
+	scope:liege = {
+		trigger_event = agot_dragon_pits.2002
+	}
+}
+agot_head_dragonkeeper_title_invalidated_effect ={
+	basic_invalidated_court_position_effect = yes
+	scope:employee = { 
+		save_scope_as = head_dragonkeeper
+	}
+	scope:liege = {
+		trigger_event = agot_dragon_pits.2002
+	}
+}

@@ -1,0 +1,45 @@
+﻿interactive_dont_call_vassals = {
+	desc = interactive_dont_call_vassals_decision_desc
+	selection_tooltip = interactive_dont_call_vassals_decision_tooltip
+	is_shown = {
+		is_landed = yes
+		is_ruler = yes
+		NOT = { has_character_flag = dont_call_vassals }
+	} 
+	effect = {
+		custom_tooltip = interactive_dont_call_vassals_decision_effect
+		add_character_flag = dont_call_vassals
+	}
+	ai_check_interval = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+	sort_order = 1000
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_realm.dds" }
+}
+
+interactive_call_vassals = {
+	desc = interactive_call_vassals_decision_desc
+	selection_tooltip = interactive_call_vassals_decision_tooltip
+	is_shown = {
+		is_landed = yes
+		is_ruler = yes
+		has_character_flag = dont_call_vassals
+	} 
+	effect = {
+		custom_tooltip = interactive_call_vassals_decision_effect
+		remove_character_flag = dont_call_vassals
+	}
+	ai_check_interval = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+	sort_order = 1000
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_realm.dds" }
+}

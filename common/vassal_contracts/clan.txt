@@ -1,0 +1,26 @@
+﻿clan_tax_collector_obligations = {
+	obligation_levels = {
+		default = {
+			levies = {
+				value = 1
+				if = {
+					if = {
+						limit = { scope:vassal = { highest_held_title_tier >= tier_county } }
+						add = -1
+					}
+				}
+			}
+
+			tax = {
+				value = 0
+				if = {
+					limit = { exists = scope:tax_collector }
+					add = {
+						value = clan_government_tax_default
+						multiply = clan_government_tax_collector_aptitude_multiplier
+					}
+				}
+			}
+		}
+	}
+}

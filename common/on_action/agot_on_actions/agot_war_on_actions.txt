@@ -1,0 +1,141 @@
+﻿on_war_started = {
+	on_actions = {
+		loyalist_faction_action
+		agot_megawar_lite_action
+	}
+}
+
+loyalist_faction_action = {
+	effect = {
+		if = {
+			limit = {
+				war = { NOT = {	using_cb = peasant_war } }
+
+				scope:attacker = {
+					NOT = {
+						AND = {
+							exists = joined_faction
+							joined_faction = { faction_is_type = peasant_faction }
+						}
+					}
+				}
+
+				scope:attacker = {
+					is_vassal_or_below_of = scope:defender
+				}
+
+				# scope:defender = {
+				# 	NOT = { has_character_flag = war_of_succession_leader }
+				# }
+			}
+
+			scope:defender = {
+				every_vassal = {
+					limit = {
+						highest_held_title_tier > tier_barony
+						NOT = { is_at_war_with = scope:defender }
+						NOT = { is_allied_to = scope:attacker }
+						NOT = { this = scope:attacker }
+						NOT = { is_allied_in_war = scope:defender }
+						NOT = { is_allied_in_war = scope:attacker }
+						OR = {
+							is_allied_to = scope:defender # an ally would join the loyalist faction but due to how factions work they can't
+							has_relation_friend = scope:defender # a friend would join the loyalist faction but due to how factions work they can't
+							AND = {
+								exists = joined_faction
+								joined_faction = { faction_is_type = agot_loyalist_faction }
+							}
+						}
+						opinion = {
+							target = scope:defender
+							value > 20
+						}
+
+						#Bookmark Ignore List (Usually vassals who would join to a canon war as attacker against their liege without actual alliance)
+						#NPK Reyne Rebellion
+						NOT  = { this = character:Tarbeck_30 }
+						NOT  = { this = character:Tarbeck_27 }
+					}
+					scope:war = { add_defender = prev }
+				}
+			}
+			scope:attacker = {
+				if = {
+					limit = {
+						exists = joined_faction
+						joined_faction = { faction_is_type = agot_loyalist_faction }
+					}
+					leave_faction = joined_faction
+				}
+			}
+		}
+	}
+}
+
+agot_megawar_lite_action = {
+	effect = {
+		if = {
+			limit = {
+				war = { using_cb = agot_succession_war }
+
+				scope:attacker = {
+					has_character_flag = agot_megawar_lite
+					is_vassal_or_below_of = scope:defender
+				}
+
+				scope:defender = {
+					any_vassal_or_below = {
+						highest_held_title_tier > tier_barony
+						OR = {
+							NOT = { is_at_war_with = scope:defender }
+							NOT = { is_at_war_with = scope:attacker }
+						}
+						NOT = { this = scope:attacker }
+						NOT = { is_allied_in_war = scope:defender }
+						NOT = { is_allied_in_war = scope:attacker }
+						OR = {
+							has_character_flag = megawar_lite_joins_defender
+							has_character_flag = megawar_lite_joins_attacker
+						}
+					}
+				}
+			}
+
+			scope:defender = {
+				#Joining the Defender
+				every_vassal_or_below = {
+					limit = {
+						highest_held_title_tier > tier_barony
+						NOT = { is_at_war_with = scope:defender }
+						NOT = { this = scope:attacker }
+						NOT = { is_allied_in_war = scope:defender }
+						NOT = { is_allied_in_war = scope:attacker }
+						has_character_flag = megawar_lite_joins_defender
+					}
+					scope:war = { add_defender = prev }
+				}
+				#Joining the Attacker
+				every_vassal_or_below = {
+					limit = {
+						highest_held_title_tier > tier_barony
+						NOT = { is_at_war_with = scope:attacker }
+						NOT = { this = scope:attacker }
+						NOT = { is_allied_in_war = scope:defender }
+						NOT = { is_allied_in_war = scope:attacker }
+						has_character_flag = megawar_lite_joins_attacker
+					}
+					scope:war = { add_attacker = prev }
+				}
+			}
+			scope:attacker = {
+				if = {
+					limit = {
+						exists = joined_faction
+						joined_faction = { faction_is_type = agot_loyalist_faction }
+					}
+					leave_faction = joined_faction
+				}
+			}
+		}
+	}
+}

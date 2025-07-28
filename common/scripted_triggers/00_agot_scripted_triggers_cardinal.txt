@@ -1,0 +1,59 @@
+﻿# # Can this character become cardinal?
+# # is_eligible_for_cardinality = {
+# # 	is_alive = yes
+# # 	#is_councillor = yes
+# # 	is_clergy = yes
+# # 	#is_landed = no
+# # 	OR = {has_government = theocracy_government is_landed = no}
+# # 	has_cardinal_faith = yes
+# # 	is_cardinal = no
+# # 	is_pope = no
+# # }
+# # Can this character's realm priest become cardinal?
+# ruler_has_cardinality_eligible_realm_priest = {
+# 	has_cardinal_faith = yes
+# 	highest_held_title_tier >= tier_barony
+# 	exists = realm_priest
+# 	realm_priest = {is_eligible_for_cardinality = yes}
+# }
+
+# # Is this character a valid cardinal?
+# is_cardinal = {
+# 	#	has_trait = most_devout_member
+# 	has_cardinal_faith = yes
+# 	any_owned_story = {
+# 		story_type = cardinal_story
+# 	}
+# }
+
+# # Is this character a valid pope?
+# is_pope = {
+# 	exists = primary_title
+# 	has_cardinal_faith = yes
+# 	OR = {
+# 		this = faith.religious_head
+# 		has_papal_title = yes
+# 	}
+# 	has_title = global_var:k_the_most_devout
+# }
+
+# # Does this character have a valid faith for the cardinal system?
+# has_cardinal_faith = {
+# 	trigger_if = {
+# 		limit = { exists = global_var:the_seven_main }
+# 		faith = global_var:the_seven_main
+# 	}
+# 	trigger_else = {
+# 		always = no
+# 	}
+# }
+# # Does this character own the papal title?
+# has_papal_title = {
+# 	trigger_if = {
+# 		limit = { exists = global_var:k_the_most_devout }
+# 		has_title = global_var:k_the_most_devout
+# 	}
+# 	trigger_else = {
+# 		always = no
+# 	}
+# }

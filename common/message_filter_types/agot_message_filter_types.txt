@@ -1,0 +1,18 @@
+﻿dragon_death = {
+	display = popup
+}
+dragonrider_death = {
+	display = popup
+}
+dragon_hatched = {
+	display = popup
+}
+dragon_tamed = {
+	display = popup
+}
+iron_throne_inheritance = {
+	display = popup
+}
+nightswatch_inheritance = {
+	display = popup
+}

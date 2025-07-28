@@ -1,0 +1,19 @@
+﻿
+
+on_birth_child = {
+	on_actions = {
+		AGOT_More_Bookmarks_canon_children
+	}
+}
+
+AGOT_More_Bookmarks_canon_children = {
+	effect = {
+	if = {
+			limit = {
+			has_game_rule = agot_more_bookmarks_canon_children_on
+			scope:mother = { has_character_flag = agot_is_pregnant }
+			}
+			agot_more_bookmarks_canon_children_birth_effect = yes
+		}
+	}
+}

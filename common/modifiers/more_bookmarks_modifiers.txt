@@ -1,0 +1,9 @@
+﻿simple_canon_kids_infertility = {
+
+fertility = -2
+
+
+
+
+
+}

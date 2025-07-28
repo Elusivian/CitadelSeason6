@@ -1,0 +1,242 @@
+﻿# Recursive long title system
+# By Tobbzn, ported from Way of Kings
+# Use the scripted effects to generate the long title in question.
+
+LongTitle = {
+	type = character
+	log_loc_errors = no
+	text = {
+		trigger = {exists = primary_title.var:previous_title}
+		localization_key = long_title.start
+	}
+	text = {
+		fallback = yes
+		localization_key = long_title.fallback
+	}
+}
+LongTitleWithName = {
+	type = character
+	log_loc_errors = no
+	text = {
+		trigger = {exists = primary_title.var:previous_title is_councillor = yes is_close_family_of = liege}
+		localization_key = long_title.relation_and_council_position.start
+	}
+	text = {
+		trigger = {exists = primary_title.var:previous_title is_councillor = yes}
+		localization_key = long_title.council_position.start
+	}
+	text = {
+		trigger = {exists = primary_title.var:previous_title is_vanilla_independent_ruler = no}
+		localization_key = long_title.liege.start
+	}
+	text = {
+		trigger = {exists = primary_title.var:previous_title}
+		localization_key = long_title.character.start
+	}
+	text = {
+		trigger = {is_courtier = yes}
+		localization_key = long_title.courtier.start
+	}
+	text = {
+		fallback = yes
+		localization_key = long_title.character.fallback
+	}
+}
+LongTitleWithNameAndHouse = {
+	type = character
+	log_loc_errors = no
+	text = {
+		trigger = {exists = primary_title.var:previous_title}
+		localization_key = long_title.house.start
+	}
+	text = {
+		fallback = yes
+		localization_key = long_title.house.fallback
+	}
+}
+LongTitleRecursive = {
+	type = landed_title
+	text = {
+		trigger = {
+			has_variable = previous_title
+			has_variable = next_title
+			var:next_title.tier = tier
+			var:previous_title.tier = tier
+		}
+		localization_key = long_title.recursive.same_tier
+	}
+	text = {
+		trigger = {
+			has_variable = previous_title
+			has_variable = next_title
+			var:next_title.tier = tier
+		}
+		localization_key = long_title.recursive.end_tier
+	}
+	text = {
+		trigger = {
+			has_variable = previous_title
+		}
+		localization_key = long_title.recursive.new_tier
+	}
+	text = {
+		trigger = {
+			has_variable = next_title
+			var:next_title.tier = tier
+		}
+		localization_key = long_title.end.same_tier
+	}
+	text = {
+		fallback = yes
+		localization_key = long_title.end.new_tier
+	}
+}
+LongTitleTierName = {
+	type = landed_title
+	text = {
+		trigger = {NOT = {exists = holder}}
+		localization_key = long_title.tier.nonexistent
+	}
+	text = { # Handles all Empires that don't require very special localization
+		trigger = {tier = holder.highest_held_title_tier}
+		localization_key = long_title.tier.primary
+	}
+	# text = { AGOT TODO : Highprince government
+	# 	trigger = {tier = tier_kingdom holder = {has_government = highprince_government is_male = yes}}
+	# 	localization_key = king_highprince_male
+	# }
+	# text = {
+	# 	trigger = {tier = tier_kingdom holder = {has_government = highprince_government is_female = yes}}
+	# 	localization_key = king_highprince_female
+	# }
+	# text = {
+	# 	trigger = {tier = tier_duchy holder = {has_government = highprince_government is_male = yes}}
+	# 	localization_key = duke_highprince_male
+	# }
+	# text = {
+	# 	trigger = {tier = tier_duchy holder = {has_government = highprince_government is_female = yes}}
+	# 	localization_key = duke_highprince_female
+	# }
+	text = {
+		trigger = {tier = tier_kingdom holder = {has_government = tribal_government is_male = yes}}
+		localization_key = king_tribal_male
+	}
+	text = {
+		trigger = {tier = tier_kingdom holder = {has_government = tribal_government is_female = yes}}
+		localization_key = king_tribal_female
+	}
+	text = {
+		trigger = {tier = tier_duchy holder = {has_government = tribal_government is_male = yes}}
+		localization_key = duke_tribal_male
+	}
+	text = {
+		trigger = {tier = tier_duchy holder = {has_government = tribal_government is_female = yes}}
+		localization_key = duke_tribal_female
+	}
+	text = {
+		trigger = {tier = tier_kingdom holder = {has_government = clan_government is_male = yes}}
+		localization_key = king_clan_male
+	}
+	text = {
+		trigger = {tier = tier_kingdom holder = {has_government = clan_government is_female = yes}}
+		localization_key = king_clan_female
+	}
+	text = {
+		trigger = {tier = tier_duchy holder = {has_government = clan_government is_male = yes}}
+		localization_key = duke_clan_male
+	}
+	text = {
+		trigger = {tier = tier_duchy holder = {has_government = clan_government is_female = yes}}
+		localization_key = duke_clan_female
+	}
+	# text = { AGOT TODO : Implement/Disable that aren't implemented yet
+	# 	trigger = {tier = tier_kingdom holder = {has_government = bureaucracy_government is_male = yes}}
+	# 	localization_key = king_bureaucracy_male
+	# }
+	# text = {
+	# 	trigger = {tier = tier_kingdom holder = {has_government = bureaucracy_government is_female = yes}}
+	# 	localization_key = king_bureaucracy_female
+	# }
+	# text = {
+	# 	trigger = {tier = tier_duchy holder = {has_government = bureaucracy_government is_male = yes}}
+	# 	localization_key = duke_bureaucracy_male
+	# }
+	# text = {
+	# 	trigger = {tier = tier_duchy holder = {has_government = bureaucracy_government is_female = yes}}
+	# 	localization_key = duke_bureaucracy_female
+	# }
+	# text = {
+	# 	trigger = {tier = tier_kingdom holder = {has_government = luminocracy_government is_male = yes}}
+	# 	localization_key = king_luminocracy_male
+	# }
+	# text = {
+	# 	trigger = {tier = tier_kingdom holder = {has_government = luminocracy_government is_female = yes}}
+	# 	localization_key = king_luminocracy_female
+	# }
+	# text = {
+	# 	trigger = {tier = tier_duchy holder = {has_government = luminocracy_government is_male = yes}}
+	# 	localization_key = duke_luminocracy_male
+	# }
+	# text = {
+	# 	trigger = {tier = tier_duchy holder = {has_government = luminocracy_government is_female = yes}}
+	# 	localization_key = duke_luminocracy_female
+	# }
+	# Feudal / Fallbacks
+	text = {
+		trigger = {tier = tier_kingdom holder = {is_male = yes}}
+		localization_key = king_lp_feudal_male
+	}
+	text = {
+		trigger = {tier = tier_kingdom holder = {is_female = yes}}
+		localization_key = king_lp_feudal_female
+	}
+	text = {
+		trigger = {tier = tier_duchy holder = {is_male = yes}}
+		localization_key = duke_feudal_male
+	}
+	text = {
+		trigger = {tier = tier_duchy holder = {is_female = yes}}
+		localization_key = duke_feudal_female
+	}
+	text = {
+		fallback = yes
+		localization_key = long_title.tier.ruler
+	}
+}
+
+# LongTitleCustom = {
+# 	type = landed_title
+# 	text = {
+# 		fallback = yes
+# 		localization_key = "Fallback"
+# 	}
+# }
+LongTitleEnding = {
+	type = character
+	log_loc_errors = no
+	text = {
+		trigger = {is_alive = yes has_variable = long_title_ending_variable}
+		localization_key = long_title_ending_variable
+	}
+	# text = {
+	# 	trigger = {
+	# 		is_primary_heir_of = title:k_Kholin.holder
+	# 	}
+	# 	localization_key = "heir to the Kholin princedom"
+	# }
+	# text = {
+	# 	trigger = {is_female = yes always = no}
+	# 	localization_key = "mother of dragons"
+	# }
+	# text = {
+	# 	trigger = {
+	# 		has_any_nickname = yes
+	# 		has_bad_nickname = no
+	# 	}
+	# 	localization_key = "[ROOT.Char.GetNickname]"
+	# }
+	text = {
+		fallback = yes
+		localization_key = ""
+	}
+}

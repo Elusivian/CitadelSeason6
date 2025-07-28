@@ -1,0 +1,39 @@
+﻿# Personal Coa Decisions by DYLAN
+adopt_personal_coa = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
+
+	ai_check_interval = 0
+
+	sort_order = 1
+	desc = adopt_personal_coa_desc
+	is_shown = {
+		is_human = yes
+		is_adult = yes
+		NOT = {
+			has_character_flag = has_personal_coa
+			has_government = tribal_government
+		}
+	}
+	cost = {
+		prestige = {
+			value = medium_prestige_value
+			if = {
+				limit = {
+					employs_court_position = master_at_arms_court_position
+				}
+				divide = 2
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = adopt_personal_coa_effect_tt
+		hidden_effect = {
+			agot_create_personal_coa = yes
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+}

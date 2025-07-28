@@ -1,0 +1,45 @@
+﻿agot_valyrian_steel_riddle_num_to_flag = {
+	if = {
+		limit = { exists = $NUM$ }
+		switch = {
+			trigger = $NUM$
+			0 = { save_scope_value_as = { name = vsr_flag value = flag:wolf } }
+			1 = { save_scope_value_as = { name = vsr_flag value = flag:eagle } }
+			2 = { save_scope_value_as = { name = vsr_flag value = flag:lizard } }
+			3 = { save_scope_value_as = { name = vsr_flag value = flag:crow } }
+			4 = { save_scope_value_as = { name = vsr_flag value = flag:dog } }
+			5 = { save_scope_value_as = { name = vsr_flag value = flag:dragon } }
+			6 = { save_scope_value_as = { name = vsr_flag value = flag:fish } }
+			7 = { save_scope_value_as = { name = vsr_flag value = flag:lion } }
+			8 = { save_scope_value_as = { name = vsr_flag value = flag:scorpion } }
+			9 = { save_scope_value_as = { name = vsr_flag value = flag:rose } }
+		}
+	}
+}
+
+agot_valyrian_steel_random_picker = {
+	random_list = {
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:wolf }  } }		save_scope_value_as = { name = vsr_flag value = flag:wolf } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:eagle }  } }		save_scope_value_as = { name = vsr_flag value = flag:eagle } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:lizard } } }		save_scope_value_as = { name = vsr_flag value = flag:lizard } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:crow }  } }		save_scope_value_as = { name = vsr_flag value = flag:crow } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:dog }  } }		save_scope_value_as = { name = vsr_flag value = flag:dog } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:dragon }  } }		save_scope_value_as = { name = vsr_flag value = flag:dragon } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:fish }  } }		save_scope_value_as = { name = vsr_flag value = flag:fish } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:lion }  } }		save_scope_value_as = { name = vsr_flag value = flag:lion } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:scorpion }  } }	save_scope_value_as = { name = vsr_flag value = flag:scorpion } }
+		1 = { trigger = { NOT = { is_target_in_variable_list = { name = vsr_animals target = flag:rose }  } }		save_scope_value_as = { name = vsr_flag value = flag:rose } }
+	}
+	set_variable = {
+		name = vsr_type_$NUM$
+		value = scope:vsr_flag
+	}
+	set_variable = {
+		name = vsr_num_$NUM$
+		value = { 1 7 }
+	}
+	add_to_variable_list = {
+		name = vsr_animals
+		target = scope:vsr_flag
+	}
+}

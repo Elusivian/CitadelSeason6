@@ -1,0 +1,39 @@
+﻿# filler triggers
+
+loaned_from_iron_bank_trigger = {
+	OR = {
+		has_character_flag = third_tier_iron_bank_loan_flag
+		has_character_flag = second_tier_iron_bank_loan_flag
+		has_character_flag = first_tier_iron_bank_loan_flag
+	}
+}
+
+could_not_pay_off_iron_bank_loan_first_notice_trigger = {
+	has_character_flag = loaned_from_iron_bank_flag
+}
+
+could_not_pay_off_iron_bank_loan_second_notice_trigger = {
+	has_character_flag = loaned_from_iron_bank_flag
+	has_character_flag = delayed_once
+}
+
+could_not_pay_off_iron_bank_loan_third_notice_trigger = {
+	has_character_flag = loaned_from_iron_bank_flag
+	has_character_flag = delayed_twice
+}
+
+can_pay_iron_bank_fees = {
+	OR = {
+		AND = {
+			gold >= 300
+		}
+		AND = {
+			has_character_flag = second_tier_iron_bank_loan_flag
+			gold >= 175
+		}
+		AND = {
+			has_character_flag = third_tier_iron_bank_loan_flag
+			gold >= 50
+		}
+	}
+}

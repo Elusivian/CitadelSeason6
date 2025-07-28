@@ -1,0 +1,242 @@
+﻿## By Eskarina
+
+
+patron_tooltip_god_name = {
+	is_shown = {
+		AND = {
+			has_variable = patron_god
+		}
+	}
+
+	is_valid = {
+
+	}
+}
+
+# patron_tooltip_pick_patron = {
+# 	is_shown = {
+# 		is_local_player = yes
+# 		not = {
+# 			has_variable = patron_god
+# 		}
+# 	}
+
+# 	is_valid = {
+
+# 	}
+# }
+
+# patron_tooltip_no_patron = {
+# 	is_shown = {
+# 		is_local_player = no
+# 		not = {
+# 			has_variable = patron_god
+# 		}
+# 	}
+
+# 	is_valid = {
+
+# 	}
+# }
+
+## Faith of the Seven
+
+choose_patron_generic = {
+	saved_scopes = {
+		patron_name
+	}
+
+	is_shown = {
+
+	}
+
+	is_valid = {
+		piety >= minor_piety_value
+	}
+
+	effect = {
+		parse_patron_name_flag_complex = { PATRON = scope:patron_name APPLY = agot_set_patron_effect }
+	}
+}
+
+get_patron_god_list = {
+	is_shown = {
+
+	}
+
+	is_valid = {
+
+	}
+
+	# possible issue: if the player changes religion while the patron god screen is open, they can pick a patron from their previous
+	# religion post-conversion and keep it
+
+	effect = {
+		clear_variable_list = patron_gods
+
+		switch = {
+			trigger = religion
+
+			religion:faith_of_the_seven_religion = {
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_father
+				}
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_mother
+				}
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_warrior
+				}
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_smith
+				}
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_maiden
+				}
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_crone
+				}
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:the_stranger
+				}
+			}
+
+			# religion:old_gods_religion = {
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:old_gods_streams
+			# 	}
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:old_gods_forests
+			# 	}
+
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:old_gods_stones
+			# 	}
+
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:old_gods_dunes
+			# 	}
+
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:old_gods_tundra
+			# 	}
+
+			# 	if = {
+			# 		limit = {
+			# 			has_faith = faith:old_gods_btw
+			# 		}
+
+			# 		add_to_variable_list = {
+			# 			name = patron_gods
+			# 			target = flag:old_gods_ice
+			# 		}
+
+			# 		add_to_variable_list = {
+			# 			name = patron_gods
+			# 			target = flag:old_gods_caves
+			# 		}
+			# 	}
+			# }
+
+			religion:valyrian_religion = {
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:belarion
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:vhagar
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:meraxes
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:syrax
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:caraxes
+				}
+			}
+
+			religion:rhllor_religion = {
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:blood_of_rhllor
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:fire_of_rhllor
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:light_of_rhllor
+				}
+
+				add_to_variable_list = {
+					name = patron_gods
+					target = flag:azor_ahai
+				}
+
+				# TODO: Add in Rite-specific modifiers once those faiths are added
+			}
+
+			# religion:drowned_god_religion = {
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:grey_king
+			# 	}
+
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:naga
+			# 	}
+
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:mermaid_queen
+			# 	}
+
+			# 	add_to_variable_list = {
+			# 		name = patron_gods
+			# 		target = flag:galon_whitestaff
+			# 	}
+			# }
+		}
+	}
+}
+
+clear_patron_god_list = {
+	is_shown = {
+
+	}
+
+	is_valid = {
+
+	}
+
+	effect = {
+		clear_variable_list = patron_gods
+	}
+}

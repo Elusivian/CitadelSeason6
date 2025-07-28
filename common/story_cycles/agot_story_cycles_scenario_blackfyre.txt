@@ -1,0 +1,912 @@
+﻿### SPOILER ALERT ### DO NOT READ THIS FILE IF UNFAMILIAR WITH SEVERAL THEORIES REGARDING daemon'S REBELLION
+
+story_agot_scenario_blackfyre = {
+	# by Freeholder (revised from TitanRogue's RR Scenario)
+
+	on_setup = {
+		debug_log = "Blackfyre Scenario initialized"
+		##################################
+		set_variable = {
+			name	= agot_blackfyre_scenario_status
+			value	= flag:hot_phase
+		}
+		set_variable = {
+			name	= agot_blackfyre_war_status
+			value	= flag:ongoing
+		}
+		
+		set_variable = {
+			name	= agot_blackfyre_lothston_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_blackfyre_hightower_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_blackfyre_oakheart_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_blackfyre_tarbeck_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_blackfyre_greyjoy_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_blackfyre_baratheon_status
+			value	= flag:pending
+		}
+		set_variable = {
+							name	= agot_blackfyre_stark_status
+							value	= flag:pending
+						}
+		set_variable = {
+			name	= agot_blackfyre_redgrass_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_blackfyre_rebellion_status
+			value	= flag:active
+		}
+		set_variable = {
+			name	= agot_ice_and_fire_status
+			value	= flag:pending
+		}
+		set_variable = {
+			name	= agot_debug_speed_mode
+			value	= flag:deactivated
+		}
+		set_variable = {
+			name	= agot_daemon_blackfyre_status
+			value	= flag:alive
+		}
+		
+		set_global_variable = {
+				name = number_of_blackfyre_rebellions
+				value = 1
+			}
+		####
+
+
+		#Initialise Events
+
+	### Daemon Events
+		character:Targaryen_94 = {
+			trigger_event = agot_events_blackfyre_minor.4000
+			
+			trigger_event = {
+			id = agot_events_blackfyre_minor.1000
+			days = 2
+				}
+				
+				trigger_event = {
+			id = agot_events_blackfyre_minor.2000
+			days = 300
+				}
+		
+		
+		}
+		
+	### Daeron Events 
+		
+		character:Targaryen_91 = {
+			trigger_event = agot_events_blackfyre_minor.1001
+		}
+
+	### Baelor
+	
+		character:Targaryen_107 = {
+			trigger_event = agot_events_blackfyre_minor.1002
+		}
+	### Maekar
+		character:Targaryen_110 = {
+			trigger_event = agot_events_blackfyre_minor.1002
+		}
+
+		# Make Bloodraven and Shiera unmarriable
+		character:Targaryen_96 = {
+			add_trait = refusing_marriage
+		}
+		character:Targaryen_97 = {
+			add_trait = refusing_marriage
+		}
+
+		##Stark Reflection Event
+		#character:Stark_102 = {
+		#	trigger_event = agot_events_blackfyre_minor.0124
+		#}
+
+		#IT starts with no MAA for some reason
+	
+		character:Targaryen_91 = {
+			create_maa_regiment = {
+				type = trebuchet 
+				check_can_recruit = no
+				size = 4
+			}
+			create_maa_regiment = {
+				type = armored_footmen  
+				check_can_recruit = no
+				size = 4
+			}
+			create_maa_regiment = {
+				type = bowmen  
+				check_can_recruit = no
+				size = 4
+			}
+		}
+	}
+	on_end = {
+	}
+	on_owner_death = { # the story should always be owned by the
+		story_owner = {
+			if = { # if an heir inherits c_storms_end give it to him
+				limit = {
+					any_heir = {
+						any_heir_title = {
+							exists = this
+							this = title:d_the_blackwater_rush
+						}
+					}
+				}
+
+				random_heir = {
+					limit = {
+						any_heir_title = {
+							exists = this
+							this = title:d_the_blackwater_rush
+						}
+					}
+					root = { make_story_owner = prev }
+				}
+			}
+			else_if = { # else primary heir; change ownership in daily effects then
+				limit = {
+					exists = primary_heir
+					primary_heir = { is_alive = yes }
+				}
+
+				root = { make_story_owner = prev.primary_heir }
+			}
+		}
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 1
+
+		# Make d_the_blackwater_rush holder owner if he isn't
+		#triggered_effect = {
+		#	trigger = {
+		#		NOT = { story_owner = title:d_the_blackwater_rush.holder }
+		#	}
+		#
+		#	effect = {
+		#		make_story_owner = title:d_the_blackwater_rush.holder
+		#	}
+		#}
+		
+		# Make d_the_blackwater_rush holder owner if he isn't
+		triggered_effect = {
+			trigger = {
+				var:agot_daemon_blackfyre_status = flag:alive
+				NOT = { story_owner = character:Targaryen_94 }
+			}
+
+			effect = {
+				
+				#story_owner = { trigger_event = agot_events_blackfyre_minor.5000 }
+					set_variable = {
+			name	= agot_daemon_blackfyre_status
+			value	= flag:dead
+		}
+			}
+		}
+		
+
+		#triggered_effect = {
+		#	trigger = {
+		#		story_owner = title:d_the_blackwater_rush.holder
+		#	}
+		#
+		#	effect = {
+		#		#title:d_the_blackwater_rush.holder = { trigger_event = agot_events_blackfyre_minor.0109 }
+		#	}
+		#}
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	# War Cleanup check
+	effect_group = {
+		days = 30
+
+		triggered_effect = {
+			trigger = {
+				#var:agot_blackfyre_rebellion_status = flag:active
+				NOT = { exists = var:usurper_war }
+				exists = title:e_blackfyre_rebellion.holder
+				#story_owner = { NOT = { has_title = title:e_the_iron_throne } }
+			}
+		
+			effect = {
+			story_owner = { destroy_title = title:e_blackfyre_rebellion
+			save_scope_as = blackfyre_claimant
+			}
+			if = { limit = { story_owner = { NOT = { has_title = title:e_the_iron_throne } } }
+			blackfyre_rebellion_defeat_effect = yes
+			
+			}
+			else = {
+			
+			blackfyre_rebellion_victory_effect = yes
+			}
+			
+			
+				# Make Bloodraven and Shiera marriable
+		character:Targaryen_96 = {
+			remove_trait = refusing_marriage
+		}
+		character:Targaryen_97 = {
+			remove_trait = refusing_marriage
+		}
+			
+			
+			
+			
+			end_story = yes
+							
+				
+				
+				
+				
+			}
+		}
+
+
+
+
+		##########################
+
+
+		
+	}
+
+
+	### HOT PHASE ###
+	# Daily checks for: Redgrass Field, Lothston Betrayal; Hightower, Oakheart, Tarbeck Support, Blackfyre-Stark Alliance, Baratheon and Greyjoy declare for Daemon if he kills the Crown Prince
+	effect_group = {
+		days = 1
+
+		trigger = {
+			var:agot_blackfyre_scenario_status = flag:hot_phase
+		}
+
+		# Daily checks for: The war's end --> switch to RESOLVING PHASE
+		triggered_effect = {
+			trigger = {
+				NOT = { var:agot_blackfyre_war_status = flag:ongoing } # Check for war being over
+			}
+			effect = {
+				set_variable = {
+					name	= agot_blackfyre_scenario_status
+					value	= flag:resolving_phase
+				}
+			}
+		}
+
+	
+
+
+
+		## Lothston decides whether to betray House Blackfyre | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				var:agot_blackfyre_lothston_status = flag:pending
+				NOR = { # Added to avoid the "variable is set but never used" error
+					var:agot_blackfyre_lothston_status = flag:chose_loyalists
+					var:agot_blackfyre_lothston_status = flag:chose_rebels
+				}
+				
+			}
+			effect = {
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					0 = { # Tywin joins crown
+						trigger = {
+							var:usurper_war.defender_war_score > 50
+							title:d_harrenhal.holder = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:usurper_war
+							add = agot_get_defender_war_score_value
+						}
+		
+						set_variable = {
+							name	= agot_blackfyre_lothston_status
+							value	= flag:chose_loyalists
+						}
+		
+						title:d_harrenhal.holder = {
+							agot_mw_fetch_crown_scope = yes
+							root.var:usurper_war = { # fetch scope mw_rebel_story
+								random_war_attacker = {
+									limit = { agot_mw_rebel_leader_trigger = yes }
+		
+									random_owned_story = {
+										limit = { story_type = story_agot_mw_rebel }
+		
+										save_scope_as = mw_rebel_story
+									}
+								}
+							}
+							agot_mw_join_loyalists_effect = { RULER = title:d_harrenhal.holder CROWN = scope:mw_crown_story.story_owner }
+							###Announce Lothston Betrayal
+							var:usurper_war = { save_scope_as = war }						
+							scope:war = { 
+							add_attacker = title:d_harrenhal.holder
+							every_war_participant = { limit = { is_ai = no } trigger_event = agot_events_blackfyre_minor.3001 } }
+						
+						}
+					}
+				
+					0 = { # nothing happens
+						modifier = {
+							exists = var:usurper_war
+							var:usurper_war.attacker_war_score > 0
+							add = agot_get_attacker_war_score_value
+						}
+						
+					}
+				}
+			}
+		}
+		
+		## Hightower decides whether to fully support House Blackfyre | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				var:agot_blackfyre_hightower_status = flag:pending
+				#NOR = { # Added to avoid the "variable is set but never used" error
+				#	var:agot_blackfyre_hightower_status = flag:chose_loyalists
+				#	var:agot_blackfyre_hightower_status = flag:chose_rebels
+				#}
+				
+			}
+			effect = {
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					0 = { # Hightower joins rebels
+						trigger = {
+							var:usurper_war.attacker_war_score > 50
+							title:d_oldtown.holder = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:usurper_war
+							add = agot_get_attacker_war_score_value
+						}
+		
+						set_variable = {
+							name	= agot_blackfyre_hightower_status
+							value	= flag:chose_rebels
+						}
+		
+						title:d_oldtown.holder = {
+							agot_mw_join_rebels_effect = { RULER = title:d_oldtown.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+							###Announce Hightower Allegiance
+							var:usurper_war = { save_scope_as = war }						
+							scope:war = { 
+							every_war_participant = { limit = { is_ai = no } trigger_event = agot_events_blackfyre_minor.3001 } }
+						
+						}
+					}
+				
+					200 = { # nothing happens
+						modifier = {
+							exists = var:usurper_war
+							var:usurper_war.defender_war_score > 0
+							add = agot_get_defender_war_score_value
+						}
+						
+					}
+				}
+			}
+		}
+		
+			## Oakheart decides whether to fully support House Blackfyre | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				var:agot_blackfyre_oakheart_status = flag:pending
+				NOR = { # Added to avoid the "variable is set but never used" error
+					var:agot_blackfyre_oakheart_status = flag:chose_loyalists
+					var:agot_blackfyre_oakheart_status = flag:chose_rebels
+				}
+				
+			}
+			effect = {
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					0 = { # oakheart joins rebels
+						trigger = {
+							var:usurper_war.attacker_war_score > 50
+							title:d_the_ocean_road.holder = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:usurper_war
+							add = agot_get_attacker_war_score_value
+						}
+		
+						set_variable = {
+							name	= agot_blackfyre_oakheart_status
+							value	= flag:chose_rebels
+						}
+		
+						title:d_the_ocean_road.holder = {
+							agot_mw_join_rebels_effect = { RULER = title:d_the_ocean_road.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+							###Announce Oakheart Allegiance
+							var:usurper_war = { save_scope_as = war }						
+							scope:war = { 
+							every_war_participant = { limit = { is_ai = no } trigger_event = agot_events_blackfyre_minor.3001 } }
+						
+						}
+					}
+				
+					100 = { # nothing happens
+						modifier = {
+							exists = var:usurper_war
+							var:usurper_war.defender_war_score > 0
+							add = agot_get_defender_war_score_value
+						}
+						
+					}
+				}
+			}
+		}
+		
+		## Tarbeck decides whether to fully support House Blackfyre | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				var:agot_blackfyre_tarbeck_status = flag:pending
+				NOR = { # Added to avoid the "variable is set but never used" error
+					var:agot_blackfyre_tarbeck_status = flag:chose_loyalists
+					var:agot_blackfyre_tarbeck_status = flag:chose_rebels
+				}
+				
+			}
+			effect = {
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					0 = { # oakheart joins rebels
+						trigger = {
+							var:usurper_war.attacker_war_score > 50
+							title:d_tarrich.holder = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:usurper_war
+							add = agot_get_attacker_war_score_value
+						}
+		
+						set_variable = {
+							name	= agot_blackfyre_tarbeck_status
+							value	= flag:chose_rebels
+						}
+		
+						title:d_tarrich.holder = {
+							agot_mw_join_rebels_effect = { RULER = title:d_tarrich.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+							###Announce Oakheart Allegiance
+							var:usurper_war = { save_scope_as = war }						
+							scope:war = { 
+							every_war_participant = { limit = { is_ai = no } trigger_event = agot_events_blackfyre_minor.3001 } }
+						
+						}
+					}
+				
+					100 = { # nothing happens
+						modifier = {
+							exists = var:usurper_war
+							var:usurper_war.defender_war_score > 0
+							add = agot_get_defender_war_score_value
+						}
+						
+					}
+				}
+			}
+		}
+	### Pact of Ice and Fire 2
+	triggered_effect = {
+			trigger = {
+				
+				exists = var:usurper_war
+				#var:usurper_war.defender_war_score > 25 # Desperate
+				var:agot_blackfyre_stark_status = flag:pending
+				character:Stark_102 = {
+					is_imprisoned = no
+					is_incapable = no
+					is_alive = yes
+					is_married = no
+					is_betrothed = no
+				NOR = {
+						is_at_war = yes
+						is_at_war_with = title:e_blackfyre_rebellion.holder
+				
+						}
+				}
+				character:Blackfyre_4 = {
+					is_imprisoned = no
+					is_incapable = no
+					is_alive = yes
+					is_married = no
+					is_betrothed = no
+				}
+				
+	
+			}
+			effect = {
+			set_variable = {
+							name	= agot_blackfyre_stark_status
+							value	= flag:complete
+						}
+			if = { limit = {
+							character:Stark_102 = { is_ai = no }
+							character:Targaryen_94 = { is_ai = yes }
+					}
+			character:Stark_102 = { trigger_event = agot_events_blackfyre_minor.8000 }
+			}
+			else_if = { limit = {
+							character:Stark_102 = { is_ai = yes }
+							character:Targaryen_94 = { is_ai = no }
+					}
+				character:Targaryen_94 = { trigger_event = agot_events_blackfyre_minor.8000 }
+					}
+			else_if = { limit = {
+							character:Stark_102 = { is_ai = yes }
+							character:Targaryen_94 = { is_ai = yes }
+					}
+							character:Blackfyre_4 = { marry = character:Stark_102 }	
+					story_owner = {  create_alliance = { # By marriage
+							target = character:Stark_102
+							allied_through_owner = this 
+							allied_through_target = character:Blackfyre_4 
+						}
+						}
+					agot_mw_join_rebels_effect = { RULER = title:k_the_north.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+			}
+			
+				
+				
+			
+			}
+		}
+
+## Baratheon joins Daemon | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				var:agot_blackfyre_baratheon_status = flag:pending
+				NOR = { # Added to avoid the "variable is set but never used" error
+					var:agot_blackfyre_baratheon_status = flag:chose_loyalists
+					var:agot_blackfyre_baratheon_status = flag:chose_rebels
+				}
+				NOT = { character:Targaryen_107 = { is_alive = yes } }
+				
+			}
+			effect = {
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					0 = { # baratheon joins rebels
+						trigger = {
+							var:usurper_war.attacker_war_score > 25
+							title:k_the_stormlands.holder = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:usurper_war
+							add = agot_get_attacker_war_score_value
+						}
+		
+						set_variable = {
+							name	= agot_blackfyre_baratheon_status
+							value	= flag:chose_rebels
+						}
+		
+						title:k_the_stormlands.holder = {
+							agot_mw_join_rebels_effect = { RULER = title:k_the_stormlands.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+							###Announce Baratheon Allegiance
+							var:usurper_war = { save_scope_as = war }						
+							
+						
+						}
+					}
+				
+					100 = { # nothing happens
+						modifier = {
+							exists = var:usurper_war
+							var:usurper_war.defender_war_score > 0
+							add = agot_get_defender_war_score_value
+						}
+						
+					}
+				}
+			}
+		}		
+		
+		
+## Greyjoy joins Daemon | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				var:agot_blackfyre_tarbeck_status = flag:pending
+				NOR = { # Added to avoid the "variable is set but never used" error
+					var:agot_blackfyre_greyjoy_status = flag:chose_loyalists
+					var:agot_blackfyre_greyjoy_status = flag:chose_rebels
+				}
+				NOT = { character:Targaryen_107 = { is_alive = yes } }
+				
+			}
+			effect = {
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					0 = { # greyjoy joins rebels
+						trigger = {
+							var:usurper_war.attacker_war_score > 50
+							title:k_the_iron_islands.holder = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:usurper_war
+							add = agot_get_attacker_war_score_value
+						}
+		
+						set_variable = {
+							name	= agot_blackfyre_greyjoy_status
+							value	= flag:chose_rebels
+						}
+		
+						title:k_the_iron_islands.holder = {
+							agot_mw_join_rebels_effect = { RULER = title:k_the_iron_islands.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+							###Announce Baratheon Allegiance
+							var:usurper_war = { save_scope_as = war }						
+							 }
+						
+						}
+					}
+				
+					100 = { # nothing happens
+						modifier = {
+							exists = var:usurper_war
+							var:usurper_war.defender_war_score > 0
+							add = agot_get_defender_war_score_value
+						}
+						
+					}
+				}
+			}
+		
+		
+		
+	### Redgrass Field 
+	triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:usurper_war
+				OR = {
+						var:usurper_war.defender_war_score > 80
+						var:usurper_war.attacker_war_score > 80
+						current_date > 8198.1.1			
+				
+				}
+				var:agot_blackfyre_redgrass_status = flag:pending
+				story_owner = {
+					NOT = { has_character_flag = redgrass_cooldown }
+					is_in_army = yes
+					OR = { 
+					is_commanding_army = yes
+					is_adult = yes 
+					}
+					is_alive = yes
+					NOT = { is_current_dragonrider_warfare = yes }
+				}
+				character:Targaryen_96 = {
+					is_imprisoned = no
+					is_incapable = no
+					is_alive = yes
+				
+				}
+				OR = {
+				character:Targaryen_107 = {
+					is_at_same_location = root.story_owner
+					is_in_army = yes
+					is_alive = yes
+					NOT = { is_current_dragonrider_warfare = yes }
+				}
+				character:Targaryen_110 = {
+					is_at_same_location = root.story_owner
+					is_in_army = yes
+					is_alive = yes
+					NOT = { is_current_dragonrider_warfare = yes }
+				}			
+					}
+				title:e_the_iron_throne.holder = { 
+						any_courtier = { 
+										has_trait = kingsguard
+										is_at_same_location = root.story_owner
+										is_in_army = yes
+										is_alive = yes
+										}
+				}
+	
+			}
+			effect = {
+				save_scope_as = blackfyre_rebellion_story
+				story_owner = { save_scope_as = king_blackfyre }
+				#Pick the Prince
+				if = { limit = { character:Targaryen_107 = {
+																is_at_same_location = scope:king_blackfyre
+																is_in_army = yes
+																is_alive = yes
+																NOT = { is_current_dragonrider_warfare = yes }
+															}
+															}
+													character:Targaryen_107 = { save_scope_as = daerons_son } }
+													else = { character:Targaryen_110 = { save_scope_as = daerons_son }
+													}
+				# Pick the Kingsguard
+				title:e_the_iron_throne.holder = { random_courtier = { limit = { has_trait = kingsguard
+																				is_at_same_location = scope:king_blackfyre
+																				is_in_army = yes
+																				is_alive = yes
+																				}
+																				save_scope_as = kingsguard_duelist
+															}
+														}
+				
+				### Ah shit
+					story_owner = {
+			trigger_event = agot_events_blackfyre_minor.3000
+				}
+				
+				
+			
+			}
+		}
+	
+	}
+
+	
+	# Fallback; Kill the story after 300 days of resolving phase anyway
+	effect_group = {
+		days = 1
+		# War is over; 
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_debug_on } # In debug we want to preserve this story cycle so we can fix bugs :)
+				var:agot_blackfyre_scenario_status = flag:resolving_phase
+			}
+			effect = {
+				if = {
+					limit = {
+						NOT = { exists = var:agot_blackfyre_scenario_days_in_resolving }
+					}
+					set_variable = {
+						name	= agot_blackfyre_scenario_days_in_resolving
+						value	= 1
+					}
+				}
+				else = {
+					change_variable = {
+						name	= agot_blackfyre_scenario_days_in_resolving
+						add		= 1
+					}
+				}
+
+				if = {
+					limit = {
+						var:agot_blackfyre_scenario_days_in_resolving > 300
+					}
+					set_variable = {
+						name	= agot_blackfyre_scenario_status
+						value	= flag:final_phase
+					}
+				}
+			}
+		}
+	}
+
+	### FINAL PHASE ###
+	# Daily checks for: End the story
+	effect_group = {
+		days = 1
+		# End the story
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_debug_on } # In debug we want to preserve this story cycle so we can fix bugs :)
+				var:agot_blackfyre_scenario_status = flag:final_phase
+			}
+			effect = {
+				end_story = yes
+			}
+		}
+	}
+}

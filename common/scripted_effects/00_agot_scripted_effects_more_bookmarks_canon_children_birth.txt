@@ -1,0 +1,5622 @@
+﻿##################################################################################################################################
+# ADDING NEW CHILDREN CHECKLIST:
+#
+# - If the canon (assumed) father does not already have his own story cycle in agot_canon_children_story_cycles, create one
+# 		- Make sure the story cycle is being set up in agot_canon_children_setup_story_cycles_effect
+#		- Make sure agot_canon_children_setup_story_cycles_effect is being called in the setup effect of the relevant bookmark
+#		- Make sure the story cycle sets up the father, mother and real father (if applicable)
+#		- Make sure the life cycle effect is being called until the last canon child is born
+# - Add the child's birth year to agot_canon_children_values (agot_canon_children_birth_year_NAME_DYN)
+# 		- Use modifiers to delay the birth year if certain conditions are not met
+# - Add child to triggered_effect (in story cycle) for the mother with the correct trigger and effect to make the mother pregnant with the child
+# - Add the child's DNA to the DNA files and assign it to a dummy character (agot_dummy_characters)
+# - Add the child's flag (is_NAME_DYN) to the portrait modifiers (all_agot_characters) for setting hairstyles/beards
+# - Create birth effect for setting the child's attributes (agot_canon_children_NAME_DYN_birth_effect)
+# - Call birth effect from agot_canon_children_birth_effect
+#
+##################################################################################################################################
+
+agot_more_bookmarks_canon_children_setup_story_cycles_effect = {
+
+
+		if = { limit = { current_date < 7972.1.1 }
+			if = { limit = { character:Targaryen_26 = { is_alive = yes } }
+				character:Targaryen_26 = { create_story = { type = story_agot_more_bookmarks_canon_children_targaryen_lineage } }
+			}
+			else = {
+			
+			character:Targaryen_13_A.house.house_head = { create_story = { type = story_agot_more_bookmarks_canon_children_targaryen_lineage } }
+			}
+		}
+
+		# The Conqueror
+		character:Targaryen_27 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aegon_i_targaryen }
+				
+			}
+		}
+		#Aenys
+		character:Targaryen_30 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aenys_i_targaryen }
+			}
+		}
+		
+		#MAegor
+		character:Targaryen_31 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_maegor_targaryen }
+			}
+		}
+		
+		#Aegon Uncrowned
+		character:Targaryen_33 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aegon_uncrowned_targaryen }
+			}
+		}
+			
+		#Jaehaerys I
+		character:Targaryen_35 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_jaehaerys_i_targaryen }
+			}
+		}
+		#Aemon
+		character:Targaryen_45 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aemon_targaryen }
+			}
+		}
+		#Baelon
+		character:Targaryen_46 ?= { 
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_baelon_targaryen }
+			}
+		}
+		#Viserys I
+		character:Targaryen_60 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_viserys_i_targaryen }
+			}
+		}
+		#Daemon
+		character:Targaryen_61 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_daemon_targaryen }
+			}
+		}
+		#Aegon II
+		character:Targaryen_65 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aegon_ii_targaryen }
+			}
+		}
+		#Rhaenyra
+		character:Targaryen_63 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_rhaenyra_targaryen }
+			}
+		}
+		#Aegon III
+		character:Targaryen_78 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aegon_iii_targaryen }
+			}
+		}
+		#Viserys II
+		character:Targaryen_79 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_viserys_ii_targaryen }
+			}
+		}
+		#Aegon IV
+		character:Targaryen_88 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aegon_iv_targaryen }
+					trigger_event = {
+					id = agot_crowned_stag.0002
+					years = 5
+					}
+			}
+		}
+		#Daeron II
+		character:Targaryen_91 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_daeron_ii_targaryen }
+			}
+		}
+		#Daemon Blackfyre
+		character:Targaryen_94 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_daemon_blackfyre }
+				create_story = { type = story_agot_more_bookmarks_canon_children_blackfyre_gen_2 }
+			}
+		}
+		#Baelor Breakspear
+		character:Targaryen_107 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_baelor_ii_targaryen }
+			}
+		}
+		#Rhaegel TARGARYEN
+		character:Targaryen_109 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_rhaegel_targaryen }
+			}
+		}
+		#Maekar I
+		character:Targaryen_110 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_maekar_i_targaryen }
+			}
+		}
+		#Aegon V
+		character:Targaryen_122 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aegon_v_targaryen }
+			}
+		}
+		#Jaehaerys II
+		character:Targaryen_124 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_jaehaerys_ii_targaryen }
+			}
+		}
+		#Aerys II
+		character:Targaryen_1 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_aerys_ii_targaryen }
+			}
+		}
+		#Rhaegar
+		character:Targaryen_3 ?= {
+			if = {
+				limit = { is_alive = yes }
+				create_story = { type = story_agot_more_bookmarks_canon_children_rhaegar_targaryen }
+			}
+		}
+		
+
+		
+	
+}
+
+agot_more_bookmarks_canon_children_birth_effect = {
+
+	scope:child = {
+		agot_canon_children_clear_genetic_traits_effect = yes
+	}
+
+	## FIRST GENERATION ##
+		
+		
+		if = { # Aegon 
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_27 } }
+			agot_more_bookmarks_canon_children_targaryen_27_birth_effect = yes
+
+		}
+		if = { # Visenya
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_28 } }
+			agot_more_bookmarks_canon_children_targaryen_28_birth_effect = yes
+		}
+		
+		if = { # Rhaenys & Orys
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_29 } }
+			agot_more_bookmarks_canon_children_targaryen_29_birth_effect = yes
+			agot_more_bookmarks_canon_children_baratheon_14_birth_effect = yes
+		}
+
+		if = { # Aenys
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_30 } }
+			agot_more_bookmarks_canon_children_targaryen_30_birth_effect = yes
+		}
+		else_if = { # maegor
+			limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_31 } }
+			agot_more_bookmarks_canon_children_targaryen_31_birth_effect = yes
+		}
+		else_if = { # Targaryen_32
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_32 } }
+					agot_more_bookmarks_canon_children_targaryen_32_birth_effect = yes
+				}
+		
+		else_if = { # Targaryen_33 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_33 } } 
+					agot_more_bookmarks_canon_children_targaryen_33_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_34 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_34 } } 
+					agot_more_bookmarks_canon_children_targaryen_34_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_35 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_35 } } 
+					agot_more_bookmarks_canon_children_targaryen_35_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_36 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_36 } } 
+					agot_more_bookmarks_canon_children_targaryen_36_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_37 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_37 } } 
+					agot_more_bookmarks_canon_children_targaryen_37_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_38 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_38 } } 
+					agot_more_bookmarks_canon_children_targaryen_38_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_39 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_39 } } 
+					agot_more_bookmarks_canon_children_targaryen_39_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_40 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_40 } } 
+					agot_more_bookmarks_canon_children_targaryen_40_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_41 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_41 } } 
+					agot_more_bookmarks_canon_children_targaryen_41_birth_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_42_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_42 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_42 } } 
+					agot_more_bookmarks_canon_children_targaryen_42_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_43 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_43 } } 
+					agot_more_bookmarks_canon_children_targaryen_43_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_44 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_44 } } 
+					agot_more_bookmarks_canon_children_targaryen_44_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_45 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_45 } } 
+					agot_more_bookmarks_canon_children_targaryen_45_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_46 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_46 } } 
+					agot_more_bookmarks_canon_children_targaryen_46_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_47 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_47 } } 
+					agot_more_bookmarks_canon_children_targaryen_47_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_48 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_48 } } 
+					agot_more_bookmarks_canon_children_targaryen_48_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_49 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_49 } } 
+					agot_more_bookmarks_canon_children_targaryen_49_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_50 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_50 } } 
+					agot_more_bookmarks_canon_children_targaryen_50_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_51 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_51 } } 
+					agot_more_bookmarks_canon_children_targaryen_51_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_52 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_52 } } 
+					agot_more_bookmarks_canon_children_targaryen_52_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_53 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_53 } } 
+					agot_more_bookmarks_canon_children_targaryen_53_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_54 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_54 } } 
+					agot_more_bookmarks_canon_children_targaryen_54_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_55 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_55 } } 
+					agot_more_bookmarks_canon_children_targaryen_55_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_56 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_56 } } 
+					agot_more_bookmarks_canon_children_targaryen_56_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_57 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_57 } } 
+					agot_more_bookmarks_canon_children_targaryen_57_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_58 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_58 } } 
+					agot_more_bookmarks_canon_children_targaryen_58_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_59 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_59 } } 
+					agot_more_bookmarks_canon_children_targaryen_59_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_60 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_60 } } 
+					agot_more_bookmarks_canon_children_targaryen_60_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_61 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_61 } } 
+					agot_more_bookmarks_canon_children_targaryen_61_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_62 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_62 } } 
+					agot_more_bookmarks_canon_children_targaryen_62_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_63 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_63 } } 
+					agot_more_bookmarks_canon_children_targaryen_63_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_64 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_64 } } 
+					agot_more_bookmarks_canon_children_targaryen_64_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_65 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_65 } } 
+					agot_more_bookmarks_canon_children_targaryen_65_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_66 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_66 } } 
+					agot_more_bookmarks_canon_children_targaryen_66_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_67 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_67 } } 
+					agot_more_bookmarks_canon_children_targaryen_67_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_68 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_68 } } 
+					agot_more_bookmarks_canon_children_targaryen_68_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_69 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_69 } } 
+					agot_more_bookmarks_canon_children_targaryen_69_birth_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_70_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_70 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_70 } } 
+					agot_more_bookmarks_canon_children_targaryen_70_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_71 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_71 } } 
+					agot_more_bookmarks_canon_children_targaryen_71_birth_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_72_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_72 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_72 } } 
+					agot_more_bookmarks_canon_children_targaryen_72_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_73 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_73 } } 
+					agot_more_bookmarks_canon_children_targaryen_73_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_74 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_74 } } 
+					agot_more_bookmarks_canon_children_targaryen_74_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_75 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_75 } } 
+					agot_more_bookmarks_canon_children_targaryen_75_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_76 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_76 } } 
+					agot_more_bookmarks_canon_children_targaryen_76_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_77 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_77 } } 
+					agot_more_bookmarks_canon_children_targaryen_77_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_78 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_78 } } 
+					agot_more_bookmarks_canon_children_targaryen_78_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_79 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_79 } } 
+					agot_more_bookmarks_canon_children_targaryen_79_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_80 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_80 } } 
+					agot_more_bookmarks_canon_children_targaryen_80_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_81 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_81 } } 
+					agot_more_bookmarks_canon_children_targaryen_81_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_82 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_82 } } 
+					agot_more_bookmarks_canon_children_targaryen_82_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_83 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_83 } } 
+					agot_more_bookmarks_canon_children_targaryen_83_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_84 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_84 } } 
+					agot_more_bookmarks_canon_children_targaryen_84_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_85 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_85 } } 
+					agot_more_bookmarks_canon_children_targaryen_85_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_86 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_86 } } 
+					agot_more_bookmarks_canon_children_targaryen_86_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_87 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_87 } } 
+					agot_more_bookmarks_canon_children_targaryen_87_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_88 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_88 } } 
+					agot_more_bookmarks_canon_children_targaryen_88_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_89 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_89 } } 
+					agot_more_bookmarks_canon_children_targaryen_89_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_90 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_90 } } 
+					agot_more_bookmarks_canon_children_targaryen_90_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_91 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_91 } } 
+					agot_more_bookmarks_canon_children_targaryen_91_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_92 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_92 } }
+					the_great_bastards_mom_selection_effect = yes
+					agot_more_bookmarks_canon_children_targaryen_104_spawn_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_92_birth_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_94_spawn_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_95_spawn_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_96_spawn_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_97_spawn_effect = yes 
+				}
+		
+		else_if = { # Targaryen_93 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_93 } } 
+					agot_more_bookmarks_canon_children_targaryen_93_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_94 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_94 } } 
+					agot_more_bookmarks_canon_children_targaryen_94_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_95 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_95 } } 
+					agot_more_bookmarks_canon_children_targaryen_95_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_96 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_96 } } 
+					agot_more_bookmarks_canon_children_targaryen_96_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_97 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_97 } } 
+					agot_more_bookmarks_canon_children_targaryen_97_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_98 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_98 } } 
+					agot_more_bookmarks_canon_children_targaryen_98_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_99 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_99 } } 
+					agot_more_bookmarks_canon_children_targaryen_99_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_100 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_100 } } 
+					agot_more_bookmarks_canon_children_targaryen_100_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_101 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_101 } } 
+					agot_more_bookmarks_canon_children_targaryen_101_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_102 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_102 } } 
+					agot_more_bookmarks_canon_children_targaryen_102_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_103 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_103 } } 
+					agot_more_bookmarks_canon_children_targaryen_103_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_104 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_104 } } 
+					agot_more_bookmarks_canon_children_targaryen_104_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_105 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_105 } } 
+					agot_more_bookmarks_canon_children_targaryen_105_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_106 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_106 } } 
+					agot_more_bookmarks_canon_children_targaryen_106_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_107 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_107 } } 
+					agot_more_bookmarks_canon_children_targaryen_107_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_108 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_108 } } 
+					agot_more_bookmarks_canon_children_targaryen_108_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_109 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_109 } } 
+					agot_more_bookmarks_canon_children_targaryen_109_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_110 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_110 } } 
+					agot_more_bookmarks_canon_children_targaryen_110_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_111 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_111 } } 
+					agot_more_bookmarks_canon_children_targaryen_111_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_112 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_112 } } 
+					agot_more_bookmarks_canon_children_targaryen_112_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_113 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_113 } } 
+					agot_more_bookmarks_canon_children_targaryen_113_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_114 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_114 } } 
+					agot_more_bookmarks_canon_children_targaryen_114_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_115 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_115 } } 
+					agot_more_bookmarks_canon_children_targaryen_115_birth_effect = yes 
+					agot_more_bookmarks_canon_children_targaryen_116_birth_effect = yes
+				}
+		
+		else_if = { # Targaryen_116 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_116 } } 
+					agot_more_bookmarks_canon_children_targaryen_116_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_117 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_117 } } 
+					agot_more_bookmarks_canon_children_targaryen_117_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_118 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_118 } } 
+					agot_more_bookmarks_canon_children_targaryen_118_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_119 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_119 } } 
+					agot_more_bookmarks_canon_children_targaryen_119_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_120 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_120 } } 
+					agot_more_bookmarks_canon_children_targaryen_120_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_121 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_121 } } 
+					agot_more_bookmarks_canon_children_targaryen_121_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_122 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_122 } } 
+					agot_more_bookmarks_canon_children_targaryen_122_birth_effect = yes 
+					agot_more_bookmarks_canon_children_blackwood_87_birth_effect = yes
+				}
+		
+		else_if = { # Targaryen_123 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_123 } } 
+					agot_more_bookmarks_canon_children_targaryen_123_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_124 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_124 } } 
+					agot_more_bookmarks_canon_children_targaryen_124_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_125 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_125 } } 
+					agot_more_bookmarks_canon_children_targaryen_125_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_126 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_126 } } 
+					agot_more_bookmarks_canon_children_targaryen_126_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_127 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_127 } } 
+					agot_more_bookmarks_canon_children_targaryen_127_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_128 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_128 } } 
+					agot_more_bookmarks_canon_children_targaryen_128_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_129 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_129 } } 
+					agot_more_bookmarks_canon_children_targaryen_129_birth_effect = yes 
+				}
+		else_if = { # Targaryen_129 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_130 } } 
+					agot_more_bookmarks_canon_children_targaryen_130_birth_effect = yes 
+				}
+		
+		else_if = { # Targaryen_1 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_1 } } 
+					agot_more_bookmarks_canon_children_targaryen_1_birth_effect = yes 
+				}
+		else_if = { # Targaryen_2 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_2 } } 
+					agot_more_bookmarks_canon_children_targaryen_2_birth_effect = yes 
+				}
+		else_if = { # Targaryen_3 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_3 } } 
+					agot_more_bookmarks_canon_children_targaryen_3_birth_effect = yes 
+				}
+		else_if = { # Targaryen_8 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_8 } } 
+					agot_more_bookmarks_canon_children_targaryen_8_birth_effect = yes 
+				}
+		else_if = { # Targaryen_9
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_9 } } 
+					agot_more_bookmarks_canon_children_targaryen_9_birth_effect = yes 
+				}
+		else_if = { # Targaryen_10 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_10 } } 
+					agot_more_bookmarks_canon_children_targaryen_10_birth_effect = yes 
+				}
+		else_if = { # Targaryen_11 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_11 } } 
+					agot_more_bookmarks_canon_children_targaryen_11_birth_effect = yes 
+				}
+		else_if = { # Targaryen_12 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_targaryen_12 } } 
+					agot_more_bookmarks_canon_children_targaryen_12_birth_effect = yes 
+				}
+		else_if = { # Stark_7
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_stark_7 } } 
+					agot_more_bookmarks_canon_children_stark_7_birth_effect = yes 
+				}
+		else_if = { # Blackfyre_1 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_1 } } 
+					agot_more_bookmarks_canon_children_blackfyre_1_birth_effect = yes 
+					agot_more_bookmarks_canon_children_blackfyre_2_birth_effect = yes 
+				}
+		else_if = { # Blackfyre_2 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_2 } } 
+					agot_more_bookmarks_canon_children_blackfyre_2_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_3 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_3 } } 
+					agot_more_bookmarks_canon_children_blackfyre_3_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_4 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_4 } } 
+					agot_more_bookmarks_canon_children_blackfyre_4_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_5 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_5 } } 
+					agot_more_bookmarks_canon_children_blackfyre_5_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_6 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_6 } } 
+					agot_more_bookmarks_canon_children_blackfyre_6_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_7 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_7 } } 
+					agot_more_bookmarks_canon_children_blackfyre_7_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_8 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_8 } } 
+					agot_more_bookmarks_canon_children_blackfyre_8_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_9 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_9 } } 
+					agot_more_bookmarks_canon_children_blackfyre_9_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_10 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_10 } } 
+					agot_more_bookmarks_canon_children_blackfyre_10_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_10 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_11 } } 
+					agot_more_bookmarks_canon_children_blackfyre_11_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_10 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_12 } } 
+					agot_more_bookmarks_canon_children_blackfyre_12_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_10 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_13 } } 
+					agot_more_bookmarks_canon_children_blackfyre_13_birth_effect = yes 
+		}
+		else_if = { # Blackfyre_10 
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_blackfyre_14 } } 
+					agot_more_bookmarks_canon_children_blackfyre_14_birth_effect = yes 
+		}
+		else_if = { # Maegor Kid
+					limit = { agot_canon_children_check_pregnancy_child_trigger = { FLAG = is_maegor_kid } } 
+					agot_more_bookmarks_maegor_kid_effect = yes 
+		}
+
+		
+	
+
+}
+
+####################################################
+####		       HOUSE TARGARYEN	    	       	####
+####################################################
+
+
+
+agot_more_bookmarks_canon_children_targaryen_27_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aerea"
+			TRAIT = is_targaryen_27
+			DNA = More_Bookmarks_Dummy_Targaryen_27
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_character_flag = dragon_dreams
+
+		set_sexuality = heterosexual
+		add_trait = strong
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = infertile
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+
+		create_story = story_agot_more_bookmarks_canon_children_aegon_i_targaryen
+		create_story = story_agot_scenario_aegons_conquest_century_of_blood
+		create_story = story_agot_scenario_aegons_conquest_faith_fixer
+		if = { limit = { character:dragon_balerion = { is_alive = yes
+													   NOT = { has_variable = current_rider }
+													   }
+													}
+			if = { limit = { character:dragon_balerion.employer = { any_courtier = { has_relation_agot_dragon = character:dragon_balerion } } }
+			
+		 character:dragon_balerion.employer = { random_courtier = { limit = { has_relation_agot_dragon = character:dragon_balerion } remove_relation_agot_dragon = character:dragon_balerion } }
+		 }
+			agot_bond_dragon_relation_effect = {
+				ACTOR = this
+				DRAGON = character:dragon_balerion
+			}
+		}
+	
+		#scope:child.house.house_head = { set_designated_heir_unsafe = scope:child }
+		random_close_or_extended_family_member = { limit = { has_inactive_trait = is_targaryen_28 } 
+		create_betrothal = scope:child
+		}
+		#### Child of Prophecy
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 90
+						}
+						
+		### The Conqueror				
+		#trigger_event = {
+		#					id = agot_events_more_bookmarks_misc.10
+		#					years = 23
+		#				}
+		
+		create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = scope:child
+			}
+		primary_title = {	set_title_name = e_targaryen_host_title }
+		change_provisions = massive_provisions_gain
+		
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_28_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Visenya"
+			TRAIT = is_targaryen_28
+			DNA = More_Bookmarks_Dummy_Targaryen_28
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+	
+
+		set_sexuality = heterosexual
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_4_year }
+
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 3500
+						}
+						
+						
+						if = { limit = { character:dragon_vhagar = { is_alive = yes
+													   NOT = { has_variable = current_rider }
+													   }
+													}
+			if = { limit = { character:dragon_vhagar.employer = { any_courtier = { has_relation_agot_dragon = character:dragon_vhagar } } }
+			
+		 character:dragon_vhagar.employer = { random_courtier = { limit = { has_relation_agot_dragon = character:dragon_vhagar } remove_relation_agot_dragon = character:dragon_vhagar } }
+		 }
+			agot_bond_dragon_relation_effect = {
+				ACTOR = this
+				DRAGON = character:dragon_vhagar
+			}
+		}
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_29_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegar"
+			NAME_FEMALE = "Rhaenys"
+			TRAIT = is_targaryen_29
+			DNA = More_Bookmarks_Dummy_Targaryen_29
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+	
+
+		set_sexuality = heterosexual
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_2
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fickle AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_4_year }
+		random_close_or_extended_family_member = { limit = { has_inactive_trait = is_targaryen_27 } 
+		create_betrothal = scope:child
+		set_relation_crush = scope:child
+		scope:child = { set_relation_crush = prev }
+		}
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 3500
+						}
+							if = { limit = { character:dragon_meraxes = { is_alive = yes
+													   NOT = { has_variable = current_rider }
+													   }
+													}
+			if = { limit = { character:dragon_meraxes.employer = { any_courtier = { has_relation_agot_dragon = character:dragon_meraxes } } }
+			
+		 character:dragon_meraxes.employer = { random_courtier = { limit = { has_relation_agot_dragon = character:dragon_meraxes } remove_relation_agot_dragon = character:dragon_meraxes } }
+		 }
+			agot_bond_dragon_relation_effect = {
+				ACTOR = this
+				DRAGON = character:dragon_meraxes
+			}
+		}
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_baratheon_14_birth_effect = {
+	create_character = {
+		age = 1
+		name = "Orys"
+		father = scope:child.father
+		gender = male
+		faith = scope:child.father.faith
+		culture = culture:westerosi_valyrian
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+		scope:new_child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Orys"
+			NAME_FEMALE = "Baela"
+			TRAIT = is_baratheon_14
+			DNA = More_Bookmarks_Dummy_Baratheon_14
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = bastard_founder
+		dynasty = { set_dynasty_name = dynn_Baratheon
+		set_coa = dynn_Baratheon_Old
+		}
+		house = { set_house_name = dynn_Baratheon
+		set_coa = dynn_Baratheon_Old
+		}
+		set_sexuality = heterosexual
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = strong
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_4_year }
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 3500
+						}
+		agot_create_artifact_orys_regular_hammer_effect = { OWNER = this }				
+		random_sibling = { limit = { has_inactive_trait = is_targaryen_27 } set_relation_best_friend = scope:new_child }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+# Aenys
+
+agot_more_bookmarks_canon_children_targaryen_30_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aenys"
+			NAME_FEMALE = "Aeriana"
+			TRAIT = is_targaryen_30
+			DNA = More_Bookmarks_Dummy_Targaryen_30
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+	
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fickle AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:craven AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:trusting AGE = agot_canon_children_trait_4_year }
+
+		create_story = story_agot_more_bookmarks_canon_children_aenys_i_targaryen
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_31_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maegor"
+			NAME_FEMALE = "Rhaenyra"
+			TRAIT = is_targaryen_31
+			DNA = More_Bookmarks_Dummy_Targaryen_31
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = infertile
+		add_trait = strong
+		add_martial_skill = 10
+		add_prowess_skill = 20
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:paranoid AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_4_year }
+
+		create_story = story_agot_more_bookmarks_canon_children_maegor_targaryen
+		
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_32_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegar"
+			NAME_FEMALE = "Rhaena"
+			TRAIT = is_targaryen_32
+			DNA = More_Bookmarks_Dummy_Targaryen_32
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = beauty_good_2
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:vengeful AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_4_year }
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_33_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_33
+			DNA = More_Bookmarks_Dummy_Targaryen_33
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		 agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = childhood_personality_age }
+		 agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = agot_canon_children_trait_1_year }
+		 agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_2_year }
+		 agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aegon_uncrowned_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_34_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Viserra"
+			TRAIT = is_targaryen_34
+			DNA = More_Bookmarks_Dummy_Targaryen_34
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_35_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jaehaerys"
+			NAME_FEMALE = "Jaehaera"
+			TRAIT = is_targaryen_35
+			DNA = More_Bookmarks_Dummy_Targaryen_35
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = intellect_good_2
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_4_year }
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_jaehaerys_i_targaryen }
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_36_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aelor"
+			NAME_FEMALE = "Alysanne"
+			TRAIT = is_targaryen_36
+			DNA = More_Bookmarks_Dummy_Targaryen_36
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = intellect_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_37_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Vaella"
+			NAME_FEMALE = "Vaella"
+			TRAIT = is_targaryen_37
+			DNA = More_Bookmarks_Dummy_Targaryen_37
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_38_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_38
+			DNA = More_Bookmarks_Dummy_Targaryen_38
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_39_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Viserra"
+			TRAIT = is_targaryen_39
+			DNA = More_Bookmarks_Dummy_Targaryen_39
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_40_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegar"
+			NAME_FEMALE = "Rhaenys"
+			TRAIT = is_targaryen_40
+			DNA = More_Bookmarks_Dummy_Targaryen_40
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_41_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegar"
+			NAME_FEMALE = "Rhaella"
+			TRAIT = is_targaryen_42
+			DNA = More_Bookmarks_Dummy_Targaryen_42
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = twin
+		
+
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+
+
+# Twins
+agot_more_bookmarks_canon_children_targaryen_42_birth_effect = {
+	create_character = {
+		age = 0
+		name = "Aerea"
+		father = scope:child.father
+		mother = scope:child.mother
+		gender = female
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aerea"
+			TRAIT = is_targaryen_41
+			DNA = More_Bookmarks_Dummy_Targaryen_41
+		}
+
+			add_trait = twin
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+					agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:forgiving AGE = agot_canon_children_trait_4_year }
+		}
+	}
+}
+
+
+
+agot_more_bookmarks_canon_children_targaryen_43_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_43
+			DNA = More_Bookmarks_Dummy_Targaryen_43
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_44_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daenerys"
+			NAME_FEMALE = "Daenerys"
+			TRAIT = is_targaryen_44
+			DNA = More_Bookmarks_Dummy_Targaryen_44
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_45_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemon"
+			NAME_FEMALE = "Aemon"
+			TRAIT = is_targaryen_45
+			DNA = More_Bookmarks_Dummy_Targaryen_45
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = infertile
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:honest AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_4_year }
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aemon_targaryen }
+		
+		if = { limit = { employer = { is_ai = yes } }
+		character:Baratheon_14.house = { random_house_member = { limit = { is_female = yes
+																					can_have_children = yes
+																					age < 8
+																					is_ai = yes
+																					is_betrothed = no
+																				}
+																				create_betrothal = scope:child
+																				}
+																				}
+		}
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_46_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Baelon"
+			NAME_FEMALE = "Baela"
+			TRAIT = is_targaryen_46
+			DNA = More_Bookmarks_Dummy_Targaryen_46
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		give_nickname = nick_the_brave_historical
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_baelon_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_47_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Alyssa"
+			NAME_FEMALE = "Alyssa"
+			TRAIT = is_targaryen_47
+			DNA = More_Bookmarks_Dummy_Targaryen_47
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		
+		
+		add_character_flag = tomboy
+		set_sexuality = heterosexual
+		add_trait = heterochromia_eyes
+		add_trait = strong
+		make_trait_inactive = heterochromia_green1
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_48_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maegelle"
+			NAME_FEMALE = "Maegelle"
+			TRAIT = is_targaryen_48
+			DNA = More_Bookmarks_Dummy_Targaryen_48
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+			
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_49_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Vaegon"
+			NAME_FEMALE = "Vaegon"
+			TRAIT = is_targaryen_49
+			DNA = More_Bookmarks_Dummy_Targaryen_49
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = asexual
+		add_trait = weak
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_character_modifier = agot_dragon_disinterest
+		add_learning_skill = 10
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:chaste AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:administrator AGE = agot_canon_children_trait_4_year }
+
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_50_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daella"
+			NAME_FEMALE = "Daella"
+			TRAIT = is_targaryen_50
+			DNA = More_Bookmarks_Dummy_Targaryen_50
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = physique_bad_2
+		add_trait = intellect_bad_1
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:shy AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:craven AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_51_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Saerion"
+			NAME_FEMALE = "Saera"
+			TRAIT = is_targaryen_51
+			DNA = More_Bookmarks_Dummy_Targaryen_51
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+	
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lustful AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:deceitful AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+		
+		employer = {
+				every_vassal = {
+								 limit = { highest_held_title_tier = tier_kingdom }
+								 if = { limit = { 
+								 age <= 20
+								 is_male = yes } root = { set_relation_crush = prev } }
+								 primary_heir = { if = { limit = { 
+								 age <= 15
+								 is_male = yes } root = { set_relation_crush = prev } } }
+								 }
+								 }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_52_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserra"
+			NAME_FEMALE = "Viserra"
+			TRAIT = is_targaryen_52
+			DNA = More_Bookmarks_Dummy_Targaryen_52
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = beauty_good_3
+		add_diplomacy_skill = 5
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:arbitrary AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:fashionable AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_53_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Gaemon"
+			NAME_FEMALE = "Gaemon"
+			TRAIT = is_targaryen_53
+			DNA = More_Bookmarks_Dummy_Targaryen_53
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_54_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Valerion"
+			NAME_FEMALE = "Valerion"
+			TRAIT = is_targaryen_54
+			DNA = More_Bookmarks_Dummy_Targaryen_54
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_55_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Gael"
+			NAME_FEMALE = "Gael"
+			TRAIT = is_targaryen_55
+			DNA = More_Bookmarks_Dummy_Targaryen_55
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_56_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maegor"
+			NAME_FEMALE = "Maegor"
+			TRAIT = is_targaryen_56
+			DNA = More_Bookmarks_Dummy_Targaryen_56
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_57_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jaenys"
+			NAME_FEMALE = "Jaenys"
+			TRAIT = is_targaryen_57
+			DNA = More_Bookmarks_Dummy_Targaryen_57
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_58_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_58
+			DNA = More_Bookmarks_Dummy_Targaryen_58
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_59_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaenerion"
+			NAME_FEMALE = "Rhaenys"
+			TRAIT = is_targaryen_59
+			DNA = More_Bookmarks_Dummy_Targaryen_59
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = beauty_good_2
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_4_year }
+			
+			#create_story = story_agot_more_bookmarks_canon_children_rhaenys_targaryen
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_60_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Visenya"
+			TRAIT = is_targaryen_60
+			DNA = More_Bookmarks_Dummy_Targaryen_60
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:improvident AGE = agot_canon_children_trait_4_year }
+
+			
+		create_story = { type = story_agot_more_bookmarks_canon_children_viserys_i_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_61_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daemon"
+			NAME_FEMALE = "Daenerys"
+			TRAIT = is_targaryen_61
+			DNA = More_Bookmarks_Dummy_Targaryen_61
+		}
+
+		
+	#Canon Targaryens
+
+		add_prowess_skill = 10
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = beauty_good_1
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_daemon_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_62_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_62
+			DNA = More_Bookmarks_Dummy_Targaryen_62
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_63_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaenyra"
+			NAME_FEMALE = "Rhaenyra"
+			TRAIT = is_targaryen_63
+			DNA = More_Bookmarks_Dummy_Targaryen_63
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = bisexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_2
+		add_trait = intellect_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fashionable AGE = agot_canon_children_trait_4_year }
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_rhaenyra_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_64_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Baelon"
+			NAME_FEMALE = "Baelon"
+			TRAIT = is_targaryen_64
+			DNA = More_Bookmarks_Dummy_Targaryen_64
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_65_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_65
+			DNA = More_Bookmarks_Dummy_Targaryen_65
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:vengeful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lazy AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lustful AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aegon_ii_targaryen }
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_66_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Haegon"
+			NAME_FEMALE = "Helaena"
+			TRAIT = is_targaryen_66
+			DNA = More_Bookmarks_Dummy_Targaryen_66
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:shy AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_67_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemond"
+			NAME_FEMALE = "Aelicent"
+			TRAIT = is_targaryen_67
+			DNA = More_Bookmarks_Dummy_Targaryen_67
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = strong
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:one_eyed AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_68_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daeron"
+			NAME_FEMALE = "Daella"
+			TRAIT = is_targaryen_68
+			DNA = More_Bookmarks_Dummy_Targaryen_68
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = beaty_good_2
+		add_trait = intellect_good_1
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:vengeful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_69_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Baela"
+			NAME_FEMALE = "Baela"
+			TRAIT = is_targaryen_69
+			DNA = More_Bookmarks_Dummy_Targaryen_69
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:impatient AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lustful AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		
+	}
+}
+
+# Twins
+agot_more_bookmarks_canon_children_targaryen_70_birth_effect = {
+	create_character = {
+		age = 0
+		name = "Rhaena"
+		father = scope:child.father
+		mother = scope:child.mother
+		gender = female
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaenar"
+			NAME_FEMALE = "Rhaena"
+			TRAIT = is_targaryen_70
+			DNA = More_Bookmarks_Dummy_Targaryen_70
+		}
+
+			add_trait = twin
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:forgiving AGE = agot_canon_children_trait_4_year }
+		}
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_71_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jaehaera"
+			NAME_FEMALE = "Jaehaera"
+			TRAIT = is_targaryen_71
+			DNA = More_Bookmarks_Dummy_Targaryen_71
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = beauty_good_2
+		add_trait = intellect_bad_1
+		set_sexuality = heterosexual
+		add_trait = twin
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:depressed_1 AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+	}
+}
+#Twin
+agot_more_bookmarks_canon_children_targaryen_72_birth_effect = {
+	create_character = {
+		age = 0
+		name = "Jaehaerys"
+		father = scope:child.father
+		mother = scope:child.mother
+		gender = male
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jaehaerys"
+			NAME_FEMALE = "Vaelena"
+			TRAIT = is_targaryen_72
+			DNA = More_Bookmarks_Dummy_Targaryen_72
+		}
+
+			add_trait = twin
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:forgiving AGE = agot_canon_children_trait_4_year }
+		}
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_73_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maelor"
+			NAME_FEMALE = "Maelor"
+			TRAIT = is_targaryen_73
+			DNA = More_Bookmarks_Dummy_Targaryen_73
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_74_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemond"
+			NAME_FEMALE = "Aemond"
+			TRAIT = is_targaryen_74
+			DNA = More_Bookmarks_Dummy_Targaryen_74
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_75_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jacaerys"
+			NAME_FEMALE = "Jacaerys"
+			TRAIT = is_targaryen_75
+			DNA = More_Bookmarks_Dummy_Targaryen_75
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = strong
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:trusting AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_76_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Lucerys"
+			NAME_FEMALE = "Lucerys"
+			TRAIT = is_targaryen_76
+			DNA = More_Bookmarks_Dummy_Targaryen_76
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = strong
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:trusting AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:honest AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_77_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Joffrey"
+			NAME_FEMALE = "Joffrey"
+			TRAIT = is_targaryen_77
+			DNA = More_Bookmarks_Dummy_Targaryen_77
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = strong
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:impatient AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_78_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_78
+			DNA = More_Bookmarks_Dummy_Targaryen_78
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:chaste AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aegon_iii_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_79_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Viserys"
+			TRAIT = is_targaryen_79
+			DNA = More_Bookmarks_Dummy_Targaryen_79
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = intellect_good_3
+		add_stewardship_skill = 10
+		add_intrigue_skill = 10
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_4_year }
+
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_viserys_ii_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_80_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Visenya"
+			NAME_FEMALE = "Visenya"
+			TRAIT = is_targaryen_80
+			DNA = More_Bookmarks_Dummy_Targaryen_80
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_81_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daeron"
+			NAME_FEMALE = "Daeron"
+			TRAIT = is_targaryen_81
+			DNA = More_Bookmarks_Dummy_Targaryen_81
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = athletic
+		add_trait = beauty_good_2
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_82_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Baelor"
+			NAME_FEMALE = "Baelor"
+			TRAIT = is_targaryen_82
+			DNA = More_Bookmarks_Dummy_Targaryen_82
+		}
+
+		
+	#Canon Targaryens
+
+
+		#add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = lunatic
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:chaste AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_83_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daemon"
+			NAME_FEMALE = "Daena"
+			TRAIT = is_targaryen_83
+			DNA = More_Bookmarks_Dummy_Targaryen_83
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = beauty_good_3
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		give_nickname = nick_the_defiant_daena
+		add_trait = strong
+		add_trait = athletic
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_84_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegar"
+			NAME_FEMALE = "Rhaena"
+			TRAIT = is_targaryen_84
+			DNA = More_Bookmarks_Dummy_Targaryen_84
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = beauty_good_1
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:content AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_85_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Elaena"
+			NAME_FEMALE = "Elaena"
+			TRAIT = is_targaryen_85
+			DNA = More_Bookmarks_Dummy_Targaryen_85
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:shrewd AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_86_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Targaryen_86"
+			NAME_FEMALE = "Targaryen_86"
+			TRAIT = is_targaryen_86
+			DNA = More_Bookmarks_Dummy_Targaryen_86
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_87_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Targaryen_87"
+			NAME_FEMALE = "Targaryen_87"
+			TRAIT = is_targaryen_87
+			DNA = More_Bookmarks_Dummy_Targaryen_87
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_88_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_88
+			DNA = More_Bookmarks_Dummy_Targaryen_88
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arbitrary AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gluttonous AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lustful AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_4_year }
+		
+		trigger_event = {
+			id = agot_crowned_stag.0002
+			years = 14
+			}
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aegon_iv_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_89_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemon"
+			NAME_FEMALE = "Aemon"
+			TRAIT = is_targaryen_89
+			DNA = More_Bookmarks_Dummy_Targaryen_89
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = beauty_good_3
+		add_trait = strong
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		random_close_or_extended_family_member = { limit = { has_inactive_trait = is_targaryen_88 } set_relation_rival = prev }
+			add_trait = refusing_marriage
+			add_character_flag = kingsguard_ambition
+			add_prowess_skill = 1
+			add_character_modifier = training_for_kingsguard
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:chaste AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gallant AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lifestyle_blademaster AGE = agot_canon_children_trait_4_year }
+		
+		}
+		
+	}
+
+agot_more_bookmarks_canon_children_targaryen_90_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Naerys"
+			NAME_FEMALE = "Naerys"
+			TRAIT = is_targaryen_36
+			DNA = More_Bookmarks_Dummy_Targaryen_90
+		}
+
+		
+		#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = beauty_good_2
+		add_trait = physique_bad_2
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		
+		random_close_or_extended_family_member = { limit = { has_inactive_trait = is_targaryen_89 } 
+		prev = { set_relation_crush = prev }
+		set_relation_crush = prev
+		set_relation_best_friend = prev }
+		random_close_or_extended_family_member = { limit = { has_inactive_trait = is_targaryen_88 } 
+		create_betrothal = scope:child
+		}
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:zealous AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_4_year }
+		
+	
+		}
+	}
+
+agot_more_bookmarks_canon_children_targaryen_91_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daeron"
+			NAME_FEMALE = "Daeron"
+			TRAIT = is_targaryen_91
+			DNA = More_Bookmarks_Dummy_Targaryen_91
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_4_year }
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_daeron_ii_targaryen }
+		if = { limit = { employer = { is_ai = yes } }
+		character:Martell_23.house = { random_house_member = { limit = { is_female = yes
+																					can_have_children = yes
+																					age < 8
+																					is_ai = yes
+																					is_betrothed = no
+																				}
+																				create_betrothal = scope:child
+																				}
+																				}
+		}
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_92_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daenerys"
+			NAME_FEMALE = "Daenerys"
+			TRAIT = is_targaryen_92
+			DNA = More_Bookmarks_Dummy_Targaryen_92
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_2
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_93_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Viserys"
+			TRAIT = is_targaryen_93
+			DNA = More_Bookmarks_Dummy_Targaryen_93
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_94_spawn_effect = {
+	create_character = {
+		age = 3
+		name = "Daemon"
+		father = scope:child.father
+		mother = scope:daemon_mom
+		gender = male
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = house:house_Blackfyre
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = daemon_child
+	}
+
+
+	scope:daemon_child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daemon"
+			NAME_FEMALE = "Daena"
+			TRAIT = is_targaryen_94
+			DNA = More_Bookmarks_Dummy_Targaryen_94
+		}
+
+		
+	#Canon Targaryens
+		
+		add_trait = legitimized_bastard
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		#give_nickname = nick_waters
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_3
+		add_trait = physique_good_1
+		add_prowess_skill = 20
+		add_trait = education_martial_prowess_5
+		add_trait = lifestyle_blademaster
+		add_trait = gallant
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:honest AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_daemon_blackfyre }
+		create_story = { type = story_agot_more_bookmarks_canon_children_blackfyre_gen_2 }
+		
+		if = { limit = { scope:child.father = { is_ai = yes 
+												has_inactive_trait = is_targaryen_88
+												any_character_artifact = { has_variable = blackfyre_artifact } 
+												}
+					}
+					scope:child.father = { random_character_artifact = {
+					limit = { has_variable = blackfyre_artifact }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = scope:daemon_child
+					history = {
+						type = inherited
+						actor = scope:child.father
+						recipient = scope:daemon_child
+						location = scope:child.father.location
+					}
+					}
+					}
+					
+					random_equipped_character_artifact = {
+					limit = { has_variable = blackfyre_artifact }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = scope:daemon_child
+					history = {
+						type = inherited
+						actor = scope:child.father
+						recipient = scope:daemon_child
+						location = scope:child.father.location
+					}
+					}
+					}
+					}
+					 set_house = house:house_Blackfyre
+				
+					
+					
+			}
+		
+				
+		
+	}
+}
+
+
+
+
+
+agot_more_bookmarks_canon_children_targaryen_94_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daemon"
+			NAME_FEMALE = "Daena"
+			TRAIT = is_targaryen_94
+			DNA = More_Bookmarks_Dummy_Targaryen_94
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_3
+		add_trait = physique_good_1
+		add_prowess_skill = 20
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:honest AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gallant AGE = agot_canon_children_trait_4_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lifestyle_blademaster AGE = agot_canon_children_trait_4_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }	
+		create_story = { type = story_agot_more_bookmarks_canon_children_daemon_blackfyre }
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_95_spawn_effect = {
+
+create_character = {
+		age = 0
+		name = "Aegor"
+		father = scope:child.father
+		mother = scope:bittersteel_mom
+		gender = male
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = bittersteel_child
+	}
+
+
+	scope:bittersteel_child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegor"
+			NAME_FEMALE = "Aegora"
+			TRAIT = is_targaryen_95
+			DNA = More_Bookmarks_Dummy_Targaryen_95
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = bastard
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		give_nickname = nick_bittersteel
+		add_trait = physique_good_2
+		add_martial_skill = 10
+		add_prowess_skill = 10
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+
+			
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_95_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegor"
+			NAME_FEMALE = "Aegora"
+			TRAIT = is_targaryen_95
+			DNA = More_Bookmarks_Dummy_Targaryen_95
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = legitimized_bastard
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		give_nickname = nick_bittersteel
+		add_trait = physique_good_2
+		add_martial_skill = 10
+		add_prowess_skill = 10
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_4_year }
+
+			
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_96_spawn_effect = {
+create_character = {
+		age = 0
+		name = "Brynden"
+		father = scope:child.father
+		mother = scope:bloodraven_mom
+		gender = male
+		faith = scope:child.mother.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = bloodraven_child
+	}
+
+
+	scope:bloodraven_child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Brynden"
+			NAME_FEMALE = "Brynda"
+			TRAIT = is_targaryen_96
+			DNA = More_Bookmarks_Dummy_Targaryen_96
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = legitimized_bastard
+		set_sexuality = heterosexual
+		add_trait = greensight
+		add_intrigue_skill = 15
+		add_prowess_skill = 10
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		give_nickname = nick_bloodraven
+		add_trait = albino
+		add_trait = lifestyle_mystic
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:deceitful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_4_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:spider AGE = agot_canon_children_trait_4_year }
+		
+			
+		
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_96_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Brynden"
+			NAME_FEMALE = "Brynda"
+			TRAIT = is_targaryen_96
+			DNA = More_Bookmarks_Dummy_Targaryen_96
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = greensight
+		add_intrigue_skill = 15
+		add_prowess_skill = 10
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		give_nickname = nick_bloodraven
+		add_trait = albino
+		add_trait = lifestyle_mystic
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:deceitful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_4_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:spider AGE = agot_canon_children_trait_4_year }
+		
+			
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_97_spawn_effect = {
+	create_character = {
+		age = 0
+		name = "Shiera"
+		father = scope:child.father
+		mother = scope:seastar_mom
+		gender = female
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = seastar_child
+	}
+
+
+	scope:seastar_child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Shaegon"
+			NAME_FEMALE = "Shiera"
+			TRAIT = is_targaryen_97
+			DNA = More_Bookmarks_Dummy_Targaryen_97
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = legitimized_bastard
+		set_sexuality = heterosexual
+		give_nickname = nick_seastar
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_3
+		add_trait = lifestyle_mystic
+		add_trait = heterochromia_eyes
+		make_trait_inactive = heterochromia_blue2
+		
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fashionable AGE = agot_canon_children_trait_4_year }
+			
+		
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_97_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Shaegon"
+			NAME_FEMALE = "Shiera"
+			TRAIT = is_targaryen_97
+			DNA = More_Bookmarks_Dummy_Targaryen_97
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		give_nickname = nick_seastar
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_3
+		add_trait = lifestyle_mystic
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fashionable AGE = agot_canon_children_trait_4_year }
+			
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_98_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Alysanne"
+			NAME_FEMALE = "Alysanne"
+			TRAIT = is_targaryen_98
+			DNA = More_Bookmarks_Dummy_Targaryen_98
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_99_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Lily"
+			NAME_FEMALE = "Lily"
+			TRAIT = is_targaryen_99
+			DNA = More_Bookmarks_Dummy_Targaryen_99
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_100_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Willow"
+			NAME_FEMALE = "Willow"
+			TRAIT = is_targaryen_100
+			DNA = More_Bookmarks_Dummy_Targaryen_100
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_101_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rosey"
+			NAME_FEMALE = "Rosey"
+			TRAIT = is_targaryen_101
+			DNA = More_Bookmarks_Dummy_Targaryen_101
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_102_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Bellenora"
+			NAME_FEMALE = "Bellenora"
+			TRAIT = is_targaryen_102
+			DNA = More_Bookmarks_Dummy_Targaryen_102
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_103_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Narha"
+			NAME_FEMALE = "Narha"
+			TRAIT = is_targaryen_103
+			DNA = More_Bookmarks_Dummy_Targaryen_103
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_104_spawn_effect = {
+	create_character = {
+		age = 6
+		name = "Balerion"
+		father = scope:child.father
+		mother = scope:balerion_mom
+		gender = male
+		faith = scope:balerion_mom.faith
+		culture = scope:balerion_mom.culture
+		dynasty_house = scope:balerion_mom.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = balerion_child
+	}
+
+
+	scope:balerion_child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Balerion"
+			NAME_FEMALE = "Baleria"
+			TRAIT = is_targaryen_104
+			DNA = More_Bookmarks_Dummy_Targaryen_104
+		}
+
+		
+	#Canon Targaryens
+
+		
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = legitimized_bastard
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_104_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Balerion"
+			NAME_FEMALE = "Baleria"
+			TRAIT = is_targaryen_104
+			DNA = More_Bookmarks_Dummy_Targaryen_104
+		}
+
+		
+	#Canon Targaryens
+
+		
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_105_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Mya"
+			NAME_FEMALE = "Mya"
+			TRAIT = is_targaryen_105
+			DNA = More_Bookmarks_Dummy_Targaryen_105
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_106_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Gwenys"
+			NAME_FEMALE = "Gwenys"
+			TRAIT = is_targaryen_106
+			DNA = More_Bookmarks_Dummy_Targaryen_106
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_107_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Baelor"
+			NAME_FEMALE = "Baela"
+			TRAIT = is_targaryen_107
+			DNA = More_Bookmarks_Dummy_Targaryen_107
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = infertile
+		set_sexuality = heterosexual
+		give_nickname = nick_breakspear
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_4_year }
+
+			
+		create_story = { type = story_agot_more_bookmarks_canon_children_baelor_ii_targaryen }
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_108_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aerys"
+			NAME_FEMALE = "Aeirana"
+			TRAIT = is_targaryen_108
+			DNA = More_Bookmarks_Dummy_Targaryen_108
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = asexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = celibate
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:content AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:inquisitive AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:shy AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:forgiving AGE = agot_canon_children_trait_4_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:celibate AGE = agot_canon_children_trait_4_year }
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_109_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegel"
+			NAME_FEMALE = "Rhaegelle"
+			TRAIT = is_targaryen_109
+			DNA = More_Bookmarks_Dummy_Targaryen_109
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		add_trait = physique_bad_1
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:gregarious AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:arbitrary AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:content AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:eccentric AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_rhaegel_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_110_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maekar"
+			NAME_FEMALE = "Maekaela"
+			TRAIT = is_targaryen_110
+			DNA = More_Bookmarks_Dummy_Targaryen_110
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = strong
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_4_year }
+
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_maekar_i_targaryen }
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_111_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Valarr"
+			NAME_FEMALE = "Vaelarys"
+			TRAIT = is_targaryen_111
+			DNA = More_Bookmarks_Dummy_Targaryen_111
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = infertile
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lifestyle_mystic AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_112_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Matarys"
+			NAME_FEMALE = "Matarra"
+			TRAIT = is_targaryen_112
+			DNA = More_Bookmarks_Dummy_Targaryen_112
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = infertile
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_113_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daeron"
+			NAME_FEMALE = "Daenys"
+			TRAIT = is_targaryen_113
+			DNA = More_Bookmarks_Dummy_Targaryen_113
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_114_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Baelor"
+			NAME_FEMALE = "Baela"
+			TRAIT = is_targaryen_114
+			DNA = More_Bookmarks_Dummy_Targaryen_114
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_115_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aelor"
+			NAME_FEMALE = "Visenya"
+			TRAIT = is_targaryen_115
+			DNA = More_Bookmarks_Dummy_Targaryen_115
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		add_trait = twin
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = lunatic_1
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+	
+		
+		
+	}
+}
+#Twin
+agot_more_bookmarks_canon_children_targaryen_116_birth_effect = {
+	create_character = {
+		age = 0
+		name = "Aelora"
+		father = scope:child.father
+		mother = scope:child.mother
+		gender = female
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aelor"
+			NAME_FEMALE = "Aelora"
+			TRAIT = is_targaryen_116
+			DNA = More_Bookmarks_Dummy_Targaryen_116
+		}
+
+			add_trait = twin
+			set_sexuality = heterosexual
+			add_trait = lunatic_1
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+		
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_2_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+			#agot_canon_children_schedule_trait_effect = { TRAIT = flag:forgiving AGE = agot_canon_children_trait_4_year }
+			
+			random_sibling = { limit = { has_inactive_trait = is_targaryen_115 } create_betrothal = prev  }
+		}
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_117_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daenor"
+			NAME_FEMALE = "Daenora"
+			TRAIT = is_targaryen_117
+			DNA = More_Bookmarks_Dummy_Targaryen_117
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_118_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daeron"
+			NAME_FEMALE = "Daenys"
+			TRAIT = is_targaryen_118
+			DNA = More_Bookmarks_Dummy_Targaryen_118
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = dragon_dreams
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:craven AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:fickle AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:lustful AGE = agot_canon_children_trait_4_year }
+
+
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_119_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aerion"
+			NAME_FEMALE = "Aeriana"
+			TRAIT = is_targaryen_119
+			DNA = More_Bookmarks_Dummy_Targaryen_119
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+		add_trait = lunatic_1
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_3
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arbitrary AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_120_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_120
+			DNA = More_Bookmarks_Dummy_Targaryen_120
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_learning_skill = 15
+		add_trait = beauty_good_1
+		add_trait = intellect_good_2	
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:curious AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:temperate AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:content AGE = agot_canon_children_trait_4_year }
+
+
+		save_scope_as = betrothed_1
+		trigger_event = {
+								id = agot_engagement_events.0005
+								years = 12
+							}
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_121_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daegon"
+			NAME_FEMALE = "Daella"
+			TRAIT = is_targaryen_121
+			DNA = More_Bookmarks_Dummy_Targaryen_121
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_122_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_122
+			DNA = More_Bookmarks_Dummy_Targaryen_122
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = intellect_good_2
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_4_year }
+		
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aegon_v_targaryen }
+		#if = { limit = { employer = { is_ai = yes } }
+		#character:Blackwood_25.house = { random_house_member = { limit = { is_female = yes
+		#																			can_have_children = yes
+		#																			age < 8
+		#																			is_ai = yes
+		#																			is_betrothed = no
+		#																		}
+		#																		create_betrothal = scope:child
+		#																		}
+		#																		}
+		#}
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 2500
+						}
+	}
+}
+
+agot_more_bookmarks_canon_children_blackwood_87_birth_effect = {
+	character:Blackwood_25.house.house_head = {
+	
+		if = { limit = { is_male = yes }
+			save_scope_as = betha_father 
+			primary_spouse = { save_scope_as = betha_mother }
+			}
+		else = {
+		
+			save_scope_as = betha_mother
+			primary_spouse = { save_scope_as = betha_father }
+		
+		
+		}
+	}
+
+
+	create_character = {
+		age = 0
+		name = "Betha"
+		father = scope:betha_father
+		mother = scope:betha_mother
+		gender = female
+		faith = faith:old_gods_south
+		culture = culture:riverlander
+		dynasty_house = character:Blackwood_25.house
+		employer = character:Blackwood_25.house.house_head
+
+		random_traits = no
+
+		save_scope_as = black_betha
+	}
+
+
+	scope:black_betha = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Brandon"
+			NAME_FEMALE = "Betha"
+			TRAIT = is_blackwood_87
+			DNA = More_Bookmarks_Dummy_Blackwood_87
+		}
+
+		
+
+
+
+		
+		give_nickname = nick_the_black_prefix
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_4_year }
+		
+		set_relation_soulmate = scope:child
+		create_betrothal = scope:child
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_123_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegel"
+			NAME_FEMALE = "Rhae"
+			TRAIT = is_targaryen_123
+			DNA = More_Bookmarks_Dummy_Targaryen_123
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_124_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Vaella"
+			NAME_FEMALE = "Vaella"
+			TRAIT = is_targaryen_124
+			DNA = More_Bookmarks_Dummy_Targaryen_124
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_125_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maegor"
+			NAME_FEMALE = "Maegor"
+			TRAIT = is_targaryen_125
+			DNA = More_Bookmarks_Dummy_Targaryen_125
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_126_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Duncan"
+			NAME_FEMALE = "Jenny"
+			TRAIT = is_targaryen_126
+			DNA = More_Bookmarks_Dummy_Targaryen_126
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_127_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jaehaerys"
+			NAME_FEMALE = "Jaehaera"
+			TRAIT = is_targaryen_127
+			DNA = More_Bookmarks_Dummy_Targaryen_127
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_jaehaerys_ii_targaryen }
+	}
+}
+agot_more_bookmarks_canon_children_targaryen_128_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Shaera"
+			NAME_FEMALE = "Shaera"
+			TRAIT = is_targaryen_128
+			DNA = More_Bookmarks_Dummy_Targaryen_128
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_129_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daeron"
+			NAME_FEMALE = "Daena"
+			TRAIT = is_targaryen_129
+			DNA = More_Bookmarks_Dummy_Targaryen_129
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = homosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = beauty_good_1
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:paranoid AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:arbitrary AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_130_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaelle"
+			NAME_FEMALE = "Rhaelle"
+			TRAIT = is_targaryen_130
+			DNA = More_Bookmarks_Dummy_Targaryen_130
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_1_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aerys"
+			NAME_FEMALE = "Aerea"
+			TRAIT = is_targaryen_1
+			DNA = More_Bookmarks_Dummy_Targaryen_1
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = lunatic_1
+		
+
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arrogant AGE = agot_canon_children_trait_1_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:paranoid AGE = agot_canon_children_trait_2_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic AGE = agot_canon_children_trait_3_year }
+		agot_canon_children_schedule_trait_effect = { TRAIT = flag:arbitrary AGE = agot_canon_children_trait_4_year }
+
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_aerys_ii_targaryen }
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_2_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegel"
+			NAME_FEMALE = "Rhaelle"
+			TRAIT = is_targaryen_2
+			DNA = More_Bookmarks_Dummy_Targaryen_1
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:shy AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:humble AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:chaste AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+
+agot_more_bookmarks_canon_children_targaryen_3_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaegar"
+			NAME_FEMALE = "Rhaegar"
+			TRAIT = is_targaryen_3
+			DNA = More_Bookmarks_Dummy_Targaryen_3
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = intellect_good_2
+		add_trait = beauty_good_3
+		
+		
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:inquisitive AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:calm AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_4_year }
+
+		
+		create_story = { type = story_agot_more_bookmarks_canon_children_rhaegar_targaryen }
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 2500
+						}
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_8_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Viserys"
+			NAME_FEMALE = "Viserys"
+			TRAIT = is_targaryen_8
+			DNA = More_Bookmarks_Dummy_Targaryen_8
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_9_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daenerys"
+			NAME_FEMALE = "Daenerys"
+			TRAIT = is_targaryen_9
+			DNA = More_Bookmarks_Dummy_Targaryen_9
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_10_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Rhaenys"
+			NAME_FEMALE = "Rhaenys"
+			TRAIT = is_targaryen_10
+			DNA = More_Bookmarks_Dummy_Targaryen_10
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_targaryen_11_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_targaryen_11
+			DNA = More_Bookmarks_Dummy_Targaryen_11
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_stark_7_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Jon"
+			NAME_FEMALE = "Jeyne"
+			TRAIT = is_stark_7
+			DNA = More_Bookmarks_Dummy_Stark_7
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_blackfyre_1_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_blackfyre_2
+			DNA = More_Bookmarks_Dummy_Blackfyre_2
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+
+# Twins
+agot_more_bookmarks_canon_children_blackfyre_2_birth_effect = {
+	create_character = {
+		age = 0
+		name = "Aemon"
+		father = scope:child.father
+		mother = scope:child.mother
+		gender = male
+		faith = scope:child.father.faith
+		culture = scope:child.father.culture
+		dynasty_house = scope:child.father.house
+		employer = scope:child.mother.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegon"
+			NAME_FEMALE = "Aerea"
+			TRAIT = is_blackfyre_1
+			DNA = More_Bookmarks_Dummy_Blackfyre_1
+		}
+
+			add_trait = twin
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:charming AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:patient AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:generous AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:forgiving AGE = agot_canon_children_trait_4_year }
+		}
+	}
+}
+
+
+agot_more_bookmarks_canon_children_blackfyre_3_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Calla"
+			NAME_FEMALE = "Calla"
+			TRAIT = is_blackfyre_3
+			DNA = More_Bookmarks_Dummy_Blackfyre_3
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_4_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daenerys"
+			NAME_FEMALE = "Daenerys"
+			TRAIT = is_blackfyre_4
+			DNA = More_Bookmarks_Dummy_Blackfyre_4
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_5_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daemon"
+			NAME_FEMALE = "Daemon"
+			TRAIT = is_blackfyre_5
+			DNA = More_Bookmarks_Dummy_Blackfyre_5
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+	
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_6_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Haegon"
+			NAME_FEMALE = "Haegon"
+			TRAIT = is_blackfyre_6
+			DNA = More_Bookmarks_Dummy_Blackfyre_6
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_7_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aenys"
+			NAME_FEMALE = "Aenys"
+			TRAIT = is_blackfyre_7
+			DNA = More_Bookmarks_Dummy_Blackfyre_7
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_8_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aegor"
+			NAME_FEMALE = "Aegor"
+			TRAIT = is_blackfyre_8
+			DNA = More_Bookmarks_Dummy_Blackfyre_8
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_9_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maelys"
+			NAME_FEMALE = "Maelys"
+			TRAIT = is_blackfyre_9
+			DNA = More_Bookmarks_Dummy_Blackfyre_9
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+		
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_10_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daena"
+			NAME_FEMALE = "Daena"
+			TRAIT = is_blackfyre_10
+			DNA = More_Bookmarks_Dummy_Blackfyre_10
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_blackfyre_11_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Daemon"
+			NAME_FEMALE = "Daena"
+			TRAIT = is_blackfyre_11
+			DNA = More_Bookmarks_Dummy_Blackfyre_11
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_blackfyre_12_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Aemon"
+			NAME_FEMALE = "Aemma"
+			TRAIT = is_blackfyre_12
+			DNA = More_Bookmarks_Dummy_Blackfyre_12
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+
+agot_more_bookmarks_canon_children_blackfyre_13_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Balerion"
+			NAME_FEMALE = "Baela"
+			TRAIT = is_blackfyre_13
+			DNA = More_Bookmarks_Dummy_Blackfyre_13
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+
+		
+	}
+}
+agot_more_bookmarks_canon_children_blackfyre_14_birth_effect = {
+	scope:child = {
+		agot_canon_children_after_birth_effect = {
+			NAME_MALE = "Maelys"
+			NAME_FEMALE = "Maenyra"
+			TRAIT = is_blackfyre_14
+			DNA = More_Bookmarks_Dummy_Blackfyre_14
+		}
+
+		
+	#Canon Targaryens
+
+
+		add_character_flag = potential_targ_lunatic
+
+		set_sexuality = heterosexual
+		give_nickname = nick_the_monstrous
+		add_character_flag = has_scripted_appearance
+		make_trait_inactive = scripted_appearance
+		add_trait = two_headed
+		add_trait = giant
+		add_trait = hunchbacked
+		add_trait = strong
+		add_prowess_skill = 15
+		
+
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:rowdy AGE = childhood_personality_age }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_2_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:brave AGE = agot_canon_children_trait_3_year }
+		#agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_4_year }
+
+		trigger_event = {
+							id = agot_events_generic.0020
+							days = 2500
+						}
+						
+		agot_create_artifact_maelys_armour_effect = { OWNER = this }
+	}
+}
+
+
+agot_more_bookmarks_maegor_kid_effect = {
+	scope:child = {
+		
+
+		random_list = {
+		
+		100 = {   add_trait = two_headed }
+		
+		100 = { add_trait = scaly }
+		
+		100 = { add_trait = disfigured }
+		
+		100 = { add_trait = hunchbacked }
+		
+		100 = { add_trait = blind }
+		
+		}
+		
+		
+	
+		
+	}
+}
+
+
+
+
+
+###EXAMPLE
+## Stannis - Baratheon_3
+#agot_canon_children_stannis_baratheon_birth_effect = {
+#	scope:child = {
+#		agot_canon_children_after_birth_effect = {
+#			NAME_MALE = "Stannis"
+#			NAME_FEMALE = "Sanelle"
+#			TRAIT = is_baratheon_3
+#			DNA = Dummy_Baratheon_3
+#		}
+#
+#		set_culture_same_as = scope:father
+#		set_sexuality = asexual
+#
+#		add_character_flag = has_scripted_appearance
+#		make_trait_inactive = scripted_appearance
+#		make_trait_inactive = black_hair
+#		make_trait_inactive = blue_eyes
+#
+#		# Stannis became Maester Cressen's ward after Steffon's death
+#
+#		agot_canon_children_schedule_trait_effect = { TRAIT = flag:pensive AGE = childhood_personality_age }
+#		agot_canon_children_schedule_trait_effect = { TRAIT = flag:just AGE = agot_canon_children_trait_1_year }
+#		agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+#		agot_canon_children_schedule_trait_effect = { TRAIT = flag:cynical AGE = agot_canon_children_trait_3_year }
+#		agot_canon_children_schedule_trait_effect = { TRAIT = flag:callous AGE = agot_canon_children_trait_4_year }
+#
+#		create_story = story_agot_canon_children_stannis_baratheon
+#	}
+#}
