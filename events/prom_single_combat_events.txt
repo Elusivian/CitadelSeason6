@@ -1,0 +1,96 @@
+﻿namespace = prom_single_combat
+#	Bout has ended, inform affected parties.
+prom_single_combat.9991 = {
+	hidden = yes
+
+	immediate = {
+		# If any clothes were stripped, put 'em back on.
+		single_combat_clean_shirtlessness_effect = {
+			ATTACKER = scope:actor
+			DEFENDER = scope:recipient
+		}
+		# Did scope:actor win?
+		if = {
+			limit = { 
+				scope:sc_victor = scope:actor
+				scope:recipient = { is_alive = yes }
+			}
+			
+			rightfully_imprison_character_effect = { 
+				TARGET = scope:recipient
+				IMPRISONER = scope:actor
+			}
+		}
+		# Or did the recipient win?
+		else_if = {
+			limit = { 
+				scope:sc_victor = scope:recipient
+				scope:actor = { is_alive = yes}
+			 }
+			
+			 rightfully_imprison_character_effect = { 
+				TARGET = scope:actor
+				IMPRISONER = scope:recipient
+			}
+		}
+		# If both parties are alive, and aren't good losers/don't have good reasons to forgive each other, then we mark them as potential rivals.
+		if = {
+			limit = {
+				scope:actor = {
+					is_alive = yes
+					NOR = {
+						has_trait = humble
+						has_trait = content
+						has_trait = just
+						has_trait = forgiving
+					}
+				}
+				scope:recipient = {
+					is_alive = yes
+					NOR = {
+						has_trait = humble
+						has_trait = content
+						has_trait = just
+						has_trait = forgiving
+					}
+					can_set_relation_potential_rival_trigger = { CHARACTER = scope:actor }
+				}
+			}
+			scope:actor = { set_relation_potential_rival = scope:recipient }
+		}
+	}
+}
+
+#	Bout has invalidated, inform affected parties.
+prom_single_combat.9992 = {
+	hidden = yes
+
+	immediate = {
+		# Put your shirts back on.
+		single_combat_clean_shirtlessness_effect = {
+			ATTACKER = scope:actor
+			DEFENDER = scope:recipient
+		}
+		# Inform both parties that the duel has invalidated.
+		scope:actor = {
+			send_interface_toast = {	
+				title = fp1_tbc.0021.trigger_failure.actor
+				left_icon = scope:recipient
+			}
+		}
+		scope:recipient = {
+			send_interface_toast = {	
+				title = fp1_tbc.0021.trigger_failure.recipient
+				left_icon = scope:actor
+			}
+		}
+		# Reset scope:actor's cooldowns against scope:recipient.
+		scope:actor = {
+			remove_interaction_cooldown = challenge_to_trial_by_combat_interaction
+			remove_interaction_cooldown_against = {
+				interaction = challenge_to_trial_by_combat_interaction
+				target = scope:recipient
+			}
+		}
+	}
+}

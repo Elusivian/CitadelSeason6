@@ -1,0 +1,654 @@
+﻿namespace = agot_braavos_iron_bank
+
+##########################################
+# The Iron Bank is here!
+##########################################
+
+agot_braavos_iron_bank.0001 = { # The envoys of the Iron Bank of Braavos are here. They present to you three different tiers of loans you can take.
+	type = character_event
+	title = agot_braavos_iron_bank.0001.t
+	desc = agot_braavos_iron_bank.0001.desc
+	theme = stewardship
+	override_background = {
+		reference = throne_room
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+
+	trigger = {
+		is_imprisoned = no
+		is_incapable = no
+	}
+
+	option = {	# I'd like the first loan.
+		name = agot_braavos_iron_bank.0001.a
+		custom_tooltip = agot_braavos_iron_bank.0001.a_tt
+		agot_take_third_tier_iron_bank_loan_effect = yes
+	}
+
+	option = {	# I'd like the middle loan.
+		name = agot_braavos_iron_bank.0001.b
+		custom_tooltip = agot_braavos_iron_bank.0001.b_tt
+		agot_take_second_tier_iron_bank_loan_effect = yes
+	}
+
+	option = {	# I'd like the most expensive loan - I'm confident I can pay it back.
+		name = agot_braavos_iron_bank.0001.c
+		custom_tooltip = agot_braavos_iron_bank.0001.c_tt
+		agot_take_first_tier_iron_bank_loan_effect = yes
+	}
+
+	option = {	# I've thought it over and I don't think I'll be needing any loans anytime soon.
+		name = agot_braavos_iron_bank.0001.d
+		custom_tooltip = agot_braavos_iron_bank.0001.d_tt
+		add_prestige = -20
+		remove_character_flag = loaned_from_iron_bank_flag
+	}
+}
+
+##########################################
+# First notice
+##########################################
+
+agot_braavos_iron_bank.0002 = { # The Iron Bank envoys are here.
+	type = character_event
+	title = agot_braavos_iron_bank.0002.t
+	desc = agot_braavos_iron_bank.0002.desc
+	theme = stewardship
+	override_background = {
+		reference = throne_room_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = fear
+	}
+
+	trigger = {
+		could_not_pay_off_iron_bank_loan_first_notice_trigger = yes
+	}
+
+	option = {	# I'll pay.
+		name = agot_braavos_iron_bank.0002.a
+		custom_tooltip = agot_braavos_iron_bank.0002.a_tt
+		if = {
+			limit = {
+				has_trait = greedy
+			}
+			add_stress = 0002
+		}
+		if = {
+			limit = {
+				has_character_flag = first_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_first_tier_loan_effect = yes
+		}
+		if = {
+			limit = {
+				has_character_flag = second_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_second_tier_loan_effect = yes
+		}
+		if = {
+			limit = {
+				has_character_flag = third_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_third_tier_loan_effect = yes
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0002.b
+		custom_tooltip = agot_braavos_iron_bank.0002.b_tt
+		trigger = {
+			has_character_flag = third_tier_iron_bank_loan_flag
+		}
+		add_character_flag = delayed_once
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0003
+			years = 2
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0002.c
+		custom_tooltip = agot_braavos_iron_bank.0002.c_tt
+		trigger = {
+			has_character_flag = second_tier_iron_bank_loan_flag
+		}
+		add_character_flag = delayed_once
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0003
+			years = 2
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0002.d
+		custom_tooltip = agot_braavos_iron_bank.0002.d_tt
+		trigger = {
+			has_character_flag = first_tier_iron_bank_loan_flag
+		}
+		add_character_flag = delayed_once
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0003
+			years = 2
+		}
+	}
+
+	option = {	# Get the fuck out!
+		name = agot_braavos_iron_bank.0002.e
+		custom_tooltip = agot_braavos_iron_bank.0002.e_tt
+		trigger_event = {
+			id = agot_braavos_iron_bank.0005
+			years = 2
+		}
+	}
+
+	option = {	# May I pay it in multiple small amounts?
+		name = agot_braavos_iron_bank.0002.f
+		custom_tooltip = agot_braavos_iron_bank.0002.f_tt
+		trigger = {
+			can_pay_iron_bank_fees = yes
+			NOT = {
+				has_variable = fees_paid
+			}
+		}
+		set_variable = {
+			name = fees_paid
+			value = 0
+		}
+		trigger_event = agot_braavos_iron_bank.0006
+	}
+}
+
+##########################################
+# Second notice
+##########################################
+
+agot_braavos_iron_bank.0003 = { # These people are back!
+	type = character_event
+	title = agot_braavos_iron_bank.0003.t
+	desc = agot_braavos_iron_bank.0003.desc
+	theme = stewardship
+	override_background = {
+		reference = throne_room_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = fear
+	}
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = fear
+	}
+
+	trigger = {
+		could_not_pay_off_iron_bank_loan_second_notice_trigger = yes
+	}
+
+	option = {	# I'll pay.
+		name = agot_braavos_iron_bank.0003.a
+		custom_tooltip = agot_braavos_iron_bank.0003.a_tt
+		if = {
+			limit = {
+				has_trait = greedy
+			}
+			add_stress = 100
+		}
+		if = {
+			limit = {
+				has_character_flag = first_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_first_tier_late_loan_effect = yes
+		}
+		if = {
+			limit = {
+				has_character_flag = second_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_second_tier_late_loan_effect = yes
+		}
+		if = {
+			limit = {
+				has_character_flag = third_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_third_tier_late_loan_effect = yes
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0003.b
+		custom_tooltip = agot_braavos_iron_bank.0003.b_tt
+		trigger = {
+			has_character_flag = third_tier_iron_bank_loan_flag
+		}
+		remove_character_flag = delayed_once
+		add_character_flag = delayed_twice
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0004
+			months = 6
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0003.c
+		custom_tooltip = agot_braavos_iron_bank.0003.c_tt
+		trigger = {
+			has_character_flag = second_tier_iron_bank_loan_flag
+		}
+		remove_character_flag = delayed_once
+		add_character_flag = delayed_twice
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0004
+			months = 6
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0003.d
+		custom_tooltip = agot_braavos_iron_bank.0003.d_tt
+		trigger = {
+			has_character_flag = first_tier_iron_bank_loan_flag
+		}
+		remove_character_flag = delayed_once
+		add_character_flag = delayed_twice
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0004
+			months = 6
+		}
+	}
+
+	option = {	# Get the fuck out!
+		name = agot_braavos_iron_bank.0003.e
+		custom_tooltip = agot_braavos_iron_bank.0003.e_tt
+		trigger_event = {
+			id = agot_braavos_iron_bank.0005
+			months = 6
+		}
+	}
+}
+
+##########################################
+# Third notice
+##########################################
+
+agot_braavos_iron_bank.0004 = { # These people are back AGAIN!
+	type = character_event
+	title = agot_braavos_iron_bank.0004.t
+	desc = agot_braavos_iron_bank.0004.desc
+	theme = stewardship
+	override_background = {
+		reference = throne_room_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = fear
+	}
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = fear
+	}
+
+	trigger = {
+		could_not_pay_off_iron_bank_loan_third_notice_trigger = yes
+	}
+
+	option = {	# I'll pay.
+		name = agot_braavos_iron_bank.0004.a
+		custom_tooltip = agot_braavos_iron_bank.0004.a_tt
+		if = {
+			limit = {
+				has_trait = greedy
+			}
+			add_stress = 0002
+		}
+		if = {
+			limit = {
+				has_character_flag = first_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_first_tier_very_late_loan_effect = yes
+		}
+		if = {
+			limit = {
+				has_character_flag = second_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_second_tier_very_late_loan_effect = yes
+		}
+		if = {
+			limit = {
+				has_character_flag = third_tier_iron_bank_loan_flag
+			}
+			agot_pay_off_iron_bank_third_tier_very_late_loan_effect = yes
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0004.b
+		custom_tooltip = agot_braavos_iron_bank.0004.b_tt
+		trigger = {
+			has_character_flag = third_tier_iron_bank_loan_flag
+		}
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0005
+			months = 6
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0004.c
+		custom_tooltip = agot_braavos_iron_bank.0004.c_tt
+		trigger = {
+			has_character_flag = second_tier_iron_bank_loan_flag
+		}
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0005
+			months = 6
+		}
+	}
+
+	option = {	# I don't have the money.
+		name = agot_braavos_iron_bank.0004.d
+		custom_tooltip = agot_braavos_iron_bank.0004.d_tt
+		trigger = {
+			has_character_flag = first_tier_iron_bank_loan_flag
+		}
+		trigger_event = {
+			id =  agot_braavos_iron_bank.0005
+			months = 6
+		}
+	}
+
+	option = {	# Get the fuck out!
+		name = agot_braavos_iron_bank.0004.e
+		trigger_event = {
+			id = agot_braavos_iron_bank.0005
+			months = 6
+		}
+	}
+}
+
+##########################################
+# You really should have paid broo #ripbozo
+##########################################
+
+agot_braavos_iron_bank.0005 = { # You have received a letter from the Iron Bank. They will not ask for the money you owe them any longer now. They've decided to take a new approach...
+	type = character_event
+	title = agot_braavos_iron_bank.0005.t
+	desc = agot_braavos_iron_bank.0005.desc
+	theme = realm
+	override_background = {
+		reference = throne_room_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = stress
+	}
+
+	trigger = {
+		has_character_flag = loaned_from_iron_bank_flag
+	}
+
+	immediate = {
+		add_character_flag = defaulted_on_loan
+		save_scope_as = player
+		primary_title = {
+			random_claimant = {
+				limit = {
+					exists = primary_title
+					primary_title.tier >= tier_county
+					has_strong_claim_on = prev
+					has_government = lp_feudal_government
+					is_ai = yes
+				}
+				save_scope_as = claimant
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = scope:claimant }
+			}
+			primary_title = {
+				random_claimant = {
+					limit = {
+						exists = primary_title
+						primary_title.tier >= tier_county
+						has_government = lp_feudal_government
+						is_ai = yes
+					}
+					save_scope_as = claimant
+				}
+			}
+		}
+	}
+
+	option = {	# That swine!!!
+		name = agot_braavos_iron_bank.0005.a
+		trigger = {
+			exists = scope:claimant
+		}
+
+		remove_character_flag = loaned_from_iron_bank_flag
+		remove_character_flag = delayed_twice
+
+		if = {
+			limit = {
+				has_character_flag = first_tier_iron_bank_loan_flag
+			}
+			remove_character_flag = first_tier_iron_bank_loan_flag
+		}
+		if = {
+			limit = {
+				has_character_flag = second_tier_iron_bank_loan_flag
+			}
+			remove_character_flag = second_tier_iron_bank_loan_flag
+		}
+		if = {
+			limit = {
+				has_character_flag = third_tier_iron_bank_loan_flag
+			}
+			remove_character_flag = third_tier_iron_bank_loan_flag
+		}
+
+		scope:claimant = {
+			start_war = {
+				cb = claim_cb
+				target = scope:player
+				claimant = scope:claimant
+				target_title = scope:player.primary_title
+			}
+			generate_golden_company_special_troops = { LOCATION = scope:claimant.capital_province ORIGIN = scope:claimant.capital_province ARMY_NAME = the_golden_company_name }
+		}
+	}
+
+	option = {	# Economic collapse
+		name = agot_braavos_iron_bank.0005.b
+		trigger = {
+			NOT = {
+				exists = scope:claimant
+			}
+		}
+		add_character_modifier = {
+			modifier = economically_undermined_character_modifier
+			years = 20
+		}
+		capital_county = {
+			add_county_modifier = {
+				modifier = economically_undermined_modifier
+				years = 15
+			}
+		}
+	}
+
+	option = {	# They will take ownership of local business entourages to slowly pay off my debts.
+		name = agot_braavos_iron_bank.0005.c
+		trigger = {
+			capital_county = {
+				development_level > 60
+			}
+			NOT = {
+				scope:claimant = {
+					has_strong_claim_on = scope:player.primary_title
+				}
+			}
+		}
+		add_character_modifier = {
+			modifier = economically_undermined_character_modifier
+			years = 20
+		}
+	}
+}
+
+##########################################
+# Fee fees
+##########################################
+
+agot_braavos_iron_bank.0006 = { # They've offered us a payment plan of four yearly fees.
+	type = character_event
+	title = agot_braavos_iron_bank.0006.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					var:fees_paid = 0
+				}
+				desc = agot_braavos_iron_bank.0006.desc
+			}
+			triggered_desc = {
+				trigger = {
+					var:fees_paid > 0
+				}
+				desc = agot_braavos_iron_bank.0006.alt
+			}
+		}
+	}
+	theme = stewardship
+	override_background = {
+		reference = throne_room_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = stress
+	}
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = stress
+	}
+
+	trigger = {
+		has_character_flag = loaned_from_iron_bank_flag
+		var:fees_paid < 4
+	}
+
+	option = {	# Let's see...
+		name = agot_braavos_iron_bank.0006.a
+		custom_tooltip = agot_braavos_iron_bank.0006.a_tt
+		trigger = {
+			has_character_flag = third_tier_iron_bank_loan_flag
+		}
+		remove_short_term_gold = 50
+		change_variable = {
+			name = fees_paid
+			add = 1
+		}
+		if = {
+			limit = {
+				var:fees_paid = 4
+			}
+			remove_variable = fees_paid
+			remove_character_flag = third_tier_iron_bank_loan_flag
+			remove_character_flag = loaned_from_iron_bank_flag
+		}
+		else = {
+			trigger_event = {
+				id = agot_braavos_iron_bank.0006
+				months = 12
+			}
+		}
+	}
+
+	option = {	# Let's see...
+		name = agot_braavos_iron_bank.0006.b
+		custom_tooltip = agot_braavos_iron_bank.0006.b_tt
+		trigger = {
+			has_character_flag = second_tier_iron_bank_loan_flag
+		}
+		remove_short_term_gold = 175
+		change_variable = {
+			name = fees_paid
+			add = 1
+		}
+		if = {
+			limit = {
+				var:fees_paid = 4
+			}
+			remove_variable = fees_paid
+			remove_character_flag = second_tier_iron_bank_loan_flag
+			remove_character_flag = loaned_from_iron_bank_flag
+		}
+		else = {
+			trigger_event = {
+				id = agot_braavos_iron_bank.0006
+				months = 12
+			}
+		}
+	}
+
+	option = {	# Let's see...
+		name = agot_braavos_iron_bank.0006.c
+		custom_tooltip = agot_braavos_iron_bank.0006.c_tt
+		trigger = {
+			has_character_flag = first_tier_iron_bank_loan_flag
+		}
+		remove_short_term_gold = 300
+		change_variable = {
+			name = fees_paid
+			add = 1
+		}
+		if = {
+			limit = {
+				var:fees_paid = 4
+			}
+			remove_variable = fees_paid
+			remove_character_flag = first_tier_iron_bank_loan_flag
+			remove_character_flag = loaned_from_iron_bank_flag
+		}
+		else = {
+			trigger_event = {
+				id = agot_braavos_iron_bank.0006
+				months = 12
+			}
+		}
+	}
+
+	option = {	# Sorry, may we go back to our previous topic? I do not wish to pay in fees.
+		name = agot_braavos_iron_bank.0006.d
+		trigger = {
+			NOT = {
+				var:fees_paid > 1
+			}
+		}
+		trigger_event = {
+			id = agot_braavos_iron_bank.0002
+		}
+	}
+}

@@ -1,0 +1,97 @@
+﻿namespace = naval_defeat
+
+########################################################
+##### Shipbuilding and Naval Information Decisions######
+########################################################
+
+
+#naval_defeat.1 - Notification of Naval Casualties
+
+
+### Naval Menu
+
+naval_defeat.1 = {
+	desc = naval_defeat.1.desc
+	
+	
+
+	
+		#### Close Menu
+	option = {
+		name = naval_defeat.1.d
+	}
+}
+
+
+
+naval_defeat.2 = {
+	#desc = naval_defeat.2.desc
+	hidden = yes
+	immediate = {
+	
+	#scope:nc_victor = { trigger_event = naval_defeat.4 }
+	#scope:nc_loser = { trigger_event = naval_defeat.3 }
+	if = { limit = { scope:nc_victor = scope:naval_defender_fleet_commander  }
+	
+		scope:naval_attacker = { trigger_event = naval_defeat.3 }
+		}
+		if = { limit = { scope:nc_victor = scope:naval_attacker_fleet_commander  }
+
+		scope:naval_defender= { trigger_event = naval_defeat.3 }
+		}
+ #scope:naval_attacker = { trigger_event = naval_defeat.3 }
+ #scope:naval_defender = { trigger_event = naval_defeat.3 }
+	
+	
+	
+
+}
+}
+
+naval_defeat.3 = {
+	desc = naval_defeat.3.desc
+	
+	immediate = {
+	
+	if = { limit = { root = scope:naval_attacker }
+	
+	scope:naval_war = {
+		every_war_attacker = { add_character_modifier = { modifier = naval_defeat_modifier months = 3 }		}
+		}
+		}
+	if = { limit = { root = scope:naval_defender }
+	
+	scope:naval_war = {
+		every_war_defender = { add_character_modifier = { modifier = naval_defeat_modifier months = 3 }		}
+		}
+		}
+	
+	
+			}
+	
+			#### Close Menu
+	option = {
+		name = naval_defeat.3.a
+	}
+	
+	
+	
+
+}
+
+
+naval_defeat.4 = {
+	desc = naval_defeat.4.desc
+	
+
+	
+			#### Close Menu
+	option = {
+		name = naval_defeat.4.a
+	}
+	
+	
+	
+
+}
+

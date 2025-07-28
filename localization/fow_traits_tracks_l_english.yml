@@ -1,0 +1,117 @@
+﻿l_english:
+ TRAIT_FLAG_DESC_fow_advantage_enemy_territory_flag: "[command_modifier_i|E]#medium Uncontrolled Territory #![advantage|E]: @advantage_icon!#P +3#!\n"
+ TRAIT_FLAG_DESC_fow_advantage_own_territory_flag: "[command_modifier_i|E]#medium Controlled Territory #![advantage|E]: @advantage_icon!#P +3#!\n"
+ TRAIT_FLAG_DESC_fow_disadvantage_enemy_territory_flag: "[command_modifier_i|E]#medium Uncontrolled Territory #![advantage|E]: @advantage_icon!#N -2#!\n"
+ TRAIT_FLAG_DESC_fow_disadvantage_own_territory_flag: "[command_modifier_i|E]#medium Controlled Territory #![advantage|E]: @advantage_icon!#N -2#!\n"
+ TRAIT_FLAG_DESC_fow_army_speed_per_win_flag: "[command_modifier_i|E][army|E] #medium Movement Speed Per Battle Won:#!@movement_speed_icon!#P +2%#! #weak (4 months)#!\n"
+ TRAIT_FLAG_DESC_fow_pursue_efficiency_per_win_flag: "[command_modifier_i|E]#medium Pursuit Efficiency Per Battle Won:#!@pursuit_icon!#P +4%#! #weak (4 months)#!\n"
+ TRAIT_FLAG_DESC_fow_infiltration_specialist_flag: "If the Commander's @skill_intrigue_icon! [intrigue|E] is higher than the County's Holder:\n[command_modifier_i|E]#medium Minimum [combat_roll|E] : #!#P +4#!\nSiege Phase Time:#! #P -25%#!\n[command_modifier_i|E]#medium [advantage|E]: @advantage_icon!#P 4#!\n"
+ TRAIT_FLAG_DESC_fow_supply_duration_scaling: "[command_modifier_i|E]#medium [supply|E] Duration per 5 @skill_stewardship_icon! Stewardship @supply_icon!:#P +10%#!\n"
+ TRAIT_FLAG_DESC_fow_master_ambusher: "[command_modifier_i|E]#medium Counter Efficiency per 5 @skill_intrigue_icon! Intrigue :#P +5%#!\n"
+ TRAIT_FLAG_DESC_fow_bannerlord: "[command_modifier_i|E][army|E] #medium Movement Speed After a War is Declared: #!@movement_speed_icon!#P +10%#! #weak (1 year)#!\n[command_modifier_i|E]#medium Enemy [casualties|E] After a War is Declared: #P +20%#! #weak (1 year)#!\n[command_modifier_i|E]#medium Attacker [advantage|E] After a War is Declared: #!@advantage_icon!#P +5#! #weak (1 year)#!\n"
+ TRAIT_FLAG_DESC_fow_focus_specialist: "[command_modifier_i|E][army|E] #medium Siege Phase Time in Enemy Capital Province:#! #P -50%#!\n"
+ trait_track_seasoned_rover_desc: "A nomadic veteran, extending supply durations, embodying resilience in diverse terrains and distant campaigns.\n\n[command_modifier_i|E]#medium Uncontrolled Territory #![advantage|E]: @advantage_icon!#P +3#!\n[command_modifier_i|E]#medium Controlled Territory #![advantage|E]: @advantage_icon!#N -2#!"
+ trait_track_resolute_localist_desc: "A defender of home soil, fortifying armies with localized wisdom.\n\n[command_modifier_i|E]#medium Controlled Territory #![advantage|E]: @advantage_icon!#P +3#!\n[command_modifier_i|E]#medium Uncontrolled Territory #![advantage|E]: @advantage_icon!#N -2#!"
+ trait_track_relentless_pursuer_desc: "Unyielding in pursuit, energizing attacks and boldness, sacrificing supply for unrelenting pressure.\n\n[command_modifier_i|E][army|E] #medium Movement Speed Per Battle Won:#!@movement_speed_icon!#P +2%#! #weak (4 months)#!\n[command_modifier_i|E]#medium Pursuit Efficiency Per Battle Won:#!@pursuit_icon!#P +4%#! #weak (4 months)#!"
+
+ ###### MOD
+ trait_track_mapper:0 "Mapper"
+ trait_track_mapper_desc:0 "A trailblazer leveraging terrain advantages and speed, charting paths to conquer with strategic insight."
+
+ trait_track_observant_pathfinder:0 "Observant Pathfinder"
+ trait_track_observant_pathfinder_desc:0 "A keen eye for strategy, improving combat precision and pursuit tactics, culminating in masterful battlefield finesse."
+
+ trait_track_respected_leader:0 "Respected Leader"
+ trait_track_respected_leader_desc:0 "Revered on the battlefield, reducing casualties and gaining strategic advantages, ascending to martial greatness."
+
+ trait_track_seasoned_rover:0 "Seasoned Rover"a
+
+ trait_track_resolute_localist:0 "Resolute Localist" 
+
+ trait_track_relentless_pursuer:0 "Relentless Pursuer"
+
+ trait_track_infiltration_specialist:0 "Infiltration Specialist"
+ trait_track_infiltration_specialist_desc:0 "A strategist shrouded in intrigue, orchestrating campaigns with hidden wisdom, unveiling secrets to victory."
+
+ trait_track_sea_raider:0 "Sea Raider"
+ trait_track_sea_raider_desc:0 "A seafaring marauder, defying disembarkation penalties, prolonging supplies, and swift raiding prowess."
+
+ trait_track_battlefield_medic:0 "Battle Apothecary"
+ trait_track_battlefield_medic_desc:0 "A healer amidst chaos, lessening casualties, bolstering morale, and defying death's grasp with martial resolve."
+
+ trait_track_dauntless_leader:0 "Dauntless Leader"
+ trait_track_dauntless_leader_desc:0 "A fearless commander who inspires courage and resilience in the face of danger, boosting morale and mitigating losses in battle."
+ 
+ trait_track_crafty_commander:0 "Crafty Commander"
+ trait_track_crafty_commander_desc:0 "A shrewd strategist skilled in supply management and resourcefulness, optimizing control over territories and logistics."
+ 
+ trait_track_cautious_planner:0 "Cautious Planner"
+ trait_track_cautious_planner_desc:0 "A meticulous planner who prioritizes caution and defensive strategies, minimizing risks and maximizing control over engagements."
+ 
+ trait_track_bannerlord:0 "Bannerlord"
+ trait_track_bannerlord_desc:0 "A noble commander leading with honor and authority, inspiring loyalty and excellence among troops, enhancing offensive capabilities."
+ 
+ trait_track_focus_specialist:0 "Focus Specialist"
+ trait_track_focus_specialist_desc:0 "A commander specializing in focused tactics and siege warfare, maximizing efficiency and effectiveness in assaults and defenses."
+ 
+ trait_track_master_ambusher:0 "Master Ambusher"
+ trait_track_master_ambusher_desc:0 "A cunning commander skilled in ambush tactics, exploiting terrain advantages and surprising enemies with devastating attacks."
+
+ trait_track_navigator:0 "Navigator"
+ trait_track_navigator_desc:0 "Expert navigator who excels in charting paths, ensuring safety and strategic positioning in battles where the terrain is favorable."
+
+ ###### VANILLA
+
+trait_track_logistician:0 "Logistician"
+trait_track_logistician_desc:0 "A master of supply management and safe travels, ensuring troops are well-provisioned and secure on the move."
+
+trait_track_military_engineer:0 "Military Engineer"
+trait_track_military_engineer_desc:0 "A skilled architect of siege tactics, reducing siege phase times and fortification challenges."
+
+trait_track_aggressive_attacker:0 "Aggressive Attacker"
+trait_track_aggressive_attacker_desc:0 "A fierce commander who gains advantages in attacking enemies aggressively, inflicting heavier casualties."
+
+trait_track_unyielding_defender:0 "Unyielding Defender"
+trait_track_unyielding_defender_desc:0 "A steadfast defender who gains advantages in holding positions, reducing losses and bolstering defenses."
+
+trait_track_forder:0 "Forder"
+trait_track_forder_desc:0 "A commander adept at traversing water obstacles, maintaining speed and seizing opportunities in unpredictable terrain."
+
+trait_track_flexible_leader:0 "Flexible Leader"
+trait_track_flexible_leader_desc:0 "An adaptable leader who minimizes terrain disadvantages, optimizing combat effectiveness across varied landscapes."
+
+trait_track_desert_warrior:0 "Desert Warrior"
+trait_track_desert_warrior_desc:0 "A warrior specialized in desert combat, utilizing advantages and mitigating challenges unique to arid environments."
+
+trait_track_jungle_stalker:0 "Jungle Stalker"
+trait_track_jungle_stalker_desc:0 "A stealthy commander adept at jungle warfare, exploiting the terrain and minimizing attrition in dense foliage."
+
+trait_track_reaver:0 "Reaver"
+trait_track_reaver_desc:0 "A daring raider commanding swift strikes and surviving in hostile territories, terrorizing enemies and maximizing mobility."
+
+trait_track_reckless:0 "Reckless"
+trait_track_reckless_desc:0 "A bold and aggressive leader, willing to take risks and push combat to the limit, sometimes at great cost."
+
+trait_track_holy_warrior:0 "Holy Warrior"
+trait_track_holy_warrior_desc:0 "A devout commander whose faith bolsters morale and effectiveness, leading with divine inspiration and resolve."
+
+trait_track_open_terrain_expert:0 "Open Terrain Expert"
+trait_track_open_terrain_expert_desc:0 "A commander skilled in open field battles, utilizing advantages and optimizing strategies in vast, unobstructed landscapes."
+
+trait_track_rough_terrain_expert:0 "Rough Terrain Expert"
+trait_track_rough_terrain_expert_desc:0 "A commander proficient in navigating difficult terrain, gaining advantages and minimizing risks in rugged landscapes."
+
+trait_track_forest_fighter:0 "Forest Fighter"
+trait_track_forest_fighter_desc:0 "A seasoned warrior adept at combat in dense forests, leveraging advantages and maneuvering effectively in woodland environments."
+
+trait_track_cautious_leader:0 "Cautious Leader"
+trait_track_cautious_leader_desc:0 "A prudent commander who prioritizes minimizing risks and losses, ensuring a methodical and cautious approach to warfare."
+
+trait_track_organizer:0 "Organizer"
+trait_track_organizer_desc:0 "A commander skilled in coordinating movements and retreats, maximizing efficiency and minimizing losses in maneuvers."
+
+trait_track_winter_soldier:0 "Winter Soldier"
+trait_track_winter_soldier_desc:0 "A hardened warrior accustomed to harsh winter conditions, leveraging advantages and maintaining resilience in frozen landscapes."
+
+trait_track_zealot:0 "Zealot"
+trait_track_zealot_desc:0 "Embarking on the path of zealotry, this commander becomes increasingly fervent in their devotion, inspiring unwavering dedication and fervor in their troops."
