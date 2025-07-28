@@ -10,7 +10,7 @@ lannisport_01 = {
 	}
 	
 	cost_gold = 3000
-
+	levy = 6000
 	character_modifier = {
 		monthly_prestige_gain_mult = 0.1
 		stewardship = 1

@@ -126,6 +126,7 @@ salt_dornish = {
 		tradition_hit_and_run
 		tradition_welcoming
 		agot_tradition_salt_dornish
+		tradition_citadel_horse
 	}
 
 	name_list = name_list_salt_dornish
@@ -188,6 +189,7 @@ sand_dornish = {
 		tradition_horse_breeder
 		tradition_warriors_of_the_dry
 		agot_tradition_sand_dornish
+		tradition_citadel_horse
 	}
 
 	name_list = name_list_sand_dornish

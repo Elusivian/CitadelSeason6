@@ -1,0 +1,3146 @@
+﻿namespace = fow_trait
+
+fow_trait.0001 = {
+
+	hidden = yes
+
+    trigger = {
+        exists = scope:army.army_commander
+            scope:army.army_commander = {
+                has_trait = seasoned_rover
+            }
+        }
+
+    immediate = {
+        scope:army.army_commander = {
+            save_scope_as = army_leader
+        }
+        if = {
+            limit = {
+                OR = {
+                    scope:army_leader.location.county.holder = {
+                        is_vassal_of = root
+                    }
+                scope:army_leader.location.county.holder = root
+                }
+            }
+            scope:army_leader = {
+                if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 100
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_neg_modifier_3
+                    }
+                    remove_character_modifier = seasoned_rover_neg_modifier
+                    remove_character_modifier = seasoned_rover_neg_modifier_1
+                    remove_character_modifier = seasoned_rover_neg_modifier_2
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 60
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_neg_modifier_2
+                    }
+                    remove_character_modifier = seasoned_rover_neg_modifier
+                    remove_character_modifier = seasoned_rover_neg_modifier_1
+                    remove_character_modifier = seasoned_rover_neg_modifier_3
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 35
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_neg_modifier_1
+                    }
+                    remove_character_modifier = seasoned_rover_neg_modifier
+                    remove_character_modifier = seasoned_rover_neg_modifier_1
+                    remove_character_modifier = seasoned_rover_neg_modifier_2
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 0
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_neg_modifier
+                    }
+                    remove_character_modifier = seasoned_rover_neg_modifier_1
+                    remove_character_modifier = seasoned_rover_neg_modifier_2
+                    remove_character_modifier = seasoned_rover_neg_modifier_3
+                }
+                remove_character_modifier = seasoned_rover_pos_modifier
+                remove_character_modifier = seasoned_rover_pos_modifier_1
+                remove_character_modifier = seasoned_rover_pos_modifier_2
+                remove_character_modifier = seasoned_rover_pos_modifier_3
+            }
+        }
+        else = {
+            scope:army_leader = {
+                if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 100
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_pos_modifier_3
+                    }
+                    remove_character_modifier = seasoned_rover_pos_modifier
+                    remove_character_modifier = seasoned_rover_pos_modifier_1
+                    remove_character_modifier = seasoned_rover_pos_modifier_2
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 60
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_pos_modifier_2
+                    }
+                    remove_character_modifier = seasoned_rover_pos_modifier
+                    remove_character_modifier = seasoned_rover_pos_modifier_1
+                    remove_character_modifier = seasoned_rover_pos_modifier_3
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 35
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_pos_modifier_1
+                    }
+                    remove_character_modifier = seasoned_rover_pos_modifier
+                    remove_character_modifier = seasoned_rover_pos_modifier_2
+                    remove_character_modifier = seasoned_rover_pos_modifier_3
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = seasoned_rover
+                                    value >= 0
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = seasoned_rover_pos_modifier
+                    }
+                    remove_character_modifier = seasoned_rover_pos_modifier_1
+                    remove_character_modifier = seasoned_rover_pos_modifier_2
+                    remove_character_modifier = seasoned_rover_pos_modifier_3
+                }
+                remove_character_modifier = seasoned_rover_neg_modifier
+                remove_character_modifier = seasoned_rover_neg_modifier_1
+                remove_character_modifier = seasoned_rover_neg_modifier_2
+                remove_character_modifier = seasoned_rover_neg_modifier_3
+            }
+        }
+    }
+}
+
+fow_trait.0002 = {
+
+	hidden = yes    
+
+    trigger = {
+        exists = scope:army.army_commander
+            scope:army.army_commander = {
+                has_trait = resolute_localist
+            }
+        }
+
+    immediate = {
+        scope:army.army_commander = {
+            save_scope_as = army_leader
+        }
+        if = {
+            limit = {
+                OR = {
+                    scope:army_leader.location.county.holder = {
+                        is_vassal_of = root
+                    }
+                scope:army_leader.location.county.holder = root
+                }
+            }
+            scope:army_leader = {
+                if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 100
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_pos_modifier_3
+                    }
+                    remove_character_modifier = resolute_localist_pos_modifier
+                    remove_character_modifier = resolute_localist_pos_modifier_1
+                    remove_character_modifier = resolute_localist_pos_modifier_2
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 60
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_pos_modifier_2
+                    }
+                    remove_character_modifier = resolute_localist_pos_modifier
+                    remove_character_modifier = resolute_localist_pos_modifier_1
+                    remove_character_modifier = resolute_localist_pos_modifier_3
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 35
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_pos_modifier_1
+                    }
+                    remove_character_modifier = resolute_localist_pos_modifier
+                    remove_character_modifier = resolute_localist_pos_modifier_1
+                    remove_character_modifier = resolute_localist_pos_modifier_2
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 0
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_pos_modifier
+                    }
+                    remove_character_modifier = resolute_localist_pos_modifier_1
+                    remove_character_modifier = resolute_localist_pos_modifier_2
+                    remove_character_modifier = resolute_localist_pos_modifier_3
+                }
+                remove_character_modifier = resolute_localist_neg_modifier
+                remove_character_modifier = resolute_localist_neg_modifier_1
+                remove_character_modifier = resolute_localist_neg_modifier_2
+                remove_character_modifier = resolute_localist_neg_modifier_3
+            }
+        }
+        else = {
+            scope:army_leader = {
+                if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 100
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_neg_modifier_3
+                    }
+                    remove_character_modifier = resolute_localist_neg_modifier
+                    remove_character_modifier = resolute_localist_neg_modifier_1
+                    remove_character_modifier = resolute_localist_neg_modifier_2
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 60
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_neg_modifier_2
+                    }
+                    remove_character_modifier = resolute_localist_neg_modifier
+                    remove_character_modifier = resolute_localist_neg_modifier_1
+                    remove_character_modifier = resolute_localist_neg_modifier_3
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 35
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_neg_modifier_1
+                    }
+                    remove_character_modifier = resolute_localist_neg_modifier
+                    remove_character_modifier = resolute_localist_neg_modifier_2
+                    remove_character_modifier = resolute_localist_neg_modifier_3
+                }
+                else_if = {
+                    limit = {
+                        has_trait_xp = {
+                            trait = resolute_localist
+                                    value >= 0
+                        }
+                    }
+                    add_character_modifier = {
+                        modifier = resolute_localist_neg_modifier
+                    }
+                    remove_character_modifier = resolute_localist_neg_modifier_1
+                    remove_character_modifier = resolute_localist_neg_modifier_2
+                    remove_character_modifier = resolute_localist_neg_modifier_3
+                }
+                remove_character_modifier = resolute_localist_pos_modifier
+                remove_character_modifier = resolute_localist_pos_modifier_1
+                remove_character_modifier = resolute_localist_pos_modifier_2
+                remove_character_modifier = resolute_localist_pos_modifier_3
+            }
+        }
+    }
+}
+
+fow_trait.0003 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = relentless_pursuer
+        }
+        side_commander = { is_alive = yes }
+        OR = {
+            side_commander = { is_ai = no }
+            side_commander = {
+                any_liege_or_above = { is_ai = no }
+            }
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                has_trait_xp = {
+                    trait = relentless_pursuer
+                    value >= 100
+                }
+            }
+            side_commander = {
+                add_character_modifier = {
+                    modifier = relentless_pursuer_modifier_3
+                    days = 120
+                }
+            }
+            remove_character_modifier = relentless_pursuer_modifier
+            remove_character_modifier = relentless_pursuer_modifier_1
+            remove_character_modifier = relentless_pursuer_modifier_2
+        }
+        else_if = {
+            limit = {
+                has_trait_xp = {
+                    trait = relentless_pursuer
+                    value >= 60
+                }
+            }
+            side_commander = {
+                add_character_modifier = {
+                    modifier = relentless_pursuer_modifier_2
+                    days = 120
+                }
+            }
+            remove_character_modifier = relentless_pursuer_modifier
+            remove_character_modifier = relentless_pursuer_modifier_1
+            remove_character_modifier = relentless_pursuer_modifier_3
+        }
+        else_if = {
+            limit = {
+                has_trait_xp = {
+                    trait = relentless_pursuer
+                    value >= 35
+                }
+            }
+            side_commander = {
+                add_character_modifier = {
+                    modifier = relentless_pursuer_modifier_1
+                    days = 120
+                }
+            }
+            remove_character_modifier = relentless_pursuer_modifier
+            remove_character_modifier = relentless_pursuer_modifier_2
+            remove_character_modifier = relentless_pursuer_modifier_3
+        }
+        else_if = {
+            limit = {
+                has_trait_xp = {
+                    trait = relentless_pursuer
+                    value >= 0
+                }
+            }
+            side_commander = {
+                add_character_modifier = {
+                    modifier = relentless_pursuer_modifier
+                    days = 120
+                }
+            }
+            remove_character_modifier = relentless_pursuer_modifier_1
+            remove_character_modifier = relentless_pursuer_modifier_2
+            remove_character_modifier = relentless_pursuer_modifier_3
+        }
+    }
+}
+
+fow_trait.0004 = {
+
+	hidden = yes    
+
+    trigger = {
+        exists = scope:army.army_commander
+            scope:army.army_commander = {
+                has_trait = infiltration_specialist
+            }
+        }
+
+    immediate = {
+        scope:army.army_commander = {
+            save_scope_as = army_leader
+        }
+        if = {
+            limit = {
+                OR = {
+                    scope:army_leader.location.county.holder = {
+                        OR = {
+                            is_at_war_with = scope:army_leader
+                            scope:army_leader = {
+                                any_liege_or_above = {
+                                    is_at_war_with = scope:army_leader.location.county.holder
+                                }
+                            }
+                        }
+                    }
+                    scope:army_leader.location.county.holder = {
+                        any_liege_or_above = {
+                            OR = {
+                                is_at_war_with = scope:army_leader
+                                scope:army_leader = {
+                                    any_liege_or_above = {
+                                        is_at_war_with = scope:army_leader
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                scope:army_leader.location.county.holder = {
+                    intrigue < army_leader.intrigue
+                }
+            }
+            scope:army_leader = {
+                add_character_modifier = {
+                    modifier = infiltration_specialist_modifier
+                }
+            }
+        }
+        else = {
+            scope:army_leader = {
+                remove_character_modifier = infiltration_specialist_modifier
+            }
+        }
+    }
+}
+
+fow_trait.00071 = {
+
+	hidden = yes
+
+    trigger = {
+        exists = scope:army.army_commander
+            scope:army.army_commander = {
+                has_trait = focus_specialist
+            }
+        }
+
+    immediate = {
+        scope:army.army_commander = {
+            if = {
+                limit = {
+                    is_at_war_with = this.location.county.holder
+                    this.location.county = this.location.county.holder.primary_title.title_capital_county
+                }
+                add_character_modifier = focus_specialist_modifier
+            }
+            else = {
+                remove_character_modifier = focus_specialist_modifier
+            }
+        }
+    }
+}
+
+##### MODDED TRAITS #####
+
+fow_trait.1001 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = mapper
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = mapper
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = mapper
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = mapper
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = mapper
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1002 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = observant_pathfinder
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = observant_pathfinder
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = observant_pathfinder
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = observant_pathfinder
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = observant_pathfinder
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1003 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = respected_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = respected_leader
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = respected_leader
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = respected_leader
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = respected_leader
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1004 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = sea_raider
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = sea_raider
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = sea_raider
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = sea_raider
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = sea_raider
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1005 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = seasoned_rover
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = seasoned_rover
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = seasoned_rover
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = seasoned_rover
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = seasoned_rover
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1006 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = resolute_localist
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = resolute_localist
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = resolute_localist
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = resolute_localist
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = resolute_localist
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1007 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = relentless_pursuer
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = relentless_pursuer
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = relentless_pursuer
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = relentless_pursuer
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = relentless_pursuer
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1008 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = infiltration_specialist
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = infiltration_specialist
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = infiltration_specialist
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = infiltration_specialist
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = infiltration_specialist
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1009 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = battlefield_medic
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = battlefield_medic
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = battlefield_medic
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = battlefield_medic
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = battlefield_medic
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1010 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = dauntless_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = dauntless_leader
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = dauntless_leader
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = dauntless_leader
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = dauntless_leader
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1011 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = crafty_commander
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = crafty_commander
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = crafty_commander
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = crafty_commander
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = crafty_commander
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1012 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = cautious_planner
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_planner
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_planner
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_planner
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_planner
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1013 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = bannerlord
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = bannerlord
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = bannerlord
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = bannerlord
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = bannerlord
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1014 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = focus_specialist
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = focus_specialist
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = focus_specialist
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = focus_specialist
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = focus_specialist
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1015 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = master_ambusher
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = master_ambusher
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = master_ambusher
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = master_ambusher
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = master_ambusher
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1016 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = navigator
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = navigator
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = navigator
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = navigator
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = navigator
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1017 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = zealot
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = zealot
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = zealot
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = zealot
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = zealot
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+##### VANILLA TRAITS#####
+
+fow_trait.2001 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = logistician
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = logistician
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = logistician
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = logistician
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = logistician
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2002 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = military_engineer
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = military_engineer
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = military_engineer
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = military_engineer
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = military_engineer
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2003 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = aggressive_attacker
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = aggressive_attacker
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = aggressive_attacker
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = aggressive_attacker
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = aggressive_attacker
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2004 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = unyielding_defender
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = unyielding_defender
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = unyielding_defender
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = unyielding_defender
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = unyielding_defender
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2005 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = forder
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = forder
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forder
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forder
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forder
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2006 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = flexible_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = flexible_leader
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = flexible_leader
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = flexible_leader
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = flexible_leader
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2007 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = desert_warrior
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = desert_warrior
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = desert_warrior
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = desert_warrior
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = desert_warrior
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2008 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = jungle_stalker
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = jungle_stalker
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = jungle_stalker
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = jungle_stalker
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = jungle_stalker
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2009 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = reaver
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = reaver
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reaver
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reaver
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reaver
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2010 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = reckless
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = reckless
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reckless
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reckless
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reckless
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2011 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = holy_warrior
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = holy_warrior
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = holy_warrior
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = holy_warrior
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = holy_warrior
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2012 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = open_terrain_expert
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = open_terrain_expert
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = open_terrain_expert
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = open_terrain_expert
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = open_terrain_expert
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2013 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = rough_terrain_expert
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = rough_terrain_expert
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = rough_terrain_expert
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = rough_terrain_expert
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = rough_terrain_expert
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2014 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = forest_fighter
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = forest_fighter
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forest_fighter
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forest_fighter
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forest_fighter
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2015 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = cautious_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_leader
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_leader
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_leader
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_leader
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2016 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = organizer
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = organizer
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = organizer
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = organizer
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = organizer
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2017 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = winter_soldier
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = winter_soldier
+                        value = 3
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = winter_soldier
+                        value = 4
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = winter_soldier
+                        value = 5
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = winter_soldier
+                        value = 6
+                    }
+                }
+            }
+        }
+    }
+}
+
+##### MODDED TRAITS #####
+
+fow_trait.1101 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = mapper
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = mapper
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = mapper
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1102 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = observant_pathfinder
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = observant_pathfinder
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = observant_pathfinder
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1103 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = respected_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = respected_leader
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = respected_leader
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1104 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = sea_raider
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = sea_raider
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = sea_raider
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1105 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = seasoned_rover
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = seasoned_rover
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = seasoned_rover
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1106 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = resolute_localist
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = resolute_localist
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = resolute_localist
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1107 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = relentless_pursuer
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = relentless_pursuer
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = relentless_pursuer
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1108 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = infiltration_specialist
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = infiltration_specialist
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = infiltration_specialist
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1109 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = battlefield_medic
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = battlefield_medic
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = battlefield_medic
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1110 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = dauntless_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = dauntless_leader
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = dauntless_leader
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1111 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = crafty_commander
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = crafty_commander
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = crafty_commander
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1112 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = cautious_planner
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_planner
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_planner
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1113 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = bannerlord
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = bannerlord
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = bannerlord
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1114 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = focus_specialist
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = focus_specialist
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = focus_specialist
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1115 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = master_ambusher
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = master_ambusher
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = master_ambusher
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1116 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = navigator
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = navigator
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = navigator
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.1117 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = zealot
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = zealot
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = zealot
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+##### VANILLA TRAITS#####
+
+fow_trait.2101 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = logistician
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = logistician
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = logistician
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2102 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = military_engineer
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = military_engineer
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = military_engineer
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2103 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = aggressive_attacker
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = aggressive_attacker
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = aggressive_attacker
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2104 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = unyielding_defender
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = unyielding_defender
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = unyielding_defender
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2105 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = forder
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = forder
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forder
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2106 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = flexible_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = flexible_leader
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = flexible_leader
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2107 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = desert_warrior
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = desert_warrior
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = desert_warrior
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2108 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = jungle_stalker
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = jungle_stalker
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = jungle_stalker
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2109 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = reaver
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = reaver
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reaver
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2110 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = reckless
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = reckless
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = reckless
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2111 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = holy_warrior
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = holy_warrior
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = holy_warrior
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2112 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = open_terrain_expert
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = open_terrain_expert
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = open_terrain_expert
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2113 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = rough_terrain_expert
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = rough_terrain_expert
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = rough_terrain_expert
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2114 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = forest_fighter
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = forest_fighter
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = forest_fighter
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2115 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = cautious_leader
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_leader
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = cautious_leader
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2116 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = organizer
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = organizer
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = organizer
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}
+
+fow_trait.2117 = {
+
+	hidden = yes
+    scope = combat_side
+
+    trigger = {
+        exists = side_commander
+        side_commander = {
+            has_trait = winter_soldier
+        }
+        side_commander = { is_alive = yes }
+    }
+
+    immediate = {
+        side_commander = {
+            random_list = {
+                1 = {
+                    add_trait_xp = {
+                        trait = winter_soldier
+                        value = 1
+                    }
+                }
+                1 = {
+                    add_trait_xp = {
+                        trait = winter_soldier
+                        value = 2
+                    }
+                }
+            }
+        }
+    }
+}

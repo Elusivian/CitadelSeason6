@@ -3118,8 +3118,27 @@ starpike_01 = {
 	cost_gold = 3000
 	
 	character_modifier = {
-		monthly_prestige = 0.25
-		owned_hostile_scheme_success_chance_add = 25
+		liege_opinion = 15
+		personal_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+		owned_scheme_secrecy_add = -10
+		intrigue = 2
+	}
+
+	cost_gold = 500
+
+	county_modifier = {
+		development_growth_factor = 0.1
+		tax_mult = 0.1
+		levy_size = 0.1
+	}
+	province_modifier = {
+		fort_level = 10
+		monthly_income = 1.5
+		levy_size = 0.2
+	}
+	character_modifier = {
+		monthly_dynasty_prestige_mult = 0.05
+		monthly_prestige  = 0.5
 	}
 	
 	ai_value = {

@@ -506,9 +506,7 @@ horn_hill_hunting_grounds_01 = {
 	character_modifier = {
 		monthly_income = 1
 		archers_maintenance_mult = -0.1
-		archer_cavalry_maintenance_mult = -0.1
 		archers_toughness_mult = 0.05
-		archer_cavalry_toughness_mult = 0.05
 
 	}
 	province_modifier = {
@@ -544,9 +542,7 @@ horn_hill_hunting_grounds_02 = {
 	character_modifier = {
 			monthly_income = 2
 			archers_maintenance_mult = -0.15
-			archer_cavalry_maintenance_mult = -0.15
 			archers_toughness_mult = 0.1
-			archer_cavalry_toughness_mult = 0.1
 	}	
 	province_modifier = {
 	}
@@ -582,9 +578,7 @@ horn_hill_hunting_grounds_03 = {
 	character_modifier = {
 			monthly_income = 3
 			archers_maintenance_mult = -0.2
-			archer_cavalry_maintenance_mult = -0.2
 			archers_toughness_mult = 0.15
-			archer_cavalry_toughness_mult = 0.15
 			stress_gain_mult = -0.1
 			monthly_prestige  = 1
 	}	
@@ -828,6 +822,8 @@ gulltown_customs_house_01 = {
 		building_requirement_tribal = no
 	}
 	
+	levy = 1500
+
 	cost_gold = expensive_building_tier_3_cost
 
 	character_modifier = {
@@ -864,6 +860,8 @@ gulltown_customs_house_02 = {
 	
 	cost_gold = expensive_building_tier_4_cost
 	
+	levy = 2000
+
 	character_modifier = {
 	}	
 	
@@ -896,7 +894,8 @@ gulltown_customs_house_03 = {
 		building_requirement_tribal = no
 	}
 
-	
+	levy = 2500
+
 	cost_gold = expensive_building_tier_5_cost
 	
 	character_modifier = {
@@ -2392,6 +2391,8 @@ oldtown_quill_and_tankard_01 = {
 		travel_danger = 10
 	}
 
+	levy = 3500
+
 	cost_gold = 3000
 
 	ai_value = {
@@ -2454,6 +2455,7 @@ the_ring_the_ring_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		monthly_prestige  = 1
 		heavy_cavalry_toughness_mult = 0.1
+		heavy_cavalry_maintenance_mult = -0.10
 	}
 
 	province_modifier = {
@@ -4966,6 +4968,7 @@ three_towers_01 = {
 	}
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.75
 		monthly_dynasty_prestige_gain_mult = 0.1
 	}
@@ -4996,6 +4999,7 @@ sunflower_hall_01 = {
 
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.5
 		monthly_dynasty_prestige_gain_mult = 0.05
 	}
@@ -5057,6 +5061,7 @@ oldcastle_01 = {
 
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.25
 		monthly_dynasty_prestige_gain_mult = 0.03
 	}
@@ -5087,6 +5092,7 @@ ramsgate_01 = {
 
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.25
 		monthly_dynasty_prestige_gain_mult = 0.03
 	}

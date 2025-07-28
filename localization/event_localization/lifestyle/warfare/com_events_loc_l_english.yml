@@ -1,0 +1,219 @@
+﻿l_english:
+ #Random Trait Acquisition Events
+ #Choose whether to become crafty_commander, master_ambusher or cautious_planner
+ learn_commander_trait.1901.t:0 "Know Your Enemy"
+ learn_commander_trait.1901.desc:0 "In the heat of battle, awareness is paramount.\n\nI always know how to act decisively, ensuring victory."
+ learn_commander_trait.1901.a:0 "I will put my management skills to good use."
+ learn_commander_trait.1901.b:0 "I'll employ my intrigue skills effectively."
+ learn_commander_trait.1901.c:0 "I would rather take the time to anticipate all the outcomes."
+ 
+ #Choose whether to become a mapper, navigator or bannerlord
+ learn_commander_trait.1902.t:0 "Paths Uncharted"
+ learn_commander_trait.1902.desc:0 "Embark on a journey where every step defines your destiny.\n\nAmidst uncharted realms, I embrace the allure of discovery, navigating through mysteries yet unveiled."
+ learn_commander_trait.1902.a:0 "I will chart new territories to prepare for battle."
+ learn_commander_trait.1902.b:0 "I will command the seas through treacherous waters."
+ learn_commander_trait.1902.c:0 "I will conquer swiftly, leading attacks to secure victory."
+
+ #Choose whether to become a battle medic, dauntless leader or relentless pursuer
+ learn_commander_trait.1904.t:0 "Trials of Valor"
+ learn_commander_trait.1904.desc:0 "Amidst the trials of war, heroes emerge to guide their comrades through the chaos, their actions shaping the destiny of nations."
+ learn_commander_trait.1904.a:0 "In the heart of battle, I shall tend to the wounded and alleviate suffering."
+ learn_commander_trait.1904.b:0 "With unwavering courage, I will lead our troops into the fray."
+ learn_commander_trait.1904.c:0 "No enemy shall escape our grasp. I will pursue them relentlessly."
+
+ #Choose whether to become a focus specialist, infiltration specialist, or observant pathfinder
+ learn_commander_trait.1905.t:0 "Paths of Strategy"
+ learn_commander_trait.1905.desc:0 "In the intricate dance of warfare, strategic minds rise to prominence, their keen insights and specialized tactics shaping the course of battles."
+ learn_commander_trait.1905.a:0 "I will devise tactical masterstrokes to outmaneuver our adversaries."
+ learn_commander_trait.1905.b:0 "Through stealth and cunning, I shall infiltrate enemy lines."
+ learn_commander_trait.1905.c:0 "I will chart the optimal path to the enemy's weakest points."
+
+ #Choose whether to become a resolute localist or seasoned rover
+ learn_commander_trait.1903.t:0 "Echoes of Home"
+ learn_commander_trait.1903.desc:0 "Within the sanctum of familiar landscapes, I discern the whispers of the land, its contours guiding my every step."
+ learn_commander_trait.1903.a:0 "I will anchor our resolve in the soil of our homeland."
+ learn_commander_trait.1903.b:0 "Let us venture forth beyond known horizons."
+
+ #Choose whether to become a respected leader or zealot
+ learn_commander_trait.1906.t:0 "The Forge of Leadership"
+ learn_commander_trait.1906.desc:0 "In the crucible of leadership, some rise to become beacons of inspiration, wielding their influence to shape the destiny of nations and armies."
+ learn_commander_trait.1906.a:0 "I will inspire unwavering loyalty among my troops."
+ learn_commander_trait.1906.b:0 "With fervent zeal burning within, I shall strike the heathens."
+
+ ##### TRAINING #####
+
+#BANNERLORD
+learn_commander_trait.101.t:0 "Bannerlord"
+#Offer:
+learn_commander_trait.3101.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] strategic prowess on the battlefield, particularly in leading relentless offensives. If there was one who could help me understand, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3201.desc:0 "[teacher.GetTitledFirstName] has demonstrated the art of pressing on the attack with unwavering determination. My final test is a mock battle where I must lead my troops in a relentless assault against [teacher.GetHerHis] fortified positions."
+#Success
+learn_commander_trait.3203.desc:0 "[teacher.GetTitledFirstName] strides up to me. "Impressive!" [teacher.GetSheHe] declares. "Your troops displayed remarkable tenacity, pressing forward without faltering.""
+#Failure
+learn_commander_trait.3204.desc:0 "It all seemed promising until I realized we had walked into a trap!\n\n[teacher.GetTitledFirstName] stands amidst the ruins of our failed assault when I arrive. "I believe I see where you went astray, [teacher.GetSheHe] offers, [teacher.Custom('quirk_pos_pp')].""
+
+#BATTLE APOTHECARY
+learn_commander_trait.201.t:0 "Battle Apothecary"
+#Offer:
+learn_commander_trait.3102.desc:0 "\n\n[teacher.GetFirstName] is renowned as a skilled battle apothecary, adept at keeping troops fighting fit even in the most dire circumstances. If there was one who could enlighten me, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3202.desc:0 "[teacher.GetTitledFirstName] has revealed to me the secrets of battlefield medicine and the importance of tending to the wounded. My final test is a simulated skirmish where I must ensure my troops receive timely medical attention amidst the chaos of combat."
+#Success
+learn_commander_trait.3302.desc:0 "[teacher.GetTitledFirstName] approaches me with a nod of approval. "Well done, [teacher.GetSheHe] commends. "Your swift actions saved many lives on the battlefield today.""
+#Failure
+learn_commander_trait.3402.desc:0 "It all appeared to be going smoothly until the wounded overwhelmed us!\n\n[teacher.GetTitledFirstName] stands amidst the chaos of strewn bandages when I approach. "I believe I've identified where things went awry, [teacher.GetSheHe] offers, [teacher.Custom('quirk_pos_pp')].""
+
+#CAUTIOUS PLANNER
+learn_commander_trait.301.t:0 "Cautious Planner"
+#Offer:
+learn_commander_trait.3103.desc:0 "\n\n[teacher.GetFirstName] is known for [teacher.GetHerHis] meticulous planning and cautious approach to warfare. If there was one who could impart wisdom, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3203.desc:0 "[teacher.GetTitledFirstName] has shared [teacher.GetHerHis] strategies of careful planning and risk mitigation. My final test is a simulated battle where I must navigate through a series of challenges, relying on cautious tactics to secure victory."
+#Success
+learn_commander_trait.3303.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Well executed, [teacher.GetSheHe] remarks. "Your cautious planning paid off handsomely in today's engagement.""
+#Failure
+learn_commander_trait.3403.desc:0 "It all seemed well-prepared until unexpected circumstances threw everything into disarray!\n\n[teacher.GetTitledFirstName] stands amidst the aftermath, analyzing the situation. "There were unforeseen variables, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#CRAFTY COMMANDER
+learn_commander_trait.401.t:0 "Crafty Commander"
+#Offer:
+learn_commander_trait.3104.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] cunning and strategic ingenuity on the battlefield. If there was one who could impart such knowledge, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3204.desc:0 "[teacher.GetTitledFirstName] has revealed the art of deception and craftiness in warfare. My final test is a simulated engagement where I must outmaneuver and outsmart the enemy using cunning tactics."
+#Success
+learn_commander_trait.3304.desc:0 "[teacher.GetTitledFirstName] approaches me with a knowing grin. "Impressive display, [teacher.GetSheHe] commends. "Your craftiness confounded the enemy at every turn.""
+#Failure
+learn_commander_trait.3404.desc:0 "It all appeared promising until the enemy saw through our ruse!" [teacher.GetTitledFirstName] stands before me, analyzing the situation. "There were unforeseen variables, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#DAUNTLESS LEADER
+learn_commander_trait.501.t:0 "Dauntless Leader"
+#Offer:
+learn_commander_trait.3105.desc:0 "\n\n[teacher.GetFirstName] is known for [teacher.GetHerHis] unwavering courage and fearless leadership on the battlefield. If there was one who could inspire me, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3205.desc:0 "[teacher.GetTitledFirstName] has demonstrated the qualities of a dauntless leader, leading from the front and inspiring bravery in the face of adversity. My final test is a simulated battle where I must exhibit courage and resolve amidst the chaos of combat."
+#Success
+learn_commander_trait.3305.desc:0 "[teacher.GetTitledFirstName] approaches me with a proud smile. "Well done, [teacher.GetSheHe] commends. "Your leadership was truly inspiring, rallying our troops to victory."
+#Failure
+learn_commander_trait.3405.desc:0 "It all seemed promising until fear gripped our ranks!\n\n[teacher.GetTitledFirstName] stands amidst the uncertainty when I approach. "Courage is not the absence of fear, [teacher.GetSheHe] remarks, [teacher.Custom('quirk_pos_pp')].""
+
+#FOCUS SPECIALIST
+learn_commander_trait.601.t:0 "Focus Specialist"
+#Offer:
+learn_commander_trait.3106.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] ability to maintain focus and concentration even in the midst of chaos on the battlefield. If there was one who could teach me, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3206.desc:0 "[teacher.GetTitledFirstName] has shown me the importance of focus and concentration in command. My final test is a simulated battle where I must maintain clarity of thought and strategic vision amidst the chaos of combat."
+#Success
+learn_commander_trait.3306.desc:0 "[teacher.GetTitledFirstName] approaches me with a nod of approval. "Impressive display, [teacher.GetSheHe] commends. "Your focus remained unwavering, guiding our forces to victory."
+#Failure
+learn_commander_trait.3406.desc:0 "It all seemed promising until distraction led to disarray!\n\n[teacher.GetTitledFirstName] stands amidst the confusion when I approach. "Focus is key to command, [teacher.GetSheHe] remarks, [teacher.Custom('quirk_pos_pp')].""
+
+#INFILTRATION SPECIALIST
+learn_commander_trait.701.t:0 "Infiltration Specialist"
+#Offer:
+learn_commander_trait.3107.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] expertise in infiltration and covert operations on the battlefield. If there was one who could teach me the art of stealth, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3207.desc:0 "[teacher.GetTitledFirstName] has demonstrated the tactics of infiltration and covert movement. My final test is a simulated exercise where I must navigate enemy lines unseen and gather vital intelligence."
+#Success
+learn_commander_trait.3307.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Well executed, [teacher.GetSheHe] commends. "Your mastery of infiltration proved invaluable in securing vital information."
+#Failure
+learn_commander_trait.3407.desc:0 "It all seemed promising until our cover was blown!\n\n[teacher.GetTitledFirstName] stands amidst the aftermath, analyzing the situation. "Stealth requires meticulous planning, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#RESOLUTE LOCALIST
+learn_commander_trait.801.t:0 "Resolute Localist"
+#Offer:
+learn_commander_trait.3108.desc:0 "\n\n[teacher.GetFirstName] is known for [teacher.GetHerHis] unwavering commitment to the local populace and their welfare during times of conflict. If there was one who could teach me the importance of community, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3208.desc:0 "[teacher.GetTitledFirstName] has exemplified the principles of resolute localism, prioritizing the needs of the local community even amidst the chaos of war. My final test is to demonstrate my ability to integrate with and support the local populace in times of crisis."
+#Success
+learn_commander_trait.3308.desc:0 "[teacher.GetTitledFirstName] approaches me with a nod of approval. "Impressive commitment, [teacher.GetSheHe] commends. "Your dedication to the local populace has strengthened our bonds and bolstered our support."
+#Failure
+learn_commander_trait.3408.desc:0 "It all seemed promising until tensions with the locals erupted!\n\n[teacher.GetTitledFirstName] stands amidst the discord, analyzing the situation. "Local support is paramount, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#MAPPER
+learn_commander_trait.901.t:0 "Mapper"
+#Offer:
+learn_commander_trait.3109.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] expertise in mapping and cartography, crucial skills for navigating the complexities of the battlefield. If there was one who could teach me the art of mapmaking, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.3209.desc:0 "[teacher.GetTitledFirstName] has demonstrated the importance of accurate mapping and cartographic skills in military strategy. My final test is to create detailed maps of unfamiliar terrain and utilize them effectively in a simulated battle scenario."
+#Success
+learn_commander_trait.3309.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Well executed, [teacher.GetSheHe] commends. "Your meticulous mapping provided invaluable insights and strategic advantages during the engagement."
+#Failure
+learn_commander_trait.3409.desc:0 "It all seemed promising until our maps proved inaccurate!\n\n[teacher.GetTitledFirstName] stands amidst the confusion, analyzing the situation. "Precision in mapping is paramount, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#MASTER AMBUSHER
+learn_commander_trait.1001.t:0 "Master Ambusher"
+#Offer:
+learn_commander_trait.4001.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] mastery of ambush tactics, making [teacher.GetHerHim] a formidable adversary on the battlefield. If there was one who could teach me the art of ambush, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4002.desc:0 "[teacher.GetTitledFirstName] has demonstrated the tactics of ambushing and surprise attacks. My final test is to plan and execute a successful ambush against a simulated enemy force."
+#Success
+learn_commander_trait.4003.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Well executed, [teacher.GetSheHe] commends. "Your mastery of ambush tactics caught the enemy off guard and secured a decisive victory."
+#Failure
+learn_commander_trait.4004.desc:0 "It all seemed promising until our ambush was discovered too soon!\n\n[teacher.GetTitledFirstName] stands amidst the chaos, analyzing the situation. "Timing is crucial in ambushes, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#NAVIGATOR
+learn_commander_trait.1002.t:0 "Navigator"
+#Offer:
+learn_commander_trait.4101.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] exceptional skills in navigation, indispensable for guiding troops through unfamiliar terrain. If there was one who could teach me the art of navigation, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4102.desc:0 "[teacher.GetTitledFirstName] has demonstrated the techniques of navigation and map reading. My final test is to lead a group through challenging terrain using only a map and compass."
+#Success
+learn_commander_trait.4103.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Well done, [teacher.GetSheHe] commends. "Your navigation skills ensured our safe passage through difficult terrain."
+#Failure
+learn_commander_trait.4104.desc:0 "It all seemed promising until we got lost!\n\n[teacher.GetTitledFirstName] stands amidst the confusion, analyzing the situation. "Navigation requires precision and attention to detail, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#OBSERVANT PATHFINDER
+learn_commander_trait.1003.t:0 "Observant Pathfinder"
+#Offer:
+learn_commander_trait.4201.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] keen observation skills and expertise in finding the most advantageous paths through terrain. If there was one who could teach me the art of observant pathfinding, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4202.desc:0 "[teacher.GetTitledFirstName] has demonstrated the techniques of observant pathfinding, identifying hidden routes and shortcuts through challenging terrain. My final test is to navigate a group through difficult terrain while maximizing strategic advantages."
+#Success
+learn_commander_trait.4203.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Impressive, [teacher.GetSheHe] commends. "Your observant pathfinding ensured our efficient movement and strategic positioning."
+#Failure
+learn_commander_trait.4204.desc:0 "It all seemed promising until we encountered unexpected obstacles!\n\n[teacher.GetTitledFirstName] stands amidst the setbacks, analyzing the situation. "Observation is key to effective pathfinding, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#RELENTLESS PURSUER
+learn_commander_trait.1004.t:0 "Relentless Pursuer"
+#Offer:
+learn_commander_trait.4301.desc:0 "\n\n[teacher.GetFirstName] is renowned for [teacher.GetHerHis] unwavering pursuit of enemies on the battlefield, making [teacher.GetHerHim] a formidable adversary. If there was one who could teach me the art of relentless pursuit, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4302.desc:0 "[teacher.GetTitledFirstName] has demonstrated the tactics of relentless pursuit, tirelessly tracking and engaging enemy forces until victory is achieved. My final test is to lead a pursuit mission against a simulated enemy, ensuring they are pursued and eliminated without escape."
+#Success
+learn_commander_trait.4303.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Impressive, [teacher.GetSheHe] commends. "Your relentless pursuit left the enemy with no chance of escape, securing a decisive victory."
+#Failure
+learn_commander_trait.4304.desc:0 "It all seemed promising until the enemy slipped away!\n\n[teacher.GetTitledFirstName] stands amidst the frustration, analyzing the situation. "Persistence is key to relentless pursuit, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#RESPECTED LEADER
+learn_commander_trait.1005.t:0 "Respected Leader"
+#Offer:
+learn_commander_trait.4401.desc:0 "\n\n[teacher.GetFirstName] is highly respected for [teacher.GetHerHis] exemplary leadership skills and ability to inspire loyalty and dedication among troops. If there was one who could teach me the qualities of a respected leader, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4402.desc:0 "[teacher.GetTitledFirstName] has demonstrated the traits of a respected leader, earning the trust and admiration of [teacher.GetHerHis] soldiers through [teacher.GetHerHis] actions and decisions. My final test is to lead a group through a challenging scenario, relying on the respect and loyalty of my troops to overcome obstacles."
+#Success
+learn_commander_trait.4403.desc:0 "[teacher.GetTitledFirstName] approaches me with a proud smile. "Well done, [teacher.GetSheHe] commends. "Your leadership earned you the respect and loyalty of your troops, leading to success in challenging circumstances."
+#Failure
+learn_commander_trait.4404.desc:0 "It all seemed promising until my authority was challenged!\n\n[teacher.GetTitledFirstName] stands amidst the discord, analyzing the situation. "Respect must be continually earned, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#SEASONED ROVER
+learn_commander_trait.1006.t:0 "Seasoned Rover"
+#Offer:
+learn_commander_trait.4501.desc:0 "\n\n[teacher.GetFirstName] is a seasoned rover, known for [teacher.GetHerHis] expertise in traversing diverse landscapes and surviving in harsh conditions. If there was one who could teach me the skills of a seasoned rover, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4502.desc:0 "[teacher.GetTitledFirstName] has demonstrated the skills of a seasoned rover, showing adeptness in navigating various terrains and overcoming challenges in the wilderness. My final test is to lead an expedition through rugged terrain, utilizing the skills learned from [teacher.GetHerHis] teachings."
+#Success
+learn_commander_trait.4503.desc:0 "[teacher.GetTitledFirstName] approaches me with a satisfied smile. "Impressive, [teacher.GetSheHe] commends. "Your expertise as a seasoned rover ensured the success of the expedition, navigating through challenging terrain with ease."
+#Failure
+learn_commander_trait.4504.desc:0 "It all seemed promising until we encountered unexpected obstacles!\n\n[teacher.GetTitledFirstName] stands amidst the setbacks, analyzing the situation. "Adaptability is key to being a seasoned rover, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""
+
+#ZEALOT
+learn_commander_trait.1007.t:0 "Zealot"
+#Offer:
+learn_commander_trait.4601.desc:0 "\n\n[teacher.GetFirstName] is known as a fervent zealot on the battlefield, driven by unwavering devotion to [teacher.GetHerHis] cause. If there was one who could teach me the fervor of a zealot, it would be [teacher.GetHerHim]."
+#Final test
+learn_commander_trait.4602.desc:0 "[teacher.GetTitledFirstName] has demonstrated the zeal of a true believer, inspiring others with [teacher.GetHerHis] passion and dedication. My final test is to lead a charge into battle, embodying the zeal instilled by [teacher.GetHerHis] teachings."
+#Success
+learn_commander_trait.4603.desc:0 "[teacher.GetTitledFirstName] approaches me with a proud smile. "Well done, [teacher.GetSheHe] commends. "Your zeal and fervor rallied the troops, leading to victory on the battlefield."
+#Failure
+learn_commander_trait.4604.desc:0 "It all seemed promising until doubt crept in!\n\n[teacher.GetTitledFirstName] stands amidst the uncertainty, analyzing the situation. "Faith must be unwavering, [teacher.GetSheHe] reflects, [teacher.Custom('quirk_pos_pp')].""

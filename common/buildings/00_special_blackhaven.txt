@@ -1,0 +1,45 @@
+##########
+# Blackhaven 
+##########
+
+
+blackhaven2 = {
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_falak_ol_aflak_citadel.dds"
+	
+	asset = {
+		type = entity
+		name = "blackhaven2_entity"
+	}
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+
+	character_modifier = {
+		character_travel_speed_mult = 0.25
+	}
+
+	county_modifier = {
+		defender_holding_advantage = 5
+		hostile_raid_time = 0.5
+	}
+
+	province_modifier = {
+		fort_level = 4
+	}
+
+	cost_gold = 500
+
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+	}
+
+	type = special
+
+	flag = travel_point_of_interest_martial
+}
+
+
