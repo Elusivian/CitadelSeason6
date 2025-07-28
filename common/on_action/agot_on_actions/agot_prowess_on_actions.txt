@@ -1,0 +1,23 @@
+﻿
+#train children
+
+#random_yearly_playable_pulse = {
+#  on_actions = {
+#	delay = { days = { 10 75 } }
+#    prowess_random_yearly_playable_pulse
+#  }
+#}
+
+
+#prowess_random_yearly_playable_pulse = {
+#	trigger = {
+#		exists = cp:councillor_marshal
+#	}
+#	random_events = {
+		#150 = agot_prowess.0002 #Up Kid's Combat Trait
+		#10 = 0
+		# 100 = child dislikes training # AGOT to do lmaoo
+		#Bad Side Effects
+		#100 Up base prowess stat
+#	}
+#}

@@ -1,0 +1,34 @@
+﻿agot_get_faegon_age = {
+	value = current_year
+	subtract = 8282
+}
+
+agot_get_dany_age = {
+	value = current_year
+	subtract = 8284
+}
+
+agot_get_dany_age_scripted_birth = {
+	value = current_year
+	subtract = title:e_the_iron_throne.var:agot_faegon_dany_birth_year
+}
+
+agot_get_jae_age_scripted_birth = {
+	value = current_year
+	subtract = title:e_the_iron_throne.var:agot_faegon_jae_birth_year
+}
+
+get_post_blackfyre_age = {
+	value = current_year
+	subtract = get_post_blackfyre_birth_year
+}
+
+get_post_blackfyre_birth_year = {
+	value = title:e_the_iron_throne.var:faegon_post_blackfyre_blackfyre_win
+	subtract = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant.age
+}
+
+get_viserys_age = {
+	value = current_year
+	subtract = 8276
+}

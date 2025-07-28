@@ -1,0 +1,36 @@
+﻿#AGOT Modified
+rf_faith_of_the_seven_opinion = {
+	decimals = 0
+	color = good
+}
+faith_of_the_seven_religion_opinion = {
+	decimals = 0
+}
+
+old_gods_religion_opinion = {
+	decimals = 0
+}
+
+drowned_god_religion_opinion = {
+	decimals = 0
+}
+
+rhllor_religion_opinion = {
+	decimals = 0
+}
+
+red_god_opinion = {
+	decimals = 0
+}
+
+valyrian_religion_opinion = {
+	decimals = 0
+}
+
+rhoynish_religion_opinion = {
+	decimals = 0
+}
+
+bearded_god_opinion = {
+	decimals = 0
+}

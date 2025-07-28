@@ -1,0 +1,32 @@
+﻿###################
+# AGOT Bookmarked #
+###################
+
+#################################
+# Dance of the Dragons Scenario #
+#################################
+agot_8133_7_1_scenario_setup = {
+	hidden_effect = {
+		title:e_the_iron_throne.holder = { designate_diarch = title:d_palemarch.holder }
+		character:Targaryen_74 = { remove_trait = bastard 
+								add_trait = disputed_heritage
+								set_to_lowborn = yes
+								#set_house = title:d_harrenhal.holder.house
+								make_trait_inactive = cool_silver_hair
+								make_trait_inactive = purple_eyes_1
+								}
+		title:d_harrenhal.holder = {
+		
+		 set_designated_heir_unsafe = character:Targaryen_74 }
+		
+		character:Palehair_1 = {  make_trait_inactive = cool_silver_hair
+								make_trait_inactive = purple_eyes_1
+								remove_trait = bastard
+								add_trait = disputed_heritage
+								}
+								
+
+	}
+
+
+}

@@ -1,0 +1,51 @@
+﻿
+
+naval_defeat_modifier = {
+	icon = asatru_raven_negative
+	#raid_speed = -0.5
+	embarkation_cost_mult = 0.25
+	naval_movement_speed_mult = -0.25
+	
+	coastal_advantage = -10
+	
+}
+
+naval_defeat_county_modifier = {
+	icon = asatru_raven_negative
+	fort_level = -5
+	development_growth = -0.1
+	monthly_county_control_decline_add = -0.1
+}
+
+
+small_flagship_modifier = {
+	embarkation_cost_mult = -0.1
+	naval_movement_speed_mult = .1
+	coastal_advantage = 10
+	monthly_dynasty_prestige_mult = 0.01
+	glory_hound_opinion = 5
+	monthly_prestige = 0.25
+}
+
+
+medium_flagship_modifier = {
+	embarkation_cost_mult = -0.2
+	naval_movement_speed_mult = 0.2
+	coastal_advantage = 20
+	monthly_dynasty_prestige_mult = 0.02
+	glory_hound_opinion = 10
+	monthly_prestige = 0.5
+}
+
+
+
+
+large_flagship_modifier = {
+embarkation_cost_mult = -0.3
+	naval_movement_speed_mult = 0.3
+	coastal_advantage = 30
+	monthly_dynasty_prestige_mult = 0.04
+	general_opinion = 10
+	glory_hound_opinion = 20
+	monthly_prestige = 1.0
+}

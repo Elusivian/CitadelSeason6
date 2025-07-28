@@ -1,0 +1,1019 @@
+﻿###################
+# AGOT More Bookmarks #
+###################
+
+#################################
+# Ironborn Invasion Setup #
+#################################
+agot_more_bookmarks_aegons_conquest_setup = {
+### Yeah I know, its too early. Oh well!
+#faith:the_seven_main = { add_doctrine = agot_exceptionalism_doctrine }
+title:c_harrenhal.holder = { set_realm_capital = title:c_harrenhal }
+
+
+character:Targaryen_27 = {
+
+ agot_spawn_laid_egg = { AMOUNT_OF_EGGS_TO_SPAWN = 4 OWNER_SCOPE = this DRAGON_PARENT = character:Targaryen_29.var:current_dragon }
+ agot_spawn_laid_egg = { AMOUNT_OF_EGGS_TO_SPAWN = 4 OWNER_SCOPE = this DRAGON_PARENT = character:Targaryen_28.var:current_dragon }
+
+set_sexuality = heterosexual
+set_character_faith = faith:valyrian
+agot_create_artifact_aegons_armour_more_bookmarks_effect = { OWNER = this }
+agot_safe_concubine_history_effect = {
+				TARGET = character:Targaryen_29
+				}
+		
+		
+		
+
+ create_story = { 
+												type = story_agot_scenario_aegons_conquest
+												save_scope_as = aegons_conquest_story
+											}
+if = { limit = { NOT = { has_game_rule = agot_story_sandbox } }
+create_story = { 
+												type = story_agot_scenario_aegons_conquest_faith_fixer
+												save_scope_as = aegons_faith_fixer_story
+											}
+											}
+#if = { limit = { has_game_rule = agot_more_bookmarks_canon_children_on }
+#create_story = { 
+#												type = story_agot_more_bookmarks_canon_children_aegon_i_targaryen
+#												save_scope_as = aegons_conquest_canon_kids_story
+#											}
+#	}
+											
+						house = {
+									every_house_member = {
+																				add_trait_xp = {
+														trait = dragonrider
+														track = dragon_bond
+														value = 40
+													}
+													add_trait_xp = {
+														trait = dragonrider
+														track = dragon_training
+														value = 60
+													}
+									
+									
+									}
+									}
+}
+
+
+character:Baratheon_14 = { add_prowess_skill = 40 }
+
+	title:c_harrenhal = {
+        change_county_control = 100
+    }
+	
+	character:Baratheon_14 = {
+		add_character_flag = kingsguard_position_rejected
+	}
+	character:Qoherys_1 = {
+		add_character_flag = kingsguard_position_rejected
+	}
+	
+	
+}
+
+
+
+
+
+
+
+agot_more_bookmarks_kingsguard_formation = {
+
+
+
+        character:Velaryon_15 = {
+            get_title = title:d_kingsguard
+            add_trait = kingsguard
+            add_trait = knight
+			agot_create_artifact_kingsguard_armour_effect = { OWNER = this }
+			agot_create_artifact_kingsguard_sword_effect = { OWNER = this }
+            create_title_and_vassal_change = {
+                type = swear_fealty
+                save_scope_as = change
+            }
+
+            change_liege = {
+                liege = title:e_the_iron_throne.holder
+                change = scope:change
+            }
+            resolve_title_and_vassal_change = scope:change
+        }
+        agot_assign_lord_commander_effect = {
+			COMMANDER = character:Velaryon_15
+			KING = title:e_the_iron_throne.holder
+		}
+		
+
+      
+
+
+
+
+
+
+
+
+
+}
+
+
+agot_create_artifact_aegons_armour_more_bookmarks_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = aegons_armour_name
+		description = aegons_armour_description
+		type = armor_plate
+		visuals = rhaegars_armour_visuals
+		wealth = scope:wealth
+		quality = scope:quality
+		template = rhaegars_armour_template
+		history = {
+			type = created
+			date = 7999.1.1
+			recipient = scope:owner #Rhaegar Targaryen (son of Aerys II)
+			location = province:4417
+		}
+		modifier = rhaegars_armour_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = { name = rhaegararmour value = yes } #this connects the artefact to the 3D model via the 01_clothes.txt file under gfx/portraits/portrait_modifiers/
+		equip_artifact_to_owner_replace = yes
+	}
+
+	scope:owner.house = { #makes sense for House Targaryen to have a House claim on the armour that literally has their sigil on it
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+
+liberation_of_riverlands_effect = {
+title:k_the_iron_islands.holder = {
+
+every_vassal = { limit = { capital_barony.title_province = { geographical_region = world_westeros_the_riverlands } } add_to_list = riverlords }
+every_vassal = { limit = { capital_barony.title_province = { geographical_region = world_westeros_the_crownlands } } add_to_list = crownlords }
+title:c_milkstone.holder = { add_to_list = harrenhal_vassals }
+title:c_briarwhite.holder = { add_to_list = harrenhal_vassals }
+title:c_harroway.holder = { add_to_list = harrenhal_vassals }
+title:c_horsehead.holder = { add_to_list = harrenhal_vassals }
+
+
+}
+
+if = { limit = { root.story_owner = { is_ai = yes } }
+ 
+ 
+ ### Liberation Resolution
+ random_list = {
+	
+	#Historical Outcome
+    800 = {
+        if ={
+            limit = {
+                character:Qoherys_1 = {
+                    is_alive = yes
+                }
+            }
+		character:Qoherys_1 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_2 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_2 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_3 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_3 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		random_knight = { limit = { is_landed = no }
+		save_scope_as = lord_of_harrenhal
+		}
+		}
+			
+            scope:lord_of_harrenhal = {
+			
+                get_title = title:c_harrenhal
+                get_title = title:c_ferrybridge
+                get_title = title:c_rippledown_rill
+                get_title = title:d_harrenhal
+                faith:the_seven_main = { save_scope_as = new_faith }
+                set_character_faith = scope:new_faith
+                every_child = {
+                    set_character_faith = scope:new_faith
+                }
+
+               
+            }
+           title:e_the_iron_throne.holder = {
+                reverse_add_opinion = {
+                    opinion = 250
+                    modifier = pleased_opinion
+                    years = 25
+                    target = scope:lord_of_harrenhal
+                }
+            }
+        title:c_riverrun.holder = { 
+									 title:e_the_iron_throne.holder = {
+                reverse_add_opinion = {
+                    opinion = 250
+                    modifier = pleased_opinion
+                    years = 25
+                    target = prev
+                }
+            }
+		
+									get_title = title:c_fairmarket
+									get_title = title:d_fairmarket
+									get_title = title:k_the_riverlands
+									 create_title_and_vassal_change = {
+										type = swear_fealty
+										save_scope_as = change
+									}
+					
+									change_liege = {
+										liege = title:e_the_iron_throne.holder
+										change = scope:change
+									}
+					
+									resolve_title_and_vassal_change = scope:change	
+					
+
+
+
+		}
+	
+		
+		}
+		
+		 400 = {
+        if ={
+            limit = {
+                character:Qoherys_1 = {
+                    is_alive = yes
+                }
+            }
+		character:Qoherys_1 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_2 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_2 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_3 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_3 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		random_knight = { limit = { is_landed = no }
+		save_scope_as = lord_of_harrenhal
+		}
+		}
+			
+            scope:lord_of_harrenhal = {
+                get_title = title:c_harrenhal
+                get_title = title:c_ferrybridge
+                get_title = title:c_rippledown_rill
+                get_title = title:d_harrenhal
+                faith:the_seven_main = { save_scope_as = new_faith }
+                set_character_faith = scope:new_faith
+                every_child = {
+                    set_character_faith = scope:new_faith
+                }
+
+               
+            }
+            title:e_the_iron_throne.holder = {
+                reverse_add_opinion = {
+                    opinion = 250
+                    modifier = pleased_opinion
+                    years = 25
+                    target = scope:lord_of_harrenhal
+                }
+            }
+        scope:lord_of_harrenhal = {
+									get_title = title:c_fairmarket
+									get_title = title:k_the_riverlands
+									 create_title_and_vassal_change = {
+										type = swear_fealty
+										save_scope_as = change
+									}
+					
+									change_liege = {
+										liege = title:e_the_iron_throne.holder
+										change = scope:change
+									}
+					
+									resolve_title_and_vassal_change = scope:change	
+					
+
+
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		200 = {
+        if ={
+            limit = {
+                character:Baratheon_14 = {
+                    is_alive = yes
+					OR = {	is_ruler = no
+												has_title = title:d_kingsguard
+										}
+                }
+            }
+		character:Baratheon_14 = {	save_scope_as = lord_of_harrenhal
+		if = { limit = { character:Baratheon_14 = { has_trait = kingsguard } }
+		agot_remove_kingsguard_effect = { KINGSGUARD = character:Baratheon_14 }
+		}
+		if = { limit = { character:Baratheon_14 = { has_trait = celibate } }
+		character:Baratheon_14 = { remove_trait = celibate }
+		}
+		if = { limit = { 
+		character:Baratheon_14 = { is_ruler =  yes 
+	
+		} }
+		character:Baratheon_14 = { depose = yes }
+		}
+		remove_trait = bastard
+		add_trait = bastard_founder
+		}
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_1 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_1 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_2 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_2 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		limit = {
+				character:Qoherys_3 = {
+							is_alive = yes
+						}
+		}
+			character:Qoherys_3 = {	save_scope_as = lord_of_harrenhal }
+			}
+		else_if = {
+		random_knight = { limit = { is_landed = no }
+		save_scope_as = lord_of_harrenhal
+		}
+		}
+			
+            scope:lord_of_harrenhal = {
+                get_title = title:c_harrenhal
+                get_title = title:c_ferrybridge
+                get_title = title:c_rippledown_rill
+                get_title = title:d_harrenhal
+                faith:the_seven_main = { save_scope_as = new_faith }
+                set_character_faith = scope:new_faith
+                every_child = {
+                    set_character_faith = scope:new_faith
+                }
+
+               
+            }
+            title:e_the_iron_throne.holder = {
+                reverse_add_opinion = {
+                    opinion = 250
+                    modifier = pleased_opinion
+                    years = 25
+                    target = scope:lord_of_harrenhal
+                }
+            }
+        scope:lord_of_harrenhal = {
+									get_title = title:c_fairmarket
+									get_title = title:d_fairmarket
+									get_title = title:k_the_riverlands
+									 create_title_and_vassal_change = {
+										type = swear_fealty
+										save_scope_as = change
+									}
+					
+									change_liege = {
+										liege = title:e_the_iron_throne.holder
+										change = scope:change
+									}
+					
+									resolve_title_and_vassal_change = scope:change	
+					
+
+
+
+		}
+		
+		}
+		
+        
+    
+ 
+    
+
+
+
+}
+
+
+
+
+
+
+
+
+
+}
+else = {
+
+root.story_owner = { 
+					get_title = title:c_fairmarket
+					get_title = title:d_fairmarket
+					get_title = title:k_the_riverlands 
+					get_title = title:c_harrenhal
+					get_title = title:c_ferrybridge
+					get_title = title:c_rippledown_rill
+					get_title = title:d_harrenhal
+
+}
+
+}
+			every_in_list = {
+					list = riverlords
+						create_title_and_vassal_change = {
+													type = swear_fealty
+													save_scope_as = change
+												}
+								
+												change_liege = {
+													liege = title:k_the_riverlands.holder
+													change = scope:change
+												}
+								
+												resolve_title_and_vassal_change = scope:change	
+												}
+			every_in_list = {
+					list = crownlords
+						create_title_and_vassal_change = {
+													type = swear_fealty
+													save_scope_as = change
+												}
+									
+												change_liege = {
+													liege = title:e_the_iron_throne.holder
+													change = scope:change
+												}
+								
+												resolve_title_and_vassal_change = scope:change	
+												primary_title = { set_de_jure_liege_title = title:k_the_crownlands }
+												}
+
+if = { limit = { NOT = { exists = scope:lord_of_harrenhal } }
+save_scope_as = lord_of_harrenhal
+}
+else = {
+scope:lord_of_harrenhal = {
+
+
+create_title_and_vassal_change = {
+													type = swear_fealty
+													save_scope_as = change
+												}
+									
+												change_liege = {
+													liege = title:e_the_iron_throne.holder
+													change = scope:change
+												}
+								
+												resolve_title_and_vassal_change = scope:change	
+												}
+every_in_list = {
+list = harrenhal_vassals
+
+create_title_and_vassal_change = {
+													type = swear_fealty
+													save_scope_as = change
+												}
+									
+												change_liege = {
+													liege = scope:lord_of_harrenhal
+													change = scope:change
+												}
+								
+												resolve_title_and_vassal_change = scope:change	
+
+}
+
+}
+
+
+}
+
+
+the_last_alliance_effect = {
+
+							if = { limit = { exists = title:e_the_stormlands.holder }
+							title:e_the_stormlands.holder = { add_to_list = potential_allies }
+							}
+							if = { limit = { exists = title:e_the_vale.holder }
+							title:e_the_vale.holder = { add_to_list = potential_allies }
+							}
+							if = { limit = { exists = title:e_the_westerlands.holder }
+							title:e_the_westerlands.holder = { add_to_list = potential_allies }
+							}
+							if = { limit = { exists = title:e_the_reach.holder }
+							title:e_the_reach.holder = { add_to_list = potential_allies }
+							}
+							if = { limit = { exists = title:e_the_north.holder }
+							title:e_the_north.holder = { add_to_list = potential_allies }
+							}
+							if = { limit = { exists = title:e_the_iron_islands.holder }
+							title:e_the_iron_islands.holder = { add_to_list = potential_allies }
+							}
+							if = { limit = { exists = title:e_dorne.holder }
+							title:e_dorne.holder = { add_to_list = potential_allies }
+							}
+							
+			
+			random_list = {
+			
+						### Triple Threat
+			               100 = {
+						   set_variable = {
+						name	= last_alliance
+						value	= flag:true
+						}
+						
+						   random_in_list = {
+							list = potential_allies
+						   save_scope_as = ally_1 }
+						   
+						   random_in_list = { 
+						   list = potential_allies
+						   limit = { NOT = { this = scope:ally_1} 
+						   } save_scope_as = ally_2 }
+						   
+						   random_in_list = { list = potential_allies limit = { NOR = { this = scope:ally_1 this = scope:ally_2 } } save_scope_as = ally_3 }
+						 scope:ally_1 = {
+						   create_alliance = {
+											target = scope:ally_2
+											allied_through_owner = this
+											allied_through_target = scope:ally_2
+							}
+							reverse_add_opinion = {
+							target = scope:ally_2 
+							modifier = perk_negotiated_alliance_opinion
+							}
+							create_alliance = {
+											target = scope:ally_3
+											allied_through_owner = this
+											allied_through_target = scope:ally_3
+							}
+							reverse_add_opinion = {
+							target = scope:ally_3 
+							modifier = perk_negotiated_alliance_opinion
+							}
+						}
+						scope:ally_2 = {
+						   create_alliance = {
+											target = scope:ally_3
+											allied_through_owner = this
+											allied_through_target = scope:ally_3
+							}
+							reverse_add_opinion = {
+							target = scope:ally_3 
+							modifier = perk_negotiated_alliance_opinion
+							}
+							
+						}
+						   every_player = { trigger_event = agot_events_more_bookmarks_misc.6 }
+						   
+						   
+						   }
+						   ### Canon
+						   200 = {
+						   set_variable = {
+						name	= last_alliance
+						value	= flag:true
+						}
+						   random_in_list = { list = potential_allies save_scope_as = ally_1}
+						   random_in_list = { list = potential_allies limit = { NOT = { this = ally_1} } save_scope_as = ally_2 }
+						 scope:ally_1 = {
+						   create_alliance = {
+											target = scope:ally_2
+											allied_through_owner = scope:ally_1
+											allied_through_target = scope:ally_2
+							}
+							reverse_add_opinion = {
+							target = scope:ally_2 
+							modifier = perk_negotiated_alliance_opinion
+							}
+							
+						 }
+						  every_player = { trigger_event = agot_events_more_bookmarks_misc.6 }
+						   
+						   }
+						 2000 = {
+						  
+						   
+						   
+						   }
+
+
+}
+}
+
+
+
+
+
+aegons_conquest_on_owner_death_effect = {
+
+	if = { limit = { exists = story_owner.primary_heir }
+		story_owner.primary_heir = {
+									if = { limit = { story_owner = { is_male = yes } }
+									agot_canon_children_setup_father_effect = {
+										FATHER = this
+										
+									}
+									}
+									
+									
+		}
+		make_story_owner = story_owner.primary_heir 
+	}
+	else_if = { limit = {
+						#has_game_rule = agot_more_bookmarks_canon_lineage
+						story_owner = { any_child = { 
+										dynasty_house = root.story_owner.house
+										} }
+				}
+				story_owner = {	
+					ordered_child = {
+								limit = { is_male = yes
+										dynasty_house = root.story_owner.house
+								}
+								order_by = age
+								
+													
+						save_scope_as = canon_heir
+					}
+			agot_canon_children_setup_father_effect = {
+										FATHER = scope:canon_heir
+										
+									}
+			root = { make_story_owner = scope:canon_heir }
+			}
+			
+	}
+	else_if = { limit = {
+						#has_game_rule = agot_more_bookmarks_canon_lineage
+						story_owner = { any_sibling = { 
+										is_alive = yes
+										} }
+				}
+				story_owner = {	
+					ordered_sibling = {
+								
+								order_by = age
+								
+													
+						save_scope_as = heir
+					}
+			
+			root = { make_story_owner = scope:heir }
+			}
+			
+	}
+	else_if = { limit = { exists = story_owner.house.house_head }
+			
+			make_story_owner = story_owner.house.house_head
+	}
+	else = {
+	end_story = yes 
+	}
+	
+	
+}
+
+
+
+agot_more_bookmarks_create_artifact_orys_hammer_effect = {
+	$OWNER$ = {
+		save_scope_as = owner
+	}
+
+	set_artifact_rarity_masterwork = yes
+	create_artifact = {
+		name = orys_hammer_name
+		visuals = bobby_hammer_visuals
+		description = orys_hammer_description
+		type = mace
+		wealth = scope:wealth
+		quality = scope:quality
+		template = bobby_hammer_template
+		
+		modifier = bobby_hammer_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	scope:newly_created_artifact ?= {
+		equip_artifact_to_owner_replace = yes
+		#set_variable = {
+		#	name = bobby_hammer_artifact
+		#	value = yes
+		#}
+		set_variable = {
+			name = historical_unique_artifact
+			value = yes
+		}
+	}
+}
+
+agot_create_artifact_orys_regular_hammer_effect = {
+	$OWNER$ = {
+		save_scope_as = owner
+	}
+	set_artifact_rarity_masterwork = yes
+	create_artifact = {
+		name = orys_hammer_name
+		description = orys_hammer_description
+		visuals = hammer
+		type = sword
+		wealth = scope:wealth
+		quality = scope:quality
+	
+		modifier = rhaegar_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	scope:newly_created_artifact ?= {
+		equip_artifact_to_owner_replace = yes
+		set_variable = {
+			name = maekar_mace_artifact
+			value = yes
+		}
+		set_variable = {
+			name = historical_unique_artifact
+			value = yes
+		}
+	}
+}
+
+
+
+
+
+agot_more_bookmarks_century_of_blood_kingsguard_formation = {
+
+
+				create_character = {
+										template = agot_hedgeknight_character
+										location = root.location
+										age = { 20 40 }
+										culture = culture:westerosi_valyrian
+										faith = faith:the_seven_main
+										after_creation = {
+											save_scope_as = kingsguard
+											agot_join_kingsguard_effect = {
+												KINGSGUARD = scope:kingsguard
+												KING = title:e_the_iron_throne.holder
+											}
+											get_title = title:d_kingsguard
+						
+											create_title_and_vassal_change = {
+												type = swear_fealty
+												save_scope_as = change
+											}
+								
+											change_liege = {
+												liege = title:e_the_iron_throne.holder
+												change = scope:change
+											}
+											resolve_title_and_vassal_change = scope:change
+										
+											agot_assign_lord_commander_effect = {
+												COMMANDER = scope:kingsguard
+												KING = title:e_the_iron_throne.holder
+											}
+										}
+						
+											
+											
+											
+				}
+				
+				create_character = {
+						template = agot_hedgeknight_character
+						location = root.location
+						age = { 20 40 }
+						culture = culture:westerosi_valyrian
+						faith = faith:the_seven_main
+						after_creation = {
+								save_scope_as = kingsguard
+								agot_join_kingsguard_effect = {
+									KINGSGUARD = scope:kingsguard
+									KING = title:e_the_iron_throne.holder
+								}
+							
+						}
+	
+						}
+				create_character = {
+						template = agot_hedgeknight_character
+						location = root.location
+						age = { 20 40 }
+						culture = culture:westerosi_valyrian
+						faith = faith:the_seven_main
+						after_creation = {
+								save_scope_as = kingsguard
+								agot_join_kingsguard_effect = {
+									KINGSGUARD = scope:kingsguard
+									KING = title:e_the_iron_throne.holder
+								}
+							
+						}
+	
+						}
+				create_character = {
+						template = agot_hedgeknight_character
+						location = root.location
+						age = { 20 40 }
+						culture = culture:westerosi_valyrian
+						faith = faith:the_seven_main
+						after_creation = {
+								save_scope_as = kingsguard
+								agot_join_kingsguard_effect = {
+									KINGSGUARD = scope:kingsguard
+									KING = title:e_the_iron_throne.holder
+								}
+							
+						}
+	
+						}
+				create_character = {
+						template = agot_hedgeknight_character
+						location = root.location
+						age = { 20 40 }
+						culture = culture:westerosi_valyrian
+						faith = faith:the_seven_main
+						after_creation = {
+								save_scope_as = kingsguard
+								agot_join_kingsguard_effect = {
+									KINGSGUARD = scope:kingsguard
+									KING = title:e_the_iron_throne.holder
+								}
+							
+						}
+	
+						}
+				create_character = {
+						template = agot_hedgeknight_character
+						location = root.location
+						age = { 20 40 }
+						culture = culture:westerosi_valyrian
+						faith = faith:the_seven_main
+						after_creation = {
+								save_scope_as = kingsguard
+								agot_join_kingsguard_effect = {
+									KINGSGUARD = scope:kingsguard
+									KING = title:e_the_iron_throne.holder
+								}
+							
+						}
+	
+						}
+				create_character = {
+						template = agot_hedgeknight_character
+						location = root.location
+						age = { 20 40 }
+						culture = culture:westerosi_valyrian
+						faith = faith:the_seven_main
+						after_creation = {
+								save_scope_as = kingsguard
+								agot_join_kingsguard_effect = {
+									KINGSGUARD = scope:kingsguard
+									KING = title:e_the_iron_throne.holder
+								}
+							
+						}
+	
+						}
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+agot_more_bookmarks_ac_crownlands_effect = {
+
+			
+			title:d_rosby = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_kings_landing = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_the_baywater_woods = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_wendwater_forest = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_masseys_hook = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+			title:c_briarcrest = {  set_de_jure_liege_title = title:d_the_blackwater_rush }
+			title:c_longgrass = { set_de_jure_liege_title = title:d_the_blackwater_rush }
+            title:d_the_blackwater_rush = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_hayford = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_deerfield = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_duskendale = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_stokeworth = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_rooks_rest = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_crackclaw_point = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+
+            title:d_sharp_point = {
+                set_de_jure_liege_title = title:k_dragonstone
+            }
+
+
+
+
+
+
+
+
+
+}

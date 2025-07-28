@@ -1,0 +1,44 @@
+﻿asoiaf_spawn_golden_company = {
+	location = {
+		save_scope_as = location
+	}
+	spawn_army = { #10,000 men
+		levies = 0
+		name = the_golden_company_name
+		men_at_arms = {
+			type = light_footmen # 2000
+			stacks = 20
+		}
+		men_at_arms = {
+			type = pikemen_unit # 2000
+			stacks = 20
+		}
+		men_at_arms = {
+			type = armored_footmen # 2000
+			stacks = 20
+		}
+		men_at_arms = {
+			type = light_horsemen # 2500
+			stacks = 25
+		}
+		men_at_arms = {
+			type = armored_horsemen # 500
+			stacks = 10
+		}
+		men_at_arms = {
+			type = bowmen # 300
+			stacks = 3
+		}
+		men_at_arms = {
+			type = longbowmen # 700
+			stacks = 7
+		}
+		men_at_arms = {
+			type = war_elephant # 25
+			stacks = 1
+		}
+		location = scope:location
+		origin = scope:location
+		inheritable = no
+	}
+}

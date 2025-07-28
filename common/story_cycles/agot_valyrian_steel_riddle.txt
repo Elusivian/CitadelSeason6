@@ -1,0 +1,44 @@
+﻿valyrian_steel_riddle = {
+	on_setup = { # Select four animals and numbers; vsr_type_$NUM$ and vsr_num_$NUM$.
+		agot_valyrian_steel_random_picker = {NUM = 1}
+		agot_valyrian_steel_random_picker = {NUM = 2}
+		agot_valyrian_steel_random_picker = {NUM = 3}
+		agot_valyrian_steel_random_picker = {NUM = 4}
+	}
+	on_owner_death = {
+		if = {
+			limit = {exists = story_owner.primary_heir}
+			make_story_owner = story_owner.primary_heir
+		}
+		else = {
+			end_story = yes
+		}
+	}
+	on_end = {
+
+	}
+	effect_group = {
+		days = { 30 90 }
+		first_valid = {
+			triggered_effect = {
+				trigger = {
+					exists = var:vsr_check_1
+					exists = var:vsr_check_2
+					exists = var:vsr_check_3
+					exists = var:vsr_check_4
+					var:vsr_check_1 = var:vsr_type_1
+					var:vsr_check_2 = var:vsr_type_2
+					var:vsr_check_3 = var:vsr_type_3
+					var:vsr_check_4 = var:vsr_type_4
+				}
+				effect = {
+					story_owner = {
+						add_gold = 1000
+						#trigger_event = x.1 # {saved_event_id = root.var:prize_event}
+					}
+					end_story = yes
+				}
+			}
+		}
+	}
+}

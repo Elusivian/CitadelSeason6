@@ -1,0 +1,107 @@
+﻿####Naval Artifact Creation
+
+
+
+
+#### Create Flagship
+
+
+agot_immersion_create_small_flagship_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_masterwork = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = small_flagship
+		description = small_flagship_desc
+		type = flagship
+		visuals = flagship
+		wealth = scope:wealth
+		quality = scope:quality
+		template = flagship_template
+		modifier = small_flagship_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = small_flagship value = yes }
+		set_variable = { name = is_flagship value = yes }
+	}
+}
+
+agot_immersion_create_medium_flagship_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = medium_flagship
+		description = medium_flagship_desc
+		type = flagship
+		visuals = flagship
+		wealth = scope:wealth
+		quality = scope:quality
+		template = flagship_template
+		modifier = medium_flagship_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = medium_flagship value = yes }
+		set_variable = { name = is_flagship value = yes }
+	}
+}
+
+
+agot_immersion_create_large_flagship_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = large_flagship
+		description = large_flagship_desc
+		type = flagship
+		visuals = flagship
+		wealth = scope:wealth
+		quality = scope:quality
+		template = flagship_template
+		modifier = large_flagship_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = large_flagship value = yes }
+		set_variable = { name = is_flagship value = yes }
+	}
+}
+
+
+
+
+
+
+
+agot_succession_war_designate_heir_effect = {
+
+$RULER$ = { save_scope_as = ruler }
+$HEIR$ = { save_scope_as = heir }
+
+scope:heir = { 
+		if = { limit = { scope:ruler = { is_male = yes } }
+					set_father = scope:ruler }
+					else = { set_mother = scope:ruler }
+					}
+					
+scope:ruler = { set_designated_heir = scope:heir }
+
+}

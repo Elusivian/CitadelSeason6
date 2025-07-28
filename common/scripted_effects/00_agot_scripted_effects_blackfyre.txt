@@ -1,0 +1,13 @@
+﻿blackfyre_war_declared = {
+	if = {
+		limit = {
+			exists = global_var:number_of_blackfyre_rebellions
+		}
+		change_global_variable = {
+			name = number_of_blackfyre_rebellions
+			add = 1
+		}
+	}
+
+	#BLACKFYRE LOYALISTS GET EVENTS
+}

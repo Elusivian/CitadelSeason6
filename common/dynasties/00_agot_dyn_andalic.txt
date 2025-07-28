@@ -1,0 +1,21 @@
+﻿############################          ANDALOS           ############################
+####################################################################################
+
+### Modcanon Houses
+############################
+dynn_Galliwick = {
+	name = "dynn_Galliwick"
+	culture = "andal"
+}
+dynn_Bar_Drox = {
+	name = "dynn_Bar_Drox"
+	culture = "andal"
+}
+dynn_Den_Reeve = {
+	name = "dynn_Den_Reeve"
+	culture = "andal"
+}
+dynn_Daelwell = {
+	name = "dynn_Daelwell"
+	culture = "andal"
+}

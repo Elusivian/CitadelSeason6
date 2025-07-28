@@ -1,0 +1,17 @@
+﻿is_three_daughters = {
+	is_shown = {
+		root = title:e_three_daughters
+		exists = title:e_three_daughters.holder
+		title:e_three_daughters.holder = { government_has_flag = government_is_free_city }
+		title:e_three_daughters = { has_title_law = magisterial_limited_succession_law }
+	}
+}
+
+agot_can_usurp_title = {
+	is_shown = {
+		exists = holder
+		NOT = {
+			holder = { has_variable = pre_war_liege }
+		}
+	}
+}

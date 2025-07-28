@@ -1,0 +1,7 @@
+﻿agot_more_bookmarks_canon_children = {
+	default = agot_more_bookmarks_canon_children_on
+
+	agot_more_bookmarks_canon_children_on = { }
+	agot_more_bookmarks_canon_children_off = { }
+
+}

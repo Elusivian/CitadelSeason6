@@ -1,0 +1,133 @@
+﻿###################
+# AGOT More Bookmarks #
+###################
+
+#################################
+# First Blackfyre Rebellion Scenario #
+#################################
+agot_8195_first_blackfyre_rebellion_scenario_setup = {
+	hidden_effect = {
+	
+		title:d_skagos.holder = {
+		if = { limit = { NOT = { is_vassal_of = title:k_the_north.holder } }
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:d_skagos.holder = {
+		change_liege = {
+			liege = title:k_the_north.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+	}
+		spawn_army = {
+						levies = 5000
+						   men_at_arms = {
+								type = reavers# 
+									stacks = 10
+								}
+					men_at_arms = {
+                        type = trebuchet# 
+                        stacks = 9
+							}
+						location = title:c_trawling.title_province
+						name = fp1_mann_event_troops
+						}
+	start_war = {
+				cb = independence_war
+				target = title:k_the_north.holder
+	
+		}
+		}
+		
+		character:Targaryen_94 = {
+		if = { limit = { NOT = { is_vassal_of = title:e_the_iron_throne.holder } }
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	character:Targaryen_94 = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+		
+		
+		}
+		
+		
+		
+		
+		spawn_army = {
+						levies = 5000
+						   men_at_arms = {
+								type = armored_footmen# 
+									stacks = 5
+								}
+								men_at_arms = {
+								type = light_footmen# 
+									stacks = 5
+								}
+					men_at_arms = {
+                        type = armored_horsemen # 
+                        stacks = 2
+							}
+							men_at_arms = {
+                        type = trebuchet # 
+                        stacks = 2
+							}
+						location = title:c_longgrass.title_province
+						name = blackfyre_loyalists
+						}
+						spawn_army = {
+						levies = 5000
+						   men_at_arms = {
+								type = armored_footmen# 
+									stacks = 5
+								}
+								men_at_arms = {
+								type = light_footmen# 
+									stacks = 5
+								}
+					men_at_arms = {
+                        type = armored_horsemen # 
+                        stacks = 2
+							}
+							men_at_arms = {
+                        type = trebuchet # 
+                        stacks = 2
+							}
+						location = title:c_longgrass.title_province
+						name = blackfyre_loyalists
+						}
+						
+					
+	
+	 trigger_event = {
+								id = blackfyre_bookmark_rebellion.0001
+								days = { 60 120 }
+							} 
+		}
+		
+	
+		title:e_the_iron_throne.holder = {
+					add_courtier = character:Targaryen_96
+				}
+				character:Targaryen_96 = { agot_appoint_as_councillor_for_castle_history_effect = {
+				CASTLE = title:e_the_iron_throne
+				POSITION = councillor_spymaster
+			} }
+			
+			
+			}
+			}
+		
+
+
+
+

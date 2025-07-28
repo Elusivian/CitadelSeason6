@@ -1,0 +1,20 @@
+﻿
+flagship_template = {
+	can_equip = {
+		any_sub_realm_county = { holder = root
+			OR = { is_coastal_county = yes
+					AND = { is_riverside_county = yes
+					root.culture = { has_cultural_parameter = can_travel_along_rivers } 
+						}
+			}
+		}	
+	OR = {	
+	NOT = {	any_equipped_character_artifact = { has_variable = is_flagship } }
+	any_equipped_character_artifact = this }
+	}
+	}
+	unique = yes
+	ai_score = {
+		value = 100
+	}
+}

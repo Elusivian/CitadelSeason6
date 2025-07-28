@@ -1,0 +1,1100 @@
+﻿###################
+# AGOT Bookmarked #
+###################
+
+##########################################
+# The First Blackfyre Rebellion Scenario #
+##########################################
+agot_8195_3_7_br_i_scenario_setup = {
+	if = { # fire only if you used ruler designer; else there is no war
+		limit = { NOT = { title:d_the_blackwater_rush.holder = { is_at_war = yes } } }
+
+		title:d_the_blackwater_rush.holder = {
+			start_war = {
+				cb = claim_cb
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+				target_title = title:k_dragonstone
+				target_title = title:d_dragonstone
+				target_title = title:c_dragonstone
+			}
+			every_character_war = {
+				add_attacker = title:c_highscar.holder
+				add_attacker = title:c_choicemarch.holder
+				add_attacker = title:d_yronwood.holder
+				add_attacker = title:d_harrenhal.holder
+				add_attacker = title:d_the_sisters.holder
+				add_attacker = title:d_goldenfields.holder
+				add_attacker = title:d_palemarch.holder
+				add_attacker = title:d_sunnyvale.holder
+				add_attacker = title:c_standfast.holder
+				add_attacker = title:c_whisper_point.holder
+				add_attacker = title:d_castamere.holder
+				add_attacker = title:d_crakehall.holder
+			}
+		}
+	}
+	if = { # fire only if you used ruler designer; else there is no war
+		limit = { NOT = { title:e_the_iron_throne.holder = character:Targaryen_91  } }
+
+		title:e_the_iron_throne.holder = {
+			#add_character_flag = { flag = mw_init_event_blocker days = 2 }
+			every_character_war = {
+				add_defender = title:k_dragonstone.holder
+				add_defender = title:c_summerfield.holder
+				add_defender = title:k_the_reach.holder
+				add_defender = title:k_dorne.holder
+				add_defender = title:k_the_riverlands.holder
+				add_defender = title:k_the_reach.holder
+				add_defender = title:k_the_vale.holder
+				add_defender = title:k_the_westerlands.holder
+				add_defender = title:d_vellum_coast.holder
+			}
+		}
+	}
+
+	title:e_the_iron_throne.holder = { 
+	#add_character_flag = { flag = mw_init_event_blocker days = 2 }
+	save_scope_as = historical_setup }
+
+	### SET UP REBEL LEADERS
+	title:d_the_blackwater_rush.holder = {
+		save_scope_as = mw_rebel_leader_daemon
+		agot_mw_scenario_rebel_setup = {
+			MODE = flag:mw_internal
+			REBEL_MAY_VASSALIZE = no
+			HELD_TITLE = title:d_the_blackwater_rush
+			CASUS_BELLI = claim_cb
+			PRE_WAR_LIEGE = title:e_the_iron_throne.holder
+			MW_TARGET = title:e_the_iron_throne.holder
+		}
+		# ADD REBEL SUPPORTERS #
+		# Add vassal rebels
+		every_vassal_or_below = {
+			limit = {
+				primary_title.tier > tier_barony
+				NOT = {
+					OR = {
+						primary_title = title:k_the_most_devout
+						primary_title = title:d_kingsguard
+					}
+				}
+			}
+
+			scope:mw_rebel_story = {
+				add_to_variable_list = {
+					name = mw_rebel_supporter_list
+					target = prev
+				}
+			}
+		}
+		# Add independent rebels
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_yronwood.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_dorne.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_harrenhal.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_riverlands.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_southstone.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_riverlands.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_fairmarket.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_riverlands.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_the_crossing.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_riverlands.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_the_sisters.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_vale.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_goldenfields.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_reach.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_palemarch.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_reach.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_sunnyvale.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_reach.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:c_standfast.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:d_goldengrove.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:c_whisper_point.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:d_oldtown.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:c_stafford.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:d_blueburn.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_castamere.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_westerlands.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_crakehall.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_westerlands.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:d_gulltown.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:k_the_vale.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:c_highscar.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:d_blackhaven.holder
+		}
+		agot_mw_add_character_to_mw_list = {
+			CHARACTER_SCOPE = title:c_choicemarch.holder
+			STORY_SCOPE = scope:mw_rebel_story
+			LIST = mw_rebel_supporter_list
+			PRE_WAR_LIEGE_SCOPE = title:d_red_watch.holder
+		}
+	}
+	######
+
+	### SET UP CROWN
+	agot_mw_scenario_crown_setup = { HELD_TITLE = title:e_the_iron_throne }
+
+	# Add vassal loyalists
+	title:e_the_iron_throne.holder = {
+		every_vassal_or_below = {
+			limit = {
+				primary_title.tier > tier_barony
+				NOT = {
+					OR = {
+						primary_title = title:k_the_most_devout
+					}
+				}
+			}
+
+			scope:mw_crown_story = {
+				add_to_variable_list = {
+					name = mw_loyalist_list
+					target = prev
+				}
+			}
+		}
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:d_vellum_coast.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_loyalist_list
+		PRE_WAR_LIEGE_SCOPE = title:k_the_stormlands.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:c_summerfield.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_loyalist_list
+		PRE_WAR_LIEGE_SCOPE = title:d_grandview.holder
+	}
+	######
+
+	### ADD NEUTRALS ###
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:k_the_iron_islands.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:e_the_iron_throne.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:k_the_stormlands.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:e_the_iron_throne.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:k_the_north.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:e_the_iron_throne.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:d_the_ocean_road.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:k_the_reach.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:c_milkstone.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:d_harrenhal.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:d_oldtown.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:k_the_reach.holder
+	}
+	agot_mw_add_character_to_mw_list = {
+		CHARACTER_SCOPE = title:d_tarrich.holder
+		STORY_SCOPE = scope:mw_crown_story
+		LIST = mw_neutral_list
+		PRE_WAR_LIEGE_SCOPE = title:k_the_westerlands.holder
+	}
+	######
+
+	### SET OPINIONS ###
+	agot_mw_set_opinions_up = { REBEL_STORY_OWNER_SCOPE = scope:mw_rebel_leader_daemon }
+	######
+
+
+	##### SCENARIO STORY CYCLE SETUP #####
+	title:d_the_blackwater_rush.holder = {
+		create_story = { # Initialize Blackfyre Rebellion # TODO
+			type = story_agot_scenario_blackfyre
+			save_scope_as = scenario_blackfyre_story
+		}
+		create_story = { # Initialize Maelys Birth# TODO
+			type = story_agot_scenario_blackdragon_blackfyre_canon_kids
+			save_scope_as = scenario_blackfyre_canon_kids_story
+		}
+		scope:scenario_blackfyre_story = { # TODO
+			set_variable = { name = usurper_war value = scope:current_war }
+			set_variable = {
+				name	= agot_blackfyre_war_status
+				value	= flag:ongoing
+			}
+			
+		}
+	}
+	scope:mw_rebel_story = {
+			set_variable = { name = linked_scenario_story value = scope:scenario_blackfyre_story }
+		}
+	#######
+
+	### CANON CHILDREN STORY CYCLE SETUP ###
+	agot_canon_children_setup_story_cycles_effect = yes
+	######
+
+
+
+
+#### Misc
+
+character:Targaryen_94 = {
+agot_create_artifact_daemonblackfyre_crown_effect  = { OWNER = character:Targaryen_94 }
+agot_create_artifact_daemonblackfyre_armour_effect  = { OWNER = character:Targaryen_94 }
+
+
+
+
+add_opinion = {
+										target = character:Targaryen_91
+										modifier = hate_opinion
+										opinion = -100
+									}
+									
+									
+character:Targaryen_91 = {
+
+every_child = {
+
+
+
+character:Targaryen_94 = {
+add_opinion = {
+										target = prev
+										modifier = hate_opinion
+										opinion = -100
+									}
+
+
+}
+
+
+
+
+}
+
+
+
+
+}									
+									
+		
+
+}
+title:d_skagos.holder = {
+
+
+	
+		if = { limit = { NOT = { is_vassal_of = title:k_the_north.holder } }
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:d_skagos.holder = {
+		change_liege = {
+			liege = title:k_the_north.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+
+
+	
+		set_variable = {
+							name = army_size
+							value = title:k_the_north.holder.max_military_strength 
+							}
+		
+		
+			spawn_army = {
+				men_at_arms = {
+					type = reavers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:army_size
+				location = title:c_drihisesk.title_province
+				name = event_troop_default_name
+				save_scope_as = skagosarmy
+			}
+
+
+
+
+
+start_war = {
+				cb = independence_war
+				target = title:k_the_north.holder
+	
+		}
+
+
+}
+}
+
+
+
+#### Braavos vs Pentos
+
+
+if = { limit = { has_global_variable = essos_is_loaded }
+
+title:k_braavos.holder = {
+
+
+
+
+start_war = {
+				cb = claim_cb
+				target = title:k_pentos.holder
+				target_title = title:c_andal_coast
+				target_title = title:c_wind_coast
+				target_title = title:d_andalimark
+				claimant = title:k_braavos.holder 
+		}
+
+
+
+
+
+
+
+
+}
+
+
+}
+
+
+
+####Maekar under Daeron
+
+
+
+character:Targaryen_110 = {
+
+create_story = { # Initialize Maelys Birth# TODO
+			type = story_agot_scenario_blackdragon_maekar_canon_kids
+			save_scope_as = scenario_blackfyre_maekar_canon_kids_story
+		}
+
+
+agot_create_artifact_maekar_mace_effect = { OWNER = this }
+
+
+if = { limit = { NOT = { is_vassal_of = title:e_the_iron_throne.holder } }
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	character:Targaryen_110 = {
+		change_liege = {
+			liege = title:e_the_iron_throne.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+	
+}
+}
+
+character:Targaryen_107 = {
+
+agot_create_artifact_baelor_sword_effect = { OWNER = this }
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+agot_create_artifact_daemonblackfyre_armour_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = daemon_blackfyre_armour_name
+		description = daemon_blackfyre_armour_description
+		type = armor_plate
+		visuals = armor
+		wealth = scope:wealth
+		quality = scope:quality
+		history = {
+			type = created
+			date = 8194.12.1
+			recipient = character:Targaryen_94 #Rhaegar Targaryen (son of Aerys II)
+			location = province:4151
+		}
+		modifier = rhaegars_armour_modifier
+		modifier = daemonblackfyre_crown_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact = {
+		set_variable = { name = historical_unique_artifact value = yes }
+		equip_artifact_to_owner_replace = yes
+	}
+
+	scope:owner.house = { #makes sense for House Targaryen to have a House claim on the armour that literally has their sigil on it
+		add_house_artifact_claim = scope:newly_created_artifact
+	}
+}
+
+
+
+
+
+
+blackfyre_rebellion_defeat_effect = {
+
+character:Targaryen_28.house.house_head = { every_courtier = {
+								
+																					add_to_list = targaryen_court
+								
+																	}
+								}
+
+								character:Targaryen_94.house.house_head = {
+								
+												every_courtier = { add_to_list = blackfyre_court
+								
+												}
+								
+								
+												
+								}
+			
+			character:Targaryen_94.house.house_head = { 
+															
+															every_vassal = {
+													
+													create_title_and_vassal_change = {
+														type = swear_fealty
+														save_scope_as = change
+													}
+													
+														change_liege = {
+															liege = title:e_the_iron_throne.holder
+															change = scope:change
+														}
+													
+													resolve_title_and_vassal_change = scope:change
+													
+													
+													}
+													destroy_title = title:d_the_blackwater_rush
+															
+			
+			}
+
+											   
+			character:Targaryen_94.house = { every_house_member = { limit = { is_ruler = yes }
+											every_held_title = { character:Targaryen_28.house.house_head = { get_title = prev } } } }
+										
+			title:k_tyrosh.holder = { add_courtier = character:Targaryen_94.house.house_head }
+			character:Targaryen_94.house.house_head = {
+			create_landless_adventurer_title_effect = {
+																						REASON = flag:deposition
+																						FLAVOR_CHAR = character:Targaryen_28.house.house_head
+												}
+												add_realm_law = camp_purpose_legitimists
+												create_story = { 
+			type = story_agot_scenario_blackdragon_exile_marriages
+			save_scope_as = scenario_blackfyre_exile_marriage_story
+		}
+												}
+		
+
+every_in_list = {  list = blackfyre_court
+					character:Targaryen_94.house.house_head = { add_courtier = prev }
+					}
+every_in_list = {  list = targaryen_court
+					character:Targaryen_28.house.house_head = { add_courtier = prev }
+					}
+						
+								
+								
+					character:Targaryen_94.house.house_head = { trigger_event = agot_events_blackfyre_minor.5000 }
+					every_player = { limit = { location = { geographical_region = world_westeros_seven_kingdoms  }
+					 }
+					 trigger_event = agot_events_blackfyre_minor.5001
+	}
+								
+
+
+}
+
+
+
+
+
+blackfyre_rebellion_victory_effect = {
+
+
+character:Targaryen_94 = { trigger_event = {
+			id = agot_events_blackfyre_minor.7000
+			days = 14
+				}
+				trigger_event = {
+			id = agot_events_blackfyre_minor.7001
+			days = 14
+				}
+				}
+			character:Targaryen_28.house.house_head = { every_courtier = {
+								
+																					add_to_list = targaryen_court
+								
+																	}
+								}
+
+								scope:blackfyre_claimaint = {
+								
+												every_courtier = { add_to_list = blackfyre_court
+								
+												}
+								
+								
+												
+								}
+			
+
+
+											   
+			character:Targaryen_28.house = { every_house_member = { limit = { is_ruler = yes }
+											every_held_title = { root.story_owner = { get_title = prev } } } }
+										
+			title:k_pentos.holder = { add_courtier = character:Targaryen_28.house.house_head }
+			character:Targaryen_28.house.house_head = {
+			create_landless_adventurer_title_effect = {
+																						REASON = flag:deposition
+																						FLAVOR_CHAR = character:Targaryen_94
+												}
+												add_realm_law = camp_purpose_legitimists
+												create_story = { 
+			type = story_agot_scenario_blackdragon_exile_marriages
+			save_scope_as = scenario_blackfyre_exile_marriage_story
+		}
+												trigger_event = agot_events_blackfyre_minor.6000	
+												}
+		if = { limit = { character:Targaryen_95 = { is_alive = yes } }
+			title:e_the_iron_throne.holder = { add_courtier = character:Targaryen_95 }
+			}
+
+every_in_list = {  list = blackfyre_court
+					scope:blackfyre_claimaint = { add_courtier = prev }
+					}
+every_in_list = {  list = targaryen_court
+					character:Targaryen_28.house.house_head = { add_courtier = prev }
+					}
+character:Targaryen_28.house.house_head = {	
+
+ 	
+####Bastards are dangerous and despicable.
+
+if = { limit = { character:Targaryen_95 = { is_alive = yes 
+											} 
+					}
+					
+					character:Targaryen_28.house.house_head = { every_child = { 
+					bittersteel_massacre = yes
+										 }
+			primary_spouse = {					   random = {
+			chance = 90
+				death = {
+							death_reason = death_murder_known
+							killer = character:Targaryen_95
+					}
+		}
+		}
+ 
+ 
+ 
+ 
+
+								   random = {
+			chance = 90
+				death = {
+							death_reason = death_murder_known
+							killer = character:Targaryen_95
+					}
+		}
+		}
+	
+	
+										 
+					}
+
+
+	every_player = { limit = { location = { geographical_region = world_westeros_seven_kingdoms  }
+					 }
+					 if = { limit = { character:Targaryen_95 = { is_alive = yes 
+											} } 
+					 trigger_event = agot_events_blackfyre_minor.6001 }
+					 else = {
+					 
+					 trigger_event = agot_events_blackfyre_minor.6002 
+					 
+					 
+					 }
+	}					
+}
+
+
+if = { limit = { character:Targaryen_96 = { is_alive = yes} }
+		character:Targaryen_96 = {
+			create_landless_adventurer_title_effect = {
+																						REASON = flag:deposition
+																						FLAVOR_CHAR = character:Targaryen_94
+												}
+												add_realm_law = camp_purpose_legitimists
+											primary_title = {	set_title_name = d_laamp_ravens_teeth }
+												}
+												}
+
+
+
+}
+
+
+
+
+bittersteel_massacre = {
+ every_child = { bittersteel_massacre = yes }
+ primary_spouse = {
+ limit = { is_ruler = no }
+ 								   random = {
+			chance = 66
+				death = {
+							death_reason = death_murder_known
+							killer = character:Targaryen_95
+					}
+		}
+ 
+ 
+ 
+ }
+
+								   random = {
+			chance = 66
+				death = {
+							death_reason = death_murder_known
+							killer = character:Targaryen_95
+					}
+		}
+
+
+
+
+}
+
+
+
+agot_create_artifact_baelor_sword_effect = {
+	$OWNER$ = {
+		save_scope_as = owner
+	}
+	set_artifact_rarity_masterwork = yes
+	create_artifact = {
+		name = baelor_sword_name
+		description = baelor_sword_description
+		visuals = longsword
+		type = sword
+		wealth = scope:wealth
+		quality = scope:quality
+		history = {
+			type = created
+			date = 8195.1.1
+			recipient = character:Targaryen_107
+		}
+		modifier = rhaegar_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	scope:newly_created_artifact ?= {
+		equip_artifact_to_owner_replace = yes
+		set_variable = {
+			name = baelor_sword_artifact
+			value = yes
+		}
+		set_variable = {
+			name = historical_unique_artifact
+			value = yes
+		}
+	}
+}
+
+
+agot_create_artifact_maekar_mace_effect = {
+	$OWNER$ = {
+		save_scope_as = owner
+	}
+	set_artifact_rarity_masterwork = yes
+	create_artifact = {
+		name = maekar_mace_name
+		description = maekar_mace_description
+		visuals = mace
+		type = sword
+		wealth = scope:wealth
+		quality = scope:quality
+		history = {
+			type = created
+			date = 8195.1.1
+			recipient = character:Targaryen_110
+		}
+		modifier = rhaegar_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	scope:newly_created_artifact ?= {
+		equip_artifact_to_owner_replace = yes
+		set_variable = {
+			name = maekar_mace_artifact
+			value = yes
+		}
+		set_variable = {
+			name = historical_unique_artifact
+			value = yes
+		}
+	}
+}
+
+
+blackdragon_maelys_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Maelys"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = scope:father.faith
+		culture = scope:father.culture
+		dynasty_house = scope:father.house
+		employer = scope:father.employer
+		
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Maelys"
+				NAME_FEMALE = "Maela"
+				TRAIT = is_blackfyre_14
+				DNA = Maelys_Dummy
+			}
+			add_trait = h
+			set_sexuality = heterosexual
+			
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			add_character_flag = potential_targ_lunatic
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:wrathful AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:authoritative  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:sadistic  AGE = agot_canon_children_trait_4_year }
+			trigger_event = {
+							id = agot_events_generic.0020
+							days = 2500
+						}
+			
+		}
+	}
+}
+
+blackdragon_aegon_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aegon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = scope:father.faith
+		culture = scope:father.culture
+		dynasty_house = scope:father.house
+		employer = scope:father.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aegon"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_122
+				DNA = Dummy_Aegon_V
+			}
+			
+			agot_canon_children_schedule_guardian_effect = {
+			GUARDIAN_FEMALE = character:Tall_1 # Dunk
+			GUARDIAN_MALE = character:Tall_1 # Dunk
+			USE_LIEGE_FOR_HEIR = no
+			CONVERT_CULTURE = no
+			CONVERT_FAITH = no
+		}
+			add_trait = intellect_good_2
+			set_sexuality = heterosexual
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+			
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:bossy AGE = childhood_personality_age }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:diligent AGE = agot_canon_children_trait_1_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:stubborn AGE = agot_canon_children_trait_2_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:compassionate  AGE = agot_canon_children_trait_3_year }
+			agot_canon_children_schedule_trait_effect = { TRAIT = flag:ambitious  AGE = agot_canon_children_trait_4_year }
+			trigger_event = {
+							id = agot_events_generic.0020
+							days = 2500
+						}
+
+			
+		}
+	}
+}
+
+
+blackdragon_aemon_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Aemon"
+		father = scope:father
+		mother = scope:mother
+		gender = male
+		faith = scope:father.faith
+		culture = scope:father.culture
+		dynasty_house = scope:father.house
+		employer = scope:father.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Aemon"
+				NAME_FEMALE = "Aemma"
+				TRAIT = is_targaryen_70
+				DNA = Dummy_Maester_Aemon
+			}
+			add_character_flag = potential_targ_lunatic
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+			
+		}
+	}
+}
+
+
+blackdragon_daella_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Daella"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = scope:father.faith
+		culture = scope:father.culture
+		dynasty_house = scope:father.house
+		employer = scope:father.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Daegar"
+				NAME_FEMALE = "Daella"
+				TRAIT = is_targaryen_121
+				DNA = Dummy_Daella
+			}
+
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+			
+		}
+	}
+}
+
+blackdragon_rhae_birth_effect = {
+	$FATHER$ = {
+		save_scope_as = father
+	}
+	$MOTHER$ = {
+		save_scope_as = mother
+	}
+	
+	create_character = {
+		age = 0
+		name = "Rhae"
+		father = scope:father
+		mother = scope:mother
+		gender = female
+		faith = scope:father.faith
+		culture = scope:father.culture
+		dynasty_house = scope:father.house
+		employer = scope:father.employer
+
+		random_traits = no
+
+		save_scope_as = new_child
+	}
+	
+	hidden_effect = {
+		scope:new_child = {
+			agot_canon_children_after_birth_effect = {
+				NAME_MALE = "Rhae"
+				NAME_FEMALE = "Rhae"
+				TRAIT = is_targaryen_123
+				DNA = Dummy_Rhae
+			}
+
+			set_sexuality = heterosexual
+
+			add_character_flag = has_scripted_appearance
+			make_trait_inactive = scripted_appearance
+
+			
+		}
+	}
+}

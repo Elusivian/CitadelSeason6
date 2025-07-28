@@ -1,0 +1,88 @@
+﻿free_city_term_empire = { # Triggers every ten years to elect a new First Magister
+	effect = {
+		every_empire = { # By doing this every empire, kingdom, duchy, county, I get every title in the game which could possible have the law
+			limit = {
+				exists = holder
+				has_title_law = magisterial_limited_succession_law
+			}
+			pre_magisterial_succession = yes # Scripted effect in common/scripted_effects/agot_free_city_effects.txt
+		}
+	}
+	on_actions = {
+		delay = { years = 10 } # Triggers the next one in ten years
+		free_city_term_empire
+	}
+}
+
+free_city_term_kingdom = { # Triggers every ten years to elect a new First Magister
+	effect = {
+		every_kingdom = {
+			limit = {
+				exists = holder
+				has_title_law = magisterial_limited_succession_law
+			}
+			pre_magisterial_succession = yes
+		}
+	}
+	on_actions = {
+		delay = { years = 10 } # Triggers the next one in ten years
+		free_city_term_kingdom
+	}
+}
+
+free_city_election_notif = {
+	effect = {
+		every_empire = {
+			limit = {
+				exists = holder
+				has_title_law = magisterial_limited_succession_law
+			}
+			notify_electors = yes
+		}
+		every_kingdom = {
+			limit = {
+				exists = holder
+				has_title_law = magisterial_limited_succession_law
+			}
+			notify_electors = yes
+		}
+	}
+	on_actions = {
+		delay = { years = 10 }
+		free_city_election_notif
+	}
+}
+
+on_game_start = { # Initial term end
+	on_actions = {
+		delay = { years = 1 }
+		free_city_election_notif
+		delay = { years = 2 }
+		free_city_term_empire
+		free_city_term_kingdom
+	}
+}
+
+yearly_global_pulse = {
+	on_actions = {
+		yearly_magisters
+	}
+}
+
+yearly_magisters = {
+	effect = {
+		if = {
+			limit = { exists = title:e_three_daughters.holder }
+			title:k_lys.holder = {
+				save_scope_as = first_magister_lys
+			}
+			title:k_tyrosh.holder = {
+				save_scope_as = archon_tyrosh
+			}
+			title:k_myr.holder = {
+				save_scope_as = first_magister_myr
+			}
+			generate_high_council_three_daughters = yes
+		}
+	}
+}

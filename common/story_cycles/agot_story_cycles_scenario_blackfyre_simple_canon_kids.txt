@@ -1,0 +1,466 @@
+﻿### SPOILER ALERT ### DO NOT READ THIS FILE IF UNFAMILIAR WITH SEVERAL THEORIES REGARDING daemon'S REBELLION
+
+story_agot_scenario_blackdragon_blackfyre_canon_kids = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		set_variable = {
+			name	= maelys_status
+			value	= flag:unborn
+		}
+	}
+	on_end = {
+	}
+	on_owner_death = {
+	#make_story_owner = story_owner.primary_heir 
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 1
+
+		# Make d_the_blackwater_rush holder owner if he isn't
+		triggered_effect = {
+			trigger = {
+				current_date > 8217.1.1
+				var:maelys_status = flag:unborn
+			}
+
+			effect = {
+				#story_owner = { trigger_event = agot_events_blackfyre_minor.1002 }
+							random_list = {
+											0 = { # Maelys is born
+												trigger = {
+												var:maelys_status = flag:unborn	
+												}
+								
+												modifier = {
+													exists = var:agot_maelys_birth_score
+													add = var:agot_maelys_birth_score
+												}
+								
+												
+												character:Targaryen_94.house = { random_house_member = { limit = { 
+												is_male = yes
+												is_ai = yes
+												NOR = { has_trait = septon
+														has_trait = maester
+														}
+												age >= 16
+												OR = { AND = { is_married = yes primary_spouse.age <= 45 }
+														is_married = no }
+												
+												
+												
+												
+												}
+
+												
+																																																save_scope_as = maelys_father } }
+												if = { limit = { exists = scope:maelys_father } 
+												set_variable = {
+																name	= maelys_status
+																value	= flag:born
+												}
+												blackdragon_maelys_birth_effect = { FATHER = scope:maelys_father MOTHER = scope:maelys_father.primary_spouse }
+												}
+												
+												}
+												
+											
+										
+											100 = { # nothing happens
+												
+												
+											}
+							}
+			
+			
+			}
+		}
+				
+			
+		
+		
+		# 
+		triggered_effect = {
+			trigger = {
+				var:maelys_status = flag:born
+			}
+
+			effect = {
+				end_story = yes
+				
+			}
+		}
+	}
+		
+effect_group = {
+		days = 365
+		# War is over; Robert chooses king (currently event is unused)
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_debug_on } # In debug we want to preserve this story cycle so we can fix bugs :)
+				var:maelys_status = flag:unborn	
+				current_date > 8217.1.1
+			}
+			effect = {
+				if = {
+					limit = {
+						NOT = { exists = var:agot_maelys_birth_score }
+					}
+					set_variable = {
+						name	= agot_maelys_birth_score
+						value	= 10
+					}
+				}
+				else = {
+					change_variable = {
+						name	= agot_maelys_birth_score
+						add		= 10
+					}
+				}
+
+				
+			}
+		}
+	}
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+
+story_agot_scenario_blackdragon_maekar_canon_kids = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Canon Kids initialized"
+		story_owner.primary_spouse = { add_character_modifier = agot_rr_lyanna_infertility }
+		set_variable = {
+			name	= aegon_status
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= aemon_status
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= daella_status
+			value	= flag:unborn
+		}
+		set_variable = {
+			name	= rhae_status
+			value	= flag:unborn
+		}
+	}
+	on_end = {
+	story_owner.primary_spouse = { remove_character_modifier = agot_rr_lyanna_infertility }
+	}
+	on_owner_death = {
+	end_story = yes
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 1
+
+		# Make d_the_blackwater_rush holder owner if he isn't
+		triggered_effect = {
+			trigger = {
+				current_date > 8198.1.1
+				var:aemon_status = flag:unborn
+			}
+
+			effect = {
+				#story_owner = { trigger_event = agot_events_blackfyre_minor.1002 }
+							random_list = {
+											100 = { # Aemon is born
+												trigger = {
+												var:aemon_status = flag:unborn	
+												}
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aemon_status
+																value	= flag:born
+												}
+												blackdragon_aemon_birth_effect = { FATHER = root.story_owner MOTHER = root.story_owner.primary_spouse }
+												}
+												
+												
+												
+											
+										
+											100 = { # nothing happens
+												
+												
+											}
+							}
+			
+			
+			}
+		}
+		triggered_effect = {
+			trigger = {
+				current_date > 8199.1.1
+				var:daella_status = flag:unborn
+			}
+
+			effect = {
+				#story_owner = { trigger_event = agot_events_blackfyre_minor.1002 }
+							random_list = {
+											100 = { # Daella is born
+												trigger = {
+												var:daella_status = flag:unborn	
+												}
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= daella_status
+																value	= flag:born
+												}
+												blackdragon_daella_birth_effect = { FATHER = root.story_owner MOTHER = root.story_owner.primary_spouse }
+												}
+												
+												
+												
+											
+										
+											100 = { # nothing happens
+												
+												
+											}
+							}
+			
+			
+			}
+		}
+
+		triggered_effect = {
+			trigger = {
+				current_date > 8200.1.1
+				var:aegon_status = flag:unborn
+			}
+
+			effect = {
+				#story_owner = { trigger_event = agot_events_blackfyre_minor.1002 }
+							random_list = {
+											100 = { # Daella is born
+												trigger = {
+												var:aegon_status = flag:unborn	
+												}
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= aegon_status
+																value	= flag:born
+												}
+												blackdragon_aegon_birth_effect = { FATHER = root.story_owner MOTHER = root.story_owner.primary_spouse }
+												}
+												
+												
+												
+											
+										
+											100 = { # nothing happens
+												
+												
+											}
+							}
+			
+			
+			}
+		}
+triggered_effect = {
+			trigger = {
+				current_date > 8202.1.1
+				var:rhae_status = flag:unborn
+			}
+
+			effect = {
+				#story_owner = { trigger_event = agot_events_blackfyre_minor.1002 }
+							random_list = {
+											100 = { # Daella is born
+												trigger = {
+												var:rhae_status = flag:unborn	
+												}
+								
+												
+								
+												
+												
+												set_variable = {
+																name	= rhae_status
+																value	= flag:born
+												}
+												blackdragon_rhae_birth_effect = { FATHER = root.story_owner MOTHER = root.story_owner.primary_spouse }
+												}
+												
+												
+												
+											
+										
+											100 = { # nothing happens
+												
+												
+											}
+							}
+			
+			
+			}
+		}
+			
+	}
+		
+		# 
+		
+	
+		
+effect_group = {
+		days = 1
+		# War is over; Robert chooses king (currently event is unused)
+		triggered_effect = {
+			trigger = {
+				current_date > 8205.1.1
+			}
+			effect = {
+				end_story = yes
+
+				
+			}
+		}
+	}
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+##### Exile Family Management
+
+
+story_agot_scenario_blackdragon_exile_marriages = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Exile Marriages initialized"
+		
+	}
+	on_end = {
+	}
+	on_owner_death = {
+	make_story_owner = story_owner.primary_heir 
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 365
+
+		# Make d_the_blackwater_rush holder owner if he isn't
+		triggered_effect = {
+			trigger = {
+				root.story_owner = {
+				is_ai = yes
+				any_child = { 
+								is_married = no
+						      age >= 16
+								is_male = yes
+							  is_courtier_of = root.story_owner
+							  } }
+			}
+
+			effect = {
+			story_owner = { 
+					trigger_event = agot_events_blackfyre_minor.1001
+							every_courtier = { limit = { is_close_or_extended_family_of = root.story_owner is_betrothed = yes this.betrothed.age >= 16 this.betrothed = { is_courtier_of = root.story_owner } } marry = this.betrothed }
+							random_child = { limit = { is_married = no is_betrothed = no age >= 25 is_male = yes is_courtier_of = root.story_owner NOR = { has_trait = devoted has_trait = maester has_trait = septon } } save_scope_as = male_child }
+							random_child = { limit = { is_married = no age >= 22 is_female = yes is_courtier_of = root.story_owner is_betrothed = no } save_scope_as = female_child }									
+					if = { limit = { exists = scope:female_child }
+						scope:male_child = { marry = scope:female_child }
+						}
+						else = {
+							create_character = {
+				age = { 16 20 }
+				gender = female
+				dynasty = none
+				location = root.story_owner.location
+				culture = root.story_owner.location.culture
+				faith = root.story_owner.location.faith
+				random_traits = yes
+				save_scope_as = lowborn_wife
+			}
+			scope:male_child = { marry = scope:lowborn_wife }
+						
+						}
+			
+			}
+		}
+		
+			
+	}
+	}
+		
+		 
+		
+	
+		
+effect_group = {
+		days = 1
+		# War is over; Robert chooses king (currently event is unused)
+		triggered_effect = {
+			trigger = {
+			story_owner = { is_landless_ruler = no }
+			}
+			effect = {
+				end_story = yes
+
+				
+			}
+		}
+	}
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+	
+
+	

@@ -1,0 +1,88 @@
+﻿############################            MYR             ############################
+####################################################################################
+
+### Main
+############################
+dynn_Drahar = {
+	name="dynn_Drahar"
+	culture = "myrish"
+}
+dynn_Rhegan = {
+	name="dynn_Rhegan"
+	culture = "myrish"
+}
+dynn_Lornel = {
+	name = "dynn_Lornel"
+	culture = "myrish"
+}
+
+### Modcanon Houses
+############################
+dynn_Mallar = {
+	name="dynn_Mallar"
+	culture = "myrish"
+}
+dynn_Naelor = {
+	name="dynn_Naelor"
+	culture = "myrish"
+}
+dynn_Abersys = {
+	name="dynn_Abersys"
+	culture = "myrish"
+}
+dynn_Sordios = {
+	name="dynn_Sordios"
+	culture = "myrish"
+}
+dynn_Allegel = {
+	name="dynn_Allegel"
+	culture = "myrish"
+}
+dynn_Varghan = {
+	name="dynn_Varghan"
+	culture = "myrish"
+}
+dynn_Saldorys = {
+	name="dynn_Saldorys"
+	culture = "myrish"
+}
+dynn_Mercor = {
+	name="dynn_Mercor"
+	culture = "myrish"
+}
+dynn_Lavelos = {
+	name="dynn_Lavelos"
+	culture = "myrish"
+}
+dynn_Uteuran = {
+	name = "dynn_Uteuran"
+	culture = "myrish"
+}
+dynn_Trellos = {
+	name = "dynn_Trellos"
+	culture = "myrish"
+}
+dynn_Myrahar = {
+	name = "dynn_Myrahar"
+	culture = "myrish"
+}
+dynn_Breneyan = {
+	name = "dynn_Breneyan"
+	culture = "myrish"
+}
+dynn_Rynhar = {
+	name = "dynn_Rynhar"
+	culture = "myrish"
+}
+dynn_Deorel = {
+	name = "dynn_Deorel"
+	culture = "myrish"
+}
+dynn_Unerelos = {
+	name = "dynn_Unerelos"
+	culture = "myrish"
+}
+dynn_Valduran = {
+	name = "dynn_Valduran"
+	culture = "myrish"
+}

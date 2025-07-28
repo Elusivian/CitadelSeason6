@@ -1,0 +1,5 @@
+﻿shattered_oaths = {
+	icon = blood_negative
+	enemy_hostile_scheme_success_chance_add = 80
+	general_opinion = -40
+}

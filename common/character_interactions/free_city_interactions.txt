@@ -1,0 +1,137 @@
+﻿request_war_interaction = {
+	category = interaction_category_diplomacy
+	common_interaction = yes
+	interface_priority = 71
+
+	desc = request_war_desc
+
+	is_shown = {
+		NOT = {
+			scope:recipient = scope:actor
+		}
+		scope:recipient = {
+			is_landed = yes
+		}
+		scope:actor = {
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+
+		#AGOT Added
+		scope:actor = { is_human = yes }
+		scope:recipient = { is_human = yes }
+
+		#AGOT Added, NW and Westeros can't declare on each other
+		NOT = {
+			AND = {
+				scope:actor = {
+					government_has_flag = government_is_feudal
+				}
+				scope:recipient = {
+					government_has_flag = government_is_nw
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				scope:actor = {
+					government_has_flag = government_is_nw
+				}
+				scope:recipient = {
+					government_has_flag = government_is_feudal
+				}
+			}
+		}
+		scope:actor =  {
+			has_primary_title = title:e_three_daughters
+			title:e_three_daughters = { has_title_law = magisterial_limited_succession_law }
+		}
+		scope:actor = { government_has_flag = government_is_free_city }
+		NOT = { scope:actor.primary_title = { any_in_list = { variable = approved_war_targets this = scope:recipient } } }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { has_trait = incapable }
+			can_attack_in_hierarchy = scope:recipient
+			NOT = {
+				has_raised_armies = yes
+			}
+			NOT = {
+				is_allied_in_war = scope:recipient
+			}
+			custom_description = {
+				text = "is_not_bankrupt"
+				gold > 0
+			}
+			NOT = {
+				custom_description = {
+					text = "is_in_an_activity"
+					exists = involved_activity
+				}
+			}
+			trigger_if = {
+				limit = {
+					culture = { has_cultural_parameter = cannot_attack_allies }
+				}
+				NOT = {
+					is_allied_to = scope:recipient
+				}
+			}
+			trigger_if = {
+				limit = {
+					culture = { has_cultural_parameter = cannot_attack_truces }
+				}
+				NOT = {
+					has_truce = scope:recipient
+				}
+			}
+			is_imprisoned = no
+			trigger_if = {
+				limit = {
+					has_variable_list = subjugation_offer_under_consideration
+				}
+				custom_description = {
+					text = is_not_considering_offer_of_subjugation
+					NOT = {
+						is_target_in_variable_list = {
+							name = subjugation_offer_under_consideration
+							target = scope:recipient
+						}
+					}
+				}
+			}
+		}
+		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+		scope:recipient = {
+			trigger_if = {
+				limit = { is_imprisoned = yes }
+				NOT = {
+					imprisoner = scope:actor
+				}
+			}
+		}
+
+		# AGOT Added - Triarchy needs council permission
+		scope:actor =  {
+			has_primary_title = title:e_three_daughters
+			title:e_three_daughters = { has_title_law = magisterial_limited_succession_law }
+		}
+		scope:actor = { government_has_flag = government_is_free_city }
+		NOT = { scope:actor.primary_title = { any_in_list = { variable = approved_war_targets this = scope:recipient } } }
+	}
+
+	on_accept = {
+		every_in_global_list = {
+			variable = all_triarchy_magisters
+			limit = { is_ai = no }
+			trigger_event = free_city_events.0005
+		}
+		scope:actor = {
+			trigger_event = { id = free_city_events.0006 days = 1 }
+		}
+	}
+	
+	auto_accept = yes
+}

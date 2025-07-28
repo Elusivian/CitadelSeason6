@@ -1,0 +1,16 @@
+﻿agot_rr_cersei_infertility = {
+	icon = health_negative
+	fertility = -2
+}
+
+agot_rr_lyanna_infertility = {
+	icon = health_negative
+	fertility = -2
+}
+
+agot_realm_support = {
+	icon = diplomacy_positive
+	scheme_success_chance = 150
+	scheme_secrecy = 50
+	scheme_phase_duration = -150
+}

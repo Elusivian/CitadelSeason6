@@ -1,0 +1,1299 @@
+﻿dynn_Arryn_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Arryn"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Arryn" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+house_ArrynGT_personal_coa_forth_son = {
+    sub = {
+        parent = "house_ArrynGT"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "house_ArrynGT" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Back_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Back"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Back" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Badics_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Badics"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Badics" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Baelish_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Baelish"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Baelish" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+house_BaelishHH_personal_coa_forth_son = {
+    sub = {
+        parent = "house_BaelishHH"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "house_BaelishHH" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Belmore_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Belmore"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Belmore" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Warrick_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Warrick"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Warrick" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Borrell_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Borrell"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Borrell" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Breakstone_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Breakstone"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Breakstone" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Brightstone_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Brightstone"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Brightstone" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Coldwater_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Coldwater"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Coldwater" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Corbray_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Corbray"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Corbray" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Crayne_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Crayne"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Crayne" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Donnerly_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Donnerly"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Donnerly" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Donniger_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Donniger"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Donniger" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Dutton_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Dutton"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Dutton" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Egen_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Egen"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Egen" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Elesham_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Elesham"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Elesham" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Grafton_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Grafton"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Grafton" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Hardyng_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Hardyng"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Hardyng" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Hersy_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Hersy"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Hersy" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Hungerford_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Hungerford"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Hungerford" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Hunter_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Hunter"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Hunter" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Lipps_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Lipps"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Lipps" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Long_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Long"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Long" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Longthorpe_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Longthorpe"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Longthorpe" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Lynderly_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Lynderly"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Lynderly" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Marsten_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Marsten"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Marsten" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Melcolm_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Melcolm"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Melcolm" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Moore_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Moore"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Moore" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Morgryn_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Morgryn"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Morgryn" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Pryor_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Pryor"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Pryor" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Redfort_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Redfort"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Redfort" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Royce_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Royce"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Royce" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+house_RoyceGOTM_personal_coa_forth_son = {
+    sub = {
+        parent = "house_RoyceGOTM"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "house_RoyceGOTM" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Ruthermont_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Ruthermont"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Ruthermont" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Saul_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Saul"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Saul" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Shell_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Shell"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Shell" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Shett_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Shett"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Shett" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+house_ShettGT_personal_coa_forth_son = {
+    sub = {
+        parent = "house_ShettGT"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "house_ShettGT" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Sunderland_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Sunderland"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Sunderland" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Templeton_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Templeton"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Templeton" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Tollett_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Tollett"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Tollett" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Torrent_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Torrent"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Torrent" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_True_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_True"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_True" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Underleaf_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Underleaf"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Underleaf" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Upcliff_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Upcliff"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Upcliff" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Waxley_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Waxley"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Waxley" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Weatherwax_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Weatherwax"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Weatherwax" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Waynwood_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Waynwood"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Waynwood" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Woodhull_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Woodhull"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Woodhull" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Wydman_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Wydman"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Wydman" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Topp_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Topp"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Topp" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Gorse_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Gorse"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Gorse" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Weight_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Weight"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Weight" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Auldryn_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Auldryn"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Auldryn" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Mullyn_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Mullyn"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Mullyn" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Garnett_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Garnett"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Garnett" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Stewart_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Stewart"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Stewart" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Webster_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Webster"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Webster" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Orimund_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Orimund"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Orimund" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Verlayn_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Verlayn"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Verlayn" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Beale_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Beale"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Beale" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Darkholme_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Darkholme"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Darkholme" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Crews_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Crews"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Crews" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Witt_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Witt"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Witt" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Driscoll_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Driscoll"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Driscoll" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Marks_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Marks"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Marks" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Kurrigan_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Kurrigan"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Kurrigan" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Den_Brove_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Den_Brove"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Den_Brove" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Grolt_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Grolt"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Grolt" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Altger_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Altger"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Altger" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Devener_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Devener"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Devener" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Halcott_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Halcott"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Halcott" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Shelldrake_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Shelldrake"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Shelldrake" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Jesper_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Jesper"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Jesper" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Vearnon_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Vearnon"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Vearnon" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+house_Ringstone_personal_coa_forth_son = {
+    sub = {
+        parent = "house_Ringstone"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "house_Ringstone" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Morris_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Morris"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Morris" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Seasons_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Seasons"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Seasons" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+house_LynderlySC_personal_coa_forth_son = {
+    sub = {
+        parent = "house_LynderlySC"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "house_LynderlySC" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Bleaker_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Bleaker"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Bleaker" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Wiltwood_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Wiltwood"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Wiltwood" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Bommenstone_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Bommenstone"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Bommenstone" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Brask_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Brask"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Brask" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Symes_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Symes"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Symes" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Flattery_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Flattery"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Flattery" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Garrish_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Garrish"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Garrish" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Revere_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Revere"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Revere" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Whickett_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Whickett"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Whickett" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Harrow_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Harrow"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Harrow" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Rutley_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Rutley"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Rutley" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Bretherick_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Bretherick"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Bretherick" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Ran_Cammon_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Ran_Cammon"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Ran_Cammon" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Chase_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Chase"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Chase" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Kinnear_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Kinnear"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Kinnear" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Seldon_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Seldon"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Seldon" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Cullimore_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Cullimore"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Cullimore" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}
+
+dynn_Lushry_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_Lushry"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_Lushry" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}

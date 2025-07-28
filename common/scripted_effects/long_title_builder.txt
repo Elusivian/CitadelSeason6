@@ -1,0 +1,43 @@
+﻿init_long_title = {
+
+	if = {
+		limit = {
+			exists = scope:previous
+		}
+		set_variable = {
+			name = previous_title
+			value = scope:previous
+		}
+		scope:previous = {
+			set_variable = {
+				name = next_title
+				value = prev
+			}
+		}
+	}
+	custom_tooltip = long_title.generation
+	save_scope_as = previous
+}
+set_long_title = { # Sets a chain of titles for your primary tier titles and one tier below.
+	# Initialized from the lowest title to the highest.
+	every_held_title = {
+		remove_variable = previous_title
+		remove_variable = next_title
+	}
+	every_held_title = {
+		limit = {
+			tier = holder.highest_held_title_tier.sub1
+		}
+		init_long_title = yes
+	}
+	every_held_title = {
+		limit = {
+			NOT = {this = holder.primary_title}
+			tier = holder.highest_held_title_tier
+		}
+		init_long_title = yes
+	}
+	primary_title = {
+		init_long_title = yes
+	}
+}

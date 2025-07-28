@@ -1,0 +1,33 @@
+﻿#This file, and the ongoing_squire_events OA below, is what allows for non-landed/"unplayable" characters experience those random
+
+#squirehood ongoing
+ongoing_squire_events = {
+	trigger = {
+		is_imprisoned = no
+	}
+	random_events = {
+		400 = 0
+		200 = agot_squirehood_ongoing.0200
+		200 = agot_squirehood_ongoing.0201
+		200 = agot_squirehood_ongoing.0202
+		200 = agot_squirehood_ongoing.0203
+		200 = agot_squirehood_ongoing.0204
+		200 = agot_squirehood_ongoing.0205
+		200 = agot_squirehood_ongoing.0206
+		200 = agot_squirehood_ongoing.0207
+		200 = agot_squirehood_ongoing.0208
+		200 = agot_squirehood_ongoing.0209
+		200 = agot_squirehood_ongoing.0210
+		200 = agot_squirehood_ongoing.0211
+		200 = agot_squirehood_ongoing.0212
+		200 = agot_squirehood_ongoing.0213
+		200 = agot_squirehood_ongoing.0214
+		200 = agot_squirehood_ongoing.0215
+		200 = agot_squirehood_ongoing.0216
+		200 = agot_squirehood_ongoing.0217
+	}
+	events = {
+		agot_knighthood_maintenance.0001 #Checks if you have become ineligible for squirehood
+		agot_squirehood_ongoing.0232 # High prowess PTK boost
+	}
+}

@@ -1,0 +1,424 @@
+﻿############################         THE NORTH          ############################
+####################################################################################
+
+### Great House
+############################
+dynn_Stark = {
+	name = "dynn_Stark"
+	culture = "northman"
+	motto = dynn_Stark_motto # Winter is Coming
+}
+
+### Main
+############################
+dynn_Ashwood = {
+	name = "dynn_Ashwood"
+	culture = "northman"
+	motto = dynn_Ashwood_Motto # Bound by Blood (nc)
+}
+dynn_Bolton = {
+	name = "dynn_Bolton"
+	culture = "northman"
+	motto = dynn_Bolton_motto # Our Blades are Sharp
+}
+dynn_Cerwyn = {
+	name = "dynn_Cerwyn"
+	culture = "northman"
+	motto = dynn_Cerwyn_motto # Honed and Ready
+}
+dynn_Condon = {
+	name = "dynn_Condon"
+	culture = "northman"
+	motto = dynn_Condon_motto
+}
+dynn_Flint = {
+	name = "dynn_Flint"
+	culture = "northman"
+	motto = dynn_Flint_motto # Ever Vigilant
+}
+dynn_Goodman = {
+	name = "dynn_Goodman"
+	culture = "northman"
+	motto = dynn_Goodman_motto
+}
+dynn_Holt = {
+	name = "dynn_Holt"
+	culture = "northman"
+	motto = dynn_Holt_motto
+}
+dynn_Hornwood = {
+	name = "dynn_Hornwood"
+	culture = "northman"
+	motto = dynn_Hornwood_motto # Righteous in Wrath
+}
+dynn_Lake = {
+	name = "dynn_Lake"
+	culture = "northman"
+	motto = dynn_Lake_motto
+}
+dynn_Lightfoot = {
+	name = "dynn_Lightfoot"
+	culture = "northman"
+	motto = dynn_Lightfoot_motto
+}
+dynn_Locke = {
+	name = "dynn_Locke"
+	culture = "northman"
+	motto = dynn_Locke_motto
+}
+dynn_Long = {
+	name = "dynn_Long"
+	culture = "northman"
+	motto = dynn_Long_motto
+}
+dynn_Mollen = {
+	name = "dynn_Mollen"
+	culture = "northman"
+	motto = dynn_Mollen_motto
+}
+dynn_Mormont = {
+	name = "dynn_Mormont"
+	culture = "northman"
+	motto = dynn_Mormont_motto # Here We Stand
+}
+dynn_Overton = {
+	name = "dynn_Overton"
+	culture = "northman"
+	motto = dynn_Overton_motto 
+}
+dynn_Poole = {
+	name = "dynn_Poole"
+	culture = "northman"
+	motto = dynn_Poole_motto
+}
+dynn_Short = { 
+	name = "dynn_Short" 
+	culture = "northman"
+	motto = dynn_Short_motto
+}
+dynn_Umber = {
+	name = "dynn_Umber"
+	culture = "northman"
+	motto = dynn_Umber_motto
+}
+dynn_WellsN = {
+	name = "dynn_Wells"
+	culture = "northman"
+	motto = dynn_Wells_motto
+}
+dynn_Woolfield = {
+	name = "dynn_Woolfield"
+	culture = "northman"
+	motto = dynn_Woolfield_motto
+}
+
+### Barrowmen
+############################
+dynn_Dustin = {
+	name = "dynn_Dustin"
+	culture = "barrowman"
+	motto = dynn_Dustin_motto
+}
+dynn_FisherSS = {
+	name = "dynn_Fisher"
+	culture = "barrowman"
+	motto = dynn_FisherSS_motto # Tilt the Scales (nc)
+}
+dynn_Ironsmith = {
+	name = "dynn_Ironsmith"
+	culture = "barrowman"
+	motto = dynn_Ironsmith_motto
+}
+dynn_Ryder = {
+	name = "dynn_Ryder"
+	culture = "barrowman"
+	motto = dynn_Ryder_motto # Ride with Fury (nc)
+}
+dynn_Ryswell = {
+	name = "dynn_Ryswell"
+	culture = "barrowman"
+	motto = dynn_Ryswell_motto
+}
+dynn_Slate = {
+	name = "dynn_Slate"
+	culture = "barrowman"
+	motto = dynn_Slate_motto
+}
+dynn_Stout = {
+	name = "dynn_Stout"
+	culture = "barrowman"
+	motto = dynn_Stout_motto
+}
+
+### Deepwood Clans
+############################
+dynn_Glover = {
+	name = "dynn_Glover"
+	culture = "wolfswood_clansman"
+	motto = dynn_Glover_motto
+}
+dynn_Tallhart = {
+	name = "dynn_Tallhart"
+	culture = "wolfswood_clansman"
+	motto = dynn_Tallhart_motto # Proud and Free
+}
+dynn_Bole = {
+	name = "dynn_Bole"
+	culture = "wolfswood_clansman"
+	motto = dynn_Bole_Motto # Firmly Rooted (nc)
+}
+dynn_Branch = {
+	name = "dynn_Branch"
+	culture = "wolfswood_clansman"
+	motto = dynn_Branch_motto
+}
+dynn_Forrester = {
+	name = "dynn_Forrester"
+	culture = "wolfswood_clansman"
+	motto = dynn_Forrester_motto # Iron From Ice (sc)
+}
+dynn_Moss = {
+	name = "dynn_Moss"
+	culture = "wolfswood_clansman"
+	motto = dynn_Moss_motto
+}
+dynn_Whitehill = {
+	name = "dynn_Whitehill"
+	culture = "wolfswood_clansman"
+	motto = dynn_Whitehill_motto # Ever Higher (sc)
+}
+dynn_Woods = {
+	name = "dynn_Woods"
+	culture = "wolfswood_clansman"
+	motto = dynn_Woods_motto # Tried, Tested, True (nc)
+}
+
+### Hill Clans
+############################
+dynn_Burley = {
+	name = "dynn_Burley"
+	culture = "hill_clansman"
+	motto = dynn_Burley_motto
+}
+dynn_Harclay = {
+	name = "dynn_Harclay"
+	culture = "hill_clansman"
+	motto = dynn_Harclay_motto
+}
+dynn_Knott = {
+	name = "dynn_Knott"
+	culture = "hill_clansman"
+	motto = dynn_Knott_motto
+}
+dynn_Liddle = {
+	name = "dynn_Liddle"
+	culture = "hill_clansman"
+	motto = dynn_Liddle_motto
+}
+dynn_Norrey = {
+	name = "dynn_Norrey"
+	culture = "hill_clansman"
+	motto = dynn_Norrey_motto
+}
+dynn_Wull = {
+	name = "dynn_Wull"
+	culture = "hill_clansman"
+	motto = dynn_Wull_motto
+}
+
+### Harbormen
+############################
+dynn_Manderly = {
+	name = "dynn_Manderly"
+	culture = "harborman"
+	motto = dynn_Manderly_motto # No Currents Mightier (nc)
+}
+dynn_Marsh = {
+	name = "dynn_Marsh"
+	culture = "harborman"
+	motto = dynn_Marsh_motto
+}
+dynn_Silverfield = {
+	name = "dynn_Silverfield"
+	culture = "harborman"
+	motto = dynn_Silverfield_motto
+}
+dynn_Waterman = {
+	name = "dynn_Waterman"
+	culture = "harborman"
+	motto = dynn_Waterman_motto
+}
+
+### Crannogmen
+############################
+dynn_Reed = {
+	name = "dynn_Reed"
+	culture = "crannogman"
+	motto = dynn_Reed_motto
+}
+dynn_Blackmyre = {
+	name = "dynn_Blackmyre"
+	culture = "crannogman"
+	motto = dynn_Blackmyre_motto
+}
+dynn_BoggsN = {
+	name = "dynn_Boggs"
+	culture = "crannogman"
+	motto = dynn_Boggs_motto
+}
+dynn_Fenn = {
+	name = "dynn_Fenn"
+	culture = "crannogman"
+	motto = dynn_Fenn_motto
+}
+dynn_Cray = {
+	name = "dynn_Cray"
+	culture = "crannogman"
+	motto = dynn_Cray_motto
+}
+dynn_Greengood = {
+	name = "dynn_Greengood"
+	culture = "crannogman"
+	motto = dynn_Greengood_motto
+}
+dynn_Peat = {
+	name = "dynn_Peat"
+	culture = "crannogman"
+	motto = dynn_Peat_motto
+}
+dynn_Quagg = {
+	name = "dynn_Quagg"
+	culture = "crannogman"
+	motto = dynn_Quagg_motto
+}
+
+### Skagosi
+############################
+dynn_Crowl = {
+	name = "dynn_Crowl"
+	culture = "skagosi"
+	motto = dynn_Crowl_motto
+}
+dynn_Magnar = {
+	name = "dynn_Magnar"
+	culture = "skagosi"
+	motto = dynn_Magnar_motto
+}
+dynn_Stane = {
+	name = "dynn_Stane"
+	culture = "skagosi"
+	motto = dynn_Stane_motto
+}
+
+### Extinct
+############################
+dynn_Amber = {
+	name = "dynn_Amber"
+	culture = "northman"
+}
+dynn_Frost = {
+	name = "dynn_Frost"
+	culture = "northman"
+}
+dynn_Greenwood = {
+	name = "dynn_Greenwood"
+	culture = "northman"
+}
+dynn_Greywolf = {
+	name = "dynn_Greywolf"
+	culture = "northman"
+}
+dynn_TowersN = {
+	name = "dynn_Towers"
+	culture = "northman"
+}
+dynn_Woodfoot = {
+	name = "dynn_Woodfoot"
+	culture = "northman"
+}
+
+### Telltale AGOT
+############################
+dynn_Brownbarrow = {
+	name = "dynn_Brownbarrow"
+	culture = "barrowman"
+	motto = dynn_Brownbarrow_motto # Modest in Temper, Bold in Deed (nc)
+}
+dynn_Degore = {
+	name = "dynn_Degore"
+	culture = "wolfswood_clansman"
+	motto = dynn_Degore_motto # Yield to None (nc)
+}
+dynn_Elliver = {
+	name = "dynn_Elliver"
+	culture = "wolfswood_clansman"
+	motto = dynn_Elliver_motto # Humble in Victory (nc)
+}
+dynn_Glenmore = {
+	name = "dynn_Glenmore"
+	culture = "barrowman"
+	motto = dynn_Glenmore_motto # Never Relent, Never Yield (nc)
+}
+dynn_Grayson = {
+	name = "dynn_Grayson"
+	culture = "wolfswood_clansman"
+	motto = dynn_Grayson_motto # Firm of Mind (nc)
+}
+dynn_Tuttle = {
+	name = "dynn_Tuttle"
+	culture = "wolfswood_clansman"
+}
+
+### Show
+############################
+dynn_Blackbrow = {
+	name = "dynn_Blackbrow"
+	culture = "northman"
+	motto = dynn_Blackbrow_motto
+}
+dynn_Caulfield = {
+	name = "dynn_Caulfield" 
+	culture = "wolfswood_clansman"
+	motto = dynn_Caulfield_motto
+}
+dynn_Dormund = {
+	name = "dynn_Dormund"
+	culture = "northman"
+	motto = dynn_Dormund_motto
+}
+dynn_Greenleaf = {
+	name = "dynn_Greenleaf"
+	culture = "northman"
+	motto = dynn_Greenleaf_motto
+}
+dynn_Mazin = {
+	name = "dynn_Mazin"
+	culture = "northman"
+	motto = dynn_Mazin_motto
+}
+dynn_Strongbeard = {
+	name = "dynn_Strongbeard" #Aberdolf Strongbeard
+	culture = "northman"
+	motto = dynn_Strongbeard_motto
+}
+dynn_Wibberley = { 
+	name = "dynn_Wibberley" 
+	culture = "barrowman"
+	motto = dynn_Wibberley_motto
+}
+
+### TTRPG
+############################
+dynn_Orlych = {
+	name = "dynn_Orlych"
+	culture = "northman"
+	motto = dynn_Orlych_motto #Prepare for the Fall
+}
+
+### Modcanon Houses
+############################
+dynn_Hayes = {
+	name = "dynn_Hayes"
+	culture = "krakenman"
+	motto = dynn_Hayes_motto
+}

@@ -1,0 +1,102 @@
+﻿# Called from code after history generation
+# Empty scope
+on_game_start_after_lobby = {
+	on_actions = {
+		agot_blackfyre_rebellion_on_game_start
+	}
+}
+
+agot_blackfyre_rebellion_on_game_start = {
+	effect = {
+		
+		# give Targaryen loyalist modifiers
+		every_ruler = {
+			limit = {
+				is_lowborn = no
+				current_date = 8195.3.7 # AGOT TODO; set proper dates for each house
+			}
+
+			if = {
+				limit = {
+					OR = {
+						house = dynasty:dynn_Rowan.dynasty_founder.house
+						house = dynasty:dynn_Hightower.dynasty_founder.house
+						house = dynasty:dynn_Hasty.dynasty_founder.house
+						house = dynasty:dynn_Darklyn.dynasty_founder.house
+						house = dynasty:dynn_Boggs.dynasty_founder.house
+						house = dynasty:dynn_Brune.dynasty_founder.house
+						house = dynasty:dynn_Penrose.dynasty_founder.house
+						house = house:house_Brownhollow
+						house = dynasty:dynn_Bush.dynasty_founder.house
+						house = dynasty:dynn_Pyne.dynasty_founder.house
+						house = dynasty:dynn_Hardy.dynasty_founder.house
+						house = dynasty:dynn_Cave.dynasty_founder.house
+						house = dynasty:dynn_Crabb.dynasty_founder.house
+						house = dynasty:dynn_Celtigar.dynasty_founder.house
+						house = dynasty:dynn_Velaryon.dynasty_founder.house
+						house = dynasty:dynn_Massey.dynasty_founder.house
+						house = dynasty:dynn_Tyrell.dynasty_founder.house
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_targaryen }
+			}
+			if = {
+				limit = {
+					OR = {
+						house = dynasty:dynn_Stafford.dynasty_founder.house
+						house = dynasty:dynn_Strickland.dynasty_founder.house
+						house = dynasty:dynn_Grafton.dynasty_founder.house
+						house = dynasty:dynn_Crakehall.dynasty_founder.house
+						house = dynasty:dynn_Costayne.dynasty_founder.house
+						house = dynasty:dynn_Frey.dynasty_founder.house
+						house = dynasty:dynn_Lothston.dynasty_founder.house
+						house = dynasty:dynn_Reyne.dynasty_founder.house
+						house = dynasty:dynn_Paege.dynasty_founder.house
+						house = dynasty:dynn_Butterwell.dynasty_founder.house
+						house = dynasty:dynn_Sunderland.dynasty_founder.house
+						house = dynasty:dynn_Peake.dynasty_founder.house
+						house = dynasty:dynn_Osgrey.dynasty_founder.house
+						house = dynasty:dynn_Ball.dynasty_founder.house
+						house = dynasty:dynn_Yronwood.dynasty_founder.house
+						house = dynasty:dynn_Vyrwel.dynasty_founder.house
+						house = dynasty:dynn_Bracken.dynasty_founder.house
+						house = dynasty:dynn_Hightower.dynasty_founder.house
+						house = dynasty:dynn_Hersy.dynasty_founder.house
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_blackfyre }
+			}
+		}
+		###
+
+	
+
+		if = {
+			limit = {
+				NOR = {
+					has_game_rule = agot_shatter_duchies
+					has_game_rule = agot_shatter_duchies_even
+					has_game_rule = agot_shatter_petty_kingdoms
+					has_game_rule = agot_shatter_kingdoms
+					has_game_rule = agot_shatter_empires
+				}
+			}
+
+			 if = { # manage 8195.3.7 1st Blackfyre Rebellion scenario
+			 	limit = { game_start_date = 8195.3.7 }
+
+			 	agot_8195_3_7_br_i_scenario_setup = yes
+			 }
+			
+		
+			
+		}
+
+	
+	}
+}
+
+
+	

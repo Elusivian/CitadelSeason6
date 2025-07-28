@@ -1,0 +1,256 @@
+﻿### SPOILER ALERT ### DO NOT READ THIS FILE IF UNFAMILIAR WITH SEVERAL THEORIES REGARDING daemon'S REBELLION
+
+story_agot_scenario_dance_tully = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Tully Story initialized"
+		set_variable = {
+			name	= tully_status
+			value	= flag:neutral
+		}
+	}
+	on_end = {
+	}
+	on_owner_death = {
+	make_story_owner = story_owner.primary_heir 
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 1
+
+		# Make d_the_blackwater_rush holder owner if he isn't
+		triggered_effect = {
+			trigger = {
+				NOT = { story_owner = character:Tully_33 }
+				var:tully_status = flag:neutral
+			}
+
+			effect = {
+			var:the_dance = { add_attacker = root.story_owner }
+			agot_mw_join_rebels_effect = { RULER = story_owner REBEL_LEADER = title:k_dragonstone.holder }
+			end_story = yes
+			
+			
+			}
+		}
+				
+			
+		
+		
+		# 
+		triggered_effect = {
+			trigger = {
+				OR = { NOT = { exists = var:the_dance }
+					 is_ai = no 
+					 }
+			}
+
+			effect = {
+				end_story = yes
+				
+			}
+		}
+	}
+
+
+
+
+
+		##########################
+
+
+		
+	}
+	
+	
+
+
+story_agot_scenario_dance_stark = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Stark Dance initialized"
+	
+		set_variable = {
+			name	= stark_status
+			value	= flag:winter
+		}
+		
+	}
+	on_end = {
+	
+	}
+	on_owner_death = {
+	make_story_owner = story_owner.primary_heir 
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 1
+
+		# Make d_the_blackwater_rush holder owner if he isn't
+		triggered_effect = {
+			trigger = {
+				current_date > 8130.1.1
+				var:stark_status = flag:winter
+			}
+
+			effect = {
+				set_variable = {
+																name	= stark_status
+																value	= flag:joined
+												}
+				var:the_dance = { add_attacker = root.story_owner }
+				agot_mw_join_rebels_effect = { RULER = this REBEL_LEADER = title:k_dragonstone.holder }
+			end_story = yes
+			
+			}
+		}
+		triggered_effect = {
+			trigger = {
+				OR = { NOT = { exists = var:the_dance }
+					 is_ai = no 
+					 }
+			}
+
+			effect = {
+				end_story = yes
+				
+			}
+		}
+		
+
+
+
+
+		##########################
+
+
+		
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+story_agot_scenario_uncrowned_greathouse = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Great House Support initialized"
+	
+		set_variable = {
+			name	= rebellion_support_status
+			value	= flag:neutral
+		}
+		
+	}
+	on_end = {
+	
+	}
+	on_owner_death = {
+	make_story_owner = story_owner.primary_heir 
+	}
+
+	# General daily checks
+effect_group = {
+		days = 1
+
+		trigger = {
+			var:rebellion_support_status = flag:neutral
+		}
+
+		
+		
+		## Hightower decides whether to fully support House Blackfyre | AI only
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				exists = var:the_dance
+				var:rebellion_support_status = flag:neutral
+				
+				
+			}
+			effect = {
+			#story_owner = { trigger_event = agot_events_more_bookmarks_misc.1 }
+				if = { # Show debug information
+					limit = { has_game_rule = agot_debug_on }
+		
+					remove_variable = attacker_score
+					remove_variable = defender_score
+					set_variable = { name = attacker_score value = agot_get_attacker_war_score_value days = 1 }
+					set_variable = { name = defender_score value = agot_get_defender_war_score_value days = 1 }
+				}
+				random_list = {
+					5 = { # Hightower joins rebels
+						trigger = {
+							var:the_dance.attacker_war_score > 20
+							story_owner = {
+								is_ai = yes  #Player can do on their own
+							}
+							#NOT = { has_game_rule = agot_story_historical_events_historical_outcomes }
+						}
+		
+						modifier = {
+							exists = var:the_dance
+							add = agot_get_attacker_war_score_value
+						}
+						modifier = {
+							story_owner = { has_title = title:k_the_westerlands }
+							add = 100
+						}
+		
+						set_variable = {
+							name	= rebellion_support_status
+							value	= flag:chose_rebels
+						}
+		
+						story_owner = {
+							agot_mw_join_rebels_effect = { RULER = this REBEL_LEADER = title:k_dragonstone.holder }
+							
+							
+						
+						}
+						end_story = yes
+					}
+				
+					2000 = { # nothing happens
+						modifier = {
+							exists = var:the_dance
+							var:usurper_war.defender_war_score > 0
+							add = agot_get_defender_war_score_value
+						}
+						
+					}
+				}
+			}
+		}
+		triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				NOT = { exists = var:the_dance }
+				
+				
+				
+			}
+			effect = {
+			end_story = yes
+			}
+		}
+	}
+}
+	
+	

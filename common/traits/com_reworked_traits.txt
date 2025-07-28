@@ -1,0 +1,948 @@
+﻿############### COMBAT ############## #Hambone all adjusted
+logistician = {
+	
+	category = commander
+	
+	supply_duration = 0.5
+	character_travel_safety = 5
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_movement_speed = 0.25
+	}
+	
+	culture_modifier = {
+		parameter = forest_trait_bonuses
+		forest_attrition_mult = -0.25
+		taiga_attrition_mult = -0.25
+	}
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_attrition_mult = -0.25
+	}
+	
+	culture_modifier = {
+		parameter = mountain_trait_bonuses
+		mountains_attrition_mult= -0.35
+		desert_mountains_attrition_mult = -0.35
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_attrition_mult = -0.25
+		desert_attrition_mult = -0.25
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_logistician_desc
+			}
+			desc = trait_logistician_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			character_travel_safety = 5
+		}
+
+		65 = {
+			supply_duration = 0.5
+			character_travel_safety = 5
+		}
+
+		100 = {
+			supply_duration = 0.5
+			character_travel_safety = 5
+		}		
+	}
+}
+
+military_engineer = {
+	
+	category = commander
+	
+	siege_phase_time = -0.1
+	
+	ruler_designer_cost = 25
+	
+	culture_modifier = {
+		parameter = mountain_trait_bonuses
+		mountains_attrition_mult= -0.25
+		desert_mountains_attrition_mult = -0.25
+	}
+	
+	culture_modifier = {
+		parameter = hill_trait_bonuses
+		hills_attrition_mult = -0.25
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_military_engineer_desc
+			}
+			desc = trait_military_engineer_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			siege_phase_time = -0.1
+		}
+
+		65 = {
+			siege_phase_time = -0.1
+		}
+
+		100 = {
+			siege_phase_time = -0.1
+			martial = 1
+		}		
+	}
+}
+
+aggressive_attacker = {
+	
+	category = commander
+	
+	#attacker_advantage = 10
+	enemy_hard_casualty_modifier = 0.1
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_advantage = 2
+	}
+	
+	culture_modifier = {
+		parameter = forest_trait_bonuses
+		forest_max_combat_roll = 2
+		taiga_max_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_max_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_max_combat_roll = 2
+		desert_max_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = hill_trait_bonuses
+		hills_max_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_aggressive_attacker_desc
+			}
+			desc = trait_aggressive_attacker_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			enemy_hard_casualty_modifier = 0.05
+			martial = 1
+		}
+
+		65 = {
+			enemy_hard_casualty_modifier = 0.05
+			martial = 1
+		}
+
+		100 = {
+			attacker_advantage = 5
+			martial = 1
+		}		
+	}
+}
+
+unyielding_defender = {
+	
+	category = commander
+	opposites = {
+		dauntless_leader
+		aggressive_attacker
+		relentless_pursuer
+		reckless
+	}
+	
+	#defender_advantage = 10
+	hard_casualty_modifier = -0.1
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_advantage = 2
+	}
+	
+	culture_modifier = {
+		parameter = forest_trait_bonuses
+		forest_min_combat_roll = 2
+		taiga_min_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_min_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = mountain_trait_bonuses
+		mountains_advantage = 2
+		desert_mountains_advantage = 2
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_min_combat_roll = 2
+		desert_min_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = hill_trait_bonuses
+		hills_min_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_unyielding_defender_desc
+			}
+			desc = trait_unyielding_defender_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			hard_casualty_modifier = -0.05
+			martial = 1
+		}
+
+		65 = {
+			hard_casualty_modifier = -0.05
+			martial = 1
+		}
+
+		100 = {
+			defender_advantage = 5
+			martial = 1
+		}		
+	}
+}
+
+forder = {
+	
+	category = commander
+	
+	no_water_crossing_penalty = yes
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_forder_desc
+			}
+			desc = trait_forder_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			character_travel_speed = 5
+			martial = 1
+		}
+
+		65 = {
+			character_travel_speed = 5
+			martial = 1
+		}
+
+		100 = {
+			character_travel_speed = 10
+			uncontrolled_province_advantage = 5
+		}		
+	}
+}
+
+flexible_leader = {
+	
+	category = commander
+	
+	enemy_terrain_advantage = -0.1
+	
+	culture_modifier = {
+		parameter = mountain_trait_bonuses
+		mountains_min_combat_roll = 2
+		desert_mountains_min_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = hill_trait_bonuses
+		hills_max_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_flexible_leader_desc
+			}
+			desc = trait_flexible_leader_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			enemy_terrain_advantage = -0.1
+		}
+
+		65 = {
+			enemy_terrain_advantage = -0.1
+		}
+
+		100 = {
+			enemy_terrain_advantage = -0.2
+			min_combat_roll = 2
+		}		
+	}
+}
+
+desert_warrior = {
+	
+	category = commander
+	
+	drylands_advantage = 3
+	desert_advantage = 3
+	desert_mountains_advantage = 3
+	oasis_advantage = 3
+	
+	desert_cancel_negative_supply = yes
+	#desert_mountains_cancel_negative_supply = yes
+	#oasis_cancel_negative_supply = yes
+	
+	#desert_attrition_mult = -0.5
+	#desert_mountains_attrition_mult = -0.5
+	#oasis_attrition_mult = -0.5
+	
+	#desert_min_combat_roll = 1
+	#desert_max_combat_roll = 5
+	
+	culture_modifier = {
+		parameter = desert_warrior_trait_is_better
+		camel_cavalry_damage_mult = 0.2
+		camel_cavalry_screen_mult = 0.1
+	}
+	
+	ruler_designer_cost = 25
+
+	trait_exclusive_if_realm_contains = {
+		drylands
+		desert
+		desert_mountains
+		oasis
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_desert_warrior_desc
+			}
+			desc = trait_desert_warrior_character_desc
+		}
+	}
+	track = {
+		30 = {
+			drylands_advantage = 2
+			desert_advantage = 2
+			desert_mountains_advantage = 2
+			oasis_advantage = 2
+		}
+
+		65 = {
+			drylands_advantage = 2
+			desert_advantage = 2
+			desert_mountains_advantage = 2
+			oasis_advantage = 2
+		}
+
+		100 = {
+			drylands_advantage = 2
+			desert_advantage = 2
+			desert_mountains_advantage = 2
+			oasis_advantage = 2
+		}		
+	}
+}
+
+jungle_stalker = {
+	
+	category = commander
+	
+	jungle_cancel_negative_supply = yes
+	jungle_advantage = 3
+	jungle_attrition_mult = -0.25
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_min_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	trait_exclusive_if_realm_contains = {
+		jungle
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_jungle_stalker_desc
+			}
+			desc = trait_jungle_stalker_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			jungle_advantage = 2
+			jungle_attrition_mult = -0.1
+		}
+
+		65 = {
+			jungle_advantage = 2
+			jungle_attrition_mult = -0.1
+		}
+
+		100 = {
+			jungle_advantage = 2
+			jungle_attrition_mult = -0.1
+			martial = 3
+		}		
+	}
+}
+
+reaver = {
+	
+	category = commander
+	
+	raid_speed = 0.1
+	hostile_county_attrition = -0.1
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_advantage = 5
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_max_combat_roll = 2
+		desert_max_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_reaver_desc
+			}
+			desc = trait_reaver_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			raid_speed = 0.1
+			hostile_county_attrition = -0.1
+		}
+
+		65 = {
+			raid_speed = 0.1
+			hostile_county_attrition = -0.1
+		}
+
+		100 = {
+			raid_speed = 0.1
+			hostile_county_attrition = -0.1
+			martial = 1
+		}		
+	}
+}
+
+reckless = {
+	
+	category = commander
+
+	opposites = {
+		cautious_leader
+	}
+	
+	min_combat_roll = -2
+	max_combat_roll = 4
+	
+	culture_modifier = {
+		parameter = forest_trait_bonuses
+		forest_max_combat_roll = 3
+		taiga_max_combat_roll = 3
+	}
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_max_combat_roll = 3
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_max_combat_roll = 2
+		desert_max_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_reckless_desc
+			}
+			desc = trait_reckless_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			min_combat_roll = -1
+			max_combat_roll = 2
+		}
+
+		65 = {
+			min_combat_roll = -1
+			max_combat_roll = 2
+		}
+
+		100 = {
+			min_combat_roll = -1
+			max_combat_roll = 2
+			enemy_hard_casualty_modifier = 0.05
+		}		
+	}
+}
+
+holy_warrior = {
+	
+	category = commander
+	
+	tolerance_advantage_mod = 6
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_holy_warrior_desc
+			}
+			desc = trait_holy_warrior_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			martial = 1
+		}
+
+		65 = {
+			martial = 1
+		}
+
+		100 = {
+			tolerance_advantage_mod = 6
+		}		
+	}
+}
+
+open_terrain_expert = {
+	
+	category = commander
+	
+	farmlands_advantage = 2
+	plains_advantage = 2
+	steppe_advantage = 2
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_movement_speed = 0.2
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_advantage = 2
+		desert_advantage = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	trait_exclusive_if_realm_contains = {
+		farmlands
+		plains
+		steppe
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_open_terrain_expert_desc
+			}
+			desc = trait_open_terrain_expert_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			farmlands_advantage = 2
+			plains_advantage = 2
+			steppe_advantage = 2
+		}
+
+		65 = {
+			farmlands_advantage = 2
+			plains_advantage = 2
+			steppe_advantage = 2
+		}
+
+		100 = {
+			farmlands_max_combat_roll = 4
+			plains_max_combat_roll = 4
+			steppe_max_combat_roll = 4
+		}		
+	}
+}
+
+rough_terrain_expert = {
+	
+	category = commander
+	
+	hills_advantage = 2
+	mountains_advantage = 2
+	wetlands_advantage = 2
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_advantage = 4
+	}
+	
+	culture_modifier = {
+		parameter = forest_trait_bonuses
+		forest_advantage = 2
+		taiga_advantage = 2
+	}
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_advantage = 2
+	}
+	
+	culture_modifier = {
+		parameter = mountain_trait_bonuses
+		mountains_max_combat_roll = 2
+		desert_mountains_max_combat_roll = 2
+		desert_mountains_advantage = 4
+	}
+	
+	culture_modifier = {
+		parameter = hill_trait_bonuses
+		hills_min_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	trait_exclusive_if_realm_contains = {
+		hills
+		mountains
+		wetlands
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_rough_terrain_expert_desc
+			}
+			desc = trait_rough_terrain_expert_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			hills_advantage = 2
+			mountains_advantage = 2
+			wetlands_advantage = 2
+		}
+
+		65 = {
+			hills_advantage = 2
+			mountains_advantage = 2
+			wetlands_advantage = 2
+		}
+
+		100 = {
+			hills_max_combat_roll = 4
+			mountains_max_combat_roll = 4
+			wetlands_max_combat_roll = 4
+		}		
+	}
+}
+
+forest_fighter = {
+	
+	category = commander
+	
+	forest_advantage = 3
+	taiga_advantage = 3
+	
+	ruler_designer_cost = 20
+
+	trait_exclusive_if_realm_contains = {
+		forest
+		taiga
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_forest_fighter_desc
+			}
+			desc = trait_forest_fighter_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			forest_advantage = 2
+			taiga_advantage = 2
+			supply_duration = 0.1
+		}
+
+		65 = {
+			forest_advantage = 2
+			taiga_advantage = 2
+			supply_duration = 0.1
+		}
+
+		100 = {
+			forest_max_combat_roll = 4
+			taiga_max_combat_roll = 4
+		}		
+	}
+}
+
+cautious_leader = {
+	
+	category = commander
+
+	opposites = {
+		dauntless_leader
+		aggressive_attacker
+		relentless_pursuer
+		reckless
+	}
+	
+	min_combat_roll = 4
+	max_combat_roll = -2
+	
+	culture_modifier = {
+		parameter = forest_trait_bonuses
+		forest_min_combat_roll = 2
+		taiga_min_combat_roll = 2
+	}
+	
+	culture_modifier = {
+		parameter = jungle_trait_bonuses
+		jungle_min_combat_roll = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_cautious_leader_desc
+			}
+			desc = trait_cautious_leader_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			min_combat_roll = 2
+			max_combat_roll = -1
+		}
+
+		65 = {
+			min_combat_roll = 2
+			max_combat_roll = -1
+		}
+
+		100 = {
+			min_combat_roll = 2
+			max_combat_roll = -1
+			hard_casualty_modifier = -0.05
+		}		
+	}
+}
+
+organizer = {
+	
+	category = commander
+	
+	movement_speed = 0.05
+	retreat_losses = -0.05
+	
+	culture_modifier = {
+		parameter = winter_trait_bonuses
+		winter_movement_speed = 0.1
+	}
+	
+	culture_modifier = {
+		parameter = mountain_trait_bonuses
+		mountains_attrition_mult = -0.15
+		desert_mountains_attrition_mult = -0.15
+	}
+	
+	culture_modifier = {
+		parameter = dry_trait_bonuses
+		drylands_advantage = 2
+		desert_advantage = 2
+	}
+	
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_organizer_desc
+			}
+			desc = trait_organizer_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			movement_speed = 0.05
+			retreat_losses = -0.05
+		}
+
+		65 = {
+			movement_speed = 0.05
+			retreat_losses = -0.05
+		}
+
+		100 = {
+			movement_speed = 0.05
+			retreat_losses = -0.05
+			martial = 1
+			stewardship = 1
+		}		
+	}
+}
+
+winter_soldier = {
+
+	category = winter_commander
+
+	winter_movement_speed = 0.15
+	winter_advantage = 3
+
+	ruler_designer_cost = 25
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_winter_soldier_desc
+			}
+			desc = trait_winter_soldier_character_desc
+		}
+	}
+
+	track = {
+		30 = {
+			winter_movement_speed = 0.05
+			winter_advantage = 2
+		}
+
+		65 = {
+			winter_movement_speed = 0.05
+			winter_advantage = 2
+		}
+
+		100 = {
+			winter_movement_speed = 0.05
+			winter_advantage = 2
+			army_screen_mult = 0.15
+		}		
+	}
+}

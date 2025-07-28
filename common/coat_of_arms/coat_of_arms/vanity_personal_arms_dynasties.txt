@@ -1,0 +1,12 @@
+﻿dynn_vanity_Robin_personal_coa_forth_son = {
+    sub = {
+        parent = "dynn_vanity_Robin"
+        instance = { offset = { 0.0 0.0 } scale = { 0.5 0.5 }  } # top left
+        instance = { offset = { 0.5 0.5 } scale = { 0.5 0.5 }  } # bottom right
+    }
+    sub = {
+        parent = "dynn_vanity_Robin" 
+        instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
+        instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
+    }
+}

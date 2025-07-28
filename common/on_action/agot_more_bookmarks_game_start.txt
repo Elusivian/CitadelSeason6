@@ -1,0 +1,338 @@
+﻿on_game_start_after_lobby = {
+	on_actions = {
+		AGOT_More_bookmarks_start
+	}
+}
+
+AGOT_More_bookmarks_start = {
+	effect = {
+	
+if = { limit = { has_game_rule = agot_more_bookmarks_canon_children_on }
+agot_more_bookmarks_canon_children_setup_story_cycles_effect = yes
+	}
+	
+	### Century of Blood
+	if = { limit = { game_start_date = 7901.1.3 }
+		agot_7901_1_3_scenario_setup = yes	
+		}
+		
+			### Aegon's Conquest
+	if = { limit = { game_start_date = 7999.1.3 }
+		agot_more_bookmarks_aegons_conquest_setup = yes	
+		}
+		
+		### Beneath the God's Eye
+		if = { limit = { game_start_date = 8043.11.1 }
+		agot_more_bookmarks_the_uncrowned_scenario_setup = yes	
+		}
+
+		### The Dance
+				if = { limit = { game_start_date = 8129.4.2 }
+				agot_more_bookmarks_dance_of_dragons_scenario_setup = yes	
+				}
+
+		### The Regency
+		if = { limit = { game_start_date = 8133.7.1 }
+		agot_8133_7_1_scenario_setup = yes	
+		}
+		
+		
+		
+	#### 1st Blackfyre Rebellion	
+		#if = { limit = { game_start_date = 8195.1.1 }
+		#agot_8195_first_blackfyre_rebellion_scenario_setup = yes	
+		#}
+	
+	#### 3rd Blackfyre Rebellion	
+			if = { limit = { game_start_date = 8219.1.1 }
+			agot_8219_third_blackfyre_rebellion_scenario_setup = yes	
+			}
+	#### Peake Uprising	
+	#	if = { limit = { game_start_date = 8232.1.1 }
+	#	agot_8232_1_1_scenario_setup = yes	
+	#	}
+	#	
+	#### 4th Blackfyre Rebellion	
+		if = { limit = { game_start_date = 8236.1.1 }
+		agot_8236_fourth_blackfyre_rebellion_scenario_setup = yes	
+		}
+	#### Conquest of Dorne	
+	#	if = { limit = { game_start_date = 8157.1.1 }
+	#	agot_8157_1_1_scenario_setup = yes	
+	#	}
+	
+	#### A Game of Thrones
+		if = { limit = { game_start_date = 8298.5.9 }
+		agot_more_bookmarks_agot_scenario_setup = yes	
+		}
+		
+	
+		
+		
+####Blackfyre/Targaryen Loyalties
+
+
+if = { limit = { AND = {
+							game_start_date > 8185.1.1
+							game_start_date < 8200.1.1
+
+						}
+						}
+
+every_ruler = {
+			limit = {
+				is_lowborn = no
+				
+			}
+
+			if = {
+				limit = {
+					OR = {
+						house = character:Hayford_3.house
+						house = character:Darry_12.house
+						house = character:Goodbrook_9.house
+						house = character:Rowan_6.house
+						house = character:Oakheart_5.house
+						house = character:Tarly_8.house
+						house = character:Hightower_18.house
+						house = character:Hasty_6.house
+						house = character:Lonmouth_4.house
+						house = character:Rykker_7.house
+						house = character:Ashford_5.house
+						house = character:Boggs_14.house
+						house = character:Brune_9.house
+						house = character:Brownhollow_5.house
+						house = character:Bush_5.house
+						house = character:Pyne_3.house
+						house = character:Hardy_11.house
+						house = character:Cave_30.house
+						house = character:Crabb_13.house
+						house = character:Celtigar_8.house
+						house = character:Velaryon_6.house
+						house = character:Massey_10.house
+						house = character:Mooton_8.house
+						house = character:Mooton_8.house
+						house = character:Tyrell_40.house
+						house = character:Lothston_1.house
+						dynasty = dynasty:dynn_Martell
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_targaryen }
+			}
+			if = {
+				limit = {
+					OR = {
+						dynasty = dynasty:dynn_Butterwell
+						dynasty = dynasty:dynn_Sunderland
+						dynasty = dynasty:dynn_Peake
+						dynasty = dynasty:dynn_Osgrey
+						dynasty = dynasty:dynn_Ball
+						dynasty = dynasty:dynn_Reyne
+						dynasty = dynasty:dynn_Crakehall
+						dynasty = dynasty:dynn_Lothston
+						dynasty = dynasty:dynn_Costayne
+						dynasty = dynasty:dynn_Strickland
+						dynasty = dynasty:dynn_Shawney
+						dynasty = dynasty:dynn_Frey
+						dynasty = dynasty:dynn_Crakehall
+						dynasty = dynasty:dynn_Yronwood
+						dynasty = dynasty:dynn_Vyrwel
+						dynasty = dynasty:dynn_Bracken
+						dynasty = dynasty:dynn_Hightower
+						dynasty = dynasty:dynn_Hersy
+						dynasty = dynasty:dynn_Oakheart
+						dynasty = dynasty:dynn_Tarbeck
+						dynasty = dynasty:dynn_Grafton
+						dynasty = dynasty:dynn_Rychard
+						dynasty = dynasty:dynn_Bar_Emmon
+						dynasty = dynasty:dynn_Sunglass
+						dynasty = dynasty:dynn_Thorne
+						dynasty = dynasty:dynn_Mertyns
+						dynasty = dynasty:dynn_Falwell
+						dynasty = dynasty:dynn_Kenning
+						dynasty = dynasty:dynn_Swann
+						dynasty = dynasty:dynn_Caron
+						dynasty = dynasty:dynn_Cole
+						house = house:house_Goldwyne
+						house = house:house_Darke
+						house = house:house_VanceA
+						AND = { has_culture = culture:marcher 
+								highest_held_title_tier <= tier_duchy 
+								NOT = { dynasty = dynasty:dynn_Dondarrion }
+								}
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_blackfyre }
+			}
+		}
+		
+		}
+		
+		
+		if = { limit = { AND = {
+							game_start_date > 8200.1.1
+							game_start_date < 8222.1.1
+
+						}
+						}
+
+every_ruler = {
+			limit = {
+				is_lowborn = no
+				
+			}
+
+			if = {
+				limit = {
+					OR = {
+						house = character:Hayford_3.house
+						house = character:Darry_12.house
+						house = character:Goodbrook_9.house
+						house = character:Rowan_6.house
+						house = character:Oakheart_5.house
+						house = character:Tarly_8.house
+						house = character:Hightower_18.house
+						house = character:Hasty_6.house
+						house = character:Lonmouth_4.house
+						house = character:Rykker_7.house
+						house = character:Ashford_5.house
+						house = character:Boggs_14.house
+						house = character:Brune_9.house
+						house = character:Brownhollow_5.house
+						house = character:Bush_5.house
+						house = character:Pyne_3.house
+						house = character:Hardy_11.house
+						house = character:Cave_30.house
+						house = character:Crabb_13.house
+						house = character:Celtigar_8.house
+						house = character:Velaryon_6.house
+						house = character:Massey_10.house
+						house = character:Mooton_8.house
+						house = character:Mooton_8.house
+						house = character:Tyrell_40.house
+						house = character:Lothston_1.house
+						dynasty = dynasty:dynn_Martell
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_targaryen }
+			}
+			if = {
+				limit = {
+					OR = {
+						house = character:Butterwell_5.house
+						house = character:Sunderland_9.house
+						house = character:Peake_6.house
+						house = character:Osgrey_7.house
+						house = character:Ball_4.house
+						house = character:Reyne_4.house
+						house = character:Costayne_4.house
+						house = character:Strickland_4.house
+						house = character:Shawney_4.house
+						house = character:Ambrose_4.house
+						house = character:Yronwood_8.house
+						house = character:Vyrwel_10.house
+						house = character:Bracken_28.house
+						house = character:Hightower_18.house
+						house = character:Hersy_4.house
+						house = character:Oakheart_5.house
+						house = character:Tarbeck_5.house
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_blackfyre }
+			}
+		}
+		
+		}
+		
+		if = { limit = { AND = {
+							game_start_date > 8222.1.1
+							game_start_date < 8256.1.1
+
+						}
+						}
+
+every_ruler = {
+			limit = {
+				is_lowborn = no
+				
+			}
+
+			if = {
+				limit = {
+					OR = {
+						house = character:Hayford_3.house
+						house = character:Darry_12.house
+						house = character:Goodbrook_9.house
+						house = character:Rowan_6.house
+						house = character:Oakheart_5.house
+						house = character:Tarly_8.house
+						house = character:Hightower_18.house
+						house = character:Hasty_6.house
+						house = character:Lonmouth_4.house
+						house = character:Rykker_7.house
+						house = character:Ashford_5.house
+						house = character:Boggs_14.house
+						house = character:Brune_9.house
+						house = character:Brownhollow_5.house
+						house = character:Bush_5.house
+						house = character:Pyne_3.house
+						house = character:Hardy_11.house
+						house = character:Cave_30.house
+						house = character:Crabb_13.house
+						house = character:Celtigar_8.house
+						house = character:Velaryon_6.house
+						house = character:Massey_10.house
+						house = character:Mooton_8.house
+						house = character:Mooton_8.house
+						house = character:Tyrell_40.house
+						house = character:Lothston_1.house
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_targaryen }
+			}
+			if = {
+				limit = {
+					OR = {
+						house = character:Butterwell_5.house
+						house = character:Sunderland_9.house
+						house = character:Peake_6.house
+						house = character:Osgrey_7.house
+						house = character:Ball_4.house
+						house = character:Costayne_4.house
+						house = character:Strickland_4.house
+						house = character:Shawney_4.house
+						house = character:Ambrose_4.house
+						house = character:Yronwood_8.house
+						house = character:Vyrwel_10.house
+						house = character:Bracken_28.house
+						house = character:Hightower_18.house
+						house = character:Hersy_4.house
+						house = character:Tarbeck_5.house
+						house = character:Greyjoy_39.house
+					}
+				}
+
+				house = { add_house_modifier = agot_historical_loyalty_blackfyre }
+			}
+		}
+		
+		}
+
+
+
+
+
+
+
+		
+			
+		
+		}
+	
+	} 
+

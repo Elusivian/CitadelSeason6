@@ -1,0 +1,1607 @@
+﻿# A title is transferred to a new character
+# root = the new holder
+# scope:title = the title that changes hands
+# scope:previous_holder = previous holder. Might be dead
+on_title_gain = {
+	on_actions = {
+		asoiaf_on_title_inheritance_rhaenyra_kills_siblings
+		asoiaf_iron_throne_lord_paramount_contract_fix
+		asoiaf_on_title_inheritance_harrold_hardyng_becomes_arryn
+		asoiaf_young_griff_landing
+		asoiaf_dummy_daenerys_landing
+		asoiaf_dummy_viserys_landing
+		asoiaf_young_griff_victory
+		asoiaf_on_title_inheritance_robert_I_gluttonous_trait
+		asoiaf_on_title_inheritance_robert_siblings_claims
+		asoiaf_on_title_inheritance_lannister_baratheon_coa
+		asoiaf_on_title_inheritance_aegon_I_crown_creation
+		asoiaf_on_title_inheritance_aenys_I_crown_creation
+		asoiaf_on_title_inheritance_jaehaerys_I_crown_creation
+		asoiaf_on_title_inheritance_aegon_III_crown_creation
+		asoiaf_on_title_inheritance_baelor_I_crown_creation
+		asoiaf_on_title_inheritance_aegon_IV_crown_creation
+		asoiaf_on_title_inheritance_maekar_I_crown_creation
+		asoiaf_on_title_inheritance_aerys_II_crown_creation
+		asoiaf_on_title_inheritance_robert_I_crown_creation
+		asoiaf_on_title_inheritance_joffrey_I_crown_creation
+		#asoiaf_on_title_inheritance_robert_usurper_nickname
+		#asoiaf_harlaw_cadet_branch_harridan_hills #TEMPORARILY DISABLED SINCE ITS NOT CLEAR IF THESE ARE ACTUAL CADET BRANCHES IN THE LORE
+		#asoiaf_harlaw_cadet_branch_grey_garden
+		#asoiaf_harlaw_cadet_branch_tower_of_glimmering
+		#asoiaf_harlaw_cadet_branch_harlaw_hall
+	}
+}
+
+asoiaf_on_title_inheritance_rhaenyra_kills_siblings = {
+	trigger = {
+		scope:title = { this = title:e_the_iron_throne }
+		scope:previous_holder = { has_inactive_trait = asoiaf_Targaryen_60_trait } #prior ruler is Viserys; won't trigger after taking back the throne from Aegon II
+		root = { has_inactive_trait = asoiaf_Targaryen_63_trait } #inheritor is Rhaenyra
+		root = {
+			father = {
+				any_child = { #if a brother exists who could be used to challenge Rhaenyra, trigger this event for her
+					AND = {
+						is_male = yes
+						is_alive = yes
+						NOR = {
+							has_trait = maester
+							has_trait = archmaester
+							has_trait = kingsguard
+							has_trait = high_septon
+							has_trait = most_devout_member
+							has_trait = septon
+							has_trait = devoted
+							has_trait = red_priest
+							has_trait = drowned_man
+							has_trait = nightswatch
+							has_trait = bastard
+						}
+						NOR = { #if Rhaenyra is married to one of her brothers, she's legitimate enough to not need to consider this course
+							is_spouse_of = root #he's currently her husband
+							AND = {
+								is_spouse_of_even_if_dead = root #he died, but he's got (legitimate) living children with her who can inherit
+								any_child = {
+									AND = {
+										mother = root
+										is_alive = yes
+										NOR = {
+											has_trait = maester
+											has_trait = archmaester
+											has_trait = kingsguard
+											has_trait = high_septon
+											has_trait = most_devout_member
+											has_trait = septon
+											has_trait = devoted
+											has_trait = red_priest
+											has_trait = drowned_man
+											has_trait = nightswatch
+											has_trait = bastard
+											has_trait = disinherited
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	effect = { #2-part event, one to decide to imprison all brothers (and their children), and one to decide to kill them all
+		root = {
+			trigger_event = { id = asoiaf_maintenance_events.0006 days = 2 } #a couple days after becoming Queen
+		}
+	}
+}
+
+asoiaf_iron_throne_lord_paramount_contract_fix = {
+	trigger = {
+		has_game_rule = asoiaf_lord_paramount_contract_fix_on
+		scope:title = { #only canon LP titles vassalised to the Iron Throne
+			OR = {
+				this = title:k_the_north
+				this = title:k_the_riverlands
+				this = title:k_the_vale
+				this = title:k_the_iron_islands
+				this = title:k_the_westerlands
+				this = title:k_the_crownlands
+				this = title:k_dragonstone
+				this = title:k_the_reach
+				this = title:k_the_stormlands
+				this = title:k_dorne
+			}
+		}
+		liege ?= { has_title = title:e_the_iron_throne } #liege exists and is the Iron Throne
+		root = { has_government = lp_feudal_government } #person inheriting is Western Feudal
+	}
+	effect = {
+		if = {
+			limit = {
+				scope:title = title:k_the_north
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.1 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_riverlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.2 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_vale
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.3 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_iron_islands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.4 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_westerlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.5 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_crownlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.6 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_dragonstone
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.7 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_reach
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.8 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_the_stormlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.9 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_dorne
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.10 days = 1 } }
+		}
+	}
+}
+
+agot_on_title_inheritance_lannister_baratheon_coa = { #ONLY FOR CERSEI'S CHILDREN; ELSEWISE THE AI CAN USE THE DECISION
+	trigger = {
+		asoiaf_historical_trigger = yes
+		scope:title = {
+			OR = {
+				this = title:e_the_iron_throne
+				this = title:k_the_westerlands
+			}
+		}
+		root = {
+			dynasty = dynasty:dynn_Baratheon
+			father = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert
+			mother = { has_inactive_trait = asoiaf_Lannister_6_trait } #Cersei
+			NOT = { real_father = { has_inactive_trait = asoiaf_Baratheon_2_trait } } #real father doesn't need to be Jaime to raise suspicion, it just can't be Robert
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = asoiaf_baratheon_kl_unavailable
+				target = flag:asoiaf_baratheon_cadet_kl
+			}
+		}
+	}
+	effect = {
+		set_house = house:house_BaratheonKL
+		set_culture = culture:crownlander
+		add_trait = disputed_heritage
+		if = {
+			limit = {
+				age < 16
+				root.mother = { is_courtier_of = root } #if she's not at court, she can't become a regent immediately after the succession
+			}
+			designate_diarch = root.mother #Cersei
+			start_diarchy = regency
+			set_diarch = root.mother #Cersei
+		}
+		every_child = { #the inheritor's children
+			if = {
+				limit = {
+					dynasty = dynasty:dynn_Baratheon
+				}
+				set_culture = culture:crownlander
+				set_house = house:house_BaratheonKL
+				trigger_event = { id = agot_coa_events.1 }
+			}
+		}
+		every_close_family_member = {
+			if = {
+				limit = {
+					dynasty = dynasty:dynn_Baratheon
+					father = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert
+					mother = { has_inactive_trait = asoiaf_Lannister_6_trait } #Cersei
+					NOT = {
+						has_trait = bastard
+					}
+				}
+				set_culture = culture:crownlander
+				set_house = house:house_BaratheonKL
+				add_trait = disputed_heritage
+				trigger_event = { id = agot_coa_events.1 }
+				every_child = {
+					if = {
+						limit = {
+							dynasty = dynasty:dynn_Baratheon
+						}
+						set_culture = culture:crownlander
+						set_house = house:house_BaratheonKL
+						trigger_event = { id = agot_coa_events.1 }
+					}
+				}
+			}
+		}
+		add_to_global_variable_list = {
+			name = asoiaf_baratheon_kl_unavailable
+			target = flag:asoiaf_baratheon_cadet_kl
+		}
+		trigger_event = { id = agot_coa_events.1 }
+		dynasty:dynn_Lannister = {
+			every_dynasty_member = {
+				limit = {
+					has_inactive_trait = asoiaf_Lannister_1_trait #Tywin
+					is_alive = yes
+				}
+				save_scope_as = asoiaf_Lannister_1
+			}
+		}
+		if = { #Alliance with Tywin (if he's alive)
+			limit = {
+				exists = scope:asoiaf_Lannister_1
+			}
+			create_alliance = {
+				target = scope:asoiaf_Lannister_1
+				allied_through_owner = ROOT #whoever inherits the Throne that meets the conditions above
+				allied_through_target = scope:asoiaf_Lannister_1
+			}
+			scope:asoiaf_Lannister_1 = {
+				add_opinion = {
+					target = ROOT
+					modifier = perk_negotiated_alliance_opinion
+				}
+			}
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_lannister_baratheon_coa = { #identical to above, to avoid overlap for AGOT+ specific triggers
+	trigger = {
+		asoiaf_historical_trigger = yes
+		scope:title = {
+			OR = {
+				this = title:e_the_iron_throne
+				this = title:k_the_westerlands
+			}
+		}
+		root = {
+			dynasty = dynasty:dynn_Baratheon
+			father = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert
+			mother = { has_inactive_trait = asoiaf_Lannister_6_trait } #Cersei
+			NOT = { real_father = { has_inactive_trait = asoiaf_Baratheon_2_trait } } #real father doesn't need to be Jaime to raise suspicion, it just can't be Robert
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = asoiaf_baratheon_kl_unavailable
+				target = flag:asoiaf_baratheon_cadet_kl
+			}
+		}
+	}
+	effect = {
+		set_house = house:house_BaratheonKL
+		set_culture = culture:crownlander
+		add_trait = disputed_heritage
+		if = {
+			limit = {
+				age < 16
+				root.mother = { is_courtier_of = root } #if she's not at court, she can't become a regent immediately after the succession
+			}
+			designate_diarch = root.mother #Cersei
+			start_diarchy = regency
+			set_diarch = root.mother #Cersei
+		}
+		every_child = { #the inheritor's children
+			if = {
+				limit = {
+					dynasty = dynasty:dynn_Baratheon
+				}
+				set_culture = culture:crownlander
+				set_house = house:house_BaratheonKL
+				trigger_event = { id = agot_coa_events.1 }
+			}
+		}
+		every_close_family_member = {
+			if = {
+				limit = {
+					dynasty = dynasty:dynn_Baratheon
+					father = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert
+					mother = { has_inactive_trait = asoiaf_Lannister_6_trait } #Cersei
+					NOT = {
+						has_trait = bastard
+					}
+				}
+				set_culture = culture:crownlander
+				set_house = house:house_BaratheonKL
+				add_trait = disputed_heritage
+				trigger_event = { id = agot_coa_events.1 }
+				every_child = {
+					if = {
+						limit = {
+							dynasty = dynasty:dynn_Baratheon
+						}
+						set_culture = culture:crownlander
+						set_house = house:house_BaratheonKL
+						trigger_event = { id = agot_coa_events.1 }
+					}
+				}
+			}
+		}
+		add_to_global_variable_list = {
+			name = asoiaf_baratheon_kl_unavailable
+			target = flag:asoiaf_baratheon_cadet_kl
+		}
+		trigger_event = { id = agot_coa_events.1 }
+		dynasty:dynn_Lannister = {
+			every_dynasty_member = {
+				limit = {
+					has_inactive_trait = asoiaf_Lannister_1_trait #Tywin
+					is_alive = yes
+				}
+				save_scope_as = asoiaf_Lannister_1
+			}
+		}
+		if = { #Alliance with Tywin (if he's alive)
+			limit = {
+				exists = scope:asoiaf_Lannister_1
+			}
+			create_alliance = {
+				target = scope:asoiaf_Lannister_1
+				allied_through_owner = ROOT #whoever inherits the Throne that meets the conditions above
+				allied_through_target = scope:asoiaf_Lannister_1
+			}
+			scope:asoiaf_Lannister_1 = {
+				add_opinion = {
+					target = ROOT
+					modifier = perk_negotiated_alliance_opinion
+				}
+			}
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_harrold_hardyng_becomes_arryn = {
+	trigger = {
+		asoiaf_historical_trigger = yes #player is on a historical game mode
+		scope:title = {
+			OR = {
+				this = title:k_the_vale
+				this = title:e_the_vale #in case Robin becomes independent
+			}
+		}
+		root = character:Hardyng_5 #inheritor is Harrold Hardyng (the Young Falcon)
+		scope:previous_holder = {
+			OR = {
+				dynasty = dynasty:dynn_Arryn #inherited from a dead Arryn
+				has_title = title:e_the_iron_throne #appointed by the Iron Throne
+			}
+		}
+	}
+	effect = {
+		character:Hardyng_5 = { #Harrold Hardyng (the Young Falcon)
+			house ?= {
+				character:Hardyng_5 = { set_house = character:Arryn_15.house }
+				every_house_member = {
+					limit = {
+						any_ancestor = {
+							this = character:Hardyng_5
+						}
+					}
+					set_house = character:Arryn_15.house
+				}
+			}
+		}
+		character:Hardyng_5.mother = { #Harry's Waynwood mother, who was the daughter of an Arryn
+			set_house = character:Arryn_15.house
+		}
+	}
+}
+
+asoiaf_young_griff_landing = { #event faegon_landing.0001
+	trigger = {
+		scope:title = {
+			this = title:e_targaryen_host_title
+		}
+		root = { #this is Aegon
+			AND = {
+				is_male = yes
+				house ?= house:house_Essos
+				has_nickname = nick_young_griff
+			}
+		}
+		root = { NOT = { has_inactive_trait = asoiaf_Targaryen_11_trait } } #can only happen once since he's assigned the trait right below
+	}
+	effect = {
+		hidden_effect = {
+			root = {
+				save_scope_as = asoiaf_targaryen_invasion_claimant
+
+				#COSMETIC STUFF
+				make_trait_inactive = asoiaf_Targaryen_11_trait #for hairstyles
+				make_trait_inactive = cool_neutral_silver_hair
+				
+				#CANON CHILDREN MODIFIER
+				if = {
+					limit = { asoiaf_canon_children_enabled_trigger = yes }
+					add_character_modifier = asoiaf_Targaryen_11_modifier
+				}
+
+				#SEXUALITY FIX
+				if = {
+					limit = { has_game_rule = asoiaf_sexuality_fix_rule_on }
+					set_sexuality = heterosexual
+				}
+				
+				#SET REAL HOUSE AND PARENTS IMMEDIATELY
+				set_father = character:Targaryen_3
+				set_mother = character:Martell_7
+				set_house = character:Targaryen_3.house
+				
+				#SET PISSWATER PRINCE'S REAL PARENTS
+				create_character = {
+					gender = female
+					age = 50
+					culture = culture:high_valyrian
+					faith = faith:the_seven_main
+					location = scope:faegon.location
+					
+					dynasty = none
+					
+					save_scope_as = culler_mother
+					
+					after_creation = {
+						death =  { death_reason = death_disappearance }
+					}
+				}
+				create_character = {
+					gender = male
+					age = 50
+					culture = culture:high_valyrian
+					faith = faith:the_seven_main
+					location = scope:faegon.location
+					
+					dynasty = generate
+					
+					save_scope_as = culler_father
+					
+					after_creation = {
+						death =  { death_reason = death_disappearance }
+					}
+				}
+				character:Targaryen_11 = { #Fake Aegon (Pissswater Prince)
+					set_mother = scope:culler_mother
+					set_father = scope:culler_father
+					set_house =  scope:culler_father.house
+				}
+				
+				#MANAGERIAL STUFF FOR AEGON
+				learn_language = language_common
+				set_court_language = language_common
+				dynasty:dynn_Targaryen = { set_variable = agot_allow_adelphogamous_incest } #if it's not set because of being broken in vanilla AGOT, this will fix it
+				add_prestige = 1000
+				add_piety = 100
+				add_gold = 400
+				add_pressed_claim = title:e_the_iron_throne
+				add_pressed_claim = title:d_kings_landing
+				add_pressed_claim = title:c_kings_landing
+				add_pressed_claim = title:k_dragonstone
+				add_pressed_claim = title:d_dragonstone
+				add_pressed_claim = title:c_dragonstone
+
+				#SPAWN OTHER TARGARYENS (depending on game rule)
+				if = {
+					limit = { asoiaf_targaryen_invasion_claimants_trigger = yes }
+					if = { #VISERYS BLOCK
+						limit = {
+							character:Targaryen_8 ?= {
+								is_alive = yes
+								ai_ai = yes #Viserys can't be a player
+								NAND = {
+									character:Targaryen_9 ?= { is_ai = no } #neither can he be an AI who is a courtier of player-controlled Daenerys
+									is_courtier_of = character:Targaryen_9
+								}
+							}
+						}
+						#destroy or abdicate from whatever titles he has
+						character:Targaryen_8 ?= {
+							if = {
+								limit = { has_title = title:d_laamp_targaryen_exiles }
+								destroy_title = title:d_laamp_targaryen_exiles
+							}
+							if = { #any other title they just abdicate from
+								limit = {
+									OR = {
+										is_landed = yes
+										is_landless_ruler = yes
+									}
+								}
+								agot_depose_effect = yes
+							}
+						}
+						add_courtier = character:Targaryen_8 #add Viserys as courtier for Aegon
+					}
+					if = { #DAENERYS BLOCK
+						limit = {
+							character:Targaryen_9 ?= {
+								is_alive = yes
+								ai_ai = yes #Daenerys can't be a player
+								NAND = {
+									character:Targaryen_8 ?= { is_ai = no } #neither can she be an AI who is a courtier of player-controlled Viserys
+									is_courtier_of = character:Targaryen_8
+								}
+							}
+						}
+						#destroy or abdicate from whatever titles she has
+						character:Targaryen_9 ?= {
+							if = {
+								limit = { has_title = title:d_laamp_targaryen_exiles }
+								destroy_title = title:d_laamp_targaryen_exiles
+							}
+							if = { #any other title they just abdicate from
+								limit = {
+									OR = {
+										is_landed = yes
+										is_landless_ruler = yes
+									}
+								}
+								agot_depose_effect = yes
+							}
+						}
+						add_courtier = character:Targaryen_9 #add Daenerys as courtier for Aegon
+					}
+				}
+
+				#RHAEGAL SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_rhaegal }
+					}
+					agot_spawn_adult_rhaegal_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_11_trait } #Aegon Targaryen (son of Rhaegar)
+							save_scope_as = asoiaf_spawned_aegon
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_aegon
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+
+				#VISERION SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_viserion }
+					}
+					agot_spawn_adult_viserion_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_8_trait } #Viserys Targaryen (son of Aerys II)
+							save_scope_as = asoiaf_spawned_viserys
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_viserys
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+
+				#DROGON SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_drogon }
+					}
+					agot_spawn_adult_drogon_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_9_trait } #Daenerys Targaryen (daughter of Aerys II)
+							save_scope_as = asoiaf_spawned_daenerys
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_daenerys
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+				
+				#PERSONALITY FIX IF ON HISTORICAL MODE
+				if = {
+					limit = { asoiaf_historical_trigger = yes }
+					asoiaf_clear_personality_traits_effect = yes
+					asoiaf_clear_education_traits_effect = yes
+					remove_trait = sadistic #the others sometimes get this trait, so I'll put this here just in case it happens to Aegon too
+					add_trait = diligent
+					add_trait = authoritative
+					add_trait = brave
+					add_trait = ambitious
+					add_trait = education_martial_3
+					add_trait = education_martial_prowess_3
+					add_trait = aggressive_attacker
+					add_trait = poet
+					
+					add_perk = bellum_justum_perk
+					add_perk = parthian_tactics_perk
+					add_perk = envelopment_perk
+					add_perk = organized_retreat_perk
+					add_perk = hit_and_run_perk
+					add_perk = engineered_for_destruction_perk
+					add_perk = living_off_the_land_perk
+					add_perk = sappers_perk
+					add_perk = strategist_perk
+					add_perk = meritocracy_perk
+					add_perk = chains_of_loyalty_perk
+					
+					learn_language = language_rhoynish
+					if = {
+						limit = { age < 16 }
+						set_focus = education_martial
+					}
+				}
+				
+				#FRIENDSHIPS, COMPANIONS, AND RIVALRIES
+				if = {
+					limit = {
+						character:Eunuch_1 ?= { #Varys
+							NOT = { is_ruler = yes }
+							is_alive = yes
+						}
+					}
+					set_relation_friend = character:Eunuch_1
+					add_courtier = character:Eunuch_1
+				}
+				if = {
+					limit = {
+						character:Connington_4 ?= { #Jon Connington (son of Armond)
+							NOT = { is_ruler = yes }
+							is_alive = yes
+						}
+					}
+					set_relation_friend = character:Connington_4
+					add_courtier = character:Connington_4
+				}
+				if = {
+					limit = {
+						character:Strickland_1 ?= { #Harry Strickland (Homeless)
+							is_alive = yes
+						}
+					}
+					set_relation_friend = character:Strickland_1
+				}
+				if = {
+					limit = {
+						character:Strickland_1 ?= { #Harry Strickland (Homeless)
+							is_ruler = no
+						}
+					}
+					add_courtier = character:Strickland_1
+				}
+				if = {
+					limit = {
+						character:Clegane_3 ?= { #Gregor Clegane
+							is_alive = yes
+							any_killed_character = {
+								this = character:Martell_7 #Elia Martell (daughter of Loreza)
+							}
+						}
+					}
+					set_relation_grudge = { reason = asoiaf_aegon_gregor_grudge_desc target = character:Clegane_3 } #Grudge with Gregor Clegane over murdering his mother
+				}
+				
+				#DELAYED EFFECT FOR REMOVING REFUSING MARRIAGE TRAIT
+				trigger_event = { id = asoiaf_young_griff_landing_events.1 days = 15 }
+			}
+		}
+	}
+}
+
+asoiaf_dummy_daenerys_landing = {
+	trigger = {
+		scope:title = {
+			this = title:e_targaryen_host_title
+		}
+		root = { has_inactive_trait = asoiaf_Targaryen_9_trait } #this is Daenerys
+	}
+	effect = {
+		hidden_effect = {
+			root = {
+				save_scope_as = asoiaf_targaryen_invasion_claimant
+				
+				#MANAGERIAL STUFF FOR DAENERYS
+				learn_language = language_common
+				set_court_language = language_common
+				dynasty:dynn_Targaryen = { set_variable = agot_allow_adelphogamous_incest } #if it's not set because of being broken in main AGOT, this will fix
+				add_prestige = 1000
+				add_piety = 100
+				add_gold = 400
+				add_pressed_claim = title:e_the_iron_throne
+				add_pressed_claim = title:d_kings_landing
+				add_pressed_claim = title:c_kings_landing
+				add_pressed_claim = title:k_dragonstone
+				add_pressed_claim = title:d_dragonstone
+				add_pressed_claim = title:c_dragonstone
+
+				#SPAWN OTHER TARGARYENS (depending on game rule)
+				if = {
+					limit = { asoiaf_targaryen_invasion_claimants_trigger = yes }
+					if = { #VISERYS BLOCK
+						limit = {
+							character:Targaryen_8 ?= {
+								is_alive = yes
+								ai_ai = yes #Viserys can't be a player
+								NAND = {
+									character:Targaryen_9 ?= { is_ai = no } #neither can he be an AI who is a courtier of player-controlled Daenerys
+									is_courtier_of = character:Targaryen_9
+								}
+							}
+						}
+						#destroy or abdicate from whatever titles he has
+						character:Targaryen_8 ?= {
+							if = {
+								limit = { has_title = title:d_laamp_targaryen_exiles }
+								destroy_title = title:d_laamp_targaryen_exiles
+							}
+							if = { #any other title they just abdicate from
+								limit = {
+									OR = {
+										is_landed = yes
+										is_landless_ruler = yes
+									}
+								}
+								agot_depose_effect = yes
+							}
+						}
+						add_courtier = character:Targaryen_8 #add Viserys as courtier for Aegon
+					}
+					asoiaf_targaryen_invasion_claimants_spawn_aegon_effect = yes #AEGON BLOCK
+				}
+
+				#RHAEGAL SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_rhaegal }
+					}
+					agot_spawn_adult_rhaegal_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_11_trait } #Aegon Targaryen (son of Rhaegar)
+							save_scope_as = asoiaf_spawned_aegon
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_aegon
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+
+				#VISERION SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_viserion }
+					}
+					agot_spawn_adult_viserion_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_8_trait } #Viserys Targaryen (son of Aerys II)
+							save_scope_as = asoiaf_spawned_viserys
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_viserys
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+
+				#DROGON SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_drogon }
+					}
+					agot_spawn_adult_drogon_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_9_trait } #Daenerys Targaryen (daughter of Aerys II)
+							save_scope_as = asoiaf_spawned_daenerys
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_daenerys
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+				
+				#DELAYED EFFECT FOR REMOVING REFUSING MARRIAGE TRAIT
+				trigger_event = { id = asoiaf_young_griff_landing_events.2 days = 15 }
+			}
+		}
+	}
+}
+
+asoiaf_dummy_viserys_landing = {
+	trigger = {
+		scope:title = {
+			this = title:e_targaryen_host_title
+		}
+		root = { has_inactive_trait = asoiaf_Targaryen_8_trait } #this is Viserys
+	}
+	effect = {
+		hidden_effect = {
+			root = {
+				save_scope_as = asoiaf_targaryen_invasion_claimant
+				
+				#MANAGERIAL STUFF FOR VISERYS
+				learn_language = language_common
+				set_court_language = language_common
+				dynasty:dynn_Targaryen = { set_variable = agot_allow_adelphogamous_incest } #if it's not set because of being broken in main AGOT, this will fix
+				add_prestige = 1000
+				add_piety = 100
+				add_gold = 400
+				add_pressed_claim = title:e_the_iron_throne
+				add_pressed_claim = title:d_kings_landing
+				add_pressed_claim = title:c_kings_landing
+				add_pressed_claim = title:k_dragonstone
+				add_pressed_claim = title:d_dragonstone
+				add_pressed_claim = title:c_dragonstone
+
+				#SPAWN OTHER TARGARYENS (depending on game rule)
+				if = {
+					limit = { asoiaf_targaryen_invasion_claimants_trigger = yes }
+					if = { #DAENERYS BLOCK
+						limit = {
+							character:Targaryen_9 ?= {
+								is_alive = yes
+								ai_ai = yes #Daenerys can't be a player
+								NAND = {
+									character:Targaryen_8 ?= { is_ai = no } #neither can she be an AI who is a courtier of player-controlled Viserys
+									is_courtier_of = character:Targaryen_8
+								}
+							}
+						}
+						#destroy or abdicate from whatever titles she has
+						character:Targaryen_9 ?= {
+							if = {
+								limit = { has_title = title:d_laamp_targaryen_exiles }
+								destroy_title = title:d_laamp_targaryen_exiles
+							}
+							if = { #any other title they just abdicate from
+								limit = {
+									OR = {
+										is_landed = yes
+										is_landless_ruler = yes
+									}
+								}
+								agot_depose_effect = yes
+							}
+						}
+						add_courtier = character:Targaryen_9 #add Daenerys as courtier for Aegon
+					}
+					asoiaf_targaryen_invasion_claimants_spawn_aegon_effect = yes #AEGON BLOCK
+				}
+
+				#RHAEGAL SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_rhaegal }
+					}
+					agot_spawn_adult_rhaegal_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_11_trait } #Aegon Targaryen (son of Rhaegar)
+							save_scope_as = asoiaf_spawned_aegon
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_aegon
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+
+				#VISERION SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_viserion }
+					}
+					agot_spawn_adult_viserion_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_8_trait } #Viserys Targaryen (son of Aerys II)
+							save_scope_as = asoiaf_spawned_viserys
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_viserys
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+
+				#DROGON SPAWN + TAME (depending on game rule)
+				if = {
+					limit = {
+						has_game_rule = asoiaf_targaryen_invasion_claimants_dragon_bonded
+						NOT = { exists = character:dragon_drogon }
+					}
+					agot_spawn_adult_drogon_effect = yes
+					dynasty:dynn_Targaryen = {
+						every_dynasty_member = {
+							limit = { has_inactive_trait = asoiaf_Targaryen_9_trait } #Daenerys Targaryen (daughter of Aerys II)
+							save_scope_as = asoiaf_spawned_daenerys
+						}
+					}
+					hidden_effect = {
+						agot_tame_dragon = {
+							TAMER = scope:asoiaf_spawned_daenerys
+							DRAGON = scope:dragon
+						}
+						scope:dragon = {
+							set_location = scope:asoiaf_targaryen_invasion_claimant.location
+						}
+					}
+				}
+				
+				#DELAYED EFFECT FOR REMOVING REFUSING MARRIAGE TRAIT
+				trigger_event = { id = asoiaf_young_griff_landing_events.2 days = 15 }
+			}
+		}
+	}
+}
+
+asoiaf_young_griff_victory = {
+	trigger = {
+		scope:title = {
+			this = title:e_the_iron_throne
+		}
+		root = { has_inactive_trait = asoiaf_Targaryen_11_trait } #this is Aegon
+		NOT = { exists = global_var:asoiaf_young_griff_victory_variable }
+	}
+	effect = {
+		hidden_effect = {
+			set_global_variable = asoiaf_young_griff_victory_variable #so this can't trigger twice
+			root = {
+				trigger_event = { id = asoiaf_young_griff_landing_events.3 days = 5 } #enough time for the player/AI to have gone through the event chain to declare his parentage
+			}
+			asoiaf_destroy_crownlands_title_effect = yes #taking the Iron Throne creates the Crownlands, so destroy it automatically
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_aegon_I_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_27_trait } #inheritor is Aegon I, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_27 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_aegon_I_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_27 }
+		scope:asoiaf_Targaryen_27 ?= {
+			agot_create_artifact_aegon_i_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.1 days = 1 } #equip Aegon I's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_aenys_I_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_30_trait } #inheritor is Aenys I, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_30 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_aenys_I_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_30 }
+		scope:asoiaf_Targaryen_30 ?= {
+			agot_create_artifact_aenys_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.2 days = 1 } #equip Aenys I's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_jaehaerys_I_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_35_trait } #inheritor is Jaehaerys I, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_35 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_jaehaerys_I_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_35 }
+		scope:asoiaf_Targaryen_35 ?= {
+			agot_create_artifact_jaehaerys_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.3 days = 1 } #equip Jaehaerys I's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_aegon_III_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_78_trait } #inheritor is Aegon III, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_78 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_aegon_III_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_78 }
+		scope:asoiaf_Targaryen_78 ?= {
+			agot_create_artifact_aegon_iii_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.4 days = 1 } #equip Aegon III's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_baelor_I_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_82_trait } #inheritor is Baelor I, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_82 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_baelor_I_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_82 }
+		scope:asoiaf_Targaryen_82 ?= {
+			agot_create_artifact_baelors_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.5 days = 1 } #equip Baelor I's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_aegon_IV_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_88_trait } #inheritor is Aegon IV, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_88 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_aegon_IV_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_88 }
+		scope:asoiaf_Targaryen_88 ?= {
+			agot_create_artifact_aegon_iv_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.6 days = 1 } #equip Aegon IV's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_maekar_I_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Targaryen_110_trait } #inheritor is Maekar I, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Targaryen_110 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_maekar_I_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_110 }
+		scope:asoiaf_Targaryen_110 ?= {
+			agot_create_artifact_maekars_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.7 days = 1 } #equip Maekar I's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_aerys_II_crown_creation = {
+	trigger = {
+		AND = {
+			this = {
+				has_inactive_trait = asoiaf_Targaryen_1_trait #inheritor is Aerys II, but NOT the historical version (that's handled by vanilla AGOT effects)
+			}
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			this = { has_inactive_trait = asoiaf_Targaryen_1_trait } #Aerys II Targaryen
+			asoiaf_aerys_II_targaryen_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Targaryen_1 }
+		scope:asoiaf_Targaryen_1 ?= {
+			create_artifact_asoiaf_aerys_II_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.8 days = 1 } #equip Aerys II's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_robert_I_crown_creation = {
+	trigger = {
+		AND = {
+			has_game_rule = asoiaf_new_dnas_stormlands_rule_on #replace with stormlands clothes rule once you've got actual outfits to trigger alongside it
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			this = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert I Baratheon
+			asoiaf_robert_I_baratheon_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Baratheon_2 }
+		scope:asoiaf_Baratheon_2 ?= {
+			create_artifact_asoiaf_robert_I_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.9 days = 1 } #destroy vanilla AGOT's Robert I crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_joffrey_I_crown_creation = {
+	trigger = {
+		AND = {
+			this = { has_inactive_trait = asoiaf_Baratheon_5_trait } #inheritor is Joffrey I, but NOT the historical version (that's handled by vanilla AGOT effects)
+			NOT = { this = character:Baratheon_5 }
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			asoiaf_joffrey_I_baratheon_crown_trigger = yes
+			NOT = { has_government = nights_watch_government }
+			NOT = { has_government = silent_sisterhood_government }
+			NOT = { has_government = theocracy_government }
+		}
+	}
+	effect = {
+		this = { save_scope_as = asoiaf_Baratheon_5 }
+		scope:asoiaf_Baratheon_5 ?= {
+			agot_create_artifact_joffreyI_crown_effect = { OWNER = this }
+			trigger_event = { id = asoiaf_equip_crown_events.10 days = 1 } #equip Maekar I's crown with delay because of overlapping effects
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_robert_I_gluttonous_trait = {
+	trigger = {
+		AND = {
+			has_game_rule = asoiaf_got_traits_rule_on
+			dynasty:dynn_Baratheon = {
+				any_dynasty_member = {
+					has_inactive_trait = asoiaf_Baratheon_2_trait
+					has_trait = brave
+					NOT = { has_trait = gluttonous }
+				}
+			}
+			OR = {
+				primary_title.tier = tier_empire
+				AND = {
+					primary_title.tier = tier_kingdom
+					agot_is_independent_ruler = yes
+				}
+			}
+			this = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert I Baratheon
+		}
+	}
+	effect = {
+		hidden_effect = {
+			this = { save_scope_as = asoiaf_Baratheon_2 }
+			scope:asoiaf_Baratheon_2 ?= {
+				remove_trait = brave
+				add_trait = gluttonous
+				add_trait = drunkard
+			}
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_robert_siblings_claims = {
+	trigger = {
+		AND = {
+			scope:title = {
+				this = title:e_the_iron_throne
+			}
+			this = { has_inactive_trait = asoiaf_Baratheon_2_trait } #Robert I Baratheon
+		}
+	}
+	effect = {
+		hidden_effect = {
+			this = {
+				every_sibling = {
+					limit = {
+						is_male = yes
+					}
+					add_pressed_claim = title:e_the_iron_throne
+				}
+			}
+		}
+	}
+}
+
+asoiaf_on_title_inheritance_robert_usurper_nickname = {
+	trigger = {
+		AND = {
+			scope:title = { this = title:e_the_iron_throne }
+			root = { #conqueror is either Aegon, Viserys, or Daenerys
+				OR = {
+					var:faegon_main_character = flag:faegon
+					var:faegon_main_character = flag:viserys
+					var:faegon_main_character = flag:dany
+				}
+			}
+			OR = { #either Robert is alive and was the prior holder, or is dead and held the title at the time
+				scope:previous_holder ?= { has_inactive_trait = asoiaf_Baratheon_2_trait } #is Robert I
+				character:Baratheon_2 ?= {
+					is_alive = no
+					has_title = title:e_the_iron_throne
+				}
+			}
+		}
+	}
+	effect = {
+		character:Baratheon_2 ?= {
+			give_nickname = nick_the_usurper
+		}
+	}
+}
+
+asoiaf_harlaw_cadet_branch_harridan_hills = {
+	trigger = {
+		this = character:Harlaw_14 #Boremund the Blue
+		has_character_flag = has_personal_coa
+		NOT = {
+			is_target_in_global_variable_list = { #House Harlaw of Harridan Hills hasn't been founded yet
+				name = asoiaf_harlaw_hh_unavailable
+				target = flag:asoiaf_harlaw_cadet_hh
+			}
+		}
+	}
+	effect = {
+		house = { save_scope_as = asoiaf_founders_old_house }
+		set_house = house:house_HarlawHH #Harlaw of Harridan Hills
+		trigger_event = { id = agot_coa_events.1 }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					any_ancestor = {
+						this = character:Harlaw_14
+					}
+					house = house:asoiaf_founders_old_house
+				}
+				set_house = house:house_HarlawHH
+				trigger_event = { id = agot_coa_events.1 }
+			}
+		}
+		add_to_global_variable_list = {
+			name = asoiaf_harlaw_hh_unavailable
+			target = flag:asoiaf_harlaw_cadet_hh
+		}
+	}
+}
+
+asoiaf_harlaw_cadet_branch_grey_garden = {
+	trigger = {
+		this = character:Harlaw_12 #Harras the Knight
+		has_character_flag = has_personal_coa
+		NOT = {
+			is_target_in_global_variable_list = { #House Harlaw of Grey Garden hasn't been founded yet
+				name = asoiaf_harlaw_gg_unavailable
+				target = flag:asoiaf_harlaw_cadet_gg
+			}
+		}
+	}
+	effect = {
+		house = { save_scope_as = asoiaf_founders_old_house }
+		set_house = house:house_HarlawGG #Harlaw of Grey Garden
+		trigger_event = { id = agot_coa_events.1 }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					any_ancestor = {
+						this = character:Harlaw_12
+					}
+					house = house:asoiaf_founders_old_house
+				}
+				set_house = house:house_HarlawGG
+				trigger_event = { id = agot_coa_events.1 }
+			}
+		}
+		add_to_global_variable_list = {
+			name = asoiaf_harlaw_gg_unavailable
+			target = flag:asoiaf_harlaw_cadet_gg
+		}
+	}
+}
+
+asoiaf_harlaw_cadet_branch_tower_of_glimmering = {
+	trigger = {
+		this = character:Harlaw_13 #Hotho Humpback
+		has_character_flag = has_personal_coa
+		NOT = {
+			is_target_in_global_variable_list = { #House Harlaw of the Tower of Glimmering hasn't been founded yet
+				name = asoiaf_harlaw_tg_unavailable
+				target = flag:asoiaf_harlaw_cadet_tg
+			}
+		}
+	}
+	effect = {
+		house = { save_scope_as = asoiaf_founders_old_house }
+		set_house = house:house_HarlawTG #Harlaw of the Tower of Glimmering
+		trigger_event = { id = agot_coa_events.1 }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					any_ancestor = {
+						this = character:Harlaw_13
+					}
+					house = house:asoiaf_founders_old_house
+				}
+				set_house = house:house_HarlawTG
+				trigger_event = { id = agot_coa_events.1 }
+			}
+		}
+		add_to_global_variable_list = {
+			name = asoiaf_harlaw_tg_unavailable
+			target = flag:asoiaf_harlaw_cadet_tg
+		}
+	}
+}
+
+asoiaf_harlaw_cadet_branch_harlaw_hall = {
+	trigger = {
+		this = character:Harlaw_2 #Sigfryd Silverhair
+		has_character_flag = has_personal_coa
+		NOT = {
+			is_target_in_global_variable_list = { #House Harlaw of Harlaw Hall hasn't been founded yet
+				name = asoiaf_harlaw_hhall_unavailable
+				target = flag:asoiaf_harlaw_cadet_hhall
+			}
+		}
+	}
+	effect = {
+		house = { save_scope_as = asoiaf_founders_old_house }
+		set_house = house:house_HarlawHHall
+		trigger_event = { id = agot_coa_events.1 }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					any_ancestor = {
+						this = character:Harlaw_2
+					}
+					house = house:asoiaf_founders_old_house
+				}
+				set_house = house:house_HarlawHHall
+				trigger_event = { id = agot_coa_events.1 }
+			}
+		}
+		add_to_global_variable_list = {
+			name = asoiaf_harlaw_hhall_unavailable
+			target = flag:asoiaf_harlaw_cadet_hhall
+		}
+	}
+}
+
+on_title_lost = {
+	on_actions = {
+		asoiaf_young_griff_war_loser
+		asoiaf_daemon_loses_stepstone_claims
+	}
+}
+
+asoiaf_young_griff_war_loser = {
+	trigger = {
+		scope:title = {
+			this = title:e_the_iron_throne
+		}
+		scope:new_holder = {
+			OR = {
+				has_inactive_trait = asoiaf_Targaryen_8_trait #Viserys Targaryen (son of Aerys II)
+				has_inactive_trait = asoiaf_Targaryen_9_trait #Daenerys Targaryen (daughter of Aerys II)
+				has_inactive_trait = asoiaf_Targaryen_11_trait #Aegon Targaryen (son of Rhaegar)
+			}
+		}
+		#NOT = { exists = global_var:asoiaf_young_griff_war_loser_variable } #commented out since it doesn't matter if it triggers multiple times, it's a good effect to have regardless
+	}
+	effect = {
+		hidden_effect = {
+			#set_global_variable = asoiaf_young_griff_war_loser_variable #so this can't trigger twice
+			root = {
+				add_pressed_claim = title:e_the_iron_throne
+				add_pressed_claim = title:d_kings_landing
+				add_pressed_claim = title:c_kings_landing
+			}
+		}
+	}
+}
+
+asoiaf_daemon_loses_stepstone_claims = { #clean up Daemon's claims after losing the Stepstones so he doesn't get elected a Pirate Captain afterwards
+	trigger = {
+		scope:title = {
+			OR = { #so it will trigger if he loses any stage of his war
+				this = title:k_the_stepstones
+				this = title:d_first_stepstones
+				this = title:c_dwarfstone
+			}
+		}
+		root = character:Targaryen_61 #Daemon Targaryen (son of Baelon) - historical
+	}
+	effect = {
+		hidden_effect = {
+			root = { #remove claims from every title in the Stepstones
+				remove_claim = title:k_the_stepstones
+				remove_claim = title:d_first_stepstones
+				remove_claim = title:d_skull_tides
+				remove_claim = title:d_the_maidens
+				remove_claim = title:d_saans_stones
+				remove_claim = title:c_blood_point
+				remove_claim = title:c_bloodstone
+				remove_claim = title:c_dwarfstone
+				remove_claim = title:c_grey_gallows
+				remove_claim = title:c_lower_sunstone
+				remove_claim = title:c_turtleback
+				remove_claim = title:c_upper_sunstone
+				remove_claim = title:c_wreckstone
+				remove_claim = title:c_liarsmyrk
+				remove_claim = title:c_pyrwell
+				remove_claim = title:c_skullhammer
+				remove_claim = title:c_the_skulls
+				remove_claim = title:c_torturers_deep
+				remove_claim = title:c_denmaiden
+				remove_claim = title:c_last_refuge
+				remove_claim = title:c_raidmaiden
+				remove_claim = title:c_tigers_island
+				remove_claim = title:c_dark_den
+				remove_claim = title:c_duskrane
+				remove_claim = title:c_shame_isle
+			}
+		}
+	}
+}

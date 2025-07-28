@@ -1,0 +1,35 @@
+﻿#AGOT Rebuilding Castles
+
+# #To send an appropriate start event
+# rebuilding_castle_start_events = {
+# 	events = {
+# 		agot_rebuilding_castle.1008 # Host
+# 		agot_rebuilding_castle.1009 # Builders
+# 	}
+# }
+
+#  # On-action managing castle construction participant events
+# rebuilding_castle_random_pulse = {
+# 	trigger = {
+#  		exists = scope:activity
+#  	}
+#  	random_events = {
+#  		#FOR ZOMBIE:
+# 		20 = agot_rebuilding_castle.2001 #Charcoal Sellers
+# 		20 = agot_rebuilding_castle.2002 #Dark Past
+# 		20 = agot_rebuilding_castle.0003 #Buried Treasure
+# 		20 = agot_rebuilding_castle.2004 #Wildling Attack
+# 		20 = agot_rebuilding_castle.2005 #Quick Decision
+# 		20 = agot_rebuilding_castle.2006 #Old Habits Die Hard
+# 		20 = agot_rebuilding_castle.2007 #Set in Stone
+# 		20 = agot_rebuilding_castle.2008 #In the Details
+
+# 	}
+#  	#fallback = rebuilding_castle_event_fallback
+#  }
+
+# # Fallback for the sake of stability
+# # rebuilding_castle_event_fallback = {
+# # 	events = {
+# # 	}
+# # }

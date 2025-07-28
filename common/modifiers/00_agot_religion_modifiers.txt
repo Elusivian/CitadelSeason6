@@ -1,0 +1,82 @@
+﻿### Look into the Flames Decision modifiers
+flames_visions_friendship = {
+	icon = diplomacy_positive
+	diplomacy = 2
+	intrigue = -1
+	befriend_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+	hostile_scheme_phase_duration_add = minor_scheme_phase_duration_malus_value
+}
+
+flames_visions_ominous_visions = {
+	icon = intrigue_positive
+	intrigue = 2
+	diplomacy = -1
+	befriend_scheme_phase_duration_add = minor_scheme_phase_duration_malus_value
+	enemy_hostile_scheme_phase_duration_add = minor_scheme_phase_duration_malus_value
+	stress_gain_mult = 0.15
+}
+
+flames_visions_of_conquest = {
+	icon = martial_positive
+	martial = 2
+	diplomacy = -1
+	monthly_martial_lifestyle_xp_gain_mult = 0.1
+	uncontrolled_province_advantage = 5
+}
+
+flames_visions_of_reconciliation = {
+	icon = diplomacy_positive
+	diplomacy = 2
+	martial = -1
+	monthly_diplomacy_lifestyle_xp_gain_mult = 0.1
+	defender_holding_advantage = 5
+}
+
+flames_visions_fortune = {
+	icon = magic_positive
+	stewardship = 2
+	development_growth_factor = 0.1
+}
+
+flames_visions_glimpse_of_past = {
+	icon = learning_positive
+	learning = 2
+	monthly_learning_lifestyle_xp_gain_mult = 0.1
+}
+
+flames_visions_hostile_schemes = {
+	icon = magic_positive
+	intrigue = 2
+	owned_hostile_scheme_success_chance_add = 10
+	hostile_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+}
+
+flames_visions_lurking_dangers = {
+	icon = magic_positive
+	intrigue = 2
+	scheme_discovery_chance_mult = 0.1
+}
+
+flames_visions_studying_prophecies = {
+	icon = magic_positive
+	learning = 2
+	monthly_piety_gain_mult = 0.15
+}
+
+flames_visions_studying_scriptures = {
+	icon = learning_positive
+	learning = 2
+	monthly_learning_lifestyle_xp_gain_mult = 0.1
+}
+
+flames_visions_falsehoods_revealed = {
+	icon = magic_positive
+	enemy_hostile_scheme_phase_duration_add = major_scheme_phase_duration_malus_value
+	scheme_discovery_chance_mult = 0.3
+}
+
+burned_commoners = {
+	icon = piety_negative
+	county_opinion_add = -50
+	levy_size = -0.1
+}

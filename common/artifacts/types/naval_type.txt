@@ -1,0 +1,4 @@
+﻿
+flagship = {
+	slot = miscellaneous
+}

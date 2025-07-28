@@ -1,0 +1,92 @@
+﻿GAME_OVER_CANNOT_PLAY_RUINS = {
+	first = GAME_OVER_CANNOT_PLAY_RUINS
+	third = GAME_OVER_CANNOT_PLAY_RUINS
+}
+
+GAME_OVER_CANNOT_PLAY_NW_VASSAL = {
+	first = GAME_OVER_CANNOT_PLAY_NW_VASSAL
+	third = GAME_OVER_CANNOT_PLAY_NW_VASSAL
+}
+
+AGOT_CANNOT_SWEAR_FEALTY_TO_PRE_WAR_LIEGE = {
+	first = AGOT_CANNOT_SWEAR_FEALTY_TO_PRE_WAR_LIEGE
+}
+
+DESIGNATE_HEIR_HAS_CHILD = {
+	first = DESIGNATE_HEIR_HAS_CHILD
+	third = DESIGNATE_HEIR_HAS_CHILD
+}
+
+agot_proclaim_it = {
+	first = I_PROCLAIM_IT
+}
+
+agot_proclaim_pk = {
+	first = I_PROCLAIM_PK
+}
+
+form_btw_must_end_struggle_trigger = {
+	first_not = FORM_BTW_MUST_END_STRUGGLE_TRIGGER
+}
+
+not_primary_title_kingdom_trigger = {
+	first_not = NOT_PRIMARY_TITLE_KINGDOM_TRIGGER
+}
+
+agot_expose_true_parentage_decision_requirement = {
+	first = agot_expose_true_parentage_decision_requirement_yes
+}
+
+rv_no_revenge_target_trigger = {
+	first = rv_no_revenge_target
+}
+
+agot_white_harbor_trigger = {
+	first = agot_wh_mint_loc
+	first_not = agot_wh_mint_loc
+	third = agot_wh_mint_loc
+	third_not = agot_wh_mint_loc
+}
+
+has_slavery_law_cooldown = {
+	first_not = SLAVERY_LAW_IS_ON_COOLDOWN
+}
+has_dragonpit_law_cooldown = {
+	first_not =	DRAGONPIT_LAW_IS_ON_COOLDOWN
+}
+
+look_into_flames_decision_no_cooldown_requirement = {
+	first = look_into_flames_decision_no_cooldown
+}
+
+agot_stolen_artifact_from_artifact_keeper_dec_trigger = {
+	first = agot_stolen_artifact_from_artifact_keeper_dec_desc
+	first_not = agot_stolen_artifact_from_artifact_keeper_dec_desc
+}
+
+agot_not_wilding_desc_trigger = {
+	first = agot_not_wilding_desc_trigger_desc
+	first_not = agot_not_wilding_desc_trigger_desc
+}
+
+hof_ask_for_claim_must_higher_one_tier = {
+	first = hof_ask_for_claim_must_higher_one_tier_desc
+	first_not = hof_ask_for_claim_must_higher_one_tier_desc
+}
+
+cannot_grant_small_council_as_vassal = {
+	third_not = CANNOT_GRANT_OWN_SC_VASSAL_THIRD
+}
+
+is_available = {
+	third = is_available_desc_third
+	third_not = NOT_is_available_desc_third
+}
+
+holy_sity_faith_of_the_seven_trigger = {
+	global_not = NOT_holy_sity_faith_of_the_seven_trigger
+}
+
+incompatible_doctrine_temporal_theocracy_trigger = {
+	global_not = CANNOT_HAVE_THEOCRACY_AND_TEMPORAL_HEAD
+}

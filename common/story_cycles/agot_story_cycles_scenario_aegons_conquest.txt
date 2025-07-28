@@ -1,0 +1,1083 @@
+﻿### SPOILER ALERT ### DO NOT READ THIS FILE IF UNFAMILIAR WITH SEVERAL THEORIES REGARDING daemon'S REBELLION
+
+story_agot_scenario_aegons_conquest = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Aegon's Conquest initialized"
+		set_variable = {
+			name	= conquest_status
+			value	= flag:ongoing
+		}
+		set_variable = {
+			name	= aegons_landing
+			value	= flag:ongoing
+		}
+		set_variable = {
+			name	= captured_kingdoms
+			value	= 0
+		}
+		set_variable = {
+			name	= crownlands_formation_storm
+			value	= flag:incomplete
+		}
+		set_variable = {
+			name	= crownlands_formation_reach
+			value	= flag:incomplete
+		}
+		set_variable = {
+						name	= last_alliance
+						value	= flag:false
+						}
+			set_variable = {
+						name = reach_captured
+						value = flag:false
+						}
+							set_variable = {
+						name = westerlands_captured
+						value = flag:false
+						}
+							set_variable = {
+						name = north_captured
+						value = flag:false
+						}
+							set_variable = {
+						name = riverlands_captured
+						value = flag:false
+						}
+							set_variable = {
+						name = stormlands_captured
+						value = flag:false
+						}
+							set_variable = {
+						name = vale_captured
+						value = flag:false
+						}
+							set_variable = {
+						name = dorne_captured
+						value = flag:false
+						}
+		story_owner = {
+		marry = character:Targaryen_29
+		
+			start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root.story_owner
+				target = title:e_the_riverlands.holder
+				target_title = title:e_the_riverlands
+			}
+		trigger_event = agot_events_more_bookmarks_misc.2
+		
+		
+
+		}
+ character:Targaryen_27 = { random_character_artifact = {
+					limit = { has_variable = circlet_visenya_artifact }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = character:Targaryen_28
+					history = {
+						type = inherited
+						actor = character:Targaryen_27
+						recipient = character:Targaryen_28
+						location = character:Targaryen_27.location
+					}
+					}
+					}
+					}
+ character:Targaryen_29 = { agot_create_artifact_rhaenys_circlet_effect = { OWNER = this }		
+	}
+	}
+	on_end = {
+	if = { limit = { character:Durrandon_88 = { is_alive = yes 
+												has_trait = refusing_marriage
+	} }
+					character:Durrandon_88 = { remove_trait = refusing_marriage }
+					}
+	
+	}
+	on_owner_death = {
+	make_story_owner = story_owner.primary_heir 
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 5
+
+		# 
+		triggered_effect = {
+			trigger = {
+				NOR = { 
+						story_owner = { this = character:Targaryen_27 }
+						story_owner = { this = character:Targaryen_28 }
+						story_owner = { this = character:Targaryen_29 }
+						}
+				var:conquest_status = flag:ongoing
+			}
+
+			effect = {
+			story_owner = { trigger_event = agot_events_more_bookmarks_misc.4 }
+			end_story = yes
+			
+			
+			}
+		}
+				
+			
+		
+		
+		# 
+		triggered_effect = {
+			trigger = {
+				story_owner = { is_at_war = no }
+			}
+
+			effect = {
+			save_scope_as = aegons_conquest_story
+				story_owner = { trigger_event = agot_events_more_bookmarks_misc.3 }
+				
+			}
+		}
+		### Add Crackclaw Point
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_riverrun } }
+				var:aegons_landing = flag:ongoing
+			}
+
+			effect = {
+			 title:d_rosby = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_kings_landing = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+         
+           
+           
+            title:d_the_blackwater_rush = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_hayford = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_deerfield = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_duskendale = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_stokeworth = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_rooks_rest = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_crackclaw_point = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+
+           
+			
+			liberation_of_riverlands_effect = yes
+			
+			
+			
+						set_variable = {
+						name	= aegons_landing
+						value	= flag:complete
+						}
+				title:c_strongbox.holder = {
+						add_to_list = crackclaw
+				}
+				title:c_needlewater.holder = {
+					add_to_list = crackclaw
+				}
+				title:c_dyre_den.holder = {
+					add_to_list = crackclaw
+				}
+				title:c_bronzeholm.holder = {
+					add_to_list = crackclaw
+				}
+				title:c_hazewood.holder = {
+					add_to_list = crackclaw
+				}
+				title:c_pointside.holder = {
+					add_to_list = crackclaw
+				}
+				title:c_brownhollow.holder = {
+					add_to_list = crackclaw
+				}
+				title:c_strongcliffs.holder = {
+					add_to_list = crackclaw
+				}
+				every_in_list = {
+								list = crackclaw 
+															
+								create_title_and_vassal_change = {
+										type = swear_fealty
+										save_scope_as = change
+								}
+							
+								change_liege = {
+									liege = title:e_the_iron_throne.holder
+									change = scope:change
+								}
+							
+							resolve_title_and_vassal_change = scope:change
+							
+									}
+								}
+		}
+		
+		### Stormlands Conquered
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_storms_end } }
+				var:crownlands_formation_storm = flag:incomplete
+			}
+
+			effect = {
+			set_variable = {
+						name	= crownlands_formation_storm
+						value	= flag:complete
+						}
+				
+			
+           story_owner = { get_title = title:c_blackstripe }
+            title:d_the_baywater_woods = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_wendwater_forest = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+            title:d_masseys_hook = {
+                set_de_jure_liege_title = title:k_the_crownlands
+            }
+         
+			title:k_the_stormlands.holder = { 
+			
+			every_vassal = { limit = { capital_barony.title_province = { geographical_region = world_westeros_the_crownlands } } 
+																		create_title_and_vassal_change = {
+										type = swear_fealty
+										save_scope_as = change
+								}
+							
+								change_liege = {
+									liege = title:e_the_iron_throne.holder
+									change = scope:change
+								}
+							
+							resolve_title_and_vassal_change = scope:change
+							if = { limit = { highest_held_title_tier = tier_duchy }
+							primary_title = { set_de_jure_liege_title = title:k_the_crownlands }
+							}
+							else = {
+							dejure_liege = { set_de_jure_liege_title = title:k_the_crownlands }
+							}
+							
+						}
+			   title:d_sharp_point = {
+                set_de_jure_liege_title = title:k_dragonstone
+            }
+						
+			
+				
+				
+
+						
+			
+			}
+		if = { limit = { character:Durrandon_88 = { is_alive = yes } }
+					character:Durrandon_88 = { remove_trait = refusing_marriage }
+					}
+			if = { limit = { character:Durrandon_88 = { has_title = title:k_the_stormlands }
+							character:Baratheon_14 = { is_alive = yes }	}
+					story_owner = { trigger_event = agot_events_more_bookmarks_misc.7 }
+					}
+		}
+		}
+		
+			### Reach Conquered
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_highgarden } }
+				var:crownlands_formation_reach = flag:incomplete
+			}
+
+			effect = {
+			set_variable = {
+						name	= crownlands_formation_reach
+						value	= flag:complete
+						}
+			
+				title:c_briarcrest.holder = { add_to_list = crownlords }
+				title:c_longgrass.holder = {add_to_list = crownlords }
+						
+			every_in_list = {
+								list = crownlords 
+															
+								create_title_and_vassal_change = {
+										type = swear_fealty
+										save_scope_as = change
+								}
+							
+								change_liege = {
+									liege = title:e_the_iron_throne.holder
+									change = scope:change
+								}
+							
+							resolve_title_and_vassal_change = scope:change
+							every_held_title = { set_de_jure_liege_title = title:d_the_blackwater_rush
+									}
+			}
+		}
+		}
+		
+		
+		
+		### Orys Duel 
+	triggered_effect = {
+			trigger = {
+				NOT = { has_game_rule = agot_story_sandbox }
+				story_owner = { is_at_war_with = title:c_storms_end.holder }
+				character:Baratheon_14 = {
+					
+					is_in_army = yes
+					is_alive = yes
+					NOT = { is_current_dragonrider_warfare = yes }
+				}
+				character:Durrandon_87 = {
+					is_at_same_location = character:Baratheon_14
+					is_in_army = yes
+					is_alive = yes
+					NOT = { is_current_dragonrider_warfare = yes }
+				
+				}
+				
+	
+			}
+			effect = {
+					character:Baratheon_14 = {
+					location = { save_scope_as = location }
+					#character:Baratheon_14 = { add_prowess_skill = 55 }
+						configure_start_single_combat_effect = {
+																SC_INITIATOR = root.story_owner
+																SC_ATTACKER = character:Durrandon_87
+																SC_DEFENDER = character:Baratheon_14
+																FATALITY = always
+																FIXED = no
+																LOCALE = terrain_scope
+																OUTPUT_EVENT = agot_events_more_bookmarks_misc.5
+																INVALIDATION_EVENT = single_combat.1006	#In a real event, this would obviously be a different even to the output.
+						}
+				
+				
+			
+			}
+		}
+		}
+		
+		
+		#### Kingdom Capture Counters
+		triggered_effect = {
+			trigger = {
+				var:last_alliance = flag:false
+				var:captured_kingdoms >= 2
+			}
+
+			effect = {
+			the_last_alliance_effect = yes
+			
+			#story_owner = { trigger_event = agot_events_more_bookmarks_misc.1 }
+			
+			
+			
+			
+			
+
+		}
+		}
+		
+		
+		#### Kingdom Capture Counters
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_highgarden } }
+				var:reach_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = reach_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_casterly_rock } }
+				var:westerlands_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = westerlands_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_riverrun } }
+				var:riverlands_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = riverlands_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_winterfell } }
+				var:north_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = north_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_the_eyrie } }
+				var:vale_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = vale_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_storms_end } }
+				var:stormlands_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = stormlands_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { any_vassal_or_below = { has_title = title:c_sunspear } }
+				var:dorne_captured = flag:false
+			}
+
+			effect = {
+			set_variable = {
+						name = dorne_captured
+						value = flag:true
+						}
+			change_variable = {
+						name = captured_kingdoms
+						add = 1
+								}
+			
+		}
+		}
+		
+			### Liberation of the Riverlands
+		triggered_effect = {
+			trigger = {
+				story_owner = { is_at_war_with = title:e_the_riverlands.holder }
+				
+			}
+
+			effect = {
+						### Tully
+						title:c_riverrun.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											500 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Blackwood
+						title:c_raventree.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Bracken
+						title:c_stone_hedge.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						
+						### Mallister
+						title:c_seagard.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Vance
+						title:c_wayfarers_rest.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Vance
+						title:c_atranta.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Frey
+						title:c_the_twins.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Piper
+						title:c_pinkmaiden.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						
+						### Strong
+						title:d_three_forks.holder = {	if = { limit = { 
+																				is_ai = yes
+																				NOR = { is_at_war_with = title:e_the_iron_throne.holder
+																				is_at_war_with = title:e_the_riverlands.holder
+																				}
+																				
+									}
+									save_scope_as = rebel_riverlord
+									random_list = {
+											1 = {
+													root.story_owner = { random_character_war = { limit = { using_cb = dragon_subjugation_cb } add_attacker = scope:rebel_riverlord }
+													}
+											}
+											100 = {
+													
+													}
+											}
+											
+											}
+									
+								
+									
+									}
+						}
+			
+								
+								
+								
+			}
+		}
+		
+	}
+
+
+
+
+
+		##########################
+
+
+		
+	 
+	
+	
+	story_agot_scenario_aegons_conquest_faith_fixer = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Faith Fixer initialized"
+		set_variable = {
+			name	= conquest_status
+			value	= flag:ongoing
+		}
+	
+		
+	}
+	on_end = {
+	
+	}
+	on_owner_death = {
+	#end_story = yes
+	}
+
+	# General daily checks
+	effect_group = {
+		days = 365
+
+		# 
+		triggered_effect = {
+			trigger = {
+				
+				story_owner = { has_faith = faith:valyrian
+								is_ai = yes
+				}
+			}
+
+			effect = {
+			story_owner = {
+
+			every_child = { limit = { is_ai = yes has_faith = faith:valyrian }
+			set_character_faith = faith:the_seven_main
+			}
+			every_vassal = { limit = { is_ai = yes 
+									   has_faith = faith:valyrian
+									  }
+									set_character_faith = faith:the_seven_main
+
+			}
+			every_courtier = { limit = { is_ai = yes 
+									   has_faith = faith:valyrian
+									  }
+									set_character_faith = faith:the_seven_main
+
+			}
+			
+			}
+		}
+				
+			
+		
+		
+		
+		}
+		triggered_effect = {
+			trigger = {
+				story_owner = { is_ai = yes }
+				character:Targaryen_27 = { is_alive = yes }
+				OR = { 
+						character:Targaryen_28 = { is_alive = no }
+						character:Targaryen_29 = { is_alive = no }
+				}
+				
+			}
+
+			effect = {
+			character:Targaryen_27 = { 
+			set_character_faith = faith:the_seven_main
+			every_child = { limit = { is_ai = yes has_faith = faith:valyrian }
+			set_character_faith = faith:the_seven_main
+			}
+			
+			}
+		}
+				
+			
+		
+		
+		
+		}
+		triggered_effect = {
+			trigger = {
+				
+				story_owner = { has_realm_law = equal_law }
+			}
+
+			effect = {
+			story_owner = { add_realm_law = male_preference_law }
+			
+			
+			}
+		}
+		triggered_effect = {
+			trigger = {
+				
+				current_date >= 8055.1.1
+			}
+
+			effect = {
+			faith:the_seven_main = { add_doctrine = agot_exceptionalism_doctrine }
+			end_story = yes
+			
+			
+			}
+		}
+				
+			
+		
+		
+		
+		}
+		
+	}
+
+
+
+
+
+		##########################
+
+
+		
+	 
+	
+	
+
+	
+	
+##### century of blood start AC
+
+
+
+story_agot_scenario_aegons_conquest_century_of_blood = {
+	# by Freeholder)
+
+	on_setup = {
+		debug_log = "Aegon's Conquest initialized"
+		set_variable = {
+			name	= conquest_status
+			value	= flag:preconquest
+		}
+		set_variable = {
+			name	= aegons_landing
+			value	= flag:incomplete
+		}
+		set_variable = {
+			name	= crownlands
+			value	= flag:incomplete
+		}
+		set_variable = {
+			name	= riverlands
+			value	= flag:incomplete
+		}
+		set_variable = {
+			name	= aegon_free_dragon
+			value	= flag:not_given
+		}
+		
+		
+
+ story_owner = { 
+
+ agot_create_artifact_aegons_armour_more_bookmarks_effect = { OWNER = this }
+
+ }
+	}
+	on_end = {
+	
+	
+	}
+	on_owner_death = {
+	aegons_conquest_on_owner_death_effect = yes
+	}
+
+	effect_group = {
+	days = 1
+			first_valid = {
+			
+			### Start the Conquest
+				triggered_effect = {
+					trigger = { story_owner = { age >= 14
+												has_trait = dragonrider
+											    current_date > 7999.1.1
+								}
+								var:conquest_status = flag:preconquest
+					}	
+					effect = { 
+					if = { limit = { exists = title:e_the_iron_throne.holder }
+						end_story = yes
+						}
+						else = {
+							story_owner = {	trigger_event = agot_events_more_bookmarks_misc.10 }
+								set_variable = {
+									name	= conquest_status
+									value	= flag:ongoing
+								}
+								}
+					}
+				}
+				triggered_effect = {
+					trigger = { story_owner = { age >= 25
+												NOT = { has_trait = dragonrider }
+											    current_date > 7999.1.1
+								}
+								var:aegon_free_dragon = flag:not_given
+					}	
+					effect = { 
+							story_owner = {
+											if = { limit = { character:dragon_balerion = { is_alive = yes
+													   NOT = { has_variable = current_rider }
+													   }
+													}
+														if = { limit = { character:dragon_balerion.employer = { any_courtier = { has_relation_agot_dragon = character:dragon_balerion } } }
+															
+																character:dragon_balerion.employer = { random_courtier = { limit = { has_relation_agot_dragon = character:dragon_balerion } remove_relation_agot_dragon = character:dragon_balerion } }
+														}
+														agot_bond_dragon_relation_effect = {
+															ACTOR = this
+															DRAGON = character:dragon_balerion
+														}
+											}
+											else = {
+											
+											create_artifact_dragon_egg_black_effect = { OWNER = this }
+											}
+											every_spouse = { agot_create_random_dragon_egg_artifact = { OWNER = this } }
+
+							}
+								set_variable = {
+									name	= aegon_free_dragon
+									value	= flag:given
+								}
+					}
+				}
+	
+			
+			
+				triggered_effect = {
+					trigger = { story_owner = { completely_controls_region = world_westeros_the_crownlands
+												NOT = { exists = title:k_the_crownlands.holder }
+								}
+								 var:crownlands = flag:incomplete
+								 var:conquest_status = flag:ongoing
+					}	
+					effect = { 
+								set_variable = {
+									name	= crownlands
+									value	= flag:complete
+								}
+					
+					agot_more_bookmarks_ac_crownlands_effect = yes
+					story_owner = { get_title = title:k_the_crownlands }
+					}
+				}
+				triggered_effect = {
+					trigger = { story_owner = { completely_controls_region = world_westeros_the_riverlands
+												NOT = { exists = title:k_the_riverlands.holder }
+								}
+							var:conquest_status = flag:ongoing
+							 var:riverlands = flag:incomplete
+					}	
+					effect = {
+								set_variable = {
+									name	= riverlands
+									value	= flag:complete
+								}
+					agot_more_bookmarks_ac_riverlands_effect = yes
+					story_owner = { get_title = title:k_the_riverlands }
+
+					}
+				}
+				triggered_effect = {
+					trigger = { story_owner = { is_at_war = no } 
+							   var:conquest_status = flag:ongoing
+					}	# otherwise, check for this trigger
+					effect = { 
+					save_scope_as = aegons_conquest_story
+					story_owner = { trigger_event =  agot_events_more_bookmarks_misc.11 }}
+				}
+				triggered_effect = {
+					trigger = { 
+											    current_date > 8076.1.1
+								var:conquest_status = flag:preconquest
+					}	
+					effect = { 
+						end_story = yes
+					}
+				}
+				}
+	}
+		
+	}
+
+
+
+
+
+		##########################
+
+
+		

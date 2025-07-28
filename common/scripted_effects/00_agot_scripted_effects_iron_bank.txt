@@ -1,0 +1,98 @@
+﻿#filler effects
+
+agot_take_third_tier_iron_bank_loan_effect = {
+	add_gold = 100
+	add_character_flag = loaned_from_iron_bank_flag
+	add_character_flag = third_tier_iron_bank_loan_flag
+	trigger_event = {
+		id =  agot_braavos_iron_bank.0002
+		years = 2
+	}
+}
+
+agot_take_second_tier_iron_bank_loan_effect = {
+	add_gold = 500
+	add_character_flag = loaned_from_iron_bank_flag
+	add_character_flag = second_tier_iron_bank_loan_flag
+	trigger_event = {
+		id =  agot_braavos_iron_bank.0002
+		years = 2
+	}
+}
+
+agot_take_first_tier_iron_bank_loan_effect = {
+	add_gold = 1000
+	add_character_flag = loaned_from_iron_bank_flag
+	add_character_flag = first_tier_iron_bank_loan_flag
+	trigger_event = {
+		id =  agot_braavos_iron_bank.0002
+		months = 18
+	}
+}
+
+agot_pay_off_iron_bank_third_tier_loan_effect = {
+	remove_short_term_gold = 200
+	remove_character_flag = third_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+}
+
+agot_pay_off_iron_bank_second_tier_loan_effect = {
+	remove_short_term_gold = 700
+	remove_character_flag = second_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+}
+
+agot_pay_off_iron_bank_first_tier_loan_effect = {
+	remove_short_term_gold = 1200
+	remove_character_flag = first_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+}
+
+agot_pay_off_iron_bank_third_tier_late_loan_effect = {
+	remove_short_term_gold = 400
+	remove_character_flag = third_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+	remove_character_flag = delayed_once
+}
+
+agot_pay_off_iron_bank_second_tier_late_loan_effect = {
+	remove_short_term_gold = 800
+	remove_character_flag = second_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+	remove_character_flag = delayed_once
+}
+
+agot_pay_off_iron_bank_first_tier_late_loan_effect = {
+	remove_short_term_gold = 1600
+	remove_character_flag = first_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+	remove_character_flag = delayed_once
+}
+
+
+agot_pay_off_iron_bank_third_tier_very_late_loan_effect = {
+	remove_short_term_gold = 600
+	remove_character_flag = third_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+	remove_character_flag = delayed_twice
+}
+
+agot_pay_off_iron_bank_second_tier_very_late_loan_effect = {
+	remove_short_term_gold = 1000
+	remove_character_flag = second_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+	remove_character_flag = delayed_twice
+}
+
+agot_pay_off_iron_bank_first_tier_very_late_loan_effect = {
+	remove_short_term_gold = 2400
+	remove_character_flag = first_tier_iron_bank_loan_flag
+	remove_character_flag = loaned_from_iron_bank_flag
+	remove_character_flag = delayed_twice
+}
+
+agot_pay_iron_bank_fee_effect = {
+	trigger_event = {
+		id = agot_braavos_iron_bank.0006
+	}
+}

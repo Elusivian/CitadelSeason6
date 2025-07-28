@@ -1,0 +1,25 @@
+mc_second_sons = {
+	pattern = "pattern_solid.dds"	
+	color1 = rgb { 157 136 90 }
+	color2 = rgb { 69 15 13 }
+	textured_emblem = {
+		texture = "asoiaf_second_sons.dds"
+		instance = { position = { 0.495 0.53 } scale = { 1.7 1.7 }  }			
+	}
+}
+
+mc_golden_company = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 179 146 70 }
+	color2 = rgb { 163 93 50 }
+	color3 = "asoiaf_burgundy_dark"
+	colored_emblem = {
+		texture = "historical_plain.dds"
+		color1 = "asoiaf_burgundy_dark"
+		instance = { position = { 0.5 0.5 } scale = { 2.0 2.0 } }
+	}
+	textured_emblem = {
+		texture = "asoiaf_spear_skulls.dds"
+		instance = { position = { 0.5 0.65 } scale = { 1.2 1.2 } }
+	}
+}

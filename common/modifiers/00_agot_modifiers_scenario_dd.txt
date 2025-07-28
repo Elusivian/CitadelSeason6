@@ -1,0 +1,4 @@
+﻿agot_dd_rhaegar_infertility = {
+	icon = health_negative
+	fertility = -2
+}

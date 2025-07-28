@@ -1,0 +1,748 @@
+﻿## AGOT ADDED FILE - File for Bookmarks
+
+
+
+
+
+
+
+
+
+
+agot_more_bookmarks_8000= {
+	start_date = 8000.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 100
+	}
+
+	
+}
+
+
+
+
+
+
+agot_more_bookmarks_8005= {
+	start_date = 8005.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8010= {
+	start_date = 8010.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8015= {
+	start_date = 8015.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8020= {
+	start_date = 8020.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8025= {
+	start_date = 8025.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8030= {
+	start_date = 8030.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8035= {
+	start_date = 8035.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8040= {
+	start_date = 8040.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8045= {
+	start_date = 8045.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8050= {
+	start_date = 8050.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8055= {
+	start_date = 8055.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8060= {
+	start_date = 8060.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8065= {
+	start_date = 8065.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8070= {
+	start_date = 8070.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8075= {
+	start_date = 8075.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8080= {
+	start_date = 8080.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8085= {
+	start_date = 8085.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8090= {
+	start_date = 8090.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8095= {
+	start_date = 8095.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8100= {
+	start_date = 8100.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8105= {
+	start_date = 8105.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8110= {
+	start_date = 8110.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8115= {
+	start_date = 8115.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8120= {
+	start_date = 8120.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8125= {
+	start_date = 8125.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8130= {
+	start_date = 8130.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8135= {
+	start_date = 8135.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8140= {
+	start_date = 8140.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8145= {
+	start_date = 8145.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8150= {
+	start_date = 8150.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8155= {
+	start_date = 8155.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8160= {
+	start_date = 8160.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8165= {
+	start_date = 8165.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8170= {
+	start_date = 8170.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8175= {
+	start_date = 8175.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8180= {
+	start_date = 8180.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8185= {
+	start_date = 8185.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8190= {
+	start_date = 8190.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8195= {
+	start_date = 8195.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8200= {
+	start_date = 8200.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8205= {
+	start_date = 8205.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8210= {
+	start_date = 8210.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8215= {
+	start_date = 8215.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8220= {
+	start_date = 8220.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8225= {
+	start_date = 8225.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8230= {
+	start_date = 8230.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8235= {
+	start_date = 8235.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8240= {
+	start_date = 8240.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8245= {
+	start_date = 8245.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8250= {
+	start_date = 8250.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8255= {
+	start_date = 8255.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8260= {
+	start_date = 8260.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8265= {
+	start_date = 8265.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8270= {
+	start_date = 8270.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8275= {
+	start_date = 8275.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8280= {
+	start_date = 8280.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8285= {
+	start_date = 8285.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8290= {
+	start_date = 8290.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8295= {
+	start_date = 8295.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+
+agot_more_bookmarks_8300= {
+	start_date = 8300.1.1
+	is_playable = yes
+	group = agot_more_bookmarks_brackets_group
+
+	weight = {
+		value = 0
+	}
+
+	
+}
+

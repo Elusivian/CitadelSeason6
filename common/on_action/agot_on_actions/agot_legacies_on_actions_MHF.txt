@@ -1,0 +1,92 @@
+﻿agot_set_legacies_MHF = {
+	on_actions = {
+		agot_set_MHF_legacies
+		set_starting_dynasty_levels_MHF
+	}
+}
+agot_set_MHF_legacies = {
+	effect = {
+
+		dynasty:dynn_Scales = {
+			add_dynasty_prestige = 2250
+			
+		}
+		dynasty:dynn_Sunglass = {
+			add_dynasty_prestige = 2250
+			
+		}
+
+		dynasty:dynn_Strickland = {
+			add_dynasty_prestige = 2250
+		}
+
+		dynasty:dynn_Percy = {
+			add_dynasty_prestige = 2250
+		}
+
+		dynasty:dynn_Noye = {
+			add_dynasty_prestige = 2250
+		}
+
+		dynasty:dynn_Umber = {
+			
+			remove_dynasty_perk = umber_legacy_1
+		}
+		dynasty:dynn_Forrester = {
+			
+			remove_dynasty_perk = forrester_legacy_1
+		}
+
+		dynasty:dynn_Shett = {
+			add_dynasty_prestige = 2250
+			
+		}
+
+		dynasty:dynn_Bricker = {
+			add_dynasty_prestige = 2250
+			
+			
+			
+			
+			
+		}
+		dynasty:dynn_Clegane = {
+			add_dynasty_prestige = 2250
+			
+		}
+
+		dynasty:dynn_Osgrey = {
+			add_dynasty_prestige = 2250
+			
+			
+			
+		}
+
+		dynasty:dynn_Graceford = {
+			
+		}
+
+		dynasty:dynn_Dayne = {
+			add_dynasty_prestige = 0
+			
+			
+			remove_dynasty_perk = dayne_legacy_1
+		}
+
+		dynasty:dynn_Drox = {
+			add_dynasty_prestige = 2250
+			
+		}
+
+		dynasty:dynn_Stark = {
+			add_dynasty_prestige = 20250
+		}
+
+	}
+}
+
+set_starting_dynasty_levels_MHF = {
+	effect = {
+		dynasty:dynn_Bricker = { agot_set_dynasty_level_history_effect = { LEVEL = 2 } }
+	}
+}
