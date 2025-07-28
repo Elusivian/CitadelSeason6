@@ -1,0 +1,3713 @@
+﻿namespace = faegon_landing
+
+#AGOT TODO: AI WEIGHTS
+#AGOT TODO: COPY TRAITS
+#AGOT TODO: BLACKFYRE LETTER JOINING EVENT
+
+faegon_landing.0001 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		NOT = {
+			has_global_variable = agot_faegon_invision_started
+		}
+	}
+
+	immediate = {
+		set_global_variable = agot_faegon_invision_started
+		random_list = {
+			0 = { #faegon
+				trigger = {
+					NOR = {
+						has_global_variable = agot_6th_blackfyre_rebellion_happened
+						has_global_variable = agot_faegon_landing_cooldown
+					}
+				}
+				modifier = {
+					add = 1000
+					OR = {
+						has_game_rule = agot_faegon_random_claimant
+						has_game_rule = agot_faegon_faegon
+					}
+				}
+
+				create_character = { #spawn him as aegon of essos
+					name = "Aegon"
+					gender = male
+					culture = culture:high_valyrian
+					faith = faith:the_seven_main
+					location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+					age = agot_get_faegon_age
+					dynasty_house = house:house_Essos
+
+					random_traits_list = {
+						count = { 1 2 }
+						logistician = {}
+						military_engineer = {}
+						aggressive_attacker = {}
+						unyielding_defender = {}
+						forder = {}
+						flexible_leader = {}
+						reckless = {}
+						open_terrain_expert = {}
+						rough_terrain_expert = {}
+						cautious_leader = {}
+						organizer = {}
+					}
+
+					random_traits = no
+
+					martial = 5
+					diplomacy = 7
+					intrigue = 4
+					stewardship = 7
+					learning = 7
+					#health = 7 # AGOT TODO
+					prowess = 8
+
+					#copy traits from Aegon
+					trait = beauty_good_2
+					trait = intellect_good_1
+					trait = education_martial_3
+					trait = education_martial_prowess_3
+					trait = ambitious
+					trait = humble
+					trait = temperate
+					trait = brave
+					trait = refusing_marriage #until the end of the war
+
+					after_creation = {
+						give_nickname = nick_young_griff
+						add_character_flag = has_scripted_appearance
+						make_trait_inactive = cool_silver_hair
+						make_trait_inactive = purple_eyes_1
+						learn_language = language_common
+					}
+
+					save_scope_as = faegon
+
+				}
+				hidden_effect = {
+					scope:faegon = {
+						random = {
+							chance = 10
+
+							if = { #only spawn blackfyre if one does not already exist
+								limit = {
+									any_living_character = { #dont like this but i aint see any other way to do it chief
+										NOT = {
+											any_character_artifact = {
+												has_artifact_modifier = vs_blackfyre_modifier
+											}
+										}
+									}
+								}
+								agot_create_artifact_vs_blackfyre_effect = { OWNER = scope:faegon }
+
+							}
+						}
+
+						while = {
+							limit = {
+								number_of_personality_traits < personality_trait_limit
+							}
+							agot_add_random_trait_effect = yes
+						}
+
+						set_variable = {
+							name = faegon_main_character
+							value = flag:faegon
+						}
+						#set_house = dynasty:dynn_Essos
+						copy_inheritable_appearance_from = character:Targaryen_11
+					}
+				}
+			}
+			0 = { #dany
+				trigger = {
+					OR = {
+						NOT = {
+							has_game_rule = agot_story_historical_events_historical_outcomes
+						}
+						has_game_rule = agot_faegon_dany
+					}
+					trigger_if = {
+						limit = {
+							NOT = { has_game_rule = agot_faegon_dany }
+						}
+						character:Targaryen_8 = {
+							AND = { #only trigger it if viserys died in amy other than natural way
+								is_alive = no
+								death_reason = death_vanished
+							}
+						}
+					}
+					NOR = {
+						has_global_variable = agot_6th_blackfyre_rebellion_happened
+						has_global_variable = agot_faegon_landing_cooldown
+					}
+				}
+				modifier = {
+					add = 1000
+					OR = {
+						has_game_rule = agot_faegon_random_claimant
+						has_game_rule = agot_faegon_dany
+					}
+				}
+
+				if = {
+					limit = {
+						exists = character:Targaryen_9
+					}
+					if = {
+						limit = {
+							character:Targaryen_9 = {
+								death_reason = death_vanished
+							}
+						}
+						create_character = {
+							name = "Daenerys"
+							gender = female
+							culture = culture:high_valyrian
+							faith = faith:the_seven_main
+							location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+							age = agot_get_dany_age
+							mother = character:Targaryen_2
+							father = character:Targaryen_1
+							dynasty_house = character:Targaryen_1.house
+
+							martial = 4
+							diplomacy = 3
+							intrigue = 2
+							stewardship = 3
+							learning = 5
+							prowess = 4
+
+							trait = education_diplomacy_3
+							trait = intellect_good_1
+							trait = beauty_good_3
+							trait = refusing_marriage
+							trait = dragonrider
+							trait = trusting
+							trait = temperate
+							trait = ambitious
+							trait = generous
+
+							save_scope_as = faegon
+
+							random_traits = no
+
+							after_creation = {
+								agot_spawn_adult_drogon_effect = yes
+								agot_dragon_revival_effect = yes
+								hidden_effect = {
+									agot_tame_dragon = {
+										TAMER = scope:faegon
+										DRAGON = scope:dragon
+									}
+								}
+								give_nickname = nick_stormborn
+								make_trait_inactive = is_targaryen_9
+								set_sexuality = bisexual
+								add_character_flag = has_scripted_appearance
+								make_trait_inactive = cool_silver_hair
+								make_trait_inactive = purple_eyes_1
+								learn_language = language_common
+							}
+						}
+
+						hidden_effect = {
+							scope:faegon = {
+								copy_traits = character:Targaryen_9
+
+								while = {
+									limit = {
+										number_of_personality_traits < personality_trait_limit
+									}
+									agot_add_random_trait_effect = yes
+								}
+
+								if = {
+									limit = { is_adult = yes }
+									agot_add_random_education_effect = yes
+								}
+								else_if = {
+									limit = {
+										NOR = {
+											has_trait = charming
+											has_trait = pensive
+											has_trait = rowdy
+											has_trait = bossy
+											has_trait = curious
+										}
+									}
+									add_trait = charming
+								}
+
+								copy_inheritable_appearance_from = character:Targaryen_9
+								create_title_and_vassal_change = {
+									type = created
+									save_scope_as = change
+								}
+								title:e_targaryen_host_title = {
+									change_title_holder = {
+										holder = scope:faegon
+										change = scope:change
+									}
+								}
+
+								make_trait_inactive = is_targaryen_9
+								add_character_flag = dany_fled_to_essos
+
+								hidden_effect = {
+									create_character = {
+										gender = female
+										age = 50
+										culture = culture:high_valyrian
+										faith = faith:the_seven_main
+										location = scope:faegon.location
+
+										dynasty = none
+
+										save_scope_as = culler_mother
+
+										after_creation = {
+											death =  { death_reason = death_disappearance }
+										}
+									}
+
+									create_character = {
+										gender = male
+										age = 50
+										culture = culture:high_valyrian
+										faith = faith:the_seven_main
+										location = scope:faegon.location
+
+										dynasty = generate
+
+										save_scope_as = culler_father
+
+										after_creation = {
+											death =  { death_reason = death_disappearance }
+										}
+									}
+									character:Targaryen_9 = {
+										set_mother = scope:culler_mother
+										set_father = scope:culler_father
+										set_house =  scope:culler_father.house
+									}
+								}
+
+								resolve_title_and_vassal_change = scope:change
+
+								set_variable = {
+									name = faegon_main_character
+									value = flag:dany
+								}
+							}
+						}
+					}
+					else = {
+						character:Targaryen_9 = {
+							save_scope_as = faegon
+							set_variable = {
+								name = faegon_main_character
+								value = flag:dany
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						title:e_the_iron_throne = {
+							exists = var:agot_faegon_dany_character
+						}
+					}
+					if = {
+						limit = {
+							title:e_the_iron_throne = {
+								var:agot_faegon_dany_character = {
+									AND = {
+										is_alive = no
+										death_reason = death_vanished
+									}
+								}
+							}
+						}
+						create_character = {
+							age = agot_get_dany_age_scripted_birth
+							random_traits = no
+							mother = character:Targaryen_2
+							father = character:Targaryen_1
+							location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+							gender_female_chance = {
+								value = 100
+								if = {
+									limit = {
+										title:e_the_iron_throne = {
+											var:agot_faegon_dany_character = {
+												is_female = no
+											}
+										}
+									}
+									add = -100
+								}
+							}
+							trait = refusing_marriage
+							faith = faith:the_seven_main
+							culture = culture:high_valyrian
+							dynasty_house = character:Targaryen_1.house
+							save_scope_as = faegon
+
+						}
+						hidden_effect = {
+							scope:faegon = {
+								copy_traits = title:e_the_iron_throne.var:agot_faegon_dany_character
+
+								while = {
+									limit = {
+										number_of_personality_traits < personality_trait_limit
+									}
+									agot_add_random_trait_effect = yes
+								}
+
+								if = {
+									limit = { is_adult = yes }
+									agot_add_random_education_effect = yes
+								}
+								else_if = {
+									limit = {
+										NOR = {
+											has_trait = charming
+											has_trait = pensive
+											has_trait = rowdy
+											has_trait = bossy
+											has_trait = curious
+										}
+									}
+									add_trait = charming
+								}
+
+								if = {
+									limit = { is_male = yes }
+									change_first_name = "Daemon"
+								}
+								if = {
+									limit = { is_female = yes }
+									change_first_name = "Daenerys"
+								}
+								give_nickname = nick_stormborn
+								make_trait_inactive = is_targaryen_9
+								add_character_flag = dany_fled_to_essos
+								copy_inheritable_appearance_from = character:Targaryen_90
+
+								set_variable = {
+									name = faegon_main_character
+									value = flag:dany
+								}
+								create_story = {
+									type = agot_story_targ_faegon_landing
+									save_scope_as = faegon_story
+								}
+							}
+							create_character = {
+								gender = female
+								age = 50
+								culture = culture:high_valyrian
+								faith = faith:the_seven_main
+								location = scope:faegon.location
+
+								dynasty = none
+
+								save_scope_as = culler_mother
+
+								after_creation = {
+									death =  { death_reason = death_disappearance }
+								}
+							}
+
+							create_character = {
+								gender = male
+								age = 50
+								culture = culture:high_valyrian
+								faith = faith:the_seven_main
+								location = scope:faegon.location
+
+								dynasty = generate
+
+								save_scope_as = culler_father
+
+								after_creation = {
+									death =  { death_reason = death_disappearance }
+								}
+							}
+							title:e_the_iron_throne.var:agot_faegon_dany_character = {
+								set_mother = scope:culler_mother
+								set_father = scope:culler_father
+								set_house =  scope:culler_father.house
+							}
+						}
+					}
+					else = {
+						title:e_the_iron_throne.var:agot_faegon_dany_character = {
+							set_variable = {
+								name = faegon_main_character
+								value = flag:dany
+							}
+						}
+					}
+				}
+			}
+			0 = { #viserys
+				trigger = {
+					OR = {
+						NOT = {
+							has_game_rule = agot_story_historical_events_historical_outcomes
+						}
+						has_game_rule = agot_faegon_viserys
+					}
+					trigger_if = {
+						limit = {
+							character:Targaryen_8 = {
+								is_alive = no
+							}
+						}
+						character:Targaryen_8 = {
+							is_alive = no
+							death_reason = death_vanished
+						}
+					}
+					NOR = {
+						has_global_variable = agot_6th_blackfyre_rebellion_happened
+						has_global_variable = agot_faegon_landing_cooldown
+					}
+				}
+				modifier = {
+					add = 1000
+					OR = {
+						has_game_rule = agot_faegon_random_claimant
+						has_game_rule = agot_faegon_viserys
+					}
+				}
+				if = { #he has vanished to the shadow realm
+					limit = {
+						character:Targaryen_8 = {
+							AND = {
+								is_alive = no
+								death_reason = death_vanished
+							}
+						}
+					}
+					create_character = {
+						name = "Viserys"
+						martial = 2
+						diplomacy = 6
+						intrigue = 6
+						stewardship = 4
+						learning = 5
+						age = get_viserys_age
+						gender = male
+						location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+
+						random_traits = no
+
+						faith = faith:the_seven_main
+						culture = culture:high_valyrian
+
+						father = character:Targaryen_1
+						mother = character:Targaryen_2
+						dynasty_house = character:Targaryen_1.house
+
+						trait = callous
+						trait = stubborn
+						trait = lunatic_1
+						trait = wrathful
+						trait = ambitious
+
+						trait = refusing_marriage
+
+						random_traits_list = {
+							count = 1
+							education_diplomacy_1 = { weight = { base = 20 } }
+							education_diplomacy_2 = { weight = { base = 45 } }
+							education_diplomacy_3 = { weight = { base = 30 } }
+							education_diplomacy_4 = { weight = { base = 5 } }
+							education_intrigue_1 = { weight = { base = 20 } }
+							education_intrigue_2 = { weight = { base = 45 } }
+							education_intrigue_3 = { weight = { base = 30 } }
+							education_intrigue_4 = { weight = { base = 5 } }
+						}
+
+						random_traits_list = {
+							count = 1
+							education_martial_prowess_1 = {
+								weight = { base = 19 }
+							}
+							education_martial_prowess_2 = {
+								weight = { base = 70 }
+							}
+							education_martial_prowess_3 = {
+								weight = { base = 10 }
+							}
+							education_martial_prowess_4 = {
+								weight = { base = 1 }
+							}
+						}
+
+
+						after_creation = {
+							copy_inheritable_appearance_from = character:Targaryen_8
+							give_nickname = nick_the_beggar_king
+							set_sexuality = heterosexual
+							add_character_flag = has_scripted_appearance
+							make_trait_inactive = cool_silver_hair
+							make_trait_inactive = purple_eyes_1
+							learn_language = language_common
+						}
+						save_scope_as = faegon
+					}
+
+					scope:faegon = {
+						set_variable = {
+							name = faegon_main_character
+							value = flag:viserys
+						}
+						create_character = {
+							gender = female
+							age = 50
+							culture = culture:high_valyrian
+							faith = faith:the_seven_main
+							location = scope:faegon.location
+
+							dynasty = none
+
+							save_scope_as = culler_mother
+
+							after_creation = {
+								death =  { death_reason = death_disappearance }
+							}
+						}
+
+						create_character = {
+							gender = male
+							age = 50
+							culture = culture:high_valyrian
+							faith = faith:the_seven_main
+							location = scope:faegon.location
+
+							dynasty = generate
+
+							save_scope_as = culler_father
+
+							after_creation = {
+								death =  { death_reason = death_disappearance }
+							}
+						}
+						character:Targaryen_8 = {
+							set_mother = scope:culler_mother
+							set_father = scope:culler_father
+							set_house =  scope:culler_father.house
+						}
+
+					}
+
+					random = {	#random chance dany spawns with vizzy
+						chance = 50
+
+						if = {
+							limit = {
+								title:e_the_iron_throne = {
+									exists = var:agot_faegon_dany_character
+									var:agot_faegon_dany_character = {
+										AND = {
+											is_alive = no
+											death_reason = death_vanished
+										}
+									}
+								}
+							}
+							create_character = {
+								age = agot_get_dany_age_scripted_birth
+								random_traits = no
+								mother = character:Targaryen_2
+								father = character:Targaryen_1
+								location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+
+								gender_female_chance = {
+									value = 100
+									if = {
+										limit = {
+											title:e_the_iron_throne = {
+												var:agot_faegon_dany_character = {
+													is_female = no
+												}
+											}
+										}
+										add = -100
+									}
+								}
+								faith = faith:the_seven_main
+								culture = culture:high_valyrian
+								dynasty_house = character:Targaryen_1.house
+								save_scope_as = dany
+
+							}
+							hidden_effect = {
+								scope:dany = {
+									copy_traits = title:e_the_iron_throne.var:agot_faegon_dany_character
+
+									while = {
+										limit = {
+											number_of_personality_traits < personality_trait_limit
+										}
+										agot_add_random_trait_effect = yes
+									}
+
+									if = {
+										limit = { is_adult = yes }
+										agot_add_random_education_effect = yes
+									}
+									else_if = {
+										limit = {
+											NOR = {
+												has_trait = charming
+												has_trait = pensive
+												has_trait = rowdy
+												has_trait = bossy
+												has_trait = curious
+											}
+										}
+										add_trait = charming
+									}
+
+									if = {
+										limit = { is_male = yes }
+										change_first_name = "Daemon"
+									}
+									if = {
+										limit = { is_female = yes }
+										change_first_name = "Daenerys"
+									}
+									give_nickname = nick_stormborn
+									make_trait_inactive = is_targaryen_9
+									add_character_flag = dany_fled_to_essos
+									copy_inheritable_appearance_from = character:Targaryen_9
+								}
+
+								create_character = {
+									gender = female
+									age = 50
+									culture = culture:high_valyrian
+									faith = faith:the_seven_main
+									location = scope:faegon.location
+
+									dynasty = none
+
+									save_scope_as = culler_mother
+
+									after_creation = {
+										death =  { death_reason = death_disappearance }
+									}
+								}
+
+								create_character = {
+									gender = male
+									age = 50
+									culture = culture:high_valyrian
+									faith = faith:the_seven_main
+									location = scope:faegon.location
+
+									dynasty = none
+
+									save_scope_as = culler_father
+
+									after_creation = {
+										death =  { death_reason = death_disappearance }
+									}
+								}
+								title:e_the_iron_throne.var:agot_faegon_dany_character = {
+									set_mother = scope:culler_mother
+									set_father = scope:culler_father
+									set_house =  scope:culler_father.house
+								}
+							}
+						}
+
+						else = {
+							create_character = {
+								name = "Daenerys"
+								gender = female
+								culture = culture:high_valyrian
+								faith = faith:the_seven_main
+								location = scope:faegon.location
+								age = agot_get_dany_age
+								mother = character:Targaryen_2
+								father = character:Targaryen_1
+								dynasty_house = character:Targaryen_1.house
+
+
+								martial = 4
+								diplomacy = 3
+								intrigue = 2
+								stewardship = 3
+								learning = 5
+								prowess = 4
+
+								trait = intellect_good_1
+								trait = beauty_good_3
+
+								after_creation = {
+									give_nickname = nick_stormborn
+									make_trait_inactive = is_targaryen_9
+									add_character_flag = dany_fled_to_essos
+									set_sexuality = bisexual
+									add_character_flag = has_scripted_appearance
+									make_trait_inactive = cool_silver_hair
+									make_trait_inactive = purple_eyes_1
+									learn_language = language_common
+								}
+
+								save_scope_as = dany
+							}
+
+							create_character = {
+								gender = female
+								age = 50
+								culture = culture:high_valyrian
+								faith = faith:the_seven_main
+								location = scope:faegon.location
+
+								dynasty = none
+
+								save_scope_as = culler_mother
+
+								after_creation = {
+									death =  { death_reason = death_disappearance }
+								}
+							}
+
+							create_character = {
+								gender = male
+								age = 50
+								culture = culture:high_valyrian
+								faith = faith:the_seven_main
+								location = scope:faegon.location
+
+								dynasty = generate
+
+								save_scope_as = culler_father
+
+								after_creation = {
+									death =  { death_reason = death_disappearance }
+								}
+							}
+
+
+							hidden_effect = {
+								scope:dany = {
+									copy_traits = character:Targaryen_9
+
+									while = {
+										limit = {
+											number_of_personality_traits < personality_trait_limit
+										}
+										agot_add_random_trait_effect = yes
+									}
+
+									if = {
+										limit = { is_adult = yes }
+										agot_add_random_education_effect = yes
+									}
+									else_if = {
+										limit = {
+											NOR = {
+												has_trait = charming
+												has_trait = pensive
+												has_trait = rowdy
+												has_trait = bossy
+												has_trait = curious
+											}
+										}
+										add_trait = charming
+									}
+								}
+								character:Targaryen_9 = {
+									set_mother = scope:culler_mother
+									set_father = scope:culler_father
+									set_house =  scope:culler_father.house
+								}
+							}
+						}
+
+						scope:faegon = {
+							set_variable = {
+								name = faegon_vizzy_dany_spawned
+								value = scope:dany
+							}
+							remove_trait = refusing_marriage
+							create_betrothal = scope:dany
+						}
+
+					}
+				}
+				else = { #he is alive
+					character:Targaryen_9 = {
+						save_scope_as = faegon
+
+						set_variable = {
+							name = faegon_main_character
+							value = flag:viserys
+						}
+					}
+				}
+			}
+			0 = { #Jae (jon snow)
+				trigger = {
+					OR = {
+						NOT = {
+							has_game_rule = agot_story_historical_events_historical_outcomes
+						}
+						has_game_rule = agot_faegon_jon
+					}
+					has_global_variable = jon_fled_to_essos
+					trigger_if = {
+						limit = {
+							title:e_the_iron_throne.var:agot_faegon_jon_snow_char = {
+								is_alive = no
+							}
+						}
+						title:e_the_iron_throne.var:agot_faegon_jon_snow_char = {
+							is_alive = no
+							death_reason = death_vanished
+						}
+					}
+					NOR = {
+						has_global_variable = agot_6th_blackfyre_rebellion_happened
+						has_global_variable = agot_faegon_landing_cooldown
+					}
+				}
+				modifier = {
+					add = 1000
+					OR = {
+						has_game_rule = agot_faegon_random_claimant
+						has_game_rule = agot_faegon_jon
+					}
+				}
+				if = {
+					limit = {
+						title:e_the_iron_throne = {
+							exists = var:agot_faegon_jon_snow_char
+							var:agot_faegon_jon_snow_char = {
+								is_alive = no
+								death_reason = death_vanished
+							}
+						}
+					}
+					create_character = {
+						age = agot_get_jae_age_scripted_birth
+						mother = character:Stark_5
+						father = character:Targaryen_3
+						location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+						gender_female_chance = {
+							value = 0
+							if = {
+								limit = {
+									title:e_the_iron_throne.var:agot_faegon_jon_snow_char = {
+										is_female = yes
+									}
+								}
+								add = 100
+							}
+						}
+						faith = faith:old_gods_south
+						culture = culture:high_valyrian
+						dynasty_house = character:Targaryen_3.house
+						save_scope_as = faegon
+
+						random_traits_list = {
+							count = 1
+							education_martial_1 = { weight = { base = 20 } }
+							education_martial_2 = { weight = { base = 45 } }
+							education_martial_3 = { weight = { base = 30 } }
+							education_martial_4 = { weight = { base = 5 } }
+						}
+
+						random_traits_list = {
+							count = 1
+							education_martial_prowess_1 = {
+								weight = { base = 19 }
+							}
+							education_martial_prowess_2 = {
+								weight = { base = 70 }
+							}
+							education_martial_prowess_3 = {
+								weight = { base = 10 }
+							}
+							education_martial_prowess_4 = {
+								weight = { base = 1 }
+							}
+						}
+
+						random_traits_list = {
+							count = { 1 2 }
+							logistician = {}
+							military_engineer = {}
+							aggressive_attacker = {}
+							unyielding_defender = {}
+							forder = {}
+							flexible_leader = {}
+							reckless = {}
+							open_terrain_expert = {}
+							rough_terrain_expert = {}
+							cautious_leader = {}
+							organizer = {}
+						}
+
+						random_traits = no
+
+						after_creation = {
+							set_sexuality = bisexual
+							give_nickname = nick_the_dragon_wolf
+							make_trait_inactive = dark_brown_hair
+							make_trait_inactive = grey_eyes
+							learn_language = language_common
+						}
+
+						trait = refusing_marriage
+					}
+					scope:faegon = {
+						copy_inheritable_appearance_from = title:e_the_iron_throne.var:agot_faegon_jon_snow_char
+						copy_traits = title:e_the_iron_throne.var:agot_faegon_jon_snow_char
+						make_trait_inactive = is_stark_7
+
+						while = {
+							limit = {
+								number_of_personality_traits < personality_trait_limit
+							}
+							agot_add_random_trait_effect = yes
+						}
+
+						if = {
+							limit = {
+								has_trait = bastard
+							}
+							remove_trait = bastard
+						}
+
+						if = {
+							limit = {
+								is_male = yes
+							}
+							change_first_name = "Aemon"
+						}
+						if = {
+							limit = {
+								is_female = yes
+							}
+							change_first_name = "Visenya"
+						}
+
+						set_variable = {
+							name = faegon_main_character
+							value = flag:jae
+						}
+					}
+				}
+				else = {
+					title:e_the_iron_throne.var:agot_faegon_jon_snow_char = {
+						save_scope_as = faegon
+
+						set_house = character:Targaryen_3.house
+						set_father = character:Targaryen_3
+						set_mother = character:Stark_5
+
+						give_nickname = nick_the_dragon_wolf
+
+						if = {
+							limit = {
+								has_trait = bastard
+							}
+							remove_trait = bastard
+						}
+
+						if = {
+							limit = {
+								is_male = yes
+							}
+							change_first_name = "Aemon"
+						}
+						if = {
+							limit = {
+								is_female = yes
+							}
+							change_first_name = "Visenya"
+						}
+
+						set_variable = {
+							name = faegon_main_character
+							value = flag:jae
+						}
+					}
+
+				}
+			}
+			100 = { #any targ that survivied the 6th blackfyre
+				trigger = {
+					has_global_variable = agot_6th_blackfyre_rebellion_happened
+					NOT = { has_global_variable = agot_faegon_landing_cooldown  }
+				}
+				create_character = {
+					age = get_post_blackfyre_age
+					gender = male
+					location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+
+					random_traits = no
+
+					gender_female_chance = {
+						value = 0
+						if = {
+							limit = {
+								title:e_the_iron_throne = {
+									var:faegon_post_blackfyre_claimant = {
+										is_female = yes
+									}
+								}
+							}
+							add = 100
+						}
+					}
+
+					faith = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant.faith
+					culture = culture:high_valyrian
+
+					father = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant.father
+					mother = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant.mother
+					dynasty_house = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant.house
+
+					random_traits_list = {
+						count = 1
+						education_diplomacy_1 = { weight = { base = 20 } }
+						education_diplomacy_2 = { weight = { base = 45 } }
+						education_diplomacy_3 = { weight = { base = 30 } }
+						education_diplomacy_4 = { weight = { base = 5 } }
+						education_intrigue_1 = { weight = { base = 20 } }
+						education_intrigue_2 = { weight = { base = 45 } }
+						education_intrigue_3 = { weight = { base = 30 } }
+						education_intrigue_4 = { weight = { base = 5 } }
+					}
+
+					random_traits_list = {
+						count = 1
+						education_martial_prowess_1 = {
+							weight = { base = 19 }
+						}
+						education_martial_prowess_2 = {
+							weight = { base = 70 }
+						}
+						education_martial_prowess_3 = {
+							weight = { base = 10 }
+						}
+						education_martial_prowess_4 = {
+							weight = { base = 1 }
+						}
+					}
+
+					trait = refusing_marriage
+
+					save_scope_as = faegon
+
+					after_creation = {
+						copy_inheritable_appearance_from = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant
+						copy_traits = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant
+						change_first_name = { template_character = title:e_the_iron_throne.var:faegon_post_blackfyre_claimant }
+						add_character_flag = has_scripted_appearance
+						make_trait_inactive = cool_silver_hair
+						make_trait_inactive = purple_eyes_1
+						learn_language = language_common
+					}
+
+				}
+				scope:faegon = {
+					if = {
+						limit = {
+							OR = {
+								has_trait = squire
+							}
+						}
+						add_trait = knight
+					}
+
+					while = {
+						limit = {
+							number_of_personality_traits < personality_trait_limit
+						}
+						agot_add_random_trait_effect = yes
+					}
+
+					create_character = {
+						gender = female
+						age = 50
+						culture = culture:high_valyrian
+						faith = faith:the_seven_main
+						location = scope:faegon.location
+
+						dynasty = none
+
+						save_scope_as = culler_mother
+
+						after_creation = {
+							death =  { death_reason = death_disappearance }
+						}
+					}
+
+					create_character = {
+						gender = male
+						age = 50
+						culture = culture:high_valyrian
+						faith = faith:the_seven_main
+						location = scope:faegon.location
+
+						dynasty = generate
+
+						save_scope_as = culler_father
+
+						after_creation = {
+							death =  { death_reason = death_disappearance }
+						}
+					}
+
+
+					hidden_effect = {
+						title:e_the_iron_throne.var:faegon_post_blackfyre_claimant = {
+							set_mother = scope:culler_mother
+							set_father = scope:culler_father
+							set_house =  scope:culler_father.house
+						}
+					}
+
+					if = {
+						limit = {
+							OR = {
+								has_trait = wounded_1
+							}
+						}
+						remove_trait = wounded_1
+					}
+
+					if = {
+						limit = {
+							OR = {
+								has_trait = wounded_2
+							}
+						}
+						remove_trait = wounded_2
+					}
+
+					if = {
+						limit = {
+							OR = {
+								has_trait = wounded_3
+							}
+						}
+						remove_trait = wounded_3
+					}
+
+					if = {
+						limit = {
+							OR = {
+								has_trait = ill
+							}
+						}
+						remove_trait = ill
+					}
+
+
+					set_variable = {
+						name = faegon_main_character
+						value = flag:post_blackfyre
+					}
+				}
+			}
+		}
+
+		scope:faegon = {
+			add_pressed_claim = title:e_the_iron_throne
+			add_pressed_claim = title:k_the_crownlands
+			add_pressed_claim = title:d_kings_landing
+			add_pressed_claim = title:c_kings_landing
+			add_pressed_claim = title:k_dragonstone
+			add_pressed_claim = title:d_dragonstone
+			add_pressed_claim = title:c_dragonstone
+
+			if = {
+				limit = { dynasty = dynasty:dynn_Targaryen }
+
+				dynasty:dynn_Targaryen = {
+					set_variable = agot_allow_adelphogamous_incest
+				}
+			}
+
+			create_story = {
+				type = agot_story_targ_faegon_landing
+				save_scope_as = faegon_story
+			}
+
+			#Add loyalists as allies
+			dynasty:dynn_Hayford = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Darry = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Goodbrook = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Rowan = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Oakheart = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Tarly = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Hightower = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Hasty = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Hasty = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Lonmouth = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Rykker = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Ashford = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Boggs = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Brune = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Bush = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Pyne = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Hardy = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Cave = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Crabb = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Celtigar = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Velaryon = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Massey = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Mooton = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						game_start_date > 8282.9.15
+						character:Targaryen_10 =  { has_trait = disinherited }
+						character:Targaryen_11 =  { has_trait = disinherited }
+					}
+				}
+				dynasty:dynn_Martell = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+			}
+			dynasty:dynn_Butterwell = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Sunderland = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Peake = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Osgrey = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Ball = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Yronwood = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Vyrwel = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Hightower = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Bracken = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			dynasty:dynn_Hersy = {
+				every_dynasty_member = {
+					limit = {
+						is_ruler = yes
+						is_ai = yes
+						NOT = { is_allied_to = title:e_the_iron_throne.holder }
+					}
+					save_scope_as = loyalist
+					scope:faegon = {
+						create_alliance = {
+							target = scope:loyalist
+							allied_through_owner = scope:faegon
+							allied_through_target = scope:loyalist
+						}
+					}
+					scope:loyalist = {
+						add_opinion = {
+							target = scope:faegon
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				}
+			}
+			random_list = {
+				75 = { }
+				25 = {
+					dynasty:dynn_Tyrell = {
+						every_dynasty_member = {
+							limit = {
+								is_ruler = yes
+								is_ai = yes
+								NOT = { is_allied_to = title:e_the_iron_throne.holder }
+							}
+							save_scope_as = loyalist
+							scope:faegon = {
+								create_alliance = {
+									target = scope:loyalist
+									allied_through_owner = scope:faegon
+									allied_through_target = scope:loyalist
+								}
+							}
+							scope:loyalist = {
+								add_opinion = {
+									target = scope:faegon
+									modifier = event_negotiated_alliance_opinion
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Targ claimant asks for support
+faegon_landing.0002 = {
+	type = letter_event
+	opening = {
+		desc = faegon_landing.0002.opening
+	}
+	desc = faegon_landing.0002.d
+	sender = scope:faegon
+
+	orphan = yes
+
+	immediate = {
+		character:Targaryen_3 = {
+			save_scope_as = rogort
+		}
+	}
+
+	#yes i will support (later you will get reward)
+	option = {
+		name = faegon_landing.0002.opt.a
+		save_scope_as = smelly_onion_person
+		scope:faegon = {
+			add_to_variable_list = {
+				name = agot_targ_restoration_supporters_temp_list
+				target = root
+			}
+			trigger_event = {
+				id = faegon_landing.0010
+				days = { 2 5 }
+			}
+		}
+	}
+
+	#no i du nut lik yu yu smeli onion >:c
+	option = {
+		name = faegon_landing.0002.opt.b
+		save_scope_as = smelly_onion_person
+		scope:faegon = {
+			trigger_event = {
+				id = faegon_landing.0011
+				days = { 2 5 }
+			}
+		}
+	}
+}
+
+#Targ claimant fluff event
+faegon_landing.0003 = {
+	type = character_event
+	title = faegon_landing.0003.t
+		desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					root = {
+						var:faegon_main_character = flag:faegon
+					}
+
+				}
+				desc = faegon_landing.0003.d.faegon
+			}
+			triggered_desc = {
+				trigger = {
+					root = {
+						var:faegon_main_character = flag:dany
+					}
+
+				}
+				desc = faegon_landing.0003.d.dany
+			}
+			triggered_desc = {
+				trigger = {
+					root = {
+						var:faegon_main_character = flag:viserys
+					}
+				}
+				desc = faegon_landing.0003.d.viserys
+			}
+			triggered_desc = {
+				trigger = {
+					root = {
+						var:faegon_main_character = flag:jae
+					}
+				}
+				desc = faegon_landing.0004.d.jae
+			}
+			desc = faegon_landing.0003.d.post_blackfyre_win
+		}
+	}
+	theme = crown
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	left_portrait = root
+
+	immediate = {
+		character:Targaryen_3 = {
+			save_scope_as = rogort
+		}
+		character:Strickland_1 = {
+			save_scope_as = strickland
+		}
+		character:Connington_4 = {
+			save_scope_as = jon_con
+		}
+		#Loc Scopes
+		root = {
+			save_scope_as = faegon_loc
+			random_owned_story = {
+				limit = {
+					story_type = agot_story_targ_faegon_landing
+				}
+				save_scope_as = faegon_story_loc
+			}
+			random_owned_story = {
+				limit = {
+					story_type = agot_story_6th_blackfyre_rebellion
+				}
+				save_scope_as = faegon_fyre_story_loc
+			}
+		}
+
+		#Causes crashes if title target doesn't belong to holder and they choose different side in war
+		if = {
+			limit = {
+				title:e_the_iron_throne.holder = title:k_the_crownlands.holder
+			}
+			title:k_the_crownlands = { save_scope_as = title_1 }
+		}
+		else = {
+			title:e_the_iron_throne = { save_scope_as = title_1 }
+		}
+		if = {
+			limit = {
+				title:e_the_iron_throne.holder = title:d_kings_landing.holder
+			}
+			title:d_kings_landing = { save_scope_as = title_2 }
+		}
+		else = {
+			title:e_the_iron_throne = { save_scope_as = title_2 }
+		}
+		if = {
+			limit = {
+				title:e_the_iron_throne.holder = title:c_kings_landing.holder
+			}
+			title:c_kings_landing = { save_scope_as = title_3 }
+		}
+		else = {
+			title:e_the_iron_throne = { save_scope_as = title_3 }
+		}
+		if = {
+			limit = {
+				title:e_the_iron_throne.holder = title:k_dragonstone.holder
+			}
+			title:k_dragonstone = { save_scope_as = title_4 }
+		}
+		else = {
+			title:e_the_iron_throne = { save_scope_as = title_4 }
+		}
+		if = {
+			limit = {
+				title:e_the_iron_throne.holder = title:d_dragonstone.holder
+			}
+			title:d_dragonstone = { save_scope_as = title_5 }
+		}
+		else = {
+			title:e_the_iron_throne = { save_scope_as = title_5 }
+		}
+		if = {
+			limit = {
+				title:e_the_iron_throne.holder = title:c_dragonstone.holder
+			}
+			title:c_dragonstone = { save_scope_as = title_6 }
+		}
+		else = {
+			title:e_the_iron_throne = { save_scope_as = title_6 }
+		}
+	}
+
+	option = {
+		name = faegon_landing.0003.opt
+		if = {
+			limit = {
+				any_owned_story = {
+					story_type = agot_story_targ_faegon_landing
+				}
+			}
+			root = { #AGOT TODO: add golden company as allies in future
+				start_war = {
+					cb = agot_faegon_landing
+					target = title:e_the_iron_throne.holder
+					target_title = title:e_the_iron_throne
+					target_title = scope:title_1
+					target_title = scope:title_2
+					target_title = scope:title_3
+					target_title = scope:title_4
+					target_title = scope:title_5
+					target_title = scope:title_6
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_story = {
+					story_type = agot_story_6th_blackfyre_rebellion
+				}
+			}
+			root = { #AGOT TODO: add golden company as allies in future
+				start_war = {
+					cb = agot_6th_blackfyre_rebellion
+					target = title:e_the_iron_throne.holder
+					target_title = title:e_the_iron_throne
+					target_title = scope:title_1
+					target_title = scope:title_2
+					target_title = scope:title_3
+					target_title = scope:title_4
+					target_title = scope:title_5
+					target_title = scope:title_6
+				}
+			}
+		}
+	}
+}
+
+#aegon invision begins wholesale, entire world
+faegon_landing.0004 = {
+	type = character_event
+	theme = crown
+
+	left_portrait = root
+	right_portrait = scope:faegon
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	title = faegon_landing.0004.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:faegon = {
+						var:faegon_main_character = flag:faegon
+					}
+
+				}
+				desc = faegon_landing.0004.d.faegon
+			}
+			triggered_desc = {
+				trigger = {
+					scope:faegon = {
+						var:faegon_main_character = flag:dany
+					}
+
+				}
+				desc = faegon_landing.0004.d.dany
+			}
+			triggered_desc = {
+				trigger = {
+					scope:faegon = {
+						var:faegon_main_character = flag:viserys
+					}
+				}
+				desc = faegon_landing.0004.d.viserys
+			}
+			triggered_desc = {
+				trigger = {
+					scope:faegon = {
+						var:faegon_main_character = flag:jae
+					}
+				}
+				desc = faegon_landing.0004.d.jae
+			}
+			desc = faegon_landing.0004.d.post_blackfyre_win
+		}
+	}
+
+	immediate = {
+		root = {
+			play_music_cue = "mood_the_others" #AGOT TODO: replace with targ war track once done
+		}
+		#loc shit so game wont piss itself
+		scope:faegon = {
+			save_scope_as = faegon_loc
+			random_owned_story = {
+				limit = {
+					story_type = agot_story_targ_faegon_landing
+				}
+				save_scope_as = faegon_story_loc
+			}
+
+			character:Strickland_1 = { #AGOT TODO REPLACE WITH CURRENT CAPTAIN GENERAL OF GOLDEN COMPANY ONCE DONE
+				save_scope_as = strickland
+			}
+
+			character:Connington_4 = {
+				save_scope_as = jon_con
+			}
+
+			location = {
+				save_scope_as = location
+			}
+
+			if = {
+				limit = { #
+					NOT = {	has_global_variable = agot_6th_blackfyre_rebellion_happened}
+					NOT = { has_variable = agot_targ_golden_company_spawned }
+				}
+				generate_golden_company_special_troops = { LOCATION = scope:claimant.capital_province ORIGIN = scope:claimant.capital_province ARMY_NAME = the_golden_company_name }
+
+				add_gold = 500
+
+				set_variable = agot_targ_golden_company_spawned
+			}
+			else_if = {
+				limit = {
+					has_global_variable = agot_6th_blackfyre_rebellion_happened
+					NOT = { has_variable = agot_targ_host_spawned }
+				}
+				spawn_army = {
+					levies = 0
+					name = targaryen_host
+					men_at_arms = {
+						type = light_footmen # 2000
+						stacks = 20
+					}
+					men_at_arms = {
+						type = pikemen_unit # 2000
+						stacks = 20
+					}
+					men_at_arms = {
+						type = armored_footmen # 2000
+						stacks = 20
+					}
+					men_at_arms = {
+						type = light_horsemen # 2500
+						stacks = 25
+					}
+					men_at_arms = {
+						type = armored_horsemen # 500
+						stacks = 10
+					}
+					men_at_arms = {
+						type = bowmen # 300
+						stacks = 3
+					}
+					men_at_arms = {
+						type = longbowmen # 700
+						stacks = 7
+					}
+					men_at_arms = {
+						type = war_elephant # 25
+						stacks = 1
+					}
+					location = scope:location
+					origin = scope:location
+					inheritable = no
+				}
+
+				add_gold = 500
+
+				set_variable = agot_targ_host_spawned
+			}
+		}
+		character:Strickland_1 = {
+			save_scope_as = strickland
+		}
+		scope:faegon = {
+			if = {
+				limit = {
+					NOT = {
+						exists = var:onion
+					}
+				}
+				set_variable = onion
+				trigger_event = {
+					id = faegon_landing.0003
+					days = 1
+					delayed = yes
+				}
+			}
+
+			#trigger_event = {
+			#	id = faegon_landing.0013 #make everyone who said they will join you, join you
+			#	days = 2
+			#}
+		}
+	}
+
+	option = {
+		trigger = {
+			this = title:e_the_iron_throne.holder
+		}
+
+
+		name = faegon_landing.0004.opt.a
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				this = title:e_the_iron_throne.holder
+			}
+		}
+
+		name = faegon_landing.0004.opt.b
+	}
+
+	option = {
+		trigger = {
+			is_ai = no
+			has_multiple_players = no
+		}
+		name = faegon_landing.0004.opt.c
+
+		set_player_character = scope:faegon
+	}
+
+}
+
+#6th Blackfyre Rebellion spawner
+faegon_landing.0005 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		NOT = {
+			has_global_variable = agot_6th_blackfyre_rebellion_happened
+		}
+	}
+
+	immediate = {
+		set_global_variable = agot_6th_blackfyre_rebellion_happened
+		create_character = { #spawn him as aegon blackfyre
+			name = "Aegon"
+			gender = male
+			culture = culture:high_valyrian
+			faith = faith:the_seven_main
+			location = title:e_the_iron_throne.holder.capital_province #change in T&T to somewhere in essos
+			age = agot_get_faegon_age
+			dynasty_house = house:house_Blackfyre
+			father = character:Blackfyre_14 #AGOT TODO: CHANGE TO ILLYRIO WIFE
+
+			random_traits_list = {
+				count = 1
+				education_martial_1 = { weight = { base = 20 } }
+				education_martial_2 = { weight = { base = 45 } }
+				education_martial_3 = { weight = { base = 30 } }
+				education_martial_4 = { weight = { base = 5 } }
+			}
+
+			random_traits_list = {
+				count = 1
+				education_martial_prowess_1 = {
+					weight = { base = 19 }
+				}
+				education_martial_prowess_2 = {
+					weight = { base = 70 }
+				}
+				education_martial_prowess_3 = {
+					weight = { base = 10 }
+				}
+				education_martial_prowess_4 = {
+					weight = { base = 1 }
+				}
+			}
+
+			random_traits_list = {
+				count = { 1 2 }
+				logistician = {}
+				military_engineer = {}
+				aggressive_attacker = {}
+				unyielding_defender = {}
+				forder = {}
+				flexible_leader = {}
+				reckless = {}
+				open_terrain_expert = {}
+				rough_terrain_expert = {}
+				cautious_leader = {}
+				organizer = {}
+			}
+
+			random_traits = no
+			trait = ambitious
+			trait = refusing_marriage #until the end of the war
+
+			martial = 5
+			diplomacy = 7
+			intrigue = 4
+			stewardship = 7
+			learning = 7
+			#health = 7 # AGOT TODO
+			prowess = 8
+
+			#copy traits from Aegon
+			trait = beauty_good_2
+			trait = intellect_good_1
+
+			save_scope_as = faegon_fyre
+		}
+
+		hidden_effect = {
+			scope:faegon_fyre = {
+				add_character_flag = has_scripted_appearance
+				make_trait_inactive = cool_silver_hair
+				make_trait_inactive = purple_eyes_1
+				learn_language = language_common
+				add_pressed_claim = title:e_the_iron_throne
+				add_pressed_claim = title:k_the_crownlands
+				add_pressed_claim = title:d_kings_landing
+				add_pressed_claim = title:c_kings_landing
+				add_pressed_claim = title:k_dragonstone
+				add_pressed_claim = title:d_dragonstone
+				add_pressed_claim = title:c_dragonstone
+
+				while = {
+					limit = {
+						number_of_personality_traits < personality_trait_limit
+					}
+					agot_add_random_trait_effect = yes
+				}
+
+				dynasty:dynn_Targaryen = {
+					set_variable = agot_allow_adelphogamous_incest
+				}
+
+				random = {
+					chance = 33
+
+					if = { #only spawn blackfyre if one does not already exist
+						limit = {
+							any_living_character = { #dont like this but i aint see any other way to do it chief
+								NOT = {
+									any_character_artifact = {
+										has_artifact_modifier = vs_blackfyre_modifier
+									}
+								}
+							}
+						}
+						agot_create_artifact_vs_blackfyre_effect = { OWNER = scope:faegon_fyre }
+						agot_create_artifact_daemonblackfyre_crown_historical_effect = { OWNER = scope:faegon_fyre }
+					}
+				}
+
+				copy_inheritable_appearance_from = character:Targaryen_94 #AGOT TODO: Change to faegon dna
+				create_title_and_vassal_change = {
+					type = created
+					save_scope_as = change
+				}
+				title:e_blackfyre_rebellion = {
+					change_title_holder = {
+						holder = scope:faegon_fyre
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+
+				create_story = {
+					type = agot_story_6th_blackfyre_rebellion
+					save_scope_as = 6th_blackfyre_rebellion_story
+				}
+
+				#Add loyalists as allies
+				dynasty:dynn_Martell = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Butterwell = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Sunderland = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Peake = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Osgrey = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Ball = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Yronwood = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Vyrwel = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Hightower = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Bracken = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+				dynasty:dynn_Hersy = {
+					every_dynasty_member = {
+						limit = {
+							is_ruler = yes
+							is_ai = yes
+							NOT = { is_allied_to = title:e_the_iron_throne.holder }
+						}
+						save_scope_as = loyalist
+						scope:faegon_fyre = {
+							create_alliance = {
+								target = scope:loyalist
+								allied_through_owner = scope:faegon_fyre
+								allied_through_target = scope:loyalist
+							}
+						}
+						scope:loyalist = {
+							add_opinion = {
+								target = scope:faegon_fyre
+								modifier = event_negotiated_alliance_opinion
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#6th Blackfyre Rebellion
+faegon_landing.0006 = {
+	type = character_event #fullscreen_event
+	override_background = {
+		reference = agot_iron_throne
+	}
+	theme = crown
+
+
+	left_portrait = root
+	right_portrait = scope:faegon_fyre
+
+	title = faegon_landing.0006.t
+	desc = faegon_landing.0006.d
+
+	immediate = {
+		root = {
+			play_music_cue = "mood_the_others" #AGOT TODO: replace with targ war track once done
+		}
+
+		character:Strickland_1 = { #AGOT TODO REPLACE WITH CURRENT CAPTAIN GENERAL OF GOLDEN COMPANY ONCE DONE
+			save_scope_as = strickland
+		}
+
+		#loc shit so game wont piss itself
+		scope:faegon_fyre = {
+			save_scope_as = faegon_fyre_loc
+			random_owned_story = {
+				limit = {
+					story_type = agot_story_6th_blackfyre_rebellion
+				}
+				save_scope_as = faegon_fyre_story_loc
+			}
+		}
+
+		scope:faegon_fyre = {
+			location = {
+				save_scope_as = location
+			}
+
+			if = {
+				limit = {
+					NOT = {	has_variable = agot_blackfyre_golden_company_spawned}
+				}
+				generate_golden_company_special_troops = { LOCATION = scope:claimant.capital_province ORIGIN = scope:claimant.capital_province ARMY_NAME = the_golden_company_name }
+
+				add_gold = 500
+
+				set_variable = agot_blackfyre_golden_company_spawned
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						exists = var:onion
+					}
+				}
+				trigger_event = {
+					id = faegon_landing.0003
+					days = 1
+					delayed = yes
+				}
+				set_variable = onion
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			this = title:e_the_iron_throne.holder
+		}
+
+		name = faegon_landing.0006.opt.a
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				this = title:e_the_iron_throne.holder
+			}
+		}
+
+		name = faegon_landing.0006.opt.b
+	}
+
+	option = {
+		trigger = {
+			is_ai = no
+			has_multiple_players = no
+		}
+		name = faegon_landing.0006.opt.c
+
+		set_player_character = scope:faegon_fyre
+	}
+}
+
+#6th Blackfyre Rebellion won by blackfyres
+faegon_landing.0007 = {
+	type = character_event
+	theme = crown
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	title = faegon_landing.0007.t
+	desc = faegon_landing.0007.d
+
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+
+	right_portrait = {
+		character = scope:former_king
+		animation = disbelief
+	}
+
+	immediate = {
+		title:e_the_iron_throne.holder = {
+			save_scope_as = former_king
+		}
+		root = {
+			save_scope_as = faegon_fyre_loc
+			random_owned_story = {
+				limit = {
+					story_type = agot_story_6th_blackfyre_rebellion
+				}
+				save_scope_as = faegon_fyre_story
+			}
+		}
+		destroy_title = title:e_blackfyre_rebellion
+	}
+
+	#let my rule begin
+	option = {
+		name = faegon_landing.0007.opt
+		save_scope_as = chosen_crown_ruler
+		agot_mw_cb_new_ruler_effect = yes
+
+		set_realm_capital = title:c_kings_landing
+		remove_trait = refusing_marriage
+
+		custom_tooltip = {
+			text = agot_6th_blackfyre_targs_flee
+			scope:former_king.house = {
+				random_house_member = {
+					limit = {
+						is_alive = yes
+						NOT = {
+							is_imprisoned = yes
+						}
+						NOT = {
+							this = character:Targaryen_120 #Maester Aemon
+						}
+						NOT = { age >= 40 }
+						NOR = {
+							has_trait = bastard
+							has_trait = nightswatch
+						}
+					}
+					title:e_the_iron_throne = {
+						set_variable = {
+							name = faegon_post_blackfyre_claimant
+							value = prev
+						}
+						set_variable = {
+							name = faegon_post_blackfyre_blackfyre_win
+							value = current_year
+						}
+					}
+				}
+				every_house_member = {
+					limit = {
+						is_alive = yes
+						NOT = {
+							is_imprisoned = yes
+						}
+						NOR = {
+							has_trait = bastard
+							has_trait = nightswatch
+						}
+						NOT = {
+							this = character:Targaryen_120 #Maester Aemon
+						}
+					}
+					# #every targ alive flees to essos btw also starts 20 or so year timer for the Faegon landing story: Typical todo
+					# title:e_the_iron_throne = {
+					# 	add_to_variable_list = {
+					# 		name = agot_6th_blackfyre_surviving_targs
+					# 		target = prev
+					# 	}
+					# }
+					death = { death_reason = death_disappearance }
+				}
+			}
+			set_global_variable = {
+				name = agot_faegon_landing_cooldown
+				years = { 20 30 }
+			}
+			set_global_variable = {
+				name = agot_faegon_blackfyre_won
+			}
+		}
+
+		hidden_effect = {
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+			}
+
+			scope:faegon_fyre_story = {
+				var:agot_faegon_landing_title = {
+					remove_county_modifier = agot_deserted_province
+					change_title_holder = {
+						holder = prev.var:agot_faegon_taken_title_from
+						change = scope:change
+					}
+				}
+			}
+
+			resolve_title_and_vassal_change = scope:change
+
+		}
+	}
+
+	after = {
+		random_owned_story = {
+			limit = { story_type = agot_story_6th_blackfyre_rebellion }
+			hidden_effect = { end_story = yes }
+		}
+	}
+}
+
+#faegon chooses his heritage
+faegon_landing.0008 = {
+	type = character_event
+	theme = crown
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	title = faegon_landing.0008.t
+	desc = faegon_landing.0008.d
+
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = faegon_loc
+		}
+
+		character:Blackfyre_14 = {
+			save_scope_as = blackfyre_parent
+		}
+		character:Targaryen_3 = {
+			save_scope_as = rodgir_father
+		}
+		character:Targaryen_119 = {
+			save_scope_as = brightonion_father
+		}
+	}
+
+	#im blackfyre
+	option = {
+		name = faegon_landing.0008.opt.a
+		#AGOT TODO REPLACE WITH ILLYRIO WIFE
+
+		trigger = {
+			OR = {
+				has_game_rule = agot_faegon_blackfyre_heritage
+				has_game_rule = agot_faegon_random_heritage
+			}
+		}
+
+		set_father = character:Blackfyre_14
+		set_house = character:Blackfyre_14.house
+
+		hidden_effect = {
+			dynasty:dynn_Targaryen = {
+				set_variable = agot_allow_adelphogamous_incest
+			}
+		}
+
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	#im really rheagar son :)
+	option = {
+		name = faegon_landing.0008.opt.b
+
+		trigger = {
+			OR = {
+				has_game_rule = agot_faegon_random_heritage
+				has_game_rule = agot_faegon_rheagar_heritage
+			}
+		}
+
+		set_father = character:Targaryen_3
+		set_mother = character:Martell_7
+		set_house = character:Targaryen_3.house
+
+		hidden_effect = {
+			create_character = {
+				gender = female
+				age = 50
+				culture = culture:high_valyrian
+				faith = faith:the_seven_main
+				location = scope:faegon.location
+
+				dynasty = none
+
+				save_scope_as = culler_mother
+
+				after_creation = {
+					death =  { death_reason = death_disappearance }
+				}
+			}
+
+			create_character = {
+				gender = male
+				age = 50
+				culture = culture:high_valyrian
+				faith = faith:the_seven_main
+				location = scope:faegon.location
+
+				dynasty = generate
+
+				save_scope_as = culler_father
+
+				after_creation = {
+					death =  { death_reason = death_disappearance }
+				}
+			}
+			character:Targaryen_11 = {
+				set_mother = scope:culler_mother
+				set_father = scope:culler_father
+				set_house =  scope:culler_father.house
+			}
+
+			dynasty:dynn_Targaryen = {
+				set_variable = agot_allow_adelphogamous_incest
+			}
+		}
+
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	#im brightflame descendant :O
+	option = {
+		name = faegon_landing.0008.opt.c
+
+		trigger = {
+			OR = {
+				has_game_rule = agot_faegon_random_heritage
+				has_game_rule = agot_faegon_brightonion_heritage
+			}
+		}
+
+		set_father = character:Targaryen_119 #best way to show descending from him
+		set_mother = character:Targaryen_117
+		set_house = character:Targaryen_119.house
+
+		hidden_effect = {
+			dynasty:dynn_Targaryen = {
+				set_variable = agot_allow_adelphogamous_incest
+			}
+		}
+
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	#im rando lyseni kid ;c
+	option = {
+		name = faegon_landing.0008.opt.d
+
+		trigger = {
+			OR = {
+				has_game_rule = agot_faegon_random_heritage
+				has_game_rule = agot_faegon_lyseni_heritage
+			}
+		}
+
+		create_character = {
+			gender = male
+			age = 42
+			faith = faith:weeping_lady
+			dynasty = none
+			culture = culture:lyseni
+			employer = title:c_sunspear.holder #AGOT TODO place in lys once its added
+			random_traits = yes
+
+			after_creation = {
+				random_list = {
+					50 = {
+						set_sexuality = heterosexual
+					}
+					50 = {
+						set_sexuality = bisexual
+					}
+				}
+			}
+
+			save_scope_as = faegon_true_father
+		}
+
+		create_character = {
+			gender = female
+			age = 42
+			faith = faith:weeping_lady
+			dynasty = none
+			culture = culture:lyseni
+			employer = title:c_sunspear.holder #AGOT TODO place in lys once its added
+			random_traits = yes
+
+			after_creation = {
+				random_list = {
+					50 = {
+						set_sexuality = heterosexual
+					}
+					50 = {
+						set_sexuality = bisexual
+					}
+				}
+			}
+
+			save_scope_as = faegon_true_mother
+		}
+
+
+		set_father = character:Targaryen_3
+		set_mother = character:Martell_7
+		set_real_father = scope:faegon_true_father
+		set_real_mother = scope:faegon_true_mother
+		set_house = character:Targaryen_3.house
+		add_secret = {
+			type = secret_agot_disputed_heritage
+			target = THIS
+		}
+
+		hidden_effect = {
+			create_character = {
+				gender = female
+				age = 50
+				culture = culture:high_valyrian
+				faith = faith:the_seven_main
+				location = scope:faegon.location
+
+				dynasty = none
+
+				save_scope_as = culler_mother
+
+				after_creation = {
+					death =  { death_reason = death_disappearance }
+				}
+			}
+
+			create_character = {
+				gender = male
+				age = 50
+				culture = culture:high_valyrian
+				faith = faith:the_seven_main
+				location = scope:faegon.location
+
+				dynasty = generate
+
+				save_scope_as = culler_father
+
+				after_creation = {
+					death =  { death_reason = death_disappearance }
+				}
+			}
+			character:Targaryen_11 = {
+				set_mother = scope:culler_mother
+				set_father = scope:culler_father
+				set_house =  scope:culler_father.house
+			}
+
+			dynasty:dynn_Targaryen = {
+				set_variable = agot_allow_adelphogamous_incest
+			}
+		}
+
+		ai_chance = {
+			base = 40
+		}
+	}
+}
+
+#Aegon's Invasion was won by attacker
+faegon_landing.0009 = {
+	type = character_event
+	theme = crown
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	title = faegon_landing.0009.t
+	desc = faegon_landing.0009.d
+
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+
+	right_portrait = {
+		character = scope:former_king
+		animation = disbelief
+	}
+
+	immediate = {
+		title:e_the_iron_throne.holder = {
+			save_scope_as = former_king
+		}
+		root = {
+			save_scope_as = faegon_loc
+		}
+		destroy_title = title:e_targaryen_host_title
+	}
+
+	#let my rule begin
+	option = {
+		name = faegon_landing.0009.opt
+		save_scope_as = chosen_crown_ruler
+		agot_mw_cb_new_ruler_effect = yes
+
+		set_realm_capital = title:c_kings_landing
+		remove_trait = refusing_marriage
+
+		if = {
+			limit = {
+				root = {
+					var:faegon_main_character = flag:viserys
+					exists = var:faegon_vizzy_dany_spawned
+				}
+			}
+			var:faegon_vizzy_dany_spawned ?= {
+				remove_trait = refusing_marriage
+			}
+		}
+
+		if = {
+			limit = {
+				root = {
+					var:faegon_main_character = flag:faegon
+				}
+			}
+			trigger_event = {
+				id = faegon_landing.0008 #choose heritage
+				delayed = yes
+			}
+		}
+
+		random_owned_story = {
+			limit = {
+				story_type = agot_story_targ_faegon_landing
+			}
+			save_scope_as = faegon_story
+		}
+
+		scope:faegon_story = {
+			var:agot_faegon_taken_title_from = { save_scope_as = old_holder }
+			var:agot_faegon_landing_title = { save_scope_as = taken_title }
+		}
+
+		trigger_event = {
+			id = faegon_landing.1000
+			delayed = yes
+		}
+	}
+
+	after = {
+		random_owned_story = {
+			limit = { story_type = agot_story_targ_faegon_landing }
+			hidden_effect = { end_story = yes }
+		}
+	}
+}
+
+#former loyalist joins the targs
+faegon_landing.0010 = {
+	type = letter_event
+	opening = {
+		desc = faegon_landing.0010.opening
+	}
+	desc = faegon_landing.0010.d
+	sender = scope:smelly_onion_person
+
+	option = {
+		name = faegon_landing.0010.opt
+	}
+}
+
+#former loyalist refuse to join the targs
+faegon_landing.0011 = {
+	type = letter_event
+	opening = {
+		desc = faegon_landing.0011.opening
+	}
+	desc = faegon_landing.0011.d
+	sender = scope:smelly_onion_person
+
+	option = {
+		name = faegon_landing.0011.opt
+	}
+}
+
+#faegon have fucking lost do this shit after punishmnent fucking list were created
+faegon_landing.0012 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		random_owned_story = {
+			limit = {
+				story_type = agot_story_6th_blackfyre_rebellion
+			}
+
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+			}
+
+			var:agot_faegon_landing_title = {
+				remove_county_modifier = agot_deserted_province
+					change_title_holder = {
+					holder = prev.var:agot_faegon_taken_title_from
+					change = scope:change
+				}
+			}
+
+			resolve_title_and_vassal_change = scope:change
+
+			if = {
+				limit = {
+					var:agot_faegon_taken_title_from = {
+						agot_is_independent_ruler = yes
+					}
+				}
+				create_title_and_vassal_change = {
+					type = swear_fealty
+					save_scope_as = change
+				}
+				var:agot_faegon_taken_title_from = {
+					change_liege = {
+						liege = title:e_the_iron_throne.holder
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			end_story = yes
+		}
+		random_owned_story = {
+			limit = {
+				story_type = agot_story_targ_faegon_landing
+			}
+
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+			}
+
+			var:agot_faegon_landing_title = {
+				remove_county_modifier = agot_deserted_province
+					change_title_holder = {
+					holder = prev.var:agot_faegon_taken_title_from
+					change = scope:change
+				}
+			}
+
+			resolve_title_and_vassal_change = scope:change
+
+			if = {
+				limit = {
+					var:agot_faegon_taken_title_from = {
+						agot_is_independent_ruler = yes
+					}
+				}
+				create_title_and_vassal_change = {
+					type = swear_fealty
+					save_scope_as = change
+				}
+				var:agot_faegon_taken_title_from = {
+					change_liege = {
+						liege = title:e_the_iron_throne.holder
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			end_story = yes
+		}
+	}
+}
+
+faegon_landing.1000 = {
+	type = character_event
+	theme = crown
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	title = faegon_landing.1000.t
+	desc = faegon_landing.1000.d
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	right_portrait = {
+		character = scope:old_holder
+		animation = personality_honorable
+	}
+
+	trigger = {
+		scope:old_holder = { is_alive = yes }
+	}
+
+	option = {
+		name = faegon_landing.1000.a
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+		}
+
+		scope:taken_title = {
+			remove_county_modifier = agot_deserted_province
+			change_title_holder = {
+				holder = scope:old_holder
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = faegon_landing.1000.b
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+		}
+
+		scope:taken_title = {
+			remove_county_modifier = agot_deserted_province
+			change_title_holder = {
+				holder = scope:old_holder
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		pay_short_term_gold = {
+			gold = massive_gold_value
+			target = scope:old_holder
+		}
+
+		scope:old_holder = {
+			add_opinion = {
+				target = root
+				opinion = 50
+				modifier = grateful_opinion
+			}
+		}
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = {
+		name = faegon_landing.1000.c
+
+		scope:taken_title = {
+			remove_county_modifier = agot_deserted_province
+		}
+
+		scope:old_holder = {
+			add_opinion = {
+				target = root
+				opinion = -100
+				modifier = angry_opinion
+			}
+		}
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}

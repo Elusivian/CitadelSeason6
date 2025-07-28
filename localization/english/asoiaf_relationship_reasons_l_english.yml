@@ -1,0 +1,53 @@
+﻿l_english:
+ asoiaf_alicent_rhaenyra_grudge_2_desc:0 "[CHARACTER.GetFirstName|U] despises [TARGET_CHARACTER.GetFirstName] after [TARGET_CHARACTER.GetSheHe] slaughtered [CHARACTER.GetFirstNamePossessiveNoTooltip] children."
+
+ asoiaf_gerold_daemon_grudge_desc:0 "[CHARACTER.GetFirstName|U] strongly suspects [TARGET_CHARACTER.GetFirstName] of being involved in the death of [CHARACTER.GetHerHis] cousin."
+
+ asoiaf_aemond_aegon_grudge_desc:0 "[CHARACTER.GetFirstName|U] never forgave [TARGET_CHARACTER.GetFirstName] for the intense bullying suffered in [CHARACTER.GetHerHis] youth."
+
+ asoiaf_aemond_lucerys_grudge_desc:0 "[CHARACTER.GetFirstName|U] holds a deep, longing hatred for [TARGET_CHARACTER.GetFirstName] ever since [TARGET_CHARACTER.GetSheHe] slashed out [CHARACTER.GetHerHis] eye in a brutal childhood quarrel."
+
+ asoiaf_dyanna_aegon_grudge_desc:0 "[CHARACTER.GetFirstName|U] resents [TARGET_CHARACTER.GetFirstName] after being expelled from the Red Keep following a sexual encounter with [TARGET_CHARACTER.GetHerHim]."
+
+ asoiaf_aegon_aemond_grudge_desc:0 "[CHARACTER.GetFirstName|U] hates and fears [TARGET_CHARACTER.GetFirstName] after [TARGET_CHARACTER.GetSheHe] tried to kill [CHARACTER.GetHerHim] during the Battle of Rook's Rest."
+
+ asoiaf_cersei_tyrion_grudge_desc:0 "[CHARACTER.GetFirstName|U] grew to hate [TARGET_CHARACTER.GetFirstName] after their mother died giving birth to [TARGET_CHARACTER.GetHerHim]."
+
+ asoiaf_aegon_gregor_grudge_desc:0 "[CHARACTER.GetFirstName|U] swore that [TARGET_CHARACTER.GetFirstName] would be brought to justice after [TARGET_CHARACTER.GetSheHe] raped and murdered [CHARACTER.GetRealMother.GetShortUIName]."
+
+ asoiaf_robert_rhaegar_grudge_desc:0 "[CHARACTER.GetFirstName|U] swore revenge upon [TARGET_CHARACTER.GetFirstName] after [TARGET_CHARACTER.GetSheHe] eloped with [CHARACTER.GetFirstNamePossessiveNoTooltip] betrothed."
+
+ asoiaf_robert_targaryen_grudge_desc:0 "[CHARACTER.GetFirstName|U] swore bloody vengence on all surviving Targaryens, sending assassins to haunt their every step."
+ 
+ asoiaf_cersei_jaime_lover_desc:0 "[TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] fell in love after growing close to one another and experimenting sexually in their youth."
+ asoiaf_cersei_jaime_lover_desc_corresponding:0 "[CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUIName] fell in love after growing close to one another and experimenting sexually in their youth."
+
+ asoiaf_lanor_joffrey_soulmate_desc:0 "[TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] fell deeply in love after sharing much of their lives together."
+ asoiaf_lanor_joffrey_soulmate_desc_corresponding:0 "[CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUIName] fell deeply in love after sharing much of their lives together."
+
+ asoiaf_rhaenyra_harwin_lover_desc:0 "[TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] fell in love after spending a lot of time with each other at court."
+ asoiaf_rhaenyra_harwin_lover_desc_corresponding:0 "[CHARACTER.GetShortUIName] and [TARGET_CHARACTER.GetShortUIName|U] fell in love after spending a lot of time with each other art court."
+
+ asoiaf_aegon_daena_lover_desc:0 "[TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] began taking each other to bed in search of excitement and lust."
+ asoiaf_aegon_daena_lover_desc_corresponding:0 "[CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUIName] began taking each other to bed in search of excitement and lust."
+
+ asoiaf_alicent_criston_lover_desc:0 "Following the death of King Viserys I, [CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUIName] deepened their friendship into a sexual relationship."
+ asoiaf_alicent_criston_lover_desc_corresponding:0 "Following the death of King Viserys I, [TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] deepened their friendship into a sexual relationship."
+
+ asoiaf_alicent_criston_friend_desc:0 "[CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUIName] grew close after mutual betrayals by Rhaenyra Targaryen, compounded by blossoming mutual respect."
+ asoiaf_alicent_criston_friend_desc_corresponding:0 "[TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] grew close after mutual betrayals by Rhaenyra Targaryen, compounded by blossoming mutual respect."
+
+ asoiaf_criston_aegon_friend_desc:0 "[CHARACTER.GetFirstName|U] took on a fatherly role in [TARGET_CHARACTER.GetFirstNamePossessive] life since infancy."
+ asoiaf_criston_aegon_friend_desc_corresponding:0 "[TARGET_CHARACTER.GetFirstName|U] took on a fatherly role in [CHARACTER.GetFirstNamePossessive] life since infancy."
+
+ asoiaf_criston_helaena_friend_desc:0 "[CHARACTER.GetFirstName|U] took on a fatherly role in [TARGET_CHARACTER.GetFirstNamePossessive] life since infancy."
+ asoiaf_criston_helaena_friend_desc_corresponding:0 "[TARGET_CHARACTER.GetFirstName|U] took on a fatherly role in [CHARACTER.GetFirstNamePossessive] life since infancy."
+
+ asoiaf_criston_aemond_friend_desc:0 "[CHARACTER.GetFirstName|U] took on a fatherly role in [TARGET_CHARACTER.GetFirstNamePossessive] life since infancy. The two further bonded over shared experiences in working hard for what's freely given to others."
+ asoiaf_criston_aemond_friend_desc_corresponding:0 "[TARGET_CHARACTER.GetFirstName|U] took on a fatherly role in [CHARACTER.GetFirstNamePossessive] life since infancy. The two further bonded over shared experiences in working hard for what's freely given to others."
+
+ asoiaf_margaery_sansa_friend_desc:0 "Common circumstance has brought [CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUIName|U] together in friendship."
+ asoiaf_margaery_sansa_friend_desc_corresponding:0 "Common circumstance has brought [TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUIName] together in friendship."
+
+ asoiaf_cersei_margaery_rival_desc:0 "Vying for power at court, [CHARACTER.GetShortUIName|U] and [TARGET_CHARACTER.GetShortUINamePossessive] relationship is mired by constant tension and hatred."
+ asoiaf_cersei_margaery_rival_desc_corresponding:0 Vying for power at court, [TARGET_CHARACTER.GetShortUIName|U] and [CHARACTER.GetShortUINamePossessive] relationship is mired by constant tension and hatred."

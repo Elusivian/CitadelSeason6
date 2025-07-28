@@ -1,0 +1,153 @@
+﻿l_english:
+ 
+ building_type_test_building_01:1 "Caerphilly Castle"
+ building_test_building_01:1 "Caerphilly Castle"
+ building_test_building_01_desc:1 "The largest castle in Wales, the second largest in Britain."
+  building_type_test_building_02:1 "Trade City of Halmstad"
+ building_test_building_02:1 "Halmstad"
+ building_test_building_02_desc:1 "Nestled along the fertile coastline, Halmstad is the perfect crossroads of commerce, where land and sea routes converge. Merchants from across the world are drawn to its bustling markets, safe harbors, and strategic location, making it a natural center for trade. Over time, a vast and prosperous city has flourished here, its wealth built on the endless flow of goods and coin."
+ building_type_citadel_ten_towers_noport:1 "Ten Towers"
+ building_citadel_ten_towers_noport:1 "Ten Towers"
+ building_citadel_ten_towers_noport_desc:1 "Ten Towers is a fortress unlike any other in the Iron Islands. Composed of ten massive towers linked by high stone walls and sea-slicked causeways, the fortress stands as both a stronghold of power and a monument to the might of House Harlaw. Despite the Ironborn tradition of salt and steel, the Ten Towers also houses rare tomes, ancient records, and chronicles of conquest, a hidden trove of knowledge among a sea of raiders."
+ building_type_citadel_ten_towers:1 "Ten Towers"
+ building_citadel_ten_towers:1 "Port of the Ten Towers"
+ building_citadel_ten_towers_desc:1 "With the addition of a port carved into the rocky coast below, Ten Towers evolves from an insular fortress into a hub of Ironborn seafaring might. Warships now rest beneath its shadow, their black sails catching the winds of reaving and trade alike."
+
+ building_type_citadel_wesselvare:1 "Fields of Wesselvare"
+ building_citadel_wesselvare:1 "Fields of Wesselvare"
+ building_citadel_wesselvare_desc:1 "Endless green waves of grain and golden meadows stretch across Wesselvare’s heartland, where the warm Reach sun and gentle rains create some of the most fertile fields North of the Mander. Each harvest fills the barns of House Varner with bounty, and travelers speak in hushed awe of the lush, rolling hills that seem to feed half the duchy. Yet beneath this beauty lies a silent memory of fire and blood, for these fields once burned under dragonflame during the Fields of Fire."
+
+ building_type_citadel_martell_pleasure_den:1 "The Pleasure Houses of Sunspear"
+ building_citadel_martell_pleasure_den_desc:1 "Hidden behind shaded courtyards and delicate silk screens, the pleasure houses of Sunspear are famed across the Narrow Sea for their intoxicating wines, expert courtesans, and languid music that drifts through the hot Dornish nights. Lords and merchants alike lose themselves in perfumed gardens where secrets are traded as often as kisses. It is said that the whispers carried from these halls have toppled more than one noble house." 
+ building_citadel_martell_pleasure_den:1 "The Pleasure Houses of Sunspear"
+ building_type_citadel_martell_pleasure_den_desc:1 "Hidden behind shaded courtyards and delicate silk screens, the pleasure houses of Sunspear are famed across the Narrow Sea for their intoxicating wines, expert courtesans, and languid music that drifts through the hot Dornish nights. Lords and merchants alike lose themselves in perfumed gardens where secrets are traded as often as kisses. It is said that the whispers carried from these halls have toppled more than one noble house."
+
+ building_type_citadel_fowler_olives:1 "The Fowler Olive Terraces"
+ building_citadel_fowler_olives_desc:1 "Small clusters of ancient olive trees cling to the lower slopes of the Red Mountains, their silver-green leaves rustling in the warm desert winds. Locals say the sound is the voice of the old gods blessing the first press." 
+ building_citadel_fowler_olives:1 "The Fowler Olive Terraces"
+ building_type_citadel_fowler_olives_desc:1 "Small clusters of ancient olive trees cling to the lower slopes of the Red Mountains, their silver-green leaves rustling in the warm desert winds. Locals say the sound is the voice of the old gods blessing the first press."
+
+ building_citadel_fowler_olives2:1 "Shaded Orchards"
+ building_citadel_fowler_olives2_desc:1 "Neat rows of olive trees now stretch across the terraced hillsides, their twisted trunks bearing fruit enough to fill amphorae bound for Sunspear’s markets. The scent of crushed olives drifts for miles on the mountain breeze."
+
+ building_citadel_fowler_olives3:1 "Silver Hills"
+ building_citadel_fowler_olives3_desc:1 "Vast groves blanket the mountain valleys like a shimmering silver cloak, tended by entire villages sworn to House Fowler. Olive oil from these hills graces the tables of princes and buys the loyalty of distant sellswords."
+
+ building_citadel_fowler_olives4:1 "The Verdant Sea of Fowler"
+ building_citadel_fowler_olives4_desc:1 "A sprawling expanse of endless olive trees rolls across Fowler lands, a green ocean that feeds half of Dorne. The harvest is a spectacle of thousands working in unison, and the wealth it brings cements House Fowler’s power at the gates of the Princes’ Pass."
+
+ building_type_citadel_princesspath:1 "The Princes Path"
+ building_citadel_princesspath:1 "The Princes Path"
+ building_citadel_princesspath_desc:1 "A rugged but vital mountain pass carved through the Red Mountains, the Princes’ Path is the lifeline between Dorne, the Reach and the Stormlands. Guarded by ancient watchstones and lined with weathered cairns, it has borne the boots of traders, armies, and exiles alike. Control of this narrow road means mastery of the gateway into Dorne and the power to shape the fate of Dorne."
+
+ building_type_citadel_dornishdunes:1 "Dornish Dunes"
+ building_citadel_dornishdunes:1 "Dornish Dunes"
+ building_citadel_dornishdunes_desc:1 "Vast seas of sun-scorched sand stretch endlessly beyond the Red Mountains, where swirling dunes shift with each hot wind and swallow the unprepared without a trace. The Dornish dunes are as deadly as they are beautiful thirst, heat, and hidden sinkholes claim travelers who stray from the rare, winding caravan trails. Only the hardiest of desert-born guides can navigate this lethal expanse, where even the bones of lost hosts vanish beneath ever moving sands."
+
+ building_type_citadel_singingcliffs:1 "The Singing Cliffs"
+ building_citadel_singingcliffs:1 "The Singing Cliffs"
+ building_citadel_singingcliffs_desc:1 "Jagged white cliffs rise above the stormy coast near Blackcrown, their faces carved by ages of wind and wave into haunting shapes. When the sea winds howl, the cliffs emit eerie, melodic wails that can be heard for miles songs of stone that give the Singing Cliffs their name. Sailors claim the sound is a warning of storms, while locals whisper the cliffs remember every soul dashed upon the rocks below."
+ 
+ building_type_citadel_bandallon:1 "Bandallon Castle"
+ building_citadel_bandallon:1 "Bandallon Castle"
+ building_citadel_bandallon_desc:1 "Rising black and grim above the Honeywine, Bandallon Castle has long guarded the Reach’s coast. Locals whisper of the day when the Lady of Blackbar’s daughter, famed for her beauty and ambition, tried to seduce the King himself only to be spurned, her house’s hopes dashed."
+
+ building_type_citadel_saltcliffe:1 "Saltcliffe"
+ building_citadel_saltcliffe:1 "Saltcliffe"
+ building_citadel_saltcliffe_desc:1 "A bleak, windswept island of jagged rocks and black sands, Saltcliffe stands isolated on the Iron Islands’ western edge. Its cliffs are whipped by cold storms from the Sunset Sea, and its thin, salty soil yields little beyond scraggly grasses and stubborn goats. Raiders born here are as hard and pitiless as the land itself. Many of the Iron Islands’ fiercest reavers have called Saltcliffe’s stony shores home, and old salt wives say the Drowned God’s voice is louder here than anywhere else in the isles."
+
+ building_type_citadel_blacktyde:1 "Blacktyde"
+ building_citadel_blacktyde:1 "Blacktyde"
+ building_citadel_blacktyde_desc:1 "A lonely mist-shrouded isle at the edge of the Sunset Sea, Blacktyde Island is a place of stormy skies and crashing waves. Its shores are littered with black stones polished by endless tides, and its forests are dark with ancient pines. Sailors say the Drowned God’s power is strongest here, and Blacktyde reavers claim they were the first to sail beyond the sight of land. Few outsiders visit, for the island’s people are fiercely proud and keep their own harsh ways."
+
+ building_type_citadel_crackclaw_mountains:1 "Crackclaw Mountains"
+ building_citadel_crackclaw_mountains:1 "Crackclaw Mountains"
+ building_citadel_crackclaw_mountains_desc:1 "A maze of steep hills and tangled forests rising from the northern shores of the Crownlands, the Crackclaw Mountains are a wild and treacherous place. Hidden paths and deep bogs make marching armies slow and vulnerable, and the Clawmen who dwell here know every rock and shadow. Fiercely loyal and skilled in ambush, they strike from thickets and disappear like ghosts, making any invasion of their homeland a bloody and uncertain affair."
+
+ building_type_citadel_whispers_ruin:1 "The Whispers"
+ building_citadel_whispers_ruin:1 "Ruins of the Whispers"
+ building_citadel_whispers_ruin_desc:1 "Half-sunken towers and crumbling walls lie hidden among the misty marshes of the Crackclaw. Locals avoid the ruins, whispering that the ghosts of old kings and traitors wander the fog. Only the bravest or most desperate dare seek shelter here, for the moaning winds carry secrets best left forgotten."
+
+ building_citadel_whispers:1 "The Rebuilt Whispers"
+ building_citadel_whispers_desc:1 "Restored from ancient stones and shored up with new timber, the Whispers once again stands watch over the swamps. Its towers rise above the mist, offering a refuge for warriors and a deadly trap for intruders. From these walls, the lords of Crackclaw Point command the marshes and guard the hidden paths only the Clawmen know."
+
+ building_type_citadel_castle_stokeworth:1 "Castle Stokeworth"
+ building_citadel_castle_stokeworth:1 "Castle Stokeworth"
+ building_citadel_castle_stokeworth_desc:1 "A proud stone castle set among gentle green hills, Castle Stokeworth stands with tall towers and thick walls that catch the light of the rising sun. Its well-kept battlements and sturdy gatehouse give it a quiet but impressive presence, and travelers often pause to admire its graceful silhouette rising above the fields of the Crownlands."
+
+ building_type_citadel_antlers:1 "Antlers"
+ building_citadel_antlers:1 "Antlers"
+ building_citadel_antlers_desc:1 "Antlers rises above gentle hills and quiet forests in the Crownlands, its high towers topped with carved stag antlers that mark the seat of House Buckwell. From its walls, the Buckwells keep watch over the rolling lands between Stokeworth and the Riverlands, guarding the roads that carry travelers and traders toward Harrenhal and beyond. Though not the largest castle, Antlers’ tall silhouette and proud banners remind all who pass of House Buckwell’s ancient loyalty and steadfast rule."
+
+ building_type_citadel_maston:1 "Port of Fair Isle"
+ building_citadel_maston:1 "Port of Fair Isle"
+ building_citadel_maston_desc:1 "The bustling port city of Maston serves as Fair Isle’s maritime gateway, drawing trade ships from across the Sunset Sea and beyond. Most of its wealth flows directly into the coffers of House Farman through tariffs and harbor taxes, enriching Faircastle and the wider Westerlands. Yet, despite its thriving docks and lively marketplaces, Maston remains overshadowed by Lannisport, whose towering walls and vast fleets still command the lion’s share of western commerce. Nonetheless, Maston proudly holds its own as a crucial waypoint for sailors and merchants seeking quieter harbors away from Lannister dominance."
+
+ building_type_citadel_westerling_mine_dry:1 "The Crag Mine"
+ building_citadel_westerling_mine_dry:1 "Dry Mine of the Crag"
+ building_citadel_westerling_mine_dry_desc:1 "In ages past, the Westerlings were among the wealthiest families in the Westerlands, their coffers filled by rich veins of gold and silver. Their keep, the Crag, stood proud above the Sunset Sea, until the mines dried up, fortunes waned, and lands were sold to keep the family solvent. Yet hope remains: with significant investment and renewed mining efforts, there’s potential to unearth deeper veins and restore the Westerlings to their former prosperity."
+
+
+ building_citadel_westerling_mine1:1 "Small Crag Mine"
+ building_citadel_westerling_mine1_desc:1 "A small mining settlement has sprung up near where the ore veins lie. The settlers have started opening up the veins and extracting the ore, but so far they're only scratching the surface."
+
+ building_citadel_westerling_mine2:1 "Crag Mine"
+ building_citadel_westerling_mine2_desc:1 "As the settlement grows, more and more ore is being extracted. The influx of competent engineers allows for the construction of an actual mine."
+
+ building_citadel_westerling_mine3:1 "Sizeable Crag Mine"
+ building_citadel_westerling_mine3_desc:1 "As the mining operations grow, so do the mines themselves. More entrances are constructed, and large shafts are dug to allow the extraction of deep ore."
+
+ building_citadel_westerling_mine4:1 "Large Crag Mine"
+ building_citadel_westerling_mine4_desc:1 "As the production of ore increases, several foundries and smelters are set up around the settlement. The processing of metal has become second nature to the inhabitants, and their skill is renowned across the known world."
+
+
+ building_type_citadel_grand_markets_of_fairisle:1 "The Grand Market of Fair Isle"
+ building_citadel_grand_markets_of_fairisle_desc:1 "Situated beneath colorful awnings and along stone-paved squares, the Grand Markets of Fair Isle draw merchants and traders from across the Sunset Sea and the Westerlands. Rare spices, foreign silks, Arbor wines, and Lannisport gold all flow through these crowded stalls. Though smaller than the sprawling markets of Oldtown or Lannisport, Fair Isle's markets remain lively and prosperous, filling House Farman’s coffers and ensuring that the island remains a vital crossroads for western trade." 
+ building_citadel_grand_markets_of_fairisle:1 "The Grand Markets of Fair Isle"
+ building_type_citadel_grand_markets_of_fairisle_desc:1 "Situated beneath colorful awnings and along stone-paved squares, the Grand Markets of Fair Isle draw merchants and traders from across the Sunset Sea and the Westerlands. Rare spices, foreign silks, Arbor wines, and Lannisport gold all flow through these crowded stalls. Though smaller than the sprawling markets of Oldtown or Lannisport, Fair Isle's markets remain lively and prosperous, filling House Farman’s coffers and ensuring that the island remains a vital crossroads for western trade."
+
+ building_type_citadel_ashemark_mine1:1 "The Ashemark Mine"
+ building_citadel_ashemark_mine1:1 "Small Ashemark Mine"
+ building_citadel_ashemark_mine1_desc:1 "A small mining settlement has sprung up near where the ore veins lie. The settlers have started opening up the veins and extracting the ore, but so far they're only scratching the surface."
+
+ building_citadel_ashemark_mine2:1 "Ashemark Mine"
+ building_citadel_ashemark_mine2_desc:1 "As the settlement grows, more and more ore is being extracted. The influx of competent engineers allows for the construction of an actual mine."
+
+ building_citadel_ashemark_mine3:1 "Sizeable Ashemark Mine"
+ building_citadel_ashemark_mine3_desc:1 "As the mining operations grow, so do the mines themselves. More entrances are constructed, and large shafts are dug to allow the extraction of deep ore."
+
+ building_citadel_ashemark_mine4:1 "Large Ashemark Mine"
+ building_citadel_ashemark_mine4_desc:1 "As the production of ore increases, several foundries and smelters are set up around the settlement. The processing of metal has become second nature to the inhabitants, and their skill is renowned across the known world."
+
+ building_type_citadel_fisher:1 "Fisher’s Harbor Bastion"
+ building_citadel_fisher:1 "Fisher’s Harbor Bastion"
+ building_citadel_fisher_desc:1 "A stout stone fortress perched where the Stony Shore meets the Sunset Sea, Fisher’s Harbor Bastion features a deep-water dock and reinforced watchtower facing the waves. Its walls are built with river-worn cobblestones and driftwood bands, reflecting House Fisher’s history along both coast and river."
+ 
+ 
+ building_type_citadel_spearwatch_island:1 "Spearwatch Island"
+ building_citadel_spearwatch_island:1 "Spearwatch Island"
+ building_citadel_spearwatch_island_desc:1 "A stark, windswept isle just off the northern coast, Spearwatch stands as a silent sentinel over the icy sea. Its stone towers rise rugged and grey, battered by relentless winds and salt spray. The island’s name comes from the ancient spear shaped stalagmites that jut from the cliffs, which form a natural fortress against any who would sail too close. Men of the North say that when a storm hits, the island’s rocky spines creak and groan like old wooden shields in the wind an eerie warning to all who would challenge their watch."
+
+ building_type_citadel_deepwood_motte:1 "Deepwood Motte"
+ building_citadel_deepwood_motte:1 "Deepwood Motte"
+ building_citadel_deepwood_motte_desc:1 "Hidden among the dense forests of the Wolfswood, Deepwood Motte serves as the sturdy seat of House Glover. Its walls, built from thick timbers cut from the surrounding woods, rise amid tangled paths and shadowed glades. Though modest compared to southern castles, Deepwood Motte’s strength lies in the loyalty and resolve of its defenders, hardened by countless skirmishes against Ironborn raiders and experienced in forest warfare."
+
+ building_type_citadel_blackpool:1 "Blackpool"
+ building_citadel_blackpool:1 "Blackpool"
+ building_citadel_blackpool_desc:1 "Set along the rocky shores of the North, Blackpool stands as a vigilant guardian against Ironborn incursions from the sea. Its grey stone towers overlook a dark bay known for deep, turbulent waters. Generations of warriors from Blackpool have watched these waves, ever ready to repel reavers with spear and arrow. Few raiders dare challenge its defenses openly, knowing the fierce reputation of those who guard this stretch of coastline."
+
+ building_type_citadel_castle_cerwyn:1 "Castle Cerwyn"
+ building_citadel_castle_cerwyn:1 "Castle Cerwyn"
+ building_citadel_castle_cerwyn_desc:1 "Rising from the rolling plains north of Winterfell, Castle Cerwyn is a solid fortress of dark stone and high walls, long serving as a loyal shield for House Stark. Its banners of black battle-axes on silver fly proudly over sturdy towers, and its halls are filled with warriors who have stood fast through countless Northern wars. The castle’s position along key roads makes it a vital outpost, guarding trade and travelers bound for Winterfell or beyond."
+
+ building_type_citadel_haystack_hall:1 "Haystack Hall"
+ building_citadel_haystack_hall:1 "Haystack Hall"
+ building_citadel_haystack_hall_desc:1 "Set among the rolling green fields of the Stormlands, Haystack Hall is a tall and cheerful castle of pale stone, surrounded by wide pastures and golden farmlands. Known for its rich harvests and sturdy barns, the hall has long been a center of grain and livestock for the stormlords. Though peaceful in appearance, Haystack Hall has withstood many sieges, its strong gates and loyal levies proving that even the heart of farmland can hold firm against invaders."
+
+  building_type_:1 "Castle Stokeworth"
+ building_:1 "Castle Stokeworth"
+ building_ _desc:1 "den a"
+
+ building_type_blackhaven2:1 "Blackhaven"
+ building_blackhaven2:1 "Blackhaven"
+ building_blackhaven2_desc:1 "Standing at the edge of the Dornish Marches, Blackhaven is a formidable fortress of dark stone guarding the border between the Stormlands and Dorne. Its tall towers and wide walls have seen centuries of conflict, and its warriors are famed for their skill in holding the passes against Dornish raiders. As the seat of House Dondarrion, Blackhaven commands respect as both a symbol of strength and a key sentinel over the southern marches."

@@ -1,0 +1,349 @@
+﻿namespace = interactive
+interactive.0001 = {
+	title = interactive.0001.title
+	desc = interactive.0001.desc
+	theme = war
+	left_portrait = scope:defender
+	right_portrait = scope:attacker
+	#immediate = {
+	#	hidden_effect = {
+	#		scope:war = {
+	#			remove_participant = prev
+	#		}
+	#	}
+	#}
+	option = {
+		name = interactive.0001.a
+		save_scope_as = recipient
+		if = {
+			limit = {
+				is_vassal_or_below_of = scope:attacker
+			}
+			scope:war = {
+				hidden_effect = {
+					set_called_to = scope:recipient
+				}
+				add_attacker = prev
+			}
+			scope:attacker = {
+				add_opinion = {
+					modifier = grateful_opinion
+					target = scope:recipient
+					opinion = 10
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_vassal_or_below_of = scope:defender
+			}
+			scope:war = {
+				hidden_effect = {
+					set_called_to = scope:recipient
+				}
+				add_defender = prev
+			}
+			scope:defender = {
+				add_opinion = {
+					modifier = grateful_opinion
+					target = scope:recipient
+					opinion = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = interactive.0001.b
+	}
+	option = {
+		name = interactive.0001.c
+		save_scope_as = recipient
+		if = {
+			limit = {
+				is_vassal_or_below_of = scope:attacker
+			}
+			scope:war = {
+				hidden_effect = {
+					set_called_to = scope:recipient
+				}
+				add_defender = prev
+			}
+			if = {
+				limit = {
+					has_game_rule = miv_oathbreakers_enabled
+				}
+				scope:attacker = {
+					add_opinion = {
+						modifier = miv_oathbreaker
+						target = scope:recipient
+					}
+				}
+			}
+			else = {
+				scope:attacker = {
+					add_opinion = {
+						modifier = betrayed_me_opinion
+						target = scope:recipient
+						opinion = -25
+					}
+				}
+			}
+			scope:defender = {
+				add_opinion = {
+					modifier = grateful_opinion
+					target = scope:recipient
+					opinion = 25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_vassal_or_below_of = scope:defender
+			}
+			scope:war = {
+				hidden_effect = {
+					set_called_to = scope:recipient
+				}
+				add_attacker = prev
+			}
+			if = {
+				limit = {
+					has_game_rule = miv_oathbreakers_enabled
+				}
+				scope:defender = {
+					add_opinion = {
+						modifier = miv_oathbreaker
+						target = scope:recipient
+					}
+				}
+			}
+			else = {
+				scope:defender = {
+					add_opinion = {
+						modifier = betrayed_me_opinion
+						target = scope:recipient
+						opinion = -25
+					}
+				}
+			}
+			scope:attacker = {
+				add_opinion = {
+					modifier = grateful_opinion
+					target = scope:recipient
+					opinion = 25
+				}
+			}
+			if = {
+				limit = {
+					exists = scope:attacker.joined_faction
+				}
+				join_faction_skip_check = scope:attacker.joined_faction
+			}
+		}
+	}
+}
+
+interactive.0002 = {
+	type = letter_event
+	opening = {
+		desc = call_ally.0100.opening
+	}
+	desc = call_ally.0100.desc
+	sender = {
+		character = scope:recipient
+		animation = anger
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+interactive.0003 = {
+	type = letter_event
+	sender = scope:actor
+	opening = vassal_interaction.0001.opening
+	desc = vassal_interaction.0001.desc
+	
+	immediate = {
+		scope:target = {
+			primary_defender = {
+				save_scope_as = defender
+			}
+		}
+			
+		save_scope_value_as = {
+			name = response
+			value = flag:gold
+		}
+	}
+
+	option = { #Accept
+		name = vassal_interaction.0001.a
+		show_as_tooltip = {
+			scope:target = {
+				end_war = white_peace
+			}
+			scope:actor = {
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = low_positive_opinion
+				}
+			}
+		}
+		scope:actor = {
+			trigger_event = {
+				id = vassal_interaction.0002
+				days = { 2 5 }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				scope:response = flag:accept
+			}
+		}
+	}
+
+	option = { #Request a favor
+		name = vassal_interaction.0001.b
+		trigger = {
+			can_add_hook = {
+				target = scope:actor
+				type = favor_hook
+			}
+		}
+		custom_tooltip = vassal_interaction.0001.request_favor_tt
+		show_as_tooltip = {
+			random_list = {
+				1 = {
+					desc = vassal_interaction.0001.accept
+					show_chance = no
+					scope:target = {
+						end_war = white_peace
+					}
+					add_hook = {
+						target = scope:actor
+						type = favor_hook
+					}
+				}
+				1 = {
+					desc = vassal_interaction.0001.decline
+					show_chance = no
+					add_prestige = medium_prestige_loss
+				}
+			}
+		}
+		scope:actor = {
+			trigger_event = {
+				id = vassal_interaction.0003
+				days = { 2 5 }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				scope:response = flag:favor
+			}
+		}
+	}
+	
+	option = { #Request gold
+		name = vassal_interaction.0001.c
+		custom_tooltip = vassal_interaction.0001.request_gold_tt
+		show_as_tooltip = {
+			random_list = {
+				1 = {
+					desc = vassal_interaction.0001.accept
+					show_chance = no
+					scope:target = {
+						end_war = white_peace
+					}
+					scope:actor = {
+						pay_short_term_gold = {
+							target = root
+							gold = scope:recipient.stop_war_attacker_bribe_size
+						}
+					}
+				}
+				1 = {
+					desc = vassal_interaction.0001.decline
+					show_chance = no
+					add_prestige = medium_prestige_loss
+				}
+			}
+		}
+		scope:actor = {
+			trigger_event = {
+				id = vassal_interaction.0004
+				days = { 2 5 }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				scope:response = flag:gold
+			}
+		}
+	}
+	
+	option = { #Refuse
+		name = vassal_interaction.0001.d
+		trigger = {
+			NOT = { has_usable_hook = scope:actor }
+		}
+		show_as_tooltip = {
+			scope:actor = {
+				add_opinion = {
+					target = root
+					modifier = refusal_opinion
+					opinion = low_negative_opinion
+				}
+			}
+		}
+		scope:actor = {
+			trigger_event = {
+				id = vassal_interaction.0005
+				days = { 2 5 }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				scope:response = flag:refuse
+			}
+		}
+	}
+
+	option = { #Refuse - you have a hook!
+		name = vassal_interaction.0001.e
+		trigger = {
+			has_usable_hook = scope:actor
+		}
+		show_as_tooltip = {
+			use_hook = scope:actor
+		}
+		save_scope_value_as = {
+			name = vassal_used_hook
+			value = yes
+		}
+		scope:actor = {
+			trigger_event = {
+				id = vassal_interaction.0005
+				days = { 2 5 }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				scope:response = flag:refuse
+			}
+		}
+	}
+}

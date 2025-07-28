@@ -1,0 +1,66 @@
+﻿l_english:
+ task_train_commanders_effect_desc:3 "\n\n#P [SCOPE.ScriptValue('marshal_train_commanders_monthly_chance_value')|1P]%#! chance of improving, or finding a new [commander|E] or [knight|E] each month\n$TAB$Councillor's [martial_skill|E]: #P +[SCOPE.ScriptValue('marshal_train_commanders_monthly_chance_value_base')|2]%#!\n\n#P [SCOPE.ScriptValue('marshal_train_commanders_trait_track_increase')|1P]#! [commander|E] or [knight|E] trait track experience per month\n"
+
+ trait_mapper:0 "Mapper"
+ trait_mapper_desc:0 "As a general, this character excels at taking advantage of any terrain."
+ trait_mapper_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] excels at taking advantage of any terrain."
+
+ trait_observant_pathfinder:0 "Observant Pathfinder"
+ trait_observant_pathfinder_desc:0 "When commanding armies, this character always finds a way... into, away from, or around the enemy."
+ trait_observant_pathfinder_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] always finds a way... into, away from, or around the enemy."
+
+ trait_respected_leader:0 "Respected Leader"
+ trait_respected_leader_desc:0 "This character's soldiers hold their commander in high esteem, leading to a fealty-driven increased efficiency in battle."
+ trait_respected_leader_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]'s soldiers hold their commander in high esteem, leading to a fealty-driven increased efficiency in battle."
+
+ trait_seasoned_rover:0 "Seasoned Rover"
+ trait_seasoned_rover_desc:0 "This character has specialized into uncharted territories, accumulating a fine expertise on any terrain others would fear to tread into. However, this has come at the cost of somewhat forgetting his homeland."
+ trait_seasoned_rover_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] has specialized into uncharted territories, accumulating a fine expertise on any terrain others would fear to tread into. However, this has come at the cost of somewhat forgetting [Character.GetHerHis] homeland."
+
+ trait_resolute_localist:0 "Resolute Localist" 
+ trait_resolute_localist_desc:0 "This character is a true child of his land, having spent years exploring its burghs and countryside. Still, wandering abroad is another story..."
+ trait_resolute_localist_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is a true child of [Character.GetHerHis] land, having spent years exploring its burghs and countryside. Still, wandering abroad is another story..."
+
+ trait_relentless_pursuer:0 "Relentless Pursuer"
+ trait_relentless_pursuer_desc:0 "This character always presses on in battle, making the most of any momentum built-up to finish off his enemies."
+ trait_relentless_pursuer_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] always presses on in battle, making the most of any momentum built-up to finish off [Character.GetHerHis] enemies."
+
+ trait_infiltration_specialist:0 "Infiltration Specialist"
+ trait_infiltration_specialist_desc:0 "This character can make an excellent use of any battlefield through intelligence, the sinews of war."
+ trait_infiltration_specialist_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] can make an excellent use of any battlefield through intelligence, the sinews of war."
+
+ trait_battlefield_medic:0 "Battle Apothecary"
+ trait_battlefield_medic_desc:0 "This commander specializes in minimizing casualties on the battlefield."
+ trait_battlefield_medic_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is known for minimizing casualties on the battlefield."
+ 
+ trait_dauntless_leader:0 "Dauntless Leader"
+ trait_dauntless_leader_desc:0 "This commander inspires fearlessness in their troops, though at a risk to themselves."
+ trait_dauntless_leader_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] inspires fearlessness in their troops, though at a risk to themselves."
+ 
+ trait_crafty_commander:0 "Crafty Commander"
+ trait_crafty_commander_desc:0 "Known for their strategic cunning, this commander always seems to have a plan."
+ trait_crafty_commander_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is known for their strategic cunning."
+ 
+ trait_cautious_planner:0 "Cautious Planner"
+ trait_cautious_planner_desc:0 "This commander carefully plans each move, prioritizing the safety of their forces."
+ trait_cautious_planner_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] carefully plans each move, prioritizing the safety of their forces."
+ 
+ trait_bannerlord:0 "Bannerlord"
+ trait_bannerlord_desc:0 "Esteemed as a symbol of authority, this commander commands respect and loyalty."
+ trait_bannerlord_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is esteemed as a symbol of authority."
+ 
+ trait_focus_specialist:0 "Focus Specialist"
+ trait_focus_specialist_desc:0 "Specialized in a particular aspect of warfare, this commander excels in their chosen field."
+ trait_focus_specialist_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is specialized in a particular aspect of warfare."
+ 
+ trait_master_ambusher:0 "Master Ambusher"
+ trait_master_ambusher_desc:0 "A master of ambush tactics, this commander strikes swiftly and decisively."
+ trait_master_ambusher_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is a master of ambush tactics."
+
+ trait_navigator:0 "Navigator"
+ trait_navigator_desc:0 "Skilled in navigation, this commander ensures their army always finds the best path."
+ trait_navigator_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is skilled in navigation, ensuring their army always finds the best path."
+
+ trait_zealot:0 "Zealot"
+ trait_zealot_desc:0 "A zealous commander devoted to their cause, inspiring fervor and unwavering dedication in their troops."
+ trait_zealot_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is a zealous commander, inspiring fervor and unwavering dedication in their troops."

@@ -1,0 +1,1985 @@
+﻿
+namespace = got_bookmark
+
+#got_bookmark.0001 - Ned Intro
+#got_bookmark.0002 - Ned Flavor
+#got_bookmark.0003 - Ned Discovers the Truth
+#got_bookmark.0004 - Ned Killed
+#got_bookmark.0005 - Stannis
+#got_bookmark.0006 - Renly
+#got_bookmark.0007 Robert Alt Death
+#got_bookmark.0008 Robert's Death Notification
+
+
+
+
+
+### Bookmark Intro
+
+got_bookmark.0001 = {
+	title = got_bookmark.0001.t
+	type = character_event
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+	hidden_effect = { house_feud_start_effect = {
+			# Feuding House Head
+			ACTOR = root
+			# Target House Head
+			TARGET = title:k_the_westerlands.holder
+			# Feud Reason
+			REASON = family_killed
+			# House Member attacker if relevant
+			ATTACKER = character:Lannister_8
+			# House Member victim if relevant
+			VICTIM = character:Arryn_3
+		}
+		}
+	
+	
+	
+	override_background = {
+		reference = agot_iron_throne
+	}
+	desc = "got_bookmark.0001_desc"
+	
+
+	
+	#### I must learn the truth.
+	option = {
+		name =  got_bookmark.0001.a
+		custom_tooltip =  got_bookmark.0001.a.tt
+		trigger_event = {
+								id = got_bookmark.0002
+								days = 60
+							}
+	
+		character:Stark_8 = { set_relation_guardian = root }
+		character:Stark_9 = { set_relation_guardian = root }
+		
+		ai_chance = {
+		base = 95 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+		
+		#### I should stay home.
+	option = {
+		name =  got_bookmark.0001.b
+		custom_tooltip =  got_bookmark.0001.b.tt
+		remove_relation_best_friend = character:Baratheon_2
+		hidden_effect = { 
+		character:Stark_6 = { remove_trait = refusing_marriage }
+		set_relation_friend = character:Baratheon_2 }
+		###Have Cersei still murder Robert
+		character:Baratheon_2 = { trigger_event = {
+								id = got_bookmark.0009
+								days = 120
+							} }
+		add_stress = 300
+		ai_chance = {
+		base = 5 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+		}
+		
+		
+### Ned's Investigation and Time at the Capitol		
+got_bookmark.0002 = {
+	theme = learning
+	title = got_bookmark.0002.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Arryn_3
+		scripted_animation = chancellor
+	}
+
+	
+	
+	override_background = {
+		reference = alley_day
+	}
+	desc = "got_bookmark.0002_desc"
+	
+
+	
+	#### I must learn the truth.
+	option = {
+		name =  got_bookmark.0002.a
+		custom_tooltip =  got_bookmark.0002.a.tt
+		trigger_event = {
+								id = got_bookmark.0003
+								days = 30
+							}
+		
+		}
+
+		}
+		
+### Ned's Discovers the Truth and Robert is dying.
+got_bookmark.0003 = {
+	theme = death
+	title = got_bookmark.0003.t
+	left_portrait = {
+		character = root
+		scripted_animation = sadness
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = severelywounded
+	}
+theme = skull
+	immediate = { character:Baratheon_2 = { add_trait = wounded_3 } }
+	
+	
+	override_background = {
+		reference = agot_iron_throne
+	}
+	desc = "got_bookmark.0003_desc"
+	
+
+	
+	#### Stannis is Robert's heir
+	option = {
+		name =  got_bookmark.0003.a
+		custom_tooltip =  got_bookmark.0003.a.tt
+		character:Stark_6 = { add_character_flag = ned_chose_stannis }
+		trigger_event = {
+								id = got_bookmark.0004
+								days = 7
+							}
+			ai_chance = {
+		base = 90 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		#### The realm must know who the true heir is. Jon must be told of his birthright.
+	option = {
+		name =  got_bookmark.0003.b
+		custom_tooltip =  got_bookmark.0003.b.tt
+		character:Stark_6 = { add_character_flag = ned_chose_jon }
+		trigger_event = {
+								id = got_bookmark.0004
+								days = 3
+							}
+				ai_chance = {
+		base = 10 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}				
+							
+		
+		}
+		
+		
+
+		}
+		
+
+
+### Ned is killed
+got_bookmark.0004 = {
+
+	title = got_bookmark.0004.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+
+	theme = skull
+	
+	override_background = {
+		reference = agot_iron_throne
+	}
+	desc = "got_bookmark.0004_desc"
+	
+	immediate = {
+	
+		character:Stark_hh_6 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			character:Stark_hh_5 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			character:Stark_hh_12 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			character:Poole_2 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			character:Stark_hh_11 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			character:Stark_hh_9 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			character:Cassel_4 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+		character:Stark_hh_7 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+		character:Tully_hh_4 = { 
+		death = {
+							death_reason = death_battle
+							killer = character:Slynt_1
+					}
+		
+			}
+			
+		
+	
+	
+	
+		###Robert is killed
+		character:Baratheon_2 = {
+			trigger_event = got_bookmark.0009		
+							}
+		hidden_effect = {	
+		
+		imprison_character_effect = {
+			TARGET = character:Stark_3
+			IMPRISONER = character:Baratheon_5
+		}
+		
+		### Arya Set-up
+		title:d_harrenhal.holder = { add_courtier = character:Stark_9 }
+		imprison_character_effect = {
+			TARGET = character:Stark_8
+			IMPRISONER = character:Baratheon_5
+		}
+		
+		character:Stark_9 = {	create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:Stark_9
+			}
+			}
+		
+		
+		### Jon Set-up
+	if = { limit = { NOT = { character:Stark_6 = { has_character_flag = ned_chose_jon } } } 	
+		title:e_beyond_the_wall.holder = { add_courtier = character:Stark_7 }
+		character:Stark_7 = { create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:Stark_7
+			} }
+			}
+		
+		character:Mormont_2 = { 
+					random_equipped_character_artifact = {
+					limit = { has_variable = valyrian_steel }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = character:Stark_7
+					history = {
+						type = inherited
+						actor = character:Mormont_2
+						recipient = character:Stark_7
+						location = character:Mormont_2.location
+					}
+				}
+				
+					
+					}
+					}
+		character:Stark_3 = { 
+					random_equipped_character_artifact = {
+					limit = { has_variable = valyrian_steel }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = character:Lannister_1
+					history = {
+						type = taken_in_battle
+						actor = character:Stark_3
+						recipient = character:Lannister_1
+						location = character:Baratheon_5.location
+					}
+				}
+					
+					}
+					}
+			
+		
+		
+		}
+	
+			}
+	
+	#### I'm sorry.
+	option = {
+		name =  got_bookmark.0004.a
+		custom_tooltip =  got_bookmark.0004.a.tt
+			death = {
+							death_reason = death_execution
+							killer = character:Baratheon_5
+					}
+		hidden_effect = { 
+		
+		
+	
+
+	
+			character:Stark_6 = { 	trigger_event = {
+								id = got_bookmark.00061
+								days = 7
+							}
+							}
+}
+		
+		}
+		
+		####Baelor!!! It's Arya!!
+			option = {
+		
+		name =  got_bookmark.0004.b
+		custom_tooltip =  got_bookmark.0004.b.tt
+		character:Stark_6 = { 	trigger_event = {
+								id = got_bookmark.00061
+								days = 7
+							}
+							}
+set_player_character = character:Stark_9
+
+death = {
+							death_reason = death_execution
+							killer = character:Baratheon_5
+					}
+		
+		}
+		option = {
+		trigger = { NOT = { character:Stark_6 = { has_character_flag = ned_chose_jon } } }
+		name =  got_bookmark.0004.c
+		custom_tooltip =  got_bookmark.0004.c.tt
+		character:Stark_6 = { 	trigger_event = {
+								id = got_bookmark.00061
+								days = 7
+							}
+							}
+set_player_character = character:Stark_7
+
+death = {
+							death_reason = death_execution
+							killer = character:Baratheon_5
+					}
+		
+		}
+
+		}
+		
+### Stannis Sends his letter
+got_bookmark.0005 = {
+	theme = war
+	title = got_bookmark.0005.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Melisandre_1
+		scripted_animation = chancellor
+	}
+
+	immediate = { 
+	
+	
+	character:Baratheon_5 = {  add_trait = disputed_heritage }
+	character:Baratheon_6 = {  add_trait = disputed_heritage }
+	character:Baratheon_7 = {  add_trait = disputed_heritage }
+	}
+	override_background = {
+		reference =  AGOT_ghost_ship
+	}
+	desc = "got_bookmark.0005_desc"
+	
+
+	
+	#### I must press my claim.
+	option = {
+		#set_character_faith = faith:rhllor
+		name =  got_bookmark.0005.a
+		custom_tooltip =  got_bookmark.0005.a.tt
+		every_player = { if = { limit = { NOT = { this = root } } trigger_event = got_bookmark.0011 } }
+		hidden_effect = { 
+		#agot_more_bookmarks_agot_megawar_setup = yes
+		agot_more_bookmarks_agot_war_setup = yes
+
+		}
+		
+		}
+
+		}
+		
+### Renly
+got_bookmark.0006 = {
+	theme = war
+	title = got_bookmark.0006.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Tyrell_13
+		scripted_animation = chancellor
+	}
+
+	immediate = { remove_trait = refusing_marriage }
+	
+	override_background = {
+		reference = agot_iron_throne
+	}
+	desc = "got_bookmark.0006_desc"
+	
+
+	
+	#### I should be king!
+	option = {
+		name =  got_bookmark.0006.a
+		custom_tooltip =  got_bookmark.0006.a.tt
+		add_character_flag = wants_to_be_king
+		title:k_the_reach.holder = { trigger_event = got_bookmark.0015 }
+		add_courtier = character:Royce_5
+		add_courtier = character:Tarth_6
+		add_courtier = character:Cuy_3
+		add_courtier = character:Morrigen_4
+		add_courtier = character:Crane_5
+	character:Baratheon_3 = { trigger_event = {
+								id = got_bookmark.0013
+								days = 180 }
+								}
+							
+		
+		ai_chance = {
+		base = 90 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+	#### I will not dishonor myself. My brother is the heir.
+	option = {
+		name =  got_bookmark.0006.b
+		custom_tooltip =  got_bookmark.0006.b.tt
+		add_character_flag = supports_stannis
+		character:Baratheon_3 = {  set_designated_heir_unsafe = character:Baratheon_4 }
+		title:k_the_reach.holder = { trigger_event = got_bookmark.0015 }
+		ai_chance = {
+		base = 10 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+
+		}
+
+
+### Who shall make my daughter a queen?
+got_bookmark.0015 = {
+	theme = war
+	title = got_bookmark.0015.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Tyrell_14
+		scripted_animation = chancellor
+	}
+
+	immediate = { character:Tyrell_14 = { remove_trait = refusing_marriage } }
+	
+	override_background = {
+		reference = garden
+	}
+	desc = "got_bookmark.0015_desc"
+	
+
+	
+	#### Renly IS right
+	option = {
+	trigger = { character:Baratheon_4 = { has_character_flag = wants_to_be_king } }
+		name =  got_bookmark.0015.a
+		custom_tooltip =  got_bookmark.0015.a.tt
+		add_character_flag = supports_renly
+		title:k_the_stormlands.holder = { marry = character:Tyrell_14 } 
+		title:k_the_stormlands.holder = {
+						create_alliance = {
+							target = character:Tyrell_8
+							allied_through_owner = title:k_the_stormlands.holder
+							allied_through_target = character:Tyrell_8
+						}
+					}
+					character:Tyrell_8 = {
+						add_opinion = {
+							target = title:k_the_stormlands.holder
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+			ai_chance = {
+		base = 150 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+	#### Perhaps King Joffrey can set aside his bethrothed.
+	option = {
+		name =  got_bookmark.0015.b
+		custom_tooltip =  got_bookmark.0015.b.tt
+		add_character_flag = supports_joffrey
+		character:Baratheon_5 = { 
+							break_betrothal = character:Stark_8
+							marry = character:Tyrell_14
+							}
+		character:Baratheon_5 = {
+						create_alliance = {
+							target = character:Tyrell_8
+							allied_through_owner = character:Baratheon_5
+							allied_through_target = character:Tyrell_8
+						}
+					}
+					character:Tyrell_8 = {
+						add_opinion = {
+							target = character:Baratheon_5
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+			ai_chance = {
+		base = 30 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+	### Another King perhaps...
+		option = {
+		name =  got_bookmark.0015.c
+		custom_tooltip =  got_bookmark.0015.c.tt
+		ai_chance = {
+		base = 15 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+		
+		
+
+		}
+		
+### Robb
+got_bookmark.00061 = {
+	theme = war
+	title = got_bookmark.00061.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+
+	immediate = {
+	hidden_effect = {
+		every_vassal_or_below = {
+	add_to_list = stark_bannermen
+	
+		}
+	character:Stark_6 = { remove_trait = refusing_marriage }
+	character:Frey_82 = { remove_trait = refusing_marriage }
+	character:Greyjoy_14 = { return_hostage = yes }
+	trigger_event = {
+								id = got_bookmark.2000
+								days = 60
+							}
+	
+	}
+	
+			character:Stark_6 = {
+						create_betrothal = character:Frey_82
+						add_courtier = character:Frey_81
+						add_courtier = character:Mormont_5
+						add_courtier = character:Umber_11
+						add_courtier = character:Karstark_17
+						add_courtier = character:Karstark_18
+						add_courtier = character:Hornwood_3
+						add_courtier = character:Blackwood_11
+						add_courtier = character:Frey_78
+						add_courtier = character:Flint_3
+						add_courtier = character:Mallister_7
+						add_courtier = character:Locke_2
+						add_courtier = character:Norrey_4
+						add_courtier = character:Greyjoy_14
+						add_courtier = character:Manderly_8
+						}
+	
+	
+	
+	}
+	
+	override_background = {
+		reference = agot_iron_throne
+	}
+	desc = "got_bookmark.00061_desc"
+	immediate = { give_nickname = nick_the_young_wolf }
+
+	
+	####  The King in the North!
+	option = {
+	ai_chance = {
+		base = 70 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		name =  got_bookmark.00061.a
+		custom_tooltip =  got_bookmark.00061.a.tt
+		add_character_flag = im_king_in_the_north
+		}
+		#### Stannis is Robert's heir.
+	option = {
+	ai_chance = {
+		base = 30 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		trigger = { has_character_flag = ned_chose_stannis }
+		name =  got_bookmark.00061.b
+		custom_tooltip =  got_bookmark.00061.b.tt
+		add_character_flag = supports_stannis
+		
+		
+		}
+		###The truth has been revealed. Jon will sit the throne!
+		option = {
+		ai_chance = {
+		base = 1000 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+	trigger = { has_character_flag = ned_chose_jon }
+		name =  got_bookmark.00061.c
+		custom_tooltip =  got_bookmark.00061.c.tt
+		add_character_flag = supports_jon
+		
+		}
+
+		}
+		
+### Balon
+got_bookmark.0007 = {
+	title = got_bookmark.0007.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+	immediate = {
+	
+		#agot_proclaim_kingdom_effect = { SWITCH_TRIGGER = primary_title }
+		add_prestige = 5000
+		
+			}
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	desc = "got_bookmark.0007_desc"
+	
+
+	
+	#### I will pay the iron price!
+	option = {
+		name =  got_bookmark.0007.a
+		custom_tooltip =  got_bookmark.0007.a.tt
+		title:k_the_westerlands.holder = { add_character_flag = { flag = mw_init_event_blocker days = 2 } }
+			
+        
+			start_war = {
+				cb = invasion_war
+				claimant = title:e_the_iron_islands.holder
+				target = title:e_the_iron_throne.holder
+				target_title = title:k_the_westerlands
+				#target_title = title:d_castamere
+				#target_title = title:c_castamere
+				#target_title = title:c_lowell
+				#target_title = title:c_seven_points
+				#target_title = title:c_lannisport
+			}
+			
+			ai_chance = {
+		base = 30 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+			
+		}
+	#### I will pay the iron price but stupider!
+	option = {
+		name =  got_bookmark.0007.b
+		custom_tooltip =  got_bookmark.0007.b.tt
+		title:c_winterfell.holder = { add_character_flag = { flag = mw_init_event_blocker days = 2 } }
+		start_war = {
+				cb = invasion_war
+				claimant = root
+				target = title:c_winterfell.holder
+				target_title = title:k_the_north
+				#target_title = title:d_the_rills
+				#target_title = title:d_flints_finger
+				#target_title = title:d_the_wolfswood
+				#target_title = title:d_grey_downs
+				#target_title = title:d_lakelands
+				#target_title = title:d_fever
+				#target_title = title:d_stony_shore
+				#target_title = title:c_sea_dragon_point
+				#target_title = title:c_stillport
+				#target_title = title:d_bear_island
+				#target_title = title:c_moat_cailin
+			}
+		add_courtier = character:Greyjoy_14	
+        character:Stark_6 = { trigger_event = {
+								id = got_bookmark.2001
+								days = 100
+							} }
+		ai_chance = {
+		base = 150 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}	
+		}
+		
+
+		}
+		
+		
+### Tyrell-Lannister
+got_bookmark.0008 = {
+	title = got_bookmark.0008.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Baelish_1
+		scripted_animation = chancellor
+	}
+
+	
+	
+	override_background = {
+		reference = garden
+	}
+	desc = "got_bookmark.0008_desc"
+	
+trigger = { character:Tyrell_14 = { is_married = no } }
+	
+	#### Perhaps King Joffrey can set aside his bethrothed.
+	option = {
+		name =  got_bookmark.0015.b
+		custom_tooltip =  got_bookmark.0015.b.tt
+		add_character_flag = supports_joffrey
+		character:Baratheon_5 = { 
+							break_betrothal = character:Stark_8
+							marry = character:Tyrell_14
+							}
+		character:Baratheon_5 = {
+						create_alliance = {
+							target = character:Tyrell_8
+							allied_through_owner = character:Baratheon_5
+							allied_through_target = character:Tyrell_8
+						}
+					}
+					character:Tyrell_8 = {
+						add_opinion = {
+							target = character:Baratheon_5
+							modifier = event_negotiated_alliance_opinion
+						}
+					}
+				character:Baratheon_5 = {	
+					every_character_war = {
+				add_defender = title:k_the_reach.holder	}
+	
+				}
+				agot_mw_join_loyalists_effect = { RULER = root CROWN = character:Baratheon_5 }
+			
+			ai_chance = {
+		base = 150 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+	### Another King perhaps...
+		option = {
+		name =  got_bookmark.0015.c
+		custom_tooltip =  got_bookmark.0015.c.tt
+		ai_chance = {
+		base = 10 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		
+		}
+
+		}
+		
+### Robert Death
+got_bookmark.0009 = {
+	title = got_bookmark.0009.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Lannister_9
+		scripted_animation = chancellor
+	}
+
+	
+	override_background = {
+		reference = wilderness
+	}
+	desc = "got_bookmark.0009_desc"
+	
+immediate = {
+
+hidden_effect = {
+	character:Baratheon_2 = { 
+	death = {
+							death_reason = death_boar
+							killer = Lannister_6
+						}
+						}
+	
+	title:k_the_stormlands.holder = { 	trigger_event = {
+								id = got_bookmark.0006
+								days = 1
+							}
+							}
+	
+	title:k_dragonstone.holder = {
+			
+			##I'd do much shorter but just in-case someone is doing MP and not clicking on their events quickly.
+			trigger_event = {
+								id = got_bookmark.0005
+								days = 30
+							}
+
+
+				}
+}
+							
+							
+							}
+	
+	#### I'm dead!.
+	option = {
+		name =  got_bookmark.0009.a
+		custom_tooltip =  got_bookmark.0009.a.tt
+		
+		}
+
+		}
+		
+		### Robert death notification
+got_bookmark.0010 = {
+	title = got_bookmark.0010.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+
+	
+	
+	override_background = {
+		reference = agot_iron_throne
+	}
+	desc = "got_bookmark.0010"
+	
+
+	
+	#### I must learn the truth.
+	option = {
+		name =  got_bookmark.0010.a
+		custom_tooltip =  got_bookmark.0010.a.tt
+		
+		}
+
+		}
+		
+### Stannis Letter
+got_bookmark.0011 = {
+	type = letter_event
+	sender = title:k_dragonstone.holder
+	opening = {
+		desc = "got_bookmark.0011_opening"
+	}
+	desc = "got_bookmark.0011_desc"
+	
+
+	
+	#### Wow
+	option = {
+		name =  got_bookmark.0011.a
+		custom_tooltip =  got_bookmark.0011.a.tt
+		
+		}
+
+		}
+		
+
+got_bookmark.0013 = {
+	title = got_bookmark.0013.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Melisandre_1
+		scripted_animation = chancellor
+	}
+
+	trigger = { character:Baratheon_4 = { has_title = title:k_the_stormlands } }
+	
+	override_background = {
+		reference = bp1_bonfire
+	}
+	desc = "got_bookmark.0013_desc"
+	
+
+	
+	#### He stole my bannermen!
+	option = {
+		name =  got_bookmark.0013.a
+		custom_tooltip =  got_bookmark.0013.a.tt
+		character:Baratheon_4 = { trigger_event = got_bookmark.0014 }
+		set_relation_lover = character:Melisandre_1
+			ai_chance = {
+		base = 150 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		#### This is wrong.
+	option = {
+		name =  got_bookmark.0013.b
+		custom_tooltip =  got_bookmark.0013.b.tt
+		set_character_faith = faith:the_seven_main
+			ai_chance = {
+		base = 10 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+
+		}
+		
+
+got_bookmark.0014 = {
+	title = got_bookmark.0014.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Tarth_6
+		scripted_animation = spymaster
+	}
+
+	
+	
+	override_background = {
+		reference = bedchamber
+	}
+	desc = "got_bookmark.0014_desc"
+	
+	immediate = {
+	
+	 set_designated_heir_unsafe = character:Baratheon_3
+character:Tarth_6 = {	create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:Tarth_6
+			}
+			}
+	every_character_war = { end_war = white_peace }
+	}
+
+	
+	#### 
+	option = {
+		name =  got_bookmark.0014.a
+		custom_tooltip =  got_bookmark.0014.a.tt
+		
+		
+		hidden_effect = { 
+		death = {
+							death_reason = death_assassination
+							killer = character:Tarth_6
+					}
+					}
+		character:Baratheon_3 = {
+
+	#agot_more_bookmarks_agot_megawar_setup = yes
+
+
+
+
+		every_character_war = { add_attacker = title:d_brightwater.holder
+					add_attacker = title:d_wendwater_forest.holder
+				add_attacker = title:d_masseys_hook.holder
+				add_attacker = character:Saan_2
+			if = { limit = { title:k_the_north.holder = { has_character_flag = supports_stannis } }
+				add_attacker = title:k_the_north.holder
+				add_attacker = title:k_the_riverlands.holder
+			}
+		} }
+	title:k_the_reach.holder = { trigger_event = got_bookmark.0008 }
+		}
+		#### I hope I am not forgotten
+	option = {
+		name =  got_bookmark.0014.b
+		custom_tooltip =  got_bookmark.0014.b.tt
+		
+		set_player_character = character:Tarth_6
+		hidden_effect = {
+		death = {
+							death_reason = death_assassination
+							killer = character:Tarth_6
+					}
+					}
+				character:Baratheon_3 = {
+
+	#agot_more_bookmarks_agot_megawar_setup = yes
+
+
+
+
+		every_character_war = { add_attacker = title:d_brightwater.holder
+					add_attacker = title:d_wendwater_forest.holder
+				add_attacker = title:d_masseys_hook.holder
+				add_attacker = character:Saan_2
+			if = { limit = { title:k_the_north.holder = { has_character_flag = supports_stannis } }
+				add_attacker = title:k_the_north.holder
+				add_attacker = title:k_the_riverlands.holder
+			}
+		} }
+		
+		title:k_the_reach.holder = { trigger_event = got_bookmark.0008 }
+		}
+
+		}
+		
+		
+		got_bookmark.0020 = {
+		hidden = true
+
+	
+	immediate = {
+		
+
+	agot_mw_join_rebels_effect = { RULER = root REBEL_LEADER = title:e_the_north.holder }
+			title:k_the_riverlands.holder = {
+	
+		create_title_and_vassal_change = {
+		type = swear_fealty
+		save_scope_as = change
+	}
+	title:k_the_riverlands.holder = {
+		change_liege = {
+			liege = title:e_the_north.holder
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	
+				
+				}
+
+			}
+
+	
+		}
+		
+		
+		
+
+
+got_bookmark.2000 = {
+	title = got_bookmark.2000.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Westerling_2
+		scripted_animation = spymaster
+	}
+	immediate = { 
+	hidden_effect = { character:Westerling_2 = { remove_trait = refusing_marriage } }
+	
+	
+	}
+	
+	
+	override_background = {
+		reference = bedchamber
+	}
+	desc = "got_bookmark.2000_desc"
+	
+	### I will do my duty
+	option = {
+		name =  got_bookmark.2000.a
+		custom_tooltip =  got_bookmark.2000.a.tt
+		
+			ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+		
+	option = {
+		name =  got_bookmark.2000.b
+		#custom_tooltip =  got_bookmark.2000.b.tt
+		break_betrothal = character:Frey_82
+		
+		marry = character:Westerling_2
+		set_relation_lover = character:Westerling_2
+		add_courtier = character:Westerling_4
+		
+		character:Frey_1 = {
+		add_courtier = character:Frey_78
+		add_courtier = character:Frey_81
+		trigger_event = got_bookmark.3000
+		}
+			ai_chance = {
+		base = 200 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+		option = {
+		name =  got_bookmark.2000.c
+		custom_tooltip =  got_bookmark.2000.c.tt
+		break_betrothal = character:Frey_82
+
+		character:Frey_1 = { trigger_event = got_bookmark.3000 }
+			ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+	
+	}
+got_bookmark.2001 = {
+	title = got_bookmark.2001.t
+	left_portrait = {
+		character = scope:winterfell_captor
+		scripted_animation = marshal
+	}
+	
+	immediate = { 
+	hidden_effect = {
+	if = { limit = { character:Greyjoy_14 = { is_alive = yes } }
+		character:Greyjoy_14 = { save_scope_as = winterfell_captor }
+		}
+		else = { title:e_the_iron_islands.holder = { save_scope_as winterfell_captor } }
+	
+	title:e_the_iron_islands.holder = { 
+	
+	imprison_character_effect = {
+			TARGET = character:Stark_10
+			IMPRISONER = title:e_the_iron_islands.holder
+		}
+			imprison_character_effect = {
+			TARGET = character:Stark_11
+			IMPRISONER = title:e_the_iron_islands.holder
+		}
+	}
+		if = { limit = { character:Greyjoy_14 = { is_alive = yes } }
+		set_relation_rival = character:Greyjoy_14
+		remove_relation_friend = character:Greyjoy_14
+		}
+		else = { set_relation_rival = scope:winterfell_captor }
+	}
+	
+	}
+	
+	
+	override_background = {
+		reference = battlefield
+	}
+	desc = "got_bookmark.2001_desc"
+	
+	### Turncloak
+	option = {
+		name =  got_bookmark.2001.a
+		custom_tooltip =  got_bookmark.2001.a.tt
+		trigger_event = {
+								id = got_bookmark.2002
+								days = 7
+							}
+		}
+		
+		
+	}
+	
+got_bookmark.2002 = {
+	title = got_bookmark.2002.t
+	left_portrait = {
+		character = character:Stark_7
+		scripted_animation = marshal
+	}
+	
+	
+	
+	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.2002_desc"
+	
+	### Jon set as heir
+	option = {
+		name =  got_bookmark.2002.a
+		custom_tooltip =  got_bookmark.2002.a.tt
+		character:Stark_7 = { trigger_event = bastard_interaction.0009 }
+		 set_designated_heir_unsafe = character:Stark_7
+			ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+		### Dont do anything
+	option = {
+		name =  got_bookmark.2002.b
+		custom_tooltip =  got_bookmark.2002.b.tt
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+		
+	}
+got_bookmark.2003 = {
+	title = got_bookmark.2003.t
+	
+	left_portrait = {
+		character = character:Stark_7
+		scripted_animation = marshal
+	}
+	
+	
+	
+	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.2003_desc"
+	immediate = { 
+hidden_effect = {
+if = { limit = { title:k_the_north.holder = character:Bolton_1 } character:Bolton_5 = { get_title = title:c_winterfell get_title = title:d_winterfell } }
+
+if = { limit = { root = title:k_the_north.holder }
+character:Stark_6 = { every_sibling = {
+			add_pressed_claim = title:e_the_north
+			add_pressed_claim = title:k_the_north
+			add_pressed_claim = title:d_winterfell
+			add_pressed_claim = title:c_winterfell
+			}
+			}
+			if = { limit = { character:Stark_7 = { is_ruler = yes } }
+					character:Stark_7 = { add_courtier = character:Stark_10
+											add_courtier = character:Stark_11 }
+											}
+			else = {
+			random_vassal = { add_courtier = character:Stark_10 }
+			random_vassal = {	add_courtier = character:Stark_11	}
+			}
+			}
+
+}
+}
+
+	
+	option = {
+		name =  got_bookmark.2003.a
+		custom_tooltip =  got_bookmark.2003.b.tt
+		#agot_mw_stay_neutral_effect = { RULER = root CROWN = title:e_the_iron_throne.holder }
+		}
+	}
+got_bookmark.2004 = {
+	title = got_bookmark.5000.t
+	left_portrait = {
+		character = character:Stark_7
+		scripted_animation = marshal
+	}	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.2004_desc"
+immediate = { 
+#add_character_flag = { flag = agot_immersion_bannermen_blocker days = 2 }	
+#agot_mw_join_loyalists_effect = { RULER = root CROWN = title:e_the_iron_throne.holder }
+
+if = { limit = { NOT = { character:Frey_82 = { is_spouse_of_even_if_dead = character:Stark_6 } } }
+	if = { limit = { character:Frey_15 = { is_alive = yes } } 
+	
+					character:Frey_15 = { get_title = title:c_riverrun
+									get_title = title:d_riverrun }
+				character:Tully_7.house.house_head = { 
+		add_pressed_claim = title:d_riverrun
+		add_pressed_claim = title:c_riverrun
+		}
+			
+									}
+else = {	title:d_the_crossing.holder = { get_title = title:c_riverrun
+									get_title = title:d_riverrun
+									
+									}
+						character:Tully_7.house.house_head = { 
+		add_pressed_claim = title:d_riverrun
+		add_pressed_claim = title:c_riverrun
+		}
+									} }
+									
+		character:Tully_7.house.house_head = { 
+		add_pressed_claim = title:k_the_riverlands
+		}
+
+}
+	option = {
+		name =  got_bookmark.2003.a
+		custom_tooltip =  got_bookmark.2002.b.tt
+	#agot_mw_stay_neutral_effect = { RULER = root CROWN = title:e_the_iron_throne.holder }
+		}
+	}
+	
+	###Ryswell/Dustin Decision
+got_bookmark.2005 = {
+	title = got_bookmark.5000.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Tarth_6
+		scripted_animation = spymaster
+	}
+	
+	option = {
+		name =  got_bookmark.3006.a
+		custom_tooltip =  got_bookmark.3006.a.tt
+		add_character_flag = supports_redwedding
+		add_courtier = character:Karstark_17
+		add_courtier = character:Karstark_18
+		ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+			option = {
+		name =  got_bookmark.3006.b
+		custom_tooltip =  got_bookmark.3006.b.tt
+		ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+###Red Wedding / Bolton-Frey Rebellion	
+	
+	
+### Walder Wants Blood	
+got_bookmark.3000 = {
+	title = got_bookmark.3000.t
+	
+	left_portrait = {
+		character = character:Stark_6
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = character:Tully_4
+		scripted_animation = chancellor
+	}
+	lower_right_portrait = {
+	character = character:Bolton_1
+	}
+	lower_left_portrait = {
+	character = character:Lannister_1
+	}
+	
+	
+	
+	override_background = {
+		reference = throne_room
+	}
+	desc = "got_bookmark.3000_desc"
+
+	### Robb Stark must die!
+	option = {
+		trigger = { character:Bolton_1 = { is_alive = yes } }
+		name =  got_bookmark.3000.a
+		custom_tooltip =  got_bookmark.3000.a.tt
+	character:Bolton_1 = {	trigger_event = {
+								id = got_bookmark.3001
+								months = 9
+							}
+							}
+	title:d_karhold.holder = {	trigger_event = {
+								id = got_bookmark.3006
+								months = 8
+							}
+							}
+	title:d_the_rills.holder = {	trigger_event = {
+								id = got_bookmark.3007
+								months = 8
+							}
+							}
+	title:d_the_barrowlands.holder = {	trigger_event = {
+								id = got_bookmark.3007
+								months = 8
+							}
+							}
+	every_in_list = { list = stark_bannermen limit = { highest_held_title_tier > tier_barony NOR = {  this = character:Umber_8 has_title = title:d_bear_island has_title = title:d_white_harbor has_title = title:d_the_neck has_title = title:d_the_barrowlands has_title = title:d_the_rills has_title = title:d_the_dreadfort has_title = title:d_the_crossing }   }	trigger_event = {
+								id = got_bookmark.3008
+								months = 8
+							} } 							
+		ai_chance = {
+		base = 1000 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+	### I'm too old for this
+	option = {
+		name =  got_bookmark.3000.b
+		custom_tooltip =  got_bookmark.3000.b.tt
+		}	
+		
+	}
+	
+### Roose makes a decision
+got_bookmark.3001 = {
+	title = got_bookmark.3001.t
+	
+	left_portrait = {
+		character = root
+		scripted_animation = personality_dishonorable
+	}
+	
+	
+	
+	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.3001_desc"
+
+	### 
+	option = {
+		trigger = { character:Frey_1 = { is_alive = yes }
+					character:Stark_6 = { is_alive = yes }
+				OR = {
+						is_ai = no
+					character:Stark_6 = { any_character_war = { character:Stark_6 = { is_attacker = yes }  attacker_war_score < 50 } }
+				
+					}
+		}
+		ai_chance = {
+		base = 1000 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		name =  got_bookmark.3001.a
+		custom_tooltip =  got_bookmark.3001.a.tt
+		duel = {
+			skill = intrigue
+			#skills = { martial prowess }
+			target = character:Stark_6
+			
+			50 = {
+				#show_chance = no
+				desc = "got_bookmark.3001_win_desc"
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				custom_tooltip = got_bookmark.3001.a.w.tt
+				
+			add_character_flag = killed_robb
+			add_trait = murderer
+			character:Frey_1 = { add_trait = murderer }
+			add_trait = disloyal
+			character:Stark_6 = { trigger_event = got_bookmark.3002 }
+			every_player = { trigger_event = got_bookmark.3003 }
+			
+			
+			}
+			50 = {
+				#show_chance = no
+				desc = "got_bookmark.3001_lose_desc"
+				character:Stark_6 = { trigger_event = got_bookmark.3004 }
+				every_player = { trigger_event = got_bookmark.3005 }
+				custom_tooltip = got_bookmark.3001.a.l.tt
+				set_relation_rival = character:Stark_6
+				character:Frey_1 = { set_relation_rival = character:Stark_6 }
+				add_trait = murderer
+				character:Frey_1 = { add_trait = murderer }
+				add_trait = disloyal
+			}
+			}
+		
+
+		}
+		
+	### I'm too old for this
+	option = {
+		name =  got_bookmark.3001.b
+		custom_tooltip =  got_bookmark.3001.b.tt
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}	
+		
+	}
+	
+	
+### Red Wedding Succes, Robb
+got_bookmark.3002 = {
+	title = got_bookmark.3002.t
+	
+	left_portrait = {
+		character = character:Frey_1
+		animation = toast_goblet
+	}
+	right_portrait = {
+		character = character:Stark_6
+		animation = severelywounded
+	}
+	lower_left_portrait = {
+	character = character:Bolton_1
+	}
+	lower_right_portrait = {
+	character = character:Tully_4
+	}
+	immediate = {
+		hidden_effect = {  set_designated_heir_unsafe = character:Stark_8
+		if = { limit = { character:Stark_8 = { NOT = { is_imprisoned_by = title:e_the_iron_throne.holder } } }
+			imprison_character_effect = {
+			TARGET = character:Stark_8
+			IMPRISONER = title:e_the_iron_throne.holder
+		}
+		}
+
+		}
+		
+	 	 every_courtier_or_guest = {  limit = { NOT = { is_away_from_court = no } }
+		death = {
+							death_reason = death_murder_known
+							killer = character:Frey_1
+					}
+					}
+	
+	
+		root = {	death = {
+							death_reason = death_murder_known
+							killer = character:Bolton_1
+					}
+					}
+	
+			
+					}
+	
+	
+	override_background = {
+		reference = throne_room
+	}
+	desc = "got_bookmark.3002_desc"
+
+	### 
+	option = {
+		name =  got_bookmark.3002.a
+		custom_tooltip =  got_bookmark.3002.b.tt
+		
+		}
+		
+	### I'm too old for this
+	option = {
+		name =  got_bookmark.3002.b
+		#custom_tooltip =  got_bookmark.2003.b.tt
+		set_player_character = character:Stark_7
+	
+		}	
+		
+	}
+	
+### Red Wedding Succes, Players Notification
+got_bookmark.3003 = {
+	title = got_bookmark.3003.t
+	
+	
+	left_portrait = {
+		character = character:Frey_1
+		animation = toast_goblet
+	}
+	right_portrait = {
+		character = character:Stark_6
+		animation = severelywounded
+	}
+	lower_left_portrait = {
+	character = character:Bolton_1
+	}
+	lower_right_portrait = {
+	character = character:Tully_4
+	}
+	
+	
+	
+	override_background = {
+		reference = throne_room
+	}
+	theme = death
+
+	desc = "got_bookmark.3003_desc"
+
+	### 
+	option = {
+		trigger = { character:Frey_1 = { is_alive = yes } }
+		name =  got_bookmark.3003.a
+		#custom_tooltip =  got_bookmark.2003.b.tt
+	character:Bolton_1 = {	character:trigger_event = {
+								id = got_bookmark.3001
+								days = 7
+							}
+							}
+		}
+		
+	### I'm too old for this
+	option = {
+		trigger = { haracter:Stark_6 = { is_ruler = yes } }
+		name =  got_bookmark.3002.b
+		set_player_character = character:Stark_7
+		}	
+		
+	}
+
+### Red Wedding Failure
+got_bookmark.3004 = {
+	title = got_bookmark.3004.t
+	
+	left_portrait = {
+		character = character:Frey_1
+		animation = toast_goblet
+	}
+	right_portrait = {
+		character = character:Stark_6
+		animation = aggressive_sword
+	}
+	lower_left_portrait = {
+	character = character:Bolton_1
+	}
+	lower_right_portrait = {
+	character = character:Tully_4
+	}
+	theme = murder_scheme	
+	
+	
+	
+	immediate = {
+	
+	 every_courtier_or_guest = {  limit = { NOT = { is_away_from_court = no } }
+		
+			hidden_effect = {		
+			random = {
+			chance = 75
+			increase_wounds_effect = {
+				REASON = battle
+			}
+		} }
+			random = {
+			chance = 50
+				death = {
+							death_reason = death_murder_known
+							killer = character:Frey_1
+					}
+		}
+	
+	
+		}
+	
+	every_in_list = { list = stark_bannermen limit = { has_character_flag = supports_redwedding } add_to_list = red_wedding_supporters } 
+	
+	
+	
+	character:Bolton_1 = {
+		
+		character:Stark_6 = { every_character_war = { remove_participant = character:Bolton_1 } }
+		
+		start_war = {
+				cb = agot_claimant_faction_war
+				target = root
+				claimant = character:Bolton_1
+				target_title = root.primary_title
+				target_title = title:d_winterfell
+				target_title = title:c_winterfell
+				
+			}
+			every_character_war = {
+				add_to_list = bolton_wars
+				add_attacker = title:d_the_crossing.holder
+				}
+			every_in_list = { list = red_wedding_supporters
+			save_scope_as = war_joiner
+			character:Stark_6 = { every_character_war = { remove_participant = scope:war_joiner } }
+			every_in_list = { list = bolton_wars add_attacker = scope:war_joiner }
+			}
+			}
+	
+	
+	
+	
+	
+	}
+	
+	
+override_background = {
+		reference = throne_room
+	}
+	desc = "got_bookmark.3004_desc"
+
+	### 
+	option = {
+	
+		name =  got_bookmark.3004.a
+		custom_tooltip =  got_bookmark.3004.a.tt
+			
+			
+			
+		
+		
+		
+					}
+			
+			
+			
+	
+	
+		
+		
+		
+		
+	}
+
+### Red Wedding Failure, Players Notification
+got_bookmark.3005 = {
+		title = got_bookmark.3005.t
+	
+	left_portrait = {
+		character = character:Frey_1
+		animation = toast_goblet
+	}
+	right_portrait = {
+		character = character:Stark_6
+		animation = aggressive_sword
+	}
+	lower_left_portrait = {
+	character = character:Bolton_1
+	}
+	lower_right_portrait = {
+	character = character:Tully_4
+	}
+	theme = murder_scheme	
+	
+override_background = {
+		reference = throne_room
+	}
+	
+	desc = "got_bookmark.3005_desc"
+
+	### 
+	option = {
+		
+		name =  got_bookmark.3005.a
+		custom_tooltip =  got_bookmark.3005.a.tt
+	
+		}
+		
+
+		
+	}
+	
+	
+got_bookmark.3006 = {
+	title = got_bookmark.3006.t
+	
+	left_portrait = {
+		character = title:d_karhold.holder
+		scripted_animation = spymaster
+	}
+	
+	
+	
+	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.3006_desc"
+
+	
+	option = {
+		name =  got_bookmark.3006.a
+		custom_tooltip =  got_bookmark.3006.a.tt
+		add_character_flag = supports_redwedding
+		add_courtier = character:Karstark_17
+		add_courtier = character:Karstark_18
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+			option = {
+		name =  got_bookmark.3006.b
+		custom_tooltip =  got_bookmark.3006.b.tt
+		ai_chance = {
+		base = 20 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+	}
+
+got_bookmark.3007 = {
+	title = got_bookmark.3006.t
+	
+	left_portrait = {
+		character = root
+		scripted_animation = spymaster
+	}
+	
+	
+	
+	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.3006_desc"
+
+	
+	option = {
+		name =  got_bookmark.3006.a
+		custom_tooltip =  got_bookmark.3006.a.tt
+		add_character_flag = supports_redwedding
+		ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+		
+			option = {
+		name =  got_bookmark.3006.b
+		custom_tooltip =  got_bookmark.3006.b.tt
+		ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+	}
+
+
+got_bookmark.3008 = {
+	title = got_bookmark.3006.t
+	
+	left_portrait = {
+		character = root
+		scripted_animation = spymaster
+	}
+	
+	
+	
+	
+	override_background = {
+		reference = ep2_hunt_snowy_forest
+	}
+	desc = "got_bookmark.3006_desc"
+
+	
+	option = {
+		name =  got_bookmark.3006.a
+		custom_tooltip =  got_bookmark.3006.a.tt
+		add_character_flag = supports_redwedding
+		ai_chance = {
+		base = 1 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+	
+		opinion_modifier = {
+				opinion_target = character:Stark_6
+				multiplier = -1
+			}
+		
+		modifier = { 
+					OR = {
+	
+			
+			
+			ai_honor <= 75
+		
+	
+		AND = {
+			ai_honor <= 25
+			ai_rationality >= 50
+		}
+	}
+	add = 50
+		
+					}
+	
+		
+	}
+		}
+		
+			option = {
+		name =  got_bookmark.3006.b
+		custom_tooltip =  got_bookmark.3006.b.tt
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		}
+		}
+	}
+	
+	
+	
+	

@@ -1,0 +1,1305 @@
+﻿namespace = agot_events_more_bookmarks_misc
+
+### Aegon the Uncrowned
+agot_events_more_bookmarks_misc.1 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.1.t
+	desc = agot_events_more_bookmarks_misc.1.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = character:Targaryen_33
+	animation = personality_callous
+	}
+	lower_left_portrait = {
+	character = character:Targaryen_32
+	animation = personality_callous
+	}
+	right_portrait = {
+	character = character:Targaryen_31
+	animation = personality_callous
+	}
+
+	immediate = {
+		character:Targaryen_32 = { save_scope_as = rhaena }
+		title:e_the_iron_throne.holder = { save_scope_as = maegor }
+		set_variable = {
+							name = it_army_size
+							value = title:e_the_iron_throne.holder.max_military_strength 
+							}
+		change_variable = {
+							name = it_army_size
+							multiply = 0.25
+		
+		}
+	
+		
+		root = {
+			spawn_army = {
+				men_at_arms = {
+					type = armored_horsemen
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_pinkmaiden.title_province
+				name = event_troop_default_name
+				save_scope_as = aegonarmy
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = armored_horsemen
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_pinkmaiden.title_province
+				name = event_troop_default_name
+				save_scope_as = rhaenaarmy
+				
+			}
+			hidden_effect = {
+				scope:aegonarmy ?= {
+					assign_commander = root
+				}
+				scope:rhaenaarmy ?= {
+					assign_commander = character:Targaryen_32
+				}
+			}
+		}
+		
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.1.a
+	}
+}
+
+
+
+### Aegon's Conquest
+agot_events_more_bookmarks_misc.2 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.2.t
+	desc = agot_events_more_bookmarks_misc.2.desc
+
+	    theme = war
+    override_background = agot_icecave
+	#right_portrait = {
+	#	character = var:current_dragon
+	#	animation = dragon_main
+	#	camera = camera_dragon_event_standing
+	#
+	#	#Add this so dragon fits within event window
+    #    outfit_tags = { linear_camera_zoom }
+	#}
+    left_portrait = {
+        character = root
+        animation = marshal
+    }
+
+	
+
+	immediate = {
+	character:Targaryen_15 = { save_scope_as = daenys }
+	hidden_effect = {
+	get_title = title:e_the_iron_throne
+
+title:e_the_iron_throne = {
+   set_variable = kingsguard 
+
+			agot_set_empire_tier_realm_paramountcy = yes
+			if = {	# Set Court Language to Common
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = {
+					set_court_language = language_common
+					if = {
+						limit = { NOT = { knows_court_language_of = this } }
+						learn_court_language_of = this
+					}
+				}
+			}
+			}
+			
+agot_more_bookmarks_kingsguard_formation = yes
+	get_title = title:c_kings_landing
+	get_title = title:d_kings_landing
+	title:c_kings_landing = {
+			title:d_kings_landing = { reset_title_name = yes }
+			reset_title_name = yes
+			title:b_the_red_keep = { set_title_name = b_aegonfort }
+			title:b_rhaenyss_hill = { reset_title_name = yes }
+			title:b_visenyas_hill = { reset_title_name = yes }
+			title:b_hookmarket = { set_title_name = b_kings_landing }
+			title:b_landingfield = { reset_title_name = yes }
+	}
+	}
+	
+		
+		set_variable = {
+							name = it_army_size
+							value = title:c_dragonstone.holder.max_military_strength 
+							}
+		change_variable = {
+							name = it_army_size
+							multiply = 0.33
+		
+		}
+	
+		
+		root = {
+			spawn_army = {
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_kings_landing.title_province
+				name = event_troop_default_name
+				save_scope_as = aegonarmy
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_kings_landing.title_province
+				name = event_troop_default_name
+				save_scope_as = visenyaarmy
+				
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_kings_landing.title_province
+				name = event_troop_default_name
+				save_scope_as = rhaenysarmy
+				
+			}
+			hidden_effect = {
+				scope:aegonarmy ?= {
+					assign_commander = root
+				}
+				scope:visenyaarmy ?= {
+					assign_commander = character:Targaryen_28
+				}
+				scope:rhaenysarmy ?= {
+					assign_commander = character:Targaryen_29
+				}
+			}
+		}
+		
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.2.a
+	}
+}
+
+### Aegon's Conquest
+agot_events_more_bookmarks_misc.3 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.3.t
+	desc = agot_events_more_bookmarks_misc.3.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = root
+	animation = personality_callous
+	}
+	
+
+	immediate = {
+		
+
+		
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.ironborn
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_riverrun } } }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = title:e_the_riverlands.holder
+				target_title = title:e_the_riverlands
+			}
+			ai_chance = {
+		base = 100 
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.storm
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_storms_end } } }
+		start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_the_stormlands.holder
+				target_title = title:e_the_stormlands
+			}
+			ai_chance = {
+		base = 3000
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.reach
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_highgarden } } }
+			start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_the_reach.holder
+				target_title = title:e_the_reach
+			}
+			ai_chance = {
+		base = 500
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.west
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_casterly_rock } } }
+			start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_the_westerlands.holder
+				target_title = title:e_the_westerlands
+			}
+			ai_chance = {
+		base = 500
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.islands
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_pyke } }
+		any_vassal_or_below = { has_title = title:c_riverrun }
+		}
+		start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_the_iron_islands.holder
+				target_title = title:e_the_iron_islands
+			}
+			ai_chance = {
+		base = 100 
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.vale
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_the_eyrie } } }
+		start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_the_vale.holder
+				target_title = title:e_the_vale
+			}
+			ai_chance = {
+		base = 200
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.north
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_winterfell } } }
+		start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_the_north.holder
+				target_title = title:e_the_north
+			}
+			ai_chance = {
+		base = 150
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.3.dorne
+		trigger = { NOT = { any_vassal_or_below = { has_title = title:c_sunspear } } }
+		start_war = {
+				cb = dragon_subjugation_cb 
+				claimant = root
+				target = title:e_dorne.holder
+				target_title = title:e_dorne
+			}
+			ai_chance = {
+		base = 25
+		}
+	}
+	option = { # Conquest is over
+		name = agot_events_more_bookmarks_misc.3.done
+		scope:aegons_conquest_story = { end_story = yes }
+		trigger_event = agot_events_more_bookmarks_misc.4 
+		ai_chance = {
+		base = 25 
+		}
+	}
+}
+
+### Aegon's Conquest Completion
+agot_events_more_bookmarks_misc.4 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.4.t
+	desc = agot_events_more_bookmarks_misc.4.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = root
+	animation = personality_callous
+	}
+	
+
+	immediate = {
+	give_nickname = nick_the_conqueror
+	get_title = title:k_the_crownlands
+		 agot_create_artifact_iron_throne_effect = { OWNER = this }
+		 hidden_effect = {
+		 
+		  change_government = lp_feudal_government
+		every_vassal_or_below = {
+		limit = { highest_held_title_tier >= tier_county }
+		 change_government = lp_feudal_government
+		  vassal_contract_set_obligation_level = {
+                    type = title_revocation_rights
+                    level = title_revocation_rights_protected
+                }
+			
+		 }
+		  every_held_title = {
+		  limit = { tier = tier_kingdom }
+                    set_de_jure_liege_title = title:e_the_iron_throne
+					}
+		
+		  every_vassal = {
+		  limit = { highest_held_title_tier = tier_kingdom }
+           every_held_title = {
+                    set_de_jure_liege_title = title:e_the_iron_throne
+					}
+                }
+		 
+			every_vassal_or_below = { limit = {
+					capital_barony.title_province = { geographical_region = world_westeros_the_crownlands }
+					has_culture = culture:riverlander
+					}
+					set_culture = culture:crownlander
+					every_courtier = { limit = { has_culture = culture:riverlander } set_culture = culture:crownlander }
+					every_sub_realm_county = { set_county_culture = culture:crownlander }
+					}
+			title:c_kings_landing = { set_county_culture = culture:crownlander }
+			title:c_blackstripe = { set_county_culture = culture:crownlander }		
+			title:c_briarcrest = { set_county_culture = culture:crownlander }
+			title:c_wings_pass = { set_county_culture = culture:crownlander }
+			
+}
+            
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.4.a
+	}
+}
+
+
+### Orys - Argilac Duel
+agot_events_more_bookmarks_misc.5 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.5.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { character:Baratheon_14 = { is_alive = yes } }
+				desc = agot_events_more_bookmarks_misc.5.desc.a
+			}
+			triggered_desc = {
+				trigger = {  character:Durrandon_87 = { is_alive = yes } }
+				desc = agot_events_more_bookmarks_misc.5.desc.b
+			}
+		}
+	}
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = root
+	animation = personality_callous
+	}
+	
+
+	immediate = {
+
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.5.a
+		trigger = { character:Baratheon_14 = { is_alive = yes } }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = title:e_the_stormlands.holder
+				target_title = title:e_the_stormlands
+			}	
+			
+			if = { limit = { character:Durrandon_88 = { is_alive = yes } }
+				imprison_character_effect = {
+			TARGET = character:Durrandon_88
+			IMPRISONER = root
+		}
+		}
+								
+								
+		ai_chance = {
+		base = 1000 
+		}						
+	}
+
+	
+	option = { #
+		name = agot_events_more_bookmarks_misc.5.d
+		trigger = { character:Baratheon_14 = { is_alive = no } }
+		set_relation_rival = character:Durrandon_87 
+		
+
+		
+		
+	}
+}
+
+
+### Aegon's Conquest Grand Alliance
+agot_events_more_bookmarks_misc.6 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.6.t
+	desc = agot_events_more_bookmarks_misc.6.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = scope:ally_1
+	animation = personality_callous
+	}
+	right_portrait = {
+	character = scope:ally_2
+	animation = personality_callous
+	}
+	lower_left_portrait = {
+	character = scope:ally_3
+	animation = personality_callous
+	}
+
+	immediate = {
+		
+	
+		
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.6.a
+	}
+}
+
+
+#### Grant Orys the Stormlands?
+
+agot_events_more_bookmarks_misc.7 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.7.t
+	desc = agot_events_more_bookmarks_misc.7.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = character:Baratheon_14
+	animation = marshal
+	}
+	right_portrait = {
+	character = root
+	animation = chancellor
+	}
+	lower_left_portrait = {
+	character = character:Durrandon_88
+	animation = personality_callous
+	}
+
+	immediate = {
+		character:Durrandon_88 = { every_vassal = { add_to_list = stormlords } 
+									every_held_title = { limit = { tier < tier_kingdom } add_to_list = stormtitles }
+									
+		}
+	
+		
+	}
+
+	option = { # Reward Orys
+		trigger = { 
+					character:Baratheon_14 = {
+										is_alive = yes
+										OR = {	is_ruler = no
+												has_title = title:d_kingsguard
+										}
+					}
+												
+					
+					
+					}
+		name = agot_events_more_bookmarks_misc.7.a
+		hidden_effect = {	
+		if = { limit = { character:Baratheon_14 = { has_trait = kingsguard } }
+		agot_remove_kingsguard_effect = { KINGSGUARD = character:Baratheon_14 }
+		}
+		if = { limit = { character:Baratheon_14 = { has_trait = celibate } }
+		character:Baratheon_14 = { remove_trait = celibate }
+		}
+		
+		
+			if = { limit = { 
+		character:Baratheon_14 = { is_ruler =  yes 
+	
+		} }
+		character:Baratheon_14 = { depose = yes }
+		}
+		
+		
+		
+		character:Baratheon_14 = { set_character_faith = faith:the_seven_main 
+		add_opinion = {
+                    opinion = 250
+                    modifier = pleased_opinion
+                    years = 25
+                    target = root
+                }
+		
+		}
+		destroy_title = title:k_the_stormlands
+		every_in_list = { 
+							list = stormtitles
+							character:Baratheon_14 = { get_title = prev }
+		}
+		#hidden_effect = { get_title = title:k_the_stormlands }
+		
+		character:Baratheon_14 = { add_courtier = character:Durrandon_88 }
+		}
+		character:Durrandon_88 = { 
+		marry = character:Baratheon_14
+		}
+		character:Baratheon_14 = { get_title = title:k_the_stormlands
+		remove_trait = bastard
+			dynasty = { set_coa = dynn_Baratheon }
+			house = { set_coa = dynn_Baratheon }
+			add_trait_force_tooltip = bastard_founder
+			remove_claim = title:d_dragonstone
+			remove_claim = title:c_dragonstone
+			set_culture = culture:stormlander
+		
+
+		}
+		hidden_effect = {
+		every_in_list = {
+							list = stormlords
+												create_title_and_vassal_change = {
+												type = swear_fealty
+												save_scope_as = change
+											}
+								
+											change_liege = {
+												liege = character:Baratheon_14
+												change = scope:change
+											}
+											resolve_title_and_vassal_change = scope:change
+		}
+		}
+		
+		ai_chance = {
+		base = 1000 
+		}
+
+		
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.7.b
+	}
+}
+#agot_events_more_bookmarks_misc.6 = {
+#	type = character_event
+#	title = agot_events_more_bookmarks_misc.5.t
+#	desc = {
+#		first_valid = {
+#			triggered_desc = {
+#				trigger = { character:Baratheon_14 = { is_alive = yes } }
+#				desc = agot_events_more_bookmarks_misc.5.desc.a
+#			}
+#			triggered_desc = {
+#				trigger = {  character:Durrandon_87 = { is_alive = yes } }
+#				desc = agot_events_more_bookmarks_misc.5.desc.b
+#			}
+#		}
+#	}
+#
+#	override_icon = {
+#		reference = "gfx/interface/icons/event_types/type_war.dds"
+#	}
+#	theme = war
+#	left_portrait = {
+#	character = root
+#	animation = personality_callous
+#	}
+#	
+#
+#	immediate = {
+#if = { limit = { character:Baratheon_14 = { is_alive = yes } }
+#	title:c_storms_end.holder = { 
+#	save_scope_as = stormking
+#	every_vassal = { add_to_list = stormlords }
+#	every_held_title = { add_to_list = storm_titles }
+#	destroy_title = title:e_the_stormlands
+#	}
+#	}
+#	if = { limit = { character:Durrandon_88 = { is_alive = yes } }
+#	character:Durrandon_88 = { remove_trait = refusing_marriage }
+#		}
+#
+#		 title:d_tarth.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_vellum_coast.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_stackfield.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:c_horncross_sound.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:c_shearfield.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:c_bronzegate.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:c_the_grief.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_dark_harrow.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_kingswood.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_greatstock.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_valor_meadows.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_grandview.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_blackhaven.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_whentway.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_marchfields.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_red_watch.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_the_slayne.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_nestridge.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_nightsong.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_the_rainwood.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_cape_wrath.holder = {
+#                add_to_list = stormlords
+#            }
+#            title:d_estermont_isles.holder = {
+#                add_to_list = stormlords
+#            }
+#		
+#	}
+#
+#	option = { #
+#		name = agot_events_more_bookmarks_misc.5.a
+#		trigger = { character:Baratheon_14 = { is_alive = yes is_married = no }
+#					character:Durrandon_88 = { is_alive = yes is_married = no }
+#		}	
+#		if = { limit = { 
+#		character:Baratheon_14 = { is_ruler =  yes 
+#		NOT = { has_title = title:c_harrenhal }
+#		} }
+#		character:Baratheon_14 = { depose = yes }
+#		}
+#		if = { limit = { character:Baratheon_14 = { has_trait = kingsguard } }
+#		agot_remove_kingsguard_effect = { KINGSGUARD = character:Baratheon_14 }
+#		}
+#		if = { limit = { character:Baratheon_14 = { has_trait = celibate } }
+#		character:Baratheon_14 = { remove_trait = celibate }
+#		}
+#		
+#					
+#								character:Baratheon_14 = { 
+#															 set_character_faith = faith:the_seven_main
+#															add_opinion = {
+#																opinion = 200
+#																modifier = pleased_opinion
+#																years = 25
+#																target =  root
+#															}
+#														
+#															every_in_list = {
+#															list = storm_titles
+#															prev = { get_title = prev }
+#															}
+#															get_title = title:k_the_stormlands
+#															 change_government = lp_feudal_government
+#														create_title_and_vassal_change = {
+#												type = swear_fealty
+#												save_scope_as = change
+#											}
+#								
+#											change_liege = {
+#												liege = title:e_the_iron_throne.holder
+#												change = scope:change
+#											}
+#											resolve_title_and_vassal_change = scope:change
+#											}
+#							character:Durrandon_88 = { marry = character:Baratheon_14 }
+#							every_in_list = {
+#							list = stormlords
+#												create_title_and_vassal_change = {
+#												type = swear_fealty
+#												save_scope_as = change
+#											}
+#								
+#											change_liege = {
+#												liege = character:Baratheon_14
+#												change = scope:change
+#											}
+#											resolve_title_and_vassal_change = scope:change
+#											}
+#								
+#								
+#								
+#		ai_chance = {
+#		base = 1000 
+#		}						
+#	}
+#	option = { #
+#		name = agot_events_more_bookmarks_misc.5.b
+#		trigger = { 
+#					character:Baratheon_14 = { is_alive = yes }
+#		}
+#		scope:stormking = { get_title = title:k_the_stormlands
+#		
+#		create_title_and_vassal_change = {
+#												type = swear_fealty
+#												save_scope_as = change
+#											}
+#								
+#											change_liege = {
+#												liege = title:e_the_iron_throne.holder
+#												change = scope:change
+#											}
+#											resolve_title_and_vassal_change = scope:change
+#											 change_government = lp_feudal_government
+#		
+#		}
+#		every_in_list = {
+#							list = stormlords
+#												create_title_and_vassal_change = {
+#												type = swear_fealty
+#												save_scope_as = change
+#											}
+#								
+#											change_liege = {
+#												liege = scope:stormking
+#												change = scope:change
+#											}
+#											resolve_title_and_vassal_change = scope:change
+#											}
+#	}
+#	option = { #
+#		name = agot_events_more_bookmarks_misc.5.c
+#		trigger = { character:Baratheon_14 = { is_alive = yes } }
+#		every_in_list = {
+#		list = storm_titles
+#		root = { get_title = prev }
+#		}
+#		every_in_list = {
+#							list = stormlords
+#												create_title_and_vassal_change = {
+#												type = swear_fealty
+#												save_scope_as = change
+#											}
+#								
+#											change_liege = {
+#												liege = root
+#												change = scope:change
+#											}
+#											resolve_title_and_vassal_change = scope:change
+#											}
+#
+#		
+#		
+#	}
+#	option = { #
+#		name = agot_events_more_bookmarks_misc.5.d
+#		trigger = { character:Baratheon_14 = { is_alive = no } }
+#		set_relation_rival = character:Durrandon_87 
+#		
+#
+#		
+#		
+#	}
+#}
+
+
+
+### Century of Blood Start Aegon's Conquest
+
+
+
+### Aegon's Conquest
+agot_events_more_bookmarks_misc.10 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.2.t
+	desc = agot_events_more_bookmarks_misc.2.desc
+
+	    theme = war
+    override_background = agot_dragonstone_cave
+	#right_portrait = {
+	#	character = var:current_dragon
+	#	animation = dragon_main
+	#	camera = camera_dragon_event_standing
+	#
+	#	#Add this so dragon fits within event window
+    #    outfit_tags = { linear_camera_zoom }
+	#}
+    left_portrait = {
+        character = root
+        animation = marshal
+    }
+
+	
+
+	immediate = {
+	save_scope_as = aegon
+	character:Targaryen_15 = { save_scope_as = daenys }
+	
+	random_sibling = { limit = { has_inactive_trait = is_targaryen_28 }
+		 agot_create_artifact_visenya_circlet_effect = { OWNER = this }	
+		 }
+	random_sibling = { limit = { has_inactive_trait = is_targaryen_29 }
+		agot_create_artifact_rhaenys_circlet_effect = { OWNER = this }	
+		 }
+	
+	
+	if = { limit = { is_landed = no } 
+	get_title = title:c_kings_landing
+	get_title = title:e_the_iron_throne
+	every_sibling = { root = { add_courtier = prev } }
+	house = { every_house_member = { limit = { has_trait = dragonrider }  root = { add_courtier = prev } } }
+	
+	
+ 
+	root.house.house_head = { 
+								create_title_and_vassal_change = {
+												type = swear_fealty
+												save_scope_as = change
+											}
+								
+											change_liege = {
+												liege = root
+												change = scope:change
+											}
+											resolve_title_and_vassal_change = scope:change
+	
+	
+	}
+	
+	}
+	else = {
+	
+	
+	
+	get_title = title:e_the_iron_throne
+	
+	
+	
+	}
+	
+
+title:e_the_iron_throne = {
+   set_variable = kingsguard 
+
+			agot_set_empire_tier_realm_paramountcy = yes
+			if = {	# Set Court Language to Common
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = {
+					set_court_language = language_common
+					if = {
+						limit = { NOT = { knows_court_language_of = this } }
+						learn_court_language_of = this
+					}
+				}
+			}
+			}
+			
+agot_more_bookmarks_century_of_blood_kingsguard_formation = yes
+	
+	
+	
+		
+		set_variable = {
+							name = it_army_size
+							value = title:c_dragonstone.holder.max_military_strength 
+							}
+		change_variable = {
+							name = it_army_size
+							multiply = 1.5		
+		}
+	
+		
+	
+			spawn_army = {
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_kings_landing.title_province
+				name = event_troop_default_name
+				save_scope_as = aegonarmy
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_kings_landing.title_province
+				name = event_troop_default_name
+
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = dragonkeepers
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_kings_landing.title_province
+				name = event_troop_default_name
+
+			}
+			
+		
+				scope:aegonarmy ?= {
+					assign_commander = root
+				}
+		
+				
+		
+		
+		
+	}
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.2.a
+		#trigger_event = agot_events_more_bookmarks_misc.11
+	}
+}
+
+agot_events_more_bookmarks_misc.11 = {
+	type = character_event
+	title = agot_events_more_bookmarks_misc.3.t
+	desc = agot_events_more_bookmarks_misc.3.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+	character = root
+	animation = personality_callous
+	}
+	
+
+	immediate = {
+	
+		
+		
+every_ruler = { limit = { 
+							NOT = { this = root } 
+							NOT = { has_trait = nightswatch }
+							agot_is_independent_ruler = yes
+							is_landed = yes
+							capital_barony.title_province = { geographical_region = world_westeros_seven_kingdoms }
+							any_sub_realm_county = { is_neighbor_to_realm = root }
+						}
+					if = { # save all the shared wars to the scope, so we can make an option for each of it within event. Allow up to 10.
+						limit = {
+									NOT = { exists = scope:target_1 }
+						}
+									save_scope_as = target_1
+									primary_title = { save_scope_as =  target_1_title }
+									
+							
+							
+					}
+				else_if = { # save all the shared wars to the scope, so we can make an option for each of it within event. Allow up to 10.
+						limit = {
+									exists = scope:target_1
+									NOT = { exists = scope:target_2 }
+						}
+									save_scope_as = target_2
+									primary_title = { save_scope_as =  target_2_title }
+					}
+					else_if = { # save all the shared wars to the scope, so we can make an option for each of it within event. Allow up to 10.
+						limit = {
+									exists = scope:target_1
+									exists = scope:target_2
+									NOT = { exists = scope:target_3 }
+						}
+									save_scope_as = target_3
+									primary_title = { save_scope_as =  target_3_title }
+					}
+						else_if = { # save all the shared wars to the scope, so we can make an option for each of it within event. Allow up to 10.
+						limit = {
+									exists = scope:target_1
+									exists = scope:target_2
+									exists = scope:target_3
+									NOT = { exists = scope:target_4 }
+						}
+									save_scope_as = target_4
+									primary_title = { save_scope_as =  target_4_title }
+					}
+						else_if = { # save all the shared wars to the scope, so we can make an option for each of it within event. Allow up to 10.
+						limit = {
+									exists = scope:target_1
+									exists = scope:target_2
+									exists = scope:target_3
+									exists = scope:target_4
+									NOT = { exists = scope:target_5 }
+						}
+									save_scope_as = target_5
+									primary_title = { save_scope_as =  target_5_title }
+					}
+					else_if = { # save all the shared wars to the scope, so we can make an option for each of it within event. Allow up to 10.
+						limit = {
+									exists = scope:target_1
+									exists = scope:target_2
+									exists = scope:target_3
+									exists = scope:target_4
+									exists = scope:target_5
+									NOT = { exists = scope:target_6 }
+						}
+									save_scope_as = target_6
+									primary_title = { save_scope_as =  target_6_title }
+					}
+					
+	}
+		}
+
+	
+	
+	
+	
+	
+	
+	
+						
+							
+		
+	
+
+	option = { #
+		name = agot_events_more_bookmarks_misc.11.a
+		trigger = { exists = scope:target_1 }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = scope:target_1
+				target_title = scope:target_1.primary_title
+			}
+			ai_chance = {
+		base = 1000
+		modifier = {
+						add = -975 # To remove something you just add a negative number (5 + -10 = -5)
+					scope:target_1.culture = { has_cultural_pillar = heritage_rhoynish }
+					}
+					
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.11.b
+		trigger = { exists = scope:target_2 }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = scope:target_2
+				target_title = scope:target_2.primary_title
+			}
+			ai_chance = {
+		base = 1000 
+		modifier = {
+						add = -975 # To remove something you just add a negative number (5 + -10 = -5)
+					scope:target_2.culture = { has_cultural_pillar = heritage_rhoynish }
+					}
+					
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.11.c
+		trigger = { exists = scope:target_3 }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = scope:target_3
+				target_title = scope:target_3.primary_title
+			}
+			ai_chance = {
+		base = 1000 
+		modifier = {
+						add = -975 # To remove something you just add a negative number (5 + -10 = -5)
+					scope:target_3.culture = { has_cultural_pillar = heritage_rhoynish }
+					}
+					
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.11.d
+		trigger = { exists = scope:target_4 }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = scope:target_4
+				target_title = scope:target_4.primary_title
+			}
+			ai_chance = {
+		base = 1000 
+		modifier = {
+						add = -975 # To remove something you just add a negative number (5 + -10 = -5)
+					scope:target_4.culture = { has_cultural_pillar = heritage_rhoynish }
+					}
+					
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.11.e
+		trigger = { exists = scope:target_5 }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = scope:target_5
+				target_title = scope:target_5.primary_title
+			}
+			ai_chance = {
+		base = 1000 
+		modifier = {
+						add = -975 # To remove something you just add a negative number (5 + -10 = -5)
+					scope:target_5.culture = { has_cultural_pillar = heritage_rhoynish }
+					}
+					
+		}
+	}
+	option = { #
+		name = agot_events_more_bookmarks_misc.11.f
+		trigger = { exists = scope:target_6 }
+		start_war = {
+				cb = dragon_subjugation_cb
+				claimant = root
+				target = scope:target_6
+				target_title = scope:target_6.primary_title
+			}
+			ai_chance = {
+		base = 1000 
+		modifier = {
+						add = -975 # To remove something you just add a negative number (5 + -10 = -5)
+					scope:target_6.culture = { has_cultural_pillar = heritage_rhoynish }
+					}
+					
+		}
+	}
+	
+	
+	option = { # Conquest is over
+		name = agot_events_more_bookmarks_misc.3.done
+		scope:aegons_conquest_story = { end_story = yes }
+		
+		if = { limit = { any_sub_realm_county = { this = title:c_kings_landing  } }
+						get_title = title:c_kings_landing
+			get_title = title:d_kings_landing
+			title:c_kings_landing = {
+					title:d_kings_landing = { reset_title_name = yes }
+					reset_title_name = yes
+					title:b_the_red_keep = { set_title_name = b_aegonfort }
+					title:b_rhaenyss_hill = { reset_title_name = yes }
+					title:b_visenyas_hill = { reset_title_name = yes }
+					title:b_hookmarket = { set_title_name = b_kings_landing }
+					title:b_landingfield = { reset_title_name = yes }
+			}
+		}
+		ai_chance = {
+		base = 25 
+		}
+	}
+	
+}

@@ -1,0 +1,331 @@
+﻿namespace = naval_decisions
+
+########################################################
+##### Shipbuilding and Naval Information Decisions######
+########################################################
+
+
+#naval_decisions.1 - Naval Menu
+#naval_decisions.2 - My personal and vassal naval power
+#naval_decisions.3 - World Naval Powers
+#naval_decisions.4 - Commission a Flagship
+#naval_decisions.5 - Flagship Completed
+
+### Naval Menu
+
+naval_decisions.1 = {
+	title = naval_decisions.1.t
+	desc = naval_decisions.1.desc
+	theme = stewardship
+	override_background = {
+		reference = docks
+	}
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	right_portrait = {
+		character = scope:admiral
+		
+	}
+	immediate = {
+	
+	random_councillor = {	limit = { has_council_position = councillor_admiral }
+				save_scope_as = admiral
+	}
+	
+	}
+	
+	#### Show me my naval strength
+	option = {
+		name = naval_decisions.1.a
+		custom_tooltip = naval_decisions.1.a.tt
+		trigger_event = naval_decisions.2
+	}
+	
+	#### Show me the naval powers of the world
+	#option = {
+	#	name = naval_decisions.1.b
+	#	custom_tooltip = naval_decisions.1.b.tt
+	#	trigger_event = naval_decisions.3
+	#}
+	#### Commission a Flagship
+	option = {
+		name = naval_decisions.1.c
+		custom_tooltip = naval_decisions.1.c.tt
+		trigger_event = naval_decisions.4
+	}
+	
+		#### Close Menu
+	option = {
+		name = naval_decisions.1.d
+	}
+}
+
+#### My Naval Power
+
+naval_decisions.2 = {
+	title = naval_decisions.2.t
+	desc = naval_decisions.2.desc
+	theme = stewardship
+	override_background = {
+		reference = docks
+	}
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	right_portrait = {
+		character = scope:admiral
+		
+	}
+	immediate = {
+	naval_power_info_calculation_effect = yes
+				}
+	###Back to menu
+	option = {
+		name = naval_decisions.2.a
+	}
+
+}
+
+### World Naval Powers
+
+naval_decisions.3 = {
+	desc = naval_decisions.3.desc
+	
+###Back to menu
+	option = {
+		name = naval_decisions.3.a
+	}
+		###Close Menu
+	option = {
+		name = naval_decisions.3.b
+	}
+}
+
+### Commission a Flagship
+
+naval_decisions.4 = {
+	title = naval_decisions.4.t
+	desc = naval_decisions.4.desc
+	theme = stewardship
+	override_background = {
+		reference = docks
+	}
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	right_portrait = {
+		character = scope:admiral
+		animation = steward
+	}
+	immediate = {
+	
+	random_councillor = {	limit = { has_council_position = councillor_admiral }
+				save_scope_as = admiral
+	}
+	
+	}
+	
+	
+	
+	#### I will order a big flaship
+	option = {
+		name = naval_decisions.4.a
+		custom_tooltip = naval_decisions.4.a.tt
+		trigger = { 
+		NOT = { any_character_artifact = { has_variable = is_flagship } }
+		highest_held_title_tier >= tier_duchy
+		OR = {
+		scope:admiral = { stewardship > 20 }
+		stewardship > 20
+		AND = {
+			scope:admiral = {  stewardship > 15 }
+			highest_held_title_tier >= tier_kingdom
+				}
+		}
+		gold >= 1000
+		}
+		
+		#agot_immersion_create_large_flagship_effect = { OWNER = this }
+		####Flagship build story
+		add_character_flag = large_flagship
+		create_story = {
+					type = flagship_commission_story
+					save_scope_as = naval_war_story
+				}
+			remove_reserved_gold = -1000
+				
+			ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 100 # To remove something you just add a negative number (5 + -10 = -5)
+	
+			ai_boldness >= 50
+		
+				}
+		
+		}	
+				
+	}
+	
+	#### I will order a medium flaship
+	option = {
+		trigger = { 
+		NOT = { any_character_artifact = { has_variable = is_flagship } }
+		highest_held_title_tier >= tier_duchy
+		OR = {
+		scope:admiral = { stewardship > 16 }
+		 stewardship > 16 
+		AND = {
+			scope:admiral = {  stewardship > 13 }
+			highest_held_title_tier >= tier_kingdom
+				}
+		}
+		gold >= 500
+		}
+		
+		name = naval_decisions.4.b
+		custom_tooltip = naval_decisions.4.b.tt
+		####Flagship build story
+		#agot_immersion_create_medium_flagship_effect = { OWNER = this }
+		add_character_flag = medium_flagship
+		create_story = {
+					type = flagship_commission_story
+					save_scope_as = naval_war_story
+				}
+		remove_reserved_gold = 500
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 100 # To remove something you just add a negative number (5 + -10 = -5)
+	
+			ai_boldness >= 0
+		
+				}
+		
+		}		
+				
+	}
+	
+		#### I will order a small flaship
+	option = {
+		name = naval_decisions.4.c
+		custom_tooltip = naval_decisions.4.c.tt
+		trigger = { gold >= 250 
+		NOT = { any_character_artifact = { has_variable = is_flagship } }
+		}
+		show_as_unavailable = {
+		
+		gold < 250
+	
+		
+		}
+		####Flagship build story
+		#agot_immersion_create_small_flagship_effect = { OWNER = this }
+		add_character_flag = small_flagship
+		create_story = {
+					type = flagship_commission_story
+					save_scope_as = naval_war_story
+				}
+		remove_reserved_gold = 250
+				ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+	modifier = {
+			add = 150 # To remove something you just add a negative number (5 + -10 = -5)
+	
+			ai_boldness <= 0
+		
+				}
+		
+		}
+				
+	}
+	
+		#### Back to menu
+	option = {
+		name = naval_decisions.4.d
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 100 # To remove something you just add a negative number (5 + -10 = -5)
+	
+			ai_boldness <= -50
+		
+				}
+		
+		}
+	}
+}
+
+### Flagship Completed
+
+naval_decisions.5 = {
+	title = naval_decisions.5.t
+	desc = naval_decisions.5.desc
+	theme = stewardship
+	override_background = {
+		reference = docks
+	}
+	left_portrait = {
+		character = root
+		animation = admiration
+	}
+	right_portrait = {
+		character = scope:admiral
+		animation = personality_content
+	}
+	
+	#### Great, thanks!
+	option = {
+		name = naval_decisions.5.a
+	}
+}
+
+
+naval_decisions.6 = {
+	title = naval_decisions.6.t
+	desc = naval_decisions.6.desc
+	theme = intrigue
+	override_background = {
+		reference = AGOT_ghost_ship
+	}
+	left_portrait = {
+		character = scope:admiral
+		animation = scheme
+	}
+	
+	immediate = {
+	set_relation_rival = scope:admiral
+	add_personal_artifact_claim = scope:newly_created_artifact
+	add_opinion = {
+			target = scope:admiral
+			modifier = embezzled_opinion
+
+					}
+	}
+	
+	#### You bastard!
+	option = {
+		name = naval_decisions.6.a
+		
+		
+		ai_chance = {
+		base = 50 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 1000 # To remove something you just add a negative number (5 + -10 = -5)
+	
+			ai_boldness >= 0
+		
+				}
+		
+		}
+	}
+	
+	#### Damn! Anyway....
+	option = {
+		name = naval_decisions.6.b
+	}
+}

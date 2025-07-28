@@ -1,0 +1,95 @@
+﻿namespace = agot_easter_egg
+
+##########################################
+# Emma: Blastin'
+##########################################
+
+# agot_easter_egg.100 = { # Of course I've got lawyers
+# 	type = character_event
+# 	title = agot_easter_egg.100.t
+# 	desc = agot_easter_egg.100.desc
+
+# 	theme = intrigue
+# 	override_background = {
+# 		reference = alley_night
+# 	}
+# 	left_portrait = {
+# 		character = root
+# 		animation = admiration
+# 	}
+
+# 	trigger = {
+# 		AND = {
+# 			exists = capital_province
+#         	capital_province = {
+# 				geographical_region = world_westeros_the_stormlands
+# 			}
+# 		}
+#         NOT = {
+# 			has_character_flag = blasted
+# 		}
+#         NOT = {
+# 			is_ai = yes
+# 		}
+# 	}
+
+# 	option = {	#accept
+# 		name = agot_easter_egg.100.a
+# 		trigger = {
+# 			NOT = { has_trait = greedy }
+# 		}
+
+# 		custom_tooltip = agot_easter_egg.100.a.tt
+# 		trigger_event = {
+# 			id = agot_easter_egg.101
+# 			days = { 7 15 }
+# 		}
+# 		add_learning_lifestyle_xp = minor_lifestyle_xp
+# 	}
+
+# 	option = {	#accept, greedy option
+# 		name = agot_easter_egg.100.b
+# 		trigger = {
+# 			has_trait = greedy
+# 		}
+
+# 		custom_tooltip = agot_easter_egg.100.b.tt
+# 		add_internal_flag = special
+# 		add_intrigue_lifestyle_xp = minor_lifestyle_xp
+# 	}
+
+# 	option = {	#deny
+# 		name = agot_easter_egg.100.c
+
+# 		custom_tooltip = agot_easter_egg.100.c.tt
+# 	}
+
+# 	after = {
+# 		add_character_flag = blasted
+# 	}
+# }
+
+# Halloween - Freypocalypse
+agot_easter_egg.0001 = {
+	hidden = yes
+
+	trigger = {
+		has_game_rule = agot_silly_mode
+	}
+
+	immediate = {
+		every_held_title = { 
+			set_coa = dynn_Frey
+			set_title_name = d_the_crossing
+		}
+		house ?= { set_coa = dynn_Frey }
+		house ?= { set_house_name = dynn_Frey }
+		if = {
+			limit = { is_female = no }
+			change_first_name = Walder
+		}
+		else = {
+			change_first_name = Walda
+		}
+	}
+}

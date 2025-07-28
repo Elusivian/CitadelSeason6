@@ -1,0 +1,656 @@
+﻿
+namespace = blackfyre_bookmark_rebellion
+
+#blackfyre_bookmark_rebellion.0001 - Liege decides whether to intervene
+#blackfyre_bookmark_rebellion.0002 - Notify Attackers
+#blackfyre_bookmark_rebellion.0003 - Notify Defenders
+
+
+
+
+### Liege decides how to react
+
+blackfyre_bookmark_rebellion.0001 = {
+	title = blackfyre_bookmark_rebellion.0001.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+	trigger = { NOT = { is_at_war_with = title:e_the_iron_throne.holder } }
+	
+	
+	override_background = {
+		reference = farmland
+	}
+	desc = "blackfyre_bookmark_rebellion.0001_desc"
+	
+
+	
+	#### I must press my claim.
+	option = {
+		name =  blackfyre_bookmark_rebellion.0001.a
+		custom_tooltip =  blackfyre_bookmark_rebellion.0001.a.tt
+		
+	hidden_effect = {
+	
+	
+			
+			##House Ambrose
+dynasty:dynn_Ambrose.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Ambrose.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Ambrose.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Ambrose.dynasty_founder.house.house_head
+				}
+			}
+	##House Ball
+
+dynasty:dynn_Ball.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Ball.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Ball.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Ball.dynasty_founder.house.house_head
+				}
+			}
+			
+			
+	##House Bracken
+
+dynasty:dynn_Bracken.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Bracken.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Bracken.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Bracken.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Costayne
+
+dynasty:dynn_Costayne.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Costayne.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Costayne.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Costayne.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Lothson
+
+dynasty:dynn_Lothson.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Lothson.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Lothson.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Lothson.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Osgrey
+
+title:c_standfast.holder = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = title:c_standfast.holder
+				create_alliance = {
+						target = title:c_standfast.holder
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = title:c_standfast.holder
+				}
+			}
+
+	##House Peake
+
+dynasty:dynn_Peake.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Peake.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Peake.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Peake.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Reyne
+
+dynasty:dynn_Reyne.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Reyne.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Reyne.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Reyne.dynasty_founder.house.house_head
+				}
+			}
+			
+			
+						
+	##House Shawney
+
+dynasty:dynn_Shawney.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Shawney.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Shawney.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Shawney.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Strickland
+
+dynasty:dynn_Strickland.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Strickland.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Strickland.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Strickland.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Sunderland
+
+dynasty:dynn_Sunderland.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Sunderland.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Sunderland.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Sunderland.dynasty_founder.house.house_head
+				}
+			}
+			
+		##House Yronwood
+
+dynasty:dynn_Yronwood.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+				}
+			}
+			
+			
+		
+			
+		
+			
+			
+		
+		
+				}
+					spawn_army = {
+						levies = 10000
+						  men_at_arms = {
+						type = light_footmen # 2000
+						stacks = 10
+					}
+					men_at_arms = {
+						type = pikemen_unit # 2000
+						stacks = 10
+					}
+					men_at_arms = {
+						type = armored_footmen # 2000
+						stacks = 10
+					}
+					men_at_arms = {
+						type = light_horsemen # 2500
+						stacks = 12
+					}
+					men_at_arms = {
+						type = armored_horsemen # 500
+						stacks = 5
+					}
+					men_at_arms = {
+						type = bowmen # 300
+						stacks = 2
+					}
+					men_at_arms = {
+						type = longbowmen # 700
+						stacks = 4
+					}
+							men_at_arms = {
+                        type = trebuchet # 
+                        stacks = 3
+							}
+						location = title:c_longgrass.title_province
+						name = blackfyre_loyalists
+						}
+		
+	
+		start_war = {
+				cb = claim_cb
+				claimant = root
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:d_dragonstone
+				target_title = title:c_dragonstone
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+			}
+		agot_8195_3_7_br_i_scenario_setup = yes
+				
+		
+		
+				ai_chance = {
+			base = 10000
+		
+		}
+	
+							
+	}
+	
+	#### I will do nothing.
+	option = {
+		name =  blackfyre_bookmark_rebellion.0001.b
+		custom_tooltip =  blackfyre_bookmark_rebellion.0001.b.tt
+	
+		
+							
+			ai_chance = {
+			base = 1
+			
+		
+		}
+		
+	}
+	
+	
+	
+}
+
+
+blackfyre_bookmark_rebellion.0002 = {
+	title = blackfyre_bookmark_rebellion.0002.t
+	left_portrait = {
+		character = root
+		scripted_animation = marshal
+	}
+	right_portrait = {
+		character = title:e_the_iron_throne.holder
+		scripted_animation = chancellor
+	}
+	trigger = { NOT = { is_at_war_with = title:e_the_iron_throne.holder } }
+	
+	
+	override_background = {
+		reference = farmland
+	}
+	desc = "blackfyre_bookmark_rebellion.0002_desc"
+	
+	#### I must press my claim.
+	option = {
+		name =  blackfyre_bookmark_rebellion.0002.a
+		custom_tooltip =  blackfyre_bookmark_rebellion.0002.a.tt
+		
+	hidden_effect = {
+			
+
+		##House Yronwood
+
+dynasty:dynn_Yronwood.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Blackfyre_6
+				}
+			}
+			character:Blackfyre_6 = {
+				allow_alliance = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+						allied_through_owner = character:Blackfyre_6
+						allied_through_target = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+				}
+			}
+			
+			
+			character:Targaryen_95 = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Blackfyre_6
+				}
+			}
+			root = {
+				allow_alliance = character:Targaryen_95
+				create_alliance = {
+						target = character:Targaryen_95
+						allied_through_owner = root
+						allied_through_target = character:Targaryen_95
+				}
+			}
+		
+		
+	
+		start_war = {
+				cb = claim_cb
+				claimant = root
+				target = title:e_the_iron_throne.holder
+				target_title = title:e_the_iron_throne
+				target_title = title:d_dragonstone
+				target_title = title:c_dragonstone
+				target_title = title:d_kings_landing
+				target_title = title:c_kings_landing
+			}
+			
+		
+			
+			
+		
+		
+				}
+				
+		
+		
+				ai_chance = {
+			base = 10000
+		
+		}
+	
+							
+	}
+	
+	#### I will do nothing.
+	option = {
+		name =  blackfyre_bookmark_rebellion.0002.b
+		custom_tooltip =  blackfyre_bookmark_rebellion.0002.b.tt
+	
+		
+							
+			ai_chance = {
+			base = 1
+			
+		
+		}
+		
+	}
+	
+	
+	
+}
+
+
+
+
+		
+			##House Ambrose
+dynasty:dynn_Ambrose.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Ambrose.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Ambrose.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Ambrose.dynasty_founder.house.house_head
+				}
+			}
+	##House Ball
+
+dynasty:dynn_Ball.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Ball.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Ball.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Ball.dynasty_founder.house.house_head
+				}
+			}
+			
+			
+	##House Bracken
+
+dynasty:dynn_Bracken.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Bracken.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Bracken.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Bracken.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Costayne
+
+dynasty:dynn_Costayne.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Costayne.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Costayne.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Costayne.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Lothson
+
+dynasty:dynn_Lothson.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Lothson.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Lothson.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Lothson.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Osgrey
+
+dynasty:dynn_Osgrey.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Osgrey.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Osgrey.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Osgrey.dynasty_founder.house.house_head
+				}
+			}
+
+	##House Peake
+
+dynasty:dynn_Peake.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Peake.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Peake.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Peake.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Reyne
+
+dynasty:dynn_Reyne.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Reyne.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Reyne.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Reyne.dynasty_founder.house.house_head
+				}
+			}
+			
+			
+						
+	##House Shawney
+
+dynasty:dynn_Shawney.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Shawney.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Shawney.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Shawney.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Strickland
+
+dynasty:dynn_Strickland.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Strickland.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Strickland.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Strickland.dynasty_founder.house.house_head
+				}
+			}
+			
+	##House Sunderland
+
+dynasty:dynn_Sunderland.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Sunderland.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Sunderland.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Sunderland.dynasty_founder.house.house_head
+				}
+			}
+			
+		##House Yronwood
+
+dynasty:dynn_Yronwood.dynasty_founder.house.house_head = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = character:Targaryen_94
+				}
+			}
+			character:Targaryen_94 = {
+				allow_alliance = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+				create_alliance = {
+						target = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+						allied_through_owner = character:Targaryen_94
+						allied_through_target = dynasty:dynn_Yronwood.dynasty_founder.house.house_head
+				}
+			}
+			
+			#trigger_event = blackfyre_bookmark_rebellion.0002
+			
+	#		}
