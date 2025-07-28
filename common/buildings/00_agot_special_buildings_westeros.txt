@@ -1238,7 +1238,7 @@ agot_blackhaven_01 = {
 	}
 
 	province_modifier = {
-		fort_level = 45
+		fort_level = 4
 	}
 
 	cost_gold = 500
