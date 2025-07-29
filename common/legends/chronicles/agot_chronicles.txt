@@ -80,8 +80,8 @@ the_conciliator = {
 			diplomacy = 1
 		}
 		province_modifier = {
-			build_speed = -0.10
-			build_gold_cost = -0.10
+			build_speed = -0.05
+			build_gold_cost = -0.05
 			tax_mult = 0.05
 
 		}
@@ -195,8 +195,8 @@ the_builder = {
 			stewardship = 2
 		}
 		province_modifier = {
-			build_speed = -0.20
-			build_gold_cost = -0.20
+			build_speed = -0.1
+			build_gold_cost = -0.1
 		}
 	}
 }
@@ -312,8 +312,8 @@ godsgrief = {
 			stewardship = 2
 		}
 		province_modifier = {
-			build_speed = -0.15
-			build_gold_cost = -0.15
+			build_speed = -0.075
+			build_gold_cost = -0.075
 			defender_holding_advantage = 5
 		}
 

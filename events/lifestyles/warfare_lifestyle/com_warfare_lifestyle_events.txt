@@ -1,0 +1,2610 @@
+﻿namespace = learn_commander_trait
+
+learn_commander_trait.1901 = { #crafty commander, master ambusher, cautious planner
+	type = character_event
+	title = learn_commander_trait.1901.t
+	desc = learn_commander_trait.1901.desc
+	theme = war
+	left_portrait = root
+
+	trigger = {
+		NOT = { has_character_flag = being_taught_commander_trait }
+		number_of_commander_traits < 3
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			factor = martial
+			multiplier = 0.1
+			max = 2
+		}
+		modifier = {
+			add = 1
+			culture = { has_cultural_parameter = commanders_likelier_to_gain_commander_traits }
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 0
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 1
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1901.a
+		trigger = { NOT = { has_trait = crafty_commander } }
+		add_trait = crafty_commander
+		stress_impact = {
+			calm = minor_stress_impact_gain
+			lazy = minor_stress_impact_gain
+			forgiving = minor_stress_impact_gain
+			patient = minor_stress_impact_gain
+			craven = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = 0.25
+				ai_energy = 0.5
+				ai_boldness = 1
+				ai_vengefulness = 0.2
+				ai_compassion = -0.5
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1901.b
+		trigger = { NOT = { has_trait = master_ambusher } }
+		add_trait = master_ambusher
+		stress_impact = {
+			arrogant = minor_stress_impact_gain
+			fickle = minor_stress_impact_gain
+			ambitious = minor_stress_impact_gain
+			impatient = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = -0.25
+				ai_boldness = -0.2
+				ai_rationality = 0.2
+				ai_honor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1901.c
+		trigger = { NOT = { has_trait = cautious_planner } }
+		add_trait = cautious_planner
+		stress_impact = {
+			content = minor_stress_impact_gain
+			impatient = minor_stress_impact_gain
+			wrathful = minor_stress_impact_gain
+            fickle = medium_stress_impact_gain
+            arbitrary = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_rationality = 1
+				ai_boldness = 0.5
+				ai_vengefulness = -0.5
+			}
+		}
+	}
+}
+
+learn_commander_trait.1902 = { #mapper, navigator, bannerlord
+	type = character_event
+	title = learn_commander_trait.1902.t
+	desc = learn_commander_trait.1902.desc
+	theme = war
+	left_portrait = root
+
+	trigger = {
+		NOT = { has_character_flag = being_taught_commander_trait }
+		number_of_commander_traits < 3
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			factor = martial
+			multiplier = 0.1
+			max = 2
+		}
+		modifier = {
+			add = 1
+			culture = { has_cultural_parameter = commanders_likelier_to_gain_commander_traits }
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 0
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 1
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1902.a
+		trigger = { NOT = { has_trait = mapper } }
+		add_trait = mapper
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = 0.25
+				ai_energy = 0.5
+				ai_boldness = 1
+				ai_vengefulness = 0.2
+				ai_compassion = -0.5
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1902.b
+		trigger = { NOT = { has_trait = navigator } }
+		add_trait = navigator
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = -0.25
+				ai_boldness = -0.2
+				ai_rationality = 0.2
+				ai_honor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1902.c
+		trigger = { NOT = { has_trait = bannerlord } }
+		add_trait = bannerlord
+		stress_impact = {
+			content = minor_stress_impact_gain
+			calm = minor_stress_impact_gain
+            craven = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_rationality = 1
+				ai_boldness = 0.5
+				ai_vengefulness = -0.5
+			}
+		}
+	}
+}
+
+learn_commander_trait.1903 = { #resolute localist, seasoned rover
+	type = character_event
+	title = learn_commander_trait.1903.t
+	desc = learn_commander_trait.1903.desc
+	theme = war
+	left_portrait = root
+
+	trigger = {
+		NOT = { has_character_flag = being_taught_commander_trait }
+		number_of_commander_traits < 3
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			factor = martial
+			multiplier = 0.1
+			max = 2
+		}
+		modifier = {
+			add = 1
+			culture = { has_cultural_parameter = commanders_likelier_to_gain_commander_traits }
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 0
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 1
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1903.a
+		trigger = { NOT = { has_trait = resolute_localist } }
+		add_trait = resolute_localist
+		stress_impact = {
+			impatient = minor_stress_impact_gain
+            brave = minor_stress_impact_gain
+            ambitious = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = 0.25
+				ai_energy = 0.5
+				ai_boldness = 1
+				ai_vengefulness = 0.2
+				ai_compassion = -0.5
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1903.b
+		trigger = { NOT = { has_trait = seasoned_rover } }
+		add_trait = seasoned_rover
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+            calm = minor_stress_impact_gain
+            content = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = -0.25
+				ai_boldness = -0.2
+				ai_rationality = 0.2
+				ai_honor = 0.2
+			}
+		}
+	}
+}
+
+learn_commander_trait.1904 = { #medic, dauntless leader, relentless pursuer
+	type = character_event
+	title = learn_commander_trait.1904.t
+	desc = learn_commander_trait.1904.desc
+	theme = war
+	left_portrait = root
+
+	trigger = {
+		NOT = { has_character_flag = being_taught_commander_trait }
+		number_of_commander_traits < 3
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			factor = martial
+			multiplier = 0.1
+			max = 2
+		}
+		modifier = {
+			add = 1
+			culture = { has_cultural_parameter = commanders_likelier_to_gain_commander_traits }
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 0
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 1
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1904.a
+		trigger = { NOT = { has_trait = battlefield_medic } }
+		add_trait = battlefield_medic
+		stress_impact = {
+			cynical = minor_stress_impact_gain
+            sadistic = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = 0.25
+				ai_energy = 0.5
+				ai_boldness = 1
+				ai_vengefulness = 0.2
+				ai_compassion = -0.5
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1904.b
+		trigger = { NOT = { has_trait = dauntless_leader } }
+		add_trait = dauntless_leader
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+            calm = minor_stress_impact_gain
+            content = minor_stress_impact_gain
+            craven = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = -0.25
+				ai_boldness = -0.2
+				ai_rationality = 0.2
+				ai_honor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1904.c
+		trigger = { NOT = { has_trait = relentless_pursuer } }
+		add_trait = relentless_pursuer
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+            calm = minor_stress_impact_gain
+            content = minor_stress_impact_gain
+            craven = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_rationality = 1
+				ai_boldness = 0.5
+				ai_vengefulness = -0.5
+			}
+		}
+	}
+}
+
+learn_commander_trait.1905 = { #focus_specialist, infiltration_specialist, observant_pathfinder
+	type = character_event
+	title = learn_commander_trait.1905.t
+	desc = learn_commander_trait.1905.desc
+	theme = war
+	left_portrait = root
+
+	trigger = {
+		NOT = { has_character_flag = being_taught_commander_trait }
+		number_of_commander_traits < 3
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			factor = martial
+			multiplier = 0.1
+			max = 2
+		}
+		modifier = {
+			add = 1
+			culture = { has_cultural_parameter = commanders_likelier_to_gain_commander_traits }
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 0
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 1
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1905.a
+		trigger = { NOT = { has_trait = focus_specialist } }
+		add_trait = focus_specialist
+		stress_impact = {
+			calm = minor_stress_impact_gain
+            lazy = minor_stress_impact_gain
+            fickle = medium_stress_impact_gain
+            arbitrary = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = 0.25
+				ai_energy = 0.5
+				ai_boldness = 1
+				ai_vengefulness = 0.2
+				ai_compassion = -0.5
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1905.b
+		trigger = { NOT = { has_trait = infiltration_specialist } }
+		add_trait = infiltration_specialist
+		stress_impact = {
+			brave = minor_stress_impact_gain
+            ambitious = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = -0.25
+				ai_boldness = -0.2
+				ai_rationality = 0.2
+				ai_honor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1905.c
+		trigger = { NOT = { has_trait = observant_pathfinder } }
+		add_trait = observant_pathfinder
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+            impatient = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_rationality = 1
+				ai_boldness = 0.5
+				ai_vengefulness = -0.5
+			}
+		}
+	}
+}
+
+learn_commander_trait.1906 = { #respected leader and zealot
+	type = character_event
+	title = learn_commander_trait.1906.t
+	desc = learn_commander_trait.1906.desc
+	theme = war
+	left_portrait = root
+
+	trigger = {
+		NOT = { has_character_flag = being_taught_commander_trait }
+		number_of_commander_traits < 3
+	}
+
+	weight_multiplier = {
+		base = 1
+		compare_modifier = {
+			factor = martial
+			multiplier = 0.1
+			max = 2
+		}
+		modifier = {
+			add = 1
+			culture = { has_cultural_parameter = commanders_likelier_to_gain_commander_traits }
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 0
+		}
+		modifier = {
+			factor = 0.3
+			number_of_commander_traits > 1
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1906.a
+		trigger = { NOT = { has_trait = respected_leader } }
+		add_trait = respected_leader
+		stress_impact = {
+			impatient = minor_stress_impact_gain
+            brave = minor_stress_impact_gain
+            ambitious = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = 0.25
+				ai_energy = 0.5
+				ai_boldness = 1
+				ai_vengefulness = 0.2
+				ai_compassion = -0.5
+			}
+		}
+	}
+
+	option = {
+		name = learn_commander_trait.1906.b
+		trigger = { NOT = { has_trait = zealot } }
+		add_trait = zealot
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+            craven = medium_stress_impact_gain
+            cynical = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			ai_value_modifier = {
+				ai_zeal = -0.25
+				ai_boldness = -0.2
+				ai_rationality = 0.2
+				ai_honor = 0.2
+			}
+		}
+	}
+}
+
+##### TRAINING #####
+
+#BANNERLORD
+##############
+
+#Training offer
+learn_commander_trait.3101 = {
+	type = character_event
+	title = learn_commander_trait.101.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3101.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:bannerlord
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3201 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3201.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:bannerlord
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3301 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3301.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:bannerlord
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3401 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3401.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:bannerlord
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Battlefield Medic
+###################
+
+#Training offer
+learn_commander_trait.3102 = {
+	type = character_event
+	title = learn_commander_trait.201.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3102.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:battlefield_medic
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3202 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3202.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:battlefield_medic
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3302 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3302.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:battlefield_medic
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3402 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3402.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:battlefield_medic
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#cautious_planner
+###################
+
+#Training offer
+learn_commander_trait.3103 = {
+	type = character_event
+	title = learn_commander_trait.301.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3103.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:cautious_planner
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3203 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3203.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:cautious_planner
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3303 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3303.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:cautious_planner
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3403 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3403.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:cautious_planner
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#crafty_commander
+###################
+
+#Training offer
+learn_commander_trait.3104 = {
+	type = character_event
+	title = learn_commander_trait.401.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3104.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:crafty_commander
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3204 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3204.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:crafty_commander
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3304 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3304.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:crafty_commander
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3404 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3404.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:crafty_commander
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#dauntless_leader
+###################
+
+#Training offer
+learn_commander_trait.3105 = {
+	type = character_event
+	title = learn_commander_trait.501.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3105.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:dauntless_leader
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3205 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3205.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:dauntless_leader
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3305 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3305.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:dauntless_leader
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3405 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3405.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:dauntless_leader
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#focus_specialist
+###################
+
+#Training offer
+learn_commander_trait.3106 = {
+	type = character_event
+	title = learn_commander_trait.601.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3106.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:focus_specialist
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3206 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3206.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:focus_specialist
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3306 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3306.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:focus_specialist
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3406 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3406.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:focus_specialist
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#infiltration_specialist
+###################
+
+#Training offer
+learn_commander_trait.3107 = {
+	type = character_event
+	title = learn_commander_trait.701.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3107.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:infiltration_specialist
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3207 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3207.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:infiltration_specialist
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3307 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3307.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:infiltration_specialist
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3407 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3407.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:infiltration_specialist
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#resolute_localist
+###################
+
+#Training offer
+learn_commander_trait.3108 = {
+	type = character_event
+	title = learn_commander_trait.801.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3108.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:resolute_localist
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3208 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3208.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:resolute_localist
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3308 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3308.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:resolute_localist
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3408 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3408.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:resolute_localist
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#mapper
+###################
+
+#Training offer
+learn_commander_trait.3109 = {
+	type = character_event
+	title = learn_commander_trait.901.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.3109.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:mapper
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.3209 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3209.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:mapper
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.3309 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3309.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:mapper
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.3409 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.3409.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:mapper
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#master_ambusher
+###################
+
+#Training offer
+learn_commander_trait.4001 = {
+	type = character_event
+	title = learn_commander_trait.1001.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4001.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:master_ambusher
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4002 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4002.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:master_ambusher
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4003 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4003.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:master_ambusher
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4004 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4004.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:master_ambusher
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#navigator
+###################
+
+#Training offer
+learn_commander_trait.4101 = {
+	type = character_event
+	title = learn_commander_trait.1002.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4101.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:navigator
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4102 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4102.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:navigator
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4103 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4103.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:navigator
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4104 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4104.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:navigator
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#observant_pathfinder
+###################
+
+#Training offer
+learn_commander_trait.4201 = {
+	type = character_event
+	title = learn_commander_trait.1003.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4201.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:observant_pathfinder
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4202 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4202.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:observant_pathfinder
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4203 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4203.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:observant_pathfinder
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4204 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4204.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:observant_pathfinder
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#relentless_pursuer
+###################
+
+#Training offer
+learn_commander_trait.4301 = {
+	type = character_event
+	title = learn_commander_trait.1004.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4301.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:relentless_pursuer
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4302 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4302.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:relentless_pursuer
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4303 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4303.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:relentless_pursuer
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4304 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4304.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:relentless_pursuer
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#respected_leader
+###################
+
+#Training offer
+learn_commander_trait.4401 = {
+	type = character_event
+	title = learn_commander_trait.1005.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4401.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:respected_leader
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4402 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4402.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:respected_leader
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4403 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4403.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:respected_leader
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4404 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4404.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:respected_leader
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#seasoned_rover
+###################
+
+#Training offer
+learn_commander_trait.4501 = {
+	type = character_event
+	title = learn_commander_trait.1006.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4501.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:seasoned_rover
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4502 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4502.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:seasoned_rover
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4503 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4503.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:seasoned_rover
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4504 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4504.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:seasoned_rover
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#zealot
+###################
+
+#Training offer
+learn_commander_trait.4601 = {
+	type = character_event
+	title = learn_commander_trait.1007.t
+	desc = {
+		desc = learn_commander_trait.11.opening
+		desc = learn_commander_trait.4601.desc
+	}
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:zealot
+		is_imprisoned = no
+	}
+
+	weight_multiplier = {
+		base = 1
+	}
+
+	option = { #Please teach me
+		name = learn_commander_trait.11.a
+		commander_trait_teaching_setup_effect = yes
+		custom_tooltip = learn_commander_trait.11.martial_tt
+	}
+
+	option = { #No, I already know enough
+		name = learn_commander_trait.11.b
+		remove_variable = commander_trait_being_taught
+		remove_character_flag = being_taught_commander_trait
+		custom_tooltip = learn_commander_trait.11.b.tt
+	}
+}
+
+#Final Test
+learn_commander_trait.4602 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4602.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		has_variable = commander_trait_being_taught
+		var:commander_trait_being_taught = flag:zealot
+	}
+
+	option = {
+		name = learn_commander_trait.12.a
+		learn_commander_trait_final_test_duel_effect = yes
+	}
+
+	option = { #Back out
+		name = learn_commander_trait.12.b
+		stress_impact = {
+			base = minor_stress_gain
+		}
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}
+
+#Success
+learn_commander_trait.4603 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4603.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:zealot
+	}
+
+	option = {
+		name = learn_commander_trait.13.a
+		learn_commander_trait_success_effect = yes
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = var:commander_trait_being_taught
+			}
+			remove_variable = commander_trait_being_taught
+		}
+		if = {
+			limit = {
+				has_character_flag = being_taught_commander_trait
+			}
+			remove_character_flag = being_taught_commander_trait
+		}
+	}
+}
+
+#Failure
+learn_commander_trait.4604 = {
+	type = character_event
+	title = learn_commander_trait.01.t
+	desc = learn_commander_trait.4604.desc
+	theme = war
+	left_portrait = scope:teacher
+
+	trigger = {
+		var:commander_trait_being_taught = flag:zealot
+	}
+
+	immediate = {
+
+	}
+
+	option = { #I will try again!
+		name = learn_commander_trait.14.a
+		custom_tooltip = learn_commander_trait.14.a.tt
+		trigger_event = {
+			on_action = learn_commander_trait_test
+			days = { 50 600 }
+		}
+	}
+
+	option = { #I give up
+		name = learn_commander_trait.14.b
+		custom_tooltip = learn_commander_trait.14.b.tt
+		giving_up_on_commander_trait_training_effect = yes
+	}
+}

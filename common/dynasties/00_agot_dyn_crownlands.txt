@@ -5,21 +5,21 @@
 ############################
 dynn_Bar_Emmon = {
 	name = "dynn_Bar_Emmon"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Bar_Emmon_motto
 }
 dynn_Bean = {
 	name = "dynn_Bean"
-	culture = "crownlander"
+	culture = "hookman"
 }
 dynn_Belgrave = {
 	name = "dynn_Belgrave"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Belgrave_motto
 }
 dynn_Bentley = {
 	name = "dynn_Bentley"
-	culture = "crownlander"
+	culture = "stormlander"
 }
 dynn_Blackberry = {
 	name = "dynn_Blackberry"
@@ -32,17 +32,17 @@ dynn_Blount = {
 }
 dynn_Bourney = {
 	name = "dynn_Bourney"
-	culture = "crownlander"
+	culture = "gods_eye_riverlander"
 	motto = dynn_Bourney_motto
 }
 dynn_Buckwell = {
 	name = "dynn_Buckwell"
-	culture = "crownlander"
+	culture = "baylander"
 	motto = dynn_Buckwell_motto # Pride and Purpose
 }
 dynn_Bullock = {
 	name = "dynn_Bullock"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Bullock_motto
 }
 dynn_Byrch = {
@@ -52,7 +52,7 @@ dynn_Byrch = {
 }
 dynn_Bywater = {
 	name = "dynn_Bywater"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Bywater_motto
 }
 dynn_Cargyll = {
@@ -67,7 +67,7 @@ dynn_Chelsted = {
 }
 dynn_Chyttering = {
 	name = "dynn_Chyttering"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Chyttering_motto
 }
 dynn_Corne = {
@@ -92,17 +92,17 @@ dynn_Edgerton = {
 }
 dynn_Farring = {
 	name = "dynn_Farring"
-	culture = "crownlander"
+	culture = "stormlander"
 	motto = dynn_Farring_motto
 }
 dynn_Follard = {
 	name = "dynn_Follard"
-	culture = "crownlander"
+	culture = "stormlander"
 	motto = dynn_Follard_motto # None so Wise
 }
 dynn_Gaunt = {
 	name = "dynn_Gaunt"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Gaunt_motto
 }
 dynn_Greenhill = {
@@ -112,16 +112,16 @@ dynn_Greenhill = {
 }
 dynn_Groves = {
 	name = "dynn_Groves"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 }
 dynn_Hall = {
 	name = "dynn_Hall"
-	culture = "crownlander"
+	culture = "gods_eye_riverlander"
 	motto = dynn_Hall_motto
 }
 dynn_Harte = {
 	name = "dynn_Harte"
-	culture = "crownlander"
+	culture = "baylander"
 	motto = dynn_Harte_motto
 }
 dynn_Hayford = {
@@ -141,7 +141,7 @@ dynn_Hollard = {
 }
 dynn_Langward = {
 	name = "dynn_Langward"
-	culture = "crownlander"
+	culture = "baylander"
 	motto = dynn_Langward_motto
 }
 dynn_Largent = {
@@ -160,32 +160,32 @@ dynn_Mallery = {
 }
 dynn_Manning = {
 	name = "dynn_Manning"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Manning_motto
 }
 dynn_Massey = {
 	name = "dynn_Massey"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Massey_motto
 }
 dynn_Pyle = {
 	name = "dynn_Pyle"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Pyle_motto
 }
 dynn_Quince = {
 	name = "dynn_Quince"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Quince_motto
 }
 dynn_Rambton = {
 	name = "dynn_Rambton"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Rambton_motto
 }
 dynn_Rollingford = {
 	name = "dynn_Rollingford"
-	culture = "crownlander"
+	culture = "gods_eye_riverlander"
 	motto = dynn_Rollingford_motto
 }
 dynn_Rosby = {
@@ -210,7 +210,7 @@ dynn_Slynt = {
 }
 dynn_Staunton = {
 	name = "dynn_Staunton"
-	culture = "crownlander"
+	culture = "baylander"
 	motto = dynn_Staunton_motto
 }
 dynn_Stokeworth = {
@@ -225,7 +225,7 @@ dynn_Sunglass = {
 }
 dynn_Sweet = {
 	name = "dynn_Sweet"
-	culture = "crownlander"
+	culture = "hookman"
 	motto = dynn_Sweet_motto
 }
 dynn_Tall = {
@@ -240,7 +240,7 @@ dynn_Thorne = {
 }
 dynn_Wendwater = {
 	name = "dynn_Wendwater"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Wendwater_motto # For All Seasons
 }
 dynn_Wheaton = {
@@ -260,7 +260,7 @@ dynn_Yore = {
 }
 dynn_Correy = {
 	name = "dynn_Correy"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 }
 
 ### Clawmen
@@ -335,12 +335,12 @@ dynn_Tanner = {
 ############################
 dynn_Miller = {
 	name = "dynn_Miller"
-	culture = "crownlander"
+	culture = "kingswood_stormlander"
 	motto = dynn_Miller_motto
 }
 dynn_Rychard = {
 	name = "dynn_Rychard"
-	culture = "crownlander"
+	culture = "baylander"
 	motto = dynn_Rychard_motto
 }
 

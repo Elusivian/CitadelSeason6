@@ -1,9 +1,6 @@
 ﻿borrell_legacy_track = {
 	is_shown = {
-		OR = {
-			dynasty = dynasty:dynn_Borrell
-			dynasty = { has_dynasty_perk = borrell_legacy_1 }
-		}
+		always = no
 	}
 }
 

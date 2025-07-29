@@ -4416,533 +4416,533 @@ accolade_the_knight_of_aspect = {
 }
 
 # Strongest of the Warband
-accolade_goodest_of_knights = {
-	key = "accolade_goodest_of_knights"
+# accolade_goodest_of_knights = {
+# 	key = "accolade_goodest_of_knights"
 
-	num_options = 2
+# 	num_options = 2
 
-	option = {
-		random_valid = {
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = aggressive
-							type_has_accolade_category = champion
-						}
-					}
-				}
-				desc = accolade_boldest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = champion
-							type_has_accolade_category = militant
-							type_has_accolade_category = forceful
-						}
-					}
-					OR = {
-						has_trait = physique_good
-						has_trait = athletic
-						has_trait = strong
-						has_trait = giant
-					}
-				}
-				desc = accolade_strongest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = learning
-							type_has_accolade_category = leader
-						}
-					}
-				}
-				desc = accolade_sagest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = intrigue
-							type_has_accolade_category = subtle
-						}
-					}
-					liege ?= {
-						culture = {
-							NOT = {
-								has_cultural_pillar = ethos_spiritual
-							}
-						}
-					}
-				}
-				desc = accolade_cleverest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = diplomacy
-							type_has_accolade_category = courtly
-						}
-					}
-					liege ?= {
-						culture = {
-							NOT = {
-								has_cultural_pillar = ethos_bellicose
-							}
-						}
-						culture = {
-							has_cultural_era_or_later = culture_era_early_medieval
-						}
-					}
-				}
-				desc = accolade_courtliest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = stewardship
-							type_has_accolade_category = defensive
-						}
-					}
-				}
-				desc = accolade_steadiest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = amoral
-							type_has_accolade_category = aggressive
-							type_has_accolade_category = forceful
-						}
-					}
-					liege ?= {
-						culture = {
-							NOT = {
-								has_cultural_pillar = ethos_courtly
-							}
-						}
-					}
-				}
-				desc = accolade_fiercest
-			}
-			triggered_desc = {
-				trigger = {
-					has_trait = beauty_good
-				}
-				desc = accolade_fairest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						type_has_accolade_category = ethical
-					}
-					liege ?= {
-						culture = {
-							NOT = {
-								has_cultural_pillar = ethos_bellicose
-							}
-						}
-					}
-				}
-				desc = accolade_gentlest
-			}
-			triggered_desc = {
-				trigger = {
-					NOR = {
-						scope:accolade_type = {
-							type_has_accolade_category = amoral
-							type_has_accolade_category = subtle
-						}
-					}
-				}
-				desc = accolade_truest
-			}
-			triggered_desc = {
-				trigger = {
-					NOR = {
-						scope:accolade_type = {
-							type_has_accolade_category = amoral
-							type_has_accolade_category = aggressive
-						}
-					}
-				}
-				desc = accolade_noblest
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = defensive
-							type_has_accolade_category = ethical
-						}
-					}
-				}
-				desc = accolade_most_faithful
-			}
-			triggered_desc = {
-				trigger = {
-					liege ?= {
-						opinion = {
-							target = root
-							value >= 80
-						}
-					}
-				}
-				desc = accolade_most_trusted
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = aggressive
-							type_has_accolade_category = amoral
-						}
-					}
-				}
-				desc = accolade_most_feared
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						type_has_accolade_category = equestrian
-					}
-				}
-				desc = accolade_swiftest
-			}
-			desc = accolade_worthiest
-			desc = accolade_most_honored
-		}
-	}
+# 	option = {
+# 		random_valid = {
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = aggressive
+# 							type_has_accolade_category = champion
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_boldest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = champion
+# 							type_has_accolade_category = militant
+# 							type_has_accolade_category = forceful
+# 						}
+# 					}
+# 					OR = {
+# 						has_trait = physique_good
+# 						has_trait = athletic
+# 						has_trait = strong
+# 						has_trait = giant
+# 					}
+# 				}
+# 				desc = accolade_strongest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = learning
+# 							type_has_accolade_category = leader
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_sagest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = intrigue
+# 							type_has_accolade_category = subtle
+# 						}
+# 					}
+# 					liege ?= {
+# 						culture = {
+# 							NOT = {
+# 								has_cultural_pillar = ethos_spiritual
+# 							}
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_cleverest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = diplomacy
+# 							type_has_accolade_category = courtly
+# 						}
+# 					}
+# 					liege ?= {
+# 						culture = {
+# 							NOT = {
+# 								has_cultural_pillar = ethos_bellicose
+# 							}
+# 						}
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_early_medieval
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_courtliest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = stewardship
+# 							type_has_accolade_category = defensive
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_steadiest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = amoral
+# 							type_has_accolade_category = aggressive
+# 							type_has_accolade_category = forceful
+# 						}
+# 					}
+# 					liege ?= {
+# 						culture = {
+# 							NOT = {
+# 								has_cultural_pillar = ethos_courtly
+# 							}
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_fiercest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					has_trait = beauty_good
+# 				}
+# 				desc = accolade_fairest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = ethical
+# 					}
+# 					liege ?= {
+# 						culture = {
+# 							NOT = {
+# 								has_cultural_pillar = ethos_bellicose
+# 							}
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_gentlest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOR = {
+# 						scope:accolade_type = {
+# 							type_has_accolade_category = amoral
+# 							type_has_accolade_category = subtle
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_truest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOR = {
+# 						scope:accolade_type = {
+# 							type_has_accolade_category = amoral
+# 							type_has_accolade_category = aggressive
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_noblest
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = defensive
+# 							type_has_accolade_category = ethical
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_most_faithful
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					liege ?= {
+# 						opinion = {
+# 							target = root
+# 							value >= 80
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_most_trusted
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = aggressive
+# 							type_has_accolade_category = amoral
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_most_feared
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = equestrian
+# 					}
+# 				}
+# 				desc = accolade_swiftest
+# 			}
+# 			desc = accolade_worthiest
+# 			desc = accolade_most_honored
+# 		}
+# 	}
 
-	option = {
-		random_valid = {
-			triggered_desc = {
-				trigger = {
-					NOR = {
-						culture = {
-							has_cultural_era_or_later = culture_era_high_medieval
-						}
-						liege ?= {
-							highest_held_title_tier >= tier_kingdom
-						}
-					}
-				}
-				desc = accolade_band
-			}
-			triggered_desc = {
-				trigger = {
-					liege ?= {
-						government_has_flag = government_is_tribal
-					}
-					scope:accolade_type = {
-						type_has_accolade_category = militant
-					}
-				}
-				desc = accolade_warband
-			}
-			triggered_desc = {
-				trigger = {
-					num_sinful_traits = 0
-				}
-				desc = accolade_faith_adherents
-			}
-			triggered_desc = {
-				trigger = {
-					num_sinful_traits <= 1
-				}
-				desc = accolade_culture_plural
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						type_has_accolade_category = light_fighter
-					}
-				}
-				desc = accolade_harriers
-			}
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						culture = {
-							has_cultural_era_or_later = culture_era_high_medieval
-						}
-					}
-					scope:accolade_type = {
-						this = accolade_type:pike_attribute
-					}
-				}
-				desc = accolade_spears
-			}
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						culture = {
-							has_cultural_era_or_later = culture_era_late_medieval
-						}
-					}
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = cavalry
-							type_has_accolade_category = equestrian
-						}
-					}
-				}
-				desc = accolade_riders
-			}
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						culture = {
-							has_cultural_era_or_later = culture_era_late_medieval
-						}
-					}
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = cavalry
-							type_has_accolade_category = equestrian
-						}
-					}
-				}
-				desc = accolade_noble_riders
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						has_cultural_era_or_later = culture_era_high_medieval
-					}
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = cavalry
-							type_has_accolade_category = equestrian
-						}
-					}
-				}
-				desc = accolade_cavalry
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						has_cultural_era_or_later = culture_era_high_medieval
-					}
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = cavalry
-							type_has_accolade_category = equestrian
-						}
-					}
-				}
-				desc = accolade_noble_cavalry
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						NOT = { has_cultural_era_or_later = culture_era_early_medieval }
-					}
-					scope:accolade_type = {
-						type_has_accolade_category = militant
-					}
-				}
-				desc = accolade_warriors
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						NOT = { has_cultural_era_or_later = culture_era_early_medieval }
-					}
-					scope:accolade_type = {
-						type_has_accolade_category = militant
-					}
-				}
-				desc = accolade_noble_warriors
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						has_cultural_era_or_later = culture_era_high_medieval
-					}
-					scope:accolade_type = {
-						type_has_accolade_category = infantry
-					}
-				}
-				desc = accolade_infantry
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = cavalry
-							type_has_accolade_category = equestrian
-						}
-						NOT = {
-							this = accolade_type:elephantry_attribute
-						}
-					}
-				}
-				desc = accolade_lances
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						this = accolade_type:crossbowmen_attribute
-					}
-				}
-				desc = accolade_crossbows
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						this = accolade_type:crossbowmen_attribute
-					}
-				}
-				desc = accolade_crossbowmen
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						has_cultural_era_or_later = culture_era_high_medieval
-					}
-					scope:accolade_type = {
-						this = accolade_type:camelry_attribute
-					}
-				}
-				desc = accolade_cameliers
-			}
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						culture = {
-							has_cultural_era_or_later = culture_era_early_medieval
-						}
-					}
-				}
-				desc = accolade_war_party
-			}
+# 	option = {
+# 		random_valid = {
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOR = {
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_high_medieval
+# 						}
+# 						liege ?= {
+# 							highest_held_title_tier >= tier_kingdom
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_band
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					liege ?= {
+# 						government_has_flag = government_is_tribal
+# 					}
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = militant
+# 					}
+# 				}
+# 				desc = accolade_warband
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					num_sinful_traits = 0
+# 				}
+# 				desc = accolade_faith_adherents
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					num_sinful_traits <= 1
+# 				}
+# 				desc = accolade_culture_plural
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = light_fighter
+# 					}
+# 				}
+# 				desc = accolade_harriers
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOT = {
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_high_medieval
+# 						}
+# 					}
+# 					scope:accolade_type = {
+# 						this = accolade_type:pike_attribute
+# 					}
+# 				}
+# 				desc = accolade_spears
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOT = {
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_late_medieval
+# 						}
+# 					}
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = cavalry
+# 							type_has_accolade_category = equestrian
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_riders
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOT = {
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_late_medieval
+# 						}
+# 					}
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = cavalry
+# 							type_has_accolade_category = equestrian
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_noble_riders
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						has_cultural_era_or_later = culture_era_high_medieval
+# 					}
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = cavalry
+# 							type_has_accolade_category = equestrian
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_cavalry
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						has_cultural_era_or_later = culture_era_high_medieval
+# 					}
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = cavalry
+# 							type_has_accolade_category = equestrian
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_noble_cavalry
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						NOT = { has_cultural_era_or_later = culture_era_early_medieval }
+# 					}
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = militant
+# 					}
+# 				}
+# 				desc = accolade_warriors
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						NOT = { has_cultural_era_or_later = culture_era_early_medieval }
+# 					}
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = militant
+# 					}
+# 				}
+# 				desc = accolade_noble_warriors
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						has_cultural_era_or_later = culture_era_high_medieval
+# 					}
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = infantry
+# 					}
+# 				}
+# 				desc = accolade_infantry
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = cavalry
+# 							type_has_accolade_category = equestrian
+# 						}
+# 						NOT = {
+# 							this = accolade_type:elephantry_attribute
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_lances
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						this = accolade_type:crossbowmen_attribute
+# 					}
+# 				}
+# 				desc = accolade_crossbows
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						this = accolade_type:crossbowmen_attribute
+# 					}
+# 				}
+# 				desc = accolade_crossbowmen
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						has_cultural_era_or_later = culture_era_high_medieval
+# 					}
+# 					scope:accolade_type = {
+# 						this = accolade_type:camelry_attribute
+# 					}
+# 				}
+# 				desc = accolade_cameliers
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOT = {
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_early_medieval
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_war_party
+# 			}
 
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						type_has_accolade_category = militant
-					}
-				}
-				desc = accolade_battle_line
-			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						type_has_accolade_category = militant
+# 					}
+# 				}
+# 				desc = accolade_battle_line
+# 			}
 
-			triggered_desc = {
-				trigger = {
-					exists = liege
-					liege.culture = {
-						NOT = {
-							has_cultural_era_or_later = culture_era_early_medieval
-						}
-					}
-				}
-				desc = accolade_chosen
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = defensive
-							type_has_accolade_category = militant
-							type_has_accolade_category = ethical
-							type_has_accolade_category = forceful
-							type_has_accolade_category = leader
-						}
-					}
-				}
-				desc = accolade_guard
-			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					exists = liege
+# 					liege.culture = {
+# 						NOT = {
+# 							has_cultural_era_or_later = culture_era_early_medieval
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_chosen
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = defensive
+# 							type_has_accolade_category = militant
+# 							type_has_accolade_category = ethical
+# 							type_has_accolade_category = forceful
+# 							type_has_accolade_category = leader
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_guard
+# 			}
 
-			triggered_desc = {
-				trigger = {
-					culture = {
-						has_cultural_era_or_later = culture_era_early_medieval
-					}
-					scope:accolade_type = {
-						OR = {
-							type_has_accolade_category = ethical
-							type_has_accolade_category = courtly
-							type_has_accolade_category = champion
-						}
-					}
-				}
-				desc = accolade_gallants
-			}
-			triggered_desc = {
-				trigger = {
-					exists = liege
-					liege ?= {
-						government_has_flag = government_is_feudal
-					}
-				}
-				desc = accolade_banners
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						NOT = {
-							type_has_accolade_category = subtle
-						}
-					}
-				}
-				desc = accolade_household_knights
-			}
-			triggered_desc = {
-				trigger = {
-					NOR = {
-						culture = {
-							has_cultural_era_or_later = culture_era_high_medieval
-						}
-						is_female = yes
-					}
-				}
-				desc = accolade_bondsmen
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						NOT = {
-							type_has_accolade_category = militant
-						}
-					}
-				}
-				desc = accolade_household
-			}
-			triggered_desc = {
-				trigger = {
-					scope:accolade_type = {
-						NOT = {
-							type_has_accolade_category = militant
-						}
-					}
-				}
-				desc = accolade_court
-			}
-			triggered_desc = {
-				trigger = {
-					culture = {
-						has_cultural_parameter = has_access_to_shieldmaidens
-					}
-					is_female = yes
-				}
-				desc = accolade_shieldmaidens
-			}
-			desc = accolade_knights
-			desc = accolade_retinue
-		}
-	}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						has_cultural_era_or_later = culture_era_early_medieval
+# 					}
+# 					scope:accolade_type = {
+# 						OR = {
+# 							type_has_accolade_category = ethical
+# 							type_has_accolade_category = courtly
+# 							type_has_accolade_category = champion
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_gallants
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					exists = liege
+# 					liege ?= {
+# 						government_has_flag = government_is_feudal
+# 					}
+# 				}
+# 				desc = accolade_banners
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						NOT = {
+# 							type_has_accolade_category = subtle
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_household_knights
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					NOR = {
+# 						culture = {
+# 							has_cultural_era_or_later = culture_era_high_medieval
+# 						}
+# 						is_female = yes
+# 					}
+# 				}
+# 				desc = accolade_bondsmen
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						NOT = {
+# 							type_has_accolade_category = militant
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_household
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:accolade_type = {
+# 						NOT = {
+# 							type_has_accolade_category = militant
+# 						}
+# 					}
+# 				}
+# 				desc = accolade_court
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					culture = {
+# 						has_cultural_parameter = has_access_to_shieldmaidens
+# 					}
+# 					is_female = yes
+# 				}
+# 				desc = accolade_shieldmaidens
+# 			}
+# 			desc = accolade_knights
+# 			desc = accolade_retinue
+# 		}
+# 	}
 
-	potential = {
-		always = yes
-	}
-}
+# 	potential = {
+# 		always = yes
+# 	}
+# }
 
 # The Iron Knight
 accolade_the_material_knight = {

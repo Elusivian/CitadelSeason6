@@ -1,0 +1,3687 @@
+
+hayford_legacy_1 = { # Andal Origins
+	legacy = hayford_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Hayford
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = hayford_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		clergy_opinion = 10
+		tolerance_advantage_mod = 3
+		knight_effectiveness_mult = 0.05
+	}
+
+	traits = {
+	}
+	
+
+}
+
+hayford_legacy_2 = { # Staunch Loyalists
+	legacy = hayford_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Hayford
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = hayford_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		diplomacy = 1
+		liege_opinion = 30
+		opinion_of_liege = 30
+	}
+
+	traits = {
+		loyal = 40
+		stubborn = 40
+	}
+	
+
+}
+
+hayford_legacy_3 = { # Wealth of the Crownfields
+	legacy = hayford_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Hayford
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = hayford_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 1
+		domain_tax_mult = 0.1
+		farmlands_supply_limit_mult  = 0.2
+		plains_supply_limit_mult = 0.2
+		hills_supply_limit_mult = 0.2
+	}
+
+	traits = {
+		greedy = 25
+	}
+	
+
+}
+
+hayford_legacy_4 = { # Ear of the Court
+	legacy = hayford_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Hayford
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = hayford_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		title_creation_cost_mult = -0.25
+		diplomacy = 1
+		intrigue = 2
+	}
+
+	traits = {
+		ambitious = 50
+		shrewd = 35
+	}
+	
+
+}
+
+hayford_legacy_5 = { # Royal Retainers
+	legacy = hayford_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Hayford
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = hayford_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = 2
+		army_maintenance_mult = -0.1
+		men_at_arms_cap = 1
+	}
+
+	traits = {
+	}
+	
+
+}
+
+rosby_legacy_1 = { # First Men Origins
+	legacy = rosby_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Rosby
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = rosby_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 1
+		the_pact_religion_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+
+	traits = {
+	}
+	
+
+}
+
+rosby_legacy_2 = { # Masters of Horse
+	legacy = rosby_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Rosby
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = rosby_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		health = 0.1
+		light_cavalry_recruitment_cost_mult = -0.15
+		light_cavalry_pursuit_mult = 0.15
+		heavy_cavalry_recruitment_cost_mult = -0.15
+		heavy_cavalry_pursuit_mult = 0.15
+	}
+
+	traits = {
+	}
+	
+
+}
+
+rosby_legacy_3 = { # Wealth of the Crownfields
+	legacy = rosby_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Rosby
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = rosby_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 1
+		domain_tax_mult = 0.1
+		farmlands_supply_limit_mult  = 0.2
+		plains_supply_limit_mult = 0.2
+		hills_supply_limit_mult = 0.2
+	}
+
+	traits = {
+		greedy = 25
+	}
+	
+
+}
+
+rosby_legacy_4 = { # Wardens of the Sands
+	legacy = rosby_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Rosby
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = rosby_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 2
+		martial = 2
+		stone_dornish_opinion = -30
+		sand_dornish_opinion = -30
+		salt_dornish_opinion = -30
+		desert_travel_danger = 10
+		desert_mountains_travel_danger = 10
+	}
+
+	traits = {
+	}
+	
+
+}
+
+rosby_legacy_5 = { # Men Over Faith
+	legacy = rosby_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Rosby
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = rosby_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = 3
+		liege_opinion = 25
+		the_seven_religion_opinion = -5
+	}
+
+	traits = {
+		brave = 40
+		cynical = 40
+	}
+	
+
+}
+
+stokeworth_legacy_1 = { # Andal Origins
+	legacy = stokeworth_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Stokeworth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stokeworth_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		clergy_opinion = 10
+		tolerance_advantage_mod = 3
+		knight_effectiveness_mult = 0.05
+	}
+
+	traits = {
+	}
+	
+
+}
+
+stokeworth_legacy_2 = { # A House of Suitors
+	legacy = stokeworth_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Stokeworth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stokeworth_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		diplomacy = 1
+		attraction_opinion = 20
+		fertility = 0.15
+	}
+
+	traits = {
+		beauty_good_1 = 50 
+	}
+	
+
+}
+
+stokeworth_legacy_3 = { # Wealth of the Crownfields
+	legacy = stokeworth_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Stokeworth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stokeworth_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 1
+		domain_tax_mult = 0.1
+		farmlands_supply_limit_mult  = 0.2
+		plains_supply_limit_mult = 0.2
+		hills_supply_limit_mult = 0.2
+	}
+
+	traits = {
+		greedy = 25
+	}
+	
+
+}
+
+stokeworth_legacy_4 = { # Historical Hands
+	legacy = stokeworth_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Stokeworth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stokeworth_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 2
+		liege_opinion = 30
+		castle_holding_build_gold_cost = -0.1
+		castle_holding_build_speed = -0.1
+		city_holding_build_gold_cost = -0.1
+		city_holding_build_speed = -0.1
+	}
+
+	traits = {
+		authoritative = 35
+		diligent = 50
+	}
+	
+
+}
+
+stokeworth_legacy_5 = { # Gold-Cloaked Legacy
+	legacy = stokeworth_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Stokeworth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stokeworth_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 2
+		defender_advantage = 5
+		courtier_and_guest_opinion = 10
+		prisoner_opinion = -10
+	}
+
+	traits = {
+		just = 20
+	}
+	
+
+}
+
+swann_legacy_1 = { # First of the Marchers
+	legacy = swann_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Swann
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = swann_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 2
+		prowess = 1
+		monthly_prestige_gain_mult = 0.1
+		courtier_and_guest_opinion = 10
+	}
+
+	traits = {
+	}
+	
+
+}
+
+swann_legacy_2 = { # On Wings of Black and White
+	legacy = swann_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Swann
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = swann_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		attraction_opinion = 15
+		personal_scheme_power_mult = 0.15
+		prowess = 1
+		stewardship = 2
+	}
+
+	traits = {
+		brave = 40
+		greedy = 40
+		diligent = 40
+	}
+	
+
+}
+
+swann_legacy_3 = { # Keepers of Stonehelm
+	legacy = swann_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Swann
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = swann_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		defender_advantage = 5
+		castle_holding_build_speed = -0.15
+		holding_build_speed = -0.15
+		marcher_opinion = 20
+		stone_dornish_opinion = -40
+		salt_dornish_opinion = -40
+		sand_dornish_opinion = -40
+	}
+
+	traits = {
+	}
+	
+
+}
+
+swann_legacy_4 = { # Knights of Old
+	legacy = swann_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Swann
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = swann_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = 1
+		min_combat_roll = -2
+		max_combat_roll = 4
+		advantage = 3
+	}
+
+	traits = {
+	}
+	
+
+}
+
+swann_legacy_5 = { # To Soar on High
+	legacy = swann_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Swann
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = swann_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		general_opinion = 10
+		monthly_lifestyle_xp_gain_mult = 0.1
+		vassal_tax_mult = 0.1
+		domain_tax_mult = 0.1
+	}
+
+	traits = {
+		calm = 40
+		arrogant = 50
+	}
+	
+
+}
+
+fowler_legacy_1 = { # First Men Origins
+	legacy = fowler_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fowler
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fowler_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 1
+		the_pact_religion_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+
+	traits = {
+	}
+	
+
+}
+
+fowler_legacy_2 = { # Kings of Stone and Sky
+	legacy = fowler_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fowler
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fowler_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		diplomacy = 1
+		controlled_province_advantage = 5
+		defender_holding_advantage = 10
+		monthly_county_control_growth_factor = 0.33
+	}
+
+	traits = {
+		authoritative = 30
+		arrogant = 60
+	}
+	
+
+}
+
+fowler_legacy_3 = { # The Stoneway Rivalry
+	legacy = fowler_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fowler
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fowler_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		intrigue = 2
+		stone_dornish_opinion = -10
+		max_hostile_schemes_add = 1
+	}
+
+	traits = {
+		deceitful = 35
+		vengeful = 35
+	}
+	
+
+}
+
+fowler_legacy_4 = { # The Host of 10,000
+	legacy = fowler_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fowler
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fowler_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		army_damage_mult = 0.15
+		mountains_attrition_mult = -0.25
+		desert_mountains_attrition_mult = -0.25
+		reachman_opinion = -30
+		stormlander_opinion = -30
+		marcher_opinion = -50
+	}
+
+	traits = {
+	}
+	
+
+}
+
+fowler_legacy_5 = { # The Third Principle
+	legacy = fowler_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fowler
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fowler_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		diplomacy = 1
+		learning = 1
+		liege_opinion = 30
+		fellow_vassal_opinion = 15
+		domain_tax_mult = 0.1
+	}
+
+	traits = {
+	}
+	
+
+}
+
+spicer_legacy_1 = { # Merchant Origins
+	legacy = spicer_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Spicer
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = spicer_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		intrigue = 1
+		stewardship = 1
+		fellow_vassal_opinion = -30
+		liege_opinion = -30
+	}
+
+	traits = {
+		ambitious = 70
+	}
+	
+
+}
+
+spicer_legacy_2 = { # Bought, Not Fought For
+	legacy = spicer_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Spicer
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = spicer_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = -4
+		stewardship = 2
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.20
+	}
+
+	traits = {
+	}
+	
+
+}
+
+spicer_legacy_3 = { # Merchants, Not Rulers
+	legacy = spicer_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Spicer
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = spicer_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		monthly_income_mult = 0.2
+		monthly_prestige = -1
+		legitimacy_baseline_add = -500
+		county_opinion_add = -20
+		stress_loss_per_prestige_level = 0.25
+	}
+
+	traits = {
+	}
+	
+
+}
+
+spicer_legacy_4 = { # Occult Scions
+	legacy = spicer_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Spicer
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = spicer_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		intrigue_scheme_power = 1
+		monthly_prestige = -1
+		general_opinion = -15
+		intrigue = 3
+	}
+
+	traits = {
+		witch = 45
+		greenseer = 45
+	}
+	
+
+}
+
+spicer_legacy_5 = { # Rags to Riches
+	legacy = spicer_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Spicer
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = spicer_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		monthly_income_per_stress_level_mult = 0.1
+		general_opinion = -15
+	}
+
+	traits = {
+		arrogant = 50
+	}
+	
+
+}
+
+staedmon_legacy_1 = { # Andal Origins
+	legacy = staedmon_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Staedmon
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = staedmon_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		clergy_opinion = 10
+		tolerance_advantage_mod = 3
+		knight_effectiveness_mult = 0.05
+	}
+
+	traits = {
+	}
+	
+
+}
+
+staedmon_legacy_2 = { # Steadfast Supporters
+	legacy = staedmon_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Staedmon
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = staedmon_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		liege_opinion = 10
+		prowess = 2
+		knight_limit = 2
+		knight_effectiveness_mult = 0.15
+		monthly_prestige_gain = 0.5
+	}
+
+	traits = {
+		loyal = 30
+	}
+	
+
+}
+
+staedmon_legacy_3 = { # Keepers of Broad Arch
+	legacy = staedmon_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Staedmon
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = staedmon_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 1
+		castle_holding_build_speed = -0.1
+		castle_holding_build_gold_cost = -0.1
+		defender_holding_advantage = 5
+	}
+
+	traits = {
+	}
+	
+
+}
+
+staedmon_legacy_4 = { # Speak Not of Love
+	legacy = staedmon_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Staedmon
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = staedmon_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		fertility = -0.2
+		dread_baseline_add = 10
+		hostile_scheme_resistance_mult = 0.2
+		monthly_martial_lifestyle_xp_gain_mult = 0.1
+	}
+
+	traits = {
+		callous = 40
+		stubborn = 40
+		temperate = 40
+	}
+	
+
+}
+
+staedmon_legacy_5 = { # Defenders of the Borderlands
+	legacy = staedmon_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Staedmon
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = staedmon_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = 2
+		skirmishers_screen_add = 12
+		skirmishers_max_size_add = 2
+		forest_advantage  = 6
+	}
+
+	traits = {
+	}
+	
+
+}
+
+fell_legacy_1 = { # First Men Origins
+	legacy = fell_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fell
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fell_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 1
+		the_pact_religion_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+
+	traits = {
+	}
+	
+
+}
+
+fell_legacy_2 = { # Wardens of the Wood
+	legacy = fell_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fell
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fell_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = 1
+		forest_advantage = 7
+		forest_min_combat_roll = 2
+		forest_max_combat_roll = 2
+		monthly_prestige_gain_mult = 0.2
+	}
+
+	traits = {
+	}
+	
+
+}
+
+fell_legacy_3 = { # Timbered Business
+	legacy = fell_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fell
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fell_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		domain_tax_mult = 0.1
+		development_growth_factor = 0.1
+		character_capital_county_monthly_development_growth_add = 0.15
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.1
+	}
+
+	traits = {
+		diligent = 50
+	}
+	
+
+}
+
+fell_legacy_4 = { # Legacy of the 'False Knight'
+	legacy = fell_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fell
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fell_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		prowess = 2
+		knight_effectiveness_mult = 0.1
+		monthly_martial_lifestyle_xp_gain_mult = 0.1
+		defender_holding_advantage = 3
+	}
+
+	traits = {
+	}
+	
+
+}
+
+fell_legacy_5 = { # Kingswood Bows
+	legacy = fell_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Fell
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fell_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 2
+		archers_max_size_add = 2
+		archers_damage_add = 10
+		archers_toughness_add = 10
+		archers_pursuit_add = 10
+	}
+
+	traits = {
+	}
+	
+
+}
+
+serrett_legacy_1 = { # United Origins
+	legacy = serrett_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Serrett
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = serrett_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 1
+		faith_hostility_advantage = 3
+		the_pact_religion_opinion = 5
+		clergy_opinion = 10
+	}
+
+	traits = {
+	}
+	
+
+}
+
+serrett_legacy_2 = { # Peacock Beauty
+	legacy = serrett_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Serrett
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = serrett_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		fertility = 0.2
+		attraction_opinion = 20
+	}
+
+	traits = {
+		beauty_good_2 = 50
+	}
+	
+
+}
+
+serrett_legacy_3 = { # Feathered Fighters
+	legacy = serrett_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Serrett
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = serrett_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		monthly_war_income_mult = 0.05
+		heavy_infantry_toughness_add = 8
+		heavy_infantry_damage_add = 8
+		pikemen_damage_add = 8
+		pikemen_toughness_add = 8
+	}
+
+	traits = {
+	}
+	
+
+}
+
+serrett_legacy_4 = { # Upon Silver Hills
+	legacy = serrett_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Serrett
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = serrett_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 1
+		learning = 1
+		development_growth_mult = 0.1
+		domain_tax_mult = 0.1
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.15
+	}
+
+	traits = {
+	}
+	
+
+}
+
+serrett_legacy_5 = { # A Legacy of Wealth
+	legacy = serrett_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Serrett
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = serrett_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		diplomacy = 2
+		vassal_tax_mult = 0.15
+		dynasty_opinion = 20
+		fellow_vassal_opinion = 10
+		liege_opinion = 10
+		monthly_prestige_gain_mult = 0.35
+	}
+
+	traits = {
+	}
+	
+
+}
+
+# FID LEGACIES
+
+tarth_legacy_1 = { # First Men Origins
+	legacy = tarth_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Tarth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = tarth_legacy_1_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 1
+		prowess = 1
+		the_pact_religion_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+}
+
+tarth_legacy_2 = {
+	legacy = tarth_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Tarth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = tarth_legacy_2_effect
+		}
+	}
+
+	character_modifier = { 
+		prowess = 2
+		diplomacy = 1
+	}
+
+	traits = {
+		brave = 30
+	}
+}
+
+tarth_legacy_3 = {
+	legacy = tarth_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Tarth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = tarth_legacy_3_effect
+		}
+	}
+
+	character_modifier = { 
+		stewardship = 2
+		build_speed = -0.05
+		build_gold_cost = -0.05
+		development_growth_factor = 0.1
+	}
+
+	traits = {
+		diligent = 30
+	}
+}
+
+tarth_legacy_4 = { 
+	legacy = tarth_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Tarth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = tarth_legacy_4_effect
+		}
+	}
+
+	character_modifier = { 
+		embarkation_cost_mult = -0.3 
+		no_disembark_penalty = yes
+		coastal_advantage = 10
+	}
+
+	traits = {
+	}
+}
+
+tarth_legacy_5 = { 
+	legacy = tarth_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Tarth
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = tarth_legacy_5_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 2
+		short_reign_duration_mult = -0.2
+		court_grandeur_baseline_add = 5
+		legitimacy_gain_mult = 0.1
+		monthly_prestige_gain_mult = 0.25
+		monthly_martial_lifestyle_xp_gain_mult = 0.15		
+	}
+
+	traits = {
+	}
+}
+
+massey_legacy_1 = { 
+	legacy = massey_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Massey
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = massey_legacy_1_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 1
+		prowess = 1
+		the_pact_religion_opinion = 5
+		courtier_and_guest_opinion = 5		
+	}
+
+	traits = {
+	}
+}
+
+massey_legacy_2 = { 
+	legacy = massey_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Massey
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = massey_legacy_2_effect
+		}
+	}
+
+	character_modifier = { 
+		diplomacy = 2
+		monthly_dynasty_prestige_gain_mult = 0.05
+		general_opinion = 10	
+	}
+
+	traits = {
+	}
+}
+
+massey_legacy_3 = { 
+	legacy = massey_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Massey
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = massey_legacy_3_effect
+		}
+	}
+
+	character_modifier = { 
+		liege_opinion = 20
+		high_valyrian_opinion = 10
+	}
+
+	traits = {
+		loyal = 40
+	}
+}
+
+massey_legacy_4 = { 
+	legacy = massey_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Massey
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = massey_legacy_4_effect
+		}
+	}
+
+	character_modifier = { 
+		embarkation_cost_mult = -0.15 
+		republican_vassal_tax_contribution_mult = 0.15
+		republican_vassal_opinion = 15
+		domain_tax_mult = 0.1
+		development_growth_factor = 0.1
+	}
+
+	traits = {
+	}
+}
+
+massey_legacy_5 = { 
+	legacy = massey_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Massey
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = massey_legacy_5_effect
+		}
+	}
+
+	character_modifier = { 
+		stewardship = 2
+		martial = 2
+		dread_baseline_add = 15
+		monthly_prestige_gain_add = 0.75
+	}
+
+	traits = {
+	}
+}
+
+corbray_legacy_1 = { 
+	legacy = corbray_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Corbray
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = corbray_legacy_1_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 1
+		clergy_opinion = 10
+		tolerance_advantage_mod = 3
+		knight_effectiveness_mult = 0.05
+	}
+
+	traits = {
+	}
+}
+
+corbray_legacy_2 = { 
+	legacy = corbray_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Corbray
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = corbray_legacy_2_effect
+		}
+	}
+
+	character_modifier = { 
+		knight_effectiveness_mult = 0.15
+		prowess = 2
+		dread_baseline_add = 10
+		monthly_dynasty_prestige_gain_mult = 0.05
+	}
+
+	traits = {
+		lifestyle_blademaster = 30
+	}
+}
+
+corbray_legacy_3 = { 
+	legacy = corbray_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Corbray
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = corbray_legacy_3_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 2
+		prowess = 1
+		hostile_scheme_power_mult = 0.15
+	}
+
+	traits = {
+		brave = 40
+		stubborn = 25
+	}
+}
+
+corbray_legacy_4 = { 
+	legacy = corbray_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Corbray
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = corbray_legacy_4_effect
+		}
+	}
+
+	character_modifier = { 
+		defender_advantage = 10
+		controlled_province_advantage = 5
+		monthly_county_control_growth_factor = 0.15
+		monthly_county_control_growth_add = 0.2		
+	}
+
+	traits = {
+	}
+}
+
+corbray_legacy_5 = { 
+	legacy = corbray_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Corbray
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = corbray_legacy_4_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 3
+		liege_opinion = 15
+		dynasty_opinion = 30	
+	}
+
+	traits = {
+	}
+}
+
+penrose_legacy_1 = {
+		legacy = penrose_legacy_track
+
+		can_be_picked = {
+			dynasty = dynasty:dynn_Penrose
+		}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = penrose_legacy_1_effect
+		}
+	}
+
+	character_modifier = { 
+		courtier_and_guest_opinion = 10
+		monthly_lifestyle_xp_gain_mult = 0.1
+	}
+
+	traits = {
+		inquisitive = 50
+	}
+
+}
+
+penrose_legacy_2 = {
+		legacy = penrose_legacy_track
+
+		can_be_picked = {
+			dynasty = dynasty:dynn_Penrose
+		}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = penrose_legacy_2_effect
+		}
+	}
+
+	character_modifier = { 
+		stewardship = 1
+		spouse_opinion = 10
+		trait_track_wit_xp_gain_mult = 0.5
+	}
+
+	traits = {
+	}
+
+}
+
+penrose_legacy_3 = {
+		legacy = penrose_legacy_track
+
+		can_be_picked = {
+			dynasty = dynasty:dynn_Penrose
+		}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = penrose_legacy_3_effect
+		}
+	}
+
+	character_modifier = { 
+		diplomacy = 1
+		high_valyrian_opinion = 10
+		liege_opinion = 10
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	traits = {
+	}
+
+}
+
+penrose_legacy_4 = {
+		legacy = penrose_legacy_track
+
+		can_be_picked = {
+			dynasty = dynasty:dynn_Penrose
+		}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = penrose_legacy_4_effect
+		}
+	}
+
+	character_modifier = { 
+		prowess = 1
+		pikemen_damage_mult = 0.15
+		pikemen_toughness_mult = 0.15
+		pikemen_maintenance_cost_mult  = -0.1
+	}
+
+	traits = {
+		patient = 30
+	}
+
+}
+
+penrose_legacy_5 = {
+		legacy = penrose_legacy_track
+
+		can_be_picked = {
+			dynasty = dynasty:dynn_Penrose
+		}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = penrose_legacy_5_effect
+		}
+	}
+
+	character_modifier = { 
+		learning = 3
+		clergy_opinion = 10
+		monthly_piety_gain_mult = 0.1
+		monthly_lifestyle_xp_gain_mult = 0.1
+	}
+
+	traits = {
+	}
+
+}
+
+mooton_legacy_1 = {
+		legacy = mooton_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Mooton
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = mooton_legacy_1_effect
+		}
+	}
+
+	character_modifier = { 
+		martial = 1
+		prowess = 1
+		the_pact_religion_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+
+}
+
+mooton_legacy_2 = {
+		legacy = mooton_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Mooton
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = mooton_legacy_2_effect
+		}
+	}
+
+	character_modifier = { 
+		stewardship = 1
+		domain_tax_mult = 0.1
+		character_capital_county_monthly_development_growth_add = 0.1
+		farmlands_development_growth_factor = 0.2
+		plains_development_growth_factor = 0.2
+	}
+
+}
+
+mooton_legacy_3 = {
+		legacy = mooton_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Mooton
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = mooton_legacy_3_effect
+		}
+	}
+
+	character_modifier = { 
+		heavy_infantry_damage_add = 5
+		heavy_infantry_screen_add = 5
+		heavy_infantry_maintenance_cost_mult = -0.1
+		knight_limit = 2
+	}
+
+	traits = {
+		zealous = 30
+	}
+
+}
+
+mooton_legacy_3 = {
+		legacy = mooton_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Mooton
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = mooton_legacy_3_effect
+		}
+	}
+
+	character_modifier = { 
+		heavy_infantry_damage_mult = 0.1
+		heavy_infantry_maintenance_cost_mult = -0.1
+		knight_limit = 2
+	}
+
+	traits = {
+		zealous = 30
+	}
+
+}
+
+mooton_legacy_4 = {
+		legacy = mooton_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Mooton
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = mooton_legacy_4_effect
+		}
+	}
+
+	character_modifier = { 
+		diplomacy = 2
+		liege_opinion = 10
+		high_valyrian_opinion = 20
+		monthly_county_control_growth_factor = 0.25
+		monthly_diplomacy_lifestyle_xp_gain_mult = 0.2
+	}
+
+	traits = {
+		gregarious = 25
+		content = 25
+	}
+
+}
+
+mooton_legacy_5 = {
+		legacy = mooton_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Mooton
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = mooton_legacy_5_effect
+		}
+	}
+
+	character_modifier = { 
+		prowess = 2
+		learning = 2
+		house_opinion = 15
+		monthly_prestige_gain_mult = 0.1
+	}
+
+	traits = {
+	}
+
+}
+
+allyrion_legacy_1 = {
+	legacy = allyrion_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Allyrion
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = allyrion_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		clergy_opinion = 10
+		tolerance_advantage_mod = 3
+		knight_effectiveness_mult = 0.05
+	}
+
+}
+
+allyrion_legacy_2 = {
+	legacy = allyrion_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Allyrion
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = allyrion_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		intrigue = 2
+		rhoynar_opinion = 10
+		sand_dornish_opinion = 10
+		salt_dornish_opinion = 10
+		high_valyrian_opinion = 10
+	}
+
+}
+
+allyrion_legacy_3 = {
+	legacy = allyrion_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Allyrion
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = allyrion_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		development_growth_factor = 0.15
+		domain_tax_mult = 0.15
+		monthly_county_control_growth_factor = 0.15
+	}
+
+}
+
+allyrion_legacy_4 = {
+	legacy = allyrion_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Allyrion
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = allyrion_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		diplomacy = 1
+		intrigue = 1
+		monthly_piety_gain_mult = 0.1
+		liege_opinion = 15
+	}
+
+	traits = {
+		deceitful = 40
+	}
+}
+
+allyrion_legacy_5 = {
+	legacy = allyrion_legacy_track
+
+	can_be_picked = {
+		dynasty = dynasty:dynn_Allyrion
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = allyrion_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 1
+		monthly_martial_lifestyle_xp_gain_mult = 0.1
+		defender_holding_advantage = 7
+		monthly_county_control_growth_factor = 0.35
+	}
+
+}
+
+redfort_legacy_1 = { # First Men Origins #Done
+	legacy = redfort_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Redfort
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = redfort_legacy_1_effect
+    	}
+	}
+
+	character_modifier = {
+    	martial = 1
+    	prowess = 1
+    	old_gods_south_opinion = 5
+    	courtier_and_guest_opinion = 5
+	}
+}
+
+redfort_legacy_2 = { # Defenders of the Bronze King
+	legacy = redfort_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Redfort
+	}
+
+	effect = {
+    	# Effect is applied in the on action 'on_birth_child'
+    	custom_description_no_bullet = {
+        	text = redfort_legacy_2_effect
+    	}
+	}
+
+	traits = {
+    	strong = 100
+	}
+
+	character_modifier = {
+    	prowess = 1
+    	diplomacy = 1
+    	old_gods_south_opinion = 5
+    	old_gods_vale_opinion = 5
+    	defender_advantage = 5
+    	knight_limit = 2
+	}
+}
+redfort_legacy_3 = { # The Vale's most Stalwart
+	legacy = redfort_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Redfort
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = redfort_legacy_3_effect
+    	}
+	}
+    
+	character_modifier = {
+    	defender_advantage = 3
+    	monthly_martial_lifestyle_xp_gain_mult = 0.2
+    	heavy_infantry_toughness_mult = 0.1
+		heavy_infantry_max_size_add = 2 
+		heavy_infantry_damage_mult = 0.1
+	}
+}
+redfort_legacy_4 = { # Strong in all
+	legacy = redfort_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Redfort
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = redfort_legacy_4_effect
+    	}
+	}
+    
+	character_modifier = {
+    	short_reign_duration_mult = -0.2
+    	vassal_limit = 5
+    	build_speed = -0.1
+		holding_build_speed = -0.1
+		garrison_size = 0.1
+		additional_fort_level = 5
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+}
+redfort_legacy_5 = { # Men of the Vale
+	legacy = redfort_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Redfort
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = redfort_legacy_5_effect
+    	}
+	}
+
+	character_modifier = {
+		vassal_tax_mult = 0.1
+    	development_growth_factor = 0.05
+    	knight_effectiveness_mult = 0.05
+    	monthly_prestige  = 1
+    	heavy_infantry_maintenance_mult = -0.05
+	}
+}
+
+fisher_legacy_1 = { # First Men Origins
+	legacy = fisher_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_FisherSS
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = fisher_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 1
+		prowess = 1
+		old_gods_south_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+}
+
+fisher_legacy_2 = { # No Safe Harbour For Reavers
+	legacy = fisher_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_FisherSS 
+	}
+
+	ai_chance = {
+		value = 0
+	}
+    
+    effect = {
+		custom_description_no_bullet = { 
+		    text = fisher_legacy_2_effect 
+		}
+	}
+	
+	character_modifier = {
+		prowess = 1
+		martial = 1
+		hostile_raid_time = 0.2
+		advantage_in_hills = 10
+	}
+	
+}
+
+fisher_legacy_3 = { # The Tides Break Upon Us
+	legacy = fisher_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_FisherSS 
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = fisher_legacy_3_effect }
+	}
+	
+	character_modifier = {
+        skirmishers_maintenance_mult = -0.15
+		skirmishers_damage_mult = 0.10 
+		skirmishers_toughness_mult = 0.1
+		skirmishers_max_size_add = 2 
+	}
+
+}
+
+fisher_legacy_4 = { # Fishing Supremacy
+	legacy = fisher_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_FisherSS  
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = fisher_legacy_4_effect }
+	}
+
+	character_modifier = {
+        domain_tax_mult = 0.10 
+		development_growth_factor = 0.05
+        stewardship = 1
+        monthly_prestige = 1
+        monthly_intrigue_lifestyle_xp_gain_mult = 0.15
+	}
+}
+
+fisher_legacy_5 = { # We Endured The Drowning
+	legacy = fisher_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_FisherSS  
+	}
+    
+    ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = fisher_legacy_5_effect
+		}
+	}
+
+	traits = {
+		stubborn = 100
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = fisher_legacy_5_effect }
+	}
+
+	character_modifier = {
+		knight_limit = 1
+        fertility = 0.05
+        knight_effectiveness_mult = 0.05
+        garrison_size = 0.1
+		additional_fort_level = 2
+	}
+}
+
+belmore_legacy_1 = { # First Men Origins
+	legacy = belmore_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Belmore
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = belmore_legacy_1_effect
+    	}
+	}
+
+	character_modifier = {
+    	martial = 1
+		prowess = 1
+		old_gods_south_opinion = 5
+		courtier_and_guest_opinion = 5
+	}
+}
+
+belmore_legacy_2 = { # Lords of the Mountains
+	legacy = belmore_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Belmore
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = belmore_legacy_2_effect
+    	}
+	}
+
+	character_modifier = {
+    		hills_advantage = 5
+    		mountain_advantage = 5
+    		knight_limit = 1
+            health = 0.2
+            hills_supply_limit_mult = 0.20
+	}
+}
+belmore_legacy_3 = { # The Noble Men
+	legacy = belmore_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Belmore
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = belmore_legacy_3_effect
+    	}
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = belmore_legacy_3_effect
+		}
+	}
+
+	traits = {
+		gregarious = 100
+	}
+    
+	character_modifier = {
+    	diplomacy = 2
+    	monthly_diplomacy_lifestyle_xp_gain_mult = 0.15
+        monthly_prestige = 1
+        monthly_piety = 1
+	}
+}
+belmore_legacy_4 = { # Clansmen Shall not Pass
+	legacy = belmore_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Belmore
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = belmore_legacy_4_effect
+    	}
+	}
+    
+	character_modifier = {
+        archer_maintenance_mult = -0.10
+	    archer_damage_mult = 0.2 
+		archer_toughness_mult = 0.1
+		archer_max_size_add = 2
+    	defender_advantage = 5
+    	mountain_clansman_opinion = -15
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+}
+belmore_legacy_5 = { # Forever Courtly
+	legacy = belmore_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Belmore
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = belmore_legacy_5_effect
+    	}
+	}
+
+	character_modifier = {
+		diplomacy = 2
+		vassal_tax_mult = 0.1
+    	development_growth_factor = 0.05
+    	monthly_piety_gain_per_knight_add = 0.05
+    	monthly_prestige_gain_per_knight_add = 0.05
+        monthly_piety = 0.25
+	}
+}
+
+templeton_legacy_1 = { # Andal Origins
+	legacy = templeton_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Templeton
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = templeton_legacy_1_effect
+    	}
+	}
+
+	character_modifier = {
+    	martial = 1
+    	prowess = 1
+    	valeman_opinion = 5
+    	mountain_clansman_opinion = -5
+    	clergy_opinion = 10
+       	knight_effectiveness_mult = 0.05
+	}
+}
+
+templeton_legacy_2 = { # Loyal to the Seven
+	legacy = templeton_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Templeton
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = templeton_legacy_2_effect
+    	}
+	}
+
+	character_modifier = {
+    		monthly_piety = 1
+    		monthly_piety_gain_per_knight_add = 0.05
+    	    monthly_prestige_gain_per_knight_add = 0.05
+	}
+}
+templeton_legacy_3 = { # The Greatest Among Knights
+	legacy = templeton_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Templeton
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = templeton_legacy_3_effect
+    	}
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = templeton_legacy_3_effect
+		}
+	}
+
+	traits = {
+		arrogant = 100
+	}
+    
+	character_modifier = {
+    	martial = 2
+    	monthly_martial_lifestyle_xp_gain_mult = 0.15
+        knight_limit = 3
+	}
+}
+templeton_legacy_4 = { # The Knights of the Ninestars
+	legacy = templeton_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Templeton
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = templeton_legacy_4_effect
+    	}
+	}
+    
+	character_modifier = {
+        heavy_cavalry_maintenance_mult = -0.10
+	    heavy_cavalry_damage_mult = 0.15 
+		heavy_cavalry_toughness_mult = 0.1
+		heavy_cavalry_add = 2
+    	attacker_advantage = 5
+    	old_gods_opinion = -10
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+}
+templeton_legacy_5 = { # Fertile Lands
+	legacy = templeton_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Templeton
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = templeton_legacy_5_effect
+    	}
+	}
+
+	character_modifier = {
+		development_growth_factor = 0.2
+		domain_tax_mult = 0.1
+		levy_reinforcement_rate = 0.2
+    	supply_capacity_mult = 0.15
+	}
+}
+
+piper_legacy_1 = { # Andal Origins
+	legacy = piper_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Piper
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = piper_legacy_1_effect
+    	}
+	}
+
+	character_modifier = {
+    	prowess = 1
+    	martial = 1
+    	clergy_opinion = 10
+    	tolerance_advantage_mod = 5
+    	knight_effectiveness_mult = 0.05
+	}
+}
+piper_legacy_2 = { # Courtly Defenders
+	legacy = piper_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Piper
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = piper_legacy_2_effect
+    	}
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = piper_legacy_3_effect
+		}
+	}
+
+	traits = {
+		honest = 100
+	}
+
+	character_modifier = {
+        diplomacy = 1
+        defender_advantage = 5	
+    	forest_advantage = 5
+    	riverlands_opinion = 10
+    	monthly_diplomacy_lifestyle_xp_gain_mult = 0.15
+    }
+}
+piper_legacy_3 = { # Defenders of the Western Border
+	legacy = piper_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Piper
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = piper_legacy_3_effect
+    	}
+	}
+    
+	character_modifier = {
+    	skirmishers_maintenance_mult = -0.15
+	    skirmishers_toughness_add = 12 
+		skirmishers_damage_add = 12
+        knight_limit = 2
+	}
+}
+piper_legacy_4 = { # Fertility of the Pink Maiden
+	legacy = piper_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Piper
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = piper_legacy_4_effect
+    	}
+	}
+    
+	character_modifier = {
+        fertility = 0.05
+        stress_gain_mult = -0.15
+        domain_tax_mult = 0.10
+    	development_growth_factor = 0.10
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+}
+piper_legacy_5 = { # True to the Riverlands
+	legacy = piper_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Piper
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = piper_legacy_5_effect
+    	}
+	}
+
+	character_modifier = {
+		diplomacy = 2
+        vassal_tax_mult  = 0.1
+		levy_reinforcement_rate = 0.2
+    	supply_capacity_mult = 0.15
+	}
+}
+
+elesham_legacy_1 = { # First Men of the Paps
+	legacy = elesham_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Elesham
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = elesham_legacy_1_effect
+    	}
+	}
+
+	character_modifier = {
+    	stewardship = 1
+    	prowess = 1
+    	old_gods_south_opinion = 5
+    	courtier_and_guest_opinion = 5
+	}
+}
+
+elesham_legacy_2 = { # Kings of the Paps
+	legacy = elesham_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Elesham
+	}
+
+	character_modifier = {
+    	garrison_size = 0.1
+		defender_advantage = 5
+        coastal_advantage = 5
+        defender_holding_advantage = 5
+	}
+}
+elesham_legacy_3 = { # Vying for Sea Control
+	legacy = elesham_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Elesham
+	}
+    
+    effect = {
+    	custom_description_no_bullet = {
+        	text = elesham_legacy_4_effect
+    	}
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = elesham_legacy_3_effect
+		}
+	}
+
+	traits = {
+		greedy = 100
+	}
+    
+
+	character_modifier = {
+    	stewardship = 2
+        domain_tax_mult = 0.15
+    	development_growth_factor = 0.10
+        monthly_stewardship_lifestyle_xp_gain_mult = 0.15
+	}
+}
+elesham_legacy_4 = { # Hardy Seamen
+	legacy = elesham_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Elesham
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = elesham_legacy_4_effect
+    	}
+	}
+    
+	character_modifier = {
+    	martial = 1
+    	embarkation_cost_mult = -0.2
+    	hard_casualty_modifier = -0.5
+    	knight_effectiveness_mult = 0.05
+	}
+
+	ai_chance = {
+    	value = 0
+	}
+}
+elesham_legacy_5 = { # The Might of the Paps
+	legacy = elesham_legacy_track
+
+	can_be_picked = {
+    	dynasty = dynasty:dynn_Elesham
+	}
+
+	effect = {
+    	custom_description_no_bullet = {
+        	text = elesham_legacy_5_effect
+    	}
+	}
+
+	character_modifier = {
+    	monthly_prestige  = 1
+    	monthly_piety = 1
+    	skirmishers_maintenance_mult = -0.15
+		skirmishers_damage_mult = 0.10 
+		skirmishers_toughness_mult = 0.1
+		skirmishers_max_size_add = 2 
+	}
+}
+
+
+# KIZANS ADDITIONS
+
+whent_legacy_1 = { # Test
+	legacy = whent_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Whent
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = whent_legacy_1_effect
+		}
+	}
+
+	character_modifier = {
+		health = -0.1
+		fertility = -0.15
+		prowess = -2
+	}
+}
+
+whent_legacy_2 = { # Test
+	legacy = whent_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Whent
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = whent_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+		attraction_opinion = -20
+		dread_gain_mult = 0.2
+	}
+
+}
+
+whent_legacy_3 = { # Test
+	legacy = whent_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Whent
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = whent_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		pikemen_damage_mult = 0.15
+		pikemen_toughness_mult = 0.3
+		pikemen_max_size_add = 2
+	}
+}
+
+whent_legacy_4 = { # Test
+	legacy = whent_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Whent
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = whent_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		high_valyrian_opinion = 30
+		 = 2
+		monthly_prestige = 0.05
+		martial = 2
+	}
+
+}
+
+whent_legacy_5 = { # Test
+	legacy = whent_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Whent
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		# Effect is applied in the on action 'on_birth_child'
+		custom_description_no_bullet = {
+			text = whent_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		health = 0.4
+		fertility = 0.15
+		attraction_opinion = 35
+		prowess = 5
+		build_speed = -0.1
+		build_gold_cost = -0.1
+	}
+}
+
+# Shawney --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+shawney_legacy_1 = { # Test
+	legacy = shawney_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Shawney
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = shawney_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+		high_valyrian_opinion = 30
+		 = 2
+		monthly_prestige = 0.05
+	}
+}
+
+shawney_legacy_2 = {
+	legacy = shawney_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Shawney
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	character_modifier = {
+		development_growth = 0.05
+		development_growth_factor = 0.1
+		character_capital_county_monthly_development_growth_add = 0.1
+		embarkation_cost_mult = -0.25     
+    	supply_capacity_mult = 0.10
+		monthly_income = -0.3
+	}
+
+	effect = {
+	custom_description_no_bullet = {
+		text = shawney_legacy_2_effect
+	}
+	}
+
+	# Correct scope: apply modifier to the actual dynasty
+	if = {
+		limit = {
+			exists = this.dynasty
+		}
+		scope:dynasty = this.dynasty
+		scope:dynasty = {
+			add_dynasty_modifier = {
+				name = shawney_river_traders
+				duration = -1
+			}
+		}
+	}
+}
+
+	
+
+shawney_legacy_3 = { # Test
+	legacy = shawney_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Shawney
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = shawney_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+		stewardship = 1
+		republic_government_opinion = -15
+		republic_government_tax_contribution_mult = 0.10
+	}
+}
+
+shawney_legacy_4 = { # Test
+	legacy = shawney_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Shawney
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = shawney_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+		monthly_income = 0.1
+		stewardship = 2
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.2
+	}
+}
+
+shawney_legacy_5 = { # Test
+	legacy = shawney_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Shawney
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+	custom_description_no_bullet = {
+		text = shawney_legacy_5_effect
+	}
+	add_character_flag = SHAWNEY_CITADEL
+	}
+
+	character_modifier = {
+		monthly_income = 0.3
+		stewardship = 2
+		build_speed = -0.05
+		build_gold_cost = -0.05
+	}
+}
+
+# Selmy --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+selmy_legacy_1 = { 
+	legacy = selmy_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Selmy
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = selmy_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+		martial = 1
+	}
+}
+
+selmy_legacy_2 = { 
+	legacy = selmy_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Selmy
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = selmy_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+    	heavy_infantry_toughness_mult = 0.1
+    	heavy_infantry_damage_mult = 0.1
+		heavy_infantry_max_size_add = 2
+	}
+}
+
+selmy_legacy_3 = { 
+	legacy = selmy_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Selmy
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = selmy_legacy_3_effect
+		}
+	}
+	
+	character_modifier = {
+    	development_growth_factor = 0.1
+    	character_capital_county_monthly_development_growth_add = 0.1
+		supply_capacity_mult = 0.15
+	}
+}
+
+selmy_legacy_4 = { 
+	legacy = selmy_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Selmy
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = selmy_legacy_4_effect
+		}
+	}
+	
+	character_modifier = {
+		prowess = 2
+		monthly_prestige = 0.15
+		trait_track_lifestyle_blademaster_xp_gain_mult = 0.15
+	}
+}
+
+selmy_legacy_5 = { 
+	legacy = selmy_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Selmy
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = selmy_legacy_5_effect
+		}
+	}
+	
+	character_modifier = {
+		prowess = 3
+		no_prowess_loss_from_age = yes
+		knight_effectiveness_mult = 0.15
+	}
+}
+
+# Clawman --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+clawman_legacy_1 = { 
+	legacy = clawman_legacy_track
+
+	can_be_picked = { 
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = clawman_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+		hills_advantage = 10
+		mountains_advantage = 10
+		prowess = 1
+	}
+}
+
+clawman_legacy_2 = { 
+	legacy = clawman_legacy_track
+
+	can_be_picked = { 
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = clawman_legacy_2_effect
+		}
+	}
+	
+	character_modifier = {
+		defender_advantage = 10
+		skirmishers_toughness_mult = 0.10
+		skirmishers_screen_mult = 0.10
+		skirmishers_max_size_add = 2
+		skirmishers_maintenance_mult = -0.15
+	}
+}
+
+clawman_legacy_3 = { 
+	legacy = clawman_legacy_track
+
+	can_be_picked = { 
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = clawman_legacy_3_effect
+		}
+	}
+	
+	character_modifier = {
+		martial = 2
+	}
+}
+
+clawman_legacy_4 = { 
+	legacy = clawman_legacy_track
+
+	can_be_picked = { 
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = clawman_legacy_4_effect
+		}
+	}
+	
+	character_modifier = {
+		general_opinion = -20
+
+	}
+}
+
+clawman_legacy_5 = { 
+	legacy = clawman_legacy_track
+
+	can_be_picked = { 
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = clawman_legacy_5_effect
+		}
+	}
+	
+	character_modifier = {
+		martial = 2
+		mountains_attrition_mult = -0.5
+    	majorroad_mountains_attrition_mult = -0.5
+    	minorroad_mountains_attrition_mult = -0.5
+    	mountains_levy_size = 0.3
+    	majorroad_mountains_levy_size = 0.3
+    	minorroad_mountains_levy_size = 0.3
+    	majorroad_mountains_advantage = 5
+    	minorroad_mountains_advantage = 5
+		garrison_size = 0.05
+	}
+}
+
+# Iron Maker --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ironmaker_legacy_1 = { 
+	legacy = ironmaker_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Ironmaker
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = ironmaker_legacy_1_effect
+		}
+	}
+
+	traits = {
+    	physique_good_1 = 33
+    	physique_good_2 = 33
+    	physique_good_3 = 33
+	}
+	
+	character_modifier = {
+		prowess = 1
+		martial = 1
+		courtier_and_guest_opinion = 5
+	}
+}
+
+ironmaker_legacy_2 = { 
+	legacy = ironmaker_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Ironmaker
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = ironmaker_legacy_2_effect
+		}
+	}
+
+	character_modifier = {
+    	heavy_infantry_toughness_mult = 0.1
+    	heavy_infantry_damage_mult = 0.1
+		heavy_infantry_max_size_add = 2
+	}
+}
+
+ironmaker_legacy_3 = { 
+	legacy = ironmaker_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Ironmaker
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = ironmaker_legacy_3_effect
+		}
+	}
+
+	character_modifier = {
+    	monthly_prestige = 0.05
+    	tolerance_advantage_mod = 5
+    	knight_effectiveness_mult = 0.05
+	}
+}
+
+ironmaker_legacy_4 = { 
+	legacy = ironmaker_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Ironmaker
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = ironmaker_legacy_4_effect
+		}
+	}
+
+	character_modifier = {
+    	prowess = 1
+    	fertility = 0.15
+    	attraction_opinion = 20
+	}
+}
+
+ironmaker_legacy_5 = { 
+	legacy = ironmaker_legacy_track
+
+	can_be_picked = { 
+		dynasty = dynasty:dynn_Ironmaker
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = ironmaker_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+		martial = 2
+		monthly_martial_lifestyle_xp_gain_mult = 0.15
+    	general_opinion = 10
+	}
+}
+
+# Honeywiner ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+honeywiner_legacy_1 = { 
+	legacy = honeywiner_legacy_track
+
+	can_be_picked = {
+		culture = {
+			OR = {
+				this = culture:honeywiner
+				any_parent_culture_or_above = {
+					this = culture:honeywiner
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+	
+	effect = {
+		custom_description_no_bullet = {
+			text = honeywiner_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+    	diplomacy = 1
+		general_opinion = 10
+		courtier_and_guest_opinion = 5
+	}
+}
+
+honeywiner_legacy_2 = { 
+	legacy = honeywiner_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = honeywiner_legacy_2_effect
+		}
+	}
+	
+	character_modifier = {
+		domain_tax_mult = 0.05
+		general_opinion = 10
+		levy_size = 0.10
+	}
+}
+
+honeywiner_legacy_3 = { 
+	legacy = honeywiner_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = honeywiner_legacy_3_effect
+		}
+	}
+	
+	character_modifier = {
+    	development_growth = 0.05
+    	development_growth_factor = 0.1
+    	character_capital_county_monthly_development_growth_add = 0.1
+	}
+}
+
+honeywiner_legacy_4 = { 
+	legacy = honeywiner_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = honeywiner_legacy_4_effect
+		}
+	}
+	
+	character_modifier = {
+    	heavy_cavalry_max_size_add = 1
+		heavy_cavalry_damage_mult = 0.1
+		heavy_cavalry_toughness_mult = 0.1
+		heavy_cavalry_pursuit_mult = 0.1
+		prowess = 2
+	}
+}
+
+honeywiner_legacy_5 = { 
+	legacy = honeywiner_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = honeywiner_legacy_5_effect
+		}
+	}
+
+	character_modifier = {
+    	stewardship = 2
+    	monthly_income_mult = 0.1 
+    	build_gold_cost = -0.05
+		build_speed = -0.05
+	}
+}
+
+# Sisterman ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sisterman_legacy_1 = { 
+	legacy = sisterman_legacy_track
+
+	can_be_picked = {
+		culture = {
+			OR = {
+				this = culture:sisterman
+				any_parent_culture_or_above = {
+					this = culture:sisterman
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = sisterman_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+    	general_opinion = -25
+		sisterman_opinion = 25
+		monthly_piety_gain_mult = 0.1
+		monthly_piety = 0.2
+	}
+}
+
+sisterman_legacy_2 = { 
+	legacy = sisterman_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = sisterman_legacy_2_effect
+		}
+	}
+	
+	character_modifier = {
+		martial_per_piety_level = 1
+		skirmishers_max_size_add = 1
+		skirmishers_siege_value_add = 0.2
+	}
+}
+
+sisterman_legacy_3 = { 
+	legacy = sisterman_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = sisterman_legacy_3_effect
+		}
+	}
+	
+	character_modifier = {
+		coastal_advantage = 10
+		prowess = 1
+		martial = 1
+		ai_boldness = medium_positive_ai_value
+		ai_greed = medium_positive_ai_value
+	}
+
+}
+
+sisterman_legacy_4 = { 
+	legacy = sisterman_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = sisterman_legacy_4_effect
+		}
+	}
+	
+	character_modifier = {
+    	enemy_hard_casualty_modifier = 0.1
+		siege_morale_loss = 0.1
+		health = 0.2
+		valeman_opinion = -10
+		sisterman_opinion = 25
+	}
+
+}
+
+sisterman_legacy_5 = { 
+	legacy = sisterman_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = sisterman_legacy_5_effect
+		}
+	}
+	
+	character_modifier = {
+		prowess = 2
+		skirmishers_damage_add = 2
+		skirmishers_damage_mult = 0.5
+		skirmishers_screen_mult = 0.5
+		skirmishers_screen_add = 2
+		monthly_prestige = 0.2
+	}
+}
+
+# Stonedornish ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+stonedornish_legacy_1 = { 
+	legacy = stonedornish_legacy_track
+
+	can_be_picked = {
+		culture = {
+			OR = {
+				this = culture:stone_dornish
+				any_parent_culture_or_above = {
+					this = culture:stone_dornish
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stonedornish_legacy_1_effect
+		}
+	}
+	
+	character_modifier = {
+		marcher_opinion = -50
+		intrigue = 2
+	}
+}
+
+stonedornish_legacy_2 = { 
+	legacy = stonedornish_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stonedornish_legacy_2_effect
+		}
+	}
+	
+	character_modifier = {
+		skirmishers_max_size_add = 2
+		skirmishers_maintenance_mult = -0.15
+		pikemen_maintenance_mult = -0.10
+		pikemen_max_size_add = 1
+	}
+}
+
+stonedornish_legacy_3 = { 
+	legacy = stonedornish_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stonedornish_legacy_3_effect
+		}
+	}
+	
+	character_modifier = {
+		hills_advantage = 10
+		mountains_advantage = 10
+		supply_duration = 5
+	}
+
+}
+
+stonedornish_legacy_4 = { 
+	legacy = stonedornish_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stonedornish_legacy_4_effect
+		}
+	}
+	
+	character_modifier = {
+		prowess = 2
+		pikemen_maintenance_mult = -0.1
+		pikemen_damage_add = 5
+		pikemen_damage_mult = 0.2
+	}
+
+}
+
+stonedornish_legacy_5 = { 
+	legacy = stonedornish_legacy_track
+
+	effect = {
+		custom_description_no_bullet = {
+			text = stonedornish_legacy_5_effect
+		}
+	}
+	
+	character_modifier = {
+    	hostile_raid_time = 0.2
+		levy_reinforcement_rate = 0.15
+		high_valyrian_opinion = -25
+	}
+}
+
+# KIZANS ADDITIONS END

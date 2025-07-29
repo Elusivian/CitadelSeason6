@@ -1090,6 +1090,8 @@ agot_lann_sept_01 = {
 
 	type_icon = "icon_lanns_sept.dds"
 
+	levy = 2000
+
 	can_construct_potential = {
 		building_requirement_tribal = no
 	}
@@ -1460,9 +1462,13 @@ agot_evenfall_hall_01 = {
 		base = 100
 		culture_likely_to_fortify_modifier = yes
 	}
+	asset = {
+		type = pdxmesh
+		name = "building_special_evenfall_mesh"
+	}
 
 	type = special
-
+	
 	flag = travel_point_of_interest_diplomatic
 }
 
@@ -2217,6 +2223,8 @@ agot_new_castle_01 = {
 		tax_mult = 0.05
 	}
 
+	levy = 2000
+
 	county_modifier = {
 		development_growth_factor = 0.1
 		levy_size = 0.05
@@ -2441,8 +2449,6 @@ agot_oldtown_walls_01 = {
 		hostile_raid_time = 0.3
 		fort_level = 3
 	}
-
-	levy = 2000
 
 	ai_value = {
 		base = 100
@@ -2712,32 +2718,50 @@ agot_cider_hall_01 = {
 }
 
 # Starpike
-agot_starpike_01 = {
-	construction_time = slow_construction_time
+# agot_starpike_01 = {
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_structure_hotin_fortress.dds"
+# 	type_icon = "icon_structure_hotin_fortress.dds"
 
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
+# 	can_construct_potential = {
+# 		building_requirement_tribal = no
+# 	}
 
-	character_modifier = {
-		liege_opinion = 15
-		personal_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
-		owned_scheme_secrecy_add = -10
-	}
+# 	character_modifier = {
+# 		liege_opinion = 15
+# 		personal_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+# 		owned_scheme_secrecy_add = -10
+# 		intrigue = 2
+# 	}
 
-	cost_gold = 500
+# 	cost_gold = 500
 
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-	}
+# 	county_modifier = {
+# 		development_growth_factor = 0.1
+# 		tax_mult = 0.05
+# 		levy_size = 0.1
+# 	}
+# 	province_modifier = {
+# 		fort_level = 6
+# 		monthly_income = 1.5
+# 		levy_size = 0.2
+# 	}
+# 	character_modifier = {
+# 		monthly_dynasty_prestige_mult = 0.05
+# 		monthly_prestige  = 0.5
+# 	}
 
-	type = special
+# 	cost_gold = 500
 
-	flag = travel_point_of_interest_intrigue
-}
+# 	ai_value = {
+# 		base = 100
+# 		culture_likely_to_fortify_modifier = yes
+# 	}
+
+# 	type = special
+
+# 	flag = travel_point_of_interest_intrigue
+# }
 
 # Ryamsport
 agot_redwyne_port_01 = {
@@ -2888,8 +2912,9 @@ agot_grafton_keep_01 = {
 		dread_gain_mult = 0.1
 		dread_baseline_add = 5
 		prisoner_opinion = -10
+		monthly_income = 2
 	}
-
+	levy = 4000
 	province_modifier = {
 		fort_level = 2
 	}
@@ -2897,6 +2922,7 @@ agot_grafton_keep_01 = {
 	county_modifier = {
 		defender_holding_advantage = 5
 		hostile_raid_time = 0.5
+		tax_mult = 0.15
 	}
 
 	ai_value = {
@@ -2927,6 +2953,7 @@ agot_gulltown_01 = {
 		diplomacy_per_piety_level = 1
 		clergy_opinion = 5
 		owned_legend_spread_mult = 0.1
+		monthly_income = 2
 	}
 
 	character_modifier = {
@@ -2941,7 +2968,7 @@ agot_gulltown_01 = {
 		development_growth_factor = 0.2
 	}
 
-	levy = 1000
+	levy = 1500
 
 	type = special
 

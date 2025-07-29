@@ -47,6 +47,8 @@ poorfellow_skirmishers = {
 	high_maintenance_cost = { gold = skirmisher_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_cheap
 
+	max_regiments = 2
+
 	stack = 125
 	icon = skirmishers
 }
@@ -70,6 +72,8 @@ warriors_sons_heavy_infantry = { #
 		skirmishers = 1
 		pikemen = 1
 	}
+
+	max_regiments = 2
 
 	stack = 100
 	icon = heavy_infantry
@@ -103,6 +107,8 @@ warriors_sons_heavy_cav = {
 	low_maintenance_cost = { gold = heavy_cavalry_low_maint_cost }
 	high_maintenance_cost = { gold = heavy_cavalry_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_expensive
+
+	max_regiments = 2
 
 	stack = 50
 	allowed_in_hired_troops = no

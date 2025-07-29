@@ -1,0 +1,173 @@
+ title_ser_one = { # Ser
+	type = character
+	special = holder
+	gender = male
+	tier = county
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { 
+			c_whetmarsh c_woodward
+			c_fang_hill c_clifton c_greenfield c_hetherfield c_the_drop c_cornfield c_eldress c_stingrock c_borrenline c_forthane c_stilwood c_ruffell c_roundtowers c_kayce
+			c_brownhollow c_sows_horn c_bronzeholm c_strongcliffs c_nessing c_greyhelm c_chancedoor c_the_scales c_darkgroves
+			c_marstone c_ramsford c_briarwhite c_martlet_bend c_oldferns c_blackpitch c_hook_bay c_leechpool c_mudgrave c_saltpans
+			c_hardvale c_gullview c_osgoodswell c_ninestars c_wickenden c_marbletoft c_brownden c_stonefall c_sedgemore c_rockle c_bronzespear c_wycliffe c_stoutstone
+			c_the_grief c_hadlow_fields c_wrathfield c_cloveridge c_deaths_head c_amberly c_scale_valley c_horncross_sound c_harvest_hall c_sunwatch c_griffins_roost c_the_stalks
+			c_standfast c_greenwall c_wallow_dell c_grave_ridge c_hastwyck c_russeting c_inchfield c_ridgeland c_oaken_rills c_rhodalea c_sagecrown c_warnstand c_pippengrow c_stonecrab_cape c_cobble_cove c_risley_glade
+			c_lemonwood c_blood_gulch c_astermine c_high_hermitage c_spottswood c_first_well c_drywell c_spottswood
+			c_grey_garden
+		}
+}
+
+ title_ser_two = { # Ser
+	type = character
+	special = holder
+	gender = female
+	tier = county
+	priority = 900
+	governments = { feudal_government }
+	titles = { 
+			c_lemonwood c_blood_gulch c_astermine c_high_hermitage c_spottswood c_first_well c_drywell c_spottswood
+		}
+}
+
+ title_master_male = { # Master
+	type = character
+	special = holder
+	gender = male
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { 
+			d_edgewood d_grey_downs d_the_wolfswood
+		}
+}
+
+ title_master_female = { # Mistress
+	type = character
+	special = holder
+	gender = female
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { 
+			d_edgewood d_grey_downs d_the_wolfswood
+		}
+}
+
+ title_lord_marcher = { # Lord of the Marches
+	type = character
+	special = holder
+	gender = male
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_nightsong }
+}
+
+ title_lady_marcher = { # Lady of the Marches
+	type = character
+	special = holder
+	gender = female
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_nightsong }
+}
+
+ title_lord_defender_male = { # Defender of the Fords
+	type = character
+	special = holder
+	gender = male
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_bitterbridge }
+}
+
+ title_lord_defender_female = { # Defender of the Fords
+	type = character
+	special = holder
+	gender = female
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_bitterbridge }
+}
+
+ title_lord_defender_vale_male = { # Defender of the Vale
+	type = character
+	special = holder
+	gender = male
+	tier = county
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { c_the_bloody_gate c_high_road }
+}
+
+ title_lord_defender_vale_female = { # Defender of the Vale
+	type = character
+	special = holder
+	gender = female
+	tier = county
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { c_the_bloody_gate c_high_road }
+}
+
+ title_lord_keeper_male = { # Keepers of the Gates of the Moon
+	type = character
+	special = holder
+	gender = male
+	tier = count
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { c_moongates }
+}
+
+ title_lord_keeper_female = { # Keepers of the Gates of the Moon
+	type = character
+	special = holder
+	gender = female
+	tier = count
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { c_moongates }
+}
+
+ title_evenstar = { # Keepers of the Gates of the Moon
+	type = character
+	special = holder
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_tarth }
+}
+
+ title_night_lamp_keeper = { # Keepers of the Gates of the Moon
+	type = character
+	special = holder
+	tier = county
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { c_sweetsister }
+}
+
+ title_lord_marshal_male = { # Lord-Marshal of the Mander
+	type = character
+	special = holder
+	gender = male
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_white_harbor }
+}
+
+ title_lord_marshal_female = { # Lady-Marshal of the Mander
+	type = character
+	special = holder
+	gender = female
+	tier = duchy
+	priority = 900
+	governments = { lp_feudal_government }
+	titles = { d_white_harbor }
+}

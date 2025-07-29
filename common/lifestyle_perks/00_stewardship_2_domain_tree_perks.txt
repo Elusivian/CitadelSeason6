@@ -237,8 +237,8 @@ professional_workforce_perk = {
 	government_character_modifier = {
 		flag = government_is_landless_adventurer
 		invert_check = yes
-		build_speed = -0.15 #Hambone
-		holding_build_speed = -0.15 #Hambone
+		build_speed = -0.1 #Hambone
+		holding_build_speed = -0.1 #Hambone
 	}
 
 	effect = {

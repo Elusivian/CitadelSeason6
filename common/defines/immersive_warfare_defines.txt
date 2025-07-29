@@ -4,10 +4,10 @@ NCombat = {
 	
 	WAR_ATTACKER_COMBAT_SCORE_SCALE = 150	#freeholder		# Scale factor for how much war score battles give to the war attacker. Can be overriden by CB
 	WAR_DEFENDER_COMBAT_SCORE_SCALE = 150	#freeholder		# Scale factor for how much war score battles give to the war defender. Can be overriden by CB
-	LEVY_TOUGHNESS = 15			 #freeholder					# How much toughness does each levy soldier have
-	LEVY_ATTACK = 15			#freeholder					# How much attack does each levy soldier have
-	KNIGHT_DAMAGE_PER_PROWESS = 20					# How much "Damage" stat does a knight get per prowess?
-	KNIGHT_TOUGHNESS_PER_PROWESS = 5				# How much "Toughness" stat does a knight get per prowess?
+	LEVY_TOUGHNESS = 14			 #freeholder					# How much toughness does each levy soldier have
+	LEVY_ATTACK = 12			#freeholder					# How much attack does each levy soldier have
+	KNIGHT_DAMAGE_PER_PROWESS = 40					# How much "Damage" stat does a knight get per prowess?
+	KNIGHT_TOUGHNESS_PER_PROWESS = 10				# How much "Toughness" stat does a knight get per prowess?
 }
 
 NArmy = {

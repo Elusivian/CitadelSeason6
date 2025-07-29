@@ -100,6 +100,8 @@ goldcloaks = {
 	high_maintenance_cost = { gold = goldcloaks_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_sub_regiments = 7
+
 	stack = 120.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = gold_cloaks
@@ -176,6 +178,8 @@ sea_watch = {
 	high_maintenance_cost = { gold = sea_snakes_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_cheap
 
+	max_regiments = 1
+s
 	stack = 80.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = skirmishers
@@ -259,6 +263,8 @@ redcloaks = {
 	high_maintenance_cost = { gold = goldcloaks_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_sub_regiments = 7
+
 	stack = 120.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = heavy_infantry
@@ -341,6 +347,8 @@ greycloaks = {
 	low_maintenance_cost = { gold = goldcloaks_low_maint_cost }
 	high_maintenance_cost = { gold = goldcloaks_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_sub_regiments = 7
 
 	stack = 120.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -430,6 +438,8 @@ cailin_archers = {
 		prestige = 0.23
 	}
 	provision_cost = @provisions_cost_infantry_cheap
+
+	max_regiments = 1
 
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }

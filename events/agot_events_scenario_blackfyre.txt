@@ -1,0 +1,1500 @@
+﻿namespace = agot_events_blackfyre_minor
+
+
+# Daemon Intro
+agot_events_blackfyre_minor.1000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.1000.t
+	desc = agot_events_blackfyre_minor.1000.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = character:Targaryen_94
+		animation = marshal
+	}
+	lower_left_portrait = {
+		character = character:Ball_23
+		animation = marshal
+	}
+	right_portrait = {
+		character = character:Targaryen_95
+		animation = marshal
+	}
+
+	immediate = {
+		character:Targaryen_89 = { save_scope_as = dragonknight }
+		character:Targaryen_95 = {save_scope_as = bittersteel}
+		character:Ball_23 = { save_scope_as = fireball }
+		set_variable = {
+							name = it_army_size
+							value = title:e_the_iron_throne.holder.max_military_strength 
+							}
+		change_variable = {
+							name = it_army_size
+							multiply = 1.5
+		
+		}
+	
+		
+		character:Targaryen_94 = {
+			spawn_army = {
+				men_at_arms = {
+					type = armored_horsemen
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_harrenhal.title_province
+				name = event_troop_default_name
+				save_scope_as = blackfyrearmy
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = armored_horsemen
+					stacks = 6
+				}
+				men_at_arms = {
+					type = onager
+					stacks = 6
+				}
+				levies = var:it_army_size
+				location = title:c_harrenhal.title_province
+				name = event_troop_default_name
+				
+			}
+			hidden_effect = {
+				scope:blackfyrearmy ?= {
+					assign_commander = character:Targaryen_94
+				}
+			}
+		}
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.1000.a
+	}
+}
+
+# Daeron Intro
+agot_events_blackfyre_minor.1001 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.1001.t
+	desc = agot_events_blackfyre_minor.1001.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = character:Targaryen_91
+		animation = war_defender
+	}
+	lower_left_portrait = {
+		character = character:Targaryen_110
+		animation = marshal
+	}
+	right_portrait = {
+		character = character:Targaryen_107
+		animation = marshal
+	}
+
+	immediate = {
+		character:Targaryen_94 = { save_scope_as = daemon }
+		character:Targaryen_107 = {save_scope_as = baelor}
+		character:Targaryen_110 = {save_scope_as = maekar}
+		
+	
+		
+		
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.1000.a
+	}
+}
+
+# Baelor/Maekar Intro
+agot_events_blackfyre_minor.1002 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.1002.t
+	desc = agot_events_blackfyre_minor.1002.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = character:Targaryen_91
+		animation = war_defender
+	}
+
+	right_portrait = {
+		character = root
+		animation = marshal
+	}
+
+	immediate = {
+		character:Targaryen_91 = { save_scope_as = daeron }
+		character:Targaryen_94 = { save_scope_as = daemon }
+		character:Targaryen_107 = {save_scope_as = baelor}
+		character:Targaryen_110 = {save_scope_as = maekar}
+
+	
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.1000.a
+	}
+}
+
+
+# Quickfinger is sent to steal a dragon egg
+agot_events_blackfyre_minor.2000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.2000.t
+	desc = agot_events_blackfyre_minor.2000.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	lower_right_portrait = {
+		character = title:e_the_iron_throne.holder
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:quickfinger
+		animation = scheme
+	}
+	
+	trigger = { character:Lowborn_Kings_Landing_5 = { is_alive = yes 
+													  is_imprisoned = no 
+				}
+		NOT = { has_title = title:e_the_iron_throne }
+	}
+	immediate = {
+		character:Lowborn_Kings_Landing_5 = { save_scope_as = quickfinger }
+		title:e_the_iron_throne.holder = { 
+											add_opinion = {
+															target = scope:quickfinger
+															modifier = gallowsbait_scum_opinion
+											}
+		
+		
+		}
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.2000.a
+		scope:quickfinger = {
+		duel = {
+						skill = intrigue
+						target = title:e_the_iron_throne.holder
+						10 = {
+							desc = agot_events_blackfyre_minor.2000.a.1
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = 1
+							}
+							
+						root =  { trigger_event = agot_events_blackfyre_minor.2001 }
+						custom_tooltip = agot_events_blackfyre_minor.2000.a.1.tt
+						show_chance = yes
+						}
+						
+						10 = {
+							desc = agot_events_blackfyre_minor.2000.a.2
+							custom_tooltip = agot_events_blackfyre_minor.2000.a.2.tt
+							show_chance = yes
+							root =  { trigger_event = agot_events_blackfyre_minor.2002 }
+							
+						}
+					}
+		}
+	}
+}
+
+#quickfinger success
+
+agot_events_blackfyre_minor.2001 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.2001.t
+	desc = agot_events_blackfyre_minor.2001.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	lower_right_portrait = {
+		character = title:e_the_iron_throne.holder
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:quickfinger
+		animation = scheme
+	}
+
+	immediate = {
+	title:e_the_iron_throne.holder =  { trigger_event = agot_events_blackfyre_minor.2003 }
+					scope:quickfinger = { add_prestige = 1000 
+										add_gold = 300
+					}
+	
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.2001.a
+		#custom_tooltip = agot_events_blackfyre_minor.2001.a.tt
+		
+					location = { save_scope_as = armyspawn }
+					set_variable = {
+							name = it_army_size
+							value = title:e_the_iron_throne.holder.max_military_strength 
+					}
+					change_variable = {
+							name = it_army_size
+							multiply = 1
+		
+					}
+					
+					character:Targaryen_94 = {
+						spawn_army = {
+							men_at_arms = {
+								type = ornate_helms
+								stacks = 6
+							}
+							men_at_arms = {
+								type = myrish_crossbows
+								stacks = 12
+							}
+							levies = var:it_army_size
+							location = scope:armyspawn
+							name = event_troop_default_name
+							save_scope_as = blackfyrearmy
+						}
+						
+						hidden_effect = {
+							scope:blackfyrearmy ?= {
+								assign_commander = scope:quickfinger
+							}
+						}
+					}
+					ai_chance = {
+ 			base = 1000
+ 		
+ 		}
+		
+	}
+	
+	option = { #
+		name = agot_events_blackfyre_minor.2001.b
+		title:e_the_iron_throne.holder = { 
+					random_character_artifact = {
+					limit = { has_variable = dragon_egg }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = character:Targaryen_94
+					history = {
+						type = stolen
+						actor = scope:quickfinger
+						recipient = character:Targaryen_94
+						location = title:e_the_iron_throne.holder.location
+					}
+				}
+				}
+				random_character_artifact = {
+					limit = { has_variable = dragon_egg }
+					artifact_owner.house = { save_scope_as = artifact_house }
+					scope:artifact_house = { add_house_artifact_claim = prev }
+					set_owner = {
+					target = character:Targaryen_94
+					history = {
+						type = stolen
+						actor = scope:quickfinger
+						recipient = character:Targaryen_94
+						location = title:e_the_iron_throne.holder.location
+					}
+				}
+				}
+				}
+	}
+}
+
+### Quickfinger Failure
+agot_events_blackfyre_minor.2002 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.2002.t
+	desc = agot_events_blackfyre_minor.2002.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	lower_right_portrait = {
+		character = title:e_the_iron_throne.holder
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:quickfinger
+		animation = scheme
+	}
+
+	immediate = {
+	
+					title:e_the_iron_throne.holder = {
+					
+					trigger_event = agot_events_blackfyre_minor.2004
+					rightfully_imprison_character_effect = {
+															TARGET = scope:quickfinger
+															IMPRISONER = title:e_the_iron_throne.holder
+					}
+					
+					}
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.2002.a
+		
+	}
+}
+
+
+### Quickfinger Success (King)
+agot_events_blackfyre_minor.2003 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.2003.t
+	desc = agot_events_blackfyre_minor.2003.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	lower_right_portrait = {
+		character = title:e_the_iron_throne.holder
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:quickfinger
+		animation = scheme
+	}
+
+	immediate = {
+	
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.2003.a
+		
+	}
+}
+
+
+### Quickfinger Failure (King)
+agot_events_blackfyre_minor.2004 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.2004.t
+	desc = agot_events_blackfyre_minor.2004.desc
+
+	override_icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	theme = war
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	lower_right_portrait = {
+		character = title:e_the_iron_throne.holder
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:quickfinger
+		animation = scheme
+	}
+
+	immediate = {
+	
+					title:e_the_iron_throne.holder = {
+					
+					
+					rightfully_imprison_character_effect = {
+															TARGET = scope:quickfinger
+															IMPRISONER = title:e_the_iron_throne.holder
+					}
+					
+					}
+		
+	}
+
+	option = { #
+		name = agot_events_blackfyre_minor.2004.a
+		
+	}
+}
+
+
+
+
+### Redgrass Field
+
+
+agot_events_blackfyre_minor.3000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3000.t
+	desc = agot_events_blackfyre_minor.3000.desc
+	theme = war
+
+	
+	left_portrait = root
+	right_portrait = scope:daerons_son
+	lower_right_portrait = scope:kingsguard_duelist
+
+	immediate = {
+		add_character_flag = { flag = redgrass_cooldown days = 60 }
+		location = { save_scope_as = location }
+	}
+
+	option = {
+		name = agot_events_blackfyre_minor.3000.a
+				duel = {
+						skill = prowess
+						target = scope:kingsguard_duelist
+						10 = {
+							desc = agot_events_blackfyre_minor.3000.a.1
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = 1
+							}
+							
+						add_character_flag = defeated_kg
+						custom_tooltip = agot_events_blackfyre_minor.3000.a.1.tt
+						show_chance = yes
+						}
+						
+						10 = {
+							desc = agot_events_blackfyre_minor.3000.a.2
+							custom_tooltip = agot_events_blackfyre_minor.3000.a.2.tt
+							show_chance = yes
+							add_character_flag = lost_to_kg
+						}
+					}
+			trigger_event = agot_events_blackfyre_minor.3001
+					}
+	}
+	
+	
+	
+
+### Redgrass Field Kingsguard Fight Resolution
+
+
+agot_events_blackfyre_minor.3001 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3001.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_character_flag = defeated_kg }
+				desc = agot_events_blackfyre_minor.3001.desc.a
+			}
+			triggered_desc = {
+				trigger = {  has_character_flag = lost_to_kg }
+				desc = agot_events_blackfyre_minor.3001.desc.b
+			}
+		}
+	}
+	theme = war
+
+
+	left_portrait = root
+	right_portrait = scope:kingsguard_duelist
+	lower_right_portrait = scope:daerons_son
+
+	immediate = {
+	add_prestige = 1000
+	if = { limit = { has_character_flag = defeated_kg }	scope:kingsguard_duelist = { add_trait = wounded_3 } }
+	}
+
+	### Stop and assist the knight
+	option = {
+		name = agot_events_blackfyre_minor.3001.a
+		trigger = { has_character_flag = defeated_kg }
+			remove_character_flag = defeated_kg	
+			trigger_event = agot_events_blackfyre_minor.3002
+			add_prestige = 1000
+			title:e_the_iron_throne.holder = { every_courtier = { limit = { has_trait = kingsguard } add_opinion = {
+			target = root
+			modifier = grateful_opinion
+			opinion = 50 } } }
+			
+			
+			title:d_kingsguard.holder = { add_opinion = {
+			target = root
+			modifier = grateful_opinion
+			opinion = 50
+		}
+		}
+		if = { limit = { character:Targaryen_96 = {
+													is_imprisoned = no
+													is_incapable = no
+													is_alive = yes
+				
+						}
+			   }
+			   trigger_event = agot_events_blackfyre_minor.3002
+			   
+			   
+			   }
+			else = {
+				trigger_event = agot_events_blackfyre_minor.3003
+			
+			
+					}
+		ai_chance = {
+ 			base = 300
+ 		
+ 		}
+		
+		} 
+					
+	
+	### Press the attack
+	option = {
+		name = agot_events_blackfyre_minor.3001.b
+		trigger = { has_character_flag = defeated_kg }
+		remove_character_flag = defeated_kg
+				scope:kingsguard_duelist = {
+				death = {
+				death_reason = death_battle 
+				killer = root }
+				}
+			trigger_event = agot_events_blackfyre_minor.3003
+			
+			ai_chance = {
+ 			base = 100
+ 		
+ 		}
+					}
+	
+	### Kingsguard attempts to end the rebellion with a single swing of his sword.
+	option = {
+		name = agot_events_blackfyre_minor.3001.c
+		trigger = { has_character_flag = lost_to_kg }
+				remove_character_flag = lost_to_kg
+				add_character_flag = redgrass_cooldown
+			configure_start_single_combat_effect = {
+			SC_INITIATOR = scope:kingsguard_duelist
+			SC_ATTACKER = scope:kingsguard_duelist
+			SC_DEFENDER = root
+			FATALITY = always
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = agot_events_blackfyre_minor.30011
+			INVALIDATION_EVENT = single_combat.1006	#In a real event, this would obviously be a different even to the output.
+		}
+	}
+	}
+	
+	
+agot_events_blackfyre_minor.309 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3001.t
+	desc = agot_events_blackfyre_minor.3001.desc
+	theme = war
+
+	override_background = {
+		reference = AGOT_rowboat_night_moonlight_strong
+	}
+
+	left_portrait = root
+	right_portrait = scope:kingsguard_duelist
+	lower_right_portrait = scope:daerons_son
+
+	immediate = {
+	
+	}
+
+	### Stop and assist the knight
+	option = {
+		name = agot_events_blackfyre_minor.30011.a
+
+					}
+
+}
+
+
+agot_events_blackfyre_minor.3002 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3002.t
+	desc = agot_events_blackfyre_minor.3002.desc
+	theme = war
+
+
+	right_portrait = {
+	character = root
+	animation = grief
+	}
+	left_portrait = {
+	character = character:Targaryen_96
+	animation = agot_weirwood_longbow_aim_arrow_default
+	}
+	override_background = { reference = battlefield }
+	immediate = {
+	character:Targaryen_96 = { save_scope_as = bloodraven }
+	every_courtier = { limit = { has_relation_agot_knight = root }
+	
+		random = {
+			chance = 75
+				death = {
+							death_reason = death_battle
+							killer = character:Targaryen_96
+					}
+		}
+		
+		}
+	random = {
+			chance = 75
+				death = {
+							death_reason = death_battle
+							killer = character:Targaryen_96
+					}
+		}
+	scope:blackfyre_rebellion_story.var:usurper_war = { 		
+	if = { limit = { character:Targaryen_94 = { is_alive = no } }
+	
+	
+	var:usurper_war = { end_war = defender }
+	}
+		
+
+					}
+
+				every_player = { limit = { location = { geographical_region = world_westeros_seven_kingdoms  }
+					 }
+					 trigger_event = agot_events_blackfyre_minor.3008 
+	}
+	
+	
+	}
+
+	### Sad
+	option = {
+	name = agot_events_blackfyre_minor.3002.a
+	if = { limit = { character:Targaryen_94 = { is_alive = yes } }
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = character:Targaryen_94
+			SC_ATTACKER = character:Targaryen_94
+			SC_DEFENDER = character:Targaryen_96
+			FATALITY = no
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = agot_events_blackfyre_minor.3009
+			INVALIDATION_EVENT = single_combat.1006	#In a real event, this would obviously be a different even to the output.
+		}
+	
+	
+	}
+	else_if = { limit = { character:Targaryen_95 = { is_alive = yes
+										 is_imprisoned = no
+										is_incapable = no}
+										}
+			configure_start_single_combat_effect = {
+			SC_INITIATOR = character:Targaryen_95
+			SC_ATTACKER = character:Targaryen_95
+			SC_DEFENDER = character:Targaryen_96
+			FATALITY = no
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = agot_events_blackfyre_minor.3009
+			INVALIDATION_EVENT = single_combat.1006	#In a real event, this would obviously be a different even to the output.
+		}
+										
+										
+	}
+	
+	
+										
+
+}
+
+
+
+
+
+}
+
+
+
+
+agot_events_blackfyre_minor.3003 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3003.t
+	desc = agot_events_blackfyre_minor.3003.desc
+	theme = war
+
+	override_background = {
+		reference = battlefield
+	}
+
+	left_portrait = root
+	right_portrait = scope:daerons_son
+	lower_right_portrait = scope:kingsguard_duelist
+
+	immediate = {
+					
+	
+	
+	}
+
+	### The Black Dragon vs The Red Dragon
+	option = {
+		name = agot_events_blackfyre_minor.3003.a
+			configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:daerons_son
+			FATALITY = always
+			FIXED = no
+			LOCALE = terrain_scope
+			OUTPUT_EVENT = agot_events_blackfyre_minor.30031
+			INVALIDATION_EVENT = single_combat.1006	#In a real event, this would obviously be a different even to the output.
+		}
+
+
+
+					}
+
+}
+
+
+
+
+agot_events_blackfyre_minor.30031 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.30031.t
+	desc = agot_events_blackfyre_minor.30031.desc
+	theme = war
+	hidden = true
+
+	override_background = {
+		reference = battlefield
+	}
+
+	left_portrait = root
+	right_portrait = scope:kingsguard_duelist
+	lower_right_portrait = scope:daerons_son
+
+	immediate = {
+					
+	add_prestige = 500
+	
+	}
+
+
+}
+
+agot_events_blackfyre_minor.4000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.4000.t
+	desc = agot_events_blackfyre_minor.4000.desc
+	theme = war
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	right_portrait = {
+	character = root
+	animation = throne_room_kneel_1
+	}
+	left_portrait = {
+	character = character:Targaryen_88
+	animation = agot_blackfyre_1	
+	}
+
+	immediate = {
+	character:Targaryen_89 = { save_scope_as = dragonknight }
+	character:Targaryen_91 = { save_scope_as = daeron }
+	character:Targaryen_92 = { save_scope_as = dany }
+	set_variable = {
+	name = daemon_age
+	value = root.age
+	}
+	hidden_effect = {
+	set_age = 12
+	}
+
+	
+	}
+
+	
+	option = {
+		name = agot_events_blackfyre_minor.4000.a
+		hidden_effect = {	
+	set_age = var:daemon_age
+	}
+
+					}
+
+}
+agot_events_blackfyre_minor.3008 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3008.t
+	desc = agot_events_blackfyre_minor.3008.desc
+	theme = war
+
+	override_background = {
+		reference = battlefield
+	}
+
+	right_portrait = {
+	character = character:Targaryen_94
+	animation = grief
+	}
+	left_portrait = {
+	character = character:Targaryen_96
+	scripted_animation = bow_drawn
+	}
+
+ immediate = {
+ 
+show_as_tooltip = {
+
+
+if = { limit = { character:Targaryen_94 = { is_alive = no } } character:Targaryen_94 = {
+death = {
+							death_reason = death_battle
+							killer = character:Targaryen_96
+					}
+					} }
+if = { limit = { character:Blackfyre_1 = { is_alive = no } } character:Blackfyre_1 = {
+death = {
+							death_reason = death_battle
+							killer = character:Targaryen_96
+					}
+					} }
+if = { limit = { character:Blackfyre_2 = { is_alive = no } } character:Blackfyre_2 = {
+death = {
+							death_reason = death_battle
+							killer = character:Targaryen_96
+					}
+					} }
+}
+ 
+ 
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.3008.a
+
+
+					}
+
+}
+
+
+agot_events_blackfyre_minor.3009 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.3009.t
+	desc = agot_events_blackfyre_minor.3009.desc
+	theme = war
+
+	override_background = {
+		reference = battlefield
+	}
+
+	right_portrait = {
+	character = scope:sc_loser
+	animation = severelywounded
+	}
+	left_portrait = {
+	character = scope:sc_victor
+	animation = throne_room_one_handed_passive_1
+	}
+
+ immediate = {
+ scope:sc_loser = { add_trait = one_eyed }
+ 
+ 
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.3008.a
+
+
+					}
+
+}
+
+### Flight of House Blackfyre
+agot_events_blackfyre_minor.5000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.5000.t
+	desc = agot_events_blackfyre_minor.5000.desc
+	theme = war
+
+	
+	override_background = {
+		reference = AGOT_rowboat_night_moonlight_strong
+	}
+
+	right_portrait = {
+	character = root
+	animation = worry
+	}
+	left_portrait = {
+	character = root.primary_heir
+	animation = lantern	
+	}
+
+	immediate = {
+	primary_title = {
+			set_title_name = d_laamp_blackfyre_exiles
+		
+		}
+	hidden_effect = {
+	title:e_the_iron_throne.holder = { save_scope_as = theking }
+	character:Targaryen_94 = { save_scope_as = daemon }
+	#save_scope_as = blackfyre
+	#destroy_title = title:e_blackfyre_rebellion
+	#every_vassal = {
+	#
+	#create_title_and_vassal_change = {
+	#	type = swear_fealty
+	#	save_scope_as = change
+	#}
+	#
+	#	change_liege = {
+	#		liege = title:e_the_iron_throne.holder
+	#		change = scope:change
+	#	}
+	#
+	#resolve_title_and_vassal_change = scope:change
+	#
+	#
+	#}
+	#destroy_title = title:d_the_blackwater_rush
+	#
+	#scope:theking = { get_title = title:c_longgrass }
+	#
+	#		scope:blackfyre = {
+	#									title:k_tyrosh.holder = { add_courtier = prev }
+	#											create_landless_adventurer_title_effect = {
+	#																					REASON = flag:voluntary
+	#																					FLAVOR_CHAR = scope:blackfyre
+	#											}
+	#											save_scope_as = landlessblackfyres
+	#				add_realm_law = camp_purpose_legitimists
+	#
+	#				}
+			}
+	#
+	}
+	
+
+	
+	option = {
+		
+		name = agot_events_blackfyre_minor.5000.a
+		hidden_effect = {
+		add_realm_law = camp_purpose_legitimists
+		#root.house = { every_house_member = { scope:landlessblackfyres = { add_courtier = prev } } }
+		scope:theking = { every_held_title = { root = { add_pressed_claim = prev} } }
+
+		every_in_list = {
+		list = targaryen_court
+		scope:theking = { add_courtier = prev }
+		}
+		every_in_list = {
+		list = blackfyre_court
+		scope:blackfyre = { add_courtier = prev }
+		}
+			}
+					
+					}
+
+}
+
+
+### The Blackfyre Exiles
+
+agot_events_blackfyre_minor.5001 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.5001.t
+	desc = agot_events_blackfyre_minor.5001.desc
+	theme = death
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	right_portrait = {
+	character = scope:blackfyre
+	animation = personality_vengeful
+	}
+
+
+
+ immediate = {
+
+ character:Targaryen_94.house.house_head = { save_scope_as = blackfyre }
+ 
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.5001.a
+
+
+					}
+
+}
+
+
+### The Flight of House Targaryen
+
+agot_events_blackfyre_minor.6000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.6000.t
+	desc = agot_events_blackfyre_minor.6000.desc
+	theme = death
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	right_portrait = {
+	character = root
+	animation = worry
+	}
+	left_portrait = {
+	character = root.primary_heir
+	animation = lantern	
+	}
+
+
+ immediate = {
+ character:Targaryen_95 = { save_scope_as = bittersteel }
+ character:Targaryen_91.house.house_head = { save_scope_as = targaryen }
+ 
+ root.primary_title = {
+			set_title_name = d_laamp_targaryen_exilez
+			set_title_prefix = ""
+		}
+ 
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.6000.a
+
+
+					}
+
+}
+
+
+### Bittersteel's Brutality
+
+agot_events_blackfyre_minor.6001 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.6001.t
+	desc = agot_events_blackfyre_minor.6001.desc
+	theme = death
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	right_portrait = {
+	character = character:Targaryen_95
+	animation = personality_vengeful
+	}
+	lower_left_portrait = {
+	character = scope:targaryen
+	animation = personality_vengeful
+	}
+
+
+ immediate = {
+ character:Targaryen_95 = { save_scope_as = bittersteel }
+ character:Targaryen_91.house.house_head = { save_scope_as = targaryen }
+ 
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.6001.a
+
+
+					}
+
+}
+
+### Bittersteel's Brutality
+
+agot_events_blackfyre_minor.6002 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.6002.t
+	desc = agot_events_blackfyre_minor.6002.desc
+	theme = death
+
+	override_background = {
+		reference = agot_iron_throne
+	}
+
+	right_portrait = {
+	character = character:Targaryen_95
+	animation = personality_vengeful
+	}
+	lower_left_portrait = {
+	character = scope:targaryen
+	animation = personality_vengeful
+	}
+
+
+ immediate = {
+ character:Targaryen_94 = { save_scope_as = daemon }
+ character:Targaryen_91.house.house_head = { save_scope_as = targaryen }
+ 
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.6001.a
+
+
+					}
+
+}
+
+
+
+
+### Dornish Aftermath
+
+agot_events_blackfyre_minor.7000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.7000.t
+	desc = agot_events_blackfyre_minor.7000.desc
+	theme = war
+
+	override_background = {
+		reference = drylands
+	}
+
+	right_portrait = {
+	character = root
+	animation = personality_callous
+	}
+	lower_left_portrait = {
+	character = title:k_dorne.holder
+	animation = personality_vengeful
+	}
+
+	trigger = { character:Martell_80.house.house_head = { has_title = title:k_dorne is_vassal_of = root } }
+ immediate = {
+	title:d_yronwood.holder = { save_scope_as = yronwood }
+	title:c_starpike.holder = { save_scope_as = peake }
+	character:Martell_80.house.house_head = { save_scope_as = martell }
+	
+	scope:martell = { 
+			add_to_list = dorne_vassals
+			every_vassal = {
+				limit = { highest_held_title_tier > tier_county }
+					add_to_list = dorne_vassals
+					}
+					
+					}
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.7000.a
+		
+		scope:yronwood = { get_title = title:k_dorne 
+		add_opinion = {
+			target = root
+			modifier = grateful_opinion
+			opinion = 100 }
+			
+			
+		
+		}
+		
+		character:Martell_80.house.house_head = { add_pressed_claim = title:k_dorne
+		set_relation_rival = scope:yronwood 
+		add_opinion = {
+										target = root
+										modifier = hate_opinion
+										opinion = -200
+									}
+		}
+		
+		hidden_effect = {
+			every_in_list = {
+			list = dorne_vassals
+													
+													create_title_and_vassal_change = {
+														type = swear_fealty
+														save_scope_as = change
+													}
+													
+														change_liege = {
+															liege = title:d_yronwood.holder
+															change = scope:change
+														}
+													
+													resolve_title_and_vassal_change = scope:change
+													
+													
+													}
+		
+		}
+		ai_chance = {
+ 			base = 300
+ 		
+ 		}
+
+					}
+					
+	option = {
+		name = agot_events_blackfyre_minor.7000.b
+		scope:peake = { get_title = title:k_dorne 
+		add_opinion = {
+			target = root
+			modifier = grateful_opinion
+			opinion = 100 }
+			
+			
+		
+		}
+		scope:yronwood = { set_relation_rival = root
+							set_relation_rival = scope:peake 
+							
+						hidden_effect = {	add_pressed_claim = title:k_dorne }
+							}
+		character:Martell_80.house.house_head = {
+		set_relation_rival = scope:peake 
+		add_opinion = {
+										target = root
+										modifier = hate_opinion
+										opinion = -200
+									}
+		add_pressed_claim = title:k_dorne }
+
+
+				hidden_effect = {
+			every_in_list = {
+			list = dorne_vassals
+													
+													create_title_and_vassal_change = {
+														type = swear_fealty
+														save_scope_as = change
+													}
+													
+														change_liege = {
+															liege = title:c_starpike.holder
+															change = scope:change
+														}
+													
+													resolve_title_and_vassal_change = scope:change
+													
+													
+													}
+		
+		}
+		ai_chance = {
+ 			base = 100
+ 		
+ 		}
+
+					}
+					
+	option = {
+		name = agot_events_blackfyre_minor.7000.c
+		ai_chance = {
+ 			base = 100
+ 		
+ 		}
+					}
+
+}
+
+
+agot_events_blackfyre_minor.7001 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.7001.t
+	desc = agot_events_blackfyre_minor.7001.desc
+	theme = romance_scheme
+
+	override_background = {
+		reference = agot_tower_of_joy
+	}
+
+	right_portrait = {
+	character = character:Targaryen_92
+	animation = happiness
+	}
+	left_portrait = {
+	character = root
+	animation = happiness
+	}
+
+	trigger = { character:Targaryen_92 = { is_alive = yes } }
+ immediate = {
+	character:Targaryen_92 = { save_scope_as = dany }
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.7001.a
+		hidden_effect = {
+		primary_spouse = { save_scope_as = oldwife }
+		divorce = scope:oldwife
+		
+		if = { limit = { character:Targaryen_92 = { is_married = yes } }
+			character:Targaryen_92 = {
+			primary_spouse = { set_relation_nemesis = root }
+			divorce = character:Targaryen_92.primary_spouse
+			make_pregnant = {
+												father = root
+												number_of_children = 2
+												known_bastard= no
+		}
+
+			}
+
+					}
+	
+	
+	agot_safe_concubine_history_effect = {
+				TARGET = scope:oldwife
+				}
+	
+												
+		
+		}
+		marry = character:Targaryen_92
+		
+		ai_chance = {
+ 			base = 50
+ 		
+ 		}
+	}
+					
+	option = {
+		name = agot_events_blackfyre_minor.7001.b
+		ai_chance = {
+ 			base = 50
+ 		
+ 		}
+	}
+
+}
+
+
+agot_events_blackfyre_minor.8000 = {
+	type = character_event
+	title = agot_events_blackfyre_minor.8000.t
+	desc = agot_events_blackfyre_minor.8000.desc
+	theme = war
+
+	override_background = {
+		reference = agot_weirwood
+	}
+
+	right_portrait = {
+	character = scope:cregan
+	animation = personality_honorable
+	}
+	left_portrait = {
+	character = scope:jace
+	animation = chancellor
+	}
+
+ immediate = {
+ character:Targaryen_75 = { save_scope_as = jace }
+ character:Stark_86 = { save_scope_as = cregan }
+ set_variable = {
+	name = cregan_age
+	value = scope:cregan.age
+	}
+	hidden_effect = {
+	scope:cregan = { set_age = 16 }
+	}
+ }
+	
+
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.8000.a
+	hidden_effect = {
+	scope:cregan = { set_age = 65 }
+	
+	}
+	title:k_the_north.holder = { marry = character:Blackfyre_4
+	create_alliance = { # By marriage
+							target = character:Targaryen_94
+							allied_through_owner = this 
+							allied_through_target = character:Blackfyre_4 
+						}
+		agot_mw_join_rebels_effect = { RULER = title:k_the_north.holder REBEL_LEADER = title:d_the_blackwater_rush.holder }
+
+	}
+
+					}
+					
+					
+	### 
+	option = {
+		name = agot_events_blackfyre_minor.8000.b
+	hidden_effect = {
+	scope:cregan = { set_age = 65 }
+	
+	}
+
+					}
+
+}
+
+

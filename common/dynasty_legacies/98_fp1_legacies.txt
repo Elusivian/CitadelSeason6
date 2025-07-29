@@ -61,6 +61,7 @@ fp1_pillage_legacy_track = {
 							this = culture:ice_riverman
 							this = culture:lakeman
 							this = culture:thenn
+							this = culture:sisterman
 							any_parent_culture_or_above = {
 								OR = {
 									this = culture:fangman

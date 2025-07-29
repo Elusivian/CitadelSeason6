@@ -360,6 +360,7 @@ marcher = {
 		tradition_stand_and_fight
 		tradition_eye_for_an_eye
 		agot_tradition_marcher
+		tradition_citadel_raid
 	}
 
 	name_list = name_list_marcher
@@ -430,6 +431,7 @@ storm_marcher = {
 		tradition_eye_for_an_eye
 		tradition_stand_and_fight
 		agot_tradition_marcher
+		tradition_citadel_raid
 	}
 
 	name_list = name_list_marcher
@@ -500,6 +502,7 @@ manderside_marcher = {
 		tradition_eye_for_an_eye
 		tradition_staunch_traditionalists
 		agot_tradition_marcher
+		tradition_citadel_raid
 	}
 
 	name_list = name_list_marcher
@@ -570,6 +573,7 @@ westmarcher = {
 		tradition_eye_for_an_eye
 		tradition_staunch_traditionalists
 		agot_tradition_marcher
+		tradition_citadel_raid
 	}
 
 	name_list = name_list_marcher
@@ -1487,6 +1491,7 @@ stone_dornish = {
 		tradition_mountaineers
 		tradition_staunch_traditionalists
 		agot_tradition_stone_dornish
+		tradition_citadel_raid
 	}
 
 	name_list = name_list_stone_dornish

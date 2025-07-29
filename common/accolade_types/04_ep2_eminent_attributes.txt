@@ -9,9 +9,9 @@
 ##################################################
 # CONTROL VALUES
 
-@lifestyle_bonus_tier_1_value = 0.15
+@lifestyle_bonus_tier_1_value = 0.25
 @lifestyle_bonus_tier_2_value = 0.25
-@lifestyle_bonus_tier_3_value = 0.35
+@lifestyle_bonus_tier_3_value = 0.45
 #
 @army_supply_bonus_tier_1_value = 0.25
 @army_supply_bonus_tier_2_value = 0.5

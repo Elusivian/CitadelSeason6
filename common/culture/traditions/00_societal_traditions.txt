@@ -230,9 +230,9 @@ tradition_hard_working = {
 		next_level_w_mills = yes
 	}
 	character_modifier = {
-		build_speed = -0.1
+		build_speed = -0.05
 		stress_gain_mult = 0.15
-		build_gold_cost = 0.1
+		build_gold_cost = 0.05
 	}
 	
 	cost = {

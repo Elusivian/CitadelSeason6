@@ -1345,19 +1345,19 @@ harbormaster_court_position = {
 
 	scaling_employer_modifiers = { #Hambone
 		terrible = {
-			domain_tax_mult = 0.05
+			domain_tax_mult = 0.02
 		}
 		poor = {
-			domain_tax_mult = 0.07
+			domain_tax_mult = 0.04
 		}
 		average = {
-			domain_tax_mult = 0.10
+			domain_tax_mult = 0.07
 		}
 		good = {
-			domain_tax_mult = 0.15
+			domain_tax_mult = 0.10
 		}
 		excellent = {
-			domain_tax_mult = 0.20
+			domain_tax_mult = 0.15
 		}
 	}
 

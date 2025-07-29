@@ -10,6 +10,7 @@
 # Valiant			-	valiant_attribute
 # Stalwart			-	stalwart_attribute
 # Scoundrel			-	scoundrel_attribute
+# Reaver			-	
 
 ##################################################
 
@@ -190,51 +191,51 @@ marauder_attribute = {
 		# glory_requirement =  { modifiers and unlocks }
 		100 = { # rank 1
 			liege_modifier = {
-				monthly_prestige_gain_per_dread_mult = 0.001
+				monthly_prestige_gain_per_dread_mult = 0.002
 			}
 			knight_army_modifier = {
-				uncontrolled_province_advantage = 2
+				uncontrolled_province_advantage = 3
 			}
 		}
 		300 = { # rank 2
 			liege_modifier = {
-				monthly_prestige_gain_per_dread_mult = 0.001
+				monthly_prestige_gain_per_dread_mult = 0.002
 			}
 			knight_army_modifier = {
-				uncontrolled_province_advantage = 2
+				uncontrolled_province_advantage = 3
 			}
 		}
 		600 = { # rank 3
 			liege_modifier = {
-				monthly_prestige_gain_per_dread_mult = 0.002
+				monthly_prestige_gain_per_dread_mult = 0.004
 			}
 			knight_army_modifier = {
-				uncontrolled_province_advantage = 3
+				uncontrolled_province_advantage = 5
 			}
 		}
 		1000 = { # rank 4
 			liege_modifier = {
-				monthly_prestige_gain_per_dread_mult = 0.002
+				monthly_prestige_gain_per_dread_mult = 0.004
 			}
 			knight_army_modifier = {
-				uncontrolled_province_advantage = 3
+				uncontrolled_province_advantage = 5
 			}
 		}
 			
 		1500 = { # rank 5
 			knight_army_modifier = {
-				uncontrolled_province_advantage = 5
+				uncontrolled_province_advantage = 8
 			}
 			liege_modifier = {
-				monthly_prestige_gain_per_dread_mult = 0.003
+				monthly_prestige_gain_per_dread_mult = 0.006
 			}
 		}
 		2100 = { # rank 6
 			knight_army_modifier = {
-				uncontrolled_province_advantage = 5
+				uncontrolled_province_advantage = 8
 			}
 			liege_modifier = {
-				monthly_prestige_gain_per_dread_mult = 0.003
+				monthly_prestige_gain_per_dread_mult = 0.006
 			}
 		}
 	}
@@ -421,37 +422,40 @@ idealist_attribute = {
 		# glory_requirement =  { modifiers and unlocks }
 		100 = { # rank 1
 			liege_modifier = {
-				courtly_opinion = 5
-				minority_opinion = 3
-				barons_and_minor_landholders_opinion = 3
+				courtly_opinion = 8
+				minority_opinion = 8
+				barons_and_minor_landholders_opinion = 8
 			}
 		}
 		300 = { # rank 2
 			liege_modifier = {
-				courtly_opinion = 5
-				minority_opinion = 3
-				barons_and_minor_landholders_opinion = 3
+				courtly_opinion = 8
+				minority_opinion = 8
+				barons_and_minor_landholders_opinion = 8
 			}
 		}
 		600 = { # rank 3
 			liege_modifier = {
-				courtly_opinion = 8
-				minority_opinion = 6
-				barons_and_minor_landholders_opinion = 6
+				courtly_opinion = 12
+				minority_opinion = 12
+				barons_and_minor_landholders_opinion = 12
+				diplomacy_per_prestige_level = 1
 			}
 		}
 		1000 = { # rank 4
 			liege_modifier = {
-				courtly_opinion = 8
-				minority_opinion = 6
-				barons_and_minor_landholders_opinion = 6
+				courtly_opinion = 12
+				minority_opinion = 12
+				barons_and_minor_landholders_opinion = 12
+				diplomacy_per_prestige_level = 1
 			}
 		}
 		1500 = { # rank 5
 			liege_modifier = {
-				courtly_opinion = 10
-				minority_opinion = 10
-				barons_and_minor_landholders_opinion = 10
+				courtly_opinion = 16
+				minority_opinion = 16
+				barons_and_minor_landholders_opinion = 16
+				diplomacy_per_prestige_level = 1
 			}
 			accolade_parameters = {
 				accolade_champions_white_peace
@@ -459,9 +463,10 @@ idealist_attribute = {
 		}
 		2100 = { # rank 6
 			liege_modifier = {
-				courtly_opinion = 10
-				minority_opinion = 10
-				barons_and_minor_landholders_opinion = 10
+				courtly_opinion = 16
+				minority_opinion = 16
+				barons_and_minor_landholders_opinion = 16
+				diplomacy_per_prestige_level = 1
 			}
 			accolade_parameters = {
 				accolade_champions_white_peace
@@ -627,14 +632,17 @@ charmer_attribute = {
 		100 = { # rank 1
 			liege_modifier = {
 				seduce_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+				stress_loss_mult = 0.10
 			}
 			accolade_parameters = {
 				accolade_court_seduction_vulnerability
+
 			}
 		}
 		300 = { # rank 2
 			liege_modifier = {
 				seduce_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+				stress_loss_mult = 0.10
 			}
 			accolade_parameters = {
 				accolade_court_seduction_vulnerability
@@ -643,6 +651,7 @@ charmer_attribute = {
 		600 = { # rank 3
 			liege_modifier = {
 				seduce_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
+				stress_loss_mult = 0.15
 			}
 			accolade_parameters = {
 				accolade_court_seduction_vulnerability
@@ -652,6 +661,7 @@ charmer_attribute = {
 		1000 = { # rank 4
 			liege_modifier = {
 				seduce_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
+				stress_loss_mult = 0.15
 			}
 			accolade_parameters = {
 				accolade_court_seduction_vulnerability
@@ -661,6 +671,8 @@ charmer_attribute = {
 		1500 = { # rank 5
 			liege_modifier = {
 				seduce_scheme_phase_duration_add = major_scheme_phase_duration_bonus_value
+				stress_loss_mult = 0.20
+				years_of_fertility = 5
 			}
 			accolade_parameters = {
 				accolade_court_seduction_vulnerability
@@ -670,6 +682,8 @@ charmer_attribute = {
 		2100 = { # rank 6
 			liege_modifier = {
 				seduce_scheme_phase_duration_add = major_scheme_phase_duration_bonus_value
+				stress_loss_mult = 0.20
+				years_of_fertility = 5
 			}
 			accolade_parameters = {
 				accolade_court_seduction_vulnerability
@@ -881,17 +895,21 @@ thug_attribute = {
 		# glory_requirement =  { modifiers and unlocks }
 		100 = { # rank 1
 			liege_modifier = {
-				dread_per_tyranny_add = 0.2
+				dread_per_tyranny_add = 0.1
+				dread_decay_mult = -0.1
 			}
 		}
 		300 = { # rank 2
 			liege_modifier = {
-				dread_per_tyranny_add = 0.2
+				dread_per_tyranny_add = 0.1
+				dread_decay_mult = -0.1
 			}
 		}
 		600 = { # rank 3
 			liege_modifier = {
-				dread_per_tyranny_add = 0.4
+				dread_per_tyranny_add = 0.2
+				dread_decay_mult = -0.1
+
 			}
 			accolade_parameters = {
 				accolade_imprisonment_chance
@@ -899,7 +917,8 @@ thug_attribute = {
 		}
 		1000 = { # rank 4
 			liege_modifier = {
-				dread_per_tyranny_add = 0.4
+				dread_per_tyranny_add = 0.2
+				dread_decay_mult = -0.1
 			}
 			accolade_parameters = {
 				accolade_imprisonment_chance
@@ -907,7 +926,9 @@ thug_attribute = {
 		}
 		1500 = { # rank 5
 			liege_modifier = {
-				dread_per_tyranny_add = 0.8
+				dread_per_tyranny_add = 0.3
+				dread_decay_mult - -0.2
+				intimidated_vassal_tax_contribution_mult = 0.10
 			}
 			accolade_parameters = {
 				accolade_imprisonment_chance_high
@@ -915,7 +936,9 @@ thug_attribute = {
 		}
 		2100 = { # rank 6
 			liege_modifier = {
-				dread_per_tyranny_add = 0.8
+				dread_per_tyranny_add = 0.3
+				dread_decay_mult = -0.2
+				intimidated_vassal_tax_contribution_mult = 0.10
 			}
 			accolade_parameters = {
 				accolade_imprisonment_chance_high
@@ -1067,17 +1090,20 @@ disciplinarian_attribute = {
 		100 = { # rank 1
 			liege_modifier = {
 				levy_reinforcement_rate = 0.1
+				levy_size = 0.05
 			}
 		}
 		300 = { # rank 2
 			liege_modifier = {
 				levy_reinforcement_rate = 0.1
+				levy_size = 0.05
 			}
 		}
 		600 = { # rank 3
 			liege_modifier = {
 				levy_reinforcement_rate = 0.2
 				levy_maintenance = -0.1
+				levy_size = 0.1
 			}
 			knight_army_modifier = {
 				hostile_county_attrition = -0.4
@@ -1087,6 +1113,7 @@ disciplinarian_attribute = {
 			liege_modifier = {
 				levy_reinforcement_rate = 0.2
 				levy_maintenance = -0.1
+				levy_size = 0.1
 			}
 			knight_army_modifier = {
 				hostile_county_attrition = -0.4
@@ -1096,6 +1123,7 @@ disciplinarian_attribute = {
 			liege_modifier = {
 				levy_reinforcement_rate = 0.3
 				levy_maintenance = -0.2
+				levy_size = 0.15
 			}
 			knight_army_modifier = {
 				hostile_county_attrition = -0.8
@@ -1105,6 +1133,7 @@ disciplinarian_attribute = {
 			liege_modifier = {
 				levy_reinforcement_rate = 0.3
 				levy_maintenance = -0.2
+				levy_size = 0.15
 			}
 			knight_army_modifier = {
 				hostile_county_attrition = -0.8
@@ -1340,17 +1369,18 @@ fanatic_attribute = {
 		# glory_requirement =  { modifiers and unlocks }
 		100 = { # rank 1
 			liege_modifier = {
-				zealot_opinion = 10
+				zealot_opinion = 15
 			}
 		}
 		300 = { # rank 2
 			liege_modifier = {
-				zealot_opinion = 10
+				zealot_opinion = 15
 			}
 		}
 		600 = { # rank 3
 			liege_modifier = {
-				zealot_opinion = 15
+				zealot_opinion = 20
+				prowess_per_piety_level = 1
 			}
 			accolade_parameters = {
 				acclaimed_knight_piety_from_battle
@@ -1358,7 +1388,8 @@ fanatic_attribute = {
 		}
 		1000 = { # rank 4
 			liege_modifier = {
-				zealot_opinion = 15
+				zealot_opinion = 20
+				prowess_per_piety_level = 1
 			}
 			#knight_army_modifier = {
 			#	tolerance_advantage_mod = 6
@@ -1369,7 +1400,9 @@ fanatic_attribute = {
 		}
 		1500 = { # rank 5
 			liege_modifier = {
-				zealot_opinion = 25
+				zealot_opinion = 30
+				prowess_per_piety_level = 1
+				negate_prowess_penalty_add = 2
 			}
 			accolade_parameters = {
 				acclaimed_knight_piety_from_battle_high
@@ -1377,7 +1410,9 @@ fanatic_attribute = {
 		}
 		2100 = { # rank 6
 			liege_modifier = {
-				zealot_opinion = 25
+				zealot_opinion = 30
+				prowess_per_piety_level = 1
+				negate_prowess_penalty_add = 2
 			}
 			accolade_parameters = {
 				acclaimed_knight_piety_from_battle_high
@@ -1570,7 +1605,7 @@ valiant_attribute = {
 				army_damage_mult = 0.2
 			}
 			liege_modifier = {
-				glory_hound_opinion = 15
+				glory_hound_opinion = 20
 			}
 		}
 		1000 = { # rank 4
@@ -1578,23 +1613,25 @@ valiant_attribute = {
 				army_damage_mult = 0.2
 			}
 			liege_modifier = {
-				glory_hound_opinion = 15
+				glory_hound_opinion = 20
 			}
 		}
 		1500 = { # rank 5
 			knight_army_modifier = {
 				army_damage_mult = 0.3
+				hard_casualty_modifier = 0.10
 			}
 			liege_modifier = {
-				glory_hound_opinion = 25
+				glory_hound_opinion = 30
 			}
 		}
 		2100 = { # rank 6
 			knight_army_modifier = {
 				army_damage_mult = 0.3
+				hard_casualty_modifier = 0.10
 			}
 			liege_modifier = {
-				glory_hound_opinion = 25
+				glory_hound_opinion = 30
 			}
 		}
 	}
@@ -1756,44 +1793,54 @@ stalwart_attribute = {
         # glory_requirement =  { modifiers and unlocks }
         100 = { # rank 1
            liege_modifier = {
-                character_travel_safety = 5
+                character_travel_safety = 10
+				defender_advantage = 2
             }
         }
         300 = { # rank 2
             liege_modifier = {
-                character_travel_safety = 5
+                character_travel_safety = 10
+				defender_advantage = 2
             }
         }
         600 = { # rank 3
             knight_army_modifier = {
                 army_toughness_mult = 0.1
+				army_screen_mult = 0.1
             }
             liege_modifier = {
-                character_travel_safety = 10
+                character_travel_safety = 15
+				defender_advantage = 4
             }
         }
         1000 = { # rank 4
             knight_army_modifier = {
                 army_toughness_mult = 0.1
+				army_screen_mult = 0.1
             }
             liege_modifier = {
-                character_travel_safety = 10
+                character_travel_safety = 15
+				defender_advantage = 4
             }
         }
         1500 = { # rank 5
             knight_army_modifier = {
                 army_toughness_mult = 0.15
+				army_screen_mult = 0.15
             }
             liege_modifier = {
-                character_travel_safety = 15
+                character_travel_safety = 20
+				defender_advantage = 6
             }
         }
         2100 = { # rank 6
             knight_army_modifier = {
                 army_toughness_mult = 0.15
+				army_screen_mult = 0.15
             }
             liege_modifier = {
-                character_travel_safety = 15
+                character_travel_safety = 20
+				defender_advantage = 6
             }
         }
     }
@@ -1965,37 +2012,651 @@ scoundrel_attribute = {
         # glory_requirement =  { modifiers and unlocks }
         100 = { # rank 1
             liege_modifier = {
-               mercenary_hire_cost_mult = -0.1
+               knight_effectiveness_per_dread = 0.002
             }
         }
         300 = { # rank 2
             liege_modifier = {
-                mercenary_hire_cost_mult = -0.1
+                knight_effectiveness_per_dread = 0.002
             }
         }
         600 = { # rank 3
             liege_modifier = {
                 martial_per_stress_level = 2
-                mercenary_hire_cost_mult = -0.2
+                knight_effectiveness_per_dread = 0.004
+				
             }
         }
         1000 = { # rank 4
             liege_modifier = {
                 martial_per_stress_level = 2
-                mercenary_hire_cost_mult = -0.2
+                knight_effectiveness_per_dread = 0.004
+				
             }
         }
         1500 = { # rank 5
             liege_modifier = {
                 martial_per_stress_level = 5
-                mercenary_hire_cost_mult = -0.3
+                knight_effectiveness_per_dread = 0.006
+				
             }
         }
         2100 = { # rank 6
             liege_modifier = {
                 martial_per_stress_level = 5
-                mercenary_hire_cost_mult = -0.3
+                knight_effectiveness_per_dread = 0.006
+				
             }
         }
     }
+}
+
+Reaver = {
+	adjective = accolade_reaving
+	noun = accolade_reaver
+	#grouping accolades
+	accolade_categories = { common personality villainous martial intrigue dreadful disliked army_bonus amoral forceful aggressive militant }
+
+	#founding and successor requirements
+	potential = {
+		prowess >= accolade_prowess_requirement_value
+		OR = {
+			has_trait = sadistic
+			has_trait = callous
+			has_trait = vengeful
+		}
+	}
+	weight = {
+		value = accolade_uninteresting_base_value
+		if = {
+			limit = {
+				scope:owner ?= {
+					exists = dynasty
+					dynasty = {
+						has_dynasty_perk = warfare_legacy_3
+					}
+				}
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					exists = dynasty
+					dynasty = {
+						has_dynasty_perk = fp1_pillage_legacy_3
+					}
+				}
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					exists = dynasty
+					dynasty = {
+						has_dynasty_perk = glory_legacy_3
+					}
+				}
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					culture = {
+						has_innovation = innovation_baliffs
+					}
+				}
+			}
+			add = -25
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					culture = {
+						has_innovation = innovation_noblesse_oblige
+					}
+				}
+			}
+			add = -25
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					OR = {
+						culture = {
+							OR = {
+								has_cultural_tradition = tradition_ruling_caste
+								has_cultural_tradition = tradition_eye_for_an_eye
+								has_cultural_pillar = ethos_bellicose 
+							}
+						}
+						faith = {
+							OR = {
+								trait_is_virtue = vengeful
+								has_doctrine = tenet_pursuit_of_power
+							}
+						}
+					}
+				}
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				culture = {
+					OR = {
+						has_cultural_tradition = tradition_ruling_caste
+						has_cultural_tradition = tradition_eye_for_an_eye
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				culture = {
+					has_cultural_tradition = tradition_charitable
+				}
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					OR = {
+						has_trait = sadistic
+						has_trait = callous
+						has_trait = vengeful
+						dread > 40
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				OR = {
+					has_trait = wrathful
+					has_trait = reaver
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				dread > 20
+			}
+			add = 50
+		}
+		#weight for opinion
+		if = {
+			limit = {
+				exists = liege
+			}
+			multiply = accolade_opinion_multiplier_value
+		}
+
+		if = {
+			limit = {
+				scope:owner ?= {
+					OR = {
+						has_trait = compassionate
+						has_trait = forgiving
+						has_trait = generous
+						culture = {
+							has_cultural_tradition = tradition_charitable
+						}
+						faith = {
+							OR = {
+								has_doctrine = tenet_pacifism
+								has_doctrine = tenet_dharmic_pacifism
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+
+	#accolade ranks from Glory XP
+	ranks = {
+		# glory_requirement =  { modifiers and unlocks }
+		100 = { # rank 1
+			liege_modifier = {
+				max_loot_mult = 0.05
+			}
+			knight_army_modifier = {
+				raid_speed = 0.05
+			}
+		}
+		300 = { # rank 2
+			liege_modifier = {
+				max_loot_mult = 0.1
+			}
+			knight_army_modifier = {
+				raid_speed = 0.1
+			}
+		}
+		600 = { # rank 3
+			liege_modifier = {
+				max_loot_mult = 0.15
+			}
+			knight_army_modifier = {
+				raid_speed = 0.15
+			}
+		}
+		1000 = { # rank 4
+			liege_modifier = {
+				max_loot_mult = 0.2
+			}
+			knight_army_modifier = {
+				raid_speed = 0.2
+			}
+		}
+			
+		1500 = { # rank 5
+			liege_modifier = {
+				max_loot_mult = 0.25
+			}
+			knight_army_modifier = {
+				raid_speed = 0.2
+			}
+			liege_modifier = {
+				no_disembark_penalty = yes
+			}
+		}
+		2100 = { # rank 6
+			liege_modifier = {
+				max_loot_mult = 0.30
+			}
+			knight_army_modifier = {
+				raid_speed = 0.2
+			}
+			liege_modifier = {
+				no_disembark_penalty = yes
+			}
+		}
+	}
+}
+
+Specter = {
+    adjective = accolade_specter
+    noun = accolade_specter
+    #grouping accolades
+    accolade_categories = { common personality amoral martial intrigue army_bonus subtle unscrupulous }
+    #founding and successor requirements
+    potential = {
+        prowess >= accolade_prowess_requirement_value
+        OR = {
+            has_trait = deceitful
+            has_trait = spider
+			has_trait = schemer
+        }
+    }
+    weight = {
+        value = accolade_uninteresting_base_value
+        if = {
+            limit = {
+                scope:owner ?= {
+                    exists = dynasty
+                    dynasty = {
+                        OR = {
+                            has_dynasty_perk = guile_legacy_3
+                            has_dynasty_perk = warfare_legacy_3
+                        }
+                    }
+                }
+            }
+            add = 50
+        }
+        if = {
+            limit = {
+                scope:owner ?= {
+                    culture = {
+                        has_cultural_pillar = ethos_bellicose
+                    }
+                }
+            }
+            add = 50
+        }
+        if = {
+            limit = {
+                culture = {
+                    has_cultural_pillar = ethos_bellicose
+                }
+            }
+            add = 50
+        }
+        if = {
+            limit = {
+                scope:owner ?= {
+                    culture = {
+                        OR = {
+                            has_cultural_tradition = tradition_stand_and_fight
+                            has_cultural_tradition = tradition_stalwart_defenders
+                            has_cultural_tradition = tradition_forbearing
+                            has_cultural_tradition = tradition_legalistic
+                        }
+                    }
+                }
+            }
+            add = -50
+        }
+        if = {
+            limit = {
+                scope:owner ?= {
+                    culture = {
+                        OR = {
+                            has_cultural_tradition = tradition_swords_for_hire
+                            has_cultural_tradition = tradition_life_is_just_a_joke
+                            has_cultural_tradition = tradition_practiced_pirates
+                            has_cultural_tradition = tradition_ep3_audacious_cadets
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+        if = {
+            limit = {
+                culture = {
+                    OR = {
+                        has_cultural_tradition = tradition_hit_and_run
+                        has_cultural_tradition = tradition_quarrelsome
+                        has_cultural_tradition = tradition_swords_for_hire
+                        has_cultural_tradition = tradition_fp1_coastal_warriors
+                        has_cultural_tradition = tradition_fp2_state_ransoming
+                        has_cultural_tradition = tradition_practiced_pirates
+                        has_cultural_tradition = tradition_ep3_audacious_cadets
+                    }
+                }
+            }
+            add = 50
+        }
+        if = {
+            limit = {
+                culture = {
+                    OR = {
+                        has_cultural_tradition = tradition_stand_and_fight
+                        has_cultural_tradition = tradition_stalwart_defenders
+                        has_cultural_tradition = tradition_modest
+                        has_cultural_tradition = tradition_chivalry
+                    }
+                }
+            }
+            add = -50
+        }
+        if = {
+            limit = {
+                scope:owner ?= {
+                    has_trait = cautious_leader
+                }
+            }
+            add = -75
+        }
+        if = {
+            limit = {
+                scope:owner ?= {
+                    OR = {
+                        has_trait = ambitious
+                        has_trait = gregarious
+                        has_trait = greedy
+                        has_trait = deceitful
+                    }
+                }
+            }
+            add = 75
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_trait = arbitrary
+                    has_trait = fickle
+                    has_trait = callous
+                }
+            }
+            add = 50
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_trait = just
+                    has_trait = shy
+                    has_trait = generous
+                    has_trait = honest
+                    has_trait = compassionate
+                    has_trait = loyal
+                }
+            }
+            add = -75
+        }
+        #weight for opinion
+        if = {
+            limit = {
+                exists = liege
+            }
+            multiply = accolade_opinion_multiplier_value
+        }
+    }
+    #accolade ranks from Glory XP
+    ranks = {
+        # glory_requirement =  { modifiers and unlocks }
+        100 = { # rank 1
+            liege_modifier = {
+               negate_intrigue_penalty_add = 2
+            }
+        }
+        300 = { # rank 2
+            liege_modifier = {
+                negate_intrigue_penalty_add = 2
+            }
+        }
+        600 = { # rank 3
+            liege_modifier = {
+                negate_intrigue_penalty_add = 3
+				intrigue_per_stress_level = 1
+            }
+        }
+        1000 = { # rank 4
+            liege_modifier = {
+                negate_intrigue_penalty_add = 3
+				intrigue_per_stress_level = 1
+            }
+        }
+        1500 = { # rank 5
+            liege_modifier = {
+                negate_intrigue_penalty_add = 4
+				intrigue_per_stress_level = 2
+            }
+        }
+        2100 = { # rank 6
+            liege_modifier = {
+                negate_intrigue_penalty_add = 4
+				intrigue_per_stress_level = 2
+            }
+        }
+    }
+}
+
+Seawolf = {
+	adjective = accolade_seawolf
+	noun = accolade_seawolf
+	#grouping accolades
+	accolade_categories = { common personality righteous stewardship martial army_bonus causes_stress ethical forceful militant leader }
+
+	#founding and successor requirements
+	potential = {
+		prowess >= accolade_prowess_requirement_value
+		OR = {
+			has_trait = sea_raider
+			has_trait = navigator
+		}
+	}
+	weight = {
+		value = accolade_uninteresting_base_value
+		if = {
+			limit = {
+				scope:owner ?= {
+					exists = dynasty
+					dynasty = {
+						OR = {
+							has_dynasty_perk = warfare_legacy_3
+							has_dynasty_perk = law_legacy_3
+						}
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					culture = {
+						NOT = {
+							has_innovation = innovation_bannus
+						}
+					}
+				}
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					culture = {
+						has_innovation = innovation_men_at_arms
+					}
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					culture = {
+						has_innovation = innovation_royal_armory
+					}
+				}
+			}
+			add = 25
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					culture = {
+						OR = {
+							has_cultural_tradition = tradition_hard_working
+							has_cultural_tradition = tradition_staunch_traditionalists
+							has_cultural_tradition = tradition_formation_fighting
+							has_cultural_tradition = tradition_strength_in_numbers
+						}
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					faith = {
+						has_doctrine = tenet_natural_primitivism
+					}
+				}
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				faith = {
+					has_doctrine = tenet_natural_primitivism
+				}
+			}
+			add = -25
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					OR = {
+						has_trait = temperate
+						has_trait = diligent
+						has_trait = stubborn
+						has_trait = callous
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				OR = {
+					has_trait = chaste
+					has_trait = just
+				}
+			}
+			add = 25
+		}
+		#weight for opinion
+		if = {
+			limit = {
+				exists = liege
+			}
+			multiply = accolade_opinion_multiplier_value
+		}
+		if = {
+			limit = {
+				scope:owner ?= {
+					has_trait = lifestyle_reveler
+				}
+			}
+			multiply = 0
+		}
+	}
+
+	#accolade ranks from Glory XP
+	ranks = {
+		# glory_requirement =  { modifiers and unlocks }
+		100 = { # rank 1
+			liege_modifier = {
+				coastal_advantage = 3
+				naval_movement_speed_mult = 0.1
+			}
+		}
+		300 = { # rank 2
+			liege_modifier = {
+				coastal_advantage = 3
+				naval_movement_speed_mult = 0.1
+			}
+		}
+		600 = { # rank 3
+			liege_modifier = {
+				coastal_advantage = 5
+				naval_movement_speed_mult = 0.2
+				development_growth = 0.1
+			}
+		}
+		1000 = { # rank 4
+			liege_modifier = {
+				coastal_advantage = 5
+				naval_movement_speed_mult = 0.2
+				development_growth = 0.1
+			}
+		}
+		1500 = { # rank 5
+			liege_modifier = {
+				coastal_advantage = 7
+				naval_movement_speed_mult = 0.3
+				development_growth = 0.15
+			}
+		}
+		2100 = { # rank 6
+			liege_modifier = {
+				coastal_advantage = 7
+				naval_movement_speed_mult = 0.3
+				development_growth = 0.15
+			}
+		}
+	}
 }

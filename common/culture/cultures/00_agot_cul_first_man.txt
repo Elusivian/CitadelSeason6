@@ -1129,11 +1129,10 @@ sisterman = {
 	martial_custom = martial_custom_male_only
 
 	traditions = {
-		tradition_practiced_pirates
 		tradition_seafaring
 		tradition_stand_and_fight
 		agot_tradition_insular_marriage
-		agot_tradition_sisterman
+		tradition_citadel_sistermen
 	}
 
 	name_list = name_list_sisterman

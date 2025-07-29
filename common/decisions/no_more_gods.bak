@@ -1,0 +1,115 @@
+﻿no_more_gods_settings = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = debug
+	is_shown = { is_ai = no }
+	ai_check_interval = 0
+	ai_potential = { always = no }
+	ai_will_do = { base = 0 }
+	sort_order = -100
+	title = no_more_gods_settings_title
+	desc = no_more_gods_settings_desc
+	selection_tooltip  = no_more_gods_settings_tooltip
+	
+	#Options
+	widget = {
+	  gui = "decision_view_widget_option_list_generic"
+	  controller = decision_option_list_controller
+	  decision_to_second_step_button = no_more_gods_button_label
+	  show_from_start = yes
+
+	  item = {
+		is_shown = { exists = global_var:no_more_gods_disable_flag }
+		value = no_more_gods_enable_adjustments
+		localization = no_more_gods_enable_label
+		icon = "gfx/interface/icons/text_icons/action_can_righteously_imprison.dds"
+	  }
+	  item = {
+		is_shown = { NOT = { exists = global_var:no_more_gods_disable_flag } }
+		value = no_more_gods_disable_adjustments
+		localization = no_more_gods_disable_label
+		icon = "gfx/interface/icons/character_interactions/icon_cross.dds"
+	  }
+	  # item = {
+		# is_shown = { 
+			# AND = {
+				# exists = global_var:no_more_gods_basic_only_flag
+				# NOT = { exists = global_var:no_more_gods_disable_flag }
+			# }
+		# }
+		# value = no_more_gods_advanced_mode
+		# localization = no_more_gods_advanced_label
+		# icon = "gfx/interface/icons/character_interactions/icon_boost_efficiency.dds"
+	  # }
+	  # item = {
+		# is_shown = { 
+			# AND = {
+				# NOT = { exists = global_var:no_more_gods_basic_only_flag }
+				# NOT = { exists = global_var:no_more_gods_disable_flag }
+			# }
+		# }
+		# value = no_more_gods_basic_mode
+		# localization = no_more_gods_basic_label
+		# icon = "gfx/interface/icons/character_interactions/icon_damage_efficiency.dds"
+	  # }
+	  # item = {
+		# value = no_more_gods_force_update
+		# localization = no_more_gods_update_label
+		# icon = "gfx/interface/icons/character_interactions/torture_interaction.dds"
+	  # }
+	}
+	#Effects
+	effect = {
+	  custom_tooltip = {
+		text = no_more_gods_force_update_tooltip
+		adjust_skill_for_all	
+	  }
+	  custom_tooltip = {
+		text = "get gold"
+		add_gold = 10	
+	  }
+	  
+	  if = {
+		limit = { scope:no_more_gods_disable_adjustments = yes }
+	    custom_tooltip = {
+			text = no_more_gods_disable_adjustments_tooltip
+			set_global_variable = {
+				name = no_more_gods_disable_flag
+				value = yes
+			}
+		}
+	  }
+	  else_if = {
+		limit = { scope:no_more_gods_enable_adjustments = yes }
+	    custom_tooltip = {
+			text = no_more_gods_enable_adjustments_tooltip
+			remove_global_variable = no_more_gods_disable_flag
+		}
+	  }
+	  # else_if = {
+		# limit = {  scope:no_more_gods_basic_mode = yes }
+	    # custom_tooltip = {
+			# text = no_more_gods_basic_mode_tooltip
+			# set_global_variable = {
+				# name = no_more_gods_basic_only_flag
+				# value = yes
+			# }
+		# }
+	  # }
+	  # else_if = {
+		# limit = { scope:no_more_gods_advanced_mode = yes	}
+	    # custom_tooltip = {
+			# text = no_more_gods_advanced_mode_tooltip
+			# remove_global_variable = no_more_gods_basic_only_flag
+		# }
+	  # }
+	  # else_if = {
+		# limit = { scope:no_more_gods_force_update = yes	}
+	    # custom_tooltip = {
+			# text = no_more_gods_force_update_tooltip
+			# adjust_skill_for_all	
+		# }
+	  # }
+	}
+}	
+
+
