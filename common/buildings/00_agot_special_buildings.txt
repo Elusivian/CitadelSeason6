@@ -121,6 +121,8 @@ the_red_keep_03 = {
 
 	max_garrison = 750
 
+	levy = 500
+
 	province_modifier = {
 		fort_level = 4
 		defender_holding_advantage = 4

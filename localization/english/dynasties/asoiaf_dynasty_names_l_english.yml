@@ -1,0 +1,18 @@
+﻿l_english:
+ dynn_Dummies:0 "Dummy"
+ dynn_Bloodraven:0 "Bloodraven"
+ dynn_Bittersteel:0 "Bittersteel"
+ dynn_Dormand:0 "Dormand"
+
+ #Brightflame overwrite dynastyies
+ dynn_Galgaeryn:0 "Galgaeryn" 
+ dynn_Tryzaen:0 "Tryzaen"
+ 
+ #Maegor Targaryen (founder of Targ dynasty)'s wife dummy dynasty to prevent tree duplication
+ dynn_Belerys:0 "Belerys"
+
+ #Corlys Velaryon (HBO)'s mother's House
+ dynn_Xaq:0 "Xaq"
+
+ #Daena Blackfyre's House
+ dynn_Malazos:0 "Malazos"

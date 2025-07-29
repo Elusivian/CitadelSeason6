@@ -108,6 +108,8 @@ northern_spears = {
 	}
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = northern_spears
@@ -181,6 +183,8 @@ dornish_crossbows = {
 	low_maintenance_cost = { gold = dornish_crossbows_low_maint_cost }
 	high_maintenance_cost = { gold = dornish_crossbows_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -258,6 +262,8 @@ vale_heavy_infantry = {
 	low_maintenance_cost = { gold = vale_heavy_infantry_low_maint_cost }
 	high_maintenance_cost = { gold = vale_heavy_infantry_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -341,6 +347,8 @@ crownlands_spears = {
 	high_maintenance_cost = { gold = crownlands_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = crownlands_spears
@@ -419,6 +427,8 @@ reach_light_cavalry = {
 	low_maintenance_cost = { gold = reach_light_cavalry_low_maint_cost }
 	high_maintenance_cost = { gold = reach_light_cavalry_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_cheap
+
+	max_regiments = 2
 
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -499,13 +509,14 @@ riverlands_light_infantry = {
 	high_maintenance_cost = { gold = riverlands_light_infantry_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_cheap
 
+	max_regiments = 2
 
 	stack = 120.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = riverlands_light_infantry
 }
 
-# innovation_agot_westerlands_fighting aka Hill Warfare
+# innovation_agot_westerlands_fighting aka Hill Warfare | Disabled by Kizan.
 westerlands_knights = {
 	type = heavy_cavalry
 
@@ -572,14 +583,15 @@ westerlands_knights = {
 	}
 
 	can_recruit = {
-		culture = { has_innovation = innovation_agot_westerlands_fighting }
-		NOT = { government_has_flag = government_is_nw }
+	always = no
 	}
 
 	buy_cost = { gold = westerlands_knights_recruitment_cost }
 	low_maintenance_cost = { gold = westerlands_knights_low_maint_cost }
 	high_maintenance_cost = { gold = westerlands_knights_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_expensive
+
+	max_regiments = 1
 
 	stack = 50.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -590,10 +602,10 @@ westerlands_knights = {
 stormlands_heavy_infantry = {
 	type = heavy_infantry
 
-	damage = 35.0
-	toughness = 30.0
+	damage = 45.0
+	toughness = 40.0
 	pursuit = 0.0
-	screen = 5.0
+	screen = 15.0
 
 	terrain_bonus = {
 		cloudforest = { damage = 10 }
@@ -656,10 +668,15 @@ stormlands_heavy_infantry = {
 		NOT = { government_has_flag = government_is_nw }
 	}
 
-	buy_cost = { gold = stormlands_heavy_infantry_recruitment_cost }
+	buy_cost = { 
+		gold = 60
+		prestige = 60
+	}
 	low_maintenance_cost = { gold = stormlands_heavy_infantry_low_maint_cost }
 	high_maintenance_cost = { gold = stormlands_heavy_infantry_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -730,6 +747,8 @@ stepstone_sailors = {
 	high_maintenance_cost = { gold = stepstone_sailors_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_cheap
 
+	max_regiments = 2
+
 	stack = 120.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = sistermen_pirates
@@ -783,6 +802,8 @@ westerosi_sellswords = {
 	low_maintenance_cost = { gold = westerosi_sellswords_low_maint_cost }
 	high_maintenance_cost = { gold = westerosi_sellswords_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 1
 
 	stack = 75
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -867,6 +888,8 @@ giant = {
 	high_maintenance_cost = { gold = giant_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_regiments = 2
+
 	stack = 5.0
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = giant
@@ -912,12 +935,14 @@ scorpions = {
 		minorroad_cloudforest = { toughness = -10 }
 	}
 
-	siege_tier = 2
-	siege_value = 0.3
+	siege_tier = 1
+	siege_value = 0.0
 
 	buy_cost = { gold = scorpions_recruitment_cost }
 	low_maintenance_cost = { gold = scorpions_low_maint_cost }
 	high_maintenance_cost = { gold = scorpions_high_maint_cost }
+
+	max_regiments = 3
 
 	stack = 10
 	allowed_in_hired_troops = no
@@ -964,6 +989,8 @@ battering_ram = {
 	high_maintenance_cost = { gold = onager_high_maint_cost }
 	provision_cost = @provisions_cost_special_cheap
 
+	max_regiments = 2
+
 	stack = 10
 	allowed_in_hired_troops = no
 	icon = battering_ram
@@ -983,6 +1010,8 @@ onager = {
 	low_maintenance_cost = { gold = mangonel_low_maint_cost }
 	high_maintenance_cost = { gold = mangonel_high_maint_cost }
 	provision_cost = @provisions_cost_special_moderate
+
+	max_regiments = 2
 
 	stack = 10
 	allowed_in_hired_troops = no
@@ -1004,6 +1033,8 @@ mangonel = {
 	high_maintenance_cost = { gold = trebuchet_high_maint_cost }
 	provision_cost = @provisions_cost_special_expensive
 
+	max_regiments = 2
+
 	stack = 10
 	allowed_in_hired_troops = no
 	icon = mangonel
@@ -1023,6 +1054,8 @@ trebuchet = {
 	low_maintenance_cost = { gold = bombard_low_maint_cost }
 	high_maintenance_cost = { gold = bombard_high_maint_cost }
 	provision_cost = @provisions_cost_special_bankrupting
+
+	max_regiments = 2
 
 	stack = 10
 	allowed_in_hired_troops = no

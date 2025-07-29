@@ -1,0 +1,204 @@
+﻿namespace = asoiaf_young_griff_landing_events
+
+asoiaf_young_griff_landing_events.1 = {
+	type = character_event
+	hidden = yes
+	
+	immediate = {
+		root = {
+			set_court_language = language_common
+			if = { #players can marry and forge alliances during the war
+				limit = {
+					is_ai = no
+				}
+				remove_trait = refusing_marriage
+			}
+			# if = {
+			# 	limit = {
+			# 		is_ai = no
+			# 	}
+			# 	spawn_army = { #Golden Company 20,000 strong instead of 10,000
+			# 		levies = 0
+			# 		name = the_golden_company_name
+			# 		men_at_arms = {
+			# 			type = light_footmen # 2000
+			# 			stacks = 20
+			# 		}
+			# 		men_at_arms = {
+			# 			type = pikemen_unit # 2000
+			# 			stacks = 20
+			# 		}
+			# 		men_at_arms = {
+			# 			type = armored_footmen # 2000
+			# 			stacks = 20
+			# 		}
+			# 		men_at_arms = {
+			# 			type = light_horsemen # 2500
+			# 			stacks = 25
+			# 		}
+			# 		men_at_arms = {
+			# 			type = armored_horsemen # 500
+			# 			stacks = 10
+			# 		}
+			# 		men_at_arms = {
+			# 			type = bowmen # 300
+			# 			stacks = 3
+			# 		}
+			# 		men_at_arms = {
+			# 			type = longbowmen # 700
+			# 			stacks = 7
+			# 		}
+			# 		men_at_arms = {
+			# 			type = war_elephant # 25
+			# 			stacks = 1
+			# 		}
+			# 		location = root.capital_province
+			# 		origin = root.capital_province
+			# 		inheritable = no
+			# 	}
+			# }
+		}
+	}
+}
+
+asoiaf_young_griff_landing_events.2 = { #remove marriage trait for Daenerys and Viserys dummies
+	type = character_event
+	hidden = yes
+	
+	immediate = {
+		root = {
+			set_court_language = language_common
+			if = { #players can marry and forge alliances during the war
+				limit = {
+					is_ai = no
+				}
+				remove_trait = refusing_marriage
+			}
+		}
+	}
+}
+
+asoiaf_young_griff_landing_events.3 = { #sets real parents for Aegon after winning the throne
+	type = character_event
+	hidden = yes
+	
+	immediate = {
+		root = {
+			if = { #He's Rhaegar's son
+				limit = {
+					root.father = character:Targaryen_3 #Rhaegar
+				}
+				hidden_effect = {
+					set_real_father = character:Targaryen_3 #Rhaegar; to account for the random Lyseni option
+					set_real_mother = character:Martell_7 #Elia; to account for the random Lyseni option
+					dynasty:dynn_Targaryen = { #just in case it hasn't been done before yet
+						set_variable = agot_allow_adelphogamous_incest
+						set_variable = { name = blood_legacy_4_beauty_good_1 value = yes }
+					}
+				}
+			}
+			if = { #He's a Blackfyre
+				limit = {
+					root.father = character:Blackfyre_14 #Maelys the Monstrous
+				}
+				trigger_event = { id = agot_coa_events.1 } #Seven Kingdoms to Blackfyre CoA
+				hidden_effect = {
+					dynasty:dynn_Targaryen = { #just in case it hasn't been done before yet
+						set_variable = agot_allow_adelphogamous_incest
+						set_variable = { name = blood_legacy_4_beauty_good_1 value = yes }
+					}
+					create_character = {
+						gender = female
+						age = 50
+						culture = culture:high_valyrian
+						faith = faith:the_seven_main
+						#location = scope:faegon.location
+						
+						dynasty = generate
+						
+						save_scope_as = asoiaf_aegon_fake_mother
+						
+						after_creation = {
+							death =  { death_reason = death_disappearance }
+						}
+					}
+					create_character = {
+						gender = male
+						age = 50
+						culture = culture:crownlander
+						faith = faith:the_seven_main
+						#location = scope:faegon.location
+						
+						dynasty = none
+						
+						save_scope_as = asoiaf_pisswater_prince_real_father
+						
+						after_creation = {
+							death =  { death_reason = death_disappearance }
+						}
+					}
+					set_mother = scope:asoiaf_aegon_fake_mother
+					set_real_father = character:Targaryen_3 #Rhaegar
+					set_real_mother = character:Martell_7 #Elia
+					character:Targaryen_11 = { #revert Pisswater Prince to being Targaryen
+						set_mother = character:Martell_7
+						set_father = character:Targaryen_3
+						set_real_father = scope:asoiaf_pisswater_prince_real_father
+						set_real_mother = scope:asoiaf_aegon_fake_mother
+						set_house =  character:Targaryen_3.house
+					}
+				}
+			}
+			if = { #He's a descendant of Aerion Brightflame
+				limit = {
+					root.father = character:Targaryen_119 #Aerion Brightflame
+				}
+				hidden_effect = {
+					dynasty:dynn_Targaryen = { #just in case it hasn't been done before yet
+						set_variable = agot_allow_adelphogamous_incest
+						set_variable = { name = blood_legacy_4_beauty_good_1 value = yes }
+					}
+					create_character = {
+						gender = female
+						age = 50
+						culture = culture:high_valyrian
+						faith = faith:the_seven_main
+						#location = scope:faegon.location
+						
+						dynasty = generate
+						
+						save_scope_as = asoiaf_aegon_fake_mother
+						
+						after_creation = {
+							death =  { death_reason = death_disappearance }
+						}
+					}
+					create_character = {
+						gender = male
+						age = 50
+						culture = culture:crownlander
+						faith = faith:the_seven_main
+						#location = scope:faegon.location
+						
+						dynasty = none
+						
+						save_scope_as = asoiaf_pisswater_prince_real_father
+						
+						after_creation = {
+							death =  { death_reason = death_disappearance }
+						}
+					}
+					set_real_father = character:Targaryen_3 #Rhaegar
+					set_real_mother = character:Martell_7 #Elia
+					character:Targaryen_11 = { #revert Pisswater Prince to being Targaryen
+						set_mother = character:Martell_7
+						set_father = character:Targaryen_3
+						set_real_father = scope:asoiaf_pisswater_prince_real_father
+						set_real_mother = scope:asoiaf_aegon_fake_mother
+						set_house =  character:Targaryen_3.house
+					}
+				}
+			}
+		}
+	}
+}

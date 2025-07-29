@@ -1,0 +1,984 @@
+﻿# namespace = agot_filler_disputed_lands
+# ALL OF THIS IS COMMENTED OUT BECAUSE DISPUTED LANDS ARE NOT PLAYABLE.
+# ##########################################
+# # The Ring Question
+# ##########################################
+
+# agot_filler_disputed_lands.100 = { # A myrish sellsword, a  tyroshi merchant and a minor lyseni noble are brought before you, all claiming ownership of a valuable ring.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.100.t
+# 	desc = agot_filler_disputed_lands.100.desc
+# 	orphan = yes # AGOT TODO this event should NOT be an orphan; FIX PLS
+
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_rational
+# 	}
+
+# 	right_portrait = {
+# 		character = cp:councillor_steward
+# 		animation = personality_greedy
+# 	}
+
+# 	trigger = {
+# 		#location = { # AGOT TODO add once essos is added
+# 		#	geographical_region = world_essos_disputed_lands
+# 		#}
+# 		always = no # AGOT TODO
+# 		NOT = {
+# 			has_character_flag = disputed_lands_ring_dispute
+# 		}
+# 		is_at_war = no
+# 		is_imprisoned = no
+# 		is_incapable = no
+# 		is_in_an_activity = no
+# 	}
+
+# 	immediate = {
+# 		add_character_flag = disputed_lands_ring_dispute
+# 		create_character = {
+# 			save_scope_as = tyroshi_mercenary
+# 			name = Abo
+# 			age = { 25 40 }
+# 			gender = male
+# 			gender_female_chance = 35
+# 			trait = blademaster_2
+# 			trait = greedy
+# 			random_traits_list = {
+# 				count = { 1 3 }
+# 				honest = { weight = { base = 20 } }
+# 				deceitful = { weight = { base = 20 } }
+# 				shy = { weight = { base = 20 } }
+# 				gregarious = { weight = { base = 20 } }
+# 				diligent = { weight = { base = 20 } }
+# 				sadistic = { weight = { base = 20 } }
+# 			}
+# 			random_traits = yes
+# 			location = root.location
+# 			faith = faith:rhllor
+# 			culture = culture:tyroshi
+# 			dynasty = none
+# 		}
+# 		create_character = {
+# 			save_scope_as = myrish_merchant
+# 			name = Abo
+# 			age = { 25 40 }
+# 			gender = male
+# 			gender_female_chance = 35
+# 			trait = education_stewardship_3
+# 			random_traits_list = {
+# 				count = { 1 3 }
+# 				honest = { weight = { base = 20 } }
+# 				deceitful = { weight = { base = 20 } }
+# 				shy = { weight = { base = 20 } }
+# 				gregarious = { weight = { base = 20 } }
+# 				diligent = { weight = { base = 20 } }
+# 				sadistic = { weight = { base = 20 } }
+# 				greedy = { weight = { base = 20 } }
+# 			}
+# 			random_traits = yes
+# 			location = root.location
+# 			faith = faith:rhllor
+# 			culture = culture:myrish
+# 			dynasty = none
+# 		}
+# 		create_character = {
+# 			save_scope_as = lyseni_lord
+# 			name = Abo
+# 			age = { 25 40 }
+# 			gender = male
+# 			gender_female_chance = 35
+# 			trait = education_diplomacy_2
+# 			trait = arrogant
+# 			random_traits_list = {
+# 				count = { 1 3 }
+# 				honest = { weight = { base = 20 } }
+# 				deceitful = { weight = { base = 20 } }
+# 				shy = { weight = { base = 20 } }
+# 				gregarious = { weight = { base = 20 } }
+# 				diligent = { weight = { base = 20 } }
+# 				sadistic = { weight = { base = 20 } }
+# 			}
+# 			random_traits = yes
+# 			location = root.location
+# 			faith = faith:weeping_lady
+# 			culture = culture:lyseni
+# 			dynasty = none
+# 		}
+# 	}
+
+# 	option = {	# Let's hear the Tyroshi out first.
+# 		name = agot_filler_disputed_lands.100.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.100.a.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.101
+# 			days = 14
+# 		}
+# 		add_stress = 10
+# 	}
+
+# 	option = {	# I don't have time for this.
+# 		name = agot_filler_disputed_lands.100.b
+
+# 		custom_tooltip = agot_filler_disputed_lands.100.b.tt
+# 	}
+# }
+
+# ##########################################
+# # The Ring Question - Tyroshi audience
+# ##########################################
+
+# agot_filler_disputed_lands.101 = { # Story about how he gained it as payment for a job.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.101.t
+# 	desc = agot_filler_disputed_lands.101.desc
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = dismissal
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:tyroshi_mercenary
+# 		animation = worry
+# 	}
+
+# 	option = {	# Interesting...
+# 		name = agot_filler_disputed_lands.101.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.101.a.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.102
+# 			days = 14
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # The Ring Question - Myrish audience
+# ##########################################
+
+# agot_filler_disputed_lands.102 = { # Story about how he acquired it in a hefty, most fought-for auction.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.102.t
+# 	desc = agot_filler_disputed_lands.102.desc
+
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = dismissal
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:myrish_merchant
+# 		animation = worry
+# 	}
+
+# 	option = {	# Interesting...
+# 		name = agot_filler_disputed_lands.102.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.101.a.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.103
+# 			days = 14
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # The Ring Question - Lyseni audience
+# ##########################################
+
+# agot_filler_disputed_lands.103 = { # Story about how because it's a family heirloom, it has to be his.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.103.t
+# 	desc = agot_filler_disputed_lands.103.desc
+
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = dismissal
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:lyseni_lord
+# 		animation = personality_bold
+# 	}
+
+# 	option = {	# Interesting. It's time to make a choice.
+# 		name = agot_filler_disputed_lands.103.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.103.a.tt
+# 		if = {
+# 			limit = {
+# 				is_married = yes
+# 				has_relation_lover = root.primary_spouse
+# 				root.primary_spouse = {
+# 					has_trait = fashionable
+# 				}
+# 			}
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.104
+# 				days = 3
+# 			}
+# 		}
+# 		else = {
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.105
+# 				days = 3
+# 			}
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # The Ring Question - Wife
+# ##########################################
+
+# agot_filler_disputed_lands.104 = { # Your wife comes to you, "asking" for the ring.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.104.t
+# 	desc = agot_filler_disputed_lands.104.desc
+
+# 	theme = lover_relation
+# 	#override_background = { # AGOT TODO
+# 	#	reference = bedroom
+# 	#}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = flirtation
+# 	}
+
+# 	right_portrait = {
+# 		character = root.primary_spouse
+# 		animation = personality_bold
+# 	}
+
+# 	option = {	# You can have it, darling. SIMP!
+# 		name = agot_filler_disputed_lands.104.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.104.a.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.106
+# 			days = 2
+# 		}
+# 		#spouse_opinion = 15 # AGOT TODO bruh
+# 	}
+
+# 	option = {	# I'm sorry, but I can't.. Imagine the consequences...
+# 		name = agot_filler_disputed_lands.104.b
+
+# 		custom_tooltip = agot_filler_disputed_lands.104.b.tt
+# 		#spouse_opinion = -15 # AGOT TODO bruh
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.105
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # The Ring Question - Judgement
+# ##########################################
+
+# agot_filler_disputed_lands.105 = { # It is time. All three stand before you, awaiting your decision.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.105.t
+# 	desc = agot_filler_disputed_lands.105.desc
+
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = scheme
+# 	}
+
+# 	lower_left_portrait = {
+# 		character = scope:tyroshi_mercenary
+# 		animation = personality_greedy
+# 	}
+
+# 	lower_center_portrait = {
+# 		character = scope:myrish_merchant
+# 		animation = beg
+# 	}
+
+# 	lower_right_portrait = {
+# 		character = scope:lyseni_lord
+# 		animation = personality_bold
+# 	}
+
+# 	right_portrait = {
+# 		character = cp:councillor_chancellor
+# 		animation = personality_rational
+# 	}
+
+# 	option = {	# The ring belongs to the Tyroshi.
+# 		name = agot_filler_disputed_lands.105.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.105.a.tt
+# 		if = {
+# 			limit = {
+# 				any_living_character = {
+# 					culture = culture:lyseni
+# 				}
+# 			}
+# 			#county_opinion_add = -10 # AGOT TODO bruh
+# 		}
+# 		if = {
+# 			limit = {
+# 				any_living_character = {
+# 					culture = culture:myrish
+# 				}
+# 			}
+# 			#county_opinion_add = -10 # AGOT TODO bruh
+# 		}
+# 	}
+
+# 	option = {	# I declare it shall be the Lyseni's property.
+# 		name = agot_filler_disputed_lands.105.b
+
+# 		custom_tooltip = agot_filler_disputed_lands.105.b.tt
+# 		if = {
+# 			limit = {
+# 				any_living_character = {
+# 					culture = culture:tyroshi
+# 				}
+# 			}
+# 			#county_opinion_add = -10 # AGOT TODO bruh
+# 		}
+# 		if = {
+# 			limit = {
+# 				any_living_character = {
+# 					culture = culture:myrish
+# 				}
+# 			}
+# 			#county_opinion_add = -10 # AGOT TODO bruh
+# 		}
+# 	}
+
+# 	option = {	# It is clear that the merchant from Myr is the true owner.
+# 		name = agot_filler_disputed_lands.105.c
+
+# 		custom_tooltip = agot_filler_disputed_lands.105.c.tt
+# 		if = {
+# 			limit = {
+# 				any_living_character = {
+# 					culture = culture:tyroshi
+# 				}
+# 			}
+# 			#county_opinion_add = -10 # AGOT TODO bruh
+# 		}
+# 		if = {
+# 			limit = {
+# 				any_living_character = {
+# 					culture = culture:lyseni
+# 				}
+# 			}
+# 			#county_opinion_add = -10 # AGOT TODO bruh
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # The Ring Question - Simping fallout
+# ##########################################
+
+# agot_filler_disputed_lands.106 = { # All three stooges come demanding reparations, since the ring is clearly feeling pretty confortable in your wife's middle finger.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.106.t
+# 	desc = agot_filler_disputed_lands.106.desc
+
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = worry
+# 	}
+
+# 	lower_left_portrait = {
+# 		character = scope:tyroshi_mercenary
+# 		animation = anger
+# 	}
+
+# 	lower_center_portrait = {
+# 		character = scope:myrish_merchant
+# 		animation = anger
+# 	}
+
+# 	lower_right_portrait = {
+# 		character = scope:lyseni_lord
+# 		animation = anger
+# 	}
+
+# 	right_portrait = {
+# 		character = root.primary_spouse
+# 		animation = ecstasy
+# 	}
+
+# 	option = {	# Guards, remove them from my presence. The dungeon will suit their needs.
+# 		name = agot_filler_disputed_lands.106.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.106.a.tt
+# 		imprison = {
+# 			target = scope:lyseni_lord
+# 			type = house_arrest
+# 		}
+# 		imprison = {
+# 			target = scope:tyroshi_mercenary
+# 			type = house_arrest
+# 		}
+# 		imprison = {
+# 			target = scope:myrish_merchant
+# 			type = house_arrest
+# 		}
+# 	}
+
+# 	option = {	# You are hereby banished from my court. If the sun finds you here tomorrow, your life will be forfeit.
+# 		name = agot_filler_disputed_lands.106.b
+
+# 		custom_tooltip = agot_filler_disputed_lands.106.b.tt
+# 		#remove_courtier_or_guest = { # AGOT TODO title doesnt exist yet; essos
+# 		#	character = scope:myrish_merchant
+# 		#	new_location = title:c_myr
+# 		#}
+# 		#remove_courtier_or_guest = { # AGOT TODO title doesnt exist yet; essos
+# 		#	character = scope:tyroshi_mercenary
+# 		#	new_location = title:c_tyrosh
+# 		#}
+# 		#remove_courtier_or_guest = { # AGOT TODO title doesnt exist yet; essos
+# 		#	character = scope:lyseni_lord
+# 		#	new_location = title:c_lys
+# 		#}
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother
+# ##########################################
+
+# agot_filler_disputed_lands.200 = { # A Westerosi knight is brought to you in chains. He tried attacking the owner of a Pillow House. The Owner states the knight was trying to steal workers for a rival establishment, while the knight swears he only came to Lys to free a relative, who was captured by pirates and sold as a slave.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.200.t
+# 	desc = agot_filler_disputed_lands.200.desc
+# 	orphan = yes # AGOT TODO this event should NOT be an orphan; FIX PLS
+
+# 	theme = diplomacy
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = scope:pillow_house_owner_1
+# 		animation = anger
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:westeros_knight_pillow_house
+# 		animation = wounded
+# 	}
+
+# 	lower_center_portrait = {
+# 		character = root
+# 		animation = personality_rational
+# 	}
+
+# 	trigger = {
+# 		#location.kingdom = title:k_lys # AGOT TODO add once essos is added
+# 		always = no # AGOT TODO
+# 		NOT = {
+# 			has_character_flag = lys_pillow_house_knight_filler
+# 		}
+# 		is_at_war = no
+# 		is_imprisoned = no
+# 		is_incapable = no
+# 		is_in_an_activity = no
+# 	}
+
+# 	immediate = {
+# 		add_character_flag = lys_pillow_house_knight_filler
+# 		create_character = {
+# 			save_scope_as = pillow_house_owner_1
+# 			name = Abo
+# 			age = { 30 60 }
+# 			gender = male
+# 			gender_female_chance = 0
+# 			trait = callous
+# 			random_traits_list = {
+# 				count = { 1 3 }
+# 				deceitful = { weight = { base = 20 } }
+# 				sadistic = { weight = { base = 20 } }
+# 				greedy = { weight = { base = 20 } }
+# 				lustful = { weight = { base = 20 } }
+# 				vengeful = { weight = { base = 20 } }
+# 				paranoid = { weight = { base = 20 } }
+# 			}
+# 			random_traits = yes
+# 			location = root.location
+# 			faith = faith:weeping_lady
+# 			culture = culture:lyseni
+# 			dynasty = none
+# 			stewardship = 23
+# 		}
+# 		create_character = {
+# 			save_scope_as = westeros_knight_pillow_house
+# 			name = Martin
+# 			age = { 20 45 }
+# 			gender = male
+# 			gender_female_chance = 0
+# 			trait = honest
+# 			trait = knight
+# 			trait = wounded
+# 			random_traits_list = {
+# 				count = { 1 3 }
+# 				temperate = { weight = { base = 20 } }
+# 				blademaster_2 = { weight = { base = 20 } }
+# 				just = { weight = { base = 20 } }
+# 				humble = { weight = { base = 20 } }
+# 				diligent = { weight = { base = 20 } }
+# 				brave = { weight = { base = 20 } }
+# 			}
+# 			random_traits = yes
+# 			location = root.location
+# 			faith = faith:the_seven_main
+# 			random_culture = {
+# 				culture:northman = { weight = { base = 10 } }
+# 				culture:westerman = { weight = { base = 10 } }
+# 				culture:riverlander  = { weight = { base = 10 } }
+# 				culture:salt_dornish = { weight = { base = 10 } }
+# 				culture:sand_dornish = { weight = { base = 10 } }
+# 				culture:crownlander  = { weight = { base = 10 } }
+# 				culture:reachman  = { weight = { base = 10 } }
+# 				culture:stone_dornish = { weight = { base = 10 } }
+# 				culture:stormlander  = { weight = { base = 10 } }
+# 				culture:valeman  = { weight = { base = 10 } }
+# 				culture:sand_dornish = { weight = { base = 10 } }
+# 				culture:sisterman   = { weight = { base = 10 } }
+# 				culture:salt_dornish  = { weight = { base = 10 } }
+# 				culture:greenblood   = { weight = { base = 10 } }
+# 			}
+# 			dynasty = none
+# 			prowess = 15
+# 		}
+# 	}
+
+# 	option = {	# I wish to hear this Westerosi man first.
+# 		name = agot_filler_disputed_lands.200.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.200.a.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.201
+# 		}
+# 	}
+
+# 	option = {	# Let the local gentleman speak.
+# 		name = agot_filler_disputed_lands.200.b
+
+# 		custom_tooltip = agot_filler_disputed_lands.200.b.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.202
+# 		}
+# 	}
+
+# 	option = {	# Where is the lady in question?
+# 		name = agot_filler_disputed_lands.200.c
+
+# 		custom_tooltip = agot_filler_disputed_lands.200.c.tt
+# 		trigger = {
+# 			has_trait = compassionate
+# 		}
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.203
+# 		}
+# 	}
+
+# 	option = {	# I have no time for such menial disputes. Get out!
+# 		name = agot_filler_disputed_lands.200.d
+
+# 		custom_tooltip = agot_filler_disputed_lands.200.d.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.204
+# 		}
+# 		scope:pillow_house_owner_1 = {
+# 			death = {
+# 				killer = scope:westeros_knight_pillow_house
+# 				death_reason = death_murder
+# 			}
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother - knight audience
+# ##########################################
+
+# agot_filler_disputed_lands.201 = { # The knight tells his heartfelt story - revealing that the pillow house owner has been involved in some shady deals.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.201.t
+# 	desc = agot_filler_disputed_lands.201.desc
+
+# 	theme = realm
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_rational
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:westeros_knight_pillow_house
+# 		animation = pain
+# 	}
+
+# 	immediate = {
+# 		add_character_flag = listened_to_knight
+# 	}
+
+# 	option = {	# Oh my, what a mess...
+# 		name = agot_filler_disputed_lands.201.a
+# 		custom_tooltip = agot_filler_disputed_lands.201.a.tt
+# 		if = {
+# 			limit = {
+# 				has_character_flag = listened_to_owner
+# 			}
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.205
+# 			}
+# 		}
+# 		else = {
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.202
+# 			}
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother - lyseni audience
+# ##########################################
+
+# agot_filler_disputed_lands.202 = { # The owner gives a flourishing speech on his work ethic and how the corruption accusations are false. He brings forth a bill claiming the knight is in reality a hired thug from a local rival. He also hints at a little leather bag hanging from his belt.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.202.t
+# 	desc = agot_filler_disputed_lands.202.desc
+
+# 	theme = corruption
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = dismissal
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:pillow_house_owner_1
+# 		animation = schadenfreude
+# 	}
+
+# 	immediate = {
+# 		add_character_flag = listened_to_owner
+# 	}
+
+# 	option = {	# Hmmm, we shall see...
+# 		name = agot_filler_disputed_lands.202.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.202.a.tt
+# 		if = {
+# 			limit = {
+# 				has_character_flag = listened_to_knight
+# 			}
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.205
+# 			}
+# 		}
+# 		else = {
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.201
+# 			}
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother - Call upon the girl
+# ##########################################
+
+# agot_filler_disputed_lands.203 = { # The young lady tells her story - of all the horrors happening in that pillow house, and the slave ships.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.203.t
+# 	desc = agot_filler_disputed_lands.203.desc
+
+# 	theme = love
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = admiration
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:slave_girl_lys_filler
+# 		animation = beg
+# 	}
+
+# 	immediate = {
+# 		scope:westeros_knight_pillow_house.culture = {
+# 			save_scope_as = knights_culture
+# 		}
+# 		create_character = {
+# 			save_scope_as = slave_girl_lys_filler
+# 			name = Alise
+# 			age = { 18 25 }
+# 			gender = female
+# 			random_traits_list = {
+# 				count = 1
+# 				beauty_good_1 = { weight = { base = 90 } }
+# 				beauty_good_2 = { weight = { base = 50 } }
+# 				beauty_good_3 = { weight = { base = 35 } }
+# 			}
+# 			random_traits = yes
+# 			fertility = 120
+# 			location = root.location
+# 			faith = faith:the_seven_main
+# 			culture = scope:knights_culture
+# 			dynasty = none
+# 			diplomacy = 18
+# 		}
+# 	}
+
+# 	option = {	# What a horror it must have been... This can go on no further.
+# 		name = agot_filler_disputed_lands.203.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.203.a.tt
+# 		trigger_event = {
+# 			id = agot_filler_disputed_lands.205
+# 			days = 1
+# 		}
+# 		add_character_flag = met_slave_girl
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother - premature end
+# ##########################################
+
+# agot_filler_disputed_lands.204 = { # Word has reached you that the pillow house owner has been found dead of countless stab wounds - he often found himself in carnal company of his own slaves, who, led by the Westerosis, seized the opportunity and ended his life.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.204.t
+# 	desc = agot_filler_disputed_lands.204.desc
+
+# 	theme = realm
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = dismissal
+# 	}
+
+# 	right_portrait = {
+# 		character = cp:councillor_spymaster
+# 		animation = scheme
+# 	}
+
+# 	immediate = {
+# 		scope:pillow_house_owner_1 = {
+# 			death = {
+# 				killer = scope:westeros_knight_pillow_house
+# 				death_reason = death_murder
+# 			}
+# 		}
+# 	}
+
+# 	option = {	# Oh well.
+# 		name = agot_filler_disputed_lands.204.a
+# 		custom_tooltip = agot_filler_disputed_lands.204.a.tt
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother - decision
+# ##########################################
+
+# agot_filler_disputed_lands.205 = { # It is time to end this ordeal.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.205.t
+# 	desc = agot_filler_disputed_lands.205.desc
+
+# 	theme = realm
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+
+# 	lower_right_portrait = {
+# 		character = scope:pillow_house_owner_1
+# 		animation = personality_greedy
+# 	}
+
+# 	lower_center_portrait = {
+# 		character = scope:westeros_knight_pillow_house
+# 		animation = beg
+# 	}
+
+# 	lower_left_portrait = {
+# 		character = scope:slave_girl_lys_filler
+# 		animation = beg
+# 	}
+
+# 	option = {	# Let the girl and his kinsman go free. Arrest this monster.
+# 		name = agot_filler_disputed_lands.205.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.205.a.tt
+# 		imprison = {
+# 			target = scope:pillow_house_owner_1
+# 			type = house_arrest
+# 		}
+# 		add_prestige = 200
+# 		if = {
+# 			limit = {
+# 				has_character_flag = met_slave_girl
+# 			}
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.206
+# 				days = 10
+# 			}
+# 		}
+# 	}
+
+# 	option = {	# I see nothing wrong with the actions of this businessman. Get out of my sight.
+# 		name = agot_filler_disputed_lands.205.b
+# 		trigger = {
+# 			NOT = {
+# 				has_trait = depressed_1
+# 			}
+# 		}
+
+# 		custom_tooltip = agot_filler_disputed_lands.205.b.tt
+# 		add_gold = 100
+# 		set_relation_rival = scope:westeros_knight_pillow_house
+# 		scope:slave_girl_lys_filler = {
+# 			death = {
+# 				death_reason = death_vanished
+# 			}
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # What pillows can't smother - aftermath, met girl
+# ##########################################
+
+# agot_filler_disputed_lands.206 = { # A few days later, the Westerosi ask with shame to stay at your court for a while. They have no money. The man offers his sword in exchange.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.206.t
+# 	desc = agot_filler_disputed_lands.206.desc
+
+# 	theme = realm
+# 	override_background = {
+# 		reference = throne_room_west
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_rational
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:westeros_knight_pillow_house
+# 		animation = beg
+# 	}
+
+# 	option = {	# I accept it. You may stay.
+# 		name = agot_filler_disputed_lands.206.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.206.a.tt
+# 		set_relation_potential_friend = scope:westeros_knight_pillow_house
+# 		if = {
+# 			limit = {
+# 				is_married = no
+# 			}
+# 			trigger_event = {
+# 				id = agot_filler_disputed_lands.207
+# 				days = 7
+# 			}
+# 		}
+# 	}
+# }
+
+# ##########################################
+# # Event template
+# ##########################################
+
+# agot_filler_disputed_lands.207 = { # While you rest in your gardens, Alise suddenly comes close to you. She expresses her utmost gratitude for freeing her from that house. Time seems to fly by while you and her sit in conversation, the woes and routine of everyday life suddenly no longer troubling you.
+# 	type = character_event
+# 	title = agot_filler_disputed_lands.207.t
+# 	desc = agot_filler_disputed_lands.207.desc
+
+# 	theme = love
+# 	override_background = {
+# 		reference = garden
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = flirtation_left
+# 	}
+
+# 	right_portrait = {
+# 		character = scope:slave_girl_lys_filler
+# 		animation = flirtation
+# 	}
+
+# 	option = {	# I grow fonder of her every single day that passes...
+# 		name = agot_filler_disputed_lands.207.a
+
+# 		custom_tooltip = agot_filler_disputed_lands.207.a.tt
+# 		start_scheme = {
+# 			type = courting
+# 			target = scope:slave_girl_lys_filler
+# 		}
+# 	}
+
+# 	option = { #I shouldn't....
+# 		name = agot_filler_disputed_lands.207.b
+
+# 		custom_tooltip = agot_filler_disputed_lands.207.b.tt
+# 		set_relation_potential_friend = scope:slave_girl_lys_filler
+# 	}
+# }

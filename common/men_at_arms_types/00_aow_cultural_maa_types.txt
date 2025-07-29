@@ -101,6 +101,8 @@ dragon_knights = {
 	high_maintenance_cost = { gold = storm_knights_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_expensive
 
+	max_regiments = 1
+
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = dragon_knights
@@ -184,6 +186,8 @@ dragon_bows = {
 	low_maintenance_cost = { gold = honeywine_quirrels_low_maint_cost }
 	high_maintenance_cost = { gold = honeywine_quirrels_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -273,6 +277,8 @@ dragon_scouts = {
 	mercenary_fallback = yes
 	holy_order_fallback = yes
 	
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = culture_ai_weight_light_cavalry }
 	icon = dragon_scouts
@@ -358,6 +364,8 @@ dragon_spears = {
 	high_maintenance_cost = { gold = stolen_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = dragon_spears
@@ -436,19 +444,12 @@ iron_bows = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { 
-		gold = 41
-		prestige = 40
-	}
-	low_maintenance_cost = { 
-		gold = 0.11
-		prestige = 0.1
-	}
-	high_maintenance_cost = { 
-		gold = 0.38
-		prestige = 0.38
-	}
+	buy_cost = { gold = honeywine_quirrels_recruitment_cost }
+	low_maintenance_cost = { gold = honeywine_quirrels_low_maint_cost }
+	high_maintenance_cost = { gold = honeywine_quirrels_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -523,19 +524,12 @@ iron_pikes = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { 
-		gold = 32
-		prestige = 31
-	}
-	low_maintenance_cost = { 
-		gold = 0.11
-		prestige = 0.1
-	}
-	high_maintenance_cost = { 
-		gold = 0.34
-		prestige = 0.34
-	}
+	buy_cost = { gold = stolen_spears_recruitment_cost }
+	low_maintenance_cost = { gold = stolen_spears_low_maint_cost }
+	high_maintenance_cost = { gold = stolen_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -617,23 +611,16 @@ iron_riders = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { 
-		gold = 38
-		prestige = 38
-	}
-	low_maintenance_cost = { 
-		gold = 0.13
-		prestige = 0.12
-	}
-	high_maintenance_cost = { 
-		gold = 0.45
-		prestige = 0.44
-	}
+	buy_cost = { gold = light_cavalry_recruitment_cost }
+	low_maintenance_cost = { gold = light_cavalry_low_maint_cost }
+	high_maintenance_cost = { gold = light_cavalry_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_cheap
 	
 	mercenary_fallback = yes
 	holy_order_fallback = yes
 	
+	max_regiments = 2
+
 	stack = 50
 	ai_quality = { value = culture_ai_weight_light_cavalry }
 	icon = iron_riders
@@ -717,6 +704,8 @@ twins_guards = {
 	low_maintenance_cost = { gold = dragonkeepers_low_maint_cost }
 	high_maintenance_cost = { gold = dragonkeepers_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -802,6 +791,8 @@ winter_knights = {
 		prestige = 0.99
 	}
 	provision_cost = @provisions_cost_cavalry_expensive
+
+	max_regiments = 1
 
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -895,6 +886,8 @@ winter_guards = {
 		prestige = 0.66
 	}
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -990,6 +983,8 @@ dread_spears = {
 	}
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = dread_spears
@@ -1066,10 +1061,14 @@ vale_guards = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { gold = dragonkeepers_recruitment_cost }
+	buy_cost = { gold = 90
+	piety = 15
+	}
 	low_maintenance_cost = { gold = dragonkeepers_low_maint_cost }
 	high_maintenance_cost = { gold = dragonkeepers_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -1153,6 +1152,8 @@ vale_archers = {
 	high_maintenance_cost = { gold = honeywine_quirrels_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = vale_archers
@@ -1235,6 +1236,8 @@ vale_pikes = {
 	high_maintenance_cost = { gold = stolen_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = vale_pikes
@@ -1308,14 +1311,31 @@ vale_knights = {
 	}
 
 	can_recruit = {
-		culture = { has_cultural_parameter = unlock_maa_vale_knights }
+		culture = { 
+			has_cultural_parameter = unlock_maa_vale_knights
+			NOR = { 
+			has_cultural_parameter = unlock_maa_winged_knights
+			has_cultural_parameter = unlock_maa_dragon_scouts
+			} 
+		}
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { gold = winged_knights_recruitment_cost }
-	low_maintenance_cost = { gold = winged_knights_low_maint_cost }
-	high_maintenance_cost = { gold = winged_knights_high_maint_cost }
+	buy_cost = { 
+		gold = 90
+		piety = 140
+	}
+	low_maintenance_cost = { 
+		gold = 0.40
+		piety = 0.4
+	}
+	high_maintenance_cost = { 
+		gold = 1.4
+		piety = 0.9
+	}
 	provision_cost = @provisions_cost_cavalry_expensive
+
+	max_regiments = 1
 
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -1393,10 +1413,15 @@ vale_footmen = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { gold = winter_wolves_recruitment_cost }
+	buy_cost = { 
+		gold = 50
+		piety = 50
+	}
 	low_maintenance_cost = { gold = winter_wolves_low_maint_cost }
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -1482,6 +1507,8 @@ raventree_bows = {
 	high_maintenance_cost = { gold = river_bows_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_sub_regiments = 5
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = raventree_bows
@@ -1558,6 +1585,7 @@ river_footmen = {
 
 	can_recruit = {
 		culture = { has_cultural_parameter = unlock_maa_river_footmen }
+		NOT = { has_title = title:b_stone_hedge }
 		NOT = { has_government = nights_watch_government }
 	}
 
@@ -1565,6 +1593,8 @@ river_footmen = {
 	low_maintenance_cost = { gold = winter_wolves_low_maint_cost }
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -1650,6 +1680,8 @@ stone_hedge_footmen = {
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = stone_hedge_footmen
@@ -1733,6 +1765,8 @@ river_scouts = {
 	low_maintenance_cost = { gold = light_cavalry_low_maint_cost }
 	high_maintenance_cost = { gold = light_cavalry_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_cheap
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -1819,6 +1853,8 @@ westerland_billmen = {
 	high_maintenance_cost = { gold = stolen_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = westerland_billmen
@@ -1896,12 +1932,15 @@ westerland_footmen = {
 	can_recruit = {
 		culture = { has_cultural_parameter = unlock_maa_westerland_footmen }
 		NOT = { has_government = nights_watch_government }
+		NOT = { has_title = title:b_cleganes_keep }
 	}
 
 	buy_cost = { gold = winter_wolves_recruitment_cost }
 	low_maintenance_cost = { gold = winter_wolves_low_maint_cost }
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -1981,12 +2020,15 @@ westerland_knights = {
 	can_recruit = {
 		culture = { has_cultural_parameter = unlock_maa_westerland_knights }
 		NOT = { has_government = nights_watch_government }
+		NOT = { has_title = title:b_casterly_rock }
 	}
 
 	buy_cost = { gold = summer_knights_recruitment_cost }
 	low_maintenance_cost = { gold = summer_knights_low_maint_cost }
 	high_maintenance_cost = { gold = summer_knights_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_expensive
+
+	max_regiments = 1
 
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -2073,6 +2115,8 @@ castelry_rock_knights = {
 	high_maintenance_cost = { gold = summer_knights_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_expensive
 
+	max_regiments = 1
+
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = castelry_rock_knights
@@ -2157,6 +2201,8 @@ clegane_footmen = {
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = clegane_footmen
@@ -2165,10 +2211,10 @@ clegane_footmen = {
 storm_footmen = {
 	type = heavy_infantry
 
-	damage = 32
-	toughness = 32
+	damage = 42
+	toughness = 42
 	pursuit = 0
-	screen = 12
+	screen = 22
 	
 	terrain_bonus = {
 		cloudforest = { damage = 10 }
@@ -2236,10 +2282,15 @@ storm_footmen = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { gold = winter_wolves_recruitment_cost }
+	buy_cost = { 
+		gold = 60
+		prestige = 60
+	}
 	low_maintenance_cost = { gold = winter_wolves_low_maint_cost }
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -2249,10 +2300,10 @@ storm_footmen = {
 storm_pikes = {
 	type = pikemen
 
-	damage = 22
-	toughness = 28
+	damage = 32
+	toughness = 38
 	pursuit = 0
-	screen = 10
+	screen = 20
 
 	terrain_bonus = {
 		cloudforest = { damage = 10 }
@@ -2325,6 +2376,8 @@ storm_pikes = {
 	low_maintenance_cost = { gold = stolen_spears_low_maint_cost }
 	high_maintenance_cost = { gold = stolen_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -2408,6 +2461,8 @@ storm_bows = {
 	low_maintenance_cost = { gold = honeywine_quirrels_low_maint_cost }
 	high_maintenance_cost = { gold = honeywine_quirrels_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -2511,6 +2566,8 @@ rainwood_hunters = {
 	low_maintenance_cost = { gold = arbor_marines_low_maint_cost }
 	high_maintenance_cost = { gold = arbor_marines_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -2629,6 +2686,8 @@ marcher_footmen = {
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = marcher_footmen
@@ -2637,10 +2696,10 @@ marcher_footmen = {
 storm_wardens = {
 	type = heavy_infantry
 
-	damage = 36
-	toughness = 34
+	damage = 46
+	toughness = 44
 	pursuit = 0
-	screen = 10
+	screen = 20
 	
 	terrain_bonus = {
 		cloudforest = { damage = 10 }
@@ -2709,10 +2768,15 @@ storm_wardens = {
 		NOT = { has_government = nights_watch_government }
 	}
 
-	buy_cost = { gold = dragonkeepers_recruitment_cost }
+	buy_cost = { 
+		gold = 60
+		prestige = 60
+	}
 	low_maintenance_cost = { gold = dragonkeepers_low_maint_cost }
 	high_maintenance_cost = { gold = dragonkeepers_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -2830,6 +2894,8 @@ reach_marcher = {
 	high_maintenance_cost = { gold = winter_wolves_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = reach_marcher
@@ -2914,6 +2980,8 @@ highgarden_knights = {
 	low_maintenance_cost = { gold = summer_knights_low_maint_cost }
 	high_maintenance_cost = { gold = summer_knights_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_expensive
+
+	max_regiments = 1
 
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -3000,6 +3068,8 @@ reach_pikes = {
 	high_maintenance_cost = { gold = stolen_spears_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = reach_pikes
@@ -3084,6 +3154,8 @@ reach_swords = {
 	high_maintenance_cost = { gold = dragonkeepers_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_moderate
 
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = reach_swords
@@ -3156,7 +3228,6 @@ reach_scouts = {
 	counters = {
 		archers = 1
 		skirmishers = 2
-		light_cavalry = 1
 	}
 	
 	can_recruit = {
@@ -3172,6 +3243,8 @@ reach_scouts = {
 	mercenary_fallback = yes
 	holy_order_fallback = yes
 	
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { value = culture_ai_weight_light_cavalry }
 	icon = reach_scouts
@@ -3253,6 +3326,8 @@ sand_archers = {
 	mercenary_fallback = yes
 	holy_order_fallback = yes
 	
+	max_regiments = 2
+
 	stack = 100
 	ai_quality = { 
 		value = culture_ai_weight_archers
@@ -3335,38 +3410,40 @@ sun_knights = {
 	high_maintenance_cost = { gold = summer_knights_high_maint_cost }
 	provision_cost = @provisions_cost_special_bankrupting
 
+	max_regiments = 1
+
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = sun_knights
 }
 
-stone_scouts = {
+stone_scouts = { 
 	type = skirmishers
 
 	damage = 24
-	toughness = 26
+	toughness = 31
 	pursuit = 16
 	screen = 14
 
 	terrain_bonus = {
-		desert = { pursuit  = 10 }
-		majorroad_desert = { pursuit  = 10 }
-		minorroad_desert = { pursuit  = 10 }
-		desert_mountains = { pursuit  = 10 }
-		majorroad_desert_mountains = { pursuit  = 10 }
-		minorroad_desert_mountains = { pursuit  = 10 }
-		drylands = { pursuit  = 10 }
-		majorroad_drylands = { pursuit  = 10 }
-		minorroad_drylands = { pursuit  = 10 }
-		canyon = { pursuit  = 10 }
-		majorroad_canyon = { pursuit  = 10 }
-		minorroad_canyon = { pursuit  = 10 }
-		oasis = { pursuit  = 10 }
-		majorroad_oasis = { pursuit  = 10 }
-		minorroad_oasis = { pursuit  = 10 }
-		hills = { pursuit  = 10 }
-		majorroad_hills = { pursuit  = 10 }
-		minorroad_hills = { pursuit  = 10 }
+		desert = { pursuit  = 15 }
+		majorroad_desert = { pursuit  = 15 }
+		minorroad_desert = { pursuit  = 15 }
+		desert_mountains = { pursuit  = 15 }
+		majorroad_desert_mountains = { pursuit  = 15 }
+		minorroad_desert_mountains = { pursuit  = 15 }
+		drylands = { pursuit  = 15 }
+		majorroad_drylands = { pursuit  = 15 }
+		minorroad_drylands = { pursuit  = 15 }
+		canyon = { pursuit  = 15 }
+		majorroad_canyon = { pursuit  = 15 }
+		minorroad_canyon = { pursuit  = 15 }
+		oasis = { pursuit  = 15 }
+		majorroad_oasis = { pursuit  = 15 }
+		minorroad_oasis = { pursuit  = 15 }
+		hills = { pursuit  = 15 }
+		majorroad_hills = { pursuit  = 15 }
+		minorroad_hills = { pursuit  = 15 }
 
 		mountains = { pursuit  = 5 }
 		majorroad_mountains = { pursuit  = 5 }
@@ -3412,6 +3489,8 @@ stone_scouts = {
 	low_maintenance_cost = { gold = light_cavalry_low_maint_cost }
 	high_maintenance_cost = { gold = light_cavalry_high_maint_cost }
 	provision_cost = @provisions_cost_cavalry_cheap
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -3492,6 +3571,8 @@ starfall_guardians = {
 	low_maintenance_cost = { gold = dragonkeepers_low_maint_cost }
 	high_maintenance_cost = { gold = dragonkeepers_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_bankrupting
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -3578,6 +3659,8 @@ hightower_guards = {
 	low_maintenance_cost = { gold = dragonkeepers_low_maint_cost }
 	high_maintenance_cost = { gold = dragonkeepers_high_maint_cost }
 	provision_cost = @provisions_cost_infantry_expensive
+
+	max_regiments = 2
 
 	stack = 100
 	ai_quality = { value = @cultural_maa_extra_ai_score }

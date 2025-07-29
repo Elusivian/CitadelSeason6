@@ -1,0 +1,277 @@
+﻿namespace = fow_task
+
+fow_task.0001 = {
+
+	hidden = yes
+    #scope:councillor.liege
+    trigger = {
+    }
+
+    immediate = {
+        every_knight = {
+            if = {
+                limit = { has_trait = mapper }
+                add_trait_xp = {
+                    trait = mapper
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = observant_pathfinder }
+                add_trait_xp = {
+                    trait = observant_pathfinder
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = respected_leader }
+                add_trait_xp = {
+                    trait = respected_leader
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = seasoned_rover }
+                add_trait_xp = {
+                    trait = seasoned_rover
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = resolute_localist }
+                add_trait_xp = {
+                    trait = resolute_localist
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = relentless_pursuer }
+                add_trait_xp = {
+                    trait = relentless_pursuer
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = infiltration_specialist }
+                add_trait_xp = {
+                    trait = infiltration_specialist
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = sea_raider }
+                add_trait_xp = {
+                    trait = sea_raider
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = battlefield_medic }
+                add_trait_xp = {
+                    trait = battlefield_medic
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = dauntless_leader }
+                add_trait_xp = {
+                    trait = dauntless_leader
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = crafty_commander }
+                add_trait_xp = {
+                    trait = crafty_commander
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = cautious_planner }
+                add_trait_xp = {
+                    trait = cautious_planner
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = bannerlord }
+                add_trait_xp = {
+                    trait = bannerlord
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = focus_specialist }
+                add_trait_xp = {
+                    trait = focus_specialist
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = master_ambusher }
+                add_trait_xp = {
+                    trait = master_ambusher
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = navigator }
+                add_trait_xp = {
+                    trait = navigator
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = logistician }
+                add_trait_xp = {
+                    trait = logistician
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = military_engineer }
+                add_trait_xp = {
+                    trait = military_engineer
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = aggressive_attacker }
+                add_trait_xp = {
+                    trait = aggressive_attacker
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = unyielding_defender }
+                add_trait_xp = {
+                    trait = unyielding_defender
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = forder }
+                add_trait_xp = {
+                    trait = forder
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = flexible_leader }
+                add_trait_xp = {
+                    trait = flexible_leader
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = desert_warrior }
+                add_trait_xp = {
+                    trait = desert_warrior
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = jungle_stalker }
+                add_trait_xp = {
+                    trait = jungle_stalker
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = reaver }
+                add_trait_xp = {
+                    trait = reaver
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = reckless }
+                add_trait_xp = {
+                    trait = reckless
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = holy_warrior }
+                add_trait_xp = {
+                    trait = holy_warrior
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = open_terrain_expert }
+                add_trait_xp = {
+                    trait = open_terrain_expert
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = rough_terrain_expert }
+                add_trait_xp = {
+                    trait = rough_terrain_expert
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = forest_fighter }
+                add_trait_xp = {
+                    trait = forest_fighter
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = cautious_leader }
+                    add_trait_xp = {
+                    trait = cautious_leader
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = organizer }
+                add_trait_xp = {
+                    trait = organizer
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+
+            if = {
+                limit = { has_trait = winter_soldier }
+                add_trait_xp = {
+                    trait = winter_soldier
+                    value = marshal_train_commanders_trait_track_increase
+                }
+            }
+        }
+    }
+}

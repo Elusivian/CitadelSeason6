@@ -1,0 +1,215 @@
+﻿l_english:
+ # Intro Events
+ agot_events_blackfyre_minor.1000.t:0 "The Blackfyre Rebellion"
+ agot_events_blackfyre_minor.1000.desc:0 "My brother [bittersteel.GetFirstNameNicknamed] and [fireball.GetFirstNameNicknamed] have helped me raise a considerable force and we now stand ready to claim the throne. Although bastard born, I am Targaryen on both sides and by royal decree I am my father's eldest legitimate son.\n\n The Great Houses have refused to support me. I will not need them. I will show the realm that Daeron is of false blood through trial by battle and then the nobility will flock to my claim after each victory."
+ agot_events_blackfyre_minor.1000.a:0 "Onwards."
+ 
+agot_events_blackfyre_minor.1001.t:0 "The Blackfyre Rebellion"
+agot_events_blackfyre_minor.1001.desc:0 "In his final folly, my father legitimized all his bastards. In my wisdom and mercy, I allowed it to stand, granting them land and titles to demonstrate that my strength rose above petty vengeance. Yet now, [daemon.GetFirstName]—the so called Black Dragon—dares to conspire against me, seeking to usurp the throne.\n\nThere will be no more words. My sons and I #bold must#! crush this rebellion with Fire and Blood.\n\nPerhaps, when this is done, the realm may finally be free of the stains left by my unworthy father."
+agot_events_blackfyre_minor.1001.a:0 "We must prevail for the good of the realm."
+
+agot_events_blackfyre_minor.1002.t:0 "The Blackfyre Rebellion"
+agot_events_blackfyre_minor.1002.desc:0 "Years of bitter tension have built like storm clouds on the horizon, and now [daemon.GetFirstNameNicknamed] has raised his banner, casting his ambition across the realm like a shadow.\n\n As my father’s son, the weight of our house rests upon my shoulders, and I cannot allow our legacy to be seized by a pretender’s grasp. Should we falter, if this bastard wins the Iron Throne, the ruin will be as deep as it is wide, swallowing not just our blood but the very heart of the kingdom itself.\n\n The realm itself will be shattered."
+agot_events_blackfyre_minor.1002.a:0 "We must prevail for the good of the realm."
+
+
+
+
+### Quickfinger
+
+agot_events_blackfyre_minor.2000.t:0 "Quickfinger's Scheme"
+agot_events_blackfyre_minor.2000.desc:0 "Quickfinger, a cunning thief, has been sent on a perilous mission to steal dragon eggs from my falseborn brother. With these treasures, we can sell them for gold and hire mercenaries to strengthen our forces. It is a desperate gambit, but one worth the risk."
+agot_events_blackfyre_minor.2000.a:0 "Our fate may depend on his success."
+agot_events_blackfyre_minor.2000.a.1:0 "Quickfinger successfully steals the dragons eggs"
+agot_events_blackfyre_minor.2000.a.1.tt:0 "You can sell or keep the eggs."
+agot_events_blackfyre_minor.2000.a.2:0 "Quickfinger is captured"
+agot_events_blackfyre_minor.2000.a.2.tt:0 "Your scheme fails."
+agot_events_blackfyre_minor.2001.t:0 "Quickfinger’s Triumph"
+agot_events_blackfyre_minor.2001.desc:0 "Quickfinger has returned victorious, dragon eggs in hand. Their value is immeasurable, and now the choice lies before me: sell them to raise a formidable mercenary army, or keep the eggs and hold the power of dragons in my grasp for future schemes."
+agot_events_blackfyre_minor.2001.a:0 "Sell the eggs and rally the mercenaries. Victory cannot wait." 
+agot_events_blackfyre_minor.2001.b:0 "Keep the eggs. Their power will serve us in time."  
+
+agot_events_blackfyre_minor.2002.t:0 "Quickfinger’s Failure"
+agot_events_blackfyre_minor.2002.desc:0 "Disaster has struck. Quickfinger’s heist has failed, and he has been captured. Our plans are in jeopardy, and I must decide how to proceed in the wake of this humiliating defeat."
+agot_events_blackfyre_minor.2002.a:0 "Curse his failure"
+
+agot_events_blackfyre_minor.2003.t:0 "The Theft of the Dragon Eggs"
+agot_events_blackfyre_minor.2003.desc:0 "Outrage! A thief known as Quickfinger has stolen the precious dragon eggs from the Red Keep. \n\n My treacherous brother is undoubtedly behind this."
+agot_events_blackfyre_minor.2003.a:0 "We cannot allow this."
+
+agot_events_blackfyre_minor.2004.t:0 "The Thief’s Folly"
+agot_events_blackfyre_minor.2004.desc:0 "Justice prevails! The thief who sought to steal my dragon eggs has failed and now languishes in my dungeons. Let this serve as a warning to all who would conspire against the crown."
+agot_events_blackfyre_minor.2004.a:0 "This thief will pay dearly for his crime."
+ 
+  #########################
+ ## Redgrass Field ##
+ #########################
+
+ agot_events_blackfyre_minor.3000.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.3000.desc:0 "My heart races as I see him—[daerons_son.GetFirstNameNicknamed], his armor glinting in the sunlight. I spot the white cloak of the Kingsguard riding forth. This is the moment I’ve hungered for.\n\n With Blackfyre in hand, I cannot be stopped.\n\n I turn to my bannermen, the greatest knights of the realm, raising the sword of kings high.\n\n #warning;bold "With me! We ride for glory, for justice, for the crown that is rightfully mine!"#!\n\nThe roar of my men echoes as we surge forward, the distance between us and that accursed prince vanishing like smoke."
+ agot_events_blackfyre_minor.3000.a:0 "The Black Dragon will prevail!"
+ agot_events_blackfyre_minor.3000.a.1:0 "You best Ser [kingsguard_duelist.GetFullName] in single combat"
+ agot_events_blackfyre_minor.3000.a.1.tt:0 "You will be able to challenge [daerons_son.GetFullName] directly."
+ agot_events_blackfyre_minor.3000.a.2:0 "Ser [kingsguard_duelist.GetFullName] gains the advantage."
+  agot_events_blackfyre_minor.3000.a.2.tt:0 "You will fight to the death with the kingsguard."
+  agot_events_blackfyre_minor.3001.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.3001.desc.a:0 "[kingsguard_duelist.GetFullName] fought with the skill and grace that I would expect for a knight of his sworn brotherhood. Time seemed to stand still as we battled endlessly, but I saw the opening—one swift strike, and I sent his sword clattering to the ground, his body crumpling as crimson seeps through the white of his cloak. \n\n As a member of the kingsguard, he has forsaken his vows by betraying me for a pretender. But he has earned my respect.\n\n I could dismount here and prevent him from being trampled in the chaos of the battle...but my true enemy [daerons_son.GetFirstNameNicknamed] is so close. The #bold throne#! is within reach.\n\n Do I honor the wounded knight's prowess and nobility, or let fate claim him as I press on for the crown?"
+ agot_events_blackfyre_minor.3001.desc.b:0 "[kingsguard_duelist.GetFullName] fought with a precision and elegance that could only come from a knight of the Kingsguard. Each clash of our blades echoed through the field as if the world held its breath, watching our fates entwine. Yet it was his sword that struck true. With a deft maneuver, he knocked me from my horse. \n\nBut this duel was not over yet!"
+ agot_events_blackfyre_minor.3001.a:0 "Dismount and see to his wounds."
+ agot_events_blackfyre_minor.3001.b:0 "We must seize the advantage!"
+  agot_events_blackfyre_minor.3001.c:0 "I will prevail."
+ agot_events_blackfyre_minor.3002.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.3002.desc:0 "The hiss of arrows cuts the air, a deadly song sung by my half-brother [bloodraven.GetFirstNameNicknamedPossessive] cold hand.\n\n Around me, I hear the thud of them sinking into flesh, the screams of men falling.\n\n One of my sons cries out, a sound that chills my blood—it would be a miracle to surive this."
+ agot_events_blackfyre_minor.3002.a:0 "You were my brother, Bloodraven."
+ agot_events_blackfyre_minor.30021.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.30021.desc:0 "[bloodraven.GetFirstNameNicknamed] has slain his own kin."
+ agot_events_blackfyre_minor.30021.a:0 "Traitor"
+
+ agot_events_blackfyre_minor.3003.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.3003.desc:0 "My knights crash into [daerons_son.GetFirstNameNicknamedPossessive] regiment, shattering their line. He does not falter though, to his credit.\n\n He accepts my challenge.\n\n #warning;bold Only one dragon will rise from this field today.#!"
+ agot_events_blackfyre_minor.3003.a:0 "I will sweep aside these pretenders."
+
+ agot_events_blackfyre_minor.30031.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.30031.desc:0 "[kingsguard_duelist.GetFullName] lay on the ground, his armor streaked with blood. His white cloak was stained red. He gasped once, his gaze defiant even in defeat, before his eyes glazed over and his body stilled. For a fleeting moment, the chaos of battle seemed to pause in respect for the fallen knight."
+ agot_events_blackfyre_minor.30031.a:0 "The battle continues."
+
+ 
+ agot_events_blackfyre_minor.3008.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.3008.desc:0 "At the Battle of [location.GetNameNoTooltip], [king_blackfyre.GetFirstNameNicknamed] fought an epic duel with Ser [kingsguard_duelist.GetFullNameNicknamed]. After besting Ser [kingsguard_duelist.GetFirstNameNoTooltip], he dismounted to prevent him from being trampled.\n\n In this moment, [bloodraven.GetFirstNameNicknamed] upon a nearby hilltop rained arrows down up him and his sons with his Raven's Teeth."
+ agot_events_blackfyre_minor.3008.a:0 "There is no honor in this."
+ 
+  agot_events_blackfyre_minor.3009.t:0 "The Battle of [location.GetNameNoTooltip]"
+ agot_events_blackfyre_minor.3009.desc:0 "After [bloodraven.GetFullNameNicknamed] rained arrows down upon [king_blackfyre.GetFirstNameNicknamedOrMeNoTooltip], he and I fought an epic duel. Ultimately [sc_victor.GetFirstNameOrMe] prevailed. [sc_loser.GetFirstNameNicknamedOrMeNoTooltip] lost an eye in the fight."
+ agot_events_blackfyre_minor.3009.a:0 "We will meet again."
+ 
+ agot_events_blackfyre_minor.4000.t:0 "The Black Dragon"
+ agot_events_blackfyre_minor.4000.desc:0 "I remember the day father bestowed upon me Blackfyre after knighting me at only twelve years of age. His voice was thick with pride. #danger;bold “A sword fit for a king.”#!\n\nNow, I am a man grown. The cracks in the realm run deep. My half-brother [daeron.GetFirstName], with his Dornish leanings, betrays our blood by bowing to those who slew our kin. He denied me my beloved [dany.GetFirstName] and gave her to our enemies.\n\n The nobility of the realm now openly assert Daeron is falseborn, a bastard in both name and spirit. He is the son of my uncle, [dragonknight.GetFullName]. They say I am the true heir.\n\nThe crown should be mine—will be mine—for Father’s words still burn within me.\n\n #warning;bold Blackfyre is a king’s sword, and I am no mere pretender.#!"
+ agot_events_blackfyre_minor.4000.a:0 "I will claim what is mine."
+ 
+  agot_events_blackfyre_minor.5000.t:0 "The Flight of House Blackfyre"
+ agot_events_blackfyre_minor.5000.desc:0 "Our rebellion has ended in defeat. With the scattering and destruction of our allies, we have no choice but to flee across the Narrow Sea.\n\nMaybe one day we will return to claim our birthright."
+ agot_events_blackfyre_minor.5000.a:0 "The Blackfyres will return."
+ 
+   agot_events_blackfyre_minor.5001.t:0 "The Flight of House Blackfyre"
+ agot_events_blackfyre_minor.5001.desc:0 "Daemon Blackfyre has been defeated. House Blackfyre now has been forced across the Narrow Sea.\n\n The war may be over, but most fear this is far from finished."
+ agot_events_blackfyre_minor.5001.a:0 "The Blackfyres will return."
+ 
+ 
+ agot_events_blackfyre_minor.6000.t:0 "The Flight of House Targaryen"
+ agot_events_blackfyre_minor.6000.desc:0 "In the chaos following Daemon Blackfyre's victory, [bittersteel.GetFullNameNicknamed] struck swiftly and cruely. The line of Daeron Targaryen was hunted without mercy, their lives cut short wherever they were found.\n\n Only a few escaped across the Narrow Sea, leaving the rest to Bittersteel's Brutality"
+ agot_events_blackfyre_minor.6000.a:0 "Will House Targaryen survive this?"
+ 
+ agot_events_blackfyre_minor.6001.t:0 "Bittersteel's Brutality"
+ agot_events_blackfyre_minor.6001.desc:0 "In the chaos following Daemon Blackfyre's victory, [bittersteel.GetFullNameNicknamed] struck swiftly and cruely. The line of Daeron Targaryen was hunted without mercy, their lives cut short wherever they were found.\n\n Only a few escaped across the Narrow Sea, leaving the rest to Bittersteel's Brutality"
+ agot_events_blackfyre_minor.6001.a:0 "Will House Targaryen survive this?"
+ 
+  agot_events_blackfyre_minor.6002.t:0 "The Flight of House Targaryen"
+ agot_events_blackfyre_minor.6002.desc:0 "House Targaryen has been defeated and have fled to Essos. Daemon Blackfyre and his supporters now hold the Iron Throne.\n\n How will the realm respond to a bastard king?"
+ agot_events_blackfyre_minor.6002.a:0 "Will House Targaryen survive this?"
+ 
+ 
+  agot_events_blackfyre_minor.7000.t:0 "Dornish Matters"
+ agot_events_blackfyre_minor.7000.desc:0 "With my ascension, it is time to answer the Dornish Question. My supporters largely viewed Dorne as an enemy. However they are a part of the realm now and I would be a fool to release them of their oaths."
+ agot_events_blackfyre_minor.7000.a:0 "Yronwood will have dominion."
+  agot_events_blackfyre_minor.7000.b:0 "Peake will be the new stewards of Dorne."
+   agot_events_blackfyre_minor.7000.c:0 "I shall leave things as they are for now."
+ 
+ agot_events_blackfyre_minor.7001.t:0 "My Precious"
+ agot_events_blackfyre_minor.7001.desc:0 "As I have claimed what is rightfully mine in the throne, I could do the same for my heart. [dany.GetFirstName] was meant to be my bride. The Blood of the Dragon does not abide by the laws of men. Like the Conqueror I could name her my wife."
+ agot_events_blackfyre_minor.7001.a:0 "We belong together, now and always."
+  agot_events_blackfyre_minor.7001.b:0 "I cannot do this."
+  
+  
+   agot_events_blackfyre_minor.8000.t:0 "The Pact of Ice and Fire"
+ agot_events_blackfyre_minor.8000.desc:0 "During the Dance of Dragons [jace.GetFullName] made an agreement with [cregan.GetFullNameNicknamed] that a Targaryen princess would be married to House Stark. The deaths of Jacaerys and near exstinction of House Targaryen caused this promise to go unfulfilled. \n\n However, perhaps this pact could be reforged?"
+ agot_events_blackfyre_minor.8000.a:0 "A promise was made."
+  agot_events_blackfyre_minor.8000.b:0 "I cannot do this."
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  d_laamp_ravens_teeth:0 "Raven's Teeth"
+  d_laamp_blackfyre_exiles:0 "Blackfyre Exiles"
+  d_laamp_targaryen_exilez:0 "Targaryen Exiles"
+  daemon_blackfyre_armour_name:0 "Plate of the Black Dragon"
+  daemon_blackfyre_armour_description:0 "Daemon Blackfyre’s armor gleamed with a dark, malevolent beauty, the blackened steel wrought to resemble the scaled hide of a dragon. Crimson accents traced the edges of his pauldrons and breastplate, the deep red shimmering like fresh blood under the sunlight. At the center of his chest, a black dragon reared upon a red field, its wings spread wide, as though ready to take flight and claim the realm by fire and fury."
+  baelor_sword_name:0 "Baelor's Sword"
+  baelor_sword_description:0 "A quality sword made for the Prince of Dragonstone"
+  maekar_mace_name:0 "Maekar's Mace"
+  maekar_mace_description:0 "A mace of high quality made for the Prince of Summerhall."
+  
+  maekar_mace_name:0 "Maekar's Mace"
+  maekar_mace_description:0 "A mace of high quality made for the Prince of Summerhall."
+  
+ agot_events_more_bookmarks_misc.1.t:0 "The Uncrowned"
+agot_events_more_bookmarks_misc.1.desc:0 "After my father's death, my uncle [maegor.GetFullName] usurped my crown. I was but a boy then—alone, powerless, without an army or allies.\n\n But those days are gone. I am a man now, and the blood of dragon runs strong in my veins. I have claimed my father's dragon, and with Rhaena by my side, we have forged alliances and gathered loyal supporters.\n\n The time has come to reclaim what is mine by right—The Iron Throne."
+agot_events_more_bookmarks_misc.1.a:0 "The realm will rise for me."
+
+agot_events_more_bookmarks_misc.2.t:0 "Aegon's Dream"
+agot_events_more_bookmarks_misc.2.desc:0 "Years ago, I had a dream. A vision of destruction—much like [daenys.GetFirstNameNicknamed] and the Doom of Valyria. But mine was far graver.\n\nIt was not merely the end of a civilization that I saw, but the end of all life. In my dream, a great darkness swept over the world, threatening to extinguish the light of men. This cruel and cold darkness came from the frozen North, bringing with it an endless winter. To ensure the survival of the realms of men, they must stand united.\n\n\n #BER From my blood, will come the Prince That Was Promised and his will be the Song of #e Ice#! and #warning Fire#!#!."
+agot_events_more_bookmarks_misc.2.a:0 "My conquest begins."
+
+ agot_events_more_bookmarks_misc.3.t:0 "The Conquest of the Seven Kingdoms"
+agot_events_more_bookmarks_misc.3.desc:0 "Looking across the maps, my commanders inquire.\n\n #bold "What would you have us do?"#!"
+agot_events_more_bookmarks_misc.3.a:0 "From my blood comes the Prince That Was Promised, and his will be the Song of Ice and Fire/"
+
+ agot_events_more_bookmarks_misc.4.t:0 "The Conquest of the Seven Kingdoms"
+agot_events_more_bookmarks_misc.4.desc:0 "With the wars over, now comes the harder labor: to bind the realm together, to bend proud lords to our will, to make them kneel and remember why dragons rule unchallenged. With the broken swords of vanquished foes, a new seat of power has been forged. The Iron Throne—it is no mere chair, but a reminder that the House of the Dragon reigns supreme."
+agot_events_more_bookmarks_misc.4.a:0 "Now we must rule."
+
+
+ agot_events_more_bookmarks_misc.5.t:0 "The Battle of [location.GetNameNoTooltip]"
+agot_events_more_bookmarks_misc.5.desc.a:0 "At The Battle of [location.GetNameNoTooltip], my armies and the Storm King's met in a great clash.\n\n In the chaos of the battle, Orys personally killed Argilac the Arrogant in a battlefield duel!"
+agot_events_more_bookmarks_misc.5.desc.b:0 "At The Battle of [location.GetNameNoTooltip], my armies and the Storm King's met in a great clash.\n\n In the chaos of the battle, Orys was slain by Argilac the Arrogant in single combat."
+agot_events_more_bookmarks_misc.5.a:0 "Orys shall be rewarded."
+agot_events_more_bookmarks_misc.5.b:0 "House Durrandon will continue."
+agot_events_more_bookmarks_misc.5.c:0 "I shall decide what to do with the Stormlands later."
+agot_events_more_bookmarks_misc.5.d:0 "He will pay for this."
+  
+
+ agot_events_more_bookmarks_misc.6.t:0 "The Last Alliance"
+agot_events_more_bookmarks_misc.6.desc:0 "A last alliance between the rulers of the Seven Kingdoms has been formed in defense against the Targaryens and their conquest.\n\n But will it be enough?"
+agot_events_more_bookmarks_misc.6.a:0 "Interesting..."
+
+ agot_events_more_bookmarks_misc.7.t:0 "The Stormlands"
+agot_events_more_bookmarks_misc.7.desc:0 "With the submission of Storm's End, I must now decide what to do as Argilac the Arrogant left no male heirs."
+agot_events_more_bookmarks_misc.7.a:0 "Orys will be rewarded!"
+agot_events_more_bookmarks_misc.7.b:0 "Argella shall keep her family's titles."
+
+agot_events_more_bookmarks_misc.3.ironborn:0 "The Kingdom of the Isles and Rivers will bow to me"
+agot_events_more_bookmarks_misc.3.storm:0 "The Stormlands"
+agot_events_more_bookmarks_misc.3.reach:0 "The Reach"
+agot_events_more_bookmarks_misc.3.west:0 "The Westerlands will submit"
+agot_events_more_bookmarks_misc.3.islands:0 "The Islands will be mine"
+agot_events_more_bookmarks_misc.3.vale:0 "The Vale will bend the knee."
+agot_events_more_bookmarks_misc.3.north:0 "House Stark will give me fealty."
+agot_events_more_bookmarks_misc.3.dorne:0 "The Rhoynar will be brought to heel"
+agot_events_more_bookmarks_misc.3.done:0 "Our conquest is over"
+aegons_armour_name:0 "Plate of the Conqueror"
+aegons_armour_description:0 "The Armor worn by Aegon Targaryen when he embarked on his mission to conquer the Seven Kingdoms."
+ 
+orys_hammer_name:0 "Orys' War Hammer"
+orys_hammer_description:0 "A massive hammer."
+rule_agot_more_bookmarks_canon_children:0 "#BER AGOT More Bookmarks#!: Canon Children"
+setting_agot_more_bookmarks_canon_children_on:0 "On"
+setting_agot_more_bookmarks_canon_children_on_desc:0 "Canon Children will be born during the Aegon's Conquest Bookmark."
+setting_agot_more_bookmarks_canon_children_off:0 "Off"
+setting_agot_more_bookmarks_canon_children_off_desc:0 "Canon Children will NOT be born during the Aegon's Conquest Bookmark."
+
+simple_canon_kids_infertility:0 "Canon Children"
+
+
+
+
+agot_events_more_bookmarks_misc.11.a: "[target_1_title.GetName|V]"
+agot_events_more_bookmarks_misc.11.b: "[target_2_title.GetName|V]"
+agot_events_more_bookmarks_misc.11.c: "[target_3_title.GetName|V]"
+agot_events_more_bookmarks_misc.11.d: "[target_4_title.GetName|V]"
+agot_events_more_bookmarks_misc.11.e: "[target_5_title.GetName|V]"
+agot_events_more_bookmarks_misc.11.f: "[target_6_title.GetName|V]"

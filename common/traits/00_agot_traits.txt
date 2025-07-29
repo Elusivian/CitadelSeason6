@@ -930,6 +930,23 @@ house_customizer = {
 	}
 }
 
+vs_customizer = {
+	shown_in_ruler_designer = yes
+	ruler_designer_cost = 100
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_vs_customizer_desc
+			}
+			desc = trait_vs_customizer_character_desc
+		}
+	}
+}
+
 heterochromia_customizer = {
 	shown_in_ruler_designer = yes
 	ruler_designer_cost = 0
@@ -945,8 +962,6 @@ heterochromia_customizer = {
 			desc = trait_heterochromia_customizer_character_desc
 		}
 	}
-
-	icon = heterochromia_customizer.dds
 }
 
 ################ PERSONALITY ###############
@@ -1680,6 +1695,32 @@ drowned_man = {
 	}
 }
 
+bearded_priest = {
+	physical = no
+	category = fame
+
+	#don't hardcode this; depends on clerical doctrine for heresies
+	#flag = can_not_marry
+
+	same_faith_opinion = 10
+	monthly_piety = 1
+	clergy_opinion = 10
+	prowess = 2
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_bearded_priest_desc
+			}
+			desc = trait_bearded_priest_character_desc
+		}
+	}
+}
+
+
 ########### FAME ##########
 
 dragon_dreams = {
@@ -1722,7 +1763,7 @@ greensight = {
 
 	same_opinion = 5
 	general_opinion = -5
-	old_gods_religion_opinion = 5
+	the_pact_religion_opinion = 5
 
 	stress_gain_mult = 0.25
 
@@ -1967,7 +2008,7 @@ declared_incapable = {
 # 	}
 # }
 
-#in_hiding = { # AGOT TODO: Trait not yet implemented
+#in_hiding = { #AGOT TODO: Trait not yet implemented
 #	shown_in_ruler_designer = no
 
 # 	incapacitating = yes
@@ -2033,7 +2074,7 @@ declared_incapable = {
 # 	}
 # }
 
-slave = {  # AGOT TODO: Trait not yet implemented
+slave = {  #AGOT TODO: Trait not yet implemented
 	shown_in_ruler_designer = no
 # 	category = fame
 
@@ -2093,6 +2134,11 @@ slave_master = {
 
 	dread_baseline_add = 25
 	enemy_hostile_scheme_success_chance_add = 20
+
+	culture_modifier = {
+		parameter = slave_master_trait_looked_down_upon
+		same_culture_opinion = -50
+	}
 
 	name = trait_slave_owner
 	desc = {
@@ -2422,7 +2468,7 @@ is_missing = {
 # 	}
 # }
 
-spring_sickness = { # AGOT TODO: Trait not yet implemented
+spring_sickness = { #AGOT TODO: Trait not yet implemented
 	shown_in_ruler_designer = no
 # 	category = health
 
@@ -2553,9 +2599,9 @@ shivers = {
 spider = {
 	category = lifestyle
 
-	dread_gain_mult = 0.25
+	dread_gain_mult = 0.2
 	intrigue = 2
-	diplomacy = 2
+	diplomacy = 1
 
 	ruler_designer_cost = 50
 
@@ -2572,12 +2618,15 @@ spider = {
 
 education_martial_prowess_5 = {
 	minimum_age = 16
-	prowess = 10
+	prowess = 12
+	negate_prowess_penalty_add = 10
+	trait_track_lifestyle_blademaster_xp_gain_mult = 0.2
 
 	culture_modifier = {
 		parameter = prowess_traits_more_valued
 		same_culture_opinion = 5
 		monthly_prestige = 0.5
+		negate_prowess_penalty_add = 10
 	}
 
 	group = education_martial_prowess

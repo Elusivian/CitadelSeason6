@@ -1,0 +1,54 @@
+﻿namespace = agot_house_maintenance
+
+# Valyrians in Western places know Common
+agot_house_maintenance.0001 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		every_living_character = {
+			if = {
+				limit = {
+					exists = location
+					NOT = { knows_language = language_common }
+					OR = {
+						has_culture = culture:westerosi_valyrian
+						has_culture = culture:high_valyrian
+					}
+					OR = {
+						location = { geographical_region = world_westeros_seven_kingdoms }
+						location = { geographical_region = world_westeros_beyond_the_wall }
+						location = { geographical_region = world_essos_free_cities }
+						location = { geographical_region = world_stepstones }
+					}
+				}
+				learn_language = language_common
+			}
+		}
+	}
+}
+
+# High Valyrian babies in Western places know Common
+agot_house_maintenance.0002 = {
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				exists = location
+				NOT = { knows_language = language_common }
+				OR = {
+					has_culture = culture:westerosi_valyrian
+					has_culture = culture:high_valyrian
+				}
+				OR = {
+					location = { geographical_region = world_westeros_seven_kingdoms }
+					location = { geographical_region = world_westeros_beyond_the_wall }
+					location = { geographical_region = world_essos_free_cities }
+					location = { geographical_region = world_stepstones }
+				}
+			}
+			learn_language = language_common
+		}
+	}
+}

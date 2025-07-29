@@ -1,0 +1,173 @@
+﻿l_english:
+
+
+#naval_warfare.2.t: 0 "How many ships do I have?"
+#naval_warfare.2.desc: 0 "I got [ROOT.Var('navalstrength').GetValue] boats"
+
+naval_warfare.2.t: 0 "How many ships do I have?"
+naval_warfare.2.desc: 0 "I got [ROOT.Var('attacker_navalstrength').GetValue] boats and he has [ROOT.Var('defender_navalstrength').GetValue] "
+
+naval_warfare.3.t: 0 "How many ships do I have?"
+naval_warfare.3.desc: 0 "I got [ROOT.Var('attacker_navalstrength').GetValue] boats and he has [ROOT.Var('defender_navalstrength').GetValue] "
+
+naval_warfare.4.t: 0 "How many ships do I have?"
+naval_warfare.4.desc: 0 "I got [ROOT.Var('attacker_navalstrength').GetValue] boats and he has [ROOT.Var('defender_navalstrength').GetValue] "
+
+naval_warfare.5.t: 0 "@embarked_icon! The Battle of [sea_battle_location.GetNameNoTier] @embarked_icon! "
+naval_warfare.5.desc: 0 "The sun dipped below the horizon, casting long shadows over the churning sea as the two fleets closed in on one another, their banners fluttering in the dying light. With the scent of salt and blood thick in the air, the captains readied their men for the clash to come, knowing that the fate of their houses would be decided by the battle that dawned on the morrow.\n \n The Fleet of [naval_attacker.GetFullName] has [ROOT.Var('attacker_navalstrength').GetValue] ships, under the command of #bold[naval_attacker_admiral.GetFullName]#!. \n \n The Fleet of [naval_defender.GetFullName] has [ROOT.Var('defender_navalstrength').GetValue] ships, under the command of #bold[naval_defender_admiral.GetFullName]#!. \n \n #bold[naval_defender_captain_1.GetFullName]#! #bold[naval_defender_captain_2.GetFullName]#! #bold[naval_defender_captain_3.GetFullName]#!"
+naval_warfare.5.a: 0 "[ROOT.Char.GetHouse.GetMotto]"
+naval_warfare.5.a.tt: 0 "You will personally command the fleet."
+naval_warfare.5a.desc: 0 "#italic A Sea Battle has Begun.#! \n \n"
+
+naval_warfare.5b.desc: 0 "#bold The Fleet of [naval_attacker.GetFullName] has [ROOT.Var('attacker_navalstrength').GetValue] ships.#!\n\n"
+naval_warfare.5b1.desc: 0 "Admiral: #bold[naval_attacker_admiral.GetFullName]#! \n"
+naval_warfare.5b2.desc: 0 "  Commanders:\n   #bold[naval_attacker_captain_1.GetFullName]#!\n   #bold[naval_attacker_captain_2.GetFullName]#!\n   #bold[naval_attacker_captain_3.GetFullName]#! \n\n"
+
+naval_warfare.5c.desc: 0 "#bold The Fleet of [naval_defender.GetFullName] has [ROOT.Var('defender_navalstrength').GetValue] ships.#!\n\n"
+naval_warfare.5c1.desc: 0 "Admiral: #bold[naval_defender_admiral.GetFullName]#! \n"
+naval_warfare.5c2.desc: 0 "  Commanders:\n   #bold[naval_defender_captain_1.GetFullName]#!\n   #bold[naval_defender_captain_2.GetFullName]#!\n   #bold[naval_defender_captain_3.GetFullName]#!"
+
+naval_warfare.6.t: 0 "@embarked_icon! The Battle of [sea_battle_location.GetNameNoTier] @embarked_icon! "
+naval_warfare.6.desc: 0 "The ships of [naval_loser.GetFullName] were smashed and scattered in a decisive victory by the fleet of [naval_winner.GetFullName]. The victor can now sail the seas unchallenged and will be a formidable foe anywhere near the waters."
+naval_warfare.6.a: 0 "[ROOT.Char.GetHouse.GetMotto]"
+
+
+
+naval_defeat_modifier: 0 "Naval Inferiority"
+
+
+death_sea_battle:0 "was slain at sea"
+death_sea_battle_killer:0 "was slain at sea by [TARGET_CHARACTER.GetUIName]"
+
+
+
+
+rule_agot_immersion_naval:0 "#I;bold AGOT Immersion:#! Naval"
+setting_agot_immersion_naval_on:0 "On"
+setting_agot_immersion_naval_on_desc:0 "Naval Battles will occur and impact the world\n #warning BETA FEATURE#!"
+setting_agot_immersion_naval_off:0 "Off"
+setting_agot_immersion_naval_off_desc:0 "Naval Battles will not occur and impact the world""
+
+
+
+
+#### NAVAL DECISIONS
+
+agot_immersion_naval_menu_title:0 "Naval Decisions"
+agot_immersion_naval_menu_desc:0 "Control of the seas are of paramount importance."
+agot_immersion_naval_menu_confirm:0 "Confirm"
+agot_immersion_naval_menu_tt:0 "Confirmeth"
+naval_decision_effect:0 "You will consult with your chief naval commander to discuss matters of the sea."
+
+naval_decisions.1.t: 0 "Naval Decisions"
+naval_decisions.1.desc: 0 "In this world, the sea is a ravenous beast, a force no lord dares ignore. To master its depths and currents is to hold the lives of men and the fate of kingdoms in your grasp; to forsake it is to drift helpless, food for the waves. I summon my fleet commander, who stands ready to obey or perish by my word.\n\n\n [admiral.GetFirstName] says to me,"#bold What would you have me do?#!""
+naval_decisions.1.a: 0 "Please give me a report on our naval capacity."
+naval_decisions.1.a.tt: 0 "Your fleet commander will review the ledgers and give you a count of #e ships#! that you can muster."
+naval_decisions.1.b: 0 "Give me a report on the naval powers of the world."
+naval_decisions.1.b.tt: 0 "You will learn about the current naval powers."
+naval_decisions.1.c: 0 "I would like to commission a flagship."
+naval_decisions.1.c.tt: 0 "You will review your options for building a #e flagship.#!"
+naval_decisions.1.d: 0 "I don't have time for this."
+
+naval_decisions.2.t: 0 "The Fleet of [ROOT.Char.GetPrimaryTitle.GetNameNoTier]"
+naval_decisions.2.desc: 0 "[admiral.GetFirstName] reports that I personally can muster [ROOT.Var('personal_navalstrength').GetValue] ships from my direct holdings. \n\n The realm could potentially raise at least [ROOT.Var('vassal_navalstrength').GetValue] ships under my command. "
+naval_decisions.2.a: 0 "Thanks [admiral.GetFirstName]"
+
+
+naval_decisions.4.t: 0 "The Shipyards"
+naval_decisions.4.desc: 0 "The salt tang filled the air as I walked through the shipyard, the rhythmic clang of hammers and the grunts of shipwrights echoing along the docks.\n\n I stopped to observe the towering hull of a galley mid-construction, its frame sturdy, but lacking the size and splendor to suit a true ruler’s pride. A flagship—a vessel to match my rank and ambitions—could command loyalty and strike fear in our foes. \n\n #e A Flagship will greatly boost your naval capacity and bring renown to your house. However, they are quite costly.#!"
+naval_decisions.4.a: 0 "I will commission a grand flagship!"
+naval_decisions.4.a.tt: 0 "A large flagship will boost your naval power by #P 100 Ships#"
+naval_decisions.4.b: 0 "I will commission a medium-sized flagship."
+naval_decisions.4.b.tt: 0 "A medium-sized flagship will boost your naval power by #P 50 Ships#"
+naval_decisions.4.c: 0 "A Small Flagship will do."
+naval_decisions.4.c.tt: 0 "A small flagship will boost your naval power by #P 25 Ships#""
+naval_decisions.4.d: 0 "Close Menu"
+
+naval_decisions.5.t: 0 "My flagship has been completed!"
+naval_decisions.5.desc: 0 "The shipwrights have finished construction of my new flagship.\n\n The seas will belong to me!"
+naval_decisions.5.a: 0 "I'm on a boat!"
+
+
+
+
+naval_decisions.6.t: 0 "Thief! [admiral.GetFirstName] has stolen my flagship!"
+naval_decisions.6.desc: 0 "The words hit me like a cold wave—gone, they said. The ship I had dreamed of, a symbol of our might, our command over the seas, stolen out from under me by the very person I entrusted to build her. My jaw tightens as I imagine their smug face, already miles from shore, sails unfurled to winds meant to carry my flag.\n\n I should’ve seen it coming; their loyalty had always felt slippery, like the shifting tides. Now, instead of bringing honor to our house, my flagship rides the waves as a monument to my own folly."
+naval_decisions.6.a: 0 "You think you can steal from me!"
+naval_decisions.6.b: 0 "I cannot concern myself with this right now."
+
+
+
+
+
+
+
+
+
+
+naval_warfare.7.win_1_desc:0 "The sea was ours, dyed red by the blood of our foes. \n\n I could still hear the distant cries of the vanquished, fading as their ships foundered in the deep. \n\n The Fleet of [naval_loser.GetFullName] had fought hard, yet it was my banners that flew tall and proud over the wreckage, torn but undefeated.\n\n We had won.
+naval_warfare.7.win_2_desc:0 "The dawn broke as our sails rose unchallenged, casting shadows over the battered enemy.\n\n  The winds had been with us, and my men were triumphant, cheering as the last of the Fleet of [naval_loser.GetFullName] sank beneath the waves. Even the gulls seemed to feast in celebration, circling above our victory.\n\n Victory was ours."
+naval_warfare.7.win_3_desc:0 "The iron grip of my will had held fast against the storm of battle, and when it was done, the enemy lay in splinters.\n\n  My sails were torn, and our decks ran slick with blood, but we had triumphed. \n\n The Fleet of [naval_loser.GetFullName] drowned beneath the weight of our victory."
+naval_warfare.7.win_4_desc:0 "The cries of my men filled the air as we surged forward, the winds at our backs, and I watched the enemy flee before us.\n\n  We chased [naval_loser.GetFullName] down, harrying his fleet as the falcon hunts the hare, until their decks were empty, their colors struck.\n\n  Today, the sea had chosen us to wield its wrath. \n\n The sea was ours."
+naval_warfare.7.win_5_desc:0 "I tasted salt and iron as I looked upon the shattered remnants of the Fleet of [naval_loser.GetFullName].\n\n The battle had tested every ounce of cunning, every ounce of strength, and we had emerged bloodied but unbowed.\n\n When the last of their sails dipped below the horizon, my men raised a cheer that shook the waves themselves."
+
+naval_warfare.7.loss_1_desc:0 "Their fires lit the night as my men scrambled to douse the flames consuming our ships.\n\n I could do nothing but watch as [naval_winner.GetFullName] seized the advantage, striking down my fleet one by one.\n\n My last commands were lost to the chaos; the sea had swallowing them whole, along with my pride."
+naval_warfare.7.loss_2_desc:0 "I watched my fleet break apart, torn asunder by the Fleet of [naval_winner.GetFullName].\n\n The waves carried the charred remnants of my ships, shattered like driftwood in a storm, as cries of the dying filled the night air.\m\m There was no escaping the shame—we had misjudged the tides, and the sea had exacted its toll.\n\nThe waters belonged to [naval_winner.GetFullName]."
+naval_warfare.7.loss_3_desc:0 "My ships were reduced to driftwood, their splintered masts jutting out like the bones of some long-dead beast.\n\n We had underestimated the resolve of [naval_winner.GetFullName] and [naval_winner.GetHerHis] fleet.\n\n Now my ships lay scattered and broken upon the waves.\n\n We had faced a storm of steel and lost; the sea’s embrace felt as cold as death."
+naval_warfare.7.loss_4_desc:0 "The masts of my ships were the only thing left standing as [naval_winner.GetNamePossessiveRegnal] fires consumed us.\n\n I could not avert my eyes from the ruin wrought by my own errors, the sea churning with wreckage and death.\n\n Pride had led us to this defeat; all that was left was the long, bitter retreat."
+naval_warfare.7.loss_5_desc:0 "[naval_winner.GetNameRegnal] had played his game well, and I had gambled everything only to lose it to the sea's cruelty.\n\n The waves were thick with corpses, and my once-proud ships lay sunken or aflame, doomed by the turn of a single tide.\n\n In the end, I was left to mourn the fallen as the sea claimed its dead."
+
+
+
+naval_warfare.8.attack:0 "Order your fleet to press the attack!"
+naval_warfare.8.attack.tt:0 "You will order your ships to continue the assault despite having lost the advantage."
+naval_warfare.8.retreat:0 "Call for a retreat."
+naval_warfare.8.retreat.tt:0 "You will cede the seas to your opponent."
+
+naval_warfare.8.battle_1_desc:0 "The spray stung my eyes, salt and blood mixing as the deck tilted beneath my feet.\n\n I could hear the clash of steel from ship to ship, the screech of dying men swallowed by the crash of waves.\n\n Smoke drifted over the water, black and thick, obscuring friend from foe.\n\nThe wind shifted, a sudden snap in the sails that nearly threw me to the deck.\n\n I wondered if the gods themselves were shifting their favor."
+naval_warfare.8.battle_2_desc:0 "Arrows fell like rain, their black shafts plunging into the water and splintering on deck.\n\n I shouted commands, my voice lost amidst the roar of battle and the screams of the dying.\n\n Fires burned unchecked, licking at the masts like greedy tongues.\n\n Our sails caught the light, tattered banners flapping like broken wings. \n\nWas this fight still winnable, or were we doomed to die with salt on our tongues?"
+naval_warfare.8.battle_3_desc:0 "The taste of copper filled my mouth as I clenched my teeth, my hand gripping the railing so hard my knuckles turned white.\n\n Boards groaned beneath me, the sound swallowed by the booming rhythm of war drums pounding like the pulse of some monstrous heart.\n\n I could see our line faltering, one ship veering into another as oars tangled in the mess of drifting corpses. Even the sea seemed to turn against us, the currents pushing the wreckage back into our path. Did they know they were sailing into death?"
+naval_warfare.8.battle_4_desc:0 "The waves heaved, tossing our ships like playthings, timbers cracking under the strain.\n\n I stumbled forward, catching myself on the rail, my vision blurred by sweat and salt.\n\n Another ram struck us, the crunch of wood on wood reverberating through my bones.\n\n The smell of burning pitch filled my nostrils, overpowering the stench of death. How long before my own courage faltered like the breaking hulls around me?"
+naval_warfare.8.battle_5_desc:0 "The sky was dark with stormclouds and the smoke of battle, thunder rumbling as if the gods themselves were bickering above.\n\n Men swung across on grappling lines, cut down before they even touched the deck.\n\n I saw one of ours gutted like a fish, his entrails spilling onto the planks as he crumpled to the ground.\n\n The sea was red with blood, and still, the enemy came on. At what point does bravery become folly?"
+naval_warfare.8.battle_6_desc:0 "The oars moved in rhythm, a desperate cadence meant to close the distance, but our strokes were faltering, slowing as exhaustion set in.\n\n I saw a grappling hook sail through the air, biting into wood with a dull thunk that shook the ship.\n\n Their boarding parties would come soon; steel and flesh meeting in a brutal embrace. There was no time to mourn the fallen, only room to push forward or fall back. How many more ships could we afford to lose?"
+naval_warfare.8.battle_7_desc:0 "The wind tore at our sails, ripping through the cloth like a knife, leaving nothing but shreds flapping in the gale.\n\n Men screamed in agony as scorpions loosed their bolts, impaling flesh and wood alike.\n\n The ship lurched violently to the side, a gaping hole in its belly as water surged in, swallowing the screams. I could hear the enemy's victory cries drifting over the water. Was this how defeat sounded?"
+naval_warfare.8.battle_8_desc:0 "The crash of iron on iron rang out like funeral bells, a rhythm as relentless as the tide.\n\n I watched one of our galleys turn broadside, hit by fire that raced across the deck in a trail of blazing oil.\n\n A man jumped overboard, his body engulfed in flames, disappearing beneath the waves with a hiss.\n\n The air was thick with smoke, heavy enough to choke on. Was the tide turning, or had it turned already?"
+naval_warfare.8.battle_9_desc:0 "A swell lifted us high, the ship cresting over the bodies that bobbed like flotsam in the wake.\n\n A ram splintered through the hull of one of ours, cracking it open like an egg and sending men tumbling into the abyss.\n\n I saw the fear in their eyes as they struggled to stay afloat, limbs flailing against the pull of the sea. Behind them, the enemy surged forward, relentless as the tide. Was it cowardice to consider turning back now?"
+naval_warfare.8.battle_10_desc:0 "The mast groaned as the wind caught it, snapping the rigging as if it were no more than thread.\n\n The air was thick with the reek of burning flesh, tar, and iron; it clawed at my throat, making every breath an effort. My men fought on, their faces twisted in rage and fear, the cries of battle turning ragged, desperate.\n\n There were too few of us left now, and the horizon offered no hope. Could retreat save what's left of us—or would it damn us just the same?"
+
+naval_warfare.99.attacker.desc:0 "I have been given command of our forces fleet.\n\n"
+naval_warfare.99.defender.desc:0 "I have been given command of our forces fleet.\n\n"
+
+
+naval_warfare.98.t:0 "Naval Duties"
+naval_warfare.98.attacker.desc:0 "I have been granted the honor of a command in the fleet of [naval_attacker.GetFullName].\n\n Soon we will meet [naval_defender.GetFullName] in battle.\n\n With a decisive victory, perhaps we can turn the tide of the conflict, [naval_war.GetName]."
+naval_warfare.98.defender.desc:0 "I have been granted the honor of a command in the fleet of [naval_defender.GetFullName].\n\n Soon we will meet [naval_attacker.GetFullName] in battle.\n\n With a decisive victory, perhaps we can turn the tide of the conflict, [naval_war.GetName]."
+
+
+naval_warfare.5.b:0 "[naval_attacker_admiral.GetFullName] will have the command."
+naval_warfare.5.c:0 "I should let [naval_secondary_attacker_1.GetFullName] lead our forces."
+naval_warfare.5.d:0 "Perhaps [naval_attacker_captain_1.GetFullName] will prove [naval_attacker_captain_1.GetHerHis] worth."
+naval_warfare.5.e:0 "My regent, [regent.GetFullName], must take control of the fleet."
+
+naval_warfare.6.b:0 "[naval_defender_admiral.GetFullName] will have the command."
+naval_warfare.6.c:0 "I should let [naval_secondary_defender_1.GetFullName] lead our forces."
+naval_warfare.6.d:0 "Perhaps [naval_defender_captain_1.GetFullName] will prove [naval_defender_captain_1.GetHerHis] worth."
+naval_warfare.6.e:0 "My regent, [regent.GetFullName], must take control of the fleet."
+
+naval_warfare.9.battle_1_desc:0 " The fleets met in the early dawn, when the sea lay cloaked in mist and salt sprayed thick as rain. The banners of [naval_loser.GetFullName] were scattered across the currents, cut down by the swift iron prows of [naval_winner.GetFullName]. The cries of the wounded mingled with the groan of splitting wood, and many a sailor found himself pulled down into the depths as his ship broke and sank."
+naval_warfare.9.battle_2_desc:0 "As sun rose high, the water ran crimson with blood, littered with the wreckage of great ships once proud and mighty. Despite valiant efforts, the forces of [naval_loser.GetFullName] found their numbers dwindling, assailed on all sides by the practiced maneuvers of [naval_winner.GetFullName]. With sails torn and hulls shattered, those who survived fled, their backs to the unforgiving sea."
+naval_warfare.9.battle_3_desc:0 "At the height of battle, the prowess of [naval_winner.GetFullName] became evident as their galleys cut through the enemy’s lines like a spear through flesh. The tides bore witness to broken oars and shattered mastheads of [naval_loser.GetFullNamePossessive] fleet, abandoned to drift or sink with no reprieve. Cries of retreat rose above the chaos as the waves swallowed their remnants whole."
+naval_warfare.9.battle_4_desc:0 "The fleet of [naval_loser.GetFullName] , though prepared to give fierce resistance, found themselves outmatched as the volley of projectiles from scope struck true. The fires spread quickly from one vessel to the next, the inferno devouring sails and rigging as the chaos grew. Few were spared as their vessels foundered; those who did not flee were left to burn or drown."
+naval_warfare.9.battle_5_desc:0 " As [naval_winner.GetNamePossessiveRegnal] galleys closed in, their mariners cast grapnels and charged aboard the remaining vessels of [naval_loser.GetFullName], taking the fight from deck to deck. The salt air grew thick with the stench of blood and smoke as blades clashed. By sunset, only a scattering of [naval_loser.GetFirstNamePossessive] ships limped away, leaving [naval_winner.GetFirstName] to claim victory upon the waves."
+
+artifact_flagship:0 "Flagship"
+
+small_flagship:0 "Small Flagship"
+small_flagship_desc:0 "\n\n This flagship has a complement of #e 25 Ships#!\n\nThe small flagship is sleek and narrow, built for speed and maneuverability, with a prow cut like a knife to cleave the waves. Dark-stained wood and iron accents give it a shadowed, predatory look; it rides low in the water, agile as a serpent. A single mast rises from its deck, bearing a banner that snaps in the sea wind, while rows of oars flank each side, their rhythm as precise as a heartbeat. A handful of small catapults and a reinforced ram jut from the prow, their purpose clear but understated, hinting at a vessel meant for swift strikes rather than prolonged sieges."
+small_flagship_modifier:0 "Small Flagship"
+medium_flagship:0 "Medium Flagship"
+medium_flagship_desc:0 "\n\n This flagship has a complement of #e 50 Ships#!\n\nBroad and solid, the medium-sized flagship is built for balance between power and endurance, sturdy enough to weather rough seas but quick enough to respond to the captain's every command. The hull is layered with thick timbers, reinforced by iron, and streaked with salt and tar, lending it an aged, battle-worn appearance. Two masts stretch upward, their sails woven from dark, heavy fabric designed to catch every ounce of wind; this is a ship meant to hold its own in any engagement. A battery of ballistae and scorpions line the forecastle and sterncastle, their iron-tipped bolts glinting in the sun, prepared to unleash deadly volleys at close or distant foes."
+Medium_flagship_modifier:0 "Medium Flagship"
+large_flagship:0 "Large Flagship"
+large_flagship_desc:0 "\n\n This flagship has a complement of #e 100 Ships#!\n\nMajestic and foreboding, the large flagship looms on the water like a fortress adrift, its hull broad enough to house entire warbands and its decks bristling with iron and steel. Three towering masts rise from its spine, bearing immense, richly dyed sails that billow out like the wings of some ancient beast, marking this vessel as a symbol of power. Ramparts line the edges of the deck, and atop them stand ranks of scorpions, trebuchets, and heavy mangonels, their dark frames crafted with an artistry that belies their deadly purpose. From the prow, an iron figurehead—weather-beaten and scarred from a hundred storms—juts forward, its fierce gaze fixed on the horizon, as though daring the seas themselves to rise against it."
+large_flagship_modifier:0 "Large Flagship"

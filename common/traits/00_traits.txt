@@ -1130,8 +1130,8 @@ lifestyle_blademaster = {
 	icon = blademaster.dds
 
 	# Modifiers
-	negate_health_penalty_add = 0.25
-	prowess = 3
+	negate_health_penalty_add = 0.15
+	prowess = 1
 	#AGOT Disabled
 	# culture_modifier = {
 	# 	parameter = trait_county_opinion_modifiers
@@ -1144,13 +1144,13 @@ lifestyle_blademaster = {
 	}
 	culture_modifier = {
 		parameter = blademaster_traits_give_learning
-		learning = 2
+		learning = 1
 	}	
 
 	track = {
 		50 = {
-			negate_health_penalty_add = 0.25
-			prowess = 6
+			negate_health_penalty_add = 0.2
+			prowess = 3
 			#AGOT Disabled
 			# culture_modifier = {
 			# 	parameter = trait_county_opinion_modifiers
@@ -1163,14 +1163,14 @@ lifestyle_blademaster = {
 			}
 			culture_modifier = {
 				parameter = blademaster_traits_give_learning
-				learning = 2
+				learning = 1
 			}
 		}
 		100 = {
-			negate_health_penalty_add = 0.5
+			negate_health_penalty_add = 0.2
 			#AGOT Modified, prowess rework
 			#prowess = 6
-			prowess = 12
+			prowess = 6
 			monthly_dynasty_prestige = 1
 			
 			#AGOT Disabled
@@ -1187,7 +1187,7 @@ lifestyle_blademaster = {
 
 			culture_modifier = {
 				parameter = blademaster_traits_give_learning
-				learning = 2
+				learning = 1
 			}
 		}
 	}
@@ -1450,7 +1450,7 @@ lifestyle_hunter = {
 strategist = {
 	category = lifestyle
 
-	martial = 3
+	martial = 2
 	diplomacy = 1
 	enemy_hard_casualty_modifier = 0.25
 	no_water_crossing_penalty = yes
@@ -1490,7 +1490,7 @@ overseer = {
 	category = lifestyle
 
 	stewardship = 2
-	martial = 2
+	martial = 1
 	monthly_county_control_growth_add = 0.5
 	epidemic_resistance = 5
 	
@@ -1510,8 +1510,8 @@ overseer = {
 gallant = {
 	category = lifestyle
 	
-	martial = 2
-	prowess = 4
+	martial = 1
+	prowess = 3
 	attraction_opinion = 20
 	accolade_glory_gain_mult = 0.2
 	monthly_prestige_gain_mult = 0.2
@@ -1572,11 +1572,11 @@ architect = {
 administrator = {
 	category = lifestyle
 
-	stewardship = 3
+	stewardship = 2
 	diplomacy = 1
 	parochial_opinion = 10
 	vassal_opinion = 5
-	epidemic_resistance = 10
+	epidemic_resistance = 20
 	
 	ruler_designer_cost = 50
 
@@ -1643,7 +1643,7 @@ avaricious = {
 schemer = {
 	category = lifestyle
 	
-	intrigue = 5
+	intrigue = 3
 	hostile_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
 	
 	ruler_designer_cost = 50
@@ -1674,7 +1674,7 @@ schemer = {
 seducer = {
 	category = lifestyle
 
-	intrigue = 3
+	intrigue = 2
 	attraction_opinion = 40
 	fertility = 0.2
 	
@@ -1709,7 +1709,7 @@ torturer = {
 	category = lifestyle
 
 	dread_gain_mult = 0.5
-	prowess = 4
+	prowess = 3
 	levy_size = 0.1
 	enemy_hostile_scheme_phase_duration_add = medium_scheme_phase_duration_malus_value
 	
@@ -3458,7 +3458,7 @@ brave = {
 		craven
 	}
 	martial = 2
-	prowess = 3
+	prowess = 2
 	
 	attraction_opinion = 10
 	glory_hound_opinion = 10
@@ -4418,7 +4418,7 @@ sadistic = {
 	intrigue = 2
 	#AGOT Modified, prowess rebalance
 	#prowess = 4
-	prowess = 2
+	prowess = 1
 	
 	dread_baseline_add = 35
 	
@@ -4505,7 +4505,7 @@ stubborn = {
 	#AGOT Added
 	culture_modifier = {
 		parameter = stubborn_trait_gives_bonuses
-		prowess = 2
+		prowess = 1
 		martial = 1
 	}
 	
@@ -5165,7 +5165,7 @@ irritable = { # Prone to outbursts and tantrums.
 	category = fame
 	diplomacy = -2
 	martial = -1
-	prowess = 2
+	prowess = 1
 	dread_gain_mult = 0.1
 	stress_loss_mult = 0.2
 
@@ -7773,7 +7773,7 @@ physique_good_3 = {
 	birth = 0.15
 	random_creation = 0.15
 	
-	prowess = 8
+	prowess = 6
 	health = 1
 	
 	attraction_opinion = 15
@@ -8535,7 +8535,7 @@ pilgrim = {
 	
 	culture_modifier = {
 		parameter = prowess_from_religious_traits
-		prowess = 2
+		prowess = 1
 	}
 	
 	faith_modifier = {
@@ -8556,7 +8556,7 @@ pilgrim = {
 		50 = {
 			culture_modifier = {
 				parameter = prowess_from_religious_traits
-				prowess = 3
+				prowess = 2
 			}
 			
 			faith_modifier = {
@@ -8578,7 +8578,7 @@ pilgrim = {
 		100 = {
 			culture_modifier = {
 				parameter = prowess_from_religious_traits
-				prowess = 3
+				prowess = 2
 			}
 			
 			faith_modifier = {
@@ -13324,7 +13324,7 @@ education_martial_prowess_2 = {
 	#minimum_age = 16
 	#AGOT Modified
 	#prowess = 2
-	prowess = 4
+	prowess = 3
 	trait_track_lifestyle_blademaster_xp_gain_mult = 0.25
 	
 	culture_modifier = {
@@ -13358,7 +13358,7 @@ education_martial_prowess_3 = {
 	#minimum_age = 16
 	#AGOT Modified
 	#prowess = 3
-	prowess = 6
+	prowess = 4
 	trait_track_lifestyle_blademaster_xp_gain_mult = 0.50
 	
 	culture_modifier = {
@@ -13392,7 +13392,7 @@ education_martial_prowess_4 = {
 	#minimum_age = 16
 	#AGOT Modified
 	#prowess = 4
-	prowess = 8
+	prowess = 6
 	trait_track_lifestyle_blademaster_xp_gain_mult = 1
 	
 	culture_modifier = {

@@ -1,0 +1,2405 @@
+﻿namespace = naval_warfare
+
+naval_warfare.1 = {
+	desc = naval_warfare.1.desc
+	
+	option = {
+		name = naval_warfare.1.a
+		
+		set_variable = {
+   name = navalstrength
+   value = 0
+		}
+		
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = root
+	holder = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = root
+		NOT = { is_at_war_with = root }
+		}
+		}
+		
+    title_province = {
+      has_building_or_higher = common_tradeport_01
+    }
+  }
+  root = { change_variable = {
+   name = navalstrength
+   add = 3
+}
+}
+		}
+		
+		if = { 
+		limit = { has_title = title:c_driftmark }
+		root = { change_variable = {
+   name = navalstrength
+   add = 50
+}
+}
+}
+		 
+		
+		trigger_event = {
+		 			id = naval_warfare.2
+		 			days = { 1 7 }
+		 		}
+	}
+	
+	}
+	
+	
+naval_warfare.2 = {
+	title = naval_warfare.2.t
+	desc = naval_warfare.2.desc
+	
+	option = {
+		name = naval_warfare.2.a
+		}
+	
+	
+	}
+	
+	
+	naval_warfare.3 = {
+	title = naval_warfare.3.t
+	desc = naval_warfare.3.desc
+	
+	immediate = { 	set_variable = {
+	name = attacker_navalstrength
+	value = 0
+		}
+		set_variable = {
+	name = defender_navalstrength
+	value = 0
+		}
+		random_character_war = { limit = { is_war_leader = ROOT }
+
+		every_war_attacker = { 
+		save_scope_as = attacker_naval
+		if = { limit = { has_culture = culture:ironborn } root = { change_variable = {  name = attacker_navalstrength   add = 10 } } }
+		if = { limit = { has_culture = culture:ironborn highest_held_title_tier > tier_county } root = { change_variable = {  name = attacker_navalstrength   add = 15 } } }
+		if = { limit = { has_title = title:c_dragonstone } root = { change_variable = {  name = attacker_navalstrength   add = 25 } } }
+		if = { limit = { has_title = title:c_driftmark } root = { change_variable = {  name = attacker_navalstrength   add = 50 } } }
+		if = { limit = { has_title = title:c_wynegarde } root = { change_variable = {  name = attacker_navalstrength   add = 100 } } }
+		if = { limit = { OR = { has_title = title:k_the_iron_islands has_title = title:e_the_iron_islands } } root = { change_variable = {  name = attacker_navalstrength   add = 50 } } }
+		if = { limit = { has_title = title:c_oldtown } root = { change_variable = {  name = attacker_navalstrength   add = 40 } } }
+		if = { limit = { has_title = title:c_kings_landing } root = { change_variable = {  name = attacker_navalstrength   add = 30 } } }
+		if = { limit = { has_title = title:c_kings_landing } root = { change_variable = {  name = attacker_navalstrength   add = 100 } } }
+		if = { limit = { has_title = title:c_white_harbor } root = { change_variable = {  name = attacker_navalstrength   add = 20 } } }
+		if = { limit = { has_title = title:c_gulltown } root = { change_variable = {  name = attacker_navalstrength   add = 30 } } }
+		
+
+		
+				every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_01
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 1
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_02
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 2
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_03
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 3
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_04
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 4
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_05
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 5
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_06
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 6
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_07
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 7
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_08
+    }
+  }
+  root = { change_variable = {
+   name = attacker_navalstrength
+   add = 8
+}
+}
+		}
+		}
+		
+		every_war_defender = {
+		
+
+		
+				every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_01
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 5
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_02
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 10
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_03
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 15
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_04
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 20
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_05
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 25
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_06
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 30
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_07
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 35
+}
+}
+		}
+		every_sub_realm_barony = {
+  limit = {
+	OR ={
+	holder = PREV
+	holder = {
+	AND = {
+		highest_held_title_tier = tier_barony
+		is_vassal_of = scope:attacker_naval
+		NOT = { is_at_war_with = PREV }
+		NOT = { is_allied_in_war = ROOT } 
+		}
+		}
+		}
+		
+    title_province = {
+      has_building = common_tradeport_08
+    }
+  }
+  root = { change_variable = {
+   name = defender_navalstrength
+   add = 40
+}
+}
+		}
+		}
+
+
+
+
+
+
+		 }
+		
+		
+		}
+		
+	
+	option = {
+		name = naval_warfare.3.a
+#				set_variable = {
+#	name = attacker_navalstrength
+#	value = 0
+#		}
+#		set_variable = {
+#	name = defender_navalstrength
+#	value = 0
+#		}
+#		random_character_war = { limit = { root = { is_war_leader = this } } 
+#
+#		every_war_attacker = { 
+#				every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_01
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 5
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_02
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 10
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_03
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 15
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_04
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 20
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_05
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 25
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_06
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 30
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_07
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 35
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_08
+#    }
+#  }
+#  root = { change_variable = {
+#   name = attacker_navalstrength
+#   add = 40
+#}
+#}
+#		}
+#		
+#		}
+#		
+#		every_war_defender = { 
+#				every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_01
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 5
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_02
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 10
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_03
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 15
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_04
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 20
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_05
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 25
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_06
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 30
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_07
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 35
+#}
+#}
+#		}
+#		every_sub_realm_barony = {
+#  limit = {
+#	OR ={
+#	holder = PREV
+#	holder = {
+#		highest_held_title_tier = tier_barony
+#		is_vassal_of = scope:attacker_naval
+#		NOT = { is_at_war_with = PREV }
+#		
+#		}
+#		}
+#		
+#    title_province = {
+#      has_building = common_tradeport_08
+#    }
+#  }
+#  root = { change_variable = {
+#   name = defender_navalstrength
+#   add = 40
+#}
+#}
+#		}
+#		}
+#
+#
+#
+#
+#
+#
+#		 }
+		
+		
+		
+		trigger_event = {
+		 			id = naval_warfare.2
+		 			days = { 1 7 }
+		 		}
+				}
+	
+	
+	}
+	
+	
+	
+	naval_warfare.4 = {
+	title = naval_warfare.4.t
+	desc = naval_warfare.4.desc
+	
+	immediate = { scope:naval_attacker = { trigger_event = naval_warfare.6 } }
+	
+	option = {
+		name = naval_warfare.4.a
+		}
+	
+	
+	}
+	
+	
+		
+naval_warfare.5 = {
+	title = naval_warfare.5.t
+	type = character_event
+	window = duel_event
+	theme = war
+	#desc = naval_warfare.5.desc
+	desc = {
+			desc = naval_warfare.5a.desc
+			desc = naval_warfare.5b.desc
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_attacker_admiral
+				}
+				desc = naval_warfare.5b1.desc
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_attacker_captain_1
+				}
+				desc = naval_warfare.5b2.desc
+			}
+			desc = naval_warfare.5c.desc
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_defender_admiral
+				}
+				desc = naval_warfare.5c1.desc
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_defender_captain_1
+				}
+				desc = naval_warfare.5c2.desc
+			}
+			
+		
+	}
+	left_portrait = {
+		character = scope:naval_attacker
+		scripted_animation = duel_wield_weapon
+	}
+	right_portrait = {
+		character = scope:naval_defender
+		scripted_animation = duel_wield_weapon
+	}
+	lower_right_portrait = {
+		character = scope:naval_defender_admiral
+		scripted_animation = duel_wield_weapon
+	}
+	lower_left_portrait = {
+		character = scope:naval_attacker_admiral
+		scripted_animation = duel_wield_weapon
+	}
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+	root.diarch = { save_scope_as = regent }
+	scope:naval_war = {
+	primary_defender = {      
+	random_sub_realm_county = { 
+				limit = { is_coastal_county = yes NOT = { exists = scope:sea_battle_location } }
+				weight = {
+					base = 1
+					
+					modifier = {
+						add = 4000
+						 title_province = { has_building = common_tradeport_01 }
+					}
+					modifier = {
+						add = 6000
+						 title_province = { has_building = common_tradeport_02 }
+					}
+					modifier = {
+						add = 7000
+						 title_province = { has_building = common_tradeport_03 }
+					}
+					modifier = {
+						add = 1000
+						 title_province = { has_building = common_tradeport_04 }
+					}
+					modifier = {
+						add = 12000
+						 title_province = { has_building = common_tradeport_05 }
+					}
+					modifier = {
+						add = 13000
+						 title_province = { has_building = common_tradeport_06 }
+					}
+					modifier = {
+						add = 14000
+						 title_province = { has_building = common_tradeport_07 }
+					}
+					modifier = {
+						add = 1500
+						 title_province = { has_building = common_tradeport_08 }
+					}
+				}
+
+
+
+				save_scope_as = sea_battle_location }
+	
+	
+	
+	
+	}
+		if = { limit = { NOT = { exists = scope:sea_battle_location } }
+			random_war_defender = { limit = { any_sub_realm_county = { is_coastal_county = yes } } weight = {
+					value = 1
+					add = max_military_strength
+				} random_sub_realm_county = { 
+				limit = { is_coastal_county = yes NOT = { exists = scope:sea_battle_location } }
+				weight = {
+					base = 20
+					modifier = {
+						add = 200
+						development_level > 15
+					}
+					modifier = {
+						add = 5000
+						is_connected_to = { max_naval_distance = 2 target = scope:naval_attacker.capital_barony.title_province }
+					}
+					
+				}
+
+
+
+				save_scope_as = sea_battle_location } }
+	}
+	}
+
+	
+	naval_war_power_calculation_effect = yes
+		
+		
+scope:naval_attacker_captain_1 = { save_scope_value_as = { name = naval_attacker_captain_1_martial value = martial } }
+scope:naval_attacker_captain_2 = { save_scope_value_as = { name = naval_attacker_captain_2_martial value = martial } }  
+scope:naval_attacker_captain_3 = { save_scope_value_as = { name = naval_attacker_captain_3_martial value = martial } }	
+
+scope:naval_attacker_admiral = { save_scope_value_as = { name = naval_attacker_admiral_martial value = martial } }	
+
+set_variable = {
+	name = attacker_naval_command_buff
+	value = {
+	add = scope:naval_attacker_captain_1_martial
+	add = scope:naval_attacker_captain_2_martial
+	add = scope:naval_attacker_captain_3_martial
+	add = scope:naval_attacker_admiral_martial
+	divide = 4
+	round = yes
+		}
+		}
+
+
+change_variable = {
+	name = attacker_navalstrength
+	add = var:attacker_naval_command_buff
+		}
+
+
+
+scope:naval_defender_captain_1 = { save_scope_value_as = { name = naval_defender_captain_1_martial value = martial } }
+scope:naval_defender_captain_2 = { save_scope_value_as = { name = naval_defender_captain_2_martial value = martial } }  
+scope:naval_defender_captain_3 = { save_scope_value_as = { name = naval_defender_captain_3_martial value = martial } }
+
+scope:naval_defender_admiral = { save_scope_value_as = { name = naval_defender_admiral_martial value = martial } }
+
+set_variable = {
+	name = defender_naval_command_buff
+	value = {
+	add = scope:naval_defender_captain_1_martial
+	add = scope:naval_defender_captain_2_martial
+	add = scope:naval_defender_captain_3_martial
+	add = scope:naval_defender_admiral_martial
+	divide = 4
+	round = yes
+		}
+		}
+
+change_variable = {
+	name = defender_navalstrength
+	add = var:defender_naval_command_buff
+	
+		}
+	
+
+
+save_scope_value_as = { name = attacker_navalstrength value = var:attacker_navalstrength }
+save_scope_value_as = { name = defender_navalstrength value = var:defender_navalstrength }		
+	
+		set_variable = {
+	name = naval_strength_battle_size
+	value = var:attacker_navalstrength
+		}
+		change_variable = {
+	name = naval_strength_battle_size
+	add = var:defender_navalstrength
+		}
+#		change_variable = {
+#	name = naval_strength_battle_size
+#	multiply = 2
+#		}
+save_scope_value_as = { name = naval_strength_battle_size value = var:naval_strength_battle_size  }	
+		
+		
+		}
+	
+	option = {
+		name = naval_warfare.5.a
+		custom_tooltip = naval_warfare.5.a.tt
+		trigger = { is_imprisoned = no
+		age >= 14
+
+		}
+		save_scope_as = naval_attacker_fleet_commander
+		add_to_list = naval_attack_participants
+		### SEND TO DEFENDER
+		scope:naval_defender = { trigger_event = {
+						id = naval_warfare.6
+						days = 5
+					}
+					}
+		
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 150 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness >= 50
+			ai_rationality <= -50
+			
+		}
+				
+		}
+		modifier = {
+			add = -1000 # To remove something you just add a negative number (5 + -10 = -5)
+		has_trait = craven
+				
+		}
+		}
+		
+		}
+		option = {
+		name = naval_warfare.5.b
+		trigger = {  exists = scope:naval_attacker_admiral }
+		scope:naval_attacker_admiral = { 
+		save_scope_as = naval_attacker_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					} 
+		### SEND TO DEFENDER
+		scope:naval_defender = { trigger_event = {
+						id = naval_warfare.6
+						days = 5
+					}
+					}
+		
+		}
+		ai_chance = {
+		base = 1000 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 100 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness <= 0
+			ai_rationality >= 0
+			
+		}
+				
+		}
+		
+		}
+		}
+		option = {
+		name = naval_warfare.5.c
+		trigger = {  exists = scope:naval_secondary_attacker_1 scope:naval_secondary_attacker_1 = { is_ai = yes } }
+		scope:naval_secondary_attacker_1 = { 
+		save_scope_as = naval_attacker_fleet_commander 
+		### SEND TO DEFENDER
+		scope:naval_defender = { trigger_event = {
+						id = naval_warfare.6
+						days = 5
+					}
+					}
+		}
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		
+		}
+		
+		}
+	option = {
+		name = naval_warfare.5.d
+		trigger = {  exists = scope:naval_attacker_captain_1 }
+		scope:naval_attacker_captain_1 = { 
+		save_scope_as = naval_attacker_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					}
+		
+		}
+		### SEND TO DEFENDER
+		scope:naval_defender = { trigger_event = {
+						id = naval_warfare.6
+						days = 5
+					}
+					}
+					ai_chance = {
+		base = 90 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		
+		}
+		}
+		option = {
+		name = naval_warfare.5.e
+		trigger = {  exists = root.diarch }
+		scope:regent = { 
+		save_scope_as = naval_attacker_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					}
+		
+		}
+		### SEND TO DEFENDER
+		scope:naval_defender = { trigger_event = {
+						id = naval_warfare.6
+						days = 5
+					}
+					}
+					ai_chance = {
+		base = 90 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		
+		}
+		}
+		
+		
+		
+		
+		
+	 
+		
+		
+		
+		
+		
+		}
+	
+	
+	
+
+	
+naval_warfare.6 = {
+	title = naval_warfare.6.t
+	theme = war
+	window = duel_event
+	desc = {
+			desc = naval_warfare.5a.desc
+			desc = naval_warfare.5b.desc
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_attacker_admiral
+				}
+				desc = naval_warfare.5b1.desc
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_attacker_captain_1
+				}
+				desc = naval_warfare.5b2.desc
+			}
+			desc = naval_warfare.5c.desc
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_defender_admiral
+				}
+				desc = naval_warfare.5c1.desc
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_defender_captain_1
+				}
+				desc = naval_warfare.5c2.desc
+			}
+			
+		
+	}
+	left_portrait = {
+		character = scope:naval_attacker
+		scripted_animation = duel_wield_weapon
+	}
+	right_portrait = {
+		character = scope:naval_defender
+		scripted_animation = duel_wield_weapon
+	}
+	lower_right_portrait = {
+		character = scope:naval_defender_admiral
+		scripted_animation = duel_wield_weapon
+	}
+	lower_left_portrait = {
+		character = scope:naval_attacker_admiral
+		scripted_animation = duel_wield_weapon
+	}
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+root.diarch = { save_scope_as = regent }
+set_variable = {
+	name = attacker_navalstrength
+	value = scope:naval_attacker.var:attacker_navalstrength
+		}
+set_variable = {
+	name = defender_navalstrength
+	value = scope:naval_attacker.var:defender_navalstrength
+		}
+
+
+	
+		}
+	
+	option = {
+		name = naval_warfare.6.a
+		custom_tooltip = naval_warfare.5.a.tt
+		trigger = { is_imprisoned = no
+		age >= 14
+
+		}
+		save_scope_as = naval_defender_fleet_commander
+		add_to_list = naval_defender_participants
+		naval_defender_battle_simulation_effect = yes
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 150 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness >= 50
+			ai_rationality <= -50
+			
+		}
+				
+		}
+		modifier = {
+			add = -1000 # To remove something you just add a negative number (5 + -10 = -5)
+		has_trait = craven
+				
+		}
+		}
+		
+		}
+		option = {
+		name = naval_warfare.6.b
+		trigger = {  exists = scope:naval_defender_admiral }
+		scope:naval_defender_admiral = { 
+		save_scope_as = naval_defender_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					}
+	
+		
+		}
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 100 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness <= 0
+			ai_rationality <= 50
+			
+		}
+				
+		}
+		}
+		}
+		option = {
+		name = naval_warfare.6.c
+		trigger = {  exists = scope:naval_secondary_defender_1 scope:naval_secondary_defender_1 = { is_ai = yes } }
+		scope:naval_secondary_defender_1 = { 
+		save_scope_as = naval_defender_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					}
+
+		}
+		
+		ai_chance = {
+		base = 100 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		
+		}
+		
+		}
+	option = {
+		name = naval_warfare.6.d
+		trigger = {  exists = scope:naval_defender_captain_1 }
+		scope:naval_defender_captain_1 = { 
+		save_scope_as = naval_defender_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					}
+		
+		
+		}
+ai_chance = {
+		base = 90 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		
+		}
+		}
+		option = {
+		name = naval_warfare.6.e
+		trigger = {  exists = root.diarch }
+		scope:regent = { 
+		save_scope_as = naval_defender_fleet_commander
+		trigger_event = {
+						id = naval_warfare.99
+						days = 2
+					}
+		
+		
+		}
+ai_chance = {
+		base = 90 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		
+		}
+		}
+	
+	
+	}
+
+
+		
+naval_warfare.7 = {
+	title = naval_warfare.6.t
+	theme = war
+	window = duel_event
+	desc = {
+			
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_win_1
+				}
+				desc = naval_warfare.7.win_1_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_win_2
+				}
+				desc = naval_warfare.7.win_2_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_win_3
+				}
+				desc = naval_warfare.7.win_3_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_win_4
+				}
+				desc = naval_warfare.7.win_4_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_win_5
+				}
+				desc = naval_warfare.7.win_5_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_loss_1
+				}
+				desc = naval_warfare.7.loss_1_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_loss_2
+				}
+				desc = naval_warfare.7.loss_2_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_loss_3
+				}
+				desc = naval_warfare.7.loss_3_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_loss_4
+				}
+				desc = naval_warfare.7.loss_4_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_loss_5
+				}
+				desc = naval_warfare.7.loss_5_desc
+			}
+			
+		
+	}
+	left_portrait = {
+		character = scope:naval_winner
+		animation = celebrate_sword
+	}
+	right_portrait = {
+		character = scope:naval_loser
+		animation = severelywounded
+	}
+	
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+	if = { limit = { scope:naval_attacker_fleet_commander = scope:naval_loser 
+					this = scope:naval_attacker 
+	}
+		random_list = {
+							10 = { 
+							add_character_flag = naval_loss_1	
+							}
+							10 = { 
+							add_character_flag = naval_loss_2		
+							}
+							10 = { 
+							add_character_flag = naval_loss_3		
+							}
+							10 = { 
+							add_character_flag = naval_loss_4		
+							}
+							10 = { 
+							add_character_flag = naval_loss_5		
+							}
+							
+						}
+						}
+					else_if = { limit = { scope:naval_attacker_fleet_commander = scope:naval_loser 
+					this = scope:naval_defender }
+					random_list = {
+							10 = { 
+							add_character_flag = naval_win_1	
+							}
+							10 = { 
+							add_character_flag = naval_win_2		
+							}
+							10 = { 
+							add_character_flag = naval_win_3		
+							}
+							10 = { 
+							add_character_flag = naval_win_4		
+							}
+							10 = { 
+							add_character_flag = naval_win_5		
+							}
+							
+						}
+					
+					}
+					else_if = { limit = { scope:naval_defender_fleet_commander = scope:naval_loser 
+					this = scope:naval_defender }
+					random_list = {
+							10 = { 
+							add_character_flag = naval_loss_1	
+							}
+							10 = { 
+							add_character_flag = naval_loss_2		
+							}
+							10 = { 
+							add_character_flag = naval_loss_3		
+							}
+							10 = { 
+							add_character_flag = naval_loss_4		
+							}
+							10 = { 
+							add_character_flag = naval_loss_5		
+							}
+							
+						}
+					
+					}
+					else_if = { limit = { scope:naval_defender_fleet_commander = scope:naval_loser 
+					this = scope:naval_attacker }
+					random_list = {
+							10 = { 
+							add_character_flag = naval_win_1	
+							}
+							10 = { 
+							add_character_flag = naval_win_2		
+							}
+							10 = { 
+							add_character_flag = naval_win_3		
+							}
+							10 = { 
+							add_character_flag = naval_win_4		
+							}
+							10 = { 
+							add_character_flag = naval_win_5		
+							}
+							
+						}
+					
+					}
+	
+	
+	
+	
+	if = { limit = { this = scope:naval_defender
+					scope:naval_defender_fleet_commander = scope:naval_loser }
+	
+	
+	scope:naval_war = {
+	
+	every_war_defender = {
+	add_character_modifier = { modifier = naval_defeat_modifier months = 18 }
+	every_sub_realm_county = { limit = { is_coastal_county = yes } add_county_modifier = { modifier = naval_defeat_county_modifier months = 18 }
+		hidden_effect = { every_courtier = { add_character_modifier = { modifier = naval_defeat_modifier months = 18 } } } 	 
+		}
+		}
+		}
+	else_if = { limit = { this = scope:naval_attacker
+					 scope:naval_attacker_fleet_commander = scope:naval_loser }
+	
+	
+	scope:naval_war = {
+	
+	every_war_attacker = {
+	add_character_modifier = { modifier = naval_defeat_modifier months = 18 }
+		hidden_effect = { every_courtier = { add_character_modifier = { modifier = naval_defeat_modifier months = 18 } } } 	 
+		}
+		}
+		}
+	else_if = { limit = { this = scope:naval_attacker
+					 this = scope:naval_winner }
+	scope:naval_attacker_fleet_commander = { add_prestige = 500 }
+	
+	
+	}
+	else_if = { limit = { this = scope:naval_defender
+					 this = scope:naval_winner }
+	scope:naval_defender_fleet_commander = { add_prestige = 500 }
+	
+	
+	}
+		
+		
+
+	
+	
+	
+		}
+	
+
+		
+		##Regroup
+		option = {
+		name = naval_warfare.5.a
+	
+		
+							remove_character_flag = naval_loss_1	
+							remove_character_flag = naval_loss_2		
+							remove_character_flag = naval_loss_3		
+							remove_character_flag = naval_loss_4		
+							remove_character_flag = naval_loss_5		
+							remove_character_flag = naval_win_1	
+							remove_character_flag = naval_win_2		
+							remove_character_flag = naval_win_3
+							remove_character_flag = naval_win_4			 
+							remove_character_flag = naval_win_5		
+							
+		
+		}
+		}	
+	
+		
+naval_warfare.8 = {
+	title = naval_warfare.6.t
+	type = character_event
+	window = duel_event
+	desc = {
+			desc = naval_warfare.5b.desc
+			
+			
+			desc = naval_warfare.5c.desc
+			
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_1
+				}
+				desc = naval_warfare.8.battle_1_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_2
+				}
+				desc = naval_warfare.8.battle_2_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_3
+				}
+				desc = naval_warfare.8.battle_3_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_4
+				}
+				desc = naval_warfare.8.battle_4_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_5
+				}
+				desc = naval_warfare.8.battle_5_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_6
+				}
+				desc = naval_warfare.8.battle_6_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_7
+				}
+				desc = naval_warfare.8.battle_7_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_8
+				}
+				desc = naval_warfare.8.battle_8_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_9
+				}
+				desc = naval_warfare.8.battle_9_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_10
+				}
+				desc = naval_warfare.8.battle_10_desc
+			}
+			
+			
+			
+			
+		
+	}
+	left_portrait = {
+		character = scope:naval_defender_fleet_commander
+		scripted_animation = duel_wield_weapon
+	}
+	right_portrait = {
+		character = scope:naval_attacker_fleet_commander
+		scripted_animation = duel_wield_weapon
+	}
+
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+	
+		remove_character_flag = naval_battle_1
+		remove_character_flag = naval_battle_2
+		remove_character_flag = naval_battle_3
+		remove_character_flag = naval_battle_4
+		remove_character_flag = naval_battle_5
+		remove_character_flag = naval_battle_6
+		remove_character_flag = naval_battle_7
+		remove_character_flag = naval_battle_8
+		remove_character_flag = naval_battle_9
+		remove_character_flag = naval_battle_10
+		remove_character_flag = battle_picked
+	
+	random_list = {
+							10 = { 
+							add_character_flag = naval_battle_1	
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_2	
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_3
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_4	
+							add_character_flag = battle_picked			
+									
+							}
+							10 = { 
+							add_character_flag = naval_battle_5	
+							add_character_flag = battle_picked								
+							}
+								10 = { 
+							add_character_flag = naval_battle_6	
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_7	
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_8	
+								add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_9
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_10
+							add_character_flag = battle_picked							
+							}
+							
+						}
+	if = { limit = { NOT = { has_character_flag = battle_picked } }
+		add_character_flag = naval_battle_10 
+		}
+	remove_character_flag = battle_picked
+	
+	set_variable = {
+	name = attacker_navalstrength
+	value = scope:naval_attacker.var:attacker_navalstrength
+		}
+	set_variable = {
+	name = defender_navalstrength
+	value = scope:naval_attacker.var:defender_navalstrength
+		}
+	
+		}
+	
+	option = {
+		name = naval_warfare.8.attack
+		custom_tooltip = naval_warfare.8.attack
+		trigger = { this = scope:naval_attacker_fleet_commander }
+	hidden_effect = {	naval_attacker_battle_simulation_effect = yes }
+		
+		#remove_character_flag = naval_battle_1
+		#remove_character_flag = naval_battle_2
+		#remove_character_flag = naval_battle_3
+		#remove_character_flag = naval_battle_4
+		#remove_character_flag = naval_battle_5
+		#remove_character_flag = naval_battle_6
+		#remove_character_flag = naval_battle_7
+		#remove_character_flag = naval_battle_8
+		#remove_character_flag = naval_battle_9
+		#remove_character_flag = naval_battle_10
+		#remove_character_flag = battle_picked
+		
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 50 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness >= 50
+			ai_rationality <= -50
+			
+		}
+				
+		}
+		}
+		}
+		option = {
+		name = naval_warfare.8.attack
+		custom_tooltip = naval_warfare.8.attack.tt
+		trigger = { this = scope:naval_defender_fleet_commander }
+		#remove_character_flag = naval_battle_1
+		#remove_character_flag = naval_battle_2
+		#remove_character_flag = naval_battle_3
+		#remove_character_flag = naval_battle_4
+		#remove_character_flag = naval_battle_5
+		#remove_character_flag = naval_battle_6
+		#remove_character_flag = naval_battle_7
+		#remove_character_flag = naval_battle_8
+		#remove_character_flag = naval_battle_9
+		#remove_character_flag = naval_battle_10
+		#remove_character_flag = battle_picked
+		hidden_effect = { naval_defender_battle_simulation_effect = yes }
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+		modifier = {
+			add = 50 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness >= 50
+			ai_rationality <= -50
+			
+		}
+		}
+		
+		
+		}
+		
+		}
+		
+		##Regroup
+		option = {
+		name = naval_warfare.8.retreat
+		custom_tooltip = naval_warfare.8.retreat.tt
+		#remove_character_flag = naval_battle_1
+		#remove_character_flag = naval_battle_2
+		#remove_character_flag = naval_battle_3
+		#remove_character_flag = naval_battle_4
+		#remove_character_flag = naval_battle_5
+		#remove_character_flag = naval_battle_6
+		#remove_character_flag = naval_battle_7
+		#remove_character_flag = naval_battle_8
+		#remove_character_flag = naval_battle_9
+		#remove_character_flag = naval_battle_10
+		#remove_character_flag = battle_picked
+		if = { limit = { this = scope:naval_attacker_fleet_commander }
+		scope:naval_attacker_fleet_commander = { save_scope_as = naval_loser }
+		scope:naval_defender_fleet_commander = { save_scope_as = naval_winner }
+		}
+		if = { limit = { this = scope:naval_defender_fleet_commander }
+		scope:naval_defender_fleet_commander = { save_scope_as = naval_loser }
+		scope:naval_attacker_fleet_commander = { save_scope_as = naval_winner }
+		}
+		scope:naval_attacker = { trigger_event = naval_warfare.7 }
+		scope:naval_defender = { trigger_event = naval_warfare.7 }
+		every_in_list = {
+		list = naval_participants
+			trigger_event = naval_warfare.9
+			}
+		#naval_defender_battle_simulation_effect = yes
+		ai_chance = {
+		base = 25 # What are the chances of selecting this option over others? (Does not need to be 0 to 100, it can be anything)
+	
+		modifier = {
+			add = 50 # To remove something you just add a negative number (5 + -10 = -5)
+		OR = {
+			ai_boldness <= 0
+			ai_rationality >= 50
+			
+		}
+		
+		
+		}
+		}
+		}
+		}
+		
+		
+		
+
+
+naval_warfare.9 = {
+	title = naval_warfare.6.t
+	type = character_event
+	window = duel_event
+	desc = {
+			desc = naval_warfare.5b.desc
+			
+			
+			desc = naval_warfare.5c.desc
+			
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_1
+				}
+				desc = naval_warfare.9.battle_1_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_2
+				}
+				desc = naval_warfare.9.battle_2_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_3
+				}
+				desc = naval_warfare.9.battle_3_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_4
+				}
+				desc = naval_warfare.9.battle_4_desc
+			}
+			triggered_desc = {
+				trigger = {
+					 has_character_flag = naval_battle_5
+				}
+				desc = naval_warfare.9.battle_5_desc
+			}
+		}
+
+	left_portrait = {
+		character = scope:naval_loser
+		animation = severelywounded
+	}
+	right_portrait = {
+		character = scope:naval_winner
+		animation = celebrate_sword
+	}
+
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+		set_variable = {
+	name = attacker_navalstrength
+	value = scope:naval_attacker.var:attacker_navalstrength
+		}
+	set_variable = {
+	name = defender_navalstrength
+	value = scope:naval_attacker.var:defender_navalstrength
+		}
+		random_list = {
+							10 = { 
+							add_character_flag = naval_battle_1	
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_2	
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_3
+							add_character_flag = battle_picked	
+							}
+							10 = { 
+							add_character_flag = naval_battle_4	
+							add_character_flag = battle_picked			
+									
+							}
+							10 = { 
+							add_character_flag = naval_battle_5	
+							add_character_flag = battle_picked								
+							}
+							
+							
+						}
+	if = { limit = { NOT = { has_character_flag = battle_picked } }
+	add_character_flag = naval_battle_1
+	}
+					
+					}
+	
+		
+		##Regroup
+		option = {
+		name = naval_warfare.5.a
+	
+		remove_character_flag = naval_battle_1
+		remove_character_flag = naval_battle_2
+		remove_character_flag = naval_battle_3
+		remove_character_flag = naval_battle_4
+		remove_character_flag = naval_battle_5
+		remove_character_flag = naval_battle_6
+		remove_character_flag = naval_battle_7
+		remove_character_flag = naval_battle_8
+		remove_character_flag = naval_battle_9
+		remove_character_flag = naval_battle_10
+		remove_character_flag = battle_picked
+		
+		}
+		}
+
+	
+	
+	
+	
+	
+	
+	
+	
+naval_warfare.98 = {
+	title = naval_warfare.98.t
+	theme = war
+	window = duel_event
+	desc = {
+			
+			triggered_desc = {
+				trigger = {
+					is_in_list = naval_attack_participants
+				}
+				desc = naval_warfare.98.attacker.desc
+			}
+			triggered_desc = {
+				trigger = {
+					is_in_list = naval_defender_participants
+				}
+				desc = naval_warfare.98.defender.desc
+			}
+			
+			
+		
+	}
+	left_portrait = {
+		character = scope:naval_attacker
+		scripted_animation = duel_wield_weapon
+	}
+	right_portrait = {
+		character = scope:naval_defender
+		scripted_animation = duel_wield_weapon
+	}
+	lower_left_portrait = {
+		character = root
+		scripted_animation = duel_wield_weapon
+	}
+	
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+
+
+
+	
+		}
+	
+	option = {
+		name = naval_warfare.5.a
+		
+		
+		
+		}
+		
+	
+	
+	}
+
+
+	
+naval_warfare.99 = {
+	title = naval_warfare.6.t
+	theme = war
+	window = duel_event
+	desc = {
+			
+			triggered_desc = {
+				trigger = {
+					root = scope:naval_attacker_fleet_commander
+				}
+				desc = naval_warfare.99.attacker.desc
+			}
+			triggered_desc = {
+				trigger = {
+					root = scope:naval_defender_fleet_commander
+				}
+				desc = naval_warfare.99.defender.desc
+			}
+			
+			desc = naval_warfare.5b.desc
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_attacker_admiral
+				}
+				desc = naval_warfare.5b1.desc
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_attacker_captain_1
+				}
+				desc = naval_warfare.5b2.desc
+			}
+			desc = naval_warfare.5c.desc
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_defender_admiral
+				}
+				desc = naval_warfare.5c1.desc
+			}
+			triggered_desc = {
+				trigger = {
+					exists = scope:naval_defender_captain_1
+				}
+				desc = naval_warfare.5c2.desc
+			}
+			
+			
+		
+	}
+
+	left_portrait = {
+		character = scope:naval_attacker
+		scripted_animation = duel_wield_weapon
+	}
+	right_portrait = {
+		character = scope:naval_defender
+		scripted_animation = duel_wield_weapon
+	}
+	lower_right_portrait = {
+		character = scope:naval_defender_admiral
+		scripted_animation = duel_wield_weapon
+	}
+	lower_left_portrait = {
+		character = scope:naval_attacker_admiral
+		scripted_animation = duel_wield_weapon
+	}
+	
+	
+	override_background = {
+		reference = fp1_ocean
+	}
+	immediate = {
+
+
+set_variable = {
+	name = attacker_navalstrength
+	value = scope:naval_attacker.var:attacker_navalstrength
+		}
+set_variable = {
+	name = defender_navalstrength
+	value = scope:naval_attacker.var:defender_navalstrength
+		}
+
+
+	
+		}
+	
+	option = {
+		name = naval_warfare.5.a
+		
+		if = { limit = { this = scope:naval_defender_fleet_commander }
+		naval_defender_battle_simulation_effect = yes 
+		}
+		
+		
+		}
+		
+	
+	
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+#	#option = {
+#	#	name = naval_warfare.6.a
+#	#	
+#	if = { limit = { var:attacker_navalstrength > var:defender_navalstrength }
+#		scope:temp_wars_scope = {
+#		every_war_defender = { add_character_modifier = { modifier = naval_defeat_modifier months = 3 }
+#			
+#		}
+#		}
+#		}
+#		
+#		if = { limit = { var:attacker_navalstrength < var:defender_navalstrength }
+#		scope:temp_wars_scope = {
+#		every_war_attacker = { add_character_modifier = { modifier = naval_defeat_modifier months = 3 }
+#						
+#		}
+#		}
+#		}
+#		
+#		hidden_effect = { 
+#		
+#		if = { limit = { var:attacker_navalstrength > var:defender_navalstrength }
+#		scope:temp_wars_scope = {
+#		every_war_defender = { 
+#			every_courtier = { add_character_modifier = { modifier = naval_defeat_modifier months = 3 } }
+#		}
+#		}
+#		}
+#		
+#		if = { limit = { var:attacker_navalstrength < var:defender_navalstrength }
+#		scope:temp_wars_scope = {
+#		every_war_attacker = { 
+#						every_courtier = { add_character_modifier = { modifier = naval_defeat_modifier months = 3 } }
+#		}
+#		}
+#		}
+#		
+#		
+#		}
+#	
+#	
+#	
+#	}
+#	
+#	
+#	}

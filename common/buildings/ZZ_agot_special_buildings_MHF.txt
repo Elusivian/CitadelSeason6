@@ -488,126 +488,114 @@ wayfarers_rest_armisteads_tomb_01 = {
 # 	flag = travel_point_of_interest_economic
 # }
 
-horn_hill_hunting_grounds_01 = {
+# horn_hill_hunting_grounds_01 = {
 
-	construction_time = slow_construction_time
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_building_royal_hunting_grounds.dds"
+# 	type_icon = "icon_building_royal_hunting_grounds.dds"
 
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
+# 	can_construct_potential = {
+# 		building_requirement_tribal = no
+# 	}
 
 
 	
-	cost_gold = expensive_building_tier_3_cost
+# 	cost_gold = expensive_building_tier_3_cost
 
 
-	character_modifier = {
-		monthly_income = 2.5
-		archers_maintenance_mult = -0.1
-		archer_cavalry_maintenance_mult = -0.1
-		archers_toughness_mult = 0.05
-		archer_cavalry_toughness_mult = 0.05
+# 	character_modifier = {
+# 		monthly_income = 1
+# 		archers_maintenance_mult = -0.1
+# 		archers_toughness_mult = 0.05
 
-	}
-	province_modifier = {
-	}
-	county_modifier = {
-	}
-
-	levy = 500
+# 	}
+# 	province_modifier = {
+# 	}
+# 	county_modifier = {
+# 	}
 	
-	next_building = horn_hill_hunting_grounds_02
+# 	next_building = horn_hill_hunting_grounds_02
 	
-	ai_value = {
-		base = 100
-	}
+# 	ai_value = {
+# 		base = 100
+# 	}
 	
-	type = special
+# 	type = special
 	
-	flag = travel_point_of_interest_martial
-}
+# 	flag = travel_point_of_interest_martial
+# }
 
-horn_hill_hunting_grounds_02 = {
+# horn_hill_hunting_grounds_02 = {
 
-	construction_time = slow_construction_time
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_building_royal_hunting_grounds.dds"
+# 	type_icon = "icon_building_royal_hunting_grounds.dds"
 
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
+# 	can_construct_potential = {
+# 		building_requirement_tribal = no
+# 	}
 
 	
-	cost_gold = expensive_building_tier_4_cost
+# 	cost_gold = expensive_building_tier_4_cost
 
 
-	character_modifier = {
-			monthly_income = 3.5
-			archers_maintenance_mult = -0.15
-			archer_cavalry_maintenance_mult = -0.15
-			archers_toughness_mult = 0.1
-			archer_cavalry_toughness_mult = 0.1
-	}	
-	province_modifier = {
-	}
-	county_modifier = {
-	}
+# 	character_modifier = {
+# 			monthly_income = 2
+# 			archers_maintenance_mult = -0.15
+# 			archers_toughness_mult = 0.1
+# 	}	
+# 	province_modifier = {
+# 	}
+# 	county_modifier = {
+# 	}
 	
-	next_building = horn_hill_hunting_grounds_03
+# 	next_building = horn_hill_hunting_grounds_03
 	
-	ai_value = {
-		base = 100
-	}
-
-	levy = 750
+# 	ai_value = {
+# 		base = 100
+# 	}
 	
-	type = special
+# 	type = special
 	
-	flag = travel_point_of_interest_martial
-}
+# 	flag = travel_point_of_interest_martial
+# }
 
-horn_hill_hunting_grounds_03 = {
+# horn_hill_hunting_grounds_03 = {
 
-	construction_time = slow_construction_time
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_building_royal_hunting_grounds.dds"
+# 	type_icon = "icon_building_royal_hunting_grounds.dds"
 
-	can_construct_potential = {
+# 	can_construct_potential = {
 		
-		building_requirement_tribal = no
-	}
+# 		building_requirement_tribal = no
+# 	}
 
 	
-	cost_gold = expensive_building_tier_5_cost
+# 	cost_gold = expensive_building_tier_5_cost
 	
 	
-	character_modifier = {
-			monthly_income = 4.5
-			archers_maintenance_mult = -0.2
-			archer_cavalry_maintenance_mult = -0.2
-			archers_toughness_mult = 0.15
-			archer_cavalry_toughness_mult = 0.15
-			stress_gain_mult = -0.1
-			monthly_prestige  = 1
-	}	
-	province_modifier = {
-	}
-	county_modifier = {
-	}
-
-	levy = 1000
+# 	character_modifier = {
+# 			monthly_income = 3
+# 			archers_maintenance_mult = -0.2
+# 			archers_toughness_mult = 0.15
+# 			stress_gain_mult = -0.1
+# 			monthly_prestige  = 1
+# 	}	
+# 	province_modifier = {
+# 	}
+# 	county_modifier = {
+# 	}
 	
 	
-	ai_value = {
-		base = 100
-	}
+# 	ai_value = {
+# 		base = 100
+# 	}
 	
-	type = special
+# 	type = special
 	
-	flag = travel_point_of_interest_martial
-}
+# 	flag = travel_point_of_interest_martial
+# }
 
 coldmoat_outworks_01 = {
 
@@ -824,107 +812,107 @@ runeport_docks_03 = {
 	flag = travel_point_of_interest_economic
 }
 
-gulltown_customs_house_01 = {
+# gulltown_customs_house_01 = {
 
-	construction_time = slow_construction_time
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_building_tax_assessor.dds"
+# 	type_icon = "icon_building_tax_assessor.dds"
 
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
+# 	can_construct_potential = {
+# 		building_requirement_tribal = no
+# 	}
 	
-	cost_gold = expensive_building_tier_3_cost
+# 	cost_gold = expensive_building_tier_3_cost
 
-	character_modifier = {
-	}		
+# 	character_modifier = {
+# 	}		
 	
-	province_modifier = {
-		monthly_income = 1.5
-	}
-	county_modifier = {
-		development_growth_factor = 0.05
-	}
+# 	province_modifier = {
+# 		monthly_income = 1.5
+# 	}
+# 	county_modifier = {
+# 		development_growth_factor = 0.05
+# 	}
 	
-	next_building = gulltown_customs_house_02
+# 	next_building = gulltown_customs_house_02
 	
-	ai_value = {
-		base = 100
-	}
+# 	ai_value = {
+# 		base = 100
+# 	}
 	
-	type = special
+# 	type = special
 	
-	flag = travel_point_of_interest_economic
-}
+# 	flag = travel_point_of_interest_economic
+# }
 
-gulltown_customs_house_02 = {
+# gulltown_customs_house_02 = {
 
-	construction_time = slow_construction_time
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_building_tax_assessor.dds"
+# 	type_icon = "icon_building_tax_assessor.dds"
 
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
+# 	can_construct_potential = {
+# 		building_requirement_tribal = no
+# 	}
 
 	
-	cost_gold = expensive_building_tier_4_cost
+# 	cost_gold = expensive_building_tier_4_cost
 	
-	character_modifier = {
-	}	
+# 	character_modifier = {
+# 	}	
 	
-	province_modifier = {
-		monthly_income = 2.5
-	}
-	county_modifier = {
-		development_growth_factor = 0.10
-	}
+# 	province_modifier = {
+# 		monthly_income = 2.5
+# 	}
+# 	county_modifier = {
+# 		development_growth_factor = 0.10
+# 	}
 	
-	next_building = gulltown_customs_house_03
+# 	next_building = gulltown_customs_house_03
 	
-	ai_value = {
-		base = 100
-	}
+# 	ai_value = {
+# 		base = 100
+# 	}
 	
-	type = special
+# 	type = special
 	
-	flag = travel_point_of_interest_economic
-}
+# 	flag = travel_point_of_interest_economic
+# }
 
-gulltown_customs_house_03 = {
+# gulltown_customs_house_03 = {
 
-	construction_time = slow_construction_time
+# 	construction_time = slow_construction_time
 
-	type_icon = "icon_building_tax_assessor.dds"
+# 	type_icon = "icon_building_tax_assessor.dds"
 
-	can_construct_potential = {
+# 	can_construct_potential = {
 		
-		building_requirement_tribal = no
-	}
+# 		building_requirement_tribal = no
+# 	}
 
 	
-	cost_gold = expensive_building_tier_5_cost
+# 	cost_gold = expensive_building_tier_5_cost
 	
-	character_modifier = {
-		monthly_prestige = 0.7
-	}	
+# 	character_modifier = {
+# 		monthly_prestige = 0.7
+# 	}	
 	
-	province_modifier = {
-		monthly_income = 3.5
-	}
-	county_modifier = {
-		development_growth_factor = 0.15
-	}
+# 	province_modifier = {
+# 		monthly_income = 3.5
+# 	}
+# 	county_modifier = {
+# 		development_growth_factor = 0.15
+# 	}
 	
 	
-	ai_value = {
-		base = 100
-	}
+# 	ai_value = {
+# 		base = 100
+# 	}
 	
-	type = special
+# 	type = special
 	
-	flag = travel_point_of_interest_economic
-}
+# 	flag = travel_point_of_interest_economic
+# }
 
 gullview_osgoods_tomb_01 = {
 
@@ -1500,7 +1488,7 @@ city_of_lannisport_01 = {
 		levy_size = 0.15
 	}
 
-	levy = 1300
+	levy = 1800
 	
 	
 	ai_value = {
@@ -2943,8 +2931,8 @@ blueburn_mills_01 = {
 	}
 
 	character_modifier = {
-		build_speed = -0.15
-		build_gold_cost = -0.15
+		build_speed = -0.1
+		build_gold_cost = -0.1
 	}
 
 	county_modifier = {
@@ -3274,13 +3262,24 @@ starpike_01 = {
 
 	max_garrison = 950
 
+	character_modifier = {
+		liege_opinion = 15
+		personal_scheme_phase_duration_add = minor_scheme_phase_duration_bonus_value
+		owned_scheme_secrecy_add = -10
+		intrigue = 1
+	}
+
+	cost_gold = 500
+
 	county_modifier = {
 		development_growth_factor = 0.1
 		levy_size = 0.1
 	}
 	province_modifier = {
-		fort_level = 5
+		fort_level = 6
+		monthly_income = 1
 		levy_size = 0.2
+		tax_mult = 0.06
 	}
 	character_modifier = {
 		monthly_dynasty_prestige_mult = 0.05
@@ -3352,7 +3351,7 @@ oldtown_quill_and_tankard_01 = {
 		owned_legend_spread_mult = 0.05
 	}
 
-	levy = 1000
+	levy = 3500
 
 	county_modifier = {
 		development_growth_factor = 0.05
@@ -3405,39 +3404,39 @@ brightwater_keep_brightwater_keep_01 = {
 	flag = travel_point_of_interest_intrigue
 }
 
-the_ring_the_ring_01 = {
+# the_ring_the_ring_01 = { - DOUBLE BUILDING - Kizan
 
-	construction_time = very_slow_construction_time
+# 	construction_time = very_slow_construction_time
 
-	type_icon = "icon_the_ring.dds"
+# 	type_icon = "icon_the_ring.dds"
 
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
+# 	can_construct_potential = {
+# 		building_requirement_tribal = no
+# 	}
 
-	cost_gold = 3000
+# 	cost_gold = 3000
 
-	character_modifier = {
-		monthly_dynasty_prestige_mult = 0.05
-		monthly_prestige  = 0.5
-		heavy_cavalry_toughness_mult = 0.1
-	}
+# 	character_modifier = {
+# 		monthly_dynasty_prestige_mult = 0.05
+# 		monthly_prestige  = 0.5
+# 		heavy_cavalry_toughness_mult = 0.1
+# 	}
 
-	province_modifier = {
-		defender_holding_advantage = 2
-		fort_level = 3
-		monthly_income = 1
-	}
+# 	province_modifier = {
+# 		defender_holding_advantage = 2
+# 		fort_level = 3
+# 		monthly_income = 1
+# 	}
 
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-	}
+# 	ai_value = {
+# 		base = 100
+# 		culture_likely_to_fortify_modifier = yes
+# 	}
 
-	type = special
+# 	type = special
 
-	flag = travel_point_of_interest_martial
-}
+# 	flag = travel_point_of_interest_martial
+# }
 
 atranta_atranta_01 = {
 
@@ -5976,6 +5975,7 @@ three_towers_01 = {
 	}
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.75
 		monthly_dynasty_prestige_gain_mult = 0.1
 	}
@@ -6006,6 +6006,7 @@ sunflower_hall_01 = {
 
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.5
 		monthly_dynasty_prestige_gain_mult = 0.05
 	}
@@ -6067,6 +6068,7 @@ oldcastle_01 = {
 
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.25
 		monthly_dynasty_prestige_gain_mult = 0.03
 	}
@@ -6097,6 +6099,7 @@ ramsgate_01 = {
 
 
 	character_modifier = {
+		domain_limit = 1
 		monthly_prestige = 0.25
 		monthly_dynasty_prestige_gain_mult = 0.03
 	}

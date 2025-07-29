@@ -1,0 +1,222 @@
+﻿namespace = recover_brightroar
+
+recover_brightroar.0001 = {
+	type = character_event
+	title = recover_brightroar_t
+
+	theme = crown
+	override_background = throne_room
+	left_portrait = root
+	right_portrait = scope:explorer
+
+	desc = {
+		first_valid = {
+			##Gerion and Tywin
+			triggered_desc = {
+				trigger = {
+					scope:explorer = {
+						this = character:Lannister_5
+					}
+				 }
+				desc = recover_brightroar_0001_a_desc
+			}
+			##Not Gerion
+			triggered_desc = {
+				desc =  recover_brightroar_0001_c_desc
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = { exists = character:Lannister_62 }
+			character:Lannister_62 = { save_scope_as = tommen }
+		}
+	}
+
+
+	##Gerion is alive
+	option = {
+
+		custom_tooltip = recover_brightroar_0001_tt
+
+		trigger = {
+			scope:explorer = {
+				this = character:Lannister_5
+			}
+			is_landed = yes #extra check to make sure they haven't lost their status
+		}
+		name = recover_brightroar_0001_a
+
+
+		ai_chance = {
+			factor = 100
+			modifier = {
+				gold > 500
+				factor = 100
+			}
+		}
+
+		trigger_event = {
+			id = recover_brightroar.9999
+		}
+	}
+
+	##Gerion is not alive, fund a random dude
+	option = {
+		trigger = {
+			scope:explorer = {
+				NOT = {
+					this = character:Lannister_5
+				}
+			}
+			is_landed = yes
+		}
+		name = recover_brightroar_0001_b
+
+		custom_tooltip = recover_brightroar_0001_tt
+
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}
+		trigger_event = {
+			id = recover_brightroar.9999
+		}
+	}
+
+	###Changed my mind...
+	option = {
+		name = recover_brightroar_0001_c
+
+		custom_tooltip = recover_brightroar_0001_b_tt
+
+		remove_decision_cooldown = recover_brightroar_decision
+
+		add_gold = 500
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+
+##Does return with brightroar
+recover_brightroar.0002 = {
+	type = character_event
+	title = recover_brightroar_t
+	desc = recover_brightroar_0002_a_desc
+
+	theme = crown
+	override_background = docks
+	left_portrait = {
+		character = root
+		animation = agot_brightroar_2
+	}
+	right_portrait = scope:explorer
+	immediate = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:recovered_brightroar
+		}
+
+		root = {
+			agot_create_artifact_vs_brightroar_effect = {
+				OWNER = this
+			}
+			dynasty = { add_dynasty_prestige = 500 }
+		}
+		scope:newly_created_artifact = {
+			add_artifact_history = {
+				type = given
+				actor = scope:explorer
+				recipient = root
+			}
+		}
+
+		scope:explorer = {
+			add_prestige = 500
+		}
+	}
+
+	artifact = { # To display the artifact in the event-window
+		target = scope:newly_created_artifact
+		position = lower_left_portrait
+	}
+
+	option = {
+		name = recover_brightroar_0002_a
+	}
+}
+
+##Does not return
+recover_brightroar.0003 = {
+	type = character_event
+	title = recover_brightroar_t
+	desc = recover_brightroar_0003_a_desc
+	theme = crown
+	override_background = throne_room
+	left_portrait = root
+
+	immediate = {
+		scope:explorer = {
+			death = { death_reason = death_vanished }
+		}
+	}
+
+	##Gerion is alive, and Tywin is alive and is the person funding him.
+	option = {
+		name = recover_brightroar_0003_a
+	}
+}
+
+recover_brightroar.9999 = {
+	hidden = yes
+	immediate = {
+		## If Gerion Lannister is the candidate, he has an increased chance to recover brightroar
+		if = {
+			limit = {
+				scope:explorer = {
+					this = character:Lannister_5
+				}
+			}
+			random_list = {
+				## Person returns with brightroar
+				15 = {
+					trigger_event = {
+						id = recover_brightroar.0002
+						days = {60 365}
+					}
+				}
+				## Person goes missing (dead)
+				85 = {
+					trigger_event = {
+						id = recover_brightroar.0003
+						days = {60 365}
+					}
+				}
+			}
+		}
+		## Otherwise the chance to recover is 1%
+		else = {
+			random_list = {
+				## Person returns with brightroar
+				5 = {
+					trigger_event = {
+						id = recover_brightroar.0002
+						days = {60 365}
+					}
+				}
+				## Person goes missing (dead)
+				95 = {
+					trigger_event = {
+						id = recover_brightroar.0003
+						days = {60 365}
+					}
+				}
+			}
+		}
+	}
+}
