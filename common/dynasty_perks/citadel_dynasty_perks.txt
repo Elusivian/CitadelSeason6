@@ -3364,14 +3364,27 @@ ironmaker_legacy_5 = {
 honeywiner_legacy_1 = { 
 	legacy = honeywiner_legacy_track
 
-	can_be_picked = { 
-		always = yes
+	can_be_picked = {
+		culture = {
+			OR = {
+				this = culture:honeywiner
+				any_parent_culture_or_above = {
+					this = culture:honeywiner
+				}
+			}
+		}
 	}
 
 	ai_chance = {
-		value = 100
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
 	}
-
+	
 	effect = {
 		custom_description_no_bullet = {
 			text = honeywiner_legacy_1_effect
@@ -3387,14 +3400,6 @@ honeywiner_legacy_1 = {
 
 honeywiner_legacy_2 = { 
 	legacy = honeywiner_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3412,14 +3417,6 @@ honeywiner_legacy_2 = {
 honeywiner_legacy_3 = { 
 	legacy = honeywiner_legacy_track
 
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
-
 	effect = {
 		custom_description_no_bullet = {
 			text = honeywiner_legacy_3_effect
@@ -3435,14 +3432,6 @@ honeywiner_legacy_3 = {
 
 honeywiner_legacy_4 = { 
 	legacy = honeywiner_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3461,14 +3450,6 @@ honeywiner_legacy_4 = {
 
 honeywiner_legacy_5 = { 
 	legacy = honeywiner_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3489,12 +3470,25 @@ honeywiner_legacy_5 = {
 sisterman_legacy_1 = { 
 	legacy = sisterman_legacy_track
 
-	can_be_picked = { 
-		always = yes
+	can_be_picked = {
+		culture = {
+			OR = {
+				this = culture:sisterman
+				any_parent_culture_or_above = {
+					this = culture:sisterman
+				}
+			}
+		}
 	}
 
 	ai_chance = {
-		value = 100
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
 	}
 
 	effect = {
@@ -3514,14 +3508,6 @@ sisterman_legacy_1 = {
 sisterman_legacy_2 = { 
 	legacy = sisterman_legacy_track
 
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
-
 	effect = {
 		custom_description_no_bullet = {
 			text = sisterman_legacy_2_effect
@@ -3537,14 +3523,6 @@ sisterman_legacy_2 = {
 
 sisterman_legacy_3 = { 
 	legacy = sisterman_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3565,14 +3543,6 @@ sisterman_legacy_3 = {
 sisterman_legacy_4 = { 
 	legacy = sisterman_legacy_track
 
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
-
 	effect = {
 		custom_description_no_bullet = {
 			text = sisterman_legacy_4_effect
@@ -3591,14 +3561,6 @@ sisterman_legacy_4 = {
 
 sisterman_legacy_5 = { 
 	legacy = sisterman_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 100
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3621,12 +3583,25 @@ sisterman_legacy_5 = {
 stonedornish_legacy_1 = { 
 	legacy = stonedornish_legacy_track
 
-	can_be_picked = { 
-		always = yes
+	can_be_picked = {
+		culture = {
+			OR = {
+				this = culture:stone_dornish
+				any_parent_culture_or_above = {
+					this = culture:stone_dornish
+				}
+			}
+		}
 	}
 
 	ai_chance = {
 		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
 	}
 
 	effect = {
@@ -3643,14 +3618,6 @@ stonedornish_legacy_1 = {
 
 stonedornish_legacy_2 = { 
 	legacy = stonedornish_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 11
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3669,14 +3636,6 @@ stonedornish_legacy_2 = {
 stonedornish_legacy_3 = { 
 	legacy = stonedornish_legacy_track
 
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 11
-	}
-
 	effect = {
 		custom_description_no_bullet = {
 			text = stonedornish_legacy_3_effect
@@ -3693,14 +3652,6 @@ stonedornish_legacy_3 = {
 
 stonedornish_legacy_4 = { 
 	legacy = stonedornish_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 11
-	}
 
 	effect = {
 		custom_description_no_bullet = {
@@ -3719,14 +3670,6 @@ stonedornish_legacy_4 = {
 
 stonedornish_legacy_5 = { 
 	legacy = stonedornish_legacy_track
-
-	can_be_picked = { 
-		always = yes
-	}
-
-	ai_chance = {
-		value = 11
-	}
 
 	effect = {
 		custom_description_no_bullet = {

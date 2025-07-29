@@ -1485,10 +1485,9 @@ city_of_lannisport_01 = {
 	}
 	county_modifier = {
 		development_growth_factor = 0.25
-		levy_size = 0.15
 	}
 
-	levy = 1800
+	levy = 2000
 	
 	
 	ai_value = {

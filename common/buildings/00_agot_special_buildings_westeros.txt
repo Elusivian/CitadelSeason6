@@ -1090,7 +1090,7 @@ agot_lann_sept_01 = {
 
 	type_icon = "icon_lanns_sept.dds"
 
-	levy = 1800
+	levy = 2000
 
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -2450,8 +2450,6 @@ agot_oldtown_walls_01 = {
 		fort_level = 3
 	}
 
-	levy = 2000
-
 	ai_value = {
 		base = 100
 		culture_likely_to_fortify_modifier = yes
@@ -2916,7 +2914,7 @@ agot_grafton_keep_01 = {
 		prisoner_opinion = -10
 		monthly_income = 2
 	}
-	levy = 2000
+	levy = 4000
 	province_modifier = {
 		fort_level = 2
 	}
